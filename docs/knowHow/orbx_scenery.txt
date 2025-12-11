@@ -1,0 +1,5 @@
+https://www.youtube.com/watch?v=LvgZHFCihpo
+
+=> um orbx XP11 scenery in XP 12 zuinstallieren via orbx central muss die Datei C:\Users\Pilot\AppData\Local\x-plane_install_12.txt
+angepasst werden. Die listet alle XP12 installationen auf. Speichert man diese als x-plane_install_11.txt gaukelt man dem OrbX central
+vor, dass XP11 installiert sei.

@@ -1,0 +1,23 @@
+Pfad zu den Miniaturbildern von PilotsDeck für Streamlink
+C:\Users\Pilot\AppData\Roaming\Elgato\StreamDeck\Plugins\com.extension.pilotsdeck.sdPlugin\Images
+
+----------------------
+
+Arcaze - korrekte Zeiten bei on/off switches
+5ms/5ms
+
+---------------------
+
+Arcaze - encoder konfigurieren
+Teiler = 2
+
+---------------------
+
+124ATC Konfiguration für automatischen Flightplan Export von Simbrief
+
+cd /D "G:\X-Plane 12\Resources\plugins\124thATC64"
+rmdir /s /q navdata
+mklink /D "navdata" "G:\X-Plane 12\Custom Data"
+
+
+---------------------

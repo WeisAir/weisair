@@ -1,0 +1,96 @@
+I
+1100 Version
+networking_disclose_multiplayer 0
+networking_disclose_flir 0
+save_flight_type 1
+wxr_disclose_atmosphere 1
+wxr_disclose_change_over_time 0
+selected_tab 6
+networking_disclose_ports 0
+networking_disclose_data_io 0
+pixel_multiplier 1.500000
+wxr_disclose_thermals 0
+wxr_disclose_runway_conditions 1
+last_device Controller (Xbox One For Windows)
+networking_disclose_iphone 0
+ios_disclose_weather 1
+networking_disclose_instructor 0
+ios_disclose_time 1
+networking_disclose_external_visuals 0
+P monitor_10 _visuals 0
+P monitor_10 _offsets 0
+P monitor_1 _visuals 0
+P monitor_1 _offsets 0
+P map_layer map_layer_SDK_Marking_2 1
+P map_layer map_layer_SDK_Marking_1 1
+P map_layer map_layer_SDK_Marking_0 1
+P monitor_14 _visuals 0
+P monitor_14 _offsets 0
+P monitor_4 _visuals 0
+P monitor_4 _offsets 0
+P pilot-430 gps_window_visible 0
+P monitor_6 _visuals 0
+P monitor_6 _offsets 0
+P WXR-1 gps_window_visible 0
+P monitor_7 _visuals 0
+P monitor_7 _offsets 0
+P pilot-1000 gps_window_visible 0
+P monitor_11 _visuals 0
+P monitor_11 _offsets 0
+P monitor_17 _visuals 0
+P monitor_17 _offsets 0
+P monitor_16 _visuals 0
+P monitor_16 _offsets 0
+P monitor_12 _visuals 0
+P monitor_12 _offsets 0
+P monitor_9 _visuals 0
+P monitor_9 _offsets 0
+P monitor_3 _visuals 0
+P monitor_3 _offsets 0
+P center-1000 gps_window_visible 0
+P monitor_0 _visuals 0
+P monitor_0 _offsets 0
+P monitor_18 _visuals 0
+P monitor_18 _offsets 0
+P monitor_5 _visuals 0
+P monitor_5 _offsets 0
+P monitor_15 _visuals 0
+P monitor_15 _offsets 0
+P monitor_2 _visuals 0
+P monitor_2 _offsets 0
+P window_state exvis_standby v=0 p=0 m=0 b=0,0,0,0
+P window_state fps_test_recoder v=0 p=0 m=0 b=0,0,0,0
+P window_state screenshot_controls v=0 p=0 m=0 b=0,0,0,0
+P window_state networkdebug v=0 p=0 m=0 b=0,0,0,0
+P window_state raininspector v=0 p=0 m=0 b=0,0,0,0
+P window_state pluginadmin v=0 p=0 m=0 b=0,0,0,0
+P window_state vramprofiler v=0 p=0 m=0 b=0,0,0,0
+P window_state microprofiler v=0 p=0 m=0 b=0,0,0,0
+P window_state demo_area v=0 p=0 m=0 b=0,0,0,0
+P window_state log_viewer v=0 p=0 m=0 b=0,0,0,0
+P window_state particle_browser v=0 p=0 m=0 b=0,0,0,0
+P window_state texture_browser v=0 p=0 m=0 b=0,0,0,0
+P window_state autopilot_constants v=0 p=0 m=0 b=0,0,0,0
+P window_state projection_params v=0 p=0 m=0 b=0,0,0,0
+P window_state key_shortcuts v=0 p=0 m=0 b=0,0,0,0
+P window_state settings v=0 p=0 m=0 b=53,0,1653,960
+P window_state main_menu v=0 p=0 m=0 b=0,0,1706,960
+P window_state atc_window v=0 p=0 m=0 b=0,0,0,0
+P window_state save_flight_window v=0 p=0 m=0 b=603,330,1103,630
+P window_state logbook_window v=0 p=0 m=0 b=0,0,0,0
+P window_state weather_map v=0 p=0 m=0 b=0,0,0,0
+P window_state ios v=0 p=0 m=0 b=279,125,1304,745
+P window_state map v=0 p=0 m=0 b=0,0,0,0
+P window_state data_out v=0 p=0 m=0 b=0,0,0,0
+P window_state replay_controls v=0 p=0 m=0 b=0,0,1706,960
+P window_state menu_bar v=1 p=0 m=0 b=0,0,1706,960
+P window_state video_recording_config v=0 p=0 m=0 b=0,0,0,0
+P window_state ground_handling_window v=0 p=0 m=0 b=0,0,0,0
+P WXR-2 gps_window_visible 0
+P GCU gps_window_visible 0
+P monitor_13 _visuals 0
+P monitor_13 _offsets 0
+P monitor_19 _visuals 0
+P monitor_19 _offsets 0
+P monitor_8 _visuals 0
+P monitor_8 _offsets 0

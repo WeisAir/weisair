@@ -1,0 +1,16 @@
+best source Europe:
+https://sonny.4lima.de/
+
+
+Wie man das Mesh einer bestehenden Tile aktualisiert, Beispiel Svalbard:
+
+-> Zip von https://sonny.4lima.de/ herunterladen
+-> hgt file extrahieren
+-> in F:\Ortho4XP\Elevation_data entsprechend platzieren
+-> in Ortho4xp die Schritte "Assemble Vector Data" und "Triangulate Mesh" wiederholen lassen (einzeln oder Batch für mehrere Files)
+-> App Config:
+	- custom dem Pfad bleibt leer!
+	- Base Folder muss der sein, wo die aktuellen Tiles liegen.
+
+default:
+https://www.viewfinderpanoramas.org/Coverage%20map%20viewfinderpanoramas_org3.htm

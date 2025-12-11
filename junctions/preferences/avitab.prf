@@ -1,0 +1,35 @@
+{
+    "general": {
+        "prefs_version": 1,
+        "show_fps": true
+    },
+    "overlay": {
+        "ILSs": false,
+        "NDBs": false,
+        "POIs": false,
+        "VORs": false,
+        "VRPs": false,
+        "airports": false,
+        "airstrips": false,
+        "colors": {
+            "other_aircraft": {
+                "above": "BLUE",
+                "below": "GREEN",
+                "same": "BLACK"
+            }
+        },
+        "heliports_seaports": false,
+        "markers": false,
+        "my_aircraft": true,
+        "other_aircraft": true,
+        "waypoints": false
+    },
+    "window": {
+        "bottom": 0,
+        "left": 0,
+        "popped": false,
+        "right": 0,
+        "top": 0,
+        "valid": false
+    }
+}

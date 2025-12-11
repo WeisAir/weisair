@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<addonIndexes>
+ <addon name="X-Plane 12" guid="17271467-ff15-4302-82a6-946b0ffe2aec">
+  <mapping mappingGuid="04cbf7c4-e96e-4404-90ea-95f05365055d" name="WINDOWS" simulator="USER" revision="0" specified="manual" cycle="0">
+   <directory path="G:\X-Plane_12_prelatest_stable\Custom Data"/>
+  </mapping>
+  <mapping mappingGuid="0915f516-2e95-44b2-8792-6ce50e5767d7" name="WINDOWS" simulator="XP12" revision="0" specified="auto" cycle="0">
+   <directory path="G:\X-Plane_12_latest\Custom Data"/>
+  </mapping>
+  <mapping mappingGuid="c23bdcc7-cab0-4099-b782-59196876eb6d" name="WINDOWS" simulator="USER" revision="0" specified="manual" cycle="0">
+   <directory path="G:\X-Plane_12_latest_stable\Custom Data"/>
+  </mapping>
+ </addon>
+ <addon name="124thATCv2 (version 2.0-a60 and above)" guid="588fb970-cd6e-43f4-ae72-2b204d2812a9">
+  <mapping mappingGuid="bc7988c8-9986-40ca-8c17-c9c8f296d54b" name="WINDOWS" simulator="USER" revision="0" specified="manual" cycle="0">
+   <directory path="G:\X-Plane 12\Resources\plugins\124thATC64\navdata"/>
+  </mapping>
+ </addon>
+ <addon name="Modern UFMC" guid="868a0e40-608f-4339-8741-6d82c76aa91c">
+  <mapping mappingGuid="47874f8a-1f30-4469-9650-7e63aaaa264a" name="WINDOWS" simulator="XP12" revision="0" specified="auto" cycle="0">
+   <directory path="G:\X-Plane_12_latest\Custom Data\UFMC"/>
+  </mapping>
+  <mapping mappingGuid="62bd1f8a-dbfa-4ab5-8edb-0659cc990b79" name="WINDOWS" simulator="USER" revision="0" specified="manual" cycle="0">
+   <directory path="G:\X-Plane_12_prelatest_stable\Custom Data\UFMC"/>
+  </mapping>
+  <mapping mappingGuid="79ac6122-527d-4c40-81c4-2264081a4786" name="WINDOWS" simulator="USER" revision="0" specified="manual" cycle="0">
+   <directory path="G:\X-Plane_12_latest_stable\Custom Data\UFMC"/>
+  </mapping>
+ </addon>
+ <addon name="IXEG 737 Classic" guid="d705cece-746d-41b0-aaf1-f13c60a8dcc4">
+  <mapping mappingGuid="956ede98-db9e-4fd0-a99c-eeafdac5e72c" name="WINDOWS" simulator="XP12" revision="0" specified="manual" cycle="0">
+   <directory path="G:\X-Plane_12_latest\Aircraft\X-Aviation\IXEG 737 Classic Plus"/>
+  </mapping>
+ </addon>
+ <addon name="SSG Boeing 748i, E-Jets Evolution" guid="fc7892a6-8ad8-43cc-8bbc-e0759a5b6a60">
+  <mapping mappingGuid="6c8db033-a688-4e1d-95f0-feb188bafb8e" name="WINDOWS" simulator="XP12" revision="0" specified="auto" cycle="0">
+   <directory path="G:\X-Plane_12_latest\Custom Data\UFMC"/>
+  </mapping>
+  <mapping mappingGuid="c3077c99-5ea5-4e4d-8727-466b9ff29f4c" name="WINDOWS" simulator="USER" revision="0" specified="manual" cycle="0">
+   <directory path="G:\X-Plane_12_prelatest_stable\Custom Data\UFMC"/>
+  </mapping>
+  <mapping mappingGuid="c833ab85-647e-46ab-bf2d-d59d0385b25a" name="WINDOWS" simulator="USER" revision="0" specified="manual" cycle="0">
+   <directory path="G:\X-Plane_12_latest_stable\Custom Data\UFMC"/>
+  </mapping>
+ </addon>
+</addonIndexes>

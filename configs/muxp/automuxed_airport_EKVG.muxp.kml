@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" >
+<Document>
+
+<name>automuxed_airport_EKVG.muxp.kml</name><description>
+muxp_version: 0.32
+id: airport_EKVG
+version: 1.0
+description: creating TIN for Vagar
+author: muxp_auto_creation_from_apt.dat
+tile: +62-008
+source_dsf: DEFAULT
+</description>
+
+<Style id="Area"><LineStyle><color>ff0000ff</color><width>4</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+<Style id="Coords"><LineStyle><color>ffff00aa</color><width>3</width></LineStyle><PolyStyle><color>40f7ffff</color></PolyStyle></Style>
+
+    <Placemark><name>area:</name><styleUrl>#Area</styleUrl><Polygon><outerBoundaryIs><LinearRing><coordinates>
+        -7.294276099999999,62.0571324,0
+        -7.294276099999999,62.0694662,0
+        -7.2527984000000005,62.0694662,0
+        -7.2527984000000005,62.0571324,0
+        -7.294276099999999,62.0571324,0
+    </coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+
+<Folder><name>limit_edges.bound:</name>
+<description>
+edge_limit: 250
+type: default
+</description>
+    <Placemark><name>coordinates:</name><styleUrl>#Coords</styleUrl><Polygon><outerBoundaryIs><LinearRing><coordinates>
+        -7.2932622,62.0679002,0
+        -7.2937761,62.0674445,0
+        -7.2922771,62.067069,0
+        -7.2927214,62.0666771,0
+        -7.289487,62.0658708,0
+        -7.2885879,62.064726,0
+        -7.2608842,62.0579407,0
+        -7.2597211,62.0589872,0
+        -7.258283,62.0586305,0
+        -7.2581441,62.0587562,0
+        -7.2535485,62.0576324,0
+        -7.2532984,62.0578643,0
+        -7.2578941,62.0589727,0
+        -7.2577687,62.0590854,0
+        -7.2592413,62.0594147,0
+        -7.2588247,62.0597935,0
+        -7.2639796,62.061113,0
+        -7.2642995,62.0612295,0
+        -7.2635685,62.0618745,0
+        -7.2763128,62.0650012,0
+        -7.2747223,62.0664168,0
+        -7.275633,62.0666512,0
+        -7.2754538,62.0667999,0
+        -7.27536,62.0668048,0
+        -7.2751204,62.0670074,0
+        -7.2754889,62.0671041,0
+        -7.2750316,62.0675067,0
+        -7.2750158,62.0675433,0
+        -7.2751099,62.0677224,0
+        -7.2751598,62.067753,0
+        -7.2762035,62.0680147,0
+        -7.2767273,62.0675505,0
+        -7.2767834,62.0674973,0
+        -7.2769444,62.0674753,0
+        -7.2771109,62.0675037,0
+        -7.2772685,62.0676771,0
+        -7.2774476,62.0678216,0
+        -7.2777582,62.0679801,0
+        -7.2784283,62.0681601,0
+        -7.278244,62.0683269,0
+        -7.277903,62.0686406,0
+        -7.2788363,62.06886,0
+        -7.2798783,62.0689662,0
+        -7.2803528,62.0682087,0
+        -7.280971,62.06835,0
+        -7.2812625,62.0681025,0
+        -7.2825306,62.0680823,0
+        -7.2847655,62.0680275,0
+        -7.2850684,62.0673249,0
+        -7.2870738,62.0677194,0
+        -7.2881327,62.067081,0
+        -7.2913574,62.0678834,0
+        -7.2917533,62.0675255,0
+        -7.2932622,62.0679002,0
+    </coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+</Folder>
+
+<Folder><name>cut_spline_segment.runway_0:</name>
+<description>
+width: 30.0
+profile_interval: 50.0
+terrain: lib/g10/terrain10/apt_tmp_dry.ter
+type: default
+</description>
+    <Folder><name>3d_coordinates:</name>
+        <Placemark><name>-99999.0</name><Point><coordinates>-7.290972,62.067042,0</coordinates></Point></Placemark>
+        <Placemark><name>-99999.0</name><Point><coordinates>-7.2808383333333335,62.06452433333333,0</coordinates></Point></Placemark>
+        <Placemark><name>-99999.0</name><Point><coordinates>-7.270704666666666,62.06200666666667,0</coordinates></Point></Placemark>
+        <Placemark><name>-99999.0</name><Point><coordinates>-7.260571,62.059489,0</coordinates></Point></Placemark>
+   </Folder>
+</Folder>
+</Document></kml>

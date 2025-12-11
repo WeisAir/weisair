@@ -1,0 +1,1 @@
+mklink /J "G:\X-Plane 12\3rdParty\hardlink_airmanager_data\remotefiles" "C:\Users\Pilot\Air Manager"

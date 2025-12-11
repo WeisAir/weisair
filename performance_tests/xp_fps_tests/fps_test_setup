@@ -1,0 +1,33 @@
+Perspective | Weather |Quality 
+
+0 (Cockpit)	 5 (Overcast @ 500 m; cirrus @ 5 km)	| 5 extreme
+
+
+Perspective
+------------
+0: default (cockpit view)
+1: view from above
+2: nighttime cockpit view
+
+Weather
+-------
+
+Value	Clouds	Visibility (miles)	Rain
+0	Clear	25	
+1	Light cumulus @ 2 km; cirrus @ 5 km	25	
+0	Clear	15	
+3	Broken cumulus @ 2 km; cirrus @ 5 km	10	
+4	Stratus @ 1 km; cirrus @ 5 km	3	Moderate
+5	Overcast @ 500 m; cirrus @ 5 km	1	Heavy
+6	Overcast @ 500 m; cirrus @ 5 km	0.8	Heavy
+7	Overcast @ 500 m; stratus @ 5 km	0.8	Light
+
+
+Quality
+-------
+
+1: low
+2: medium
+3: high
+4: very high
+5: extreme

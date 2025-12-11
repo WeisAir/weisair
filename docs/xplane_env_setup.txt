@@ -1,0 +1,93 @@
+XPLANE 12
+
+Air Manager
+	https://www.siminnovations.com/api4/download.php?product_type=APPLICATION&application_group_type=AIR_MANAGER&beta=false&platform=WINDOWS&architecture=X86_64&program_compilation=HOME_USE
+	https://www.siminnovations.com/api4/download.php?product_type=APPLICATION&application_group_type=FLIGHTSIM_PLUGINS&beta=false&platform=WINDOWS&architecture=X86_64&program_compilation=HOME_USE
+
+Plugins
+	X-Camera
+		https://store.x-plane.org/edownload.asp?eid1=889&eid2=5D87E8B4qSRDhHq&file=0
+		54-1015-1F34-0466-660D-7443-7A52-771E-7E0F-660F-7605
+	Betterpushback
+	Traffic Global
+	xEnviro
+	FlywithLua
+	
+XP Management
+	XOrganizer
+		https://store.x-plane.org/edownload.asp?eid1=1636&eid2=DFA64F5FxYkEL0G&file=0
+
+	XToolbox
+		https://store.x-plane.org/edownload.asp?eid1=1186&eid2=DECA2E260F58HTj&file=0
+	
+	OrbX Central
+
+Hardware
+
+	Arcaze USB
+		http://mail-button.de/download/Arcaze%20USB-Interface-5.70.exe
+	Elgato Stream Deck
+		https://edge.elgato.com/egc/windows/sd/Stream_Deck_6.1.0.18521.msi
+	
+	FaceTrackNoIR
+		-> vie mail
+	SimHaptic
+		https://store.x-plane.org/edownload.asp?eid1=1788&eid2=AE6CE0D5z1oHen1&file=0
+		A243-S484-G568-Y106
+	webFMC
+	
+Navigation / VATSIM
+
+	Navigraph Charts
+	Navigraph FMS Data Manager
+	Navigraph Simlink
+	Simbrief Downloader
+	xPilot
+		VATSIM ID: 1452651
+	
+OS
+	Daemon Tools
+		https://www.daemon-tools.cc/deu/products/dtLite#install-dtLite-offer
+	DDS Thumbnail Viewer
+		https://download.nvidia.com/developer/NVTextureSuite/DDS_viewer.exe
+	(?) Process Lasso
+	(?) SpaceDesk
+	qBittorrent
+	Nvidia driver 531.61
+	7zip
+	Notepad++
+	SkinMan
+	Gimp
+	Inkscape
+	GPUZ	
+		
+Scenery Development
+	Ortho4XP
+	MUXP
+
+Aircraft
+	
+	AFL C172 NG Digital XP12
+		https://airfoillabs-public.s3.us-east-2.amazonaws.com/xjet-2.x/AFL+Product+Manager+Windows+Installer.exe
+		1a8c0391-9710-4481-9c93-7f4a62345c87
+	AFL C172 SP
+		https://store.x-plane.org/edownload.asp?eid1=401&eid2=41F27E59724tFOI&file=0
+		CW-AUUWXR-Y3XJXY-FYTJWW-YT3HH2
+	SSG B748
+		https://store.x-plane.org/edownload.asp?eid1=1079&eid2=963C8638fKNmbmR&file=0
+		RX-RZXF78-KPLRTE-L42ZFP-AJMKNJ
+	IXEG 737 Classic Plus
+		https://www.x-aviation.com/catalog/download.php?order=134915&id=147217
+	SAAB 340A
+		https://www.x-aviation.com/catalog/download.php?order=78430&id=84615
+
+Scenery
+		
+
+
+
+
+
+
+
+

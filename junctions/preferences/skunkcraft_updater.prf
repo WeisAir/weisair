@@ -1,0 +1,11 @@
+opt:audio_feedback|n|0
+opt:audio_startup|n|1
+opt:connect_timeout|n|0
+opt:custom_network|n|0
+opt:ignore_liveries|n|0
+opt:operation_timeout|n|0
+opt:run_at_startup|n|1
+opt:scan_plugins|n|1
+opt:scan_sceneries|n|0
+opt:sound_gain|n|150
+opt:verbose_logging|n|0
