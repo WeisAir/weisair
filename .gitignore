@@ -1,0 +1,33 @@
+# Ignore everything
+*
+
+# But not these files...
+!/.gitignore
+!weisair/*
+!weisair/airmanager_panels/*
+!weisair/batch_scripts/*
+!weisair/configs/*
+!weisair/configs/facetracknoir_profiles/*
+!weisair/junctions/Scripts/myarcaze.lua
+!weisair/junctions/Scripts/arcaze_scripts/*
+!weisair/junctions/Scripts/weisair_scripts/*
+!weisair/configs/muxp/*
+!weisair/junctions/preferences/*
+!weisair/junctions/preferences/control profiles/*
+!weisair/configs/simhaptic/Profiles/*
+!weisair/configs/x-camera/*
+!weisair/configs/x-organizer/*
+!weisair/devices/mountain_keyboard_icons/*
+!weisair/devices/streamdeck/*
+!weisair/devices/streamdeck/icons/*
+!weisair/devices/streamdeck/icons/weisair_737/*
+!weisair/devices/streamdeck/icons/weisair_747/*
+!weisair/devices/streamdeck/icons/weisair_generic/*
+!weisair/devices/streamdeck/icons/weisair_s340a/*
+!weisair/devices/streamdeck/profiles/*
+!weisair/docs/*
+!weisair/docs/diagrams/*
+!weisair/docs/knowhow/*
+!weisair/performance_tests/xp_fps_tests/*
+!weisair/wallpapers/*
+!*/
