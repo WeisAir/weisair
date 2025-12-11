@@ -1,0 +1,27 @@
+{
+    "folders": [
+        {
+            "path": ".."
+        }
+    ],
+    "settings": {
+        "favorites.resources": [
+            {
+                "filePath": "weisair\\junctions\\Scripts\\arcaze_scripts",
+                "group": "Default"
+            },
+            {
+                "filePath": "weisair\\junctions\\Scripts\\weisair_scripts",
+                "group": "Default"
+            },
+            {
+                "filePath": "weisair\\junctions\\Scripts\\myarcaze.lua",
+                "group": "Default"
+            },
+            {
+                "filePath": "X-Plane_12_latest_stable\\Log.txt",
+                "group": "Default"
+            }
+        ]
+    }
+}
