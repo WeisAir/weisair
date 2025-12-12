@@ -21,8 +21,6 @@ P monitor_10 _visuals 0
 P monitor_10 _offsets 0
 P monitor_1 _visuals 0
 P monitor_1 _offsets 0
-P map_layer map_layer_SDK_Marking_2 1
-P map_layer map_layer_SDK_Marking_1 1
 P map_layer map_layer_SDK_Marking_0 1
 P monitor_14 _visuals 0
 P monitor_14 _offsets 0
@@ -60,10 +58,10 @@ P monitor_2 _visuals 0
 P monitor_2 _offsets 0
 P window_state exvis_standby v=0 p=0 m=0 b=0,0,0,0
 P window_state fps_test_recoder v=0 p=0 m=0 b=0,0,0,0
-P window_state screenshot_controls v=0 p=0 m=0 b=0,0,0,0
+P window_state screenshot_controls v=0 p=0 m=0 b=204,349,684,789
 P window_state networkdebug v=0 p=0 m=0 b=0,0,0,0
 P window_state raininspector v=0 p=0 m=0 b=0,0,0,0
-P window_state pluginadmin v=0 p=0 m=0 b=0,0,0,0
+P window_state pluginadmin v=0 p=0 m=0 b=20,20,570,640
 P window_state vramprofiler v=0 p=0 m=0 b=0,0,0,0
 P window_state microprofiler v=0 p=0 m=0 b=0,0,0,0
 P window_state demo_area v=0 p=0 m=0 b=0,0,0,0
@@ -84,13 +82,13 @@ P window_state map v=0 p=0 m=0 b=0,0,0,0
 P window_state data_out v=0 p=0 m=0 b=0,0,0,0
 P window_state replay_controls v=0 p=0 m=0 b=0,0,1706,960
 P window_state menu_bar v=1 p=0 m=0 b=0,0,1706,960
-P window_state video_recording_config v=0 p=0 m=0 b=0,0,0,0
+P window_state video_recording_config v=0 p=0 m=0 b=553,280,1153,680
 P window_state ground_handling_window v=0 p=0 m=0 b=0,0,0,0
 P WXR-2 gps_window_visible 0
-P GCU gps_window_visible 0
 P monitor_13 _visuals 0
 P monitor_13 _offsets 0
 P monitor_19 _visuals 0
 P monitor_19 _offsets 0
+P GCU gps_window_visible 0
 P monitor_8 _visuals 0
 P monitor_8 _offsets 0

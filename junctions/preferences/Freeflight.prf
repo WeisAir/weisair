@@ -1,24 +1,38 @@
 I
 1100 Version
+_default_to_ramps 1
+_favorite Aircraft/B737-800X/b738.acf||Aircraft/Embraer E170/E170.acf||Aircraft/X-Aviation/Saab 340A/Passenger Variant/LES_Saab_340A.acf||Aircraft/SSG_B748_Series_V2.8RC1_XP12/SSG_B748-I_12.acf||Aircraft/Airfoillabs/C172 NG DIGITAL/C172_NG_DIGITAL.acf||Aircraft/Laminar Research/Lancair Evolution/N844X.acf||Aircraft/X-Aviation/IXEG 737 Classic Plus/B733.acf
 _airport EDDF
-_last_start {"runway_start":{"airport_id":"EDDF","runway":"07C"}}
+_last_start {"ramp_start":{"airport":"EDDF","ramp":"V270"}}
 
 _other_aircraft {"ai_aircraft":null}
 
-_time {"local_time":{"day_of_year":184,"latitude":50.032760897706787,"longitude":8.5352138872533132,"time_in_24_hours":12.762409210205078}}
+_time {"local_time":{"day_of_year":345,"latitude":50.036389797932678,"longitude":8.523136535138562,"time_in_24_hours":17.166666030883789}}
 
 _aircraft Aircraft/B737-800X/b738.acf
-_wxr_def ,var_rand_space_pct=0.00,var_deft_change_enum=3,var_rwx_is_sim_time=1,var_vis_sm=40.00,var_vis_alt_lo_ft=5000.00,var_vis_alt_hi_ft=15000.00,var_ISA_offset_C=0.00,var_SLP_pas=101355.38,var_QNH_ele=107.90,var_precip_rat=0.00,var_cld_typ_enum0=2,var_cld_cov0=0.00,var_tops_msl_ft0=11640.00,var_bases_msl_ft0=10000.00,var_cld_typ_enum1=2,var_cld_cov1=0.00,var_tops_msl_ft1=21640.00,var_bases_msl_ft1=20000.00,var_cld_typ_enum2=2,var_cld_cov2=0.00,var_tops_msl_ft2=31640.00,var_bases_msl_ft2=30000.00,var_wind_alt_msl_ft0=3928.57,var_wind_alt_msl_ft1=7857.14,var_wind_alt_msl_ft2=11785.71,var_wind_alt_msl_ft3=15714.29,var_wind_alt_msl_ft4=19642.86,var_wind_alt_msl_ft5=23571.43,var_wind_alt_msl_ft6=27500.00,var_wind_alt_msl_ft7=31428.57,var_wind_alt_msl_ft8=35357.14,var_wind_alt_msl_ft9=39285.71,var_wind_alt_msl_ft10=43214.29,var_wind_alt_msl_ft11=47142.86,var_wind_alt_msl_ft12=51071.43,var_wind_spd_kt0=-1.00,var_wind_spd_kt1=-1.00,var_wind_spd_kt2=-1.00,var_wind_spd_kt3=-1.00,var_wind_spd_kt4=-1.00,var_wind_spd_kt5=-1.00,var_wind_spd_kt6=-1.00,var_wind_spd_kt7=-1.00,var_wind_spd_kt8=-1.00,var_wind_spd_kt9=-1.00,var_wind_spd_kt10=-1.00,var_wind_spd_kt11=-1.00,var_wind_spd_kt12=-1.00,var_wind_dir_true0=0.00,var_wind_dir_true1=0.00,var_wind_dir_true2=0.00,var_wind_dir_true3=0.00,var_wind_dir_true4=0.00,var_wind_dir_true5=0.00,var_wind_dir_true6=0.00,var_wind_dir_true7=0.00,var_wind_dir_true8=0.00,var_wind_dir_true9=0.00,var_wind_dir_true10=0.00,var_wind_dir_true11=0.00,var_wind_dir_true12=0.00,var_wind_inc_kt0=0.00,var_wind_inc_kt1=0.00,var_wind_inc_kt2=0.00,var_wind_inc_kt3=0.00,var_wind_inc_kt4=0.00,var_wind_inc_kt5=0.00,var_wind_inc_kt6=0.00,var_wind_inc_kt7=0.00,var_wind_inc_kt8=0.00,var_wind_inc_kt9=0.00,var_wind_inc_kt10=0.00,var_wind_inc_kt11=0.00,var_wind_inc_kt12=0.00,var_wind_shr_deg0=0.00,var_wind_shr_deg1=0.00,var_wind_shr_deg2=0.00,var_wind_shr_deg3=0.00,var_wind_shr_deg4=0.00,var_wind_shr_deg5=0.00,var_wind_shr_deg6=0.00,var_wind_shr_deg7=0.00,var_wind_shr_deg8=0.00,var_wind_shr_deg9=0.00,var_wind_shr_deg10=0.00,var_wind_shr_deg11=0.00,var_wind_shr_deg12=0.00,var_CAT_rat0=0.00,var_CAT_rat1=0.00,var_CAT_rat2=0.00,var_CAT_rat3=0.00,var_CAT_rat4=0.00,var_CAT_rat5=0.00,var_CAT_rat6=0.00,var_CAT_rat7=0.00,var_CAT_rat8=0.00,var_CAT_rat9=0.00,var_CAT_rat10=0.00,var_CAT_rat11=0.00,var_CAT_rat12=0.00,var_therm_vvi_fpm=0.00,var_wave_height_ft=3.00,var_wave_dir_deg=270.00,var_ter_eff_UI=0
+_wxr_def ,var_rand_space_pct=0.00,var_deft_change_enum=7,var_rwx_is_sim_time=1,var_vis_sm=0.34,var_vis_alt_lo_ft=555.65,var_vis_alt_hi_ft=3010.43,var_ISA_offset_C=-8.02,var_SLP_pas=102574.16,var_QNH_ele=114.70,var_precip_rat=0.00,var_cld_typ_enum0=1,var_cld_cov0=0.75,var_tops_msl_ft0=3010.43,var_bases_msl_ft0=555.65,var_cld_typ_enum1=2,var_cld_cov1=0.01,var_tops_msl_ft1=45000.00,var_bases_msl_ft1=28571.89,var_cld_typ_enum2=0,var_cld_cov2=0.01,var_tops_msl_ft2=45000.00,var_bases_msl_ft2=44180.00,var_wind_alt_msl_ft0=0.00,var_wind_alt_msl_ft1=1772.00,var_wind_alt_msl_ft2=3243.00,var_wind_alt_msl_ft3=6392.00,var_wind_alt_msl_ft4=9878.00,var_wind_alt_msl_ft5=13801.00,var_wind_alt_msl_ft6=18281.00,var_wind_alt_msl_ft7=23564.00,var_wind_alt_msl_ft8=30053.00,var_wind_alt_msl_ft9=33999.00,var_wind_alt_msl_ft10=39000.00,var_wind_alt_msl_ft11=44600.00,var_wind_alt_msl_ft12=53082.00,var_wind_spd_kt0=2.64,var_wind_spd_kt1=3.91,var_wind_spd_kt2=3.66,var_wind_spd_kt3=5.08,var_wind_spd_kt4=12.60,var_wind_spd_kt5=18.95,var_wind_spd_kt6=24.64,var_wind_spd_kt7=14.78,var_wind_spd_kt8=11.14,var_wind_spd_kt9=4.85,var_wind_spd_kt10=13.30,var_wind_spd_kt11=15.39,var_wind_spd_kt12=20.90,var_wind_dir_true0=266.60,var_wind_dir_true1=185.31,var_wind_dir_true2=260.54,var_wind_dir_true3=240.33,var_wind_dir_true4=241.16,var_wind_dir_true5=248.92,var_wind_dir_true6=249.17,var_wind_dir_true7=243.22,var_wind_dir_true8=229.99,var_wind_dir_true9=252.23,var_wind_dir_true10=270.15,var_wind_dir_true11=234.04,var_wind_dir_true12=247.20,var_wind_inc_kt0=-0.12,var_wind_inc_kt1=0.45,var_wind_inc_kt2=0.83,var_wind_inc_kt3=0.83,var_wind_inc_kt4=0.83,var_wind_inc_kt5=0.90,var_wind_inc_kt6=0.99,var_wind_inc_kt7=1.05,var_wind_inc_kt8=1.12,var_wind_inc_kt9=1.20,var_wind_inc_kt10=1.31,var_wind_inc_kt11=1.44,var_wind_inc_kt12=0.00,var_wind_shr_deg0=-0.18,var_wind_shr_deg1=0.67,var_wind_shr_deg2=1.24,var_wind_shr_deg3=1.24,var_wind_shr_deg4=1.25,var_wind_shr_deg5=1.35,var_wind_shr_deg6=1.49,var_wind_shr_deg7=1.58,var_wind_shr_deg8=1.68,var_wind_shr_deg9=1.81,var_wind_shr_deg10=1.97,var_wind_shr_deg11=2.16,var_wind_shr_deg12=0.00,var_CAT_rat0=-0.00,var_CAT_rat1=0.01,var_CAT_rat2=0.01,var_CAT_rat3=0.01,var_CAT_rat4=0.01,var_CAT_rat5=0.01,var_CAT_rat6=0.02,var_CAT_rat7=0.02,var_CAT_rat8=0.02,var_CAT_rat9=0.02,var_CAT_rat10=0.02,var_CAT_rat11=0.02,var_CAT_rat12=0.00,var_therm_vvi_fpm=0.00,var_wave_height_ft=0.08,var_wave_dir_deg=266.00,var_ter_eff_UI=0
 _wxr_use_rvr 0
 P _loads_crc32 _AircraftB737800Xb738acf 150074887
+P _loads_crc32 _AircraftLaminarResearchLancairEvolutionN844Xacf 1012608288
 P _loads_crc32 _AircraftLaminarResearchCirrusSR22CirrusSR22acf 3839323202
-P _rwy_or_ramp EDDF 0_0
+P _rwy_or_ramp EDDF 222
+P _rwy_or_ramp LFHM 3
 P _rwy_or_ramp EGLL 1_0
 P _rwy_or_ramp EDDC 0_1
 P _rwy_or_ramp LOWS 0_0
-P _weight_and_balance _AircraftB737800Xb738acf {"weight":{"deice_fluid_in_liters":0.0,"deice_holdover_time_in_minutes":0.0,"fueltank_weight_in_kilograms":[1943.196533203125,0.0,1943.193359375,0.0,0.0,0.0,0.0,0.0,0.0],"oxygen_pressure_in_millibars":123843.6328125}}
+P _weight_and_balance _AircraftB737800Xb738acf {"weight":{"deice_fluid_in_liters":0.0,"deice_holdover_time_in_minutes":0.0,"fueltank_weight_in_kilograms":[1862.9742431640625,0.0,1862.9742431640625,0.0,0.0,0.0,0.0,0.0,0.0],"oxygen_pressure_in_millibars":123653.765625}}
 
+P _weight_and_balance _AircraftLaminarResearchLancairEvolutionN844Xacf {"weight":{"deice_fluid_in_liters":0.0,"deice_holdover_time_in_minutes":0.0,"fueltank_weight_in_kilograms":[91.761764526367188,91.761764526367188,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"oxygen_pressure_in_millibars":0.0,"payload_weight_in_kilograms":[207.11027526855469,207.11027526855469,69.036758422851562]}}
 P _weight_and_balance _AircraftLaminarResearchCirrusSR22CirrusSR22acf {"weight":{"deice_fluid_in_liters":30.299999237060547,"deice_holdover_time_in_minutes":0.0,"fueltank_weight_in_kilograms":[62.903644561767578,62.903644561767578,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"oxygen_pressure_in_millibars":124105.65625,"payload_weight_in_kilograms":[129.657470703125,129.657470703125,41.254650115966797]}}
+P _livery _AircraftLaminarResearchBETATechnologiesAlia250ALIA250acf Default
+P _livery _AircraftLaminarResearchAeroWorksAerolite103Aerolite103acf Default
+P _livery _AircraftLaminarResearchCessna172SPCessna172SPseaplaneacf Default
+P _livery _AircraftLaminarResearchMcDonnellDouglasF4PhantomIIF4acf Default
+P _livery _AircraftLaminarResearchGrummanF14TomcatF14Dacf Default
+P _livery _AircraftLaminarResearchSikorskyS76S76Cacf Default
+P _livery _AircraftLaminarResearchRobinsonR22BetaIIRobinsonR22BetaIImarineracf Default
+P _livery _AircraftLaminarResearchRobinsonR22BetaIIRobinsonR22BetaIIacf Default
+P _livery _AircraftLaminarResearchSchleicherASK21ASK21acf Default
 P _livery _AircraftB737800Xb738acf Eurowings
 P _livery _AircraftSSGB748SeriesV28RC1XP12SSGB748F12acf Boeing Light
 P _livery _AircraftLaminarResearchVansAircraftRV10RV10acf Default
@@ -47,10 +61,21 @@ P _livery _AircraftB737800Xb7384kacf Default
 P _livery _AircraftLaminarResearchBoeing737800b738acf American
 P _livery _AircraftLaminarResearchAirbusA330300A330acf Lufthansa D-AIKN
 P _livery _AircraftLaminarResearchCirrusSR22CirrusSR22acf Default
-P _start_is_rwy EDDF 1
+P _start_is_rwy EDDF 0
+P _start_is_rwy LFHM 0
 P _start_is_rwy EGLL 1
 P _start_is_rwy EDDC 1
 P _start_is_rwy LOWS 1
+P _favorite_apt LFHM 1
+P _favorite_apt LOWI 1
+P _favorite_apt TNCM 1
+P _favorite_apt EDBX 1
+P _favorite_apt VNLK 1
+P _favorite_apt TNCS 1
+P _favorite_apt LFKX 1
+P _favorite_apt LFLJ 1
+P _favorite_apt EDDC 1
 P _favorite_apt EDDF 1
 P _timestamp _AircraftB737800Xb738acf 1763214080.000000
+P _timestamp _AircraftLaminarResearchLancairEvolutionN844Xacf 1750794752.000000
 P _timestamp _AircraftLaminarResearchCirrusSR22CirrusSR22acf 1750794752.000000

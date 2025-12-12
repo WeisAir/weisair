@@ -1,0 +1,45 @@
+
+Caches to be deleted after NVIDIA driver update
+----------
+
+NVIDIA caches
+
+1. Go to :
+
+C:\ProgramData\NVIDIA Corporation\NV_Cache
+
+Delete everything inside the folder. Skip anything that is currently in use by your system
+
+2. Go to:
+
+C:\Users\your-username-here\AppData\Local\D3DSCache
+
+Delete everything inside the folder. Skip anything that is currently in use by your system
+
+3. Go to:
+
+C:\Users\your-username-here\AppData\Local\NVIDIA\GLCache
+
+Delete everything inside the folder. Skip anything that is currently in use by your system
+
+4. Go to:
+
+C:\Users\your-username-here\AppData\Local\NVIDIA\DXCache
+
+Delete everything inside the folder. Skip anything that is currently in use by your system
+
+5) Go to:
+
+C:\Users\your-username-here\AppData\Roaming\NVIDIA\ComputeCache
+
+Delete everything inside the folder. Skip anything that is currently in use by your system
+
+6) Go to:
+
+C:\Users\your-username-here\AppData\Local\Temp
+
+Delete everything inside the folder. Skip anything that is currently in use by your system
+
+X-PLANE cache
+
+delete Output\shadercache\vulkan folder (just an extra precaution)
