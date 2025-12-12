@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>Boeing 737</aircraft><type>EICAS </type><uuid>8c92ad23-b2c0-49b3-36fe-83de229cdf99</uuid><author>weisair based on Sim Innovations</author><description>
+
+based on, just added frame around it
+
+Engine vibration data for X-Plane comes from a x737 dataref, because there is no general engine vibration dataref in X-Plane. So in X-Plane this will only work with the x737.
+
+Start valve open is still to be done, as for the oil filter bypass, but there is no data for this in X-Plane nor in FSX or P3D.
+
+
+
+
+
+The EICAS uses, except for the engine vibration, no custom datarefs or variables.</description><compatibleFSX>true</compatibleFSX><compatibleP3D>true</compatibleP3D><compatibleXPL>true</compatibleXPL><compatibleFS2>false</compatibleFS2><compatibleFS2020>true</compatibleFS2020><version>111</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>874</prefWidth><prefHeight>874</prefHeight><source>PERSONAL</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier><tier>PROFESSIONAL_STANDARD</tier></tiers></pluginstrument>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>Boeing 737NG</aircraft><type>Primary Flight Display x737-800</type><uuid>ef4af907-3bfc-4f65-a84e-e4b67fa5629a</uuid><author>Sim Innovations</author><description>TO DO TO DO TO DO TO DO TO DO TO DO TO DO TO DO TO DO
+- Finish radio altimeter functionality (flashing etc...).
+- Make thousands on altitude tape bigger than hundreds.
+- Make heading bug stop at the corners of the compass rose.
+- Implement autopilot modes.
+- Ground indicator should show landing altitude from 400nm to destination.
+- Flashing  and color change of BARO and RADIO minimums indicators.
+- Various maneuvering speeds (waiting for good datarefs).
+TO DO TO DO TO DO TO DO TO DO TO DO TO DO TO DO TO DO</description><compatibleFSX>false</compatibleFSX><compatibleP3D>false</compatibleP3D><compatibleXPL>true</compatibleXPL><compatibleFS2>false</compatibleFS2><version>107</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>800</prefWidth><prefHeight>800</prefHeight><source>ONLINE</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier><tier>PROFESSIONAL_STANDARD</tier></tiers></pluginstrument>

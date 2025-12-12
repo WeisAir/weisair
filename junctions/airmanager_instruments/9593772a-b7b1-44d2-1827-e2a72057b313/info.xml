@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>Boeing 737-800X</aircraft><type>Z_2D_XP - LANDING GEARS</type><uuid>9593772a-b7b1-44d2-1827-e2a72057b313</uuid><author>enjxp_SimPassion</author><description>Compatible with the B737-800X ZiboMod
+
+ReleaseComments
+0.0.5Added Annunciators hardware LEDs handling
+Added 3 buttons for current Gears Handle 3 positions (Software and Hardware)
+Added Toggle button for showing/hiding the 3 green marks helpers (Software and Hardware)
+Corrected handle behavior
+0.0.4Fixed behavior from new Landing Gears lever handling in the ZiboMod
+0.0.3Updated ScriptAuthor variable
+0.0.2Added version number displayed to be able to check version on tablet devices
+Added ability to hide check infos
+0.0.1Initial release
+</description><compatibleFSX>false</compatibleFSX><compatibleP3D>false</compatibleP3D><compatibleXPL>true</compatibleXPL><compatibleFS2>false</compatibleFS2><compatibleFS2020>false</compatibleFS2020><version>101</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>203</prefWidth><prefHeight>1101</prefHeight><source>ONLINE</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier></tiers></pluginstrument>

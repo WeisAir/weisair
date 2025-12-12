@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>Generic</aircraft><type>Altimeter with Barber pole &amp; optional Alt Alerter</type><uuid>f0a6bec6-c6ba-4cf1-ad82-bf7263e05b61</uuid><author>J. ZAHAR based on original Work by Filipe Bessa</author><description>Realistic three needle with barber pole altimeter
+--------------------------------------------------------
+Modified version of the original by Filipe Bessa
+
+- Added real behaviour of the Barber Pole indicator:
+- The Barber Pole flag now correctly appears passing 15000ft in descent
+- Added XPlane compatibility
+
+ver 1-20: 
+- Changed the face with real original fonts MILSPEC 8335
+- Modified sizes of 1000 and 10000 ft needles
+added a manual altitude alerter (can be disabled in the code)
+-Usage:
+- Use the right button to set the desired value
+-Rotate the bezel right or left so you place the red indexin front of the altitude to be reached.
+--The green index places itself automatically 500ft before the target alt, and the yellow index warns you that you are less than 100 ft from target altitude when the altimeter needle enters the sector.
+
+-Customization section:
+--------------------------
+- Added a button for the manual Kohlsmann setting (can be disabled in the code)
+- Added the code for a manual altitude alerter (can be disabled in the code)</description><compatibleFSX>true</compatibleFSX><compatibleP3D>true</compatibleP3D><compatibleXPL>true</compatibleXPL><compatibleFS2>false</compatibleFS2><compatibleFS2020>true</compatibleFS2020><version>129</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>500</prefWidth><prefHeight>500</prefHeight><source>ONLINE</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform><platform>ESP32</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier></tiers></pluginstrument>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>Boeing 737-800X</aircraft><type>ZIBO Flaps-Autobrakes </type><uuid>49f8d4fc-dbe0-4ec6-0600-a927ae85e3a6</uuid><author>GoodSim</author><description>This is a modification of Russ Barlow's EADT x737NG Flaps-Autobrakes Panel that converts it for use with the ZiboMod 737.  It uses ZIBO datarefs and commands and will only work correctly with the ZIBO 737. 
+
+It has flaps/slats (leading edge) indicators and an autobrake setting knob with associated indicator lights including antiskid . The flap pointer moves slowly.
+
+Tested with  ZiboMod 737-800 v.3.40  and Air Manager 3.7 .
+
+GoodSim  5/28/20</description><compatibleFSX>false</compatibleFSX><compatibleP3D>false</compatibleP3D><compatibleXPL>true</compatibleXPL><compatibleFS2>false</compatibleFS2><compatibleFS2020>false</compatibleFS2020><version>101</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>252</prefWidth><prefHeight>203</prefHeight><source>ONLINE</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier></tiers></pluginstrument>

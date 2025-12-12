@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>ATR 72-500</aircraft><type>Airspeed indicator</type><uuid>982b38f2-b2b6-46d9-b5a7-b3cbe44197af</uuid><author>flyatr</author><description>Airspeed gauge for the Flight 1 ATR 72-500
+
+V 1.11
+- replaced jpg by png
+
+V 1.10
+- The bezel can now be hidden by clicking in the top left corner of the instrument
+- New graphics to match all of my ATR gauges
+- Bug fixes
+
+V 1.00
+- Works after battery is switched on
+- Adjustable speedbug uses the AUTOPILOT IAS setting. Adjustment is possible through gauge knob or FSX control assignment
+- Automatic speed bugs show V-speed limits based on the aircraft's weight and flaps setting (approach, go-around, take-off)
+
+TAKE OFF
+- Yellow bug - V1
+- White bug - VmLB0 (minimum speed for low bank turns at flaps 0)
+- Red bug - VmLB0 (icing conditions)
+- Green bug - VmHB0 (minimum speed for high bank turns at flaps 0, icing conditions)
+
+LANDING
+- Yellow bug - VGA (go around speed)
+- White bug - VmLB0 (see above)
+- Red bug - VmLB0 (icing conditions)
+- Green bug - VmHB30 (minimum speed for high bank turns at flaps 30)
+</description><compatibleFSX>true</compatibleFSX><compatibleP3D>true</compatibleP3D><compatibleXPL>true</compatibleXPL><compatibleFS2>false</compatibleFS2><compatibleFS2020>true</compatibleFS2020><version>117</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>330</prefWidth><prefHeight>330</prefHeight><source>ONLINE</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier></tiers></pluginstrument>

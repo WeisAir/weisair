@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>ATR 72-500</aircraft><type>Clock</type><uuid>02758343-a7a6-4e1d-b406-bd6afa8dc79e</uuid><author>flyatr</author><description>Clock with local and zulu time display and stopwatch.
+The clock in the ATR does not look like this. It just fills the space on my panel and has the same design as the temperature gauge.
+
+V 1.16
+- Due to the changes in 1.15, the GMT time didn't change until the function was called by the simulator.
+
+V 1.15
+- Some scripting mistakes corrected by Sim Innovations. And it now works on bus voltage instead of battery switch state
+
+V 1.11
+- Replaced jpg by png
+
+V 1.1
+- The bezel can now be hidden by clicking in the top left corner of the instrument
+- Display off when battery off</description><compatibleFSX>true</compatibleFSX><compatibleP3D>true</compatibleP3D><compatibleXPL>true</compatibleXPL><compatibleFS2>false</compatibleFS2><compatibleFS2020>true</compatibleFS2020><version>122</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>330</prefWidth><prefHeight>140</prefHeight><source>ONLINE</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier></tiers></pluginstrument>

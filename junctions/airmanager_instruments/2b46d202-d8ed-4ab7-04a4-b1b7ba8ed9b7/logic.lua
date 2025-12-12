@@ -1,0 +1,1 @@
+vst_gns530 = video_stream_add("xpl/GNS530_1", 280, 110, 1040, 760)

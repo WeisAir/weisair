@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>Boeing 737-800X</aircraft><type>Z_2D_XP - EFB Tablet for ZiboMod</type><uuid>cc8ae7fa-eaf1-4228-88c6-05f22630939c</uuid><author>enjxp_SimPassion</author><description>ZiboMod minimal : 4.0_6.5
+
+Here's a new release of an External 2D EFB Tablet working on Air Manager / Air Player Suite from Sim Innovations https://www.siminnovations.com/
+
+See Logic.lua for changelog
+
+For now The only requirement is at least Air Manager 3.5 (still require a Sim Innovations Air Manager Desktop license purchase)
+
+https://www.siminnovations.com/api3/download.php?product_type=APPLICATION&amp;application_group_type=AIR_MANAGER&amp;beta=false&amp;platform=WINDOWS&amp;program_compilation=HOME_USE
+
+from here http://siminnovations.com/wiki/index.php?title=Air_Manager_3.x_Installation
+
+EFB Show/Hide command available in X-Plane :
+------------------------------------------
+Please :
+- add the Z2DXP.efb folder found in &quot;documentation\Z2DXP.efb_PLUGIN_and_README\&quot; folder from this instrument to the following path :
+&quot;...\B737-800X\plugins\xlua\scripts&quot;, so we get &quot;...\B737-800X\plugins\xlua\scripts\Z2DXP.efb\&quot;
+- then bind a button or keys to the following command in X-Plane / Settings /  : &quot;Toggle Z2DXP EFB Tablet Visibility&quot; (Z2DXP/EFB/toggle_switch/show_z2dxp_efb)
+
+On Air Manager for Desktop, the panel is designed t obe displayed on a standard 1920 x 1080 monitor by default (we may have to adapt if resolution is different)
+
+AIR MANAGER Panel tab
+---------------------
+
+- Create the Panel Z2DXP EFB based on the &quot;Premade panel&quot; : Boeing B737-800X - Z2DXP EFB Panel
+- Select your Display
+- Select the Layout &quot;Z2DXP EFB ...&quot;
+
+Let the panel to display on full screen
+
+in[Window preferences]
+
+check&quot;Locked&quot;
+check&quot;Always on Top&quot;
+check&quot;Click thru&quot;
+
+[Background mode]
+
+check&quot;Transparent&quot;
+
+AIR MANAGER Settings tab
+--------------------
+
+in[Graphics]
+
+check&quot;DirectX 11&quot;
+
+AIR MANAGER Panel tab
+-----------------
+
+expand the Panel tree and select the &quot;Z2DXP EFB Tablet for ZiboMod&quot; instrument
+
+in[Position within panel]
+
+set&lt;Left&gt; to 260 value for the EFB to be centered on the monitor
+
+
+------------------------------------------------------------------------------------
+
+Enjoy Flying with ZiboMod Boeing B737-800X
+
+Regards
+
+See Logic.lua for changelog</description><compatibleFSX>false</compatibleFSX><compatibleP3D>false</compatibleP3D><compatibleXPL>true</compatibleXPL><compatibleFS2>false</compatibleFS2><compatibleFS2020>false</compatibleFS2020><version>151</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>1634</prefWidth><prefHeight>1260</prefHeight><source>ONLINE</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier></tiers></pluginstrument>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>ATR 72-500</aircraft><type>RMI (ADF VOR Indicator)</type><uuid>bf98dc68-9b51-4a26-9989-56c626a457ce</uuid><author>flyatr</author><description>See generic RMI.
+Gauge works when there is power on the main bus that means either engine 1 or 2 is firing.
+
+V 1.11
+- replaced jpg by png
+
+V1.1
+- The bezel can now be hidden by clicking in the top left corner of the instrument
+- New graphics to match all of my ATR gauges</description><compatibleFSX>true</compatibleFSX><compatibleP3D>true</compatibleP3D><compatibleXPL>true</compatibleXPL><compatibleFS2>false</compatibleFS2><compatibleFS2020>true</compatibleFS2020><version>115</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>330</prefWidth><prefHeight>330</prefHeight><source>ONLINE</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier></tiers></pluginstrument>

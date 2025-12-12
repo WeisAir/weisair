@@ -1,0 +1,1 @@
+my_image = img_add_fullscreen("weisair_v5_background_transition.png")

@@ -1,0 +1,10 @@
+frame_prop = user_prop_add_boolean("Show display frame", true, "draw a frame around the display")
+
+--video_stream_id = video_stream_add(key, x, y, width, height, tex_x, tex_y, tex_width, tex_height)
+
+if user_prop_get(frame_prop) == true then
+    background = img_add_fullscreen("display_frame.png")
+    video_stream_id = video_stream_add("xpl/gauges[1]",11 ,9 , 759-24, 571-18, 1280, 696, 759, 571)
+else
+    video_stream_id = video_stream_add("xpl/gauges[1]", 0, 0, 759, 571, 1280, 696, 759, 571)
+end

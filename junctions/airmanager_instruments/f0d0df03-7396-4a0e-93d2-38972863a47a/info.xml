@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<pluginstrument>
+  <aircraft>Boeing 737NG</aircraft>
+  <author>Russ Barlow</author>
+  <compatibleFSX>false</compatibleFSX>
+  <compatibleP3D>false</compatibleP3D>
+  <compatibleXPL>true</compatibleXPL>
+  <configVersion>1</configVersion>
+  <description>his is another part of the x737 suite and includes speed brake warning and extended lights.
+
+It uses ALL custome x737 datarefs and will not work wit any other airplane.</description>
+  <pluginInterfaceVersion>100</pluginInterfaceVersion>
+  <prefHeight>162</prefHeight>
+  <prefWidth>504</prefWidth>
+  <type>Speedbrakes Panel</type>
+  <uuid>f0d0df03-7396-4a0e-93d2-38972863a47a</uuid>
+  <version>102</version>
+  <tiers>
+    <tier>HOME_USE_STANDARD</tier>
+    <tier>PROFESSIONAL_STANDARD</tier>
+  </tiers>
+</pluginstrument>

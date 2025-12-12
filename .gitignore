@@ -1,33 +1,18 @@
-# Ignore everything
-*
+# Ignore
+/configs/fms_data_manager_backups
+/configs/flywithlua_scripts/
+/configs/preferences
+/docs/issues
+/junctions/Global Scenery/
+/junctions/screenshots/
+/junctions/tmp/
+/junctions/Scripts/
+/junctions/Aircraft/
+/licenses
+/performance_tests/
+/tools/
 
-# But not these files...
-!/.gitignore
-!airmanager_panels/*
-!batch_scripts/*
-!configs/*
-!configs/facetracknoir_profiles/*
+# but not
 !junctions/Scripts/myarcaze.lua
 !junctions/Scripts/arcaze_scripts/*
 !junctions/Scripts/weisair_scripts/*
-!configs/muxp/*
-!junctions/preferences/*
-!junctions/preferences/control profiles/*
-!configs/simhaptic/Profiles/*
-!configs/x-camera/*
-!configs/x-organizer/*
-!devices/mountain_keyboard_icons/*
-!devices/streamdeck/*
-!devices/streamdeck/icons/*
-!devices/streamdeck/icons/weisair_737/*
-!devices/streamdeck/icons/weisair_747/*
-!devices/streamdeck/icons/weisair_generic/*
-!devices/streamdeck/icons/weisair_s340a/*
-!devices/streamdeck/profiles/*
-!docs/*
-!docs/diagrams/*
-!docs/knowhow/*
-!performance_tests/xp_fps_tests/*
-!wallpapers/*
-!X-Plane 12.code-workspace
-!*/

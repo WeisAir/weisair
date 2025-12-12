@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<pluginstrument>
+  <aircraft>Boeing 737NG</aircraft>
+  <author>Russ Barlow</author>
+  <compatibleFSX>false</compatibleFSX>
+  <compatibleP3D>false</compatibleP3D>
+  <compatibleXPL>true</compatibleXPL>
+  <configVersion>1</configVersion>
+  <description>This is a Flap / Leading Edge indicator for the x737 for X-Plane.  There are also lights for the Autobrake and Antiskid and an Autobrake setting knob.
+
+
+It uses custom datarefs to simulate B737NG so it will only work correctly with x737 sinulator.</description>
+  <pluginInterfaceVersion>100</pluginInterfaceVersion>
+  <prefHeight>203</prefHeight>
+  <prefWidth>252</prefWidth>
+  <type>Flaps-Autobrakes</type>
+  <uuid>0fcc6f57-12e9-441f-953c-0691ffaae632</uuid>
+  <version>102</version>
+  <tiers>
+    <tier>HOME_USE_STANDARD</tier>
+    <tier>PROFESSIONAL_STANDARD</tier>
+  </tiers>
+</pluginstrument>

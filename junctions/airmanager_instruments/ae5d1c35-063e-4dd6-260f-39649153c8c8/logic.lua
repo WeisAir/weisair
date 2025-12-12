@@ -1,0 +1,144 @@
+--geometry and style settings
+
+local instrument_height = 96    
+local instrument_width = 340
+
+local knob_outer_width = 79	
+local knob_outer_height = 79
+local knob_inner_width = 56
+local knob_inner_height = 56
+local knob_outer_x = 72
+local knob_outer_y = (instrument_height - knob_outer_height)*0.5
+local knob_inner_x = knob_outer_x + (knob_outer_width -knob_inner_width)*0.5
+local knob_inner_y = (instrument_height - knob_inner_height)*0.5
+local knob_lable_style = "font: arimo_bold.ttf; size:25; color: white; halign:left; valign:center;"
+--local knob_lable_style = "font: arimo_bold.ttf; size:25; color: white; halign:right; valign:center; background_color:black"
+local knob_lable_x = 10
+local knob_lable_y = 0
+local knob_lable_width = instrument_width
+local knob_lable_height = instrument_height + 1
+
+local knob_push_button_width = knob_inner_width * 0.75 
+local knob_push_button_height = knob_inner_height *0.75
+local knob_push_button_x = (knob_inner_width-knob_push_button_width)*0.5 + knob_inner_x
+local knob_push_button_y = (knob_inner_height-knob_push_button_height)*0.5 + knob_inner_y
+
+local xpdr_value_text_style = "font: digital-7-mono.ttf; size:27; color: green; halign:center; valign:center"
+
+local xpdr_dot_pos_y = 55
+local xpdr_dot_pos_0_x = 208
+local xpdr_dot_pos_1_x = 194
+local xpdr_dot_pos_2_x = 180
+local xpdr_dot_pos_3_x = 166
+local xpdr_knob_diameter = 5
+
+-- used data variables
+local xpdr_selected_digit = 0
+
+--background = img_add_fullscreen("background.png")
+txt_xprd_code = txt_add("2204",xpdr_value_text_style,155,30,70,20)
+txt_xpdr_mode = txt_add("ALT OFF",xpdr_value_text_style,240,20,70,20)
+txt_xprd_idnt = txt_add("IDENT",xpdr_value_text_style,240,50,70,20)
+txt_style(txt_xpdr_mode , "size:20;")
+
+-- dual dial callback functions
+
+function callback_outer_knob_turn(direction)
+	--XPDR select digit
+	--FN+ => maybe toggle XPDR modes
+	
+	xpdr_selected_digit = xpdr_selected_digit - direction
+	xpdr_selected_digit_current = var_cap(xpdr_selected_digit,-1,3)
+	
+	if xpdr_selected_digit_current > -1 then
+	    visible(xpdr_mode_selector, false)
+            visible(xpdr_active_digit_dot, true)
+        end
+							
+	if xpdr_selected_digit_current == 0 then move(xpdr_active_digit_dot,xpdr_dot_pos_0_x) end		
+	if xpdr_selected_digit_current == 1 then move(xpdr_active_digit_dot,xpdr_dot_pos_1_x) end
+	if xpdr_selected_digit_current == 2 then move(xpdr_active_digit_dot,xpdr_dot_pos_2_x) end
+	if xpdr_selected_digit_current == 3 then move(xpdr_active_digit_dot,xpdr_dot_pos_3_x) end	
+        
+        if xpdr_selected_digit_current == -1 then 
+            --hop over to mode delector
+            visible(xpdr_mode_selector, true)
+            visible(xpdr_active_digit_dot, false)
+        end
+
+	xpdr_selected_digit = xpdr_selected_digit_current
+	print(xpdr_selected_digit)
+end
+
+function callback_inner_knob_turn(direction)
+	--XPDR select 0..7 per digit
+	
+	if direction == 1 then 
+		
+		if xpdr_selected_digit == -1 then xpl_command("laminar/B738/knob/transponder_mode_up") end
+		if xpdr_selected_digit == 0 then xpl_command("sim/transponder/transponder_ones_up") end
+		if xpdr_selected_digit == 1 then xpl_command("sim/transponder/transponder_tens_up") end
+		if xpdr_selected_digit == 2 then xpl_command("sim/transponder/transponder_hundreds_up") end
+		if xpdr_selected_digit == 3 then xpl_command("sim/transponder/transponder_thousands_up") end
+
+	end
+	
+	if direction == -1 then
+		
+		if xpdr_selected_digit == -1 then xpl_command("laminar/B738/knob/transponder_mode_dn") end
+		if xpdr_selected_digit == 0 then xpl_command("sim/transponder/transponder_ones_down") end
+		if xpdr_selected_digit == 1 then xpl_command("sim/transponder/transponder_tens_down") end
+		if xpdr_selected_digit == 2 then xpl_command("sim/transponder/transponder_hundreds_down") end
+		if xpdr_selected_digit == 3 then xpl_command("sim/transponder/transponder_thousands_down") end
+		
+	end
+end
+
+function callback_knob_press()
+	--XPDR ident
+	xpl_command("laminar/B738/push_button/transponder_ident_dn")
+	
+end
+
+function xpdr_values (xpdr_code, xpdr_mode,xpdr_ident)
+
+	txt_set(txt_xprd_code, string.format("%04.0f", xpdr_code))
+	
+	--display readable text for xpdr mode
+	
+	if xpdr_mode == 1.0 then txt_set(txt_xpdr_mode, "STBY") end
+	if xpdr_mode == 2.0 then txt_set(txt_xpdr_mode, "ALT OFF") end
+	if xpdr_mode == 3.0 then txt_set(txt_xpdr_mode, "ALT ON") end
+	if xpdr_mode == 4.0 then txt_set(txt_xpdr_mode, "TA") end 
+	if xpdr_mode == 5.0 then txt_set(txt_xpdr_mode, "TA/RA") end 
+	
+	--Ident annunciator	
+	if xpdr_ident == 1 then txt_style(txt_xprd_idnt , "color: green;") end
+	if xpdr_ident == 0 then txt_style(txt_xprd_idnt , "color: white;") end
+	
+end
+
+--add dials
+dial_outer = dial_add("mcp_knob.png", knob_outer_x, knob_outer_y, knob_outer_width, knob_outer_height, callback_outer_knob_turn)
+dial_inner = dial_add("mcp_knob.png", knob_inner_x, knob_inner_y, knob_inner_width, knob_inner_height, callback_inner_knob_turn)
+
+--add knob pushbuttons
+push_button_dial = button_add(nil,nil, knob_push_button_x, knob_push_button_y,	knob_push_button_width, knob_push_button_height,  callback_knob_press)
+
+--add dial lables overlay
+lable_dial = txt_add("XPDR", knob_lable_style, knob_lable_x, knob_lable_y, knob_lable_width, knob_lable_height)
+
+--xpdr active dot
+xpdr_active_digit_dot = img_add("xpdr_active_digit_dot.png",xpdr_dot_pos_0_x,xpdr_dot_pos_y,xpdr_knob_diameter,xpdr_knob_diameter)
+xpdr_mode_selector = img_add("xpdr_active_digit_dot.png",240,40,70,xpdr_knob_diameter*0.5)
+visible(xpdr_mode_selector, false)
+
+
+--dataref callback setters
+group_knob = group_add(dial_outer, dial_inner, push_button_dial, lable_dial)
+
+xpl_dataref_subscribe(
+"sim/cockpit/radios/transponder_code","INT",	-- XPDR (code)
+"laminar/B738/knob/transponder_pos","FLOAT",	-- XPDR (mode)
+"sim/cockpit/radios/transponder_id","INT",	-- XPDR (ident)
+xpdr_values)

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<pluginstrument>
+  <aircraft>Boeing 737NG</aircraft>
+  <type>Annunciator Panel x737</type>
+  <uuid>7358c949-796d-4140-9eb3-a26dae47a623</uuid>
+  <author>Russ Barlow</author>
+  <description>This is a x737 Annunciator panel that is included for the B737NG suite.
+
+It has the Master Caution and "six packs" system lights as well as autopilot/auththrottle/FMC warning lights.
+
+It uses custom x737 datarefs and will only work correctly with v737</description>
+  <compatibleFSX>false</compatibleFSX>
+  <compatibleP3D>false</compatibleP3D>
+  <compatibleXPL>true</compatibleXPL>
+  <version>103</version>
+  <configVersion>1</configVersion>
+  <pluginInterfaceVersion>100</pluginInterfaceVersion>
+  <prefWidth>931</prefWidth>
+  <prefHeight>174</prefHeight>
+  <tiers>
+    <tier>HOME_USE_STANDARD</tier>
+    <tier>PROFESSIONAL_STANDARD</tier>
+  </tiers>
+</pluginstrument>

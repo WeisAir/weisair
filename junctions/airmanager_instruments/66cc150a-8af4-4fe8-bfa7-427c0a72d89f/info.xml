@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>Zibo B737</aircraft><type>RMI</type><uuid>66cc150a-8af4-4fe8-bfa7-427c0a72d89f</uuid><author>Russ Barlow</author><description>See generic RMI.
+Gauge works when there is power on the main bus that means either engine 1 or 2 is firing.
+
+V 1.11
+- replaced jpg by png
+
+V1.1
+- The bezel can now be hidden by clicking in the top left corner of the instrument
+- New graphics to match all of my ATR gauges</description><compatibleFSX>false</compatibleFSX><compatibleP3D>false</compatibleP3D><compatibleXPL>true</compatibleXPL><compatibleFS2>false</compatibleFS2><version>100</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>670</prefWidth><prefHeight>670</prefHeight><source>PERSONAL</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier></tiers></pluginstrument>

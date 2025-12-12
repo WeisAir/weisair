@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<pluginstrument>
+  <aircraft>Boeing 737-800X</aircraft>
+  <type>Z2DXP - FO CDU Full for ZiboMod - AM35</type>
+  <uuid>db035e31-dfbc-4b7a-3e42-766e3bc1672a</uuid>
+  <author>Darren Lane (ozuser) / enjxp_SimPassion</author>
+  <description>FMC CDU for the xplane 737-800 zibo mod.
+Features:
+All working buttons, exec and msg lights, colored fonts to match the original.
+
+To do list:
+Inverse font (for DRY/WET) line in display</description>
+  <compatibleFSX>false</compatibleFSX>
+  <compatibleP3D>false</compatibleP3D>
+  <compatibleXPL>true</compatibleXPL>
+  <compatibleFS2>false</compatibleFS2>
+  <version>107</version>
+  <configVersion>1</configVersion>
+  <pluginInterfaceVersion>100</pluginInterfaceVersion>
+  <prefWidth>623</prefWidth>
+  <prefHeight>1001</prefHeight>
+  <source>ONLINE</source>
+  <platforms>
+    <platform>WINDOWS</platform>
+    <platform>MAC</platform>
+    <platform>LINUX</platform>
+    <platform>RASPBERRY_PI</platform>
+    <platform>ANDROID</platform>
+    <platform>IPAD</platform>
+  </platforms>
+  <tiers>
+    <tier>HOME_USE_STANDARD</tier>
+  </tiers>
+</pluginstrument>

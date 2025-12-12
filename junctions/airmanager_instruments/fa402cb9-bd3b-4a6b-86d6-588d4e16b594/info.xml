@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>Zibo B737</aircraft><type>EFIS </type><uuid>fa402cb9-bd3b-4a6b-86d6-588d4e16b594</uuid><author>enjxp_SimPassion</author><description>This is CAPT EFIS instrument i've reworked, starting on Russ Barlow EFIS for x737,
+to fit the behavior and manage original EFIS in ZiboMod B737-800X
+It uses initial Graphics Background and global lightning Panels designed by AudioBirdXP, thanks to its kind agreement
+I've added my own designed dials and buttons
+
+</description><compatibleFSX>false</compatibleFSX><compatibleP3D>false</compatibleP3D><compatibleXPL>true</compatibleXPL><compatibleFS2>false</compatibleFS2><version>106</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>598</prefWidth><prefHeight>329</prefHeight><source>PERSONAL</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier></tiers></pluginstrument>

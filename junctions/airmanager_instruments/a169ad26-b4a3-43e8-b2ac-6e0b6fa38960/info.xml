@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pluginstrument>
+  <aircraft>Cirrus SF50</aircraft>
+  <type>Standby Frame</type>
+  <uuid>a169ad26-b4a3-43e8-b2ac-6e0b6fa38960</uuid>
+  <author>Russ Barlow</author>
+  <description>
+  </description>
+  <compatibleFSX>false</compatibleFSX>
+  <compatibleP3D>false</compatibleP3D>
+  <compatibleXPL>true</compatibleXPL>
+  <compatibleFS2>false</compatibleFS2>
+  <version>102</version>
+  <configVersion>1</configVersion>
+  <pluginInterfaceVersion>100</pluginInterfaceVersion>
+  <prefWidth>700</prefWidth>
+  <prefHeight>700</prefHeight>
+  <source>ONLINE</source>
+  <tiers>
+    <tier>HOME_USE_STANDARD</tier>
+    <tier>PROFESSIONAL_STANDARD</tier>
+  </tiers>
+</pluginstrument>

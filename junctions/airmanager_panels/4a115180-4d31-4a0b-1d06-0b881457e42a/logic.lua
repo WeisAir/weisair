@@ -1,0 +1,1 @@
+img_background = img_add_fullscreen("background_v2.png")

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>ATR 72-500</aircraft><type>Altimeter</type><uuid>30a5ec7e-789c-4f68-ae19-1a016144b55b</uuid><author>flyatr</author><description>Altimeter for the ATR 72-500
+
+V 1.22 and 1.23
+- AM 3.x support
+
+V 1.21
+- replaced jpg by png
+
+V 1.2
+- The bezel can now be hidden by clicking in the top left corner of the instrument
+- New graphics to match all of my ATR gauges
+
+V 1.1
+- Altitude alert now operative. Yellow lamp lights up when altitude lies within +/- 1000 and 250 feet of autopilot setting.
+- Nicer transition of flags (drum roll)
+
+V 1.0
+- Altitude display with rotating drums
+- &quot;OFF&quot; flag visible until master battery is on
+- Ground proximity flag visible if altitude &lt; 10.000 ft
+- &quot;Negative&quot; flag if altitude &lt; 0 ft
+- Barometric pressure shown as mm Hg and mbar</description><compatibleFSX>true</compatibleFSX><compatibleP3D>true</compatibleP3D><compatibleXPL>true</compatibleXPL><compatibleFS2>false</compatibleFS2><compatibleFS2020>true</compatibleFS2020><version>128</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>330</prefWidth><prefHeight>330</prefHeight><source>ONLINE</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier></tiers></pluginstrument>

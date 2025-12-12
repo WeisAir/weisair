@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>Boeing 737-800X</aircraft><type>Z_2D_XP - MCP</type><uuid>7dc869c0-e95d-4c72-346a-2785207de174</uuid><author>enjxp_SimPassion</author><description>Requires at least ZiboMod 3_56_EA_68
+
+---------------------------------------------------
+Transcripted by enjxp_SimPassion to ZiboMod
+I've also designed and re-created all buttons,
+dials and switches
+---------------------------------------------------
+For main background image :
+using original background and global panel lights
+graphics parts from ZiboMod,
+thanks to the kind agreement of the designer
+AudioBirdXP
+
+---------------------------------------------------
+
+-- Hardware Ready using Arduino board for Cockpit builders
+--62PINS for I/O
+---------------------
+--3OUTPUTS: by Single or Daisychained - MAX7219 Displays LEDs (Maxi 4 Daisychained)
+--12INPUTS: Dials
+--5INPUTS: Bank Switch
+--8INPUTS: FDA/AT/DISENGAGE/FDB Switches
+--17INPUTS: Push Buttons
+--17OUTPUTS: LEDs
+
+---------------------------------------------------
+This panel is based on Russ Barlow's MCP for the EADT x737, which is based on Joe Venzon Boeing 737NG MCP
+--------------------------------------------------
+This Mode Control Panel (MCP) is only usable with ZiboMod Boeing 737-800X for X-Plane 11. The panel duplicates the function of the B737-800X's MCP.
+
+See Logic.lua for changelog
+</description><compatibleFSX>false</compatibleFSX><compatibleP3D>false</compatibleP3D><compatibleXPL>true</compatibleXPL><compatibleFS2>false</compatibleFS2><compatibleFS2020>false</compatibleFS2020><version>127</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>1920</prefWidth><prefHeight>329</prefHeight><source>ONLINE</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier></tiers></pluginstrument>

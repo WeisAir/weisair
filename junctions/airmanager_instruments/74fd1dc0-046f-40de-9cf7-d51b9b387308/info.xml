@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>ATR 72-500</aircraft><type>Vertical speed indicator / VSI</type><uuid>74fd1dc0-046f-40de-9cf7-d51b9b387308</uuid><author>flyatr</author><description>Simple vertical speed indicator for the ATR 72-500
+- The screen turns on when the master battery is on
+- Currently no TCAS functionality
+
+V1.11
+- replaced jpg by png
+
+V1.1
+- The bezel can now be hidden by clicking in the top left corner of the instrument
+- New graphics to match all of my ATR gauges</description><compatibleFSX>true</compatibleFSX><compatibleP3D>true</compatibleP3D><compatibleXPL>true</compatibleXPL><compatibleFS2>false</compatibleFS2><compatibleFS2020>true</compatibleFS2020><version>115</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>330</prefWidth><prefHeight>330</prefHeight><source>ONLINE</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier></tiers></pluginstrument>

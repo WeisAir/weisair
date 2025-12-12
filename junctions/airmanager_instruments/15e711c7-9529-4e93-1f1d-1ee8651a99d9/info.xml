@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>Boeing 737-800X</aircraft><type>ZIBO Annunciator Panel  REDUCED</type><uuid>15e711c7-9529-4e93-1f1d-1ee8651a99d9</uuid><author>GoodSim</author><description>This is a modification of Russ Barlow's EADT x737NG annunciator panel that converts it for use with the ZiboMod 737.  It uses ZIBO datarefs and commands and will only work correctly with the ZIBO 737. 
+
+It has working Fire Warning, Master Caution,  Capt &amp; FO &quot;six packs&quot; failure lights, and Autoflight Status Annunciators with test switch.
+
+ Tested with  ZiboMod 737-800 v.3.40 and Air Manager 3.7.
+
+ GoodSim  5/28/20
+</description><compatibleFSX>false</compatibleFSX><compatibleP3D>false</compatibleP3D><compatibleXPL>true</compatibleXPL><compatibleFS2>false</compatibleFS2><compatibleFS2020>false</compatibleFS2020><version>104</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>931</prefWidth><prefHeight>174</prefHeight><source>PERSONAL</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier></tiers></pluginstrument>
