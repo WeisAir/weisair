@@ -5769,6 +5769,7 @@ sim/atc/com2_tuned_facility
 sim/atc/com2_tx
 sim/atc/com2_tx_override
 sim/atc/company_msg
+sim/atc/transponder_vfr_default
 sim/atc/user_aircraft_transmitting
 sim/cockpit/autopilot/airspeed
 sim/cockpit/autopilot/airspeed_is_mach
@@ -6582,6 +6583,7 @@ sim/cockpit2/electrical/HUD_brightness_ratio
 sim/cockpit2/electrical/HUD_brightness_ratio_auto
 sim/cockpit2/electrical/HUD_brightness_ratio_manual
 sim/cockpit2/electrical/RAT_generator_amps
+sim/cockpit2/electrical/RAT_generator_extended
 sim/cockpit2/electrical/RAT_generator_on
 sim/cockpit2/electrical/RAT_generator_volts
 sim/cockpit2/electrical/air_driven_generator_on
@@ -6644,6 +6646,7 @@ sim/cockpit2/engine/actuators/prop_ratio
 sim/cockpit2/engine/actuators/prop_ratio_all
 sim/cockpit2/engine/actuators/prop_rotation_speed_rad_sec
 sim/cockpit2/engine/actuators/prop_rotation_speed_rad_sec_all
+sim/cockpit2/engine/actuators/reverse_lockout
 sim/cockpit2/engine/actuators/start_lock_engaged
 sim/cockpit2/engine/actuators/starter_fuel_flow_ratio
 sim/cockpit2/engine/actuators/starter_hit
@@ -7119,6 +7122,14 @@ sim/cockpit2/radios/indicators/fas_has_dme
 sim/cockpit2/radios/indicators/fas_has_dme_copilot
 sim/cockpit2/radios/indicators/fas_id
 sim/cockpit2/radios/indicators/fas_id_copilot
+sim/cockpit2/radios/indicators/fms1_act_eta
+sim/cockpit2/radios/indicators/fms1_act_eta_hour
+sim/cockpit2/radios/indicators/fms1_act_eta_minute
+sim/cockpit2/radios/indicators/fms1_act_eta_second
+sim/cockpit2/radios/indicators/fms2_act_eta
+sim/cockpit2/radios/indicators/fms2_act_eta_hour
+sim/cockpit2/radios/indicators/fms2_act_eta_minute
+sim/cockpit2/radios/indicators/fms2_act_eta_second
 sim/cockpit2/radios/indicators/fms_acceleration_alt
 sim/cockpit2/radios/indicators/fms_cdu1_style_line0
 sim/cockpit2/radios/indicators/fms_cdu1_style_line1
@@ -7188,6 +7199,8 @@ sim/cockpit2/radios/indicators/fms_distance_to_tod_pilot
 sim/cockpit2/radios/indicators/fms_exec_light_copilot
 sim/cockpit2/radios/indicators/fms_exec_light_pilot
 sim/cockpit2/radios/indicators/fms_fpta_pilot
+sim/cockpit2/radios/indicators/fms_gross_weight
+sim/cockpit2/radios/indicators/fms_sel_flap_setting
 sim/cockpit2/radios/indicators/fms_thrust_reduction_alt
 sim/cockpit2/radios/indicators/fms_tod_before_distance_pilot
 sim/cockpit2/radios/indicators/fms_tod_before_index_pilot
@@ -7197,6 +7210,7 @@ sim/cockpit2/radios/indicators/fms_vertical_msg_copilot
 sim/cockpit2/radios/indicators/fms_vertical_msg_pilot
 sim/cockpit2/radios/indicators/fms_vpa_pilot
 sim/cockpit2/radios/indicators/fms_vtk_pilot
+sim/cockpit2/radios/indicators/fms_zero_fuel_weight
 sim/cockpit2/radios/indicators/gps2_bearing_deg_mag
 sim/cockpit2/radios/indicators/gps2_dme_distance_nm
 sim/cockpit2/radios/indicators/gps2_dme_id
@@ -8630,6 +8644,7 @@ sim/flightmodel2/misc/gforce_normal
 sim/flightmodel2/misc/gforce_side
 sim/flightmodel2/misc/has_crashed
 sim/flightmodel2/misc/line_is_locked
+sim/flightmodel2/misc/plugin_particle_light_leak
 sim/flightmodel2/misc/pressure_outflow_ratio
 sim/flightmodel2/misc/rain_repellent_ratio
 sim/flightmodel2/misc/tailhook_angle_degrees
@@ -10135,6 +10150,8 @@ sim/operation/failures/rel_lo_press_fuepmp7
 sim/operation/failures/rel_loc
 sim/operation/failures/rel_lower_IMU
 sim/operation/failures/rel_lower_battery
+sim/operation/failures/rel_lrn1
+sim/operation/failures/rel_lrn2
 sim/operation/failures/rel_magLFT0
 sim/operation/failures/rel_magLFT1
 sim/operation/failures/rel_magLFT2
@@ -10383,6 +10400,7 @@ sim/operation/misc/commandline
 sim/operation/misc/debug_network
 sim/operation/misc/frame_rate_period
 sim/operation/misc/time_ratio
+sim/operation/override/getting_elec_ADG
 sim/operation/override/override_FADEC
 sim/operation/override/override_GPU_volts
 sim/operation/override/override_TCAS
@@ -10415,6 +10433,7 @@ sim/operation/override/override_gps
 sim/operation/override/override_ground_trucks
 sim/operation/override/override_groundplane
 sim/operation/override/override_gs
+sim/operation/override/override_hydr_RAT
 sim/operation/override/override_ias
 sim/operation/override/override_itt_egt
 sim/operation/override/override_joystick
@@ -10580,6 +10599,7 @@ sim/private/controls/atc/debug/taxi/debug_to_runway
 sim/private/controls/atc/debug/taxi/departure
 sim/private/controls/atc/debug/test_taxi_width
 sim/private/controls/atc/debug/vector_tee
+sim/private/controls/atc/debug/vector_tee_buf
 sim/private/controls/atc/debug/vector_w1
 sim/private/controls/atc/debug/vector_w2
 sim/private/controls/atc/debug/vector_w3
@@ -10764,7 +10784,6 @@ sim/private/controls/collector/kill_slow
 sim/private/controls/collector/layer_range/max
 sim/private/controls/collector/layer_range/min
 sim/private/controls/collector/max_imm
-sim/private/controls/collector/use_modern
 sim/private/controls/color_correction/ratio
 sim/private/controls/color_management/abney_correction
 sim/private/controls/color_management/compression
@@ -10801,6 +10820,11 @@ sim/private/controls/debug/debug_point_size
 sim/private/controls/debug/debug_text_distance
 sim/private/controls/debug/draw_cpu_command_geo
 sim/private/controls/debug/histo_bottom
+sim/private/controls/debug/histo_mode
+sim/private/controls/debug/histo_spot_radius
+sim/private/controls/debug/histo_spot_tracking
+sim/private/controls/debug/histo_spot_x
+sim/private/controls/debug/histo_spot_y
 sim/private/controls/debug/histo_top
 sim/private/controls/debug/kill_bloom
 sim/private/controls/debug/kill_debug_lines
@@ -10821,6 +10845,7 @@ sim/private/controls/debug/show_actor_surface
 sim/private/controls/debug/show_avionics_bounds
 sim/private/controls/debug/show_ctc_emitters
 sim/private/controls/debug/show_engn_puff_velocity
+sim/private/controls/debug/show_fxaa_stencil
 sim/private/controls/debug/show_histo
 sim/private/controls/debug/show_manip_commands
 sim/private/controls/debug/show_manipulator_axis
@@ -10898,12 +10923,6 @@ sim/private/controls/gfx/managed_buffers/max_movement_count
 sim/private/controls/grib/calc_vis_power
 sim/private/controls/grib/max_calc_vis_sm
 sim/private/controls/grib/min_calc_vis_sm
-sim/private/controls/hack/petr/wxr/control
-sim/private/controls/hack/petr/wxr/control/ice
-sim/private/controls/hack/petr/wxr/control/puddles
-sim/private/controls/hack/petr/wxr/control/rain
-sim/private/controls/hack/petr/wxr/control/snow
-sim/private/controls/hack/petr/wxr/force_set
 sim/private/controls/hack/petr/wxr/kf/ice_in_0
 sim/private/controls/hack/petr/wxr/kf/ice_in_1
 sim/private/controls/hack/petr/wxr/kf/ice_in_2
@@ -11148,7 +11167,6 @@ sim/private/controls/material/reference_albedo
 sim/private/controls/material/specular_bias
 sim/private/controls/material/specular_samples
 sim/private/controls/menus/close_menu_delay_seconds
-sim/private/controls/missions/no_ending
 sim/private/controls/moon/angular_diameter
 sim/private/controls/moon/nits
 sim/private/controls/mouse_yoke/alpha_joys
@@ -11251,7 +11269,6 @@ sim/private/controls/perf/disable_reflection_cam
 sim/private/controls/perf/disable_shadow_prep
 sim/private/controls/perf/kill_atc
 sim/private/controls/perf/kill_chains
-sim/private/controls/perf/kill_click_3d
 sim/private/controls/perf/kill_clip
 sim/private/controls/perf/kill_cockpit_objects
 sim/private/controls/perf/kill_counters
@@ -11658,7 +11675,6 @@ sim/private/controls/twxr/ice/scale_decal
 sim/private/controls/twxr/ice/scale_normal
 sim/private/controls/twxr/ice_area_scale
 sim/private/controls/twxr/ice_area_width
-sim/private/controls/twxr/override
 sim/private/controls/twxr/rain_area_scale
 sim/private/controls/twxr/rain_area_width
 sim/private/controls/twxr/rain_darken_albedo_rat
@@ -11819,10 +11835,10 @@ sim/private/controls/vr/mouse_z_off_draw
 sim/private/controls/vr/mouse_z_off_test
 sim/private/controls/vr/self_hotspot_angle
 sim/private/controls/vr/sitting_is_fwd
+sim/private/controls/vr/steamvr_async_vblank
 sim/private/controls/vr/tchochke/aabb_slop_touch
 sim/private/controls/vr/teleport_tune_rate
 sim/private/controls/vr/thumbstick_nullzone
-sim/private/controls/vr/use_interleave
 sim/private/controls/vr/use_post_present
 sim/private/controls/vr/z_test
 sim/private/controls/wakes/pontoon_splash_mod
@@ -11895,6 +11911,7 @@ sim/private/controls/water/wake_cull
 sim/private/controls/water/wake_displace_rat
 sim/private/controls/water/wake_min_rat
 sim/private/controls/weather/allow_historic_rwx
+sim/private/controls/weather/allow_initial_snow_coverage
 sim/private/controls/weather/conpad_metaball_r
 sim/private/controls/weather/fuzzy_bounds_speed
 sim/private/controls/weather/fuzzy_grib_bounds
@@ -11908,7 +11925,6 @@ sim/private/controls/weather/metar_auto_max_dist
 sim/private/controls/weather/metar_decay_hours
 sim/private/controls/weather/metar_max_dist
 sim/private/controls/weather/metar_voronoi_soften_pct
-sim/private/controls/weather/new_wind
 sim/private/controls/weather/presets/isa_troposphere
 sim/private/controls/weather/real_perlin_scale
 sim/private/controls/weather/rwx/grib_cb_ratio_strength
@@ -12079,6 +12095,7 @@ sim/private/stats/gfx/pipelines/ocean_spectrum/num_pipelines
 sim/private/stats/gfx/pipelines/ocean_variance/num_pipelines
 sim/private/stats/gfx/pipelines/particle/num_pipelines
 sim/private/stats/gfx/pipelines/planet/num_pipelines
+sim/private/stats/gfx/pipelines/profile_view/num_pipelines
 sim/private/stats/gfx/pipelines/rain/num_pipelines
 sim/private/stats/gfx/pipelines/rain_draw/num_pipelines
 sim/private/stats/gfx/pipelines/rain_droplets_compute/num_pipelines
@@ -12249,13 +12266,10 @@ sim/private/stats/test/mempool/wasted
 sim/private/stats/test/mempool/wasted_large
 sim/private/stats/time/thread_sync_wait
 sim/private/stats/ubo/caches/material
-sim/private/stats/ubo/caches/projection
 sim/private/stats/ubo/num_write/environment
 sim/private/stats/ubo/num_write/light_data
 sim/private/stats/ubo/num_write/material_no_cache
 sim/private/stats/ubo/num_write/misc
-sim/private/stats/ubo/num_write/projection
-sim/private/stats/ubo/num_write/projection_no_cache
 sim/private/stats/ubo/num_write/shadow
 sim/private/stats/ubo/num_write/water
 sim/private/stats/vegetation/stat/extruded_points

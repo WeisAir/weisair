@@ -10,6 +10,7 @@
 /junctions/Aircraft/
 /licenses
 /performance_tests/xp_fps_tests/*
+/performance_tests/xplane_fps_testautomation/XPFiles/*
 /tools/
 
 # but not
