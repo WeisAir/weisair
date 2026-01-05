@@ -1,0 +1,1 @@
+C:\cygwin64\bin\bash.exe /cygdrive/g/weisair/performance_tests/xplane_fps_testautomation/cleanLogs.sh

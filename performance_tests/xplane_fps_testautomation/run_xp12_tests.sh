@@ -1,12 +1,14 @@
 #!/bin/sh
 
 
+
 ########################## VARIABLES
+
+var_script_log_dir="XPFiles"
 
 #X-Plane App paths
 var_XP12_path_latest="/cygdrive/g/X-Plane_12_latest"
 var_XP12_path_stable="/cygdrive/g/X-Plane_12_latest_stable"
-var_script_log_dir="XPFiles"
 var_XP_current_test_path=$var_XP12_path_latest
 
 #current date and time
@@ -30,7 +32,6 @@ if [ -z "$var_safe_mode" ];
 	else
 		var_fps_run_command="${var_XP_current_test_path}/X-Plane.exe --fps_test="${var_fps_test_scenario}" --safe_mode="${var_safe_mode}" --load_smo=Output/replays/"${var_XP12_fps_recording}
 fi
-
 
 ########################## VARIABLES
 
