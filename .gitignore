@@ -9,7 +9,7 @@
 /junctions/Scripts/
 /junctions/Aircraft/
 /licenses
-/performance_tests/
+/performance_tests/xp_fps_tests/*
 /tools/
 
 # but not

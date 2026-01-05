@@ -212,3 +212,4 @@ R SHIFT+ALT TrafficGlobal/control/full_reset Reset all traffic immediately.
 3 ALT TrafficGlobal/control/force_goaround Initiate go-around for aircraft on approach
 End <NONE> TrafficGlobal/comms/request_runway_info Request runway and parking info.
 9 SHIFT sim/view/wingman
+# CTRL TrafficGlobal/control/clear_active_ai Clear active AI focus.

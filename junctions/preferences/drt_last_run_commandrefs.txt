@@ -314,9 +314,6 @@ WeisAIR/b738/simops/save_flight_8
 WeisAIR/b738/syncCRS
 WeisAIR/b738/wipersDN
 WeisAIR/b738/wipersUP
-WeisAIR/b748/eng/toggle_eng1_fuel_control
-WeisAIR/b748/eng/toggle_eng2_fuel_control
-WeisAIR/b748/eng/toggle_eng3_fuel_control
 WeisAIR/generic/camera/toggle_cockpit_cameras
 WeisAIR/generic/camera/toggle_external_cameras
 WeisAIR/generic/camera/toggle_overhead_cameras
@@ -4430,4 +4427,6 @@ sim/weapons/weapon_select_down
 sim/weapons/weapon_select_up
 sim/weapons/weapon_target_down
 sim/weapons/weapon_target_up
+terrain_radar/radar_range_decrease
+terrain_radar/radar_range_increase
 terrain_radar/radar_show
