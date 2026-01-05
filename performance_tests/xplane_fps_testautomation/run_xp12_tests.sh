@@ -16,10 +16,12 @@ var_start_time=$(date +%s%N | cut -b1-13)
 
 #test parameters
 var_XP12_fps_recording="b738_london_land.fps"
-var_viewpoint=0 # 0 = default cockpit day / 100 = above view / 200 = cockpit night
-var_scenario=34 # performance test pattern according to https://www.x-plane.com/kb/frame-rate-test/
+var_viewpoint=2 # 0 = default cockpit day / 100 = above view / 200 = cockpit night
+var_scenario_weather=3 # performance test pattern according to https://www.x-plane.com/kb/frame-rate-test/
+var_scenario_rendering_preset=5 # performance test pattern according to https://www.x-plane.com/kb/frame-rate-test/
 var_safe_mode="" #SCN -> default scenery, PLG -> default plugins, ART -> default ART controls
-var_fps_test_scenario=$(($var_viewpoint+$var_scenario)) # addtion of viewpoint and scenario
+#var_fps_test_scenario=$(($var_viewpoint+$var_scenario)) # addtion of viewpoint and scenario
+var_fps_test_scenario=$(($var_viewpoint*100+$var_scenario_weather*10+$var_scenario_rendering_preset)) # addtion of viewpoint and scenario
 var_additional_params="--weather_seed=1 --time_seed=1 --no_prefs --event_trace --safe_mode=SCN,PLG,ART" # additional unclear / undocumented params 
 
 if [ -z "$var_safe_mode" ]; 
