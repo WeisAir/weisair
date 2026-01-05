@@ -6,6 +6,7 @@
 #X-Plane App paths
 var_XP12_path_latest="/cygdrive/g/X-Plane_12_latest"
 var_XP12_path_stable="/cygdrive/g/X-Plane_12_latest_stable"
+var_script_log_dir="XPFiles"
 var_XP_current_test_path=$var_XP12_path_latest
 
 #current date and time
@@ -33,28 +34,27 @@ fi
 
 
 #create directories to backup diagnostics data from X-Plane
-mkdir -p ./XPFiles/${var_date}
-mkdir -p ./XPFiles/${var_date}/${var_time}
+mkdir -p ./${var_script_log_dir}/${var_date}
+mkdir -p ./${var_script_log_dir}/${var_date}/${var_time}
 
 #run built-in fps test
 
 echo $var_fps_run_command
-#TODO: SAFEMODE BUGGY
 #$(${var_fps_run_command})
 #$(${var_XP_current_test_path}/X-Plane.exe --lock_fr=30)
 
 #copy original X-Plane generated log, data and telemetry files
-$(cp ${var_XP_current_test_path}/Log.txt ./XPFiles/${var_date}/${var_time})
-$(cp ${var_XP_current_test_path}/Data.txt ./XPFiles/${var_date}/${var_time})
-$(cp "${var_XP_current_test_path}/Output/diagnostic reports/telemetry_0.tlm" ./XPFiles/${var_date}/${var_time})
+$(cp ${var_XP_current_test_path}/Log.txt ./${var_script_log_dir}/${var_date}/${var_time})
+$(cp ${var_XP_current_test_path}/Data.txt ./${var_script_log_dir}/${var_date}/${var_time})
+$(cp "${var_XP_current_test_path}/Output/diagnostic reports/telemetry_0.tlm" ./${var_script_log_dir}/${var_date}/${var_time})
 
 #TESTPHASE ONLY: Overwrite copied log.txt with test_fps_log.txt which contains an FPS value
 #$(cp ./test_fps_log.txt ./${var_date}/${var_time}/Log.txt)
 
 #extract fps average from log.txt
-var_fps_value=$(grep "fps=" ./XPFiles/${var_date}/${var_time}/Log.txt | cut -f3 -d ',' | tr -d '[:blank:]' | cut -f2 -d'=' | tr -d '\n' | tr -d '\r')
+var_fps_value=$(grep "fps=" ./${var_script_log_dir}/${var_date}/${var_time}/Log.txt | cut -f3 -d ',' | tr -d '[:blank:]' | cut -f2 -d'=' | tr -d '\n' | tr -d '\r')
 #extract XP Version from log.txt
-var_xp_version=$(grep "Log.txt for X-Plane" ./XPFiles/${var_date}/${var_time}/Log.txt | cut -f4 -d " ")
+var_xp_version=$(grep "Log.txt for X-Plane" ./${var_script_log_dir}/${var_date}/${var_time}/Log.txt | cut -f4 -d " ")
 #extract aircraft information from recording
 var_aircraft=$(cat ./${var_XP12_fps_recording} | grep Aircraft | cut -f3 -d " " | cut -f2,3 -d "/")
 
