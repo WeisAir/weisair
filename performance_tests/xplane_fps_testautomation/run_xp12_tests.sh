@@ -47,12 +47,12 @@ echo $var_fps_run_command
 #$(${var_XP_current_test_path}/X-Plane.exe --lock_fr=30)
 
 #copy original X-Plane generated log, data and telemetry files
-$(cp ${var_XP_current_test_path}/Log.txt ./${var_script_log_dir}/${var_date}/${var_time})
-$(cp ${var_XP_current_test_path}/Data.txt ./${var_script_log_dir}/${var_date}/${var_time})
-$(cp "${var_XP_current_test_path}/Output/diagnostic reports/telemetry_0.tlm" ./${var_script_log_dir}/${var_date}/${var_time})
+#$(cp ${var_XP_current_test_path}/Log.txt ./${var_script_log_dir}/${var_date}/${var_time})
+#$(cp ${var_XP_current_test_path}/Data.txt ./${var_script_log_dir}/${var_date}/${var_time})
+#$(cp "${var_XP_current_test_path}/Output/diagnostic reports/telemetry_0.tlm" ./${var_script_log_dir}/${var_date}/${var_time})
 
 #TESTPHASE ONLY: Overwrite copied log.txt with test_fps_log.txt which contains an FPS value
-#$(cp ./test_fps_log.txt ./${var_date}/${var_time}/Log.txt)
+$(cp ./test_fps_log.txt ./${var_script_log_dir}/${var_date}/${var_time}/Log.txt)
 
 #extract fps average from log.txt
 var_fps_value=$(grep "fps=" ./${var_script_log_dir}/${var_date}/${var_time}/Log.txt | cut -f3 -d ',' | tr -d '[:blank:]' | cut -f2 -d'=' | tr -d '\n' | tr -d '\r')
