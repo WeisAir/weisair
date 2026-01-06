@@ -75,3 +75,20 @@ if [ -z "$var_safe_mode" ];
 fi
 
 echo $var_record >> statistics.csv
+
+
+
+###gnuplot
+
+# pro test.fps ein Diagramm erstellen
+# 	latest/stable
+# 		ortho/vanilla
+# 			fps
+
+# ./stats/[TESTNAME]_statistics.csv
+# vanilla;34;fps_latest;fps_stable
+# ortho;34;fps_latest;fps_stable
+# vanilla;45;fps_latest;fps_stable
+# ortho;45;fps_latest;fps_stable
+
+# ./stats/[TESTNAME]_plot.png
