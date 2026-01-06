@@ -1,0 +1,18 @@
+#!/usr/bin/gnuplot
+
+set terminal png
+set output "out.png"
+set key right nobox
+
+set title "FPS Test"
+set auto x
+set xrange [0:10]
+set yrange [0:60]
+set style data histogram
+set style histogram cluster gap 1
+set style fill solid border -1
+set boxwidth 0.9
+set xtic rotate by -45 scale 0
+#set bmargin 10 
+#plot '/cygdrive/g/weisair/performance_tests/xplane_fps_testautomation/statistics_to_plot.csv' using 6:xtic(1) ti col, '' u 12 ti col, '' u 13 ti col, '' u 14 ti col
+plot "statistics_to_plot.csv" using 2:xticlabels(1) with histogram title "legend_here"

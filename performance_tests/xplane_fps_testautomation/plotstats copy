@@ -1,0 +1,7 @@
+#!/usr/bin/gnuplot
+
+set terminal png
+set output "out.png"
+set key right nobox
+set samples 100
+plot [-pi/2:pi] cos(x),-(sin(x) > sin(x+ARG1) ? sin(x) : sin(x+ARG1))

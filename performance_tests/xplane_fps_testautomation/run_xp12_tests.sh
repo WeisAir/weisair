@@ -1,6 +1,11 @@
 #!/bin/sh
 
+########################## PRECONFIG
 
+#set DISPLAY VARIABLE
+$(export DISPLAY=:0.0)
+gnuplot plotstats
+#gnuplot -c plotstats 5 #https://stackoverflow.com/questions/12328603/how-to-pass-command-line-argument-to-gnuplot
 
 ########################## VARIABLES
 
