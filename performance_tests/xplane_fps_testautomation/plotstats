@@ -1,18 +1,26 @@
 #!/usr/bin/gnuplot
 
 set terminal png
-set output "out.png"
+set output outputname
 set key right nobox
+set title "X-Plane 12 FPS-Test: ".datafile
+set datafile separator comma
 
-set title "FPS Test"
-set auto x
-set xrange [0:10]
-set yrange [0:60]
+
 set style data histogram
+
+## axis params:
+set yrange [0:60]
+set xlabel 'Performance Test Patterns / Scenery Type'
+set ylabel 'Average Frames Per Second (FPS)'
+
+
+##box styling params:
 set style histogram cluster gap 1
 set style fill solid border -1
 set boxwidth 0.9
-set xtic rotate by -45 scale 0
-#set bmargin 10 
-#plot '/cygdrive/g/weisair/performance_tests/xplane_fps_testautomation/statistics_to_plot.csv' using 6:xtic(1) ti col, '' u 12 ti col, '' u 13 ti col, '' u 14 ti col
-plot "statistics_to_plot.csv" using 2:xticlabels(1) with histogram title "legend_here"
+#set xtic rotate by -45 scale 0
+
+#plot "statistics_to_plot.csv" using 3:xtic(1) title 'FPS (latest)', '' using 4 title 'FPS (stable)'
+#plot "statistics_to_plot.csv" using 3:xtic(1) title 'FPS (latest)' , '' using 4 title 'FPS (stable)', '' u 0:3:3  with labels offset -1.8,0.8 title " ", '' u 0:4:4  with labels offset 1.8,0.8 title " " 
+plot "statistics_to_plot.csv" using 3:xtic(1) title 'FPS (latest)' , '' using 4 title 'FPS (stable)', '' u 0:3:3  with labels offset -1.8,0.8 title " ", '' u 0:4:4  with labels offset 1.8,0.8 title " " 
