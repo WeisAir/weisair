@@ -1,0 +1,429 @@
+[Thu Jan  8 23:32:38 2026]
+Self-test 288K passed!
+Self-test 288K passed!
+Self-test 288K passed!
+Self-test 288K passed!
+Self-test 288K passed!
+Self-test 288K passed!
+[Fri Jan  9 21:27:04 2026]
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 50K passed!
+Self-test 50K passed!
+Self-test 50K passed!
+Self-test 50K passed!
+Self-test 50K passed!
+Self-test 50K passed!
+[Fri Jan  9 21:32:52 2026]
+Self-test 60K passed!
+Self-test 60K passed!
+Self-test 60K passed!
+Self-test 60K passed!
+Self-test 60K passed!
+Self-test 60K passed!
+Self-test 64K passed!
+Self-test 64K passed!
+Self-test 64K passed!
+Self-test 64K passed!
+Self-test 64K passed!
+Self-test 64K passed!
+[Fri Jan  9 21:38:22 2026]
+Self-test 72K passed!
+Self-test 72K passed!
+Self-test 72K passed!
+Self-test 72K passed!
+Self-test 72K passed!
+Self-test 72K passed!
+Self-test 80K passed!
+Self-test 80K passed!
+Self-test 80K passed!
+Self-test 80K passed!
+Self-test 80K passed!
+Self-test 80K passed!
+[Fri Jan  9 21:43:48 2026]
+Self-test 84K passed!
+Self-test 84K passed!
+Self-test 84K passed!
+Self-test 84K passed!
+Self-test 84K passed!
+Self-test 84K passed!
+Self-test 96K passed!
+Self-test 96K passed!
+Self-test 96K passed!
+Self-test 96K passed!
+[Fri Jan  9 21:49:01 2026]
+Self-test 96K passed!
+Self-test 96K passed!
+Self-test 100K passed!
+Self-test 100K passed!
+Self-test 100K passed!
+Self-test 100K passed!
+Self-test 112K passed!
+Self-test 100K passed!
+Self-test 100K passed!
+Self-test 112K passed!
+Self-test 112K passed!
+[Fri Jan  9 21:54:45 2026]
+Self-test 112K passed!
+Self-test 120K passed!
+Self-test 112K passed!
+Self-test 112K passed!
+Self-test 120K passed!
+Self-test 120K passed!
+Self-test 128K passed!
+Self-test 120K passed!
+Self-test 128K passed!
+Self-test 120K passed!
+Self-test 120K passed!
+[Fri Jan  9 21:59:53 2026]
+Self-test 128K passed!
+Self-test 48K passed!
+Self-test 128K passed!
+Self-test 48K passed!
+FATAL ERROR: Rounding was 0.5, expected less than 0.4
+Hardware failure detected running 48K FFT size, consult stress.txt file.
+Self-test 128K passed!
+Self-test 128K passed!
+Self-test 50K passed!
+Self-test 48K passed!
+Self-test 50K passed!
+[Fri Jan  9 22:05:02 2026]
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 60K passed!
+Self-test 50K passed!
+Self-test 60K passed!
+Self-test 50K passed!
+Self-test 50K passed!
+Self-test 64K passed!
+Self-test 60K passed!
+Self-test 64K passed!
+[Fri Jan  9 22:11:39 2026]
+Self-test 60K passed!
+Self-test 60K passed!
+Self-test 72K passed!
+Self-test 64K passed!
+Self-test 72K passed!
+Self-test 64K passed!
+Self-test 80K passed!
+Self-test 64K passed!
+Self-test 72K passed!
+Self-test 80K passed!
+[Fri Jan  9 22:17:34 2026]
+Self-test 72K passed!
+Self-test 84K passed!
+Self-test 72K passed!
+Self-test 80K passed!
+Self-test 84K passed!
+Self-test 80K passed!
+Self-test 96K passed!
+Self-test 80K passed!
+Self-test 84K passed!
+Self-test 96K passed!
+[Fri Jan  9 22:23:04 2026]
+Self-test 84K passed!
+Self-test 100K passed!
+Self-test 84K passed!
+Self-test 100K passed!
+Self-test 96K passed!
+Self-test 96K passed!
+Self-test 96K passed!
+Self-test 112K passed!
+Self-test 112K passed!
+Self-test 100K passed!
+[Fri Jan  9 22:29:06 2026]
+Self-test 100K passed!
+Self-test 120K passed!
+Self-test 100K passed!
+Self-test 120K passed!
+Self-test 112K passed!
+Self-test 112K passed!
+Self-test 112K passed!
+Self-test 128K passed!
+Self-test 120K passed!
+Self-test 128K passed!
+[Fri Jan  9 22:34:29 2026]
+Self-test 120K passed!
+Self-test 48K passed!
+Self-test 120K passed!
+Self-test 48K passed!
+Self-test 128K passed!
+Self-test 128K passed!
+Self-test 50K passed!
+Self-test 128K passed!
+Self-test 50K passed!
+Self-test 48K passed!
+[Fri Jan  9 22:40:21 2026]
+Self-test 48K passed!
+Self-test 60K passed!
+Self-test 48K passed!
+Self-test 50K passed!
+Self-test 60K passed!
+Self-test 64K passed!
+Self-test 50K passed!
+Self-test 50K passed!
+Self-test 60K passed!
+Self-test 64K passed!
+[Fri Jan  9 22:46:19 2026]
+Self-test 60K passed!
+Self-test 72K passed!
+Self-test 64K passed!
+Self-test 60K passed!
+Self-test 72K passed!
+Self-test 64K passed!
+Self-test 72K passed!
+Self-test 80K passed!
+Self-test 80K passed!
+Self-test 64K passed!
+[Fri Jan  9 22:52:16 2026]
+Self-test 72K passed!
+Self-test 84K passed!
+Self-test 84K passed!
+Self-test 80K passed!
+Self-test 72K passed!
+Self-test 80K passed!
+Self-test 96K passed!
+Self-test 96K passed!
+Self-test 80K passed!
+Self-test 84K passed!
+[Fri Jan  9 22:57:22 2026]
+Self-test 84K passed!
+Self-test 100K passed!
+Self-test 100K passed!
+Self-test 84K passed!
+Self-test 96K passed!
+[Sat Jan 17 12:54:39 2026]
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 50K passed!
+Self-test 50K passed!
+Self-test 50K passed!
+Self-test 50K passed!
+Self-test 50K passed!
+Self-test 50K passed!
+[Sat Jan 17 13:00:01 2026]
+Self-test 60K passed!
+Self-test 60K passed!
+Self-test 60K passed!
+Self-test 60K passed!
+Self-test 60K passed!
+Self-test 60K passed!
+Self-test 64K passed!
+Self-test 64K passed!
+Self-test 64K passed!
+[Sat Jan 17 13:05:51 2026]
+Self-test 64K passed!
+Self-test 72K passed!
+Self-test 72K passed!
+Self-test 72K passed!
+Self-test 64K passed!
+Self-test 80K passed!
+Self-test 80K passed!
+Self-test 64K passed!
+Self-test 80K passed!
+[Sat Jan 17 13:11:32 2026]
+Self-test 84K passed!
+Self-test 84K passed!
+Self-test 72K passed!
+Self-test 72K passed!
+Self-test 84K passed!
+Self-test 96K passed!
+Self-test 72K passed!
+Self-test 80K passed!
+Self-test 96K passed!
+Self-test 96K passed!
+[Sat Jan 17 13:16:40 2026]
+Self-test 100K passed!
+Self-test 80K passed!
+Self-test 80K passed!
+Self-test 100K passed!
+Self-test 100K passed!
+Self-test 84K passed!
+Self-test 84K passed!
+Self-test 112K passed!
+Self-test 112K passed!
+Self-test 112K passed!
+[Sat Jan 17 13:21:54 2026]
+Self-test 84K passed!
+Self-test 96K passed!
+Self-test 96K passed!
+Self-test 120K passed!
+Self-test 120K passed!
+Self-test 120K passed!
+Self-test 96K passed!
+Self-test 100K passed!
+Self-test 100K passed!
+Self-test 128K passed!
+[Sat Jan 17 13:26:56 2026]
+Self-test 128K passed!
+Self-test 128K passed!
+Self-test 100K passed!
+Self-test 112K passed!
+Self-test 48K passed!
+Self-test 112K passed!
+Self-test 112K passed!
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 120K passed!
+[Sat Jan 17 13:31:57 2026]
+Self-test 120K passed!
+Self-test 50K passed!
+Self-test 120K passed!
+Self-test 50K passed!
+Self-test 50K passed!
+Self-test 128K passed!
+Self-test 128K passed!
+Self-test 128K passed!
+Self-test 60K passed!
+Self-test 60K passed!
+Self-test 60K passed!
+[Sat Jan 17 13:37:55 2026]
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 64K passed!
+Self-test 64K passed!
+Self-test 64K passed!
+Self-test 50K passed!
+Self-test 50K passed!
+Self-test 72K passed!
+Self-test 50K passed!
+Self-test 72K passed!
+Self-test 72K passed!
+[Sat Jan 17 13:43:13 2026]
+Self-test 60K passed!
+Self-test 80K passed!
+Self-test 60K passed!
+Self-test 60K passed!
+Self-test 80K passed!
+Self-test 64K passed!
+Self-test 80K passed!
+Self-test 64K passed!
+Self-test 84K passed!
+Self-test 64K passed!
+Self-test 84K passed!
+[Sat Jan 17 13:48:36 2026]
+Self-test 84K passed!
+Self-test 72K passed!
+Self-test 72K passed!
+Self-test 96K passed!
+Self-test 72K passed!
+Self-test 96K passed!
+Self-test 96K passed!
+Self-test 80K passed!
+Self-test 80K passed!
+Self-test 100K passed!
+[Sat Jan 17 13:53:55 2026]
+Self-test 100K passed!
+Self-test 80K passed!
+Self-test 84K passed!
+Self-test 100K passed!
+Self-test 84K passed!
+Self-test 112K passed!
+Self-test 112K passed!
+Self-test 84K passed!
+Self-test 96K passed!
+Self-test 112K passed!
+Self-test 96K passed!
+Self-test 120K passed!
+[Sat Jan 17 13:58:57 2026]
+Self-test 120K passed!
+[Sat Jan 17 18:00:17 2026]
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 50K passed!
+Self-test 50K passed!
+Self-test 50K passed!
+Self-test 50K passed!
+Self-test 50K passed!
+Self-test 50K passed!
+[Sat Jan 17 18:06:05 2026]
+Self-test 60K passed!
+Self-test 60K passed!
+Self-test 60K passed!
+Self-test 60K passed!
+Self-test 60K passed!
+Self-test 60K passed!
+Self-test 64K passed!
+Self-test 64K passed!
+Self-test 64K passed!
+Self-test 64K passed!
+Self-test 64K passed!
+Self-test 64K passed!
+[Sat Jan 17 18:11:34 2026]
+Self-test 72K passed!
+Self-test 72K passed!
+Self-test 72K passed!
+Self-test 72K passed!
+Self-test 72K passed!
+Self-test 72K passed!
+Self-test 80K passed!
+Self-test 80K passed!
+Self-test 80K passed!
+Self-test 80K passed!
+Self-test 80K passed!
+Self-test 80K passed!
+[Sat Jan 17 18:17:18 2026]
+Self-test 84K passed!
+Self-test 84K passed!
+Self-test 84K passed!
+Self-test 84K passed!
+Self-test 84K passed!
+Self-test 84K passed!
+Self-test 96K passed!
+Self-test 96K passed!
+Self-test 96K passed!
+Self-test 96K passed!
+Self-test 96K passed!
+Self-test 96K passed!
+[Sat Jan 17 18:22:58 2026]
+Self-test 100K passed!
+Self-test 100K passed!
+Self-test 100K passed!
+Self-test 100K passed!
+Self-test 100K passed!
+Self-test 100K passed!
+Self-test 112K passed!
+Self-test 112K passed!
+Self-test 112K passed!
+Self-test 112K passed!
+Self-test 112K passed!
+Self-test 112K passed!
+[Sat Jan 17 18:28:46 2026]
+Self-test 120K passed!
+Self-test 120K passed!
+Self-test 120K passed!
+Self-test 120K passed!
+Self-test 120K passed!
+Self-test 120K passed!
+Self-test 128K passed!
+Self-test 128K passed!
+Self-test 128K passed!
+Self-test 128K passed!
+[Sat Jan 17 18:33:47 2026]
+Self-test 128K passed!
+Self-test 128K passed!
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 48K passed!
+Self-test 50K passed!
+[Sat Jan 17 18:42:28 2026]
+FATAL ERROR: Rounding was 0.4991403114, expected less than 0.4
+Hardware failure detected running 48K FFT size, consult stress.txt file.
+FATAL ERROR: Rounding was 0.5, expected less than 0.4
+Hardware failure detected running 48K FFT size, consult stress.txt file.
