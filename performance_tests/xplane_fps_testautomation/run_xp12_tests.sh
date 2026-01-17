@@ -82,6 +82,7 @@ fi
 #var_escaped_stats_filename=echo $var_XP12_fps_recording | sed 's/_/+/g'
 #var_stats_file=echo "statistics_to_plot_${var_escaped_stats_filename}.csv"
 var_stats_file="statistics_to_plot_${var_XP12_fps_recording}.csv"
+#var_stats_file="statistics_to_plot.csv"
 var_plot_file="output_plot_${var_XP12_fps_recording}.png"
 echo $var_record >> $var_stats_file
 

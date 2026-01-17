@@ -4,6 +4,7 @@ set terminal png
 set output outputname
 set key right nobox
 set title "X-Plane 12 FPS-Test: ".datafile
+set title noenhanced
 set datafile separator comma
 
 
