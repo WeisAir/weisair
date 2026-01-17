@@ -4,8 +4,7 @@
 
 #set DISPLAY VARIABLE
 $(export DISPLAY=:0.0)
-gnuplot plotstats
-#gnuplot -c plotstats 5 #https://stackoverflow.com/questions/12328603/how-to-pass-command-line-argument-to-gnuplot
+#gnuplot plotstats
 
 ########################## VARIABLES
 
@@ -79,7 +78,12 @@ if [ -z "$var_safe_mode" ];
 		var_record="${var_date},${var_time},${var_fps_value},${var_aircraft},${var_fps_test_scenario},${var_xp_version},${var_XP12_fps_recording},${var_test_duration_s},${var_safe_mode}"
 fi
 
-echo $var_record >> statistics.csv
+#var_escaped_stats_filename=${var_XP12_fps_recording//_/+}
+#var_escaped_stats_filename=echo $var_XP12_fps_recording | sed 's/_/+/g'
+#var_stats_file=echo "statistics_to_plot_${var_escaped_stats_filename}.csv"
+var_stats_file="statistics_to_plot_${var_XP12_fps_recording}.csv"
+var_plot_file="output_plot_${var_XP12_fps_recording}.png"
+echo $var_record >> $var_stats_file
 
 
 
@@ -97,3 +101,7 @@ echo $var_record >> statistics.csv
 # ortho;45;fps_latest;fps_stable
 
 # ./stats/[TESTNAME]_plot.png
+
+#gnuplot -e "title=$var_XP12_fps_recording" plotstats
+
+gnuplot -e "datafile='${var_stats_file}'; outputname='${var_plot_file}'" plotstats

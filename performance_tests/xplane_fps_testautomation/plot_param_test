@@ -1,0 +1,6 @@
+#!/usr/bin/gnuplot
+
+set terminal png
+set output outputname 
+f(x) = sin(x)
+plot datafile
