@@ -1,0 +1,64 @@
+I
+1100 Version
+_favorite Aircraft/B737-800X/b738.acf||Aircraft/X-Aviation/Douglas DC-3 v2/DC3_Classic.acf||Aircraft/Embraer E170/E170.acf||Aircraft/X-Aviation/IXEG 737 Classic Plus/B733.acf||Aircraft/X-Aviation/Saab 340A/Passenger Variant/LES_Saab_340A.acf||Aircraft/SSG_B748_Series_V2.8RC1_XP12/SSG_B748-I_12.acf||Aircraft/Airfoillabs/C172 NG DIGITAL/C172_NG_DIGITAL.acf||Aircraft/Laminar Research/Lancair Evolution/N844X.acf||Aircraft/Laminar Research/Cirrus SR22/Cirrus SR22.acf
+_airport EDBX
+_last_start {"runway_start":{"airport_id":"EDBX","runway":"06"}}
+
+P _rwy_or_ramp EDBX 0_0
+P _livery _AircraftLaminarResearchBETATechnologiesAlia250ALIA250acf Default
+P _livery _AircraftLaminarResearchAeroWorksAerolite103Aerolite103acf Default
+P _livery _AircraftLaminarResearchCessna172SPCessna172SPseaplaneacf Default
+P _livery _AircraftLaminarResearchMcDonnellDouglasF4PhantomIIF4acf Default
+P _livery _AircraftLaminarResearchGrummanF14TomcatF14Dacf Default
+P _livery _AircraftLaminarResearchSikorskyS76S76Cacf Default
+P _livery _AircraftLaminarResearchRobinsonR22BetaIIRobinsonR22BetaIImarineracf Default
+P _livery _AircraftLaminarResearchRobinsonR22BetaIIRobinsonR22BetaIIacf Default
+P _livery _AircraftLaminarResearchSchleicherASK21ASK21acf Default
+P _livery _AircraftSSGB748SeriesV28RC1XP12SSGB748F12acf Boeing Light
+P _livery _AircraftLaminarResearchVansAircraftRV10RV10acf Default
+P _livery _AircraftLaminarResearchStinsonL5SentinelL5Sentinelacf Default
+P _livery _AircraftLaminarResearchPiperPA18SuperCubPA18150acf Default
+P _livery _AircraftLaminarResearchLancairEvolutionN844Xacf Default
+P _livery _AircraftRobinDR401DR401CDI155acf F-SLCD
+P _livery _AircraftLaminarResearchCirrusVisionSF50CirrusSF50acf Default
+P _livery _AircraftLaminarResearchCessna172SPCessna172SPG1000acf Default
+P _livery _AircraftLaminarResearchCessna172SPCessna172SPacf Default
+P _livery _AircraftLaminarResearchCessnaCitationXCessnaCitationXacf Default
+P _livery _AircraftAirfoillabsC172NGDIGITALC172NGDIGITALacf Blank
+P _livery _AircraftLaminarResearchBeechcraftKingAirC90BC90Bacf Default
+P _livery _AircraftLaminarResearchBeechcraftBaron58Baron58acf Default
+P _livery _AircraftSSGB748SeriesV28RC1XP12SSGB748I12acf Boeing Sunrise
+P _livery _AircraftLaminarResearchMcDonnellDouglasMD82MD80acf Default
+P _livery _AircraftXAviationSaab340APassengerVariantLESSaab340Aacf Default
+P _livery _AircraftXAviationSaab340ACargoVariantLESSaab340ACargoacf Default
+P _livery _AircraftXAviationSaab340AAirborneVariantLESSaab340AAEWacf Default
+P _livery _AircraftXAviationIXEG737ClassicPlusB733acf Default
+P _livery _AircraftEmbraerE170E170XP11acf Default
+P _livery _AircraftEmbraerE170E170acf Default
+P _livery _AircraftXAviationDouglasDC3v2DC3Modernacf Leading Edge Simulations
+P _livery _AircraftXAviationDouglasDC3v2DC3Classicacf Leading Edge Simulations
+P _livery _AircraftB737800Xb7384kacf Default
+P _livery _AircraftB737800Xb738acf Default
+P _livery _AircraftLaminarResearchBoeing737800b738acf American
+P _livery _AircraftLaminarResearchAirbusA330300A330acf Lufthansa D-AIKN
+P _livery _AircraftLaminarResearchCirrusSR22CirrusSR22acf Default
+P _start_is_rwy EDBX 1
+P _favorite_apt EKVG 1
+P _favorite_apt RCSS 1
+P _favorite_apt ENSB 1
+P _favorite_apt EKCH 1
+P _favorite_apt TNCM 1
+P _favorite_apt TNCS 1
+P _favorite_apt LGSK 1
+P _favorite_apt VNLK 1
+P _favorite_apt LIMW 1
+P _favorite_apt EGLC 1
+P _favorite_apt EDDM 1
+P _favorite_apt EDBX 1
+P _favorite_apt KLGA 1
+P _favorite_apt LEPA 1
+P _favorite_apt LPMA 1
+P _favorite_apt LFKX 1
+P _favorite_apt LFLJ 1
+P _favorite_apt EDDC 1
+P _favorite_apt LOWS 1

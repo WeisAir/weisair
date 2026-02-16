@@ -4,9 +4,9 @@ num_monitors 1
 monitor/0/m_window_idx 0
 monitor/0/m_monitor 0
 monitor/0/m_window_bounds/0 0
-monitor/0/m_window_bounds/1 0
-monitor/0/m_window_bounds/2 1280
-monitor/0/m_window_bounds/3 720
+monitor/0/m_window_bounds/1 23
+monitor/0/m_window_bounds/2 2560
+monitor/0/m_window_bounds/3 1392
 monitor/0/m_arbitrary_bounds/0 -8
 monitor/0/m_arbitrary_bounds/1 -31
 monitor/0/m_arbitrary_bounds/2 2568

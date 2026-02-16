@@ -1,0 +1,5 @@
+10022026
+
+- see settings screenshot
+- capped to 29fps
+- with lossless scaling - see settings screenshot

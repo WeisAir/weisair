@@ -12,7 +12,7 @@ TortureTime=3
 TortureWeak=1048576
 
 [Internals]
-OldCpuSpeed=4981
+OldCpuSpeed=5178
 NewCpuSpeedCount=0
 NewCpuSpeed=0
 V30OptionsConverted=1
