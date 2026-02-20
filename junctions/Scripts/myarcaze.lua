@@ -92,3 +92,4 @@ end
 
 -- always include generic functions scripts
 dofile(SCRIPT_DIRECTORY .. "weisair_scripts/generic_functions_xcam.lua")
+dofile(SCRIPT_DIRECTORY .. "weisair_scripts/generic_functions_global_settings.lua")

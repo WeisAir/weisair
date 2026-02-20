@@ -216,6 +216,8 @@ WeisAIR/b748/eng/toggle_eng3_fuel_control
 WeisAIR/generic/camera/toggle_cockpit_cameras
 WeisAIR/generic/camera/toggle_external_cameras
 WeisAIR/generic/camera/toggle_overhead_cameras
+WeisAIR/lancairevo/lights/cabin_lights_off
+WeisAIR/lancairevo/lights/cabin_lights_on
 laminar/sr22/anti_ice_tks_max
 laminar/sr22/button/air_con_toggle
 laminar/sr22/fan_speed_left

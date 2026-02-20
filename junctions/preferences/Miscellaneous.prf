@@ -2,7 +2,7 @@ I
 1100 Version
 networking_disclose_multiplayer 0
 networking_disclose_flir 0
-save_flight_type 1
+save_flight_type 0
 wxr_disclose_atmosphere 1
 wxr_disclose_change_over_time 0
 selected_tab 8
@@ -18,23 +18,26 @@ ios_disclose_weather 1
 networking_disclose_instructor 0
 atc_cmd_window_splitter 130.666656
 ios_disclose_time 1
+auto_tune_for_atc 0
 networking_disclose_external_visuals 0
 P monitor_10 _visuals 0
 P monitor_10 _offsets 0
-P monitor_13 _visuals 0
-P monitor_13 _offsets 0
+P monitor_19 _visuals 0
+P monitor_19 _offsets 0
 P map_layer map_layer_SDK_Marking_2 1
 P map_layer map_layer_SDK_Marking_1 1
 P map_layer map_layer_SDK_Marking_0 1
 P monitor_14 _visuals 0
 P monitor_14 _offsets 0
 P PFD-1 gps_window_visible 0
-P pilot-320 gps_window_visible 0
+P GCU gps_window_visible 0
 P MFD-1 gps_window_visible 0
 P RMU-1 gps_window_visible 0
 P copilot-320 gps_window_visible 0
 P monitor_8 _visuals 0
 P monitor_8 _offsets 0
+P acf_profile Cirrus___SR-22 Default___TPM
+P acf_profile Beechcraft___King___Air___C90B Default___TPM
 P acf_profile SSG___747-8___Intercontinental___V2.8.2 SSG___B748
 P acf_profile Cessna___Citation___X CitationX
 P acf_profile Boeing___737-800X B738___Zibo___v2
@@ -44,6 +47,7 @@ P monitor_6 _visuals 0
 P monitor_6 _offsets 0
 P WXR-1 gps_window_visible 0
 P RMU-2 gps_window_visible 0
+P pilot-530 gps_window_visible 0
 P monitor_7 _visuals 0
 P monitor_7 _offsets 0
 P pilot-1000 gps_window_visible 0
@@ -62,6 +66,7 @@ P pilot-4200 gps_window_visible 0
 P monitor_3 _visuals 0
 P monitor_3 _offsets 0
 P MCDU-3 gps_window_visible 0
+P copilot-430 gps_window_visible 0
 P center-1000 gps_window_visible 0
 P monitor_0 _visuals 0
 P monitor_0 _offsets 0
@@ -75,7 +80,7 @@ P monitor_2 _visuals 0
 P monitor_2 _offsets 0
 P window_state exvis_standby v=0 p=0 m=0 b=0,0,0,0
 P window_state fps_test_recoder v=0 p=0 m=0 b=0,0,0,0
-P window_state screenshot_controls v=0 p=0 m=0 b=427,213,907,653
+P window_state screenshot_controls v=0 p=0 m=0 b=1928,-5,2408,435
 P window_state networkdebug v=0 p=0 m=0 b=0,0,0,0
 P window_state raininspector v=0 p=0 m=0 b=0,0,0,0
 P window_state pluginadmin v=0 p=0 m=0 b=20,20,570,640
@@ -104,9 +109,9 @@ P window_state ground_handling_window v=0 p=0 m=0 b=0,0,0,0
 P PFD-2 gps_window_visible 0
 P pilot-2000 gps_window_visible 0
 P WXR-2 gps_window_visible 0
-P monitor_19 _visuals 0
-P monitor_19 _offsets 0
-P GCU gps_window_visible 0
+P monitor_13 _visuals 0
+P monitor_13 _offsets 0
+P pilot-320 gps_window_visible 0
 P copilot-2000 gps_window_visible 0
 P monitor_1 _visuals 0
 P monitor_1 _offsets 0
