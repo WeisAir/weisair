@@ -30,17 +30,16 @@ P map_layer map_layer_SDK_Marking_0 1
 P monitor_14 _visuals 0
 P monitor_14 _offsets 0
 P PFD-1 gps_window_visible 0
-P GCU gps_window_visible 0
 P MFD-1 gps_window_visible 0
 P RMU-1 gps_window_visible 0
 P copilot-320 gps_window_visible 0
-P monitor_8 _visuals 0
-P monitor_8 _offsets 0
 P acf_profile Cirrus___SR-22 Default___TPM
 P acf_profile Beechcraft___King___Air___C90B Default___TPM
 P acf_profile SSG___747-8___Intercontinental___V2.8.2 SSG___B748
 P acf_profile Cessna___Citation___X CitationX
 P acf_profile Boeing___737-800X B738___Zibo___v2
+P monitor_1 _visuals 0
+P monitor_1 _offsets 0
 P pilot-430 gps_window_visible 0
 P MFD-2 gps_window_visible 0
 P monitor_6 _visuals 0
@@ -80,7 +79,7 @@ P monitor_2 _visuals 0
 P monitor_2 _offsets 0
 P window_state exvis_standby v=0 p=0 m=0 b=0,0,0,0
 P window_state fps_test_recoder v=0 p=0 m=0 b=0,0,0,0
-P window_state screenshot_controls v=0 p=0 m=0 b=1928,-5,2408,435
+P window_state screenshot_controls v=1 p=0 m=0 b=1928,-5,2408,435
 P window_state networkdebug v=0 p=0 m=0 b=0,0,0,0
 P window_state raininspector v=0 p=0 m=0 b=0,0,0,0
 P window_state pluginadmin v=0 p=0 m=0 b=20,20,570,640
@@ -105,15 +104,16 @@ P window_state data_out v=0 p=0 m=0 b=0,0,0,0
 P window_state replay_controls v=0 p=0 m=0 b=0,0,2560,1440
 P window_state menu_bar v=1 p=0 m=0 b=0,0,2560,1440
 P window_state video_recording_config v=0 p=0 m=0 b=0,0,0,0
-P window_state ground_handling_window v=0 p=0 m=0 b=0,0,0,0
+P window_state ground_handling_window v=0 p=0 m=0 b=300,450,700,700
 P PFD-2 gps_window_visible 0
 P pilot-2000 gps_window_visible 0
 P WXR-2 gps_window_visible 0
-P monitor_13 _visuals 0
-P monitor_13 _offsets 0
-P pilot-320 gps_window_visible 0
-P copilot-2000 gps_window_visible 0
-P monitor_1 _visuals 0
-P monitor_1 _offsets 0
 P monitor_4 _visuals 0
 P monitor_4 _offsets 0
+P GCU gps_window_visible 0
+P monitor_13 _visuals 0
+P monitor_13 _offsets 0
+P copilot-2000 gps_window_visible 0
+P pilot-320 gps_window_visible 0
+P monitor_8 _visuals 0
+P monitor_8 _offsets 0

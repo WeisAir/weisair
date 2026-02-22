@@ -15,5 +15,5 @@
 
 # but not
 !junctions/Scripts/myarcaze.lua
-!junctions/Scripts/arcaze_scripts/*
-!junctions/Scripts/weisair_scripts/*
+!junctions/Scripts/arcaze_scripts/*.*
+!junctions/Scripts/weisair_scripts/*.*

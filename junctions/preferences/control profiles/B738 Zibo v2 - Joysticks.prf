@@ -8575,8 +8575,12 @@ _joy_AXIS_cmnd720 sim/none/none
 _joy_AXIS_cmnd721 sim/none/none
 _joy_AXIS_cmnd800 sim/none/none
 _joy_AXIS_cmnd801 sim/none/none
+_joy_AXIS_cmnd802 sim/none/none
+_joy_AXIS_cmnd803 sim/none/none
 _joy_AXIS_cmnd804 sim/none/none
 _joy_AXIS_cmnd805 sim/none/none
+_joy_AXIS_cmnd806 sim/none/none
+_joy_AXIS_cmnd807 sim/none/none
 _joy_AXIS_cmnd808 sim/none/none
 _joy_AXIS_cmnd809 sim/none/none
 _joy_AXIS_cmnd810 sim/none/none
