@@ -58,6 +58,32 @@ end
 function new_warn_fs2020(oil_pressure, bus_volts, gen_volts, vacuum1, vacuum2, fuelq_l, fuelq_r, test_switch)
 
     local power = bus_volts >= 8
+    local light_test = test_switch == 1 and power
+    
+    -- Low fuel
+    visible(img_ann_fuel, ((fuelq_l < 5 or fuelq_r < 5) or light_test) and power)
+    visible(img_ann_fuell, (fuelq_l < 5 or light_test) and power)
+    visible(img_ann_fuelr, (fuelq_r < 5 or light_test) and power)
+    
+    -- Oil pressure
+    visible(img_ann_oil, (oil_pressure < 20 or light_test) and power)
+    
+    -- Vacuum
+    visible(img_ann_vac, (vacuum1 < 3 or vacuum2 < 3 or light_test) and power)
+    visible(img_ann_vacl, (vacuum1 < 3 or light_test) and power)
+    visible(img_ann_vacr, (vacuum2 < 3 or light_test) and power)
+    
+    -- Volts
+    visible(img_ann_volts, (gen_volts < 24.5 or light_test) and power)
+    
+    -- Bar
+    visible(img_ann_bar, light_test)
+    
+end
+
+function new_warn_fs2024(oil_pressure, bus_volts, gen_volts, vacuum1, vacuum2, fuelq_l, fuelq_r, test_switch)
+
+    local power = bus_volts >= 8
     local light_test = test_switch == 0 and power
     
     -- Low fuel
@@ -75,6 +101,9 @@ function new_warn_fs2020(oil_pressure, bus_volts, gen_volts, vacuum1, vacuum2, f
     
     -- Volts
     visible(img_ann_volts, (gen_volts < 24.5 or light_test) and power)
+
+    -- Bar
+    visible(img_ann_bar, light_test)
     
 end
 
@@ -101,5 +130,14 @@ fs2020_variable_subscribe("GENERAL ENG OIL PRESSURE:1", "Psi",
                           "SUCTION PRESSURE:2", "inHg",
                           "FUEL TANK LEFT MAIN QUANTITY", "gallons",
                           "FUEL TANK RIGHT MAIN QUANTITY", "gallons", 
-                          "L:XMLVAR_DayNightSwitch", "Double", new_warn_fs2020)
+                          "L:buttonAnnTest", "Double", new_warn_fs2020)
+                          
+fs2024_variable_subscribe("GENERAL ENG OIL PRESSURE:1", "Psi",
+                          "ELECTRICAL BUS VOLTAGE:1", "Volts",
+                          "ELECTRICAL GENERATOR VOLTAGE:1", "Volts",
+                          "SUCTION PRESSURE:1", "inHg",
+                          "SUCTION PRESSURE:2", "inHg",
+                          "FUEL TANK LEFT MAIN QUANTITY", "gallons",
+                          "FUEL TANK RIGHT MAIN QUANTITY", "gallons",
+                          "B:SAFETY_LIGHT", "Double", new_warn_fs2024)
 -- END ANNUNCIATOR PANEL

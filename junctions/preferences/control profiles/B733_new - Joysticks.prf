@@ -1,6 +1,7 @@
 I
 10 Version
 _require_faa_checks 1
+_discretize_flap_axis 0
 _eq_pfc_ailn_trim 0
 _eq_pfc_rudd_trim 0
 _eq_pfc_elev_trim 0
@@ -1105,7 +1106,7 @@ _joy_lo_raw_dat22 9900000256.000000
 _joy_lo_raw_dat23 9900000256.000000
 _joy_lo_raw_dat24 9900000256.000000
 _joy_lo_raw_dat25 0.725490
-_joy_lo_raw_dat26 0.737255
+_joy_lo_raw_dat26 0.545098
 _joy_lo_raw_dat27 0.000000
 _joy_lo_raw_dat28 9900000256.000000
 _joy_lo_raw_dat29 9900000256.000000
@@ -1254,9 +1255,9 @@ _joy_lo_raw_dat171 9900000256.000000
 _joy_lo_raw_dat172 9900000256.000000
 _joy_lo_raw_dat173 9900000256.000000
 _joy_lo_raw_dat174 9900000256.000000
-_joy_lo_raw_dat175 8999999488.000000
-_joy_lo_raw_dat176 0.682353
-_joy_lo_raw_dat177 0.725490
+_joy_lo_raw_dat175 0.564706
+_joy_lo_raw_dat176 0.552941
+_joy_lo_raw_dat177 0.000000
 _joy_lo_raw_dat178 9900000256.000000
 _joy_lo_raw_dat179 9900000256.000000
 _joy_lo_raw_dat180 9900000256.000000
@@ -1606,7 +1607,7 @@ _joy_hi_raw_dat23 -9900000256.000000
 _joy_hi_raw_dat24 -9900000256.000000
 _joy_hi_raw_dat25 1.000000
 _joy_hi_raw_dat26 1.000000
-_joy_hi_raw_dat27 0.000000
+_joy_hi_raw_dat27 0.823529
 _joy_hi_raw_dat28 -9900000256.000000
 _joy_hi_raw_dat29 -9900000256.000000
 _joy_hi_raw_dat30 -9900000256.000000
@@ -1754,7 +1755,7 @@ _joy_hi_raw_dat171 -9900000256.000000
 _joy_hi_raw_dat172 -9900000256.000000
 _joy_hi_raw_dat173 -9900000256.000000
 _joy_hi_raw_dat174 -9900000256.000000
-_joy_hi_raw_dat175 -8999999488.000000
+_joy_hi_raw_dat175 0.847059
 _joy_hi_raw_dat176 0.976471
 _joy_hi_raw_dat177 1.000000
 _joy_hi_raw_dat178 -9900000256.000000
@@ -1780,7 +1781,7 @@ _joy_hi_raw_dat197 -9900000256.000000
 _joy_hi_raw_dat198 -9900000256.000000
 _joy_hi_raw_dat199 -9900000256.000000
 _joy_hi_raw_dat200 0.498039
-_joy_hi_raw_dat201 0.498039
+_joy_hi_raw_dat201 0.501961
 _joy_hi_raw_dat202 -9900000256.000000
 _joy_hi_raw_dat203 -9900000256.000000
 _joy_hi_raw_dat204 -9900000256.000000
@@ -4658,6 +4659,8 @@ _joy_prat75 0.000000
 _joy_prat76 0.000000
 _joy_prat77 0.000000
 _joy_prat78 0.000000
+_joy_prat79 0.000000
+_joy_prat80 0.000000
 _axis_is_required0 0
 _axis_is_required1 0
 _axis_is_required2 0
@@ -4737,6 +4740,8 @@ _axis_is_required75 0
 _axis_is_required76 0
 _axis_is_required77 0
 _axis_is_required78 0
+_axis_is_required79 0
+_axis_is_required80 0
 _joy_AXIS_use0 0
 _joy_AXIS_use1 0
 _joy_AXIS_use2 0

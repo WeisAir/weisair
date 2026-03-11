@@ -120,7 +120,7 @@ fsx_variable_subscribe("ELECTRICAL MAIN BUS VOLTAGE", "Volts",
                        "L:Eng1_OilTemp", "Celsius",
                        "L:Eng1_OilPressure", "PSI", new_oil_fsx) 
                        
-fs2020_variable_subscribe("ELECTRICAL MAIN BUS VOLTAGE", "Volts",
+msfs_variable_subscribe("ELECTRICAL MAIN BUS VOLTAGE", "Volts",
                           "ENG OIL PRESSURE:1", "PSI",
                           "ENG OIL TEMPERATURE:1", "Fahrenheit", new_oil_fsx)                        
 ---------------------------------------------

@@ -55,41 +55,41 @@ function callback(direction)
   -- -1: When the dial is being turned anti-clockwise
 --  no function since this dial has to be turned manually
 if direction==-1 then 
-	rot=rot - 3
-		rotate(alt_alerter, rot)
-		rotate(dial_id, rot)
-	else
-		rot=rot+3
-		rotate(alt_alerter,rot)
-		rotate(dial_id, rot)
-	end
+    rot=rot - 3
+        rotate(alt_alerter, rot)
+        rotate(dial_id, rot)
+    else
+        rot=rot+3
+        rotate(alt_alerter,rot)
+        rotate(dial_id, rot)
+    end
 end
 
 if display_altalerter then
-	alt_alerter=img_add("alt_alerter.png", 0,0,size,size)
-	dial_id = dial_add("altknob.png", 420, 388, 85, 85,callback)	 
---	dial_id = dial_add("alt_alerter.png", 0,0,size,size,callback)
-	dial_click_rotate(dial_id, 3)
+    alt_alerter=img_add("alt_alerter.png", 0,0,size,size)
+    dial_id = dial_add("altknob.png", 420, 388, 85, 85,callback)     
+--    dial_id = dial_add("alt_alerter.png", 0,0,size,size,callback)
+    dial_click_rotate(dial_id, 3)
 end
 --------------------------
 --KOHLSMAN DIAL FUNCTIONS --
 function new_alt(alt)
 
-	if alt == -1 then
-		xpl_command("sim/instruments/barometer_down")
-		fsx_event("KOHLSMAN_DEC")
-		fs2020_event("KOHLSMAN_DEC")
-	elseif alt == 1 then
-		xpl_command("sim/instruments/barometer_up")
-		fsx_event("KOHLSMAN_INC")
-		fs2020_event("KOHLSMAN_INC")
-	end
+    if alt == 1 then
+        xpl_command("sim/instruments/barometer_down")
+        fsx_event("KOHLSMAN_DEC")
+        msfs_event("KOHLSMAN_DEC")
+    elseif alt == -1 then
+        xpl_command("sim/instruments/barometer_up")
+        fsx_event("KOHLSMAN_INC")
+        msfs_event("KOHLSMAN_INC")
+    end
 
 end
 
 function new_altitude(altitude, pressure)
     
-	k = (altitude/10000)*36
+    k = (altitude/10000)*36
     h = ( (altitude - math.floor(altitude/10000)*10000)/1000 )*36
     t = ( altitude - math.floor(altitude/10000)*10000 )*0.36
     
@@ -101,22 +101,22 @@ function new_altitude(altitude, pressure)
     hh = h/36
     tt = t/0.36-hh*1000
     
-	barset = var_cap(pressure, 29.1, 30.7)
-	
-	rotate(setdisk, (((barset - 29.1) * 160 / 1.6) * -1)+80)
+    barset = var_cap(pressure, 29.1, 30.7)
+    
+    rotate(setdisk, (((barset - 29.1) * 160 / 1.6) * -1)+80)
 end 
-	
+    
 -- DIALS ADD --
 if display_dial then
-	img_add("altknobshadow.png", 4,388, 85, 85)
-	dial_alt = dial_add("altknob.png", 4, 388, 85, 85, new_alt)
-	dial_click_rotate(dial_alt,1)
+    img_add("altknobshadow.png", 4,388, 85, 85)
+    dial_alt = dial_add("altknob.png", 4, 388, 85, 85, new_alt)
+    dial_click_rotate(dial_alt,1)
 end  
 
 ------ DATAREF SUBSCRIPTION -----
 xpl_dataref_subscribe("sim/cockpit2/gauges/indicators/altitude_ft_pilot", "FLOAT",
-					  "sim/cockpit/misc/barometer_setting", "FLOAT", new_altitude)
+                      "sim/cockpit/misc/barometer_setting", "FLOAT", new_altitude)
 fsx_variable_subscribe("INDICATED ALTITUDE", "Feet",
-					   "KOHLSMAN SETTING HG", "inHg", new_altitude)
-fs2020_variable_subscribe("INDICATED ALTITUDE", "Feet",
-					      "KOHLSMAN SETTING HG", "inHg", new_altitude)					   
+                       "KOHLSMAN SETTING HG", "inHg", new_altitude)
+msfs_variable_subscribe("INDICATED ALTITUDE", "Feet",
+                        "KOHLSMAN SETTING HG", "inHg", new_altitude)                       

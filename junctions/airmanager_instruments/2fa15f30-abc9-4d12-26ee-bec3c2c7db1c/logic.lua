@@ -3,6 +3,7 @@
 local prop_command = user_prop_add_string("Command", "sim/none/none", "the command sent if the button is pressed")
 --local prop_command_type = user_prop_add_enum("Command type", "once,begin,end","once", "the type of the command according to XPLANE docs")
 local prop_lable_text = user_prop_add_string("Button Lable Text", "SYS", "the lable text printed on the button")
+local prop_lable_font_size = user_prop_add_integer("Font Size", 1,200,27, "the lable text font size")
 
 --geometry and style settings
 
@@ -13,7 +14,8 @@ local lable_text_width = instrument_width
 local lable_text_height = instrument_height
 local lable_text_x = 0
 local lable_text_y = 0
-local lable_text_style = "font: arimo_bold.ttf; size:27; color: white; halign:center; valign:center"
+
+local lable_text_style = "font: arimo_bold.ttf; size: " .. tostring(user_prop_get(prop_lable_font_size)) ..  " ; color: white; halign:center; valign:center;"
 
 --add button
 function pressed_callback()

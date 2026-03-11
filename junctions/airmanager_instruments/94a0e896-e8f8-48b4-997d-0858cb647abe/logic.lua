@@ -32,7 +32,7 @@ end
 img_horbar = img_add("OBSneedle.png",0,-180,512,512)
 img_verbar = img_add("OBSneedle.png",-150,0,512,512)
 rotate(img_verbar, -90)
-img_compring = img_add_fullscreen("OBScard.png")
+img_compring = img_add_fullscreen("OBScard.png", "rotate_animation_type: LOG; rotate_animation_speed: 0.08; rotate_animation_direction: FASTEST")
 img_add_fullscreen("OBScover.png")
 img_add("OBSknobshadow.png",31,395,85,85)
 
@@ -51,21 +51,21 @@ function new_obs(obs)
         if user_prop_get(prop_VOR) == "VOR 1" then
             xpl_command("sim/radios/obs1_down")
             fsx_event("VOR1_OBI_DEC")
-            fs2020_event("VOR1_OBI_DEC")
+            msfs_event("VOR1_OBI_DEC")
         else
             xpl_command("sim/radios/copilot_obs2_down")
             fsx_event("VOR2_OBI_DEC")
-            fs2020_event("VOR2_OBI_DEC")
+            msfs_event("VOR2_OBI_DEC")
         end
     elseif obs == -1 then
         if user_prop_get(prop_VOR) == "VOR 1" then
             xpl_command("sim/radios/obs1_up")
             fsx_event("VOR1_OBI_INC")
-            fs2020_event("VOR1_OBI_INC")
+            msfs_event("VOR1_OBI_INC")
         else
             xpl_command("sim/radios/copilot_obs2_up")
             fsx_event("VOR2_OBI_INC")
-            fs2020_event("VOR2_OBI_INC")
+            msfs_event("VOR2_OBI_INC")
         end
     end
 
@@ -142,7 +142,13 @@ end
 ---------------------------------------------
 dial_obs = dial_add("obsknob.png", 31, 395, 85, 85, 5, new_obs)
 dial_click_rotate(dial_obs, 6)
-hw_dial_add("OBS dial", 5, new_obs)
+-- Detent settings
+detent_settings = {}
+detent_settings["1 detent/pulse"]  = "TYPE_1_DETENT_PER_PULSE"
+detent_settings["2 detents/pulse"] = "TYPE_2_DETENT_PER_PULSE"
+detent_settings["4 detents/pulse"] = "TYPE_4_DETENT_PER_PULSE"
+detent_setting = user_prop_add_enum("Detent setting", "1 detent/pulse,2 detents/pulse, 4 detents/pulse", "2 detents/pulse", "Select your rotary encoder type")
+hw_dial_add("OBS dial", detent_settings[user_prop_get(detent_setting)], 3, new_obs)
 ---------------------------------------------
 --   Simulator Subscriptions               --
 ---------------------------------------------
@@ -161,20 +167,20 @@ fsx_variable_subscribe("NAV OBS:1", "Degrees",
                        "NAV GS FLAG:1", "Bool",
                        "NAV GS FLAG:2", "Bool", new_data_fs)
 
-fs2020_variable_subscribe("NAV OBS:1", "Degrees",
-                          "NAV OBS:2", "Degrees",
+msfs_variable_subscribe("NAV OBS:1", "Degrees",
+                        "NAV OBS:2", "Degrees",
                           
-                          "NAV CDI:1", "Number", 
-                          "NAV CDI:2", "Number",
+                        "NAV CDI:1", "Number", 
+                        "NAV CDI:2", "Number",
                           
-                          "NAV GSI:1", "Number",
-                          "NAV GSI:2", "Number", 
+                        "NAV GSI:1", "Number",
+                        "NAV GSI:2", "Number", 
                           
-                          "NAV TOFROM:1", "Enum",
-                          "NAV TOFROM:2", "Enum", 
+                        "NAV TOFROM:1", "Enum",
+                        "NAV TOFROM:2", "Enum", 
                           
-                          "NAV GS FLAG:1", "Bool",
-                          "NAV GS FLAG:2", "Bool", new_data_fs)
+                        "NAV GS FLAG:1", "Bool",
+                        "NAV GS FLAG:2", "Bool", new_data_fs)
 
 xpl_dataref_subscribe("sim/cockpit/radios/nav1_obs_degm", "FLOAT",
                       "sim/cockpit/radios/nav2_obs_degm2", "FLOAT", 

@@ -16,14 +16,14 @@ prop_DO = user_prop_add_boolean("Dimming Overlay",false,"Use Dimming overlay")
 --   Load and display images in Z-order    --
 --   Loaded images selectable with prop    --
 ---------------------------------------------
-as_card = img_add_fullscreen("aircard.png")
+as_card = img_add_fullscreen("aircard.png", "rotate_animation_type: LOG; rotate_animation_speed: 0.08; rotate_animation_direction: FASTEST")
 if user_prop_get(prop_BG) == false then
     img_add_fullscreen("airspeed.png")
     img_add_fullscreen("Bezel.png")    
 else
     img_add_fullscreen("airspeedwBG.png")
 end    
-as_needle =  img_add("needle.png",0,0,512,512)
+as_needle =  img_add("needle.png",0,0,512,512, "rotate_animation_type: LOG; rotate_animation_speed: 0.08")
 img_add("airknobshadow.png",31,400,85,85)
 card = 0
 if user_prop_get(prop_DO) == true then
@@ -88,7 +88,13 @@ end
 ---------------------------------------------
 dial_knob = dial_add("airknob.png", 31, 395, 85, 85, new_knob)
 dial_click_rotate(dial_knob,6)
-hw_dial_add("KIAS/TAS card dial", 3, new_knob)
+-- Detent settings
+detent_settings = {}
+detent_settings["1 detent/pulse"]  = "TYPE_1_DETENT_PER_PULSE"
+detent_settings["2 detents/pulse"] = "TYPE_2_DETENT_PER_PULSE"
+detent_settings["4 detents/pulse"] = "TYPE_4_DETENT_PER_PULSE"
+detent_setting = user_prop_add_enum("Detent setting", "1 detent/pulse,2 detents/pulse, 4 detents/pulse", "2 detents/pulse", "Select your rotary encoder type")
+hw_dial_add("KIAS/TAS card dial", detent_settings[user_prop_get(detent_setting)], 3, new_knob)
 ---------------------------------------------
 --   Simulator Subscriptions               --
 ---------------------------------------------
@@ -97,8 +103,8 @@ xpl_dataref_subscribe("sim/cockpit2/gauges/indicators/airspeed_kts_pilot", "FLOA
 fsx_variable_subscribe("AIRSPEED INDICATED", "knots", 
                        "L:AirspeedIndicatedNeedle", "number", new_speed_fsx)
 
-fs2020_variable_subscribe("AIRSPEED INDICATED", "knots",
-                          "L:AirspeedIndicatedNeedle", "number", new_speed_fsx)
+msfs_variable_subscribe("AIRSPEED INDICATED", "knots",
+                        "L:AirspeedIndicatedNeedle", "number", new_speed_fsx)
 ---------------------------------------------
 -- END       Airspeed Indicator            --
 ---------------------------------------------

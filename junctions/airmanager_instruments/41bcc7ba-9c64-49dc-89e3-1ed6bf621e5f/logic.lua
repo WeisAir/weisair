@@ -221,9 +221,9 @@ end
 
 -- Dataref and variable subscribe --
 xpl_dataref_subscribe("sim/cockpit2/gauges/indicators/heading_electric_deg_mag_pilot", "FLOAT",
-                      "sim/cockpit2/gauges/indicators/roll_electric_deg_pilot", "FLOAT",
-                      "sim/cockpit2/gauges/indicators/pitch_electric_deg_pilot", "FLOAT",
-                      "sim/cockpit2/gauges/indicators/airspeed_kts_pilot", "FLOAT",
+                      "sim/cockpit2/gauges/indicators/roll_AHARS_deg_pilot", "FLOAT",
+                      "sim/cockpit2/gauges/indicators/pitch_AHARS_deg_pilot", "FLOAT",
+                      "sim/cockpit2/gauges/indicators/airspeed_kts_stby", "FLOAT",
                       "sim/flightmodel/misc/h_ind", "FLOAT",
                       "sim/cockpit2/gauges/actuators/barometer_setting_in_hg_pilot", "FLOAT", new_data)
 fsx_variable_subscribe("PLANE HEADING DEGREES MAGNETIC", "Degrees",
@@ -232,7 +232,7 @@ fsx_variable_subscribe("PLANE HEADING DEGREES MAGNETIC", "Degrees",
                        "AIRSPEED INDICATED", "Knots",
                        "PRESSURE ALTITUDE", "Feet",
                        "KOHLSMAN SETTING HG", "inHg", new_data_fsx)       
-fs2020_variable_subscribe("PLANE HEADING DEGREES MAGNETIC", "Degrees",
+msfs_variable_subscribe("PLANE HEADING DEGREES MAGNETIC", "Degrees",
                           "ATTITUDE INDICATOR BANK DEGREES", "Degrees", 
                           "ATTITUDE INDICATOR PITCH DEGREES", "Degrees", 
                           "AIRSPEED INDICATED", "Knots",

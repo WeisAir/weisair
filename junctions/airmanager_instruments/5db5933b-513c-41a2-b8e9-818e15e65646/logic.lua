@@ -6,7 +6,7 @@
 prop_bezel = user_prop_add_boolean("Bezel", true, "Show the bezel and screws")
 
 img_add_fullscreen("bezel_background.png", "visible:" .. tostring(user_prop_get(prop_bezel)) )
-img_baro_scale = img_add("baro_scale.png", 25, 25, 500, 500)
+img_baro_scale = img_add("baro_scale.png", 25, 25, 500, 500, "rotate_animation_type: LOG; rotate_animation_speed: 0.08")
 img_add("background.png", 25, 25, 500, 500)
 img_10000ft = img_add("10000ftpointer.png", 115, 115, 320, 320)
 img_1000ft = img_add("1000ftneedle.png", 225, 0, 100, 500)
@@ -38,19 +38,19 @@ xpl_dataref_subscribe("sim/flightmodel/misc/h_ind", "FLOAT",
                       "sim/cockpit2/gauges/actuators/barometer_setting_in_hg_pilot", "FLOAT", new_data)
 fsx_variable_subscribe("INDICATED ALTITUDE", "Feet",
                        "KOHLSMAN SETTING HG", "inHg", new_data)
-fs2020_variable_subscribe("INDICATED ALTITUDE", "Feet",
-                          "KOHLSMAN SETTING HG", "inHg", new_data)
+msfs_variable_subscribe("INDICATED ALTITUDE", "Feet",
+                        "KOHLSMAN SETTING HG", "inHg", new_data)
 
 function new_baro(alt)
 
     if alt == 1 then
         xpl_command("sim/instruments/barometer_down")
         fsx_event("KOHLSMAN_DEC")
-        fs2020_event("KOHLSMAN_DEC")
+        msfs_event("KOHLSMAN_DEC")
     elseif alt == -1 then
         xpl_command("sim/instruments/barometer_up")
         fsx_event("KOHLSMAN_INC")
-        fs2020_event("KOHLSMAN_INC")
+        msfs_event("KOHLSMAN_INC")
     end
 
 end
@@ -62,7 +62,7 @@ detent_settings["1 detent/pulse"]  = "TYPE_1_DETENT_PER_PULSE"
 detent_settings["2 detents/pulse"] = "TYPE_2_DETENT_PER_PULSE"
 detent_settings["4 detents/pulse"] = "TYPE_4_DETENT_PER_PULSE"
 
-baro_rotary_setting = user_prop_add_enum("Baro setting", "1 detent/pulse,2 detents/pulse, 4 detents/pulse", "2 detents/pulse", "Select your rotary encoder type")
+baro_rotary_setting = user_prop_add_enum("Detent setting", "1 detent/pulse,2 detents/pulse, 4 detents/pulse", "2 detents/pulse", "Select your rotary encoder type")
 
 hw_dial_add("Baro dial", detent_settings[user_prop_get(baro_rotary_setting)], 2, new_baro)
 dial_baro = dial_add(nil, 0, 428, 122, 122, new_baro)

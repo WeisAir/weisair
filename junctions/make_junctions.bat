@@ -30,3 +30,4 @@ mklink /j "C:\Users\Pilot\Air Manager\panels\OPEN_DIRECTORY" "G:\weisair\junctio
 REM DELETE JUNCTIONS
 
 REM rmdir <junctionlink>
+

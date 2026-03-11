@@ -17,8 +17,8 @@ prop_DO = user_prop_add_boolean("Dimming Overlay",false,"Enable dimming overlay?
 --   Loaded images selectable with prop    --
 ---------------------------------------------
 img_add_fullscreen("DualFuel.png")
-img_lt_fuel = img_add("needle3.png", -142, 0, 512, 512)
-img_rt_fuel = img_add("needle3.png", 142, 0, 512, 512)
+img_lt_fuel = img_add("needle3.png", -142, 0, 512, 512, "angle_z: 145; rotate_animation_type: LOG; rotate_animation_speed: 0.1")
+img_rt_fuel = img_add("needle3.png", 142, 0, 512, 512, "angle_z: 215; rotate_animation_type: LOG; rotate_animation_speed: 0.1")
 if user_prop_get(prop_BG) == false then
     img_add_fullscreen("DualFuelCover.png")
 else
@@ -27,18 +27,6 @@ end
 if user_prop_get(prop_DO) == true then
     img_add_fullscreen("dimoverlay.png")
 end
-
-
------------------------------------------
--- Init: default visibility & rotation --
------------------------------------------
-local left        = 0
-local right        = 0
-local cur_left     = 0
-local cur_right    = 0
-local speedl    = 0.5
-local speedr    = 0.5
-local factor    = 0.045
 
 ---------------------------------------------
 --   Functions                             --
@@ -60,6 +48,9 @@ function new_fuel(quan, bus_volts, fuel_L_AFL, fuel_R_AFL)
         left = 0
         right = 0
     end
+    
+    rotate(img_lt_fuel, 145 - (left * 4.23))
+    rotate(img_rt_fuel, 215 + (right * 4.23))
 
 end
 
@@ -75,58 +66,24 @@ function new_fuel_fsx(lefttank_FSX, righttank_FSX, lefttank_A2A, righttank_A2A, 
         left = 0
         right = 0
     end
+    
+    rotate(img_lt_fuel, 145 - (left * 4.23))
+    rotate(img_rt_fuel, 215 + (right * 4.23))
 
 end
 
-function timer_callback()    
-    rotate(img_lt_fuel , 145 - (cur_left    * 4.23))
-    rotate(img_rt_fuel , 215 + (cur_right    * 4.23))
-    
-    
-    if (cur_left < left) then
-        diff = left - cur_left
-        if (diff < 0.001) then
-            speedl = 0
-            cur_left = left
-        else
-            speedl = diff * factor
-        end
-        cur_left = cur_left + speedl
-    elseif (cur_left > left) then
-        diff = cur_left - left
-        if (diff < 0.001) then
-            speedl = 0
-            cur_left = left
-        else
-            speedl = diff * factor
-        end
-        cur_left = cur_left - speedl
-    else
-    
+function new_fuel_msfs(left, right, volts)
+
+
+    if volts < 10 then
+        left = 0
+        right = 0
     end
     
-    if (cur_right < right) then
-        diff = right - cur_right
-        if (diff < 0.001) then
-            speedr = 0
-            cur_right = right
-        else
-            speedr = diff * factor
-        end
-        cur_right = cur_right + speedr
-    elseif (cur_right > right) then
-        diff = cur_right - right
-        if (diff < 0.001) then
-            speedr = 0
-            cur_right = right
-        else
-            speedr = diff * factor
-        end
-        cur_right = cur_right - speedr
-    else
-    end
-    end
-  timer_start(0, 50, timer_callback)
+    rotate(img_lt_fuel, 145 - (left * 4.23))
+    rotate(img_rt_fuel, 215 + (right * 4.23))
+
+end
 
 ---------------------------------------------
 --   Simulator Subscriptions               --
@@ -144,9 +101,11 @@ fsx_variable_subscribe("FUEL TANK LEFT MAIN QUANTITY", "gallons",
                        
 fs2020_variable_subscribe("FUEL TANK LEFT MAIN QUANTITY", "gallons",
                           "FUEL TANK RIGHT MAIN QUANTITY", "gallons", 
-                          "L:FuelLeftWingTank", "gallons",
-                          "L:FuelRightWingTank", "gallons", 
-                          "ELECTRICAL MAIN BUS VOLTAGE", "VOLTS", new_fuel_fsx)                       
+                          "ELECTRICAL MAIN BUS VOLTAGE", "VOLTS", new_fuel_msfs)
+
+fs2024_variable_subscribe("FUEL TANK LEFT MAIN QUANTITY", "gallons",
+                          "FUEL TANK RIGHT MAIN QUANTITY", "gallons", 
+                          "ELECTRICAL BUS VOLTAGE:1", "VOLTS", new_fuel_msfs)
 ---------------------------------------------
 --   END                                   --
 ---------------------------------------------                       

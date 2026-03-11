@@ -146,7 +146,7 @@ fsx_variable_subscribe("ELECTRICAL MAIN BUS VOLTAGE", "Volts",
                        "L:Eng1_GPH", "gallons",
                        "L:Eng1_EGTGauge", "number", new_values_fsx)
                        
-fs2020_variable_subscribe("ELECTRICAL MAIN BUS VOLTAGE", "Volts",
+msfs_variable_subscribe("ELECTRICAL MAIN BUS VOLTAGE", "Volts",
                           "GENERAL ENG EXHAUST GAS TEMPERATURE:1", "fahrenheit", 
                           "ENG FUEL FLOW GPH:1", "Gallons per hour",
                           "L:Eng1_GPH", "gallons",

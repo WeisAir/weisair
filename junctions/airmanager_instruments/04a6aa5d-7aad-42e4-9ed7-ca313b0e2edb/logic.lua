@@ -33,7 +33,7 @@ if user_prop_get(prop_BG) == false then
 else
     img_add_fullscreen("ADFwBG.png")
 end  
-rose = img_add_fullscreen("OBScard.png")
+rose = img_add_fullscreen("OBScard.png", "rotate_animation_type: LOG; rotate_animation_speed: 0.08; rotate_animation_direction: FASTEST")
 yellow_needle = img_add_fullscreen("ADFneedle.png")
 img_add_fullscreen("ADFcover.png")
 if user_prop_get(prop_DO) == true then
@@ -57,11 +57,11 @@ function new_hdg(hdg)
         if hdg == 1 then
             xpl_command("sim/radios/adf1_card_down")
             fsx_event("ADF_CARD_DEC")
-            fs2020_event("ADF_CARD_DEC")
+            msfs_event("ADF_CARD_DEC")
         elseif hdg == -1 then
             xpl_command("sim/radios/adf1_card_up")
             fsx_event("ADF_CARD_INC")
-            fs2020_event("ADF_CARD_INC")
+            msfs_event("ADF_CARD_INC")
         end
     end
 end
@@ -208,7 +208,7 @@ end
 -- Slowly move needle to current bearing --
 function timer_callback()
     if user_prop_get(prop_DIP) == true then
-        rotate(yellow_needle, current_bearing)
+        
     
         raw_diff = (360 + target_bearing - current_bearing) %360
         diff = fif(raw_diff < 180, raw_diff, (360 - raw_diff) * -1)
@@ -220,33 +220,36 @@ end
 --   Controls Add                          --
 ---------------------------------------------
 if user_prop_get(prop_RMI) == false then
+    -- Detent settings
+    detent_settings = {}
+    detent_settings["1 detent/pulse"]  = "TYPE_1_DETENT_PER_PULSE"
+    detent_settings["2 detents/pulse"] = "TYPE_2_DETENT_PER_PULSE"
+    detent_settings["4 detents/pulse"] = "TYPE_4_DETENT_PER_PULSE"
+    detent_setting = user_prop_add_enum("Detent setting", "1 detent/pulse,2 detents/pulse, 4 detents/pulse", "2 detents/pulse", "Select your rotary encoder type")
     dial_hdg = dial_add("adfknob.png", 33, 400, 85, 85, 5, new_hdg)
     dial_click_rotate(dial_hdg, 6)
-    hw_dial_add("ADF heading dial", 5, new_hdg)
+    hw_dial_add("ADF heading dial", detent_settings[user_prop_get(detent_setting)], 3, new_hdg)
 end
 ---------------------------------------------
 --   Simulator Subscriptions               --
 ---------------------------------------------
 xpl_dataref_subscribe("sim/cockpit/gyros/psi_ind_elec_pilot_degm", "FLOAT", new_rotation)
 fsx_variable_subscribe("HEADING INDICATOR", "degrees", new_rotation)
-fs2020_variable_subscribe("HEADING INDICATOR", "degrees", new_rotation)
+msfs_variable_subscribe("HEADING INDICATOR", "degrees", new_rotation)
 
 xpl_dataref_subscribe("sim/cockpit/radios/adf1_cardinal_dir", "FLOAT",
                       "sim/cockpit2/radios/indicators/adf1_relative_bearing_deg", "FLOAT", new_adf)
 fsx_variable_subscribe("ADF CARD", "Degrees",
                        "ADF RADIAL:1", "Degrees", new_adf)
-fs2020_variable_subscribe("ADF CARD", "Degrees",
-                          "ADF RADIAL:1", "Degrees", new_adf)
-                       
---sim/cockpit2/radios/indicators/adf1_relative_bearing_deg
---sim/cockpit2/gauges/indicators/roll_electric_deg_pilot
+msfs_variable_subscribe("ADF CARD", "Degrees",
+                        "ADF RADIAL:1", "Degrees", new_adf)
 xpl_dataref_subscribe("sim/cockpit/radios/adf1_cardinal_dir", "FLOAT",
     "sim/cockpit2/radios/indicators/adf1_relative_bearing_deg", "FLOAT", 
     "sim/cockpit2/gauges/indicators/roll_electric_deg_pilot", "FLOAT",
     new_adfdipped)
  
 -- Timers --
-tmr_update = timer_start(0, 50, timer_callback)
+tmr_update = timer_start(0, 20, timer_callback)
                       
 ---------------------------------------------
 -- END       ADF gauge                     --

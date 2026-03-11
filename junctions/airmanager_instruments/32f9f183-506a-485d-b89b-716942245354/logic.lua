@@ -175,8 +175,8 @@ fsx_variable_subscribe("L:Eng1_RPM", "RPM",
 fsx_variable_subscribe("GENERAL ENG ELAPSED TIME:1", "hours",
                        "L:Counter1Hours", "hours", flight_time_fsx)
         
-fs2020_variable_subscribe("GENERAL ENG RPM:1", "rpm", rpm_fs2020)
-fs2020_variable_subscribe("GENERAL ENG ELAPSED TIME:1", "hours", flight_time_fs2020)
+msfs_variable_subscribe("GENERAL ENG RPM:1", "rpm", rpm_fs2020)
+msfs_variable_subscribe("GENERAL ENG ELAPSED TIME:1", "hours", flight_time_fs2020)
         
 ---------------------------------------------
 -- END                                     --

@@ -66,22 +66,22 @@ function new_knob_gyro(direction)
     if direction == -1 then
         xpl_command("sim/instruments/DG_sync_up")
         fsx_event("GYRO_DRIFT_INC")
-		fs2020_event("GYRO_DRIFT_INC")
+		msfs_event("GYRO_DRIFT_INC")
     elseif direction == 1 then
         xpl_command("sim/instruments/DG_sync_down")
         fsx_event("GYRO_DRIFT_DEC")
-		fs2020_event("GYRO_DRIFT_DEC")
+		msfs_event("GYRO_DRIFT_DEC")
     end
 end
 
 function new_knob_hdg(value)
     if value == 1 then
         fsx_event("HEADING_BUG_INC")
-		fs2020_event("HEADING_BUG_INC")
+		msfs_event("HEADING_BUG_INC")
         xpl_command("sim/autopilot/heading_up")
     elseif value == -1 then
         fsx_event("HEADING_BUG_DEC")
-		fs2020_event("HEADING_BUG_DEC")
+		msfs_event("HEADING_BUG_DEC")
         xpl_command("sim/autopilot/heading_down")
     end
 
@@ -203,14 +203,14 @@ fsx_variable_subscribe("PARTIAL PANEL VACUUM", "Enum",
                        "SUCTION PRESSURE", "Inches of Mercury", new_vacfail_fsx)                           
      
 
-fs2020_variable_subscribe("HEADING INDICATOR", "degrees", new_rotation)
+msfs_variable_subscribe("HEADING INDICATOR", "degrees", new_rotation)
 
-fs2020_variable_subscribe("HEADING INDICATOR", "degrees",
+msfs_variable_subscribe("HEADING INDICATOR", "degrees",
                           "AUTOPILOT HEADING LOCK DIR", "degrees",
                           "L:HeadingGyro", "degrees", 
                           "L:AutopilotHeadingBug", "number", new_headbug_fsx)
                        
-fs2020_variable_subscribe("PARTIAL PANEL VACUUM", "Enum",
+msfs_variable_subscribe("PARTIAL PANEL VACUUM", "Enum",
                           "SUCTION PRESSURE", "Inches of Mercury", new_vacfail_fsx) 
 					   
 ---------------------------------------------

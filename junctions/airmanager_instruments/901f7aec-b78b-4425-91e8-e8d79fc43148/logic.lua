@@ -29,7 +29,7 @@ fsx_variable_subscribe("GENERAL ENG RPM:1", "RPM",
 
 end)
 
-fs2020_variable_subscribe("GENERAL ENG RPM:1", "RPM",
+msfs_variable_subscribe("GENERAL ENG RPM:1", "RPM",
                           "GENERAL ENG RPM:2", "RPM", function(rpm_left, rpm_right)
 
     rpm_left  = var_cap(rpm_left, 477, 3000)

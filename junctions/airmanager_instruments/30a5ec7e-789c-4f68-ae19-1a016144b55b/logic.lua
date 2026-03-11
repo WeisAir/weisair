@@ -27,11 +27,11 @@ img_add("markings.png",30,30,270,270)
 function dial_it(direction)  
     if direction == 1 then
         fsx_event("KOHLSMAN_INC")
-        fs2020_event("KOHLSMAN_INC")
+        msfs_event("KOHLSMAN_INC")
         xpl_command("sim/instruments/barometer_up")
     elseif direction == -1 then
         fsx_event("KOHLSMAN_DEC")
-        fs2020_event("KOHLSMAN_DEC")
+        msfs_event("KOHLSMAN_DEC")
         xpl_command("sim/instruments/barometer_down")
     end
 end
@@ -291,7 +291,7 @@ fsx_variable_subscribe("INDICATED ALTITUDE", "Feet",
                        "ELECTRICAL MASTER BATTERY", "BOOLEAN", 
                        "AUTOPILOT ALTITUDE LOCK VAR", "Feet", new_fsx_data)
                        
-fs2020_variable_subscribe("INDICATED ALTITUDE", "Feet",
+msfs_variable_subscribe("INDICATED ALTITUDE", "Feet",
                           "KOHLSMAN SETTING HG", "inHg", 
                           "KOHLSMAN SETTING MB", "Millibars",
                           "ELECTRICAL MASTER BATTERY", "BOOLEAN", 

@@ -101,8 +101,8 @@ fsx_variable_subscribe("SUCTION PRESSURE", "Inches of Mercury",
 fsx_variable_subscribe("ELECTRICAL BATTERY BUS AMPS", "Amperes",
                        "L:Ammeter1", "amps", new_amps_fsx)
                        
-fs2020_variable_subscribe("SUCTION PRESSURE", "Inches of Mercury", new_vac_fsx)
-fs2020_variable_subscribe("ELECTRICAL BATTERY BUS AMPS", "Amperes", new_amps_fs2020)                       
+msfs_variable_subscribe("SUCTION PRESSURE", "Inches of Mercury", new_vac_fsx)
+msfs_variable_subscribe("ELECTRICAL BATTERY BUS AMPS", "Amperes", new_amps_fs2020)                       
 ---------------------------------------------
 --   END                                   --
 ---------------------------------------------                                 

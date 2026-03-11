@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "C:/Users/Pilot/Air Manager"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"favorites.resources": [
+			{
+				"filePath": "g:\\weisair\\junctions\\Scripts\\arcaze_scripts",
+				"group": "Default"
+			},
+			{
+				"filePath": "g:\\weisair\\junctions\\Scripts\\weisair_scripts",
+				"group": "Default"
+			},
+			{
+				"filePath": "g:\\weisair\\junctions\\Scripts\\myarcaze.lua",
+				"group": "Default"
+			}
+		]
+	}
+}

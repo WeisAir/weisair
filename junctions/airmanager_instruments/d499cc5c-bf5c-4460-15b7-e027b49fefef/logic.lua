@@ -64,3 +64,7 @@ fs2020_variable_subscribe("ELECTRICAL BATTERY VOLTAGE:1", "Volts",
                           "ELECTRICAL MAIN BUS VOLTAGE:1", "Volts",
                           "GENERAL ENG RPM:1", "RPM", 
                           "ROTOR RPM PCT", "Percent", new_data_fs)
+fs2024_variable_subscribe("ELECTRICAL BATTERY VOLTAGE:1", "Volts",
+                          "ELECTRICAL BUS VOLTAGE:1", "Volts",
+                          "GENERAL ENG RPM:1", "RPM", 
+                          "ROTOR RPM PCT", "Percent", new_data_fs)

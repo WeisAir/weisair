@@ -1,6 +1,7 @@
 I
 10 Version
 _require_faa_checks 1
+_discretize_flap_axis 0
 _eq_pfc_ailn_trim 0
 _eq_pfc_rudd_trim 0
 _eq_pfc_elev_trim 0
@@ -47,7 +48,7 @@ _joy_location3 \\?\hid#vid_1690&pid_fe13&mi_01#8&382d058e&0&0000#{4d1e55b2-f16f-
 _joy_location4 \\?\hid#vid_06a3&pid_0763#9&227446d9&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
 _joy_location5 \\?\hid#vid_1690&pid_fe13&mi_02#9&dbb10c4&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
 _joy_location6 \\?\hid#vid_1690&pid_fe13&mi_02#9&7c0bbfb&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
-_joy_location7 \\?\hid#vid_06a3&pid_0c2d#6&2fd718fc&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+_joy_location7 \\?\hid#vid_06a3&pid_0c2d#a&21be3a2c&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
 _joy_location8 \\?\hid#vid_294b&pid_1900#6&2969e354&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
 _joy_location9 \\?\hid#vid_1690&pid_fe13&mi_01#8&2130ef7&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
 _joy_location10 \\?\hid#vid_1690&pid_fe13&mi_01#9&1f844840&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
@@ -66,7 +67,7 @@ _joy_lru_time3 1697399442
 _joy_lru_time4 1752487128
 _joy_lru_time5 1697399442
 _joy_lru_time6 1697399442
-_joy_lru_time7 1753439356
+_joy_lru_time7 1772563902
 _joy_lru_time8 1752487128
 _joy_lru_time9 0
 _joy_lru_time10 0
@@ -4658,6 +4659,8 @@ _joy_prat75 0.000000
 _joy_prat76 0.000000
 _joy_prat77 0.000000
 _joy_prat78 0.000000
+_joy_prat79 0.000000
+_joy_prat80 0.000000
 _axis_is_required0 0
 _axis_is_required1 0
 _axis_is_required2 0
@@ -4737,6 +4740,8 @@ _axis_is_required75 0
 _axis_is_required76 0
 _axis_is_required77 0
 _axis_is_required78 0
+_axis_is_required79 0
+_axis_is_required80 0
 _joy_AXIS_use0 0
 _joy_AXIS_use1 0
 _joy_AXIS_use2 0
@@ -4762,9 +4767,9 @@ _joy_AXIS_use21 0
 _joy_AXIS_use22 0
 _joy_AXIS_use23 0
 _joy_AXIS_use24 0
-_joy_AXIS_use25 4
+_joy_AXIS_use25 0
 _joy_AXIS_use26 0
-_joy_AXIS_use27 14
+_joy_AXIS_use27 0
 _joy_AXIS_use28 0
 _joy_AXIS_use29 0
 _joy_AXIS_use30 0
@@ -4913,8 +4918,8 @@ _joy_AXIS_use172 0
 _joy_AXIS_use173 0
 _joy_AXIS_use174 0
 _joy_AXIS_use175 0
-_joy_AXIS_use176 0
-_joy_AXIS_use177 0
+_joy_AXIS_use176 4
+_joy_AXIS_use177 14
 _joy_AXIS_use178 0
 _joy_AXIS_use179 0
 _joy_AXIS_use180 0
@@ -8567,8 +8572,12 @@ _joy_AXIS_cmnd720 sim/none/none
 _joy_AXIS_cmnd721 sim/none/none
 _joy_AXIS_cmnd800 sim/none/none
 _joy_AXIS_cmnd801 sim/none/none
+_joy_AXIS_cmnd802 sim/none/none
+_joy_AXIS_cmnd803 sim/none/none
 _joy_AXIS_cmnd804 sim/none/none
 _joy_AXIS_cmnd805 sim/none/none
+_joy_AXIS_cmnd806 sim/none/none
+_joy_AXIS_cmnd807 sim/none/none
 _joy_AXIS_cmnd808 sim/none/none
 _joy_AXIS_cmnd809 sim/none/none
 _joy_AXIS_cmnd810 sim/none/none

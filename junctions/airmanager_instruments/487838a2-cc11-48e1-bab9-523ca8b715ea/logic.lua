@@ -83,9 +83,9 @@ fsx_variable_subscribe("TURN COORDINATOR BALL", "Position", new_ball_deflection_
 fsx_variable_subscribe("TURN INDICATOR RATE", "Radians", new_turnrate_fsx)
 fsx_variable_subscribe("ELECTRICAL MAIN BUS VOLTAGE", "volts", new_battery_fsx)
 
-fs2020_variable_subscribe("TURN COORDINATOR BALL", "Position", new_ball_deflection_fs2020)
-fs2020_variable_subscribe("TURN INDICATOR RATE", "Radians", new_turnrate_fsx)
-fs2020_variable_subscribe("ELECTRICAL MAIN BUS VOLTAGE", "volts", new_battery_fsx)
+msfs_variable_subscribe("TURN COORDINATOR BALL", "Position", new_ball_deflection_fs2020)
+msfs_variable_subscribe("TURN INDICATOR RATE", "Radians", new_turnrate_fsx)
+msfs_variable_subscribe("ELECTRICAL MAIN BUS VOLTAGE", "volts", new_battery_fsx)
 
 ---------------------------------------------
 -- END       Turn & Slip                   --

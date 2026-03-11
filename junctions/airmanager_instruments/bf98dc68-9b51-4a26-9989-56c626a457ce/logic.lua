@@ -135,7 +135,7 @@ fsx_variable_subscribe("PLANE HEADING DEGREES GYRO", "DEGREES",
 					   "ADF RADIAL:2", "DEGREES", 
 					   "GENERAL ENG COMBUSTION:1", "BOOLEAN", 
 					   "GENERAL ENG COMBUSTION:2", "BOOLEAN", new_data_fsx)
-fs2020_variable_subscribe("PLANE HEADING DEGREES GYRO", "DEGREES", 
+msfs_variable_subscribe("PLANE HEADING DEGREES GYRO", "DEGREES", 
 					      "NAV RELATIVE BEARING TO STATION:1", "DEGREES", 
 					      "NAV RELATIVE BEARING TO STATION:2", "DEGREES", 
 					      "ADF RADIAL:1", "DEGREES", 

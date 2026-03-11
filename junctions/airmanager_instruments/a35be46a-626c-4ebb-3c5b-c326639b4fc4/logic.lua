@@ -10,6 +10,6 @@ xpl_dataref_subscribe("sim/flightmodel2/controls/flap1_deploy_ratio", "FLOAT", m
 fsx_variable_subscribe("FLAPS HANDLE PERCENT", "Percent", function(flaps_pos)
     move_flaps(flaps_pos / 100)
 end)
-fs2020_variable_subscribe("FLAPS HANDLE PERCENT", "Percent", function(flaps_pos)
+msfs_variable_subscribe("FLAPS HANDLE PERCENT", "Percent", function(flaps_pos)
     move_flaps(flaps_pos / 100)
 end)

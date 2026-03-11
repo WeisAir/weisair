@@ -31,4 +31,4 @@ end
 
 xpl_dataref_subscribe("sim/aircraft/view/acf_tailnum", "STRING", new_callsign_xpl)
 fsx_variable_subscribe("ATC ID", "STRING", new_callsign_fsx)
-fs2020_variable_subscribe("ATC ID", "STRING", new_callsign_fsx)
+msfs_variable_subscribe("ATC ID", "STRING", new_callsign_fsx)

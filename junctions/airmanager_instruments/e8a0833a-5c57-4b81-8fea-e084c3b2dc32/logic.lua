@@ -11,4 +11,4 @@ end
 -- Bus subscribe
 xpl_dataref_subscribe("sim/cockpit2/gauges/indicators/vvi_fpm_pilot", "FLOAT", PT_vario)
 fsx_variable_subscribe("VERTICAL SPEED", "Feet per minute", PT_vario)
-fs2020_variable_subscribe("VERTICAL SPEED", "Feet per minute", PT_vario)
+msfs_variable_subscribe("VERTICAL SPEED", "Feet per minute", PT_vario)

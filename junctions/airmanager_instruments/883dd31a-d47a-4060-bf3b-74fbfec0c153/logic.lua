@@ -41,4 +41,4 @@ end
 -- Subscribe to data --
 xpl_dataref_subscribe("sim/cockpit2/gauges/indicators/airspeed_kts_pilot", "FLOAT", new_data)
 fsx_variable_subscribe("AIRSPEED INDICATED", "knots", new_data)
-fs2020_variable_subscribe("AIRSPEED INDICATED", "knots", new_data)
+msfs_variable_subscribe("AIRSPEED INDICATED", "knots", new_data)

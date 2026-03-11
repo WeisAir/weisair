@@ -26,4 +26,4 @@ end
 -- Subscribe to data --
 xpl_dataref_subscribe("sim/cockpit2/engine/indicators/MPR_in_hg", "FLOAT[8]", new_data_xpl)
 fsx_variable_subscribe("RECIP ENG MANIFOLD PRESSURE:1", "inHg", new_data_fs)
-fs2020_variable_subscribe("RECIP ENG MANIFOLD PRESSURE:1", "inHg", new_data_fs)
+msfs_variable_subscribe("RECIP ENG MANIFOLD PRESSURE:1", "inHg", new_data_fs)

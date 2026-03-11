@@ -79,27 +79,27 @@ img_dial_c_d = img_add("rotary_pwr_vol.png", 60, 236, 96, 96)
 dial_c = dial_add(nil, 61, 239, 96, 96, function(dir)
     xpl_dataref_write("sim/cockpit2/radios/actuators/audio_volume_com" .. g_unit, "FLOAT", var_cap(g_com_vol + dir * 0.1, 0, 1) )
     if dir == 1 then
-        fs2020_event("K:COM1_VOLUME_INC")
+        msfs_event("K:COM1_VOLUME_INC")
     else
-        fs2020_event("K:COM1_VOLUME_DEC")
+        msfs_event("K:COM1_VOLUME_DEC")
     end
 end)
 xpl_dataref_subscribe("sim/cockpit2/radios/actuators/audio_volume_com" .. g_unit, "FLOAT", function(volume)
     g_com_vol = volume
     rotate(img_dial_c_d, volume * 270)
 end)
-fs2020_variable_subscribe("COM VOLUME:1", "Percent", function(volume)
+msfs_variable_subscribe("COM VOLUME:1", "Percent", function(volume)
     rotate(img_dial_c_d, volume * 2.7)
 end)
 button_add(nil, nil, 79, 257, 60, 60, function()
     xpl_command("sim/GPS/g430n" .. g_unit .. "_cvol")
     xpl_command("RXP/GNS/PWR_PUSH_" .. g_unit)
-    fs2020_event("K:RADIO_COMMNAV1_TEST_TOGGLE")
+    msfs_event("K:RADIO_COMMNAV1_TEST_TOGGLE")
 end)
 button_add("softkey_com.png", "softkey_com_pressed.png", 129, 96, 106, 138, function()
     xpl_command("sim/radios/com" .. g_unit .. "_standy_flip")
     xpl_command("RXP/GNS/CFLP_" .. g_unit)
-    fs2020_event("H:AS530_COMSWAP_Push")
+    msfs_event("H:AS530_COMSWAP_Push")
 end)
 
 -- NAV
@@ -107,26 +107,26 @@ img_dial_v_d = img_add("rotary_vol.png", 60, 502, 96, 96)
 dial_v = dial_add(nil, 61, 502, 96, 96, function(dir)
     xpl_dataref_write("sim/cockpit2/radios/actuators/audio_volume_nav" .. g_unit, "FLOAT", var_cap(g_nav_vol + dir * 0.1, 0, 1) )
     if dir == 1 then
-        fs2020_event("K:NAV1_VOLUME_INC")
+        msfs_event("K:NAV1_VOLUME_INC")
     else
-        fs2020_event("K:NAV1_VOLUME_DEC")
+        msfs_event("K:NAV1_VOLUME_DEC")
     end
 end)
 xpl_dataref_subscribe("sim/cockpit2/radios/actuators/audio_volume_nav" .. g_unit, "FLOAT", function(volume)
     g_nav_vol = volume
     rotate(img_dial_v_d, volume * 270)
 end)
-fs2020_variable_subscribe("NAV VOLUME:1", "Percent", function(volume)
+msfs_variable_subscribe("NAV VOLUME:1", "Percent", function(volume)
     rotate(img_dial_v_d, volume * 2.7)
 end)
 button_add(nil, nil, 79, 520, 60, 60, function()
     xpl_command("sim/GPS/g430n" .. g_unit .. "_vvol")
-    fs2020_event("K:RADIO_VOR1_IDENT_TOGGLE")
+    msfs_event("K:RADIO_VOR1_IDENT_TOGGLE")
 end)
 button_add("softkey_vloc.png", "softkey_vloc_pressed.png", 129, 362, 106, 138, function()
     xpl_command("sim/radios/nav" .. g_unit .. "_standy_flip")
     xpl_command("RXP/GNS/VFLP_" .. g_unit)
-    fs2020_event("H:AS530_NAVSWAP_Push")
+    msfs_event("H:AS530_NAVSWAP_Push")
 end)
 
 -- C/V dials
@@ -134,11 +134,11 @@ dial_com_outer = dial_add("rotary_outer.png", 25, 895, 240, 240, function(dir)
     if dir == 1 then
         xpl_command("sim/GPS/g430n" .. g_unit .. "_coarse_up")
         xpl_command("RXP/GNS/COM_OUTR_CW_" .. g_unit)
-        fs2020_event("H:AS530_LeftLargeKnob_Right")
+        msfs_event("H:AS530_LeftLargeKnob_Right")
     else
         xpl_command("sim/GPS/g430n" .. g_unit .. "_coarse_down")
         xpl_command("RXP/GNS/COM_OUTR_CCW_" .. g_unit)
-        fs2020_event("H:AS530_LeftLargeKnob_Left")
+        msfs_event("H:AS530_LeftLargeKnob_Left")
     end
 end)
 mouse_setting(dial_com_outer, "CLICK_ROTATE", 5)
@@ -158,18 +158,18 @@ dial_add(nil, 80, 950, 130, 130, function(dir)
     if dir == 1 then
         xpl_command("sim/GPS/g430n" .. g_unit .. "_fine_up")
         xpl_command("RXP/GNS/COM_INNR_CW_" .. g_unit)
-        fs2020_event("H:AS530_LeftSmallKnob_Right")
+        msfs_event("H:AS530_LeftSmallKnob_Right")
     else
         xpl_command("sim/GPS/g430n" .. g_unit .. "_fine_down")
         xpl_command("RXP/GNS/COM_INNR_CCW_" .. g_unit)
-        fs2020_event("H:AS530_LeftSmallKnob_Left")
+        msfs_event("H:AS530_LeftSmallKnob_Left")
     end
 
 end)
 button_add(nil, nil, 105, 975, 80, 80, function()
     xpl_command("sim/GPS/g430n" .. g_unit .. "_nav_com_tog")
     xpl_command("RXP/GNS/COM_PUSH_" .. g_unit)
-    fs2020_event("H:AS530_LeftSmallKnob_Push")
+    msfs_event("H:AS530_LeftSmallKnob_Push")
 end)
 
 -- CRSR dials
@@ -177,11 +177,11 @@ dial_page_outer = dial_add("rotary_outer.png", 1335, 895, 240, 240, function(dir
     if dir == 1 then
         xpl_command("sim/GPS/g430n" .. g_unit .. "_chapter_up")
         xpl_command("RXP/GNS/GPS_OUTR_CW_" .. g_unit)
-        fs2020_event("H:AS530_RightLargeKnob_Right")
+        msfs_event("H:AS530_RightLargeKnob_Right")
     else
         xpl_command("sim/GPS/g430n" .. g_unit .. "_chapter_dn")
         xpl_command("RXP/GNS/GPS_OUTR_CCW_" .. g_unit)
-        fs2020_event("H:AS530_RightLargeKnob_Left")
+        msfs_event("H:AS530_RightLargeKnob_Left")
     end
 end)
 mouse_setting(dial_page_outer, "CLICK_ROTATE", 5)
@@ -201,55 +201,55 @@ dial_add(nil, 1390, 950, 130, 130, function(dir)
     if dir == 1 then
         xpl_command("sim/GPS/g430n" .. g_unit .. "_page_up")
         xpl_command("RXP/GNS/GPS_INNR_CW_" .. g_unit)
-        fs2020_event("H:AS530_RightSmallKnob_Right")
+        msfs_event("H:AS530_RightSmallKnob_Right")
     else
         xpl_command("sim/GPS/g430n" .. g_unit .. "_page_dn")
         xpl_command("RXP/GNS/GPS_INNR_CCW_" .. g_unit)
-        fs2020_event("H:AS530_RightSmallKnob_Left")
+        msfs_event("H:AS530_RightSmallKnob_Left")
     end
 
 end)
 button_add(nil, nil, 1415, 975, 80, 80, function()
     xpl_command("sim/GPS/g430n" .. g_unit .. "_cursor")
     xpl_command("RXP/GNS/GPS_PUSH_" .. g_unit)
-    fs2020_event("H:AS530_RightSmallKnob_Push")
+    msfs_event("H:AS530_RightSmallKnob_Push")
 end)
 
 -- Bottom buttons - left to right
 button_add("softkey_cdi.png", "softkey_cdi_pressed.png", 308, 927, 144, 106, function()
     xpl_command("sim/GPS/g430n" .. g_unit .. "_cdi")
     xpl_command("RXP/GNS/CDI_" .. g_unit)
-    fs2020_event("H:AS530_CDI_Push")
+    msfs_event("H:AS530_CDI_Push")
 end)
 
 button_add("softkey_obs.png", "softkey_obs_pressed.png", 476, 927, 144, 106, function()
     xpl_command("sim/GPS/g430n" .. g_unit .. "_obs")
     xpl_command("RXP/GNS/OBS_" .. g_unit)
-    fs2020_event("H:AS530_OBS_Push")
+    msfs_event("H:AS530_OBS_Push")
 end)
 
 button_add("softkey_msg.png", "softkey_msg_pressed.png", 644, 927, 144, 106, function()
     xpl_command("sim/GPS/g430n" .. g_unit .. "_msg")
     xpl_command("RXP/GNS/MSG_" .. g_unit)
-    fs2020_event("H:AS530_MSG_Push")
+    msfs_event("H:AS530_MSG_Push")
 end)
 
 button_add("softkey_fpl.png", "softkey_fpl_pressed.png", 812, 927, 144, 106, function()
     xpl_command("sim/GPS/g430n" .. g_unit .. "_fpl")
     xpl_command("RXP/GNS/FPL_" .. g_unit)
-    fs2020_event("H:AS530_FPL_Push")
+    msfs_event("H:AS530_FPL_Push")
 end)
 
 button_add("softkey_vnav.png", "softkey_vnav_pressed.png", 980, 927, 144, 106, function()
     xpl_command("sim/GPS/g430n" .. g_unit .. "_vnav")
     xpl_command("RXP/GNS/VNAV_" .. g_unit)
-    fs2020_event("H:AS530_VNAV_Push")
+    msfs_event("H:AS530_VNAV_Push")
 end)
 
 button_add("softkey_proc.png", "softkey_proc_pressed.png", 1148, 927, 144, 106, function()
     xpl_command("sim/GPS/g430n" .. g_unit .. "_proc")
     xpl_command("RXP/GNS/PROC_" .. g_unit)
-    fs2020_event("H:AS530_PROC_Push")
+    msfs_event("H:AS530_PROC_Push")
 end)
 
 -- Right buttons - top to bottom
@@ -257,32 +257,32 @@ img_add("softkey_range.png", 1399, 100, 144, 280)
 button_add(nil, "softkey_range_up_pressed.png", 1399, 100, 144, 140, function()
     xpl_command("sim/GPS/g430n" .. g_unit .. "_zoom_in")
     xpl_command("RXP/GNS/RUP_" .. g_unit)
-    fs2020_event("H:AS530_RNG_Dezoom")
+    msfs_event("H:AS530_RNG_Dezoom")
 end)
 
 button_add(nil, "softkey_range_down_pressed.png", 1399, 240, 144, 140, function()
     xpl_command("sim/GPS/g430n" .. g_unit .. "_zoom_out")
     xpl_command("RXP/GNS/RDN_" .. g_unit)
-    fs2020_event("H:AS530_RNG_Zoom")
+    msfs_event("H:AS530_RNG_Zoom")
 end)
 
 button_add("softkey_direct.png", "softkey_direct_pressed.png", 1399, 393, 144, 106, function()
     xpl_command("sim/GPS/g430n" .. g_unit .. "_direct")
     xpl_command("RXP/GNS/DTO_" .. g_unit)
-    fs2020_event("H:AS530_DirectTo_Push")
+    msfs_event("H:AS530_DirectTo_Push")
 end)
 
 button_add("softkey_menu.png", "softkey_menu_pressed.png", 1399, 493, 144, 106, function()
     xpl_command("sim/GPS/g430n" .. g_unit .. "_menu")
     xpl_command("RXP/GNS/MNU_" .. g_unit)
-    fs2020_event("H:AS530_MENU_Push")
+    msfs_event("H:AS530_MENU_Push")
 end)
 
 button_add("softkey_clr.png", "softkey_clr_pressed.png", 1399, 593, 144, 106, function()
     xpl_command("sim/GPS/g430n" .. g_unit .. "_clr", "BEGIN")
     xpl_command("RXP/GNS/CLR_" .. g_unit, "BEGIN")
     timer_clr = timer_start(2000, function()
-        fs2020_event("H:AS530_CLR_Push_Long")
+        msfs_event("H:AS530_CLR_Push_Long")
     end)
 end,
 function()
@@ -290,14 +290,14 @@ function()
     xpl_command("RXP/GNS/CLR_" .. g_unit, "END")
     if timer_running(timer_clr) then
         timer_stop(timer_clr)
-        fs2020_event("H:AS530_CLR_Push")
+        msfs_event("H:AS530_CLR_Push")
     end
 end)
 
 button_add("softkey_ent.png", "softkey_ent_pressed.png", 1399, 693, 144, 106, function()
     xpl_command("sim/GPS/g430n" .. g_unit .. "_ent")
     xpl_command("RXP/GNS/ENT_" .. g_unit)
-    fs2020_event("H:AS530_ENT_Push")
+    msfs_event("H:AS530_ENT_Push")
 end)
 
 -- Night and day

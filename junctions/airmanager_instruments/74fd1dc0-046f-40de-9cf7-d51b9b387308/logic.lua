@@ -60,7 +60,7 @@ switch_add(nil,nil,0,0,80,80,bezel_config)
 -- Variable subscribe
 fsx_variable_subscribe("VERTICAL SPEED", "Feet per minute", 
                            "ELECTRICAL MASTER BATTERY", "BOOLEAN", new_data_fsx)
-fs2020_variable_subscribe("VERTICAL SPEED", "Feet per minute", 
+msfs_variable_subscribe("VERTICAL SPEED", "Feet per minute", 
                              "ELECTRICAL MASTER BATTERY", "BOOLEAN", new_data_fsx)
 xpl_dataref_subscribe("sim/cockpit/electrical/battery_on", "INT", 
                       "sim/cockpit2/gauges/indicators/vvi_fpm_pilot", "FLOAT", new_data_xpl)

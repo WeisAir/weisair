@@ -16,15 +16,15 @@ prop_DO = user_prop_add_boolean("Dimming Overlay",false,"Use Dimming overlay")
 --   Load and display images in Z-order    --
 --   Loaded images selectable with prop    --
 ---------------------------------------------
-setdisk = img_add("altimeterCard.png", 15, 0, 512, 512)
+setdisk = img_add("altimeterCard.png", 15, 0, 512, 512, "rotate_animation_type: LOG; rotate_animation_speed: 0.08; rotate_animation_direction: FASTEST")
 if user_prop_get(prop_BG) == false then
     img_add_fullscreen("altimeter.png")
 else
     img_add_fullscreen("altimeterwBG.png")
 end    
-needle_10000 = img_add_fullscreen("altimeterdisc.png")
-needle_1000 = img_add_fullscreen("needle1000.png")
-needle_100 = img_add_fullscreen("needle100.png")
+needle_10000 = img_add_fullscreen("altimeterdisc.png", "rotate_animation_type: LOG; rotate_animation_speed: 0.08; rotate_animation_direction: FASTEST")
+needle_1000 = img_add_fullscreen("needle1000.png", "rotate_animation_type: LOG; rotate_animation_speed: 0.08; rotate_animation_direction: FASTEST")
+needle_100 = img_add_fullscreen("needle100.png", "rotate_animation_type: LOG; rotate_animation_speed: 0.08; rotate_animation_direction: FASTEST")
 if user_prop_get(prop_DO) == true then
     img_add_fullscreen("dimoverlay.png")
 end
@@ -34,14 +34,14 @@ img_add("altknobshadow.png",31,400,85,85)
 --   Functions                             --
 ---------------------------------------------
 function new_alt(alt)
-    if alt == -1 then
+    if alt == 1 then
         xpl_command("sim/instruments/barometer_down")
         fsx_event("KOHLSMAN_DEC")
-        fs2020_event("KOHLSMAN_DEC")
-    elseif alt == 1 then
+        msfs_event("KOHLSMAN_DEC")
+    elseif alt == -1 then
         xpl_command("sim/instruments/barometer_up")
         fsx_event("KOHLSMAN_INC")
-        fs2020_event("KOHLSMAN_INC")
+        msfs_event("KOHLSMAN_INC")
     end
 end
 
@@ -68,7 +68,13 @@ end
 ---------------------------------------------
 dial_alt = dial_add("altknob.png", 31, 400, 85, 85, new_alt)
 dial_click_rotate(dial_alt,1)
-hw_dial_add("Barometer dial", 3, new_alt)
+-- Detent settings
+detent_settings = {}
+detent_settings["1 detent/pulse"]  = "TYPE_1_DETENT_PER_PULSE"
+detent_settings["2 detents/pulse"] = "TYPE_2_DETENT_PER_PULSE"
+detent_settings["4 detents/pulse"] = "TYPE_4_DETENT_PER_PULSE"
+detent_setting = user_prop_add_enum("Detent setting", "1 detent/pulse,2 detents/pulse, 4 detents/pulse", "2 detents/pulse", "Select your rotary encoder type")
+hw_dial_add("Barometer dial", detent_settings[user_prop_get(detent_setting)], 3, new_alt)
 ---------------------------------------------
 --   Simulator Subscriptions               --
 ---------------------------------------------
@@ -77,7 +83,7 @@ xpl_dataref_subscribe("sim/cockpit2/gauges/indicators/altitude_ft_pilot", "FLOAT
                       "sim/cockpit/misc/barometer_setting", "FLOAT", new_altitude)
 fsx_variable_subscribe("INDICATED ALTITUDE", "Feet",
                        "KOHLSMAN SETTING HG", "inHg", new_altitude)
-fs2020_variable_subscribe("INDICATED ALTITUDE", "Feet",
+msfs_variable_subscribe("INDICATED ALTITUDE", "Feet",
                           "KOHLSMAN SETTING HG", "inHg", new_altitude)
 
 ---------------------------------------------

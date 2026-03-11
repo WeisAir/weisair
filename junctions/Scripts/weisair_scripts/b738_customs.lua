@@ -1,3 +1,11 @@
+---------DATAREFS
+
+dataref("wxr_alt", "sim/cockpit2/EFIS/EFIS_weather_alt", "writable")
+dataref("wxr_main_mode", "sim/cockpit2/EFIS/EFIS_weather_mode", "writable") -- wxr main mode 1= TEST, 3=NORM
+
+--------------------
+
+
 function b738_syncCRS()
 	dataref("course_pilot", "laminar/B738/autopilot/course_pilot", "readonly")
 	dataref("course_copilot", "laminar/B738/autopilot/course_copilot", "writable")
@@ -249,6 +257,48 @@ function b738_range_set_R640()
 	
 end		
 create_command("WeisAIR/b738/EFIS/range_set_R640", "range_set_R640", "b738_range_set_R640()", "", "")
+
+function b738_toggle_wxr_mode()
+		
+	dataref("wxr_mode", "laminar/B738/wxr/capt/mode_pos", "readonly")
+	
+	if (wxr_mode < 1.0) then command_once("laminar/B738/toggle_switch/wxr_capt_mode_right") 
+		else 
+			command_once("laminar/B738/toggle_switch/wxr_capt_mode_left") 
+			command_once("laminar/B738/toggle_switch/wxr_capt_mode_left") 
+	end
+	
+end
+create_command("WeisAIR/b738/wxr/b738_toggle_wxr_mode", "b738_toggle_wxr_mode", "b738_toggle_wxr_mode()", "", "")
+
+function b738_inc_wxr_alt()
+
+	current_wxr_alt = wxr_alt
+	new_wxr_alt = current_wxr_alt + 1000.0
+
+	if (new_wxr_alt < 60000.0) then set("sim/cockpit2/EFIS/EFIS_weather_alt", new_wxr_alt) end
+	
+end
+create_command("WeisAIR/b738/wxr/b738_inc_wxr_alt", "b738_inc_wxr_alt", "b738_inc_wxr_alt()", "", "")
+
+function b738_dec_wxr_alt()
+		
+	current_wxr_alt = wxr_alt
+	new_wxr_alt = current_wxr_alt - 1000.0
+
+	if (new_wxr_alt > 0.0) then set("sim/cockpit2/EFIS/EFIS_weather_alt", new_wxr_alt) end
+	
+end
+create_command("WeisAIR/b738/wxr/b738_dec_wxr_alt", "b738_dec_wxr_alt", "b738_dec_wxr_alt()", "", "")
+
+function b738_toggle_wxr_main_mode()
+			
+	if (wxr_main_mode == 1) then set("sim/cockpit2/EFIS/EFIS_weather_mode", 3)
+		else set("sim/cockpit2/EFIS/EFIS_weather_mode", 1)
+	end
+	
+end
+create_command("WeisAIR/b738/wxr/b738_toggle_wxr_main_mode", "b738_toggle_wxr_main_mode", "b738_toggle_wxr_main_mode()", "", "")
 
 function b738_autobrake_pos_toggle()
 

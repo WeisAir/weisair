@@ -74,12 +74,12 @@ function new_control_pressed()
         end)
     end
 
-    if (fsx_connected() or p3d_connected() or fs2020_connected()) and not timer_running(timer_stopwatch) and gbl_time_state == 3 and gbl_power then
+    if (fsx_connected() or p3d_connected() or msfs_connected()) and not timer_running(timer_stopwatch) and gbl_time_state == 3 and gbl_power then
         timer_stopwatch = timer_start(nil, 1000, function(count)
             stopwatch_seconds = var_cap(stopwatch_seconds + 1, 0, 3599)
             stopwatch_minutes = var_cap(((stopwatch_seconds / 60) - ((stopwatch_seconds / 60)%1))%60, 0, 59)
         end)
-    elseif fsx_connected() or p3d_connected() or fs2020_connected() and timer_running(timer_stopwatch) then
+    elseif fsx_connected() or p3d_connected() or msfs_connected() and timer_running(timer_stopwatch) then
         timer_stop(timer_stopwatch)
     end
     
@@ -179,7 +179,17 @@ fs2020_variable_subscribe("ZULU TIME", "Hours",
                           "AMBIENT TEMPERATURE", "Celsius", 
                           "LIGHT PANEL", "Bool", 
                           "ELECTRICAL BATTERY VOLTAGE", "Volts",
-                          "ELECTRICAL MAIN BUS VOLTAGE", "Volts", new_timeoat_fsx)                       
+                          "ELECTRICAL MAIN BUS VOLTAGE", "Volts", new_timeoat_fsx)
+
+fs2024_variable_subscribe("ZULU TIME", "Hours",
+                          "ZULU TIME", "Minutes",
+                          "LOCAL TIME", "Hours",
+                          "LOCAL TIME", "Minutes",
+                          "SIM TIME", "Seconds",
+                          "AMBIENT TEMPERATURE", "Celsius", 
+                          "LIGHT PANEL", "Bool", 
+                          "ELECTRICAL BATTERY VOLTAGE", "Volts",
+                          "ELECTRICAL BUS VOLTAGE:1", "Volts", new_timeoat_fsx) 
                        
 ---------------------------------------------
 --   END   Chronometer                     --

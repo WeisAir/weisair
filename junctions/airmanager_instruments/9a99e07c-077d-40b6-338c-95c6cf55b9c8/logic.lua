@@ -10,84 +10,84 @@ img_add_fullscreen("background.png")
 function callback_hdg()
 
     xpl_command("sim/autopilot/heading")
-    fs2020_event("AP_HDG_HOLD")
+    msfs_event("AP_HDG_HOLD")
 
 end
 
 function callback_apr()
 
     xpl_command("sim/autopilot/approach")
-    fs2020_event("AP_APR_HOLD")
+    msfs_event("AP_APR_HOLD")
 
 end
 
 function callback_nav()
 
     xpl_command("sim/autopilot/NAV")
-    fs2020_event("AP_NAV1_HOLD")
+    msfs_event("AP_NAV1_HOLD")
 
 end
 
 function callback_trk()
 
     xpl_command("sim/autopilot/track")
-    --fs2020_event("")
+    --msfs_event("")
 
 end
 
 function callback_ap()
     
     xpl_command("sim/autopilot/servos_toggle")
-    fs2020_event("AP_MASTER")
+    msfs_event("AP_MASTER")
 
 end
 
 function callback_fd()
     
     xpl_command("sim/autopilot/fdir_toggle")
-    fs2020_event("TOGGLE_FLIGHT_DIRECTOR")
+    msfs_event("TOGGLE_FLIGHT_DIRECTOR")
 
 end
 
 function callback_lvl()
 
     xpl_command("sim/autopilot/wing_leveler")
-    fs2020_event("AP_WING_LEVELER")
+    msfs_event("AP_WING_LEVELER")
 
 end
 
 function callback_yd()
 
     xpl_command("sim/systems/yaw_damper_toggle")
-    fs2020_event("YAW_DAMPER_TOGGLE")
+    msfs_event("YAW_DAMPER_TOGGLE")
 
 end
 
 function callback_ias()
 
     xpl_command("sim/autopilot/level_change")
-    fs2020_event("AP_AIRSPEED_HOLD")
+    msfs_event("FLIGHT_LEVEL_CHANGE")
 
 end
 
 function callback_vnv()
 
     xpl_command("sim/autopilot/vnav")
-    --fs2020_event("")
+    msfs_event("B:AUTOPILOT_VNAV_MODE", 1)
 
 end
 
 function callback_vs()
 
     xpl_command("sim/autopilot/vertical_speed")
-    fs2020_event("AP_PANEL_VS_HOLD")
+    msfs_event("AP_PANEL_VS_HOLD")
 
 end
 
 function callback_alt()
 
     xpl_command("sim/autopilot/altitude_arm")
-    fs2020_event("AP_ALT_HOLD")
+    msfs_event("AP_ALT_HOLD")
 
 end
 
@@ -95,20 +95,20 @@ end
 function heading_input(direction)
     if direction == 1 then
         xpl_command("sim/autopilot/heading_up")
-        fs2020_event("HEADING_BUG_INC")
+        msfs_event("HEADING_BUG_INC")
     else
         xpl_command("sim/autopilot/heading_down")
-        fs2020_event("HEADING_BUG_DEC")
+        msfs_event("HEADING_BUG_DEC")
     end
 end
 
 function altitude_input(direction)
     if direction == 1 then
         xpl_command("sim/autopilot/altitude_up")
-        fs2020_event("AP_ALT_VAR_INC")
+        msfs_event("AP_ALT_VAR_INC")
     else
         xpl_command("sim/autopilot/altitude_down")
-        fs2020_event("AP_ALT_VAR_DEC")
+        msfs_event("AP_ALT_VAR_DEC")
     end
 end
 
@@ -116,18 +116,18 @@ function vs_callback(direction)
     if direction == 1 then
         if gbl_vs_mode then
             xpl_command("sim/autopilot/vertical_speed_up")
-            fs2020_event("AP_VS_VAR_INC")
+            msfs_event("AP_VS_VAR_INC")
         else
             xpl_command("sim/autopilot/airspeed_down")
-            fs2020_event("AP_SPD_VAR_DEC")
+            msfs_event("AP_SPD_VAR_DEC")
         end
     else
         if gbl_vs_mode then
             xpl_command("sim/autopilot/vertical_speed_down")
-            fs2020_event("AP_VS_VAR_DEC")
+            msfs_event("AP_VS_VAR_DEC")
         else
             xpl_command("sim/autopilot/airspeed_up")
-            fs2020_event("AP_SPD_VAR_INC")
+            msfs_event("AP_SPD_VAR_INC")
         end
     end
 end
@@ -162,7 +162,7 @@ rotary_alt = dial_add("rotary_alt.png", 1312, 103, 154, 154, 3, altitude_input)
 function sync_heading_pressed()
 
     xpl_command("sim/autopilot/heading_sync")
-    fs2020_event("HEADING_BUG_SET", math.floor(gbl_hdg) )
+    msfs_event("HEADING_BUG_SET", math.floor(gbl_hdg) )
 
 end
 button_add(nil, "sync.png", 181, 150, 60, 60, sync_heading_pressed)
@@ -170,7 +170,7 @@ button_add(nil, "sync.png", 181, 150, 60, 60, sync_heading_pressed)
 function sync_altitude_pressed()
 
     xpl_command("sim/autopilot/altitude_sync")
-    fs2020_event("AP_ALT_VAR_SET_ENGLISH", math.floor(gbl_alt) )
+    msfs_event("AP_ALT_VAR_SET_ENGLISH", math.floor(math.ceil(gbl_alt / 100)) )
 
 end
 button_add(nil, "sync.png", 1359, 150, 60, 60, sync_altitude_pressed)
@@ -220,7 +220,7 @@ xpl_dataref_subscribe("sim/cockpit2/autopilot/heading_status", "INT",
     
 end)
 
-fs2020_variable_subscribe("PLANE HEADING DEGREES MAGNETIC", "Degrees",
+msfs_variable_subscribe("PLANE HEADING DEGREES MAGNETIC", "Degrees",
                           "INDICATED ALTITUDE", "Feet", 
                           "AUTOPILOT HEADING LOCK", "Bool",
                           "AUTOPILOT APPROACH HOLD", "Bool",
@@ -229,7 +229,7 @@ fs2020_variable_subscribe("PLANE HEADING DEGREES MAGNETIC", "Degrees",
                           "AUTOPILOT FLIGHT DIRECTOR ACTIVE", "Bool",
                           "AUTOPILOT WING LEVELER", "Bool",
                           "AUTOPILOT YAW DAMPER", "Bool",
-                          "AUTOPILOT AIRSPEED HOLD", "Bool",
+                          "AUTOPILOT FLIGHT LEVEL CHANGE", "Bool",
                           "AUTOPILOT VERTICAL HOLD", "Bool",
                           "AUTOPILOT ALTITUDE LOCK", "Bool", function(heading_deg, altitude_ft, hdg, apr, nav, ap_master, fd, lvl, yd, ias, vs, alt)
 

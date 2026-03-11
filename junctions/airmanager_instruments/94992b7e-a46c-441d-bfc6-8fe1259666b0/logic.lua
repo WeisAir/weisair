@@ -110,10 +110,10 @@ function new_knob(value)
     -- FSX / FS2020
     if value == 1 then
         fsx_event("ATTITUDE_BARS_POSITION_UP")
-        fs2020_event("ATTITUDE_BARS_POSITION_UP")
+        msfs_event("ATTITUDE_BARS_POSITION_UP")
     else
         fsx_event("ATTITUDE_BARS_POSITION_DOWN")
-        fs2020_event("ATTITUDE_BARS_POSITION_DOWN")
+        msfs_event("ATTITUDE_BARS_POSITION_DOWN")
     end
 end
 
@@ -143,12 +143,12 @@ fsx_variable_subscribe("ATTITUDE INDICATOR BANK DEGREES", "Degrees",
 fsx_variable_subscribe("SUCTION PRESSURE", "Inches of Mercury",
                        "SUCTION PRESSURE", "Inches of Mercury", new_vac)         
 
-fs2020_variable_subscribe("ATTITUDE INDICATOR BANK DEGREES", "Degrees",
-                          "ATTITUDE INDICATOR PITCH DEGREES", "Degrees", 
-                          "ATTITUDE BARS POSITION", "Percent", new_attitude_fsx)
+msfs_variable_subscribe("ATTITUDE INDICATOR BANK DEGREES", "Degrees",
+                        "ATTITUDE INDICATOR PITCH DEGREES", "Degrees", 
+                        "ATTITUDE BARS POSITION", "Percent", new_attitude_fsx)
                        
-fs2020_variable_subscribe("SUCTION PRESSURE", "Inches of Mercury", 
-                          "SUCTION PRESSURE", "Inches of Mercury", new_vac)   
+msfs_variable_subscribe("SUCTION PRESSURE", "Inches of Mercury", 
+                        "SUCTION PRESSURE", "Inches of Mercury", new_vac)   
                        
 ---------------------------------------------
 -- END    Attitude                         --

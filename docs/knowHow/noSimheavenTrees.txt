@@ -1,0 +1,2 @@
+-> wenn bei der Nutzung von Ortho + SImheaven keine Vegetation zu sehen ist, muss ein Symlink zur Simheaven Library erstellt werden. Habe das analog zur Standard-Config für meine XP12 Installationen angepasst:
+-> set_link_WIN_weisair.bat
