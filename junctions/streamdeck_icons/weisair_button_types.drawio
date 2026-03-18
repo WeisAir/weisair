@@ -1,0 +1,31 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Android 10; Mobile; rv:138.0) Gecko/138.0 Firefox/138.0" version="27.0.4">
+  <diagram name="Seite-1" id="nJbo_MC2ZqVkgD2hf2OR">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="1" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="9gLFnEWdYfwhCm29dmtL-1" value="" style="whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;" vertex="1" parent="1">
+          <mxGeometry x="120" y="40" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="9gLFnEWdYfwhCm29dmtL-3" value="Line 1" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;labelBackgroundColor=none;fontColor=#393C56;" vertex="1" parent="1">
+          <mxGeometry x="120" y="40" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="9gLFnEWdYfwhCm29dmtL-4" value="Line 2" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;labelBackgroundColor=none;fontColor=#393C56;" vertex="1" parent="1">
+          <mxGeometry x="120" y="60" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="9gLFnEWdYfwhCm29dmtL-9" value="" style="whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;" vertex="1" parent="1">
+          <mxGeometry x="120" y="80" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="9gLFnEWdYfwhCm29dmtL-10" value="" style="whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;" vertex="1" parent="1">
+          <mxGeometry x="120" y="110" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="9gLFnEWdYfwhCm29dmtL-11" value="Korry 1" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;labelBackgroundColor=none;fontColor=#393C56;" vertex="1" parent="1">
+          <mxGeometry x="120" y="85" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="9gLFnEWdYfwhCm29dmtL-12" value="Korry 2" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;labelBackgroundColor=none;fontColor=#393C56;" vertex="1" parent="1">
+          <mxGeometry x="120" y="115" width="100" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
