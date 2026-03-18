@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>A32NX FlyByWire</aircraft><type>Autoland Captain</type><uuid>1eaf1b36-cbaf-41e7-9455-e61b1f3bb4f6</uuid><author>Alexander Hildmann/Yves Levesque</author><description>To use &quot;Illumination mode&quot;, Illumination Pedestal Captain instrument is neeeded.
+Changes:
+2021-12-21  v2.1   Add Illumination mode
+ 2023-01-11: Correct Master Warning and MAster Caution variable write
+2023-02-12 V 2.2.0  YL  Change fs2020_variable_write() to fs2020_rpn(). Needs AM 4.2
+2024-12-21  YL  v3.0 Adapt to MSFS2024
+
+</description><compatibleFSX>false</compatibleFSX><compatibleP3D>false</compatibleP3D><compatibleXPL>false</compatibleXPL><compatibleFS2>false</compatibleFS2><compatibleFS2020>true</compatibleFS2020><compatibleFS2024>true</compatibleFS2024><version>300</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>440</prefWidth><prefHeight>326</prefHeight><source>PERSONAL</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform><platform>ESP32</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier></tiers></pluginstrument>

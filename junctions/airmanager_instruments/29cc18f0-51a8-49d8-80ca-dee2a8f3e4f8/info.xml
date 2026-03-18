@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>Airbus A320 FlightFactor</aircraft><type>ECAM</type><uuid>29cc18f0-51a8-49d8-80ca-dee2a8f3e4f8</uuid><author>Alexander Hidmann</author><description>-- Airbus A320 FlightFactor ECAM instrument for Air Manager
+-- Author:   Alexander Hildmann
+-- Date: September 9 2019
+-- Last tested:   with Windows 10, Xplane (11.35r1) and
+-- FlightFactor A320 Ultimate(0.10.8-2305) 
+-- IMPORTANT!!!!
+-- Specific FFA320 datarefs are used, these datarefs where added starting version 0.94 
+-- Please read the FFA320 documentation for more info regarding datarefs
+-- Some datarefs used in this instrument must be added to the file:
+-- X-Plane 11/aircraft/FlightFactor A320 ultimate/data/publish.txt (create file if not exist)
+-- Paste content of add2publish.txt file (included in this instrument, resource directory) into publish.txt
+-- Known Errors:
+-- FFA320 variables for the button lights are working but not properly. The problem is reported to FlightFactor.
+-- If problem is fixed in the future, ButtonLightx/State should be used instead of ButtonLightx/Power.</description><compatibleFSX>false</compatibleFSX><compatibleP3D>false</compatibleP3D><compatibleXPL>true</compatibleXPL><compatibleFS2>false</compatibleFS2><compatibleFS2020>false</compatibleFS2020><compatibleFS2024>false</compatibleFS2024><version>101</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>888</prefWidth><prefHeight>300</prefHeight><source>ONLINE</source><platforms><platform>WINDOWS</platform><platform>LINUX</platform><platform>MAC</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier></tiers></pluginstrument>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>A32NX FlyByWire</aircraft><type>Flood Lights Glareshield</type><uuid>98816861-6e47-447d-2c96-016d910ce70e</uuid><author>Alexander Hildmann</author><description>Creates flood light effect on the Glareshield panel, needs input from the Illumination Pedestal Captain instrument
+Changes:
+2022-02-19           Correct Power and Illumination
+2024-12-21  YL  v3.0 Adapt to MSFS2024
+</description><compatibleFSX>false</compatibleFSX><compatibleP3D>false</compatibleP3D><compatibleXPL>false</compatibleXPL><compatibleFS2>false</compatibleFS2><compatibleFS2020>true</compatibleFS2020><compatibleFS2024>true</compatibleFS2024><version>300</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>1920</prefWidth><prefHeight>1080</prefHeight><source>PERSONAL</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform><platform>ESP32</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier></tiers></pluginstrument>

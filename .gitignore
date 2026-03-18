@@ -6,7 +6,10 @@
 /junctions/Global Scenery/
 /junctions/screenshots/
 /junctions/tmp/
-/junctions/Scripts/
+#/junctions/Scripts/
+/junctions/Scripts/3jFPS12*
+/junctions/Scripts/LandingRate.lua
+/junctions/Scripts/streamdeck_handlers*
 /junctions/Aircraft/
 /licenses
 /performance_tests/xp_fps_tests/*
@@ -14,6 +17,7 @@
 /tools/
 
 # but not
-!junctions/Scripts/myarcaze.lua
-!junctions/Scripts/arcaze_scripts/*.*
-!junctions/Scripts/weisair_scripts/*.*
+#!junctions/Scripts/myarcaze.lua
+#!junctions/Scripts/arcaze_scripts/*.*
+#!junctions/Scripts/weisair_scripts/*.*
+

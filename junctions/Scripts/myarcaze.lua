@@ -52,7 +52,8 @@ if AIRCRAFT_FILENAME == "B733.acf" then
 end
 
 if AIRCRAFT_FILENAME == "A330.acf" then 
-	dofile(SCRIPT_DIRECTORY .. "arcaze_scripts/myarcaze_A330.config") 
+	dofile(SCRIPT_DIRECTORY .. "arcaze_scripts/myarcaze_A330.config")
+	dofile(SCRIPT_DIRECTORY .. "weisair_scripts/laminar_a330_customs.lua") 
 	print("WeisAir Panel Scripts loaded for Aircraft",  AIRCRAFT_FILENAME)
 end
 

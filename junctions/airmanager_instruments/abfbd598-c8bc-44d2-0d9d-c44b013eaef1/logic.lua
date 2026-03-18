@@ -1,0 +1,1 @@
+video_stream_id = video_stream_add("xpl/gauges[0]", 0, 0, 2048, 1024, 0, 0, 2048, 1024)
