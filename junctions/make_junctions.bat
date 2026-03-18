@@ -27,6 +27,17 @@ REM CREATE JUNCTIONS FOR AIRMANAGER INSTRUMENTS AND PANELS
 mklink /j "C:\Users\Pilot\Air Manager\instruments\OPEN_DIRECTORY" "G:\weisair\junctions\airmanager_instruments"
 mklink /j "C:\Users\Pilot\Air Manager\panels\OPEN_DIRECTORY" "G:\weisair\junctions\airmanager_panels"
 
+REM CREATE JUNCTIONS FOR CUSTOM STREAMDECK PILOTSDECK IMAGERY
+mklink /j "C:\Users\Pilot\AppData\Roaming\Elgato\StreamDeck\Plugins\com.extension.pilotsdeck.sdPlugin\Images\weisair_733" "G:\weisair\junctions\streamdeck_icons\weisair_733"
+mklink /j "C:\Users\Pilot\AppData\Roaming\Elgato\StreamDeck\Plugins\com.extension.pilotsdeck.sdPlugin\Images\weisair_738" "G:\weisair\junctions\streamdeck_icons\weisair_738"
+mklink /j "C:\Users\Pilot\AppData\Roaming\Elgato\StreamDeck\Plugins\com.extension.pilotsdeck.sdPlugin\Images\weisair_748" "G:\weisair\junctions\streamdeck_icons\weisair_748"
+mklink /j "C:\Users\Pilot\AppData\Roaming\Elgato\StreamDeck\Plugins\com.extension.pilotsdeck.sdPlugin\Images\weisair_dc3" "G:\weisair\junctions\streamdeck_icons\weisair_dc3"
+mklink /j "C:\Users\Pilot\AppData\Roaming\Elgato\StreamDeck\Plugins\com.extension.pilotsdeck.sdPlugin\Images\weisair_e170" "G:\weisair\junctions\streamdeck_icons\weisair_e170"
+mklink /j "C:\Users\Pilot\AppData\Roaming\Elgato\StreamDeck\Plugins\com.extension.pilotsdeck.sdPlugin\Images\weisair_generic" "G:\weisair\junctions\streamdeck_icons\weisair_generic"
+mklink /j "C:\Users\Pilot\AppData\Roaming\Elgato\StreamDeck\Plugins\com.extension.pilotsdeck.sdPlugin\Images\weisair_s340a" "G:\weisair\junctions\streamdeck_icons\weisair_s340a"
+
+
+
 REM DELETE JUNCTIONS
 
 REM rmdir <junctionlink>
