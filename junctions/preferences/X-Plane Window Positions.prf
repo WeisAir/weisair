@@ -4,7 +4,7 @@ num_monitors 1
 monitor/0/m_window_idx 0
 monitor/0/m_monitor 1
 monitor/0/m_window_bounds/0 -2560
-monitor/0/m_window_bounds/1 0
+monitor/0/m_window_bounds/1 23
 monitor/0/m_window_bounds/2 0
 monitor/0/m_window_bounds/3 1440
 monitor/0/m_arbitrary_bounds/0 0
@@ -21,7 +21,7 @@ monitor/0/proj/proj_cylinder 0
 monitor/0/proj/proj_sphere 0
 monitor/0/proj/diff_FOV 0
 monitor/0/proj/FOVx_renopt 65.000000
-monitor/0/proj/FOVy_renopt 46.918396
+monitor/0/proj/FOVy_renopt 38.848190
 monitor/0/proj/os_x_rat 0.000000
 monitor/0/proj/os_y_rat 0.000000
 monitor/0/proj/off_vrt_deg 0.000000

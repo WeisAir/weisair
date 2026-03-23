@@ -35,6 +35,8 @@ mklink /j "C:\Users\Pilot\AppData\Roaming\Elgato\StreamDeck\Plugins\com.extensio
 mklink /j "C:\Users\Pilot\AppData\Roaming\Elgato\StreamDeck\Plugins\com.extension.pilotsdeck.sdPlugin\Images\weisair_e170" "G:\weisair\junctions\streamdeck_icons\weisair_e170"
 mklink /j "C:\Users\Pilot\AppData\Roaming\Elgato\StreamDeck\Plugins\com.extension.pilotsdeck.sdPlugin\Images\weisair_generic" "G:\weisair\junctions\streamdeck_icons\weisair_generic"
 mklink /j "C:\Users\Pilot\AppData\Roaming\Elgato\StreamDeck\Plugins\com.extension.pilotsdeck.sdPlugin\Images\weisair_s340a" "G:\weisair\junctions\streamdeck_icons\weisair_s340a"
+mklink /j "C:\Users\Pilot\AppData\Roaming\Elgato\StreamDeck\Plugins\com.extension.pilotsdeck.sdPlugin\Images\weisair_a330" "G:\weisair\junctions\streamdeck_icons\weisair_a330"
+
 
 
 
