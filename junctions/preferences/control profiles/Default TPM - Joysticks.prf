@@ -5257,10 +5257,10 @@ _joy_BUTN_use11 sim/none/none
 _joy_BUTN_use12 sim/none/none
 _joy_BUTN_use13 sim/none/none
 _joy_BUTN_use14 sim/none/none
-_joy_BUTN_use15 WeisAIR/lancairevo/lights/cabin_lights_on
-_joy_BUTN_use_desc15 cabin_lights_on
-_joy_BUTN_use16 WeisAIR/lancairevo/lights/cabin_lights_off
-_joy_BUTN_use_desc16 cabin_lights_off
+_joy_BUTN_use15 WeisAIR/sr22/lights/cockpit_lights_max
+_joy_BUTN_use_desc15 cockpit_lights_max
+_joy_BUTN_use16 WeisAIR/sr22/lights/cockpit_lights_off
+_joy_BUTN_use_desc16 cockpit_lights_off
 _joy_BUTN_use17 sim/none/none
 _joy_BUTN_use18 sim/none/none
 _joy_BUTN_use19 sim/none/none
@@ -8644,3 +8644,5 @@ _joy_AXIS_cmnd1808 sim/none/none
 _joy_AXIS_cmnd1809 sim/none/none
 _joy_AXIS_cmnd1812 sim/none/none
 _joy_AXIS_cmnd1813 sim/none/none
+axis_response_curve100 INTERP_MODE LINEAR | 0.000000 0.000000  | 0.486339 0.479042  | 1.000000 1.000000 
+axis_response_curve101 INTERP_MODE LINEAR | 0.000000 0.000000  | 0.501366 0.452096  | 1.000000 1.000000 
