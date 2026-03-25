@@ -2,19 +2,7 @@
   "auto_reload_plugins": false,
   "impersonate_dre": false,
   "debug_mode": false,
-  "windows": [
-    {
-      "search_term": "door",
-      "regex": false,
-      "case_sensitive": false,
-      "datarefs_commands": "all",
-      "change_filter": "all_changes",
-      "pos_left": 1272,
-      "pos_top": 1070,
-      "pos_right": 2017,
-      "pos_bottom": 567
-    }
-  ],
+  "windows": [],
   "color_scheme": "default",
   "update_rate": 0.0
 }
