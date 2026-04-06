@@ -9,9 +9,9 @@ _data_rate_02 2
 _sound_on 1
 _voice_on 1
 _text_out 1
-_g_cam_internal 0
+_g_cam_internal 1
 _g_cam_internal_rat 1.000000
-_h_cam_external 0
+_h_cam_external 1
 _eq_dataref_udp 0
 _eq_track_IR 0
 _eq_tobii_eyetracker 0
@@ -79,11 +79,11 @@ _nav_arm 0
 _alt_arm 0
 _vnv_arm 0
 _nav_is_bac 0
-_mode_athr 0
+_mode_athr -1
 _km_is_mach 0
 _use_fms_alt 0
-_syn_hold_deg_phi -0.034551
-_syn_hold_deg_the 1.237204
+_syn_hold_deg_phi -0.034319
+_syn_hold_deg_the 1.228451
 _asi_hold_kts_mac 180.000000
 _hdg_hold_mag[0] 0.000000
 _hdg_hold_mag[1] 0.000000
@@ -102,8 +102,8 @@ _Nfreq3 370
 _Nfreq4 11170
 _Nfreq5 11170
 _Nfreq6 10815
-_Nfreq7 11440
-_Nfreq8 11410
+_Nfreq7 11570
+_Nfreq8 11545
 _Nfreq9 11215
 _Nfreq10 10855
 _Nfreq11 11775
@@ -197,7 +197,7 @@ _CfreqSTDBY13 118000
 _CfreqSTDBY14 118000
 _CfreqSTDBY15 118000
 _CfreqSTDBY16 118000
-_acf_path_rel0 Aircraft/Embraer E170/E170.acf
+_acf_path_rel0 Aircraft/Laminar Research/Airbus A330-300/A330.acf
 _acf_path_rel1 Aircraft/Laminar Research/Beechcraft Baron 58/Baron_58.acf
 _acf_path_rel2 Aircraft/Laminar Research/Cirrus Vision SF50/CirrusSF50.acf
 _acf_path_rel3 Aircraft/Laminar Research/Boeing 737-800/b738.acf
@@ -1049,7 +1049,7 @@ _snd_pt_str_40 49000
 _snd_pt_str_41 49000
 _snd_pt_str_42 49000
 _snd_pt_str_43 49000
-_snd_pt_str_44 63072
+_snd_pt_str_44 56419
 _snd_pt_str_45 49000
 _snd_pt_str_46 49000
 _snd_pt_str_47 49000

@@ -6,10 +6,13 @@ save_flight_type 0
 wxr_disclose_atmosphere 1
 flight_school_tab 4
 wxr_disclose_change_over_time 0
+ios_disclose_location 0
+wind_layer_mode 1
 selected_tab 3
 networking_disclose_ports 0
 networking_disclose_data_io 0
 networking_disclose_external_visuals 0
+ios_disclose_aircraft 0
 pixel_multiplier 1.000000
 wxr_disclose_thermals 0
 wxr_disclose_runway_conditions 0
@@ -27,6 +30,7 @@ weather_layer_mode 2
 P monitor_10 _offsets 0
 P monitor_10 _visuals 0
 P pilot-320 gps_window_visible 0
+P map_layer map_layer_type::Winds 1
 P map_layer map_layer_SDK_Marking_2 1
 P map_layer map_layer_SDK_Marking_1 1
 P map_layer map_layer_SDK_Marking_0 1
@@ -85,7 +89,6 @@ P monitor_15 _offsets 0
 P monitor_15 _visuals 0
 P monitor_2 _offsets 0
 P monitor_2 _visuals 0
-P window_state main_menu v=0 p=0 m=0 b=0,0,2560,1417
 P window_state exvis_standby v=0 p=0 m=0 b=0,0,0,0
 P window_state fps_test_recoder v=0 p=0 m=0 b=0,0,0,0
 P window_state screenshot_controls v=0 p=0 m=0 b=33,876,513,1316
@@ -102,11 +105,12 @@ P window_state autopilot_constants v=0 p=0 m=0 b=0,0,0,0
 P window_state projection_params v=0 p=0 m=0 b=0,0,0,0
 P window_state key_shortcuts v=0 p=0 m=0 b=0,0,0,0
 P window_state settings v=0 p=0 m=0 b=480,168,2080,1248
+P window_state main_menu v=0 p=0 m=0 b=0,0,2560,1417
 P window_state atc_window v=0 p=0 m=0 b=300,300,850,665
 P window_state save_flight_window v=0 p=0 m=0 b=1030,570,1530,870
 P window_state logbook_window v=0 p=0 m=0 b=80,200,950,450
 P window_state weather_map v=0 p=0 m=0 b=0,0,0,0
-P window_state ios v=0 p=0 m=0 b=-50,0,974,620
+P window_state ios v=0 p=0 m=0 b=804,285,2311,1222
 P window_state map v=0 p=0 m=0 b=1518,612,2462,1152
 P window_state data_out v=0 p=0 m=0 b=-50,100,874,620
 P window_state replay_controls v=0 p=0 m=0 b=0,0,2560,1440
