@@ -39,11 +39,11 @@ _vr_use_openxr 0
 _eq_matrox_TH 0
 _eq_HUD_new 1
 _num_acf 1
-_apt_id_str EDDB
+_apt_id_str LDSP
 _tex_res 4
 _default_view 2
 _rcas_ratio 0.000000
-_num_runs_done 321
+_num_runs_done 326
 _metric_temp 0
 _metric_press 1
 _utc_time 0
@@ -66,9 +66,9 @@ _show_atc_taxi_route 1
 _warn_text 1
 _save_acf_sel 0
 _rel_path_tow Aircraft/Laminar Research/Piper PA-18 Super Cub/PA-18-150.acf
-_ref_rwy_wrl 1
+_ref_rwy_wrl 0
 _ref_ram_wrl 0
-_ref_rwy_dir 1
+_ref_rwy_dir 0
 _use_experimental_FM 0
 _use_MTBF 0
 _real_MTBF_hours 10000.000000
@@ -79,16 +79,16 @@ _nav_arm 0
 _alt_arm 0
 _vnv_arm 0
 _nav_is_bac 0
-_mode_athr -1
+_mode_athr 0
 _km_is_mach 0
 _use_fms_alt 0
-_syn_hold_deg_phi 0.184852
-_syn_hold_deg_the -0.526755
+_syn_hold_deg_phi -0.034551
+_syn_hold_deg_the 1.237204
 _asi_hold_kts_mac 180.000000
 _hdg_hold_mag[0] 0.000000
 _hdg_hold_mag[1] 0.000000
 _vvi_hold_fpm 0.000000
-_alt_hold_ft_dial 2000.000000
+_alt_hold_ft_dial 1000.000000
 _alt_hold_ft_use 4448.204590
 _thermo_metric_units 1
 _aro_setting_HG[0] 29.920000
@@ -133,7 +133,7 @@ _OBS_mag[0]0 0.000000
 _OBS_mag[0]1 0.000000
 _OBS_mag[0]2 0.000000
 _OBS_mag[0]3 0.000000
-_OBS_mag[0]4 354.860962
+_OBS_mag[0]4 355.223572
 _OBS_mag[0]5 0.000000
 _OBS_mag[0]6 0.000000
 _OBS_mag[0]7 0.000000
@@ -163,7 +163,7 @@ _OBS_mag[1]13 0.000000
 _OBS_mag[1]14 0.000000
 _OBS_mag[1]15 0.000000
 _OBS_mag[1]16 0.000000
-_Cfreq0 118805
+_Cfreq0 118100
 _Cfreq1 118000
 _Cfreq2 118000
 _Cfreq3 118000
@@ -197,26 +197,26 @@ _CfreqSTDBY13 118000
 _CfreqSTDBY14 118000
 _CfreqSTDBY15 118000
 _CfreqSTDBY16 118000
-_acf_path_rel0 Aircraft/Laminar Research/Cirrus SR22/Cirrus SR22.acf
+_acf_path_rel0 Aircraft/Embraer E170/E170.acf
 _acf_path_rel1 Aircraft/Laminar Research/Beechcraft Baron 58/Baron_58.acf
-_acf_path_rel2 Aircraft/Laminar Research/Piper PA-18 Super Cub/PA-18-150.acf
-_acf_path_rel3 Aircraft/Laminar Research/Piper PA-18 Super Cub/PA-18-150.acf
-_acf_path_rel4 Aircraft/Laminar Research/Cirrus SR22/Cirrus SR22.acf
-_acf_path_rel5 Aircraft/Laminar Research/Cirrus Vision SF50/CirrusSF50.acf
-_acf_path_rel6 Aircraft/Laminar Research/Piper PA-18 Super Cub/PA-18-150.acf
+_acf_path_rel2 Aircraft/Laminar Research/Cirrus Vision SF50/CirrusSF50.acf
+_acf_path_rel3 Aircraft/Laminar Research/Boeing 737-800/b738.acf
+_acf_path_rel4 Aircraft/Traffic Global/_TCAS_AI_/TrafficGlobalTCAS.acf
+_acf_path_rel5 Aircraft/Laminar Research/Cirrus SR22/Cirrus SR22.acf
+_acf_path_rel6 Aircraft/Laminar Research/Sikorsky S-76/S-76C.acf
 _acf_path_rel7 Aircraft/Laminar Research/Cessna 172 SP/Cessna_172SP.acf
-_acf_path_rel8 Aircraft/Laminar Research/McDonnell Douglas MD-82/MD80.acf
-_acf_path_rel9 Aircraft/Laminar Research/Piper PA-18 Super Cub/PA-18-150.acf
-_acf_path_rel10 Aircraft/Laminar Research/Airbus A330-300/A330_AI.acf
-_acf_path_rel11 Aircraft/Laminar Research/Cessna Citation X/Cessna_CitationX.acf
-_acf_path_rel12 Aircraft/Laminar Research/Cessna Citation X/Cessna_CitationX.acf
-_acf_path_rel13 Aircraft/Laminar Research/McDonnell Douglas MD-82/MD80.acf
-_acf_path_rel14 Aircraft/Laminar Research/Cirrus SR22/Cirrus SR22.acf
-_acf_path_rel15 Aircraft/Laminar Research/Piper PA-18 Super Cub/PA-18-150.acf
-_acf_path_rel16 Aircraft/Laminar Research/Cirrus SR22/Cirrus SR22.acf
-_acf_path_rel17 Aircraft/Laminar Research/Sikorsky S-76/S-76C.acf
-_acf_path_rel18 Aircraft/Laminar Research/Sikorsky S-76/S-76C.acf
-_acf_path_rel19 Aircraft/Laminar Research/McDonnell Douglas MD-82/MD80.acf
+_acf_path_rel8 Aircraft/Laminar Research/Cirrus Vision SF50/CirrusSF50.acf
+_acf_path_rel9 Aircraft/Laminar Research/Boeing 737-800/b738.acf
+_acf_path_rel10 Aircraft/Laminar Research/Beechcraft Baron 58/Baron_58.acf
+_acf_path_rel11 Aircraft/Laminar Research/Van's Aircraft RV-10/RV-10.acf
+_acf_path_rel12 Aircraft/Laminar Research/Beechcraft King Air C90B/C90B.acf
+_acf_path_rel13 Aircraft/Laminar Research/Piper PA-18 Super Cub/PA-18-150.acf
+_acf_path_rel14 Aircraft/Laminar Research/Airbus A330-300/A330_AI.acf
+_acf_path_rel15 Aircraft/Laminar Research/Airbus A330-300/A330_AI.acf
+_acf_path_rel16 Aircraft/Laminar Research/Piper PA-18 Super Cub/PA-18-150.acf
+_acf_path_rel17 Aircraft/Laminar Research/Beechcraft Baron 58/Baron_58.acf
+_acf_path_rel18 Aircraft/Laminar Research/Van's Aircraft RV-10/RV-10.acf
+_acf_path_rel19 Aircraft/Laminar Research/Piper PA-18 Super Cub/PA-18-150.acf
 _vol_master 1.000000
 _vol_grp_aircraft 0.307647
 _vol_grp_cockpit 0.307647
@@ -1049,7 +1049,7 @@ _snd_pt_str_40 49000
 _snd_pt_str_41 49000
 _snd_pt_str_42 49000
 _snd_pt_str_43 49000
-_snd_pt_str_44 54094
+_snd_pt_str_44 63072
 _snd_pt_str_45 49000
 _snd_pt_str_46 49000
 _snd_pt_str_47 49000

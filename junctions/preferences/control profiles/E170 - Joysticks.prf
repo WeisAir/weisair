@@ -4769,7 +4769,7 @@ _joy_AXIS_use23 0
 _joy_AXIS_use24 0
 _joy_AXIS_use25 0
 _joy_AXIS_use26 4
-_joy_AXIS_use27 14
+_joy_AXIS_use27 0
 _joy_AXIS_use28 0
 _joy_AXIS_use29 0
 _joy_AXIS_use30 0
@@ -4919,7 +4919,7 @@ _joy_AXIS_use173 0
 _joy_AXIS_use174 0
 _joy_AXIS_use175 0
 _joy_AXIS_use176 0
-_joy_AXIS_use177 0
+_joy_AXIS_use177 14
 _joy_AXIS_use178 0
 _joy_AXIS_use179 0
 _joy_AXIS_use180 0
