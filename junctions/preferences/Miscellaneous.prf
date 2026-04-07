@@ -29,17 +29,18 @@ auto_tune_for_atc 0
 weather_layer_mode 2
 P monitor_10 _offsets 0
 P monitor_10 _visuals 0
-P pilot-320 gps_window_visible 0
-P map_layer map_layer_type::Winds 1
+P monitor_19 _offsets 0
+P monitor_19 _visuals 0
 P map_layer map_layer_SDK_Marking_2 1
 P map_layer map_layer_SDK_Marking_1 1
 P map_layer map_layer_SDK_Marking_0 1
+P map_layer map_layer_type::Compass_Rose 1
+P map_layer map_layer_type::Winds 1
 P map_layer map_layer_type::Weather 1
 P monitor_14 _offsets 0
 P monitor_14 _visuals 0
 P PFD-1 gps_window_visible 0
-P monitor_19 _offsets 0
-P monitor_19 _visuals 0
+P GCU gps_window_visible 0
 P MFD-1 gps_window_visible 0
 P RMU-1 gps_window_visible 0
 P copilot-320 gps_window_visible 0
@@ -111,7 +112,7 @@ P window_state save_flight_window v=0 p=0 m=0 b=1030,570,1530,870
 P window_state logbook_window v=0 p=0 m=0 b=80,200,950,450
 P window_state weather_map v=0 p=0 m=0 b=0,0,0,0
 P window_state ios v=0 p=0 m=0 b=804,285,2311,1222
-P window_state map v=0 p=0 m=0 b=1518,612,2462,1152
+P window_state map v=1 p=1 m=0 b=-1052,278,-88,838
 P window_state data_out v=0 p=0 m=0 b=-50,100,874,620
 P window_state replay_controls v=0 p=0 m=0 b=0,0,2560,1440
 P window_state menu_bar v=1 p=0 m=0 b=0,0,2560,1417
@@ -120,9 +121,9 @@ P window_state ground_handling_window v=0 p=0 m=0 b=-929,738,-529,988
 P PFD-2 gps_window_visible 0
 P pilot-2000 gps_window_visible 0
 P WXR-2 gps_window_visible 0
-P GCU gps_window_visible 0
 P monitor_13 _offsets 0
 P monitor_13 _visuals 0
+P pilot-320 gps_window_visible 0
 P copilot-2000 gps_window_visible 0
 P monitor_1 _offsets 1
 P monitor_1 _visuals 0
