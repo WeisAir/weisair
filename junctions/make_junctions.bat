@@ -37,8 +37,7 @@ mklink /j "C:\Users\Pilot\AppData\Roaming\Elgato\StreamDeck\Plugins\com.extensio
 mklink /j "C:\Users\Pilot\AppData\Roaming\Elgato\StreamDeck\Plugins\com.extension.pilotsdeck.sdPlugin\Images\weisair_s340a" "G:\weisair\junctions\streamdeck_icons\weisair_s340a"
 mklink /j "C:\Users\Pilot\AppData\Roaming\Elgato\StreamDeck\Plugins\com.extension.pilotsdeck.sdPlugin\Images\weisair_a330" "G:\weisair\junctions\streamdeck_icons\weisair_a330"
 mklink /j "C:\Users\Pilot\AppData\Roaming\Elgato\StreamDeck\Plugins\com.extension.pilotsdeck.sdPlugin\Images\weisair_ops" "G:\weisair\junctions\streamdeck_icons\weisair_ops"
-
-
+mklink /j "C:\Users\Pilot\AppData\Roaming\Elgato\StreamDeck\Plugins\com.extension.pilotsdeck.sdPlugin\Scripts" "G:\weisair\junctions\PilotsDeckScripts"
 
 
 REM DELETE JUNCTIONS
