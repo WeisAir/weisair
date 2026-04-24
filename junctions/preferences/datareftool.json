@@ -2,52 +2,7 @@
   "auto_reload_plugins": false,
   "impersonate_dre": false,
   "debug_mode": false,
-  "windows": [
-    {
-      "search_term": "laminar/B738/pfd/wind_arrow",
-      "regex": false,
-      "case_sensitive": false,
-      "datarefs_commands": "all",
-      "change_filter": "all",
-      "pos_left": 99442,
-      "pos_top": 121,
-      "pos_right": 100050,
-      "pos_bottom": -23
-    },
-    {
-      "search_term": "sim/cockpit2/gauges/indicators/wind_heading_deg_mag",
-      "regex": false,
-      "case_sensitive": false,
-      "datarefs_commands": "all",
-      "change_filter": "all",
-      "pos_left": 100071,
-      "pos_top": 121,
-      "pos_right": 100679,
-      "pos_bottom": -20
-    },
-    {
-      "search_term": "sim/cockpit/autopilot/heading_mag",
-      "regex": false,
-      "case_sensitive": false,
-      "datarefs_commands": "all",
-      "change_filter": "all",
-      "pos_left": 232,
-      "pos_top": 747,
-      "pos_right": 841,
-      "pos_bottom": 565
-    },
-    {
-      "search_term": "sim/cockpit2/gauges/indicators/heading_AHARS_deg_mag_copilot",
-      "regex": false,
-      "case_sensitive": false,
-      "datarefs_commands": "all",
-      "change_filter": "all_changes",
-      "pos_left": 232,
-      "pos_top": 535,
-      "pos_right": 895,
-      "pos_bottom": 394
-    }
-  ],
+  "windows": [],
   "color_scheme": "default",
   "update_rate": 0.0
 }

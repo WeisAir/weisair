@@ -11,7 +11,7 @@ function park_brake_switch(position)
     sw_on = fif(  position > 0  , 1, 0 )
     switch_set_position(park_brake_sw, position)
 end    
-xpl_dataref_subscribe("sim/cockpit2/controls/parking_brake_ratio","FLOAT",park_brake_switch)
+xpl_dataref_subscribe("sim/cockpit2/controls/wheel_brake_ratio","FLOAT",park_brake_switch)
 fsx_variable_subscribe("BRAKE PARKING POSITION", "Position", park_brake_switch )
 msfs_variable_subscribe("BRAKE PARKING POSITION", "Position", park_brake_switch )
 

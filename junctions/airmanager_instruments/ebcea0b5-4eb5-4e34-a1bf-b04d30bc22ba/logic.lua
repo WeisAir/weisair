@@ -26,4 +26,4 @@ end
 btn = button_add(nil,nil,0,0,136,65, press_callback, release_callback)
 
 -- Simulator data subscription
-xpl_dataref_subscribe("sim/cockpit2/controls/parking_brake_ratio", "FLOAT", MC_value)
+xpl_dataref_subscribe("sim/cockpit2/controls/wheel_brake_ratio", "FLOAT", MC_value)

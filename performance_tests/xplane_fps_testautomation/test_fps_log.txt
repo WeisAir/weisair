@@ -580,7 +580,7 @@ I found the following scenery packages (prioritized in this order):
 0:00:00.000 I/JOY: 	Saitek Pro Flight Rudder Pedals Axis 2 assigned to joy_use_hdng
 0:00:00.000 D/STM: Transitioning from state state_InitialLoading to state_QuickFlightWizard
 0:00:00.000 I/ACF: Loading airplane number 20 with Aircraft/Laminar Research/Cirrus SR22/Cirrus SR22.acf
-[BetterPushback-v0.52]: Dataref 'sim/cockpit2/controls/parking_brake_ratio' has been replaced. Please use the new name.
+[BetterPushback-v0.52]: Dataref 'sim/cockpit2/controls/wheel_brake_ratio' has been replaced. Please use the new name.
 [BetterPushback-v0.52]: Dataref 'sim/aircraft/parts/acf_gear_tirrad' has been replaced. Please use the new name.
 [BetterPushback-v0.52]: Dataref 'sim/weather/runway_friction' has been replaced. Please use the new name.
 0:00:00.000 I/WIN: Showing subscreen Main Menu
@@ -1095,7 +1095,7 @@ Fetching plugins for C:\X-Plane 12 1.3 vanilla/Aircraft/B737-800X/plugins
 [xlua/win_x64/xlua.xpl]: Dataref 'sim/cockpit2/controls/flap_ratio' has been replaced. Please use the new name.
 [xlua/win_x64/xlua.xpl]: Dataref 'sim/flightmodel/misc/cgz_ref_to_default' has been replaced. Please use the new name.
 [xlua/win_x64/xlua.xpl]: Dataref 'sim/cockpit/pressure/cabin_vvi_set_m_msec' has been replaced. Please use the new name.
-[xlua/win_x64/xlua.xpl]: Dataref 'sim/cockpit2/controls/parking_brake_ratio' has been replaced. Please use the new name.
+[xlua/win_x64/xlua.xpl]: Dataref 'sim/cockpit2/controls/wheel_brake_ratio' has been replaced. Please use the new name.
 [xlua/win_x64/xlua.xpl]: Dataref 'sim/weather/barometer_sealevel_inhg' has been replaced. Please use the new name.
 0:00:00.431 I/LUA: Running scripts/B738.calc/B738.calc.lua
 [xlua/win_x64/xlua.xpl]: Dataref 'sim/weather/barometer_current_inhg' has been replaced. Please use the new name.
@@ -1113,7 +1113,7 @@ Loaded: C:\X-Plane 12 1.3 vanilla/Aircraft/B737-800X/plugins/xlua/win_x64/xlua.x
 [zibomod/win_x64/zibomod.xpl]: Dataref 'sim/flightmodel/misc/cgz_ref_to_default' has been replaced. Please use the new name.
 [zibomod/win_x64/zibomod.xpl]: Dataref 'sim/weather/barometer_current_inhg' has been replaced. Please use the new name.
 [zibomod/win_x64/zibomod.xpl]: Dataref 'sim/cockpit/pressure/cabin_vvi_set_m_msec' has been replaced. Please use the new name.
-[zibomod/win_x64/zibomod.xpl]: Dataref 'sim/cockpit2/controls/parking_brake_ratio' has been replaced. Please use the new name.
+[zibomod/win_x64/zibomod.xpl]: Dataref 'sim/cockpit2/controls/wheel_brake_ratio' has been replaced. Please use the new name.
 [zibomod/win_x64/zibomod.xpl]: Dataref 'sim/weather/barometer_sealevel_inhg' has been replaced. Please use the new name.
 [zibomod/win_x64/zibomod.xpl]: Dataref 'sim/cockpit2/engine/indicators/EGT_deg_C' has been replaced. Please use the new name.
 [zibomod/win_x64/zibomod.xpl]: Dataref 'sim/cockpit/pressure/cabin_vvi_actual_m_msec' has been replaced. Please use the new name.

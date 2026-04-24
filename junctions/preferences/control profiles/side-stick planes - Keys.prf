@@ -118,7 +118,7 @@ W CTRL sim/view/forward_with_nothing
 6 SHIFT sim/view/ridealong
 7 SHIFT sim/view/track_weapon
 8 SHIFT sim/view/chase
-9 SHIFT sim/view/3d_cockpit_cmnd_look
+0 SHIFT sim/view/3d_cockpit_cmnd_look
 C SHIFT sim/view/cinema_verite
 S SHIFT sim/view/sunglasses
 N SHIFT sim/view/night_vision
@@ -211,3 +211,4 @@ Delete CTRL TrafficGlobal/control/delete_selected_ai Delete selected AI.
 R SHIFT+ALT TrafficGlobal/control/full_reset Reset all traffic immediately.
 3 ALT TrafficGlobal/control/force_goaround Initiate go-around for aircraft on approach
 End <NONE> TrafficGlobal/comms/request_runway_info Request runway and parking info.
+9 SHIFT sim/view/wingman

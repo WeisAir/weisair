@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "C:/Users/Pilot/AppData/Roaming/Elgato/StreamDeck/Plugins/com.extension.pilotsdeck.sdPlugin/Scripts"
+		},
+		{
+			"path": "W:/Dev/xplane_telemetry"
 		}
 	],
 	"settings": {

@@ -9,7 +9,7 @@ _data_rate_02 2
 _sound_on 1
 _voice_on 1
 _text_out 1
-_g_cam_internal 0
+_g_cam_internal 1
 _g_cam_internal_rat 1.000000
 _h_cam_external 0
 _eq_dataref_udp 0
@@ -35,15 +35,15 @@ _vr_manip_visualize 1
 _vr_has_3d_mouse 0
 _vr_separate_graphics_settings 0
 _vr_separate_vr_settings_init_once 0
-_vr_use_openxr 0
+_vr_use_openxr 1
 _eq_matrox_TH 0
 _eq_HUD_new 0
 _num_acf 1
-_apt_id_str KLAX
-_tex_res 4
+_apt_id_str KVUO
+_tex_res 5
 _default_view 2
-_rcas_ratio 0.177626
-_num_runs_done 28
+_rcas_ratio 0.000000
+_num_runs_done 0
 _metric_temp 0
 _metric_press 0
 _utc_time 0
@@ -66,7 +66,7 @@ _show_atc_taxi_route 1
 _warn_text 1
 _save_acf_sel 0
 _rel_path_tow Aircraft/Laminar Research/Piper PA-18 Super Cub/PA-18-150.acf
-_ref_rwy_wrl 2
+_ref_rwy_wrl 0
 _ref_ram_wrl 0
 _ref_rwy_dir 0
 _use_experimental_FM 0
@@ -79,40 +79,40 @@ _nav_arm 0
 _alt_arm 0
 _vnv_arm 0
 _nav_is_bac 0
-_mode_athr -1
+_mode_athr 0
 _km_is_mach 0
 _use_fms_alt 0
-_syn_hold_deg_phi -0.001165
-_syn_hold_deg_the 4.116206
-_asi_hold_kts_mac 200.000000
+_syn_hold_deg_phi 0.000000
+_syn_hold_deg_the 0.000000
+_asi_hold_kts_mac 0.000000
 _hdg_hold_mag[0] 0.000000
 _hdg_hold_mag[1] 0.000000
 _vvi_hold_fpm 0.000000
-_alt_hold_ft_dial 10000.000000
-_alt_hold_ft_use 128.426071
-_thermo_metric_units 1
-_aro_setting_HG[0] 29.920000
-_aro_setting_HG[1] 29.920000
+_alt_hold_ft_dial 0.000000
+_alt_hold_ft_use 0.000000
+_thermo_metric_units 0
+_aro_setting_HG[0] 29.921249
+_aro_setting_HG[1] 29.921249
 _pdr_freq[0] 1200
 _pdr_freq[1] 1200
-_Nfreq0 11250
-_Nfreq1 11360
+_Nfreq0 11170
+_Nfreq1 11170
 _Nfreq2 210
 _Nfreq3 210
 _Nfreq4 11170
 _Nfreq5 11170
-_Nfreq6 11375
-_Nfreq7 11360
+_Nfreq6 11170
+_Nfreq7 11170
 _Nfreq8 11170
-_Nfreq9 11110
-_Nfreq10 10850
-_Nfreq11 11010
-_Nfreq12 11015
-_Nfreq13 11020
+_Nfreq9 11170
+_Nfreq10 11170
+_Nfreq11 11170
+_Nfreq12 11170
+_Nfreq13 11170
 _Nfreq14 11170
 _Nfreq15 58327
 _Nfreq16 58327
-_NfreqSTDBY0 11780
+_NfreqSTDBY0 11170
 _NfreqSTDBY1 11170
 _NfreqSTDBY2 210
 _NfreqSTDBY3 210
@@ -133,7 +133,7 @@ _OBS_mag[0]0 0.000000
 _OBS_mag[0]1 0.000000
 _OBS_mag[0]2 0.000000
 _OBS_mag[0]3 0.000000
-_OBS_mag[0]4 348.660034
+_OBS_mag[0]4 0.000000
 _OBS_mag[0]5 0.000000
 _OBS_mag[0]6 0.000000
 _OBS_mag[0]7 0.000000
@@ -164,7 +164,7 @@ _OBS_mag[1]14 0.000000
 _OBS_mag[1]15 0.000000
 _OBS_mag[1]16 0.000000
 _Cfreq0 118100
-_Cfreq1 120950
+_Cfreq1 121800
 _Cfreq2 118000
 _Cfreq3 118000
 _Cfreq4 118000
@@ -197,26 +197,7 @@ _CfreqSTDBY13 118000
 _CfreqSTDBY14 118000
 _CfreqSTDBY15 118000
 _CfreqSTDBY16 118000
-_acf_path_rel0 Aircraft/SSG_B748_Series_V2.8RC1_XP12/SSG_B748-I_12.acf
-_acf_path_rel1 Aircraft/Laminar Research/Piper PA-18 Super Cub/PA-18-150.acf
-_acf_path_rel2 Aircraft/Laminar Research/Cirrus SR22/Cirrus SR22.acf
-_acf_path_rel3 Aircraft/Laminar Research/Cessna 172 SP/Cessna_172SP.acf
-_acf_path_rel4 Aircraft/Embraer E170/E170_XP11.acf
-_acf_path_rel5 Aircraft/Laminar Research/Van's Aircraft RV-10/RV-10.acf
-_acf_path_rel6 Aircraft/Laminar Research/Cirrus SR22/Cirrus SR22.acf
-_acf_path_rel7 Aircraft/Laminar Research/Cessna Citation X/Cessna_CitationX.acf
-_acf_path_rel8 Aircraft/Laminar Research/Cessna Citation X/Cessna_CitationX.acf
-_acf_path_rel9 Aircraft/Traffic Global/_TCAS_AI_/TrafficGlobalTCAS.acf
-_acf_path_rel10 Aircraft/Laminar Research/Cessna 172 SP/Cessna_172SP.acf
-_acf_path_rel11 Aircraft/Laminar Research/Cessna Citation X/Cessna_CitationX.acf
-_acf_path_rel12 Aircraft/Laminar Research/Sikorsky S-76/S-76C.acf
-_acf_path_rel13 Aircraft/Laminar Research/Boeing 737-800/b738.acf
-_acf_path_rel14 Aircraft/Laminar Research/Cessna 172 SP/Cessna_172SP.acf
-_acf_path_rel15 Aircraft/Traffic Global/_TCAS_AI_/TrafficGlobalTCAS.acf
-_acf_path_rel16 Aircraft/Laminar Research/Cessna 172 SP/Cessna_172SP.acf
-_acf_path_rel17 Aircraft/Laminar Research/Van's Aircraft RV-10/RV-10.acf
-_acf_path_rel18 Aircraft/Laminar Research/Beechcraft King Air C90B/C90B.acf
-_acf_path_rel19 Aircraft/Laminar Research/Airbus A330-300/A330_AI.acf
+_acf_path_rel0 Aircraft/Laminar Research/Cirrus Vision SF50/CirrusSF50.acf
 _vol_master 1.000000
 _vol_grp_aircraft 0.000000
 _vol_grp_cockpit 0.000000
@@ -572,7 +553,7 @@ _Bdisk169 0
 _Bdisk170 0
 _Bdisk171 0
 _Bdisk172 0
-_Bgraf0 1
+_Bgraf0 0
 _Bgraf1 0
 _Bgraf2 0
 _Bgraf3 0
@@ -745,7 +726,7 @@ _Bgraf169 0
 _Bgraf170 0
 _Bgraf171 0
 _Bgraf172 0
-_Breal0 1
+_Breal0 0
 _Breal1 0
 _Breal2 0
 _Breal3 0
@@ -924,7 +905,7 @@ _Psumm2 0
 _Psumm3 0
 _mp_xmts_per_sec 20
 _ev_xmts_per_sec 40
-_graf_rate 21.299147
+_graf_rate 20.000000
 _inet_rate 10.000000
 _disk_rate 20.000000
 _rcv_port 49000
@@ -1049,7 +1030,7 @@ _snd_pt_str_40 49000
 _snd_pt_str_41 49000
 _snd_pt_str_42 49000
 _snd_pt_str_43 49000
-_snd_pt_str_44 49484
+_snd_pt_str_44 61081
 _snd_pt_str_45 49000
 _snd_pt_str_46 49000
 _snd_pt_str_47 49000
@@ -1110,33 +1091,33 @@ _snd_pt_rak_str_49 49010
 _snd_pt_rak_str_50 49010
 _snd_pt_rak_str_51 49010
 _snd_ip_str_44 127.0.0.1
-renopt_ANISO 8
+renopt_ANISO 16
 renopt_FSR_04 0
 renopt_FXAA 1
 renopt_MSAA 0
-renopt_SSAO_04 0
+renopt_SSAO_04 3
 renopt_boats 1
 renopt_clouds_02 2
-renopt_draw_3d_04 2
-renopt_draw_distance04 3
+renopt_draw_3d_04 4
+renopt_draw_distance04 4
 renopt_gload 1
-renopt_shadow_quality_04 0
-renopt_static_acf 0
-renopt_tex_res_04 3
-renopt_vegetation_3d 0
-renopt_vegetation_quality_04 3
+renopt_shadow_quality_04 4
+renopt_static_acf 1
+renopt_tex_res_04 4
+renopt_vegetation_3d 1
+renopt_vegetation_quality_04 4
 vr_renopt_ANISO 0
-vr_renopt_FSR_04 4
-vr_renopt_FXAA 1
+vr_renopt_FSR_04 959721728
+vr_renopt_FXAA 841888256
 vr_renopt_MSAA 0
-vr_renopt_SSAO_04 4
-vr_renopt_boats 1
-vr_renopt_clouds_02 3
-vr_renopt_draw_3d_04 4
-vr_renopt_draw_distance04 4
+vr_renopt_SSAO_04 21248
+vr_renopt_boats 15
+vr_renopt_clouds_02 4
+vr_renopt_draw_3d_04 18688
+vr_renopt_draw_distance04 10
 vr_renopt_gload 0
-vr_renopt_shadow_quality_04 4
-vr_renopt_static_acf 1
+vr_renopt_shadow_quality_04 7
+vr_renopt_static_acf 15
 vr_renopt_tex_res_04 0
 vr_renopt_vegetation_3d 0
-vr_renopt_vegetation_quality_04 4
+vr_renopt_vegetation_quality_04 15

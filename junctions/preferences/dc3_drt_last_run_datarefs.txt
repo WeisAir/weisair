@@ -2028,7 +2028,7 @@ sim/cockpit2/controls/gear_handle_request
 sim/cockpit2/controls/incidence_ratio
 sim/cockpit2/controls/left_brake_ratio
 sim/cockpit2/controls/nosewheel_steer_on
-sim/cockpit2/controls/parking_brake_ratio
+sim/cockpit2/controls/wheel_brake_ratio
 sim/cockpit2/controls/right_brake_ratio
 sim/cockpit2/controls/roll_spoiler_actuation
 sim/cockpit2/controls/rudder_trim
