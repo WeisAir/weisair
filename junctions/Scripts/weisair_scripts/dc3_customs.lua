@@ -10,8 +10,8 @@ dataref("park_brake","les/dc3/gear/brakes/parking_brake","writable")
 
 function land_lights_on()
 	
-	dataref("ll_l", "les/dc3/elecSys/lighting/L_ldgLit", "writable")
-	dataref("ll_r", "les/dc3/elecSys/lighting/R_ldgLit", "writable")
+	--dataref("ll_l", "les/dc3/elecSys/lighting/L_ldgLit", "writable")
+	--dataref("ll_r", "les/dc3/elecSys/lighting/R_ldgLit", "writable")
 	
 	set("les/dc3/elecSys/lighting/L_ldgLit",1)
 	set("les/dc3/elecSys/lighting/R_ldgLit",1)
@@ -22,8 +22,8 @@ create_command("WeisAIR/dc3/lights/land_lights_on", "land_lights_on", "land_ligh
 
 function land_lights_off()
 	
-	dataref("ll_l", "les/dc3/elecSys/lighting/L_ldgLit", "writable")
-	dataref("ll_r", "les/dc3/elecSys/lighting/R_ldgLit", "writable")
+--	dataref("ll_l", "les/dc3/elecSys/lighting/L_ldgLit", "writable")
+--	dataref("ll_r", "les/dc3/elecSys/lighting/R_ldgLit", "writable")
 	
 	set("les/dc3/elecSys/lighting/L_ldgLit",0)
 	set("les/dc3/elecSys/lighting/R_ldgLit",0)

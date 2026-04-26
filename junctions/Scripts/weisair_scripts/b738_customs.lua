@@ -315,7 +315,7 @@ create_command("WeisAIR/b738/b738_autobrake_pos_toggle", "b738_autobrake_pos_tog
 
 function b738_autobrake_set_rto()
 	
-	dataref("autobrake_pos", "laminar/B738/autobrake/autobrake_pos", "writable")
+	-- dataref("autobrake_pos", "laminar/B738/autobrake/autobrake_pos", "writable")
 	set("laminar/B738/autobrake/autobrake_pos", 0.0) 
 
 end
@@ -547,10 +547,10 @@ end
 
 function b738_cockpit_lights_max()
 		
-	dataref("panel_brightness_background", "laminar/B738/electric/generic_brightness", "writable",6)
-	dataref("panel_brightness_afds", "laminar/B738/electric/generic_brightness", "writable",7)
-	dataref("panel_brightness_overhead", "laminar/B738/electric/panel_brightness", "writable",2)
-	dataref("panel_brightness_main", "laminar/B738/electric/panel_brightness", "writable",0)
+	--dataref("panel_brightness_background", "laminar/B738/electric/generic_brightness", "writable",6)
+	--dataref("panel_brightness_afds", "laminar/B738/electric/generic_brightness", "writable",7)
+	--dataref("panel_brightness_overhead", "laminar/B738/electric/panel_brightness", "writable",2)
+	--dataref("panel_brightness_main", "laminar/B738/electric/panel_brightness", "writable",0)
 	set_array("laminar/B738/electric/generic_brightness", 6 , 1 )
 	set_array("laminar/B738/electric/generic_brightness", 7 , 1 )
 	set_array("laminar/B738/electric/panel_brightness",2,1)
@@ -596,10 +596,10 @@ create_command("WeisAIR/b738/LIGHTS/b738_pos_lights_toggle", "b738_pos_lights_to
 
 function b738_cockpit_lights_off()
 		
-	dataref("panel_brightness_background", "laminar/B738/electric/generic_brightness", "writable",6)
-	dataref("panel_brightness_afds", "laminar/B738/electric/generic_brightness", "writable",7)
-	dataref("panel_brightness_overhead", "laminar/B738/electric/panel_brightness", "writable",2)
-	dataref("panel_brightness_main", "laminar/B738/electric/panel_brightness", "writable",0)
+	--dataref("panel_brightness_background", "laminar/B738/electric/generic_brightness", "writable",6)
+	--dataref("panel_brightness_afds", "laminar/B738/electric/generic_brightness", "writable",7)
+	--dataref("panel_brightness_overhead", "laminar/B738/electric/panel_brightness", "writable",2)
+	--dataref("panel_brightness_main", "laminar/B738/electric/panel_brightness", "writable",0)
 	set_array("laminar/B738/electric/generic_brightness", 6 , 0 )
 	set_array("laminar/B738/electric/generic_brightness", 7 , 0 )
 	set_array("laminar/B738/electric/panel_brightness",2,0)
