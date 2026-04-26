@@ -64,7 +64,7 @@ create_command("WeisAIR/b748/LIGHTS/cockpit_lights_off", "b748_cockpit_lights_of
 
 function toggle_IRS_Mode_L()
 	dataref("irsMode_L", "ssg/Nav/align1_sw", "writable")
-	new_mode = irsMode_L + 1
+	local new_mode = irsMode_L + 1
 	if (new_mode <4) then set("ssg/Nav/align1_sw", new_mode)
 	else set("ssg/Nav/align1_sw", 0)
 	end
@@ -73,7 +73,7 @@ create_command("WeisAIR/b748/irs/toggle_IRS_Mode_L", "toggle_IRS_Mode_L", "toggl
 
 function toggle_IRS_Mode_R()
 	dataref("irsMode_R", "ssg/Nav/align3_sw", "writable")
-	new_mode = irsMode_R + 1
+	local new_mode = irsMode_R + 1
 	if (new_mode <4) then set("ssg/Nav/align3_sw", new_mode)
 	else set("ssg/Nav/align3_sw", 0)
 	end
@@ -82,7 +82,7 @@ create_command("WeisAIR/b748/irs/toggle_IRS_Mode_R", "toggle_IRS_Mode_R", "toggl
 
 function toggle_IRS_Mode_C()
 	dataref("irsMode_C", "ssg/Nav/align2_sw", "writable")
-	new_mode = irsMode_C + 1
+	local new_mode = irsMode_C + 1
 	if (new_mode <4) then set("ssg/Nav/align2_sw", new_mode)
 	else set("ssg/Nav/align2_sw", 0)
 	end
@@ -95,42 +95,42 @@ create_command("WeisAIR/b748/irs/toggle_IRS_Mode_C", "toggle_IRS_Mode_C", "toggl
 
 function incMcpAltitude()
 	dataref("mcp_altitude", "ssg/B748/MCP/mcp_alt_target_act", "writable")
-	new_altitude = mcp_altitude + 100
+	local new_altitude = mcp_altitude + 100
 	set("ssg/B748/MCP/mcp_alt_target_act", new_altitude)
 end
 create_command("WeisAIR/b748/mcp/incMcpAltitude", "incMcpAltitude", "incMcpAltitude()", "", "")
 
 function decMcpAltitude()
 	dataref("mcp_altitude", "ssg/B748/MCP/mcp_alt_target_act", "writable")
-	new_altitude = mcp_altitude - 100
+	local new_altitude = mcp_altitude - 100
 	set("ssg/B748/MCP/mcp_alt_target_act", new_altitude)
 end
 create_command("WeisAIR/b748/MCP/decMcpAltitude", "decMcpAltitude", "decMcpAltitude()", "", "")
 
 function incMcpHeading()
 	dataref("mcp_heading", "ssg/B748/MCP/mcp_heading_bug_act", "writable")
-	new_heading = mcp_heading + 1.0
+	local new_heading = mcp_heading + 1.0
 	set("ssg/B748/MCP/mcp_heading_bug_act", new_heading)
 end
 create_command("WeisAIR/b748/MultiPanel/incMcpHeading", "incMcpHeading", "incMcpHeading()", "", "")
 
 function decMcpHeading()
 	dataref("mcp_heading", "ssg/B748/MCP/mcp_heading_bug_act", "writable")
-	new_heading = mcp_heading - 1.0
+	local new_heading = mcp_heading - 1.0
 	set("ssg/B748/MCP/mcp_heading_bug_act", new_heading)
 end
 create_command("WeisAIR/b748/MultiPanel/decMcpHeading", "decMcpHeading", "decMcpHeading()", "", "")	
 
 function incMcpBankAngle()
 	dataref("mcp_bank_angle", "ssg/B748/MCP/mcp_bank_angle_act", "writable")
-	new_bank_angle = mcp_bank_angle + 1.0
+	local new_bank_angle = mcp_bank_angle + 1.0
 	if (new_bank_angle >=0 and new_bank_angle <= 5) then set("ssg/B748/MCP/mcp_bank_angle_act", new_bank_angle) end
 end
 create_command("WeisAIR/b748/MultiPanel/incMcpBankAngle", "incMcpBankAngle", "incMcpBankAngle()", "", "")
 
 function decMcpBankAngle()
 	dataref("mcp_bank_angle", "ssg/B748/MCP/mcp_bank_angle_act", "writable")
-	new_bank_angle = mcp_bank_angle - 1.0
+	local new_bank_angle = mcp_bank_angle - 1.0
 	if (new_bank_angle >=0 and new_bank_angle <= 5) then set("ssg/B748/MCP/mcp_bank_angle_act", new_bank_angle) end
 end
 create_command("WeisAIR/b748/MultiPanel/decMcpBankAngle", "decMcpBankAngle", "decMcpBankAngle()", "", "")	
@@ -145,28 +145,28 @@ create_command("WeisAIR/b748/MultiPanel/hdgSelectPushButton", "hdgSelectPushButt
 
 function incMcpSpeed()
 	dataref("mcp_speed", "ssg/B748/MCP/mcp_ias_mach_act", "writable")
-	new_speed = mcp_speed + 1.0
+	local new_speed = mcp_speed + 1.0
 	set("ssg/B748/MCP/mcp_ias_mach_act", new_speed)
 end
 create_command("WeisAIR/b748/MultiPanel/incMcpSpeed", "incMcpSpeed", "incMcpSpeed()", "", "")
 
 function decMcpSpeed()
 	dataref("mcp_speed", "ssg/B748/MCP/mcp_ias_mach_act", "writable")
-	new_speed = mcp_speed - 1.0
+	local new_speed = mcp_speed - 1.0
 	set("ssg/B748/MCP/mcp_ias_mach_act", new_speed)
 end
 create_command("WeisAIR/b748/MultiPanel/decMcpSpeed", "decMcpSpeed", "decMcpSpeed()", "", "")	
 
 function incMcpVertSpeed()
 	dataref("mcp_vertSpeed", "ssg/B748/MCP/mcp_vs_target_act", "writable")
-	new_vertSpeed = mcp_vertSpeed + 100.0
+	local new_vertSpeed = mcp_vertSpeed + 100.0
 	set("ssg/B748/MCP/mcp_vs_target_act", new_vertSpeed)
 end
 create_command("WeisAIR/b748/MultiPanel/incMcpVertSpeed", "incMcpVertSpeed", "incMcpVertSpeed()", "", "")
 
 function decMcpVertSpeed()
 	dataref("mcp_vertSpeed", "ssg/B748/MCP/mcp_vs_target_act", "writable")
-	new_vertSpeed = mcp_vertSpeed - 100.0
+	local new_vertSpeed = mcp_vertSpeed - 100.0
 	set("ssg/B748/MCP/mcp_vs_target_act", new_vertSpeed)
 end
 create_command("WeisAIR/b748/MultiPanel/decMcpVertSpeed", "decMcpVertSpeed", "decMcpVertSpeed()", "", "")	
@@ -654,7 +654,7 @@ function checklist_dial_up()
 	
 	dataref("checklist_cursor_pos", "SSG/B748/CHKL/chkl_l_sw", "writable")
 	
-	new_cursor_pos = checklist_cursor_pos + 1
+	local new_cursor_pos = checklist_cursor_pos + 1
 
 	if (checklist_cursor_pos < 10) then set("SSG/B748/CHKL/chkl_l_sw", new_cursor_pos)
 		else set("SSG/B748/CHKL/chkl_l_sw", 0)
@@ -667,7 +667,7 @@ function checklist_dial_down()
 	
 	dataref("checklist_cursor_pos", "SSG/B748/CHKL/chkl_l_sw", "writable")
 	
-	new_cursor_pos = checklist_cursor_pos - 1
+	local new_cursor_pos = checklist_cursor_pos - 1
 
 	if (checklist_cursor_pos >= 0) then set("SSG/B748/CHKL/chkl_l_sw", new_cursor_pos)
 		else set("SSG/B748/CHKL/chkl_l_sw", 9)
@@ -693,8 +693,8 @@ create_command("WeisAIR/b748/EICAS/checklist_dial_button_push", "checklist_dial_
 function WXR_push_cpt()
 	dataref("button_state_WXR", "ssg/B748/ND/show_wheather_pilot", "writable")
 	
-	button_state_current = button_state_WXR
-	button_state_new = -1.0
+	local button_state_current = button_state_WXR
+	local button_state_new = -1.0
 	
 	if(button_state_current == 0.0) then button_state_new = 1.0 end
 	if(button_state_current == 1.0) then button_state_new = 0.0 end
@@ -707,8 +707,8 @@ create_command("WeisAIR/b748/EFIS/WXR_push_cpt", "WXR_push_cpt", "WXR_push_cpt()
 function STA_push_cpt()
 	dataref("button_state_STA", "ssg/B748/ND/show_VOR_pilot", "writable")
 	
-	button_state_current = button_state_STA
-	button_state_new = -1.0
+	local button_state_current = button_state_STA
+	local button_state_new = -1.0
 	
 	if(button_state_current == 0.0) then button_state_new = 1.0 end
 	if(button_state_current == 1.0) then button_state_new = 0.0 end
@@ -721,8 +721,8 @@ create_command("WeisAIR/b748/EFIS/STA_push_cpt", "STA_push_cpt", "STA_push_cpt()
 function WPT_push_cpt()
 	dataref("button_state_WPT", "ssg/B748/ND/show_waypoint_pilot", "writable")
 	
-	button_state_current = button_state_WPT
-	button_state_new = -1.0
+	local button_state_current = button_state_WPT
+	local button_state_new = -1.0
 	
 	if(button_state_current == 0.0) then button_state_new = 1.0 end
 	if(button_state_current == 1.0) then button_state_new = 0.0 end
@@ -735,8 +735,8 @@ create_command("WeisAIR/b748/EFIS/WPT_push_cpt", "WPT_push_cpt", "WPT_push_cpt()
 function ARPT_push_cpt()
 	dataref("button_state_ARPT", "ssg/B748/ND/show_airport_pilot", "writable")
 	
-	button_state_current = button_state_ARPT
-	button_state_new = -1.0
+	local button_state_current = button_state_ARPT
+	local button_state_new = -1.0
 	
 	if(button_state_current == 0.0) then button_state_new = 1.0 end
 	if(button_state_current == 1.0) then button_state_new = 0.0 end
@@ -749,8 +749,8 @@ create_command("WeisAIR/b748/EFIS/ARPT_push_cpt", "ARPT_push_cpt", "ARPT_push_cp
 function DATA_push_cpt()
 	dataref("button_state_DATA", "ssg/B748/ND/show_NDB_pilot", "writable")
 	
-	button_state_current = button_state_DATA
-	button_state_new = -1.0
+	local button_state_current = button_state_DATA
+	local button_state_new = -1.0
 	
 	if(button_state_current == 0.0) then button_state_new = 1.0 end
 	if(button_state_current == 1.0) then button_state_new = 0.0 end
@@ -763,8 +763,8 @@ create_command("WeisAIR/b748/EFIS/DATA_push_cpt", "DATA_push_cpt", "DATA_push_cp
 function POS_push_cpt()
 	dataref("button_state_POS", "ssg/B748/ND/show_POS_pilot", "writable")
 	
-	button_state_current = button_state_POS
-	button_state_new = -1.0
+	local button_state_current = button_state_POS
+	local button_state_new = -1.0
 	
 	if(button_state_current == 0.0) then button_state_new = 1.0 end
 	if(button_state_current == 1.0) then button_state_new = 0.0 end
@@ -777,8 +777,8 @@ create_command("WeisAIR/b748/EFIS/POS_push_cpt", "POS_push_cpt", "POS_push_cpt()
 function TERR_push_cpt()
 	dataref("button_state_TERR", "ssg/B748/ND/show_Terr_pilot", "writable")
 	
-	button_state_current = button_state_TERR
-	button_state_new = -1.0
+	local button_state_current = button_state_TERR
+	local button_state_new = -1.0
 	
 	if(button_state_current == 0.0) then button_state_new = 1.0 end
 	if(button_state_current == 1.0) then button_state_new = 0.0 end
@@ -791,8 +791,8 @@ create_command("WeisAIR/b748/EFIS/TERR_push_cpt", "TERR_push_cpt", "TERR_push_cp
 function baro_inc()
 	dataref("baro_value", "ssg/PFD/baro_act", "readable")
 	
-	baro_current_before_inc = baro_value
-	baro_new_for_inc = baro_current_before_inc + 1
+	local baro_current_before_inc = baro_value
+	local baro_new_for_inc = baro_current_before_inc + 1
 	
 	set("ssg/PFD/baro_act", baro_new_for_inc)
 	
@@ -802,8 +802,8 @@ create_command("WeisAIR/b748/EFIS/baro_inc", "baro_inc", "baro_inc()", "", "")
 function baro_dec()
 	dataref("baro_value", "ssg/PFD/baro_act", "readable")
 	
-	baro_current_before_dec = baro_value
-	baro_new_for_dec = baro_current_before_dec - 1
+	local baro_current_before_dec = baro_value
+	local baro_new_for_dec = baro_current_before_dec - 1
 	
 	set("ssg/PFD/baro_act", baro_new_for_dec)
 	
@@ -843,8 +843,8 @@ function baro_STD_push()
 		
 	dataref("button_state_STD", "ssg/PFD/baro_standard_sw_p", "readable")
 	
-	button_state_current = button_state_STD
-	button_state_new = -1
+	local button_state_current = button_state_STD
+	local button_state_new = -1
 	
 	if(button_state_current == 0) then button_state_new = 1 end
 	if(button_state_current == 1) then button_state_new = 0 end
@@ -858,8 +858,8 @@ function MTRS_push()
 		
 	dataref("button_state_MRTS", "ssg/PFD/meters_sw_pilot", "readable")
 	
-	button_state_current = button_state_MRTS
-	button_state_new = -1
+	local button_state_current = button_state_MRTS
+	local button_state_new = -1
 	
 	if(button_state_current == 0) then button_state_new = 1 end
 	if(button_state_current == 1) then button_state_new = 0 end
@@ -873,8 +873,8 @@ function FPV_push()
 	
 	dataref("button_state_FPV", "SSG/B748/PFD/fpv_sw_pilot", "readable")
 	
-	button_state_current = button_state_FPV
-	button_state_new = -1
+	local button_state_current = button_state_FPV
+	local button_state_new = -1
 	
 	if(button_state_current == 0) then button_state_new = 1 end
 	if(button_state_current == 1) then button_state_new = 0 end
@@ -887,8 +887,8 @@ function TFC_push()
 			
 	dataref("button_state_TFC", "ssg/B748/ND/show_TCAS_pilot", "readable")
 	
-	button_state_current = button_state_TFC
-	button_state_new = -1.0
+	local button_state_current = button_state_TFC
+	local button_state_new = -1.0
 	
 	if(button_state_current == 0.0) then button_state_new = 1.0 end
 	if(button_state_current == 1.0) then button_state_new = 0.0 end
@@ -937,8 +937,8 @@ function mode_inc()
 	
 	dataref("map_mode", "ssg/B748/ND/mode_pilot", "writable")
 	
-	mode_current = map_mode
-	mode_new = mode_current + 1.0
+	local mode_current = map_mode
+	local mode_new = mode_current + 1.0
 
 	if (mode_new <=3.0 and mode_new >=0.0) 
 		then set("ssg/B748/ND/mode_pilot", mode_new)
@@ -950,8 +950,8 @@ function mode_dec()
 	
 	dataref("map_mode", "ssg/B748/ND/mode_pilot", "writable")
 	
-	mode_current = map_mode
-	mode_new = mode_current - 1.0
+	local mode_current = map_mode
+	local mode_new = mode_current - 1.0
 
 	if (mode_new <=3.0 and mode_new >=0.0) 
 		then set("ssg/B748/ND/mode_pilot", mode_new)
@@ -963,8 +963,8 @@ function mode_toggle()
 	
 	dataref("map_mode", "ssg/B748/ND/mode_pilot", "writable")
 	
-	mode_current = map_mode
-	mode_new = mode_current + 1.0
+	local mode_current = map_mode
+	local mode_new = mode_current + 1.0
 
 	if (mode_new <=3.0)
 		then set("ssg/B748/ND/mode_pilot", mode_new)
@@ -977,8 +977,8 @@ create_command("WeisAIR/b748/EFIS/mode_toggle", "mode_toggle", "mode_toggle()", 
 function mins_inc()
 	dataref("mins", "ssg/AP/minimum_radio_sw", "readable")
 	
-	mins_current = mins
-	mins_new = mins + 1
+	local mins_current = mins
+	local mins_new = mins + 1
 	
 	set("ssg/AP/minimum_radio_sw", mins_new)
 	
@@ -988,8 +988,8 @@ create_command("WeisAIR/b748/EFIS/mins_inc", "mins_inc", "mins_inc()", "", "")
 function mins_dec()
 	dataref("mins", "ssg/AP/minimum_radio_sw", "readable")
 	
-	mins_current = mins
-	mins_new = mins - 1
+	local mins_current = mins
+	local mins_new = mins - 1
 	
 	set("ssg/AP/minimum_radio_sw", mins_new)
 	
@@ -999,8 +999,8 @@ create_command("WeisAIR/b748/EFIS/mins_dec", "mins_dec", "mins_dec()", "", "")
 function range_inc()
 	dataref("range", "ssg/B748/ND/range_pilot", "writable")
 	
-	range_current = range
-	range_new = range + 1.0
+	local range_current = range
+	local range_new = range + 1.0
 	
 	if (range_new >= -3.0 and range_new <= 7.0) then set("ssg/B748/ND/range_pilot", range_new) end
 	
@@ -1010,8 +1010,8 @@ create_command("WeisAIR/b748/EFIS/range_inc", "range_inc", "range_inc()", "", ""
 function range_dec()
 	dataref("range", "ssg/B748/ND/range_pilot", "writable")
 	
-	range_current = range
-	range_new = range - 1.0
+	local range_current = range
+	local range_new = range - 1.0
 	
 	if (range_new >= -3.0 and range_new <= 7.0) then set("ssg/B748/ND/range_pilot", range_new) end
 	
@@ -1023,8 +1023,8 @@ function range_toggle()
 	
 	dataref("range", "ssg/B748/ND/range_pilot", "writable")
 	
-	range_current = range
-	range_new = range + 1.0
+	local range_current = range
+	local range_new = range + 1.0
 	
 	if (range_new <= 7.0) then set("ssg/B748/ND/range_pilot", range_new) 
 	else set("ssg/B748/ND/range_pilot", -3.0) 
@@ -1193,8 +1193,8 @@ function wipers_dec()
 	
 	if (rangeWiperL ~= rangeWiperR) then set ("ssg/ICE/ice_washerL_sw",rangeWiperR) end
 	
-	range_current = rangeWiperR
-	range_new = range_current - 1
+	local range_current = rangeWiperR
+	local range_new = range_current - 1
 	
 	if (range_new >= 0 and range_new <= 3) then 
 		set("ssg/ICE/ice_washerL_sw", range_new) 
@@ -1211,8 +1211,8 @@ function wipers_inc()
 	
 	if (rangeWiperL ~= rangeWiperR) then set ("ssg/ICE/ice_washerL_sw",rangeWiperR) end
 	
-	range_current = rangeWiperR
-	range_new = range_current + 1
+	local range_current = rangeWiperR
+	local range_new = range_current + 1
 	
 	if (range_new >= 0 and range_new <= 3) then 
 		set("ssg/ICE/ice_washerL_sw", range_new) 
@@ -1226,7 +1226,7 @@ function transponderUp()
 		
 	dataref("transponderVal", "ssg/Radio/transp_mode_sw", "writable")
 	
-	transponder_new = transponderVal + 1
+	local transponder_new = transponderVal + 1
 	
 	if (transponder_new < 4) then 
 		set("ssg/Radio/transp_mode_sw", transponder_new) 
@@ -1239,7 +1239,7 @@ function transponderDn()
 		
 	dataref("transponderVal", "ssg/Radio/transp_mode_sw", "writable")
 	
-	transponder_new = transponderVal - 1
+	local transponder_new = transponderVal - 1
 	
 	if (transponder_new > -1) then 
 		set("ssg/Radio/transp_mode_sw", transponder_new) 
@@ -1273,7 +1273,7 @@ function toggle_hyd_pump_1()
 		
 	dataref("hyd_pump_1_mode", "ssg/HYD/hyd_pump1_swb", "readable")
 		
-	next_mode = hyd_pump_1_mode + 1
+	local next_mode = hyd_pump_1_mode + 1
 
 	if (next_mode >= -1 and next_mode < 3) then set("ssg/HYD/hyd_pump1_swb", next_mode)
 		else set("ssg/HYD/hyd_pump1_swb", -1)
@@ -1285,7 +1285,7 @@ function toggle_hyd_pump_2()
 		
 	dataref("hyd_pump_2_mode", "ssg/HYD/hyd_pump2_swb", "readable")
 		
-	next_mode = hyd_pump_2_mode + 1
+	local next_mode = hyd_pump_2_mode + 1
 
 	if (next_mode >= 0 and next_mode < 3) then set("ssg/HYD/hyd_pump2_swb", next_mode)
 		else set("ssg/HYD/hyd_pump2_swb", 0)
@@ -1297,7 +1297,7 @@ function toggle_hyd_pump_3()
 		
 	dataref("hyd_pump_3_mode", "ssg/HYD/hyd_pump3_swb", "readable")
 		
-	next_mode = hyd_pump_3_mode + 1
+	local next_mode = hyd_pump_3_mode + 1
 
 	if (next_mode >= 0 and next_mode < 3) then set("ssg/HYD/hyd_pump3_swb", next_mode)
 		else set("ssg/HYD/hyd_pump3_swb", 0)
@@ -1309,7 +1309,7 @@ function toggle_hyd_pump_4()
 		
 	dataref("hyd_pump_4_mode", "ssg/HYD/hyd_pump4_swb", "readable")
 		
-	next_mode = hyd_pump_4_mode + 1
+	local next_mode = hyd_pump_4_mode + 1
 
 	if (next_mode >= -1 and next_mode < 3) then set("ssg/HYD/hyd_pump4_swb", next_mode)
 		else set("ssg/HYD/hyd_pump4_swb", -1)
@@ -1321,7 +1321,7 @@ function toggle_deice_eng_1()
 		
 	dataref("deice_mode_eng1", "ssg/ICE/ice_eng1_sw", "readable")
 		
-	next_mode = deice_mode_eng1 + 1
+	local next_mode = deice_mode_eng1 + 1
 
 	if (next_mode >= 0 and next_mode < 3) then set("ssg/ICE/ice_eng1_sw", next_mode)
 		else set("ssg/ICE/ice_eng1_sw", 0)
@@ -1333,7 +1333,7 @@ function toggle_deice_eng_2()
 		
 	dataref("deice_mode_eng2", "ssg/ICE/ice_eng2_sw", "readable")
 		
-	next_mode = deice_mode_eng2 + 1
+	local next_mode = deice_mode_eng2 + 1
 
 	if (next_mode >= 0 and next_mode < 3) then set("ssg/ICE/ice_eng2_sw", next_mode)
 		else set("ssg/ICE/ice_eng2_sw", 0)
@@ -1345,7 +1345,7 @@ function toggle_deice_eng_3()
 		
 	dataref("deice_mode_eng3", "ssg/ICE/ice_eng3_sw", "readable")
 		
-	next_mode = deice_mode_eng3 + 1
+	local next_mode = deice_mode_eng3 + 1
 
 	if (next_mode >= 0 and next_mode < 3) then set("ssg/ICE/ice_eng3_sw", next_mode)
 		else set("ssg/ICE/ice_eng3_sw", 0)
@@ -1357,7 +1357,7 @@ function toggle_deice_eng_4()
 		
 	dataref("deice_mode_eng4", "ssg/ICE/ice_eng4_sw", "readable")
 		
-	next_mode = deice_mode_eng4 + 1
+	local next_mode = deice_mode_eng4 + 1
 
 	if (next_mode >= 0 and next_mode < 3) then set("ssg/ICE/ice_eng4_sw", next_mode)
 		else set("ssg/ICE/ice_eng4_sw", 0)
@@ -1369,7 +1369,7 @@ function toggle_deice_wing()
 		
 	dataref("deice_mode_wing", "ssg/ICE/ice_wing_sw", "readable")
 		
-	next_mode = deice_mode_wing + 1
+	local next_mode = deice_mode_wing + 1
 
 	if (next_mode >= 0 and next_mode < 3) then set("ssg/ICE/ice_wing_sw", next_mode)
 		else set("ssg/ICE/ice_wing_sw", 0)
@@ -1381,7 +1381,7 @@ function toggle_altn_vent()
 		
 	dataref("altn_vent_mode", "ssg/B748/altn_vent_valve_sw", "readable")
 		
-	next_mode = altn_vent_mode + 1
+	local next_mode = altn_vent_mode + 1
 
 	if (next_mode >= -1 and next_mode <= 1) then set("ssg/B748/altn_vent_valve_sw", next_mode)
 		else set("ssg/B748/altn_vent_valve_sw", -1)
@@ -1393,7 +1393,7 @@ function toggle_auto_select()
 		
 	dataref("auto_select_mode", "ssg/ECS/auto_ecs_sel", "readable")
 		
-	next_mode = auto_select_mode + 1
+	local next_mode = auto_select_mode + 1
 
 	if (next_mode >= 0 and next_mode <= 2) then set("ssg/ECS/auto_ecs_sel", next_mode)
 		else set("ssg/ECS/auto_ecs_sel", 0)
@@ -1406,7 +1406,7 @@ function toggle_autobrakes()
 		
 	dataref("autobrakes_mode", "ssg/GEAR/autobrake_sel", "readable")
 		
-	next_mode = autobrakes_mode + 1
+	local next_mode = autobrakes_mode + 1
 
 	if (next_mode >= 0 and next_mode <= 6) then set("ssg/GEAR/autobrake_sel", next_mode)
 		else set("ssg/GEAR/autobrake_sel", 0)
@@ -1418,7 +1418,7 @@ function toggle_stby_power()
 	
 	dataref("current_stby_pwr", "ssg/Elec/bat2_sw", "writable")
 	
-	new_stby_pwr = current_stby_pwr + 1
+	local new_stby_pwr = current_stby_pwr + 1
 
 	if (new_stby_pwr < 3) then set("ssg/Elec/bat2_sw", new_stby_pwr)
 		else set("ssg/Elec/bat2_sw", 0)
@@ -1431,7 +1431,7 @@ function toggle_eng1_fuel_control()
 		
 	dataref("fuel_control_eng1", "ssg/ENG/eng1_cutoff_sw", "readable")
 		
-	fuel_control_eng1_tmp = fuel_control_eng1
+	local fuel_control_eng1_tmp = fuel_control_eng1
 	
 	if (fuel_control_eng1_tmp == 0) then set("ssg/ENG/eng1_cutoff_sw", 1) end
 	if (fuel_control_eng1_tmp == 1) then set("ssg/ENG/eng1_cutoff_sw", 0) end
@@ -1444,7 +1444,7 @@ function toggle_eng2_fuel_control()
 		
 	dataref("fuel_control_eng2", "ssg/ENG/eng2_cutoff_sw", "readable")
 		
-	fuel_control_eng2_tmp = fuel_control_eng2
+	local fuel_control_eng2_tmp = fuel_control_eng2
 	
 	if (fuel_control_eng2_tmp == 0) then set("ssg/ENG/eng2_cutoff_sw", 1) end
 	if (fuel_control_eng2_tmp == 1) then set("ssg/ENG/eng2_cutoff_sw", 0) end
@@ -1457,7 +1457,7 @@ function toggle_eng3_fuel_control()
 		
 	dataref("fuel_control_eng3", "ssg/ENG/eng3_cutoff_sw", "readable")
 		
-	fuel_control_eng3_tmp = fuel_control_eng3
+	local fuel_control_eng3_tmp = fuel_control_eng3
 	
 	if (fuel_control_eng3_tmp == 0) then set("ssg/ENG/eng3_cutoff_sw", 1) end
 	if (fuel_control_eng3_tmp == 1) then set("ssg/ENG/eng3_cutoff_sw", 0) end
@@ -1470,7 +1470,7 @@ function toggle_eng4_fuel_control()
 		
 	dataref("fuel_control_eng4", "ssg/ENG/eng4_cutoff_sw", "readable")
 		
-	fuel_control_eng4_tmp = fuel_control_eng4
+	local fuel_control_eng4_tmp = fuel_control_eng4
 	
 	if (fuel_control_eng4_tmp == 0) then set("ssg/ENG/eng4_cutoff_sw", 1) end
 	if (fuel_control_eng4_tmp == 1) then set("ssg/ENG/eng4_cutoff_sw", 0) end
@@ -1509,8 +1509,8 @@ function checklistUp()
 		
 	dataref("checklistVal", "SSG/B748/CHKL/chkl_r_sw", "writable")
 	
-	checklistVal_current = checklistVal
-	checklistVal_new = checklistVal_current + 1
+	local checklistVal_current = checklistVal
+	local checklistVal_new = checklistVal_current + 1
 	
 	if (checklistVal_new >= -1 and checklistVal_new <= 9) then 
 		set("SSG/B748/CHKL/chkl_r_sw", checklistVal_new)		
@@ -1523,8 +1523,8 @@ function checklistDn()
 		
 	dataref("checklistVal", "SSG/B748/CHKL/chkl_r_sw", "writable")
 	
-	checklistVal_current = checklistVal
-	checklistVal_new = checklistVal_current - 1
+	local checklistVal_current = checklistVal
+	local checklistVal_new = checklistVal_current - 1
 	
 	if (checklistVal_new >= -1 and checklistVal_new <= 9) then 
 		set("SSG/B748/CHKL/chkl_r_sw", checklistVal_new)		

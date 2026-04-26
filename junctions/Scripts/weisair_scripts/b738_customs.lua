@@ -61,8 +61,8 @@ function b738_toggle_map_mode()
 		
 	dataref("map_mode", "laminar/B738/EFIS_control/capt/map_mode_pos", "writable")
 	
-	current_map_mode = map_mode
-	next_mode = map_mode + 1.0
+	local current_map_mode = map_mode
+	local next_mode = map_mode + 1.0
 	
 	if (next_mode < 4.0) then set("laminar/B738/EFIS_control/capt/map_mode_pos", next_mode)
 		else set("laminar/B738/EFIS_control/capt/map_mode_pos", 0.0)
@@ -103,7 +103,7 @@ function b738_mode_inc()
 	
 	dataref("map_mode", "laminar/B738/EFIS_control/capt/map_mode_pos", "writable")
 	
-	mode_current = map_mode
+	local mode_current = map_mode
 	mode_new = mode_current + 1.0
 
 	if (mode_new <=3.0 and mode_new >=0.0) 
@@ -116,7 +116,7 @@ function b738_mode_dec()
 	
 	dataref("map_mode", "laminar/B738/EFIS_control/capt/map_mode_pos", "writable")
 	
-	mode_current = map_mode
+	local mode_current = map_mode
 	mode_new = mode_current - 1.0
 
 	if (mode_new <=3.0 and mode_new >=0.0) 
@@ -169,8 +169,8 @@ function b738_toggle_map_range()
 		
 	dataref("selected_range", "laminar/B738/EFIS/capt/map_range", "writable")
 	
-	current_range = selected_range
-	next_range = current_range + 1.0
+	local current_range = selected_range
+	local next_range = current_range + 1.0
 	
 	if (next_range < 8.0) then set("laminar/B738/EFIS/capt/map_range", next_range)
 		else set("laminar/B738/EFIS/capt/map_range", 0.0)
@@ -184,7 +184,7 @@ function b738_range_inc()
 	dataref("range", "laminar/B738/EFIS/capt/map_range", "writable")
 	
 	range_current = range
-	range_new = range + 1.0
+	local range_new = range + 1.0
 	
 	if (range_new >= 0.0 and range_new <= 7.0) then set("laminar/B738/EFIS/capt/map_range", range_new) end
 	
@@ -194,8 +194,8 @@ create_command("WeisAIR/b738/EFIS/range_inc", "range_inc", "b738_range_inc()", "
 function b738_range_dec()
 	dataref("range", "laminar/B738/EFIS/capt/map_range", "writable")
 	
-	range_current = range
-	range_new = range - 1.0
+	local range_current = range
+	local range_new = range - 1.0
 	
 	if (range_new >= 0.0 and range_new <= 7.0) then set("laminar/B738/EFIS/capt/map_range", range_new) end
 	
@@ -273,8 +273,8 @@ create_command("WeisAIR/b738/wxr/b738_toggle_wxr_mode", "b738_toggle_wxr_mode", 
 
 function b738_inc_wxr_alt()
 
-	current_wxr_alt = wxr_alt
-	new_wxr_alt = current_wxr_alt + 1000.0
+	local current_wxr_alt = wxr_alt
+	local new_wxr_alt = current_wxr_alt + 1000.0
 
 	if (new_wxr_alt < 60000.0) then set("sim/cockpit2/EFIS/EFIS_weather_alt", new_wxr_alt) end
 	
@@ -283,8 +283,8 @@ create_command("WeisAIR/b738/wxr/b738_inc_wxr_alt", "b738_inc_wxr_alt", "b738_in
 
 function b738_dec_wxr_alt()
 		
-	current_wxr_alt = wxr_alt
-	new_wxr_alt = current_wxr_alt - 1000.0
+	local current_wxr_alt = wxr_alt
+	local new_wxr_alt = current_wxr_alt - 1000.0
 
 	if (new_wxr_alt > 0.0) then set("sim/cockpit2/EFIS/EFIS_weather_alt", new_wxr_alt) end
 	
@@ -627,8 +627,8 @@ function b738_toggle_irs_left()
 		
 	dataref("irs_left_state", "laminar/B738/toggle_switch/irs_left", readonly)
 	
-	current_state = irs_left_state
-	new_state = current_state + 1.0
+	local current_state = irs_left_state
+	local new_state = current_state + 1.0
 	
 	if (new_state <= 3.0) then	command_once("laminar/B738/toggle_switch/irs_L_right") end
 	if (new_state > 3.0) then	
@@ -646,8 +646,8 @@ function b738_toggle_irs_right()
 		
 	dataref("irs_right_state", "laminar/B738/toggle_switch/irs_right", readonly)
 	
-	current_state = irs_right_state
-	new_state = current_state + 1.0
+	local current_state = irs_right_state
+	local new_state = current_state + 1.0
 	
 	if (new_state <= 3.0) then	command_once("laminar/B738/toggle_switch/irs_R_right") end
 	if (new_state > 3.0) then	
@@ -665,8 +665,8 @@ function b738_toggle_left_pack_modes()
 		
 	dataref("left_pack_mode", "laminar/B738/air/l_pack_pos", writable)
 	
-	current_state = left_pack_mode
-	new_state = current_state + 1.0
+	local current_state = left_pack_mode
+	local new_state = current_state + 1.0
 	
 	if (new_state == 3.0) then set("laminar/B738/air/l_pack_pos", 0.0) else command_once("laminar/B738/toggle_switch/l_pack_dn") end	
 	
@@ -678,8 +678,8 @@ function b738_toggle_right_pack_modes()
 		
 	dataref("right_pack_mode", "laminar/B738/air/r_pack_pos", writable)
 	
-	current_state = right_pack_mode
-	new_state = current_state + 1.0
+	local current_state = right_pack_mode
+	local new_state = current_state + 1.0
 	
 	if (new_state == 3.0) then set("laminar/B738/air/r_pack_pos", 0.0) else command_once("laminar/B738/toggle_switch/r_pack_dn") end	
 	
@@ -692,8 +692,8 @@ function b738_toggle_isol_valve_modes()
 		
 	dataref("isol_valve_mode", "laminar/B738/air/isolation_valve_pos", writable)
 	
-	current_state = isol_valve_mode
-	new_state = current_state + 1.0
+	local current_state = isol_valve_mode
+	local new_state = current_state + 1.0
 	
 	if (new_state == 3.0) then set("laminar/B738/air/isolation_valve_pos", 0.0) else command_once("laminar/B738/toggle_switch/iso_valve_dn") end	
 	
@@ -705,8 +705,8 @@ function b738_toggle_air_valve_modes()
 		
 	dataref("air_valve_mode", "laminar/B738/toggle_switch/air_valve_ctrl", writable)
 	
-	current_state = air_valve_mode
-	new_state = current_state + 1.0
+	local current_state = air_valve_mode
+	local new_state = current_state + 1.0
 	
 	if (new_state == 3.0) then set("laminar/B738/toggle_switch/air_valve_ctrl", 0.0) else command_once("laminar/B738/toggle_switch/air_valve_ctrl_right") end	
 	
@@ -747,8 +747,8 @@ function b738_toggle_emer_exit_lights()
 		
 	dataref("emer_exit_lights_status", "laminar/B738/toggle_switch/emer_exit_lights", readonly)
 	
-	current_state = emer_exit_lights_status
-	new_state = current_state + 1.0
+	local current_state = emer_exit_lights_status
+	local new_state = current_state + 1.0
 	
 	if (new_state == 3.0) then 
 		command_once("laminar/B738/toggle_switch/emer_exit_lights_up")

@@ -44,7 +44,7 @@ create_command("WeisAIR/b733/toggle_fire_test", "toggle_fire_test", "toggle_fire
 
 function inc_pilot_dh()
 
-	new_val = pilot_dh + 1.0
+	local new_val = pilot_dh + 1.0
 
 	if(new_val < 1000.0) then set("ixeg/733/ehsi/dh_pt_act", new_val)	end
 end
@@ -52,7 +52,7 @@ create_command("WeisAIR/b733/ehsi/inc_pilot_dh", "inc_pilot_dh", "inc_pilot_dh()
 
 function dec_pilot_dh()
 
-	new_val = pilot_dh - 1.0
+	local new_val = pilot_dh - 1.0
 
 	if(new_val > -21.0) then set("ixeg/733/ehsi/dh_pt_act", new_val)	end
 end
@@ -161,7 +161,7 @@ create_command("WeisAIR/b733/LIGHTS/cockpit_lights_off", "b733_cockpit_lights_of
 function crs_1_inc()
 	dataref("crs1_act", "ixeg/733/MCP/mcp_plt_course_act", "writable")
 	
-	new_val = crs1_act + 1.0
+	local new_val = crs1_act + 1.0
 	if (new_val < 360.0) then set("ixeg/733/MCP/mcp_plt_course_act", new_val) 
 		else set("ixeg/733/MCP/mcp_plt_course_act", 360.0-new_val)
 	end
@@ -172,7 +172,7 @@ create_command("WeisAIR/b733/mcp/crs_1_inc", "crs_1_inc", "crs_1_inc()", "", "")
 function crs_1_dec()
 	dataref("crs1_act", "ixeg/733/MCP/mcp_plt_course_act", "writable")
 	
-	new_val = crs1_act - 1.0
+	local new_val = crs1_act - 1.0
 	if (new_val > 0.0) then set("ixeg/733/MCP/mcp_plt_course_act", new_val) 
 		else set("ixeg/733/MCP/mcp_plt_course_act", 360.0+new_val)
 	end
@@ -183,7 +183,7 @@ create_command("WeisAIR/b733/mcp/crs_1_dec", "crs_1_dec", "crs_1_dec()", "", "")
 function crs_2_inc()
 	dataref("crs2_act", "ixeg/733/MCP/mcp_cplt_course_act", "writable")
 	
-	new_val = crs2_act + 1.0
+	local new_val = crs2_act + 1.0
 	if (new_val < 360.0) then set("ixeg/733/MCP/mcp_cplt_course_act", new_val) 
 		else set("ixeg/733/MCP/mcp_cplt_course_act", 360.0-new_val)
 	end
@@ -194,7 +194,7 @@ create_command("WeisAIR/b733/mcp/crs_2_inc", "crs_2_inc", "crs_2_inc()", "", "")
 function crs_2_dec()
 	dataref("crs2_act", "ixeg/733/MCP/mcp_cplt_course_act", "writable")
 	
-	new_val = crs2_act - 1.0
+	local new_val = crs2_act - 1.0
 	if (new_val > 0.0) then set("ixeg/733/MCP/mcp_cplt_course_act", new_val) 
 		else set("ixeg/733/MCP/mcp_cplt_course_act", 360.0+new_val)
 	end
@@ -206,7 +206,7 @@ create_command("WeisAIR/b733/mcp/crs_2_dec", "crs_2_dec", "crs_2_dec()", "", "")
 
 function toggle_autobrake()
 
-	new_val = autobrakes_mode + 1.0
+	local new_val = autobrakes_mode + 1.0
 	if (new_val < 5.0) then set("ixeg/733/hydraulics/hyd_auto_brake_act", new_val) 
 		else set("ixeg/733/hydraulics/hyd_auto_brake_act", -1.0)
 	end
@@ -219,7 +219,7 @@ function alt_inc_1000()
 	--dataref("alt_act_1000_inc", "sim/cockpit/autopilot/altitude", "writable")
 	--new_val = alt_act_1000_inc + 1000.0
 
-	new_val = alt_act + 1000.0
+	local new_val = alt_act + 1000.0
 	set("sim/cockpit/autopilot/altitude", new_val) 
 end
 create_command("WeisAIR/b733/mcp/alt_inc_1000", "alt_inc_1000", "alt_inc_1000()", "", "")
@@ -228,7 +228,7 @@ function alt_inc_100()
 	--dataref("alt_act_100_inc", "sim/cockpit/autopilot/altitude", "writable")
 	--new_val = alt_act_100_inc + 100.0
 	
-	new_val = alt_act + 100.0
+	local new_val = alt_act + 100.0
 	set("sim/cockpit/autopilot/altitude", new_val) 
 end
 create_command("WeisAIR/b733/mcp/alt_inc_100", "alt_inc_100", "alt_inc_100()", "", "")
@@ -237,7 +237,7 @@ function alt_dec_1000()
 	--dataref("alt_act_1000_dec", "sim/cockpit/autopilot/altitude", "writable")
 	--new_val = alt_act_1000_dec - 1000.0
 
-	new_val = alt_act - 1000.0
+	local new_val = alt_act - 1000.0
 	if (new_val > 0) then set("sim/cockpit/autopilot/altitude", new_val) end
 end
 create_command("WeisAIR/b733/mcp/alt_dec_1000", "alt_dec_1000", "alt_dec_1000()", "", "")
@@ -246,32 +246,32 @@ function alt_dec_100()
 	--dataref("alt_act_100_dec", "sim/cockpit/autopilot/altitude", "writable")
 	--new_val = alt_act_100_dec - 100.0
 
-	new_val = alt_act - 100.0
+	local new_val = alt_act - 100.0
 	if (new_val > 0) then set("sim/cockpit/autopilot/altitude", new_val) end
 end
 create_command("WeisAIR/b733/mcp/alt_dec_100", "alt_dec_100", "alt_dec_100()", "", "")
 
 
 function inc_flt_alt()
-	new_val = flt_alt_250 + 0.25
+	local new_val = flt_alt_250 + 0.25
 	set("ixeg/733/pressurization/cabin_auto_flt_alt_kft_act", new_val) 
 end
 create_command("WeisAIR/b733/pressure/inc_flt_alt", "inc_flt_alt", "inc_flt_alt()", "", "")
 
 function dec_flt_alt()
-	new_val = flt_alt_250 - 0.25
+	local new_val = flt_alt_250 - 0.25
 	set("ixeg/733/pressurization/cabin_auto_flt_alt_kft_act", new_val) 
 end
 create_command("WeisAIR/b733/pressure/dec_flt_alt", "dec_flt_alt", "dec_flt_alt()", "", "")
 
 function inc_land_alt()
-	new_val = land_alt_500 + 0.5
+	local new_val = land_alt_500 + 0.5
 	if (new_val <14.0) then	set("ixeg/733/pressurization/cabin_auto_land_alt_kft_act", new_val) end 
 end
 create_command("WeisAIR/b733/pressure/inc_land_alt", "inc_land_alt", "inc_land_alt()", "", "")
 
 function dec_land_alt()
-	new_val = land_alt_500 - 0.5
+	local new_val = land_alt_500 - 0.5
 	if (new_val >-1.5)	then set("ixeg/733/pressurization/cabin_auto_land_alt_kft_act", new_val) end 
 end
 create_command("WeisAIR/b733/pressure/dec_land_alt", "dec_land_alt", "dec_land_alt()", "", "")
@@ -279,8 +279,8 @@ create_command("WeisAIR/b733/pressure/dec_land_alt", "dec_land_alt", "dec_land_a
 function range_inc()
 	dataref("range", "ixeg/733/ehsi/ehsi_range_pt_act", "writable")
 	
-	range_current = range
-	range_new = range + 1.0
+	local range_current = range
+	local range_new = range + 1.0
 	
 	if (range_new >= 0.0 and range_new <= 5.0) then set("ixeg/733/ehsi/ehsi_range_pt_act", range_new) end
 	
@@ -290,8 +290,8 @@ create_command("WeisAIR/b733/EHSI/range_inc", "range_inc", "range_inc()", "", ""
 function range_dec()
 	dataref("range", "ixeg/733/ehsi/ehsi_range_pt_act", "writable")
 	
-	range_current = range
-	range_new = range - 1.0
+	local range_current = range
+	local range_new = range - 1.0
 	
 	if (range_new >= 0.0 and range_new <= 5.0) then set("ixeg/733/ehsi/ehsi_range_pt_act", range_new) end
 	
@@ -302,8 +302,8 @@ create_command("WeisAIR/b733/EHSI/range_dec", "range_dec", "range_dec()", "", ""
 function map_mode_inc()
 	dataref("map_mode", "ixeg/733/ehsi/ehsi_mode_pt_act", "writable")
 	
-	map_mode_current = map_mode
-	map_mode_new = map_mode + 1.0
+	local map_mode_current = map_mode
+	local map_mode_new = map_mode + 1.0
 	
 	if (map_mode_new >= 0.0 and map_mode_new <= 4.0) then set("ixeg/733/ehsi/ehsi_mode_pt_act", map_mode_new) end
 	
@@ -313,8 +313,8 @@ create_command("WeisAIR/b733/EHSI/map_mode_inc", "map_mode_inc", "map_mode_inc()
 function map_mode_dec()
 	dataref("map_mode", "ixeg/733/ehsi/ehsi_mode_pt_act", "writable")
 	
-	map_mode_current = map_mode
-	map_mode_new = map_mode - 1.0
+	local map_mode_current = map_mode
+	local map_mode_new = map_mode - 1.0
 	
 	if (map_mode_new >= 0.0 and map_mode_new <= 4.0) then set("ixeg/733/ehsi/ehsi_mode_pt_act", map_mode_new) end
 	
@@ -397,7 +397,7 @@ function pos_lights_toggle()
 	
 		dataref("pos_light_state", "ixeg/733/lighting/position_lt_act", "writable")
 		
-		new_val = pos_light_state + 1.0
+		local new_val = pos_light_state + 1.0
 
 		if (new_val < 2.0) then set("ixeg/733/lighting/position_lt_act",new_val)
 		else set("ixeg/733/lighting/position_lt_act",-1.0)
@@ -838,7 +838,7 @@ create_command("WeisAIR/b733/irs/toggle_irs_left", "b733_toggle_irs_left", "b733
 
 function b733_toggle_irs_right()
 		
-	new_state = irs_right_state + 1.0
+	local new_state = irs_right_state + 1.0
 	
 	if (new_state <= 3.0) then	set("ixeg/733/irs/irs_right_mode_act",new_state) 
 	else set("ixeg/733/irs/irs_right_mode_act",0.0) 
@@ -850,7 +850,7 @@ create_command("WeisAIR/b733/irs/toggle_irs_right", "b733_toggle_irs_right", "b7
 function wxr_tilt_up()
 	dataref("wxr_tilt", "ixeg/733/wxr/wxr_tilt_act", "writable")
 
-	new_val = wxr_tilt + 0.1
+	local new_val = wxr_tilt + 0.1
 	if (new_val < 15.1) then	set("ixeg/733/wxr/wxr_tilt_act",new_val) end
 
 end
@@ -859,7 +859,7 @@ create_command("WeisAIR/ehsi/wxr_tilt_up", "wxr_tilt_up", "wxr_tilt_up()", "", "
 function wxr_tilt_dn()
 	dataref("wxr_tilt", "ixeg/733/wxr/wxr_tilt_act", "writable")
 
-	new_val = wxr_tilt - 0.1
+	local new_val = wxr_tilt - 0.1
 	if (new_val > -15.1) then set("ixeg/733/wxr/wxr_tilt_act",new_val) end
 
 end
@@ -898,7 +898,7 @@ create_command("WeisAIR/ehsi/wxr_map_toggle", "wxr_map_toggle", "wxr_map_toggle(
 
 function transponderUp()	
 	
-	transponder_new = transponderVal + 1
+	local transponder_new = transponderVal + 1
 	
 	if (transponder_new < 5) then 
 		set("ixeg/733/xpdr/xpdr_mode_act", transponder_new) 
@@ -909,7 +909,7 @@ create_command("WeisAIR/b733/radios/transponderUp", "transponderUp", "transponde
 
 function transponderDn()
 	
-	transponder_new = transponderVal - 1
+	local transponder_new = transponderVal - 1
 	
 	if (transponder_new > -1) then 
 		set("ixeg/733/xpdr/xpdr_mode_act", transponder_new) 
@@ -920,7 +920,7 @@ create_command("WeisAIR/b733/radios/transponderDn", "transponderDn", "transponde
 
 function toggle_left_pack_modes()
 
-	new_state = left_pack_mode + 1.0	
+	local new_state = left_pack_mode + 1.0	
 	if (new_state < 3.0) then set("ixeg/733/bleedair/bleedair_lpack_act", new_state) 
 	else set("ixeg/733/bleedair/bleedair_lpack_act", 0.0)
 	end	
@@ -930,7 +930,7 @@ create_command("WeisAIR/b733/pressure/toggle_left_pack_modes", "toggle_left_pack
 
 function toggle_right_pack_modes()
 		
-	new_state = right_pack_mode + 1.0	
+	local new_state = right_pack_mode + 1.0	
 	if (new_state < 3.0) then set("ixeg/733/bleedair/bleedair_rpack_act", new_state) 
 	else set("ixeg/733/bleedair/bleedair_rpack_act", 0.0)
 	end	
@@ -941,7 +941,7 @@ create_command("WeisAIR/b733/pressure/toggle_right_pack_modes", "toggle_right_pa
 
 function toggle_isol_valve_modes()
 		
-	new_state = iso_valve_mode + 1.0	
+	local new_state = iso_valve_mode + 1.0	
 	if (new_state < 3.0) then set("ixeg/733/bleedair/bleedair_isovalve_act", new_state) 
 	else set("ixeg/733/bleedair/bleedair_isovalve_act", 0.0)
 	end	
@@ -953,7 +953,7 @@ create_command("WeisAIR/b733/pressure/toggle_isol_valve_modes", "toggle_isol_val
 
 function toggle_man_cabin_pressure_valve()
 		
-	new_state = man_cabin_pressure_toggle + 1.0	
+	local new_state = man_cabin_pressure_toggle + 1.0	
 	if (new_state < 2.0) then set("ixeg/733/pressurization/cabin_manual_act", new_state) 
 	else set("ixeg/733/pressurization/cabin_manual_act", -1.0)
 	end	
@@ -963,7 +963,7 @@ create_command("WeisAIR/b733/pressure/toggle_man_cabin_pressure_valve", "toggle_
 
 function toggle_cabin_pressure_mode()
 		
-	new_state = cabin_pressure_mode + 1.0	
+	local new_state = cabin_pressure_mode + 1.0	
 	if (new_state < 5.0) then set("ixeg/733/pressurization/cabin_mode_act", new_state) 
 	else set("ixeg/733/pressurization/cabin_mode_act", 0.0)
 	end	

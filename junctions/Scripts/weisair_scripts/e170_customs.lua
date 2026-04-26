@@ -22,7 +22,7 @@ function toggle_autobrake()
 	
 	dataref("autobrake_mode", "sim/cockpit/switches/auto_brake_settings", "writable")
 	
-	new_ab_mode = autobrake_mode + 1
+	local new_ab_mode = autobrake_mode + 1
 	if new_ab_mode == 6 then set("sim/cockpit/switches/auto_brake_settings",0)
 		else if new_ab_mode ~=2 then set("sim/cockpit/switches/auto_brake_settings",new_ab_mode)
 			else set("sim/cockpit/switches/auto_brake_settings",3)
@@ -36,7 +36,7 @@ function toggle_ac_bus_ties_switch()
 	
 	dataref("ac_bus_ties_state", "XCrafts/electrical/ac_bus_tie_switch", "writable")
 	
-	new_bt_state = ac_bus_ties_state + 1
+	local new_bt_state = ac_bus_ties_state + 1
 	if new_bt_state <3 then set("XCrafts/electrical/ac_bus_tie_switch",new_bt_state)
 		else set("XCrafts/electrical/ac_bus_tie_switch",0)
 	end
@@ -48,7 +48,7 @@ function toggle_emer_exit_lights()
 	
 	dataref("emer_exit_lights_state", "XCrafts/light/emerg_switch", "writable")
 	
-	new_emer_exit_lights_state = emer_exit_lights_state + 1
+	local new_emer_exit_lights_state = emer_exit_lights_state + 1
 	if new_emer_exit_lights_state <3 then set("XCrafts/light/emerg_switch",new_emer_exit_lights_state)
 		else set("XCrafts/light/emerg_switch",0)
 	end
@@ -81,7 +81,7 @@ function map_range_dec()
 	
 	dataref("map_range", "sim/cockpit/switches/EFIS_map_range_selector", "writable")
 	
-	inc_map_range = map_range + 1
+	local inc_map_range = map_range + 1
 	if inc_map_range <7 then set("sim/cockpit/switches/EFIS_map_range_selector",inc_map_range)	end
 
 end
@@ -91,7 +91,7 @@ function map_range_inc()
 	
 	dataref("map_range", "sim/cockpit/switches/EFIS_map_range_selector", "writable")
 	
-	dec_map_range = map_range - 1
+	local dec_map_range = map_range - 1
 	if dec_map_range >=0 then set("sim/cockpit/switches/EFIS_map_range_selector",dec_map_range)	end
 
 end

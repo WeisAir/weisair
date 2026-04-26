@@ -35,7 +35,7 @@ create_command("WeisAIR/dc3/lights/land_lights_off", "land_lights_off", "land_li
 
 function battery_switch_toggle()
 	
-	new_val = bat_switch + 1
+	local new_val = bat_switch + 1
 
 	if (new_val < 3) then set("les/dc3/elecSys/controls/battery_sw",new_val)
 	else set("les/dc3/elecSys/controls/battery_sw",0)
@@ -46,7 +46,7 @@ create_command("WeisAIR/dc3/elec/battery_switch_toggle", "battery_switch_toggle"
 
 function magneto_left_toggle()
 	
-	new_val = left_magneto + 1
+	local new_val = left_magneto + 1
 
 	if (new_val < 4) then set("les/dc3/elecSys/controls/Lmagneto_sw",new_val)
 	else set("les/dc3/elecSys/controls/Lmagneto_sw",0)
@@ -57,7 +57,7 @@ create_command("WeisAIR/dc3/elec/magneto_left_toggle", "magneto_left_toggle", "m
 
 function magneto_right_toggle()
 	
-	new_val = right_magneto + 1
+	local new_val = right_magneto + 1
 
 	if (new_val < 4) then set("les/dc3/elecSys/controls/Rmagneto_sw",new_val)
 	else set("les/dc3/elecSys/controls/Rmagneto_sw",0)
@@ -104,7 +104,7 @@ create_command("WeisAIR/dc3/eng/fire_test_stop", "fire_test_stop", "fire_test_st
 
 function xpdr_mode_dec()
 	
-	new_val = xpdr_mode - 1
+	local new_val = xpdr_mode - 1
 	if (new_val > -1) then set("les/dc3/radios/xpndr_kb",new_val) end
 	
 end
@@ -112,7 +112,7 @@ create_command("WeisAIR/dc3/xpdr/xpdr_mode_dec", "xpdr_mode_dec", "xpdr_mode_dec
 
 function xpdr_mode_inc()
 	
-	new_val = xpdr_mode + 1
+	local new_val = xpdr_mode + 1
 	if (new_val < 4) then set("les/dc3/radios/xpndr_kb",new_val) end
 	
 end
@@ -120,7 +120,7 @@ create_command("WeisAIR/dc3/xpdr/xpdr_mode_inc", "xpdr_mode_inc", "xpdr_mode_inc
 
 function toggle_fire_ext_selector()
 	
-	new_val = fire_ext_selector + 1
+	local new_val = fire_ext_selector + 1
 	if (new_val < 2) then set("les/dc3/fuelSys/fire_eng_select_switch_mnp",new_val) 
 	else set("les/dc3/fuelSys/fire_eng_select_switch_mnp",-1)
 	end
@@ -130,7 +130,7 @@ create_command("WeisAIR/dc3/fire/toggle_fire_ext_selector", "toggle_fire_ext_sel
 
 function toggle_left_engine_fuel_selector()
 	
-	new_val = left_eng_fuel_selector + 1
+	local new_val = left_eng_fuel_selector + 1
 	if (new_val < 5) then set("les/dc3/fuelSys/lFuelSelector_kb",new_val) 
 	else set("les/dc3/fuelSys/lFuelSelector_kb",0)
 	end
@@ -140,7 +140,7 @@ create_command("WeisAIR/dc3/fuel/toggle_left_engine_fuel_selector", "toggle_left
 
 function toggle_right_engine_fuel_selector()
 	
-	new_val = right_eng_fuel_selector + 1
+	local new_val = right_eng_fuel_selector + 1
 	if (new_val < 5) then set("les/dc3/fuelSys/rFuelSelector_kb",new_val) 
 	else set("les/dc3/fuelSys/rFuelSelector_kb",0)
 	end

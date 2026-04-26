@@ -52,7 +52,7 @@ create_command("WeisAIR/ops_weather/set_weather_largecellthunderstorms", "set_we
 function toggle_weather_presets()
 	
 	dataref("wxr_preset", "sim/weather/region/weather_preset", writable)
-	new_state = wxr_preset + 1
+	local new_state = wxr_preset + 1
 	
 	if (new_state < 9) then set("sim/weather/region/weather_preset", new_state)
 		else set("sim/weather/region/weather_preset", 0)
@@ -148,8 +148,8 @@ function toggle_weather_rwy_friction()
 	
 	dataref("rwy_friction", "sim/weather/region/runway_friction", writable)
 	
-	current_state = rwy_friction
-	new_state = current_state + 1.0
+	local current_state = rwy_friction
+	local new_state = current_state + 1.0
 	
 	if (new_state < 16.0) then set("sim/weather/region/runway_friction", new_state)
 		else set("sim/weather/region/runway_friction", 0.0)
@@ -165,7 +165,7 @@ function inc_sealevel_temp_10degr()
 	
 	dataref("sealvl_temperature", "sim/weather/region/sealevel_temperature_c", writable)
 	
-	new_temp = sealvl_temperature + 10
+	local new_temp = sealvl_temperature + 10
 	set("sim/weather/region/sealevel_temperature_c",new_temp)
 
 end
@@ -175,7 +175,7 @@ function dec_sealevel_temp_10degr()
 	
 	dataref("sealvl_temperature", "sim/weather/region/sealevel_temperature_c", writable)
 	
-	new_temp = sealvl_temperature - 10
+	local new_temp = sealvl_temperature - 10
 	set("sim/weather/region/sealevel_temperature_c",new_temp)
 
 end
@@ -191,8 +191,8 @@ function inc_wind_10kts()
 	set("sim/weather/region/update_immediately",1)
 	
 	dataref("wind_speed", "sim/weather/region/wind_speed_msc", writable,0)
-	current_speed = wind_speed
-	new_speed = current_speed + (10/1.94384)
+	local current_speed = wind_speed
+	local new_speed = current_speed + (10/1.94384)
 	set_array("sim/weather/region/wind_speed_msc",0, new_speed)
 end
 create_command("WeisAIR/ops_weather/inc_wind_10kts", "inc_wind_10kts", "inc_wind_10kts()", "", "")
@@ -201,8 +201,8 @@ function dec_wind_10kts()
 	set("sim/weather/region/update_immediately",1)
 	
 	dataref("wind_speed", "sim/weather/region/wind_speed_msc", writable,0)
-	current_speed = wind_speed
-	new_speed = current_speed - (10/1.94384)
+	local current_speed = wind_speed
+	local new_speed = current_speed - (10/1.94384)
 	if (new_speed >=0) then set_array("sim/weather/region/wind_speed_msc",0, new_speed) 
 		else set_array("sim/weather/region/wind_speed_msc",0, 0) 
 	end
@@ -213,8 +213,8 @@ function inc_wind_direction_10degr()
 	set("sim/weather/region/update_immediately",1)
 	
 	dataref("wind_direction", "sim/weather/region/wind_direction_degt", writable,0)
-	current_direction = wind_direction
-	new_direction = current_direction + 10
+	local current_direction = wind_direction
+	local new_direction = current_direction + 10
 	if (new_direction < 360) then set_array("sim/weather/region/wind_direction_degt",0, new_direction)
 		else set_array("sim/weather/region/wind_direction_degt",0, 0) 
 	end
@@ -225,8 +225,8 @@ function dec_wind_direction_10degr()
 	set("sim/weather/region/update_immediately",1)
 	
 	dataref("wind_direction", "sim/weather/region/wind_direction_degt", writable,0)
-	current_direction = wind_direction
-	new_direction = current_direction - 10
+	local current_direction = wind_direction
+	local new_direction = current_direction - 10
 	if (new_direction > 0) then set_array("sim/weather/region/wind_direction_degt",0, new_direction)
 		else set_array("sim/weather/region/wind_direction_degt",0, 359) 
 	end
@@ -286,8 +286,8 @@ function set_zulutime_next_hour()
 	
 	dataref("zulu_time", "sim/time/zulu_time_sec", writable)
 	
-	current_state = zulu_time
-	new_state = current_state + 3600
+	local current_state = zulu_time
+	local new_state = current_state + 3600
 	
 	if (new_state < 86400) then set("sim/time/zulu_time_sec", new_state)
 		else set("sim/time/zulu_time_sec", 0)
@@ -300,8 +300,8 @@ function set_zulutime_prev_hour()
 	
 	dataref("zulu_time", "sim/time/zulu_time_sec", writable)
 	
-	current_state = zulu_time
-	new_state = current_state - 3600
+	local current_state = zulu_time
+	local new_state = current_state - 3600
 	
 	if (new_state > 0) then set("sim/time/zulu_time_sec", new_state)
 		else set("sim/time/zulu_time_sec", 82800)

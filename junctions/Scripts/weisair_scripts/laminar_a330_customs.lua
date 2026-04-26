@@ -14,8 +14,8 @@ function a330_taxi_lights_toggle()
 	
 	dataref("taxi_lights_state", "sim/cockpit2/switches/landing_lights_switch", "writable",1)
 	
-	current_taxi_light_state = taxi_lights_state
-	new_taxi_light_state = taxi_lights_state + 0.5
+	local current_taxi_light_state = taxi_lights_state
+	local new_taxi_light_state = taxi_lights_state + 0.5
 
 	if (new_taxi_light_state < 1.5) then set_array("sim/cockpit2/switches/landing_lights_switch",1, new_taxi_light_state)
 	else 
