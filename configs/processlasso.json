@@ -1,0 +1,1048 @@
+{
+ "$id": "https://bitsum.com/json-schemas/2026-01-17-00/processlasso.schema.json",
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "cpuAffinityRuleOrder": [
+  "cefclient.exe",
+  "handler.exe",
+  "onedrive.sync.service.exe",
+  "mountaindisplaypadworker.exe",
+  "simbrief downloader.exe",
+  "navigraphsimlink.exe",
+  "securityhealthsystray.exe",
+  "explorer.exe",
+  "taskmgr.exe",
+  "editors_helper.exe",
+  "editors.exe",
+  "processlasso.exe",
+  "crashhelper.exe",
+  "firefox.exe",
+  "microsoftedgeupdate.exe",
+  "makalu monitor.exe",
+  "setup.exe",
+  "ngfmsagent.exe",
+  "dwm.exe",
+  "winlogon.exe",
+  "fontdrvhost.exe",
+  "lsass.exe",
+  "trustedinstaller.exe",
+  "svchost.exe (wuqisvcgroup -p -s wuqisvc)",
+  "svchost.exe (netsvcs -p -s wisvc)",
+  "svchost.exe (localsystemnetworkrestricted -p)",
+  "svchost.exe (localserviceandnoimpersonation -p -s ssdpsrv)",
+  "svchost.exe (netsvcs -p -s wlidsvc)",
+  "svchost.exe (localservice -p -s licensemanager)",
+  "svchost.exe (netsvcs -p -s wuauserv)",
+  "svchost.exe (localservice -p -s npsmsvc)",
+  "svchost.exe (whesvc -p -s whesvc)",
+  "securityhealthservice.exe",
+  "svchost.exe (invsvcgroup -p -s inventorysvc)",
+  "processgovernor.exe",
+  "srvstub.exe",
+  "svchost.exe (localservicenetworkrestricted -p -s ngcctnrsvc)",
+  "svchost.exe (udksvcgroup -s udkusersvc)",
+  "svchost.exe (netsvcs -p)",
+  "nissrv.exe",
+  "svchost.exe (netsvcs -p -s appinfo)",
+  "svchost.exe (localserviceandnoimpersonation -p -s wcncsvc)",
+  "svchost.exe (localservice -p -s cdpsvc)",
+  "presentationfontcache.exe",
+  "svchost.exe (localsystemnetworkrestricted -p -s pcasvc)",
+  "svchost.exe (netsvcs -p -s tokenbroker)",
+  "svchost.exe (localsystemnetworkrestricted -p -s ngcsvc)",
+  "svchost.exe (unistacksvcgroup -s wpnuserservice)",
+  "svchost.exe (localsystemnetworkrestricted -p -s webthreatdefusersvc)",
+  "svchost.exe (netsvcs -p -s bits)",
+  "svchost.exe (unistacksvcgroup -s cdpusersvc)",
+  "svchost.exe (wsaifabricsvcgroup -p -s wsaifabricsvc)",
+  "svchost.exe (osprivacy -p -s camsvc)",
+  "svchost.exe (sdrsvc)",
+  "svchost.exe (netsvcs -p -s usosvc)",
+  "svchost.exe (localservicenetworkrestricted -s rmsvc)",
+  "svchost.exe (clipboardsvcgroup -p -s cbdhsvc)",
+  "svchost.exe (netsvcs)",
+  "svchost.exe (netsvcs -p -s lanmanserver)",
+  "lms.exe",
+  "searchindexer.exe",
+  "rtkauduservice64.exe",
+  "jhi_service.exe",
+  "wmiregistrationservice.exe",
+  "oneapp.igcc.winservice.exe",
+  "nvcontainer.exe",
+  "vssvc.exe",
+  "mpdefendercoreservice.exe",
+  "msmpeng.exe",
+  "updatesvc.exe",
+  "svchost.exe (networkservice -p -s tapisrv)",
+  "launcher-x64.exe",
+  "svchost.exe (wbiosvcgroup -s wbiosrvc)",
+  "svchost.exe (imgsvc)",
+  "svchost.exe (localservice -p -s sstpsvc)",
+  "svchost.exe (netsvcs -p -s winmgmt)",
+  "svchost.exe (netsvcs -p -s wpnservice)",
+  "svchost.exe (localsystemnetworkrestricted -p -s trkwks)",
+  "svchost.exe (netsvcs -p -s iphlpsvc)",
+  "aggregatorhost.exe",
+  "svchost.exe (utcsvc -p)",
+  "svchost.exe (netsvcs -p -s ikeext)",
+  "svchost.exe (localservicenonetwork -p -s dps)",
+  "svchost.exe (localservice -p -s dispbrokerdesktopsvc)",
+  "dashost.exe",
+  "svchost.exe (localsystemnetworkrestricted -p -s deviceassociationservice)",
+  "svchost.exe (appmodel -p -s staterepository)",
+  "spoolsv.exe",
+  "svchost.exe (netsvcs -p -s shellhwdetection)",
+  "svchost.exe (localservicenetworkrestricted -p -s wcmsvc)",
+  "svchost.exe (localservicehttp -p)",
+  "svchost.exe (webthreatdefense -p -s webthreatdefsvc)",
+  "svchost.exe (localservicenetworkrestricted -p -s dusmsvc)",
+  "svchost.exe (localservicenetworkrestricted -p -s dhcp)",
+  "ctfmon.exe",
+  "svchost.exe (localsystemnetworkrestricted -p -s textinputmanagementservice)",
+  "audiodg.exe",
+  "svchost.exe (localservicenetworkrestricted -p)",
+  "svchost.exe",
+  "svchost.exe (localservicenonetwork -p)",
+  "svchost.exe (netsvcs -p -s sessionenv)",
+  "svchost.exe (localservicenonetworkfirewall -p)",
+  "svchost.exe (swprv)",
+  "svchost.exe (networkservice -p)",
+  "svchost.exe (networkservice -p -s lanmanworkstation)",
+  "svchost.exe (localservice -p -s fontcache)",
+  "svchost.exe (localsystemnetworkrestricted -p -s audioendpointbuilder)",
+  "svchost.exe (netsvcs -s certpropsvc)",
+  "igfxem.exe",
+  "igfxcuiservice.exe",
+  "svchost.exe (netsvcsredirectionguard -p -s sens)",
+  "svchost.exe (localsystemnetworkrestricted -p -s umrdpservice)",
+  "svchost.exe (unistacksvcgroup)",
+  "svchost.exe (localserviceredirectionguard -p -s eventsystem)",
+  "svchost.exe (localsystemnetworkrestricted -p -s sysmain)",
+  "svchost.exe (netsvcs -p -s themes)",
+  "svchost.exe (localservicenetworkrestricted -p -s eventlog)",
+  "nvdisplay.container.exe",
+  "crossdeviceresume.exe",
+  "shellhost.exe",
+  "sihost.exe",
+  "svchost.exe (netsvcs -p -s usermanager)",
+  "svchost.exe (localsystemnetworkrestricted -p -s devquerybroker)",
+  "intelcphecisvc.exe",
+  "svchost.exe (userprofileservice -p -s profsvc)",
+  "intelcphdcpsvc.exe",
+  "svchost.exe (localsystemnetworkrestricted -p -s hidserv)",
+  "svchost.exe (localservicenetworkrestricted -p -s timebrokersvc)",
+  "svchost.exe (localsystemnetworkrestricted -p -s ncbservice)",
+  "svchost.exe (localservicenetworkrestricted -p -s lmhosts)",
+  "svchost.exe (networkservice -s termservice)",
+  "svchost.exe (gpsvcgroup)",
+  "svchost.exe (netprofm -p -s netprofm)",
+  "svchost.exe (dcomlaunch -p -s lsm)",
+  "svchost.exe (rpcss -p)",
+  "bitsumsessionagent.exe",
+  "core temp.exe",
+  "taskhostw.exe",
+  "conhost.exe",
+  "helperservice.exe",
+  "svchost.exe (netsvcs -p -s schedule)",
+  "wudfhost.exe",
+  "tiworker.exe",
+  "applicationframehost.exe",
+  "textinputhost.exe",
+  "smartscreen.exe",
+  "lockapp.exe",
+  "microsoftstartfeedprovider.exe",
+  "shellexperiencehost.exe",
+  "useroobebroker.exe",
+  "runtimebroker.exe",
+  "widgetservice.exe",
+  "startmenuexperiencehost.exe",
+  "msedgewebview2.exe",
+  "searchhost.exe",
+  "widgetboard.exe",
+  "phoneexperiencehost.exe",
+  "wmiprvse.exe",
+  "igcc.exe",
+  "systemsettings.exe",
+  "svchost.exe (dcomlaunch -p)",
+  "svchost.exe (localsystemnetworkrestricted -p -s wdisystemhost)",
+  "svchost.exe (localservice -p -s nsi)",
+  "services.exe",
+  "wininit.exe",
+  "csrss.exe",
+  "registry",
+  "memory compression",
+  "smss.exe",
+  "system",
+  "x-plane.exe"
+ ],
+ "cpuModel": "Intel(R) Core(TM) i5-8600K CPU @ 3.60GHz",
+ "description": "Rulesets for Process Lasso",
+ "priorityClassRuleOrder": [
+  "cefclient.exe",
+  "handler.exe",
+  "x-plane.exe"
+ ],
+ "ruleSets": [
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "aggregatorhost.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "applicationframehost.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "audiodg.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "bitsumsessionagent.exe"
+  },
+  {
+   "cpuAffinity": "1-5",
+   "cpuAffinityDelay": 0,
+   "priorityClass": "Hoch",
+   "priorityClassEnforcedByRegistry": false,
+   "processName": "cefclient.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "conhost.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "core temp.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "crashhelper.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "crossdeviceresume.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "csrss.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "ctfmon.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "dashost.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "dwm.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "editors.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "editors_helper.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "explorer.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "firefox.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "fontdrvhost.exe"
+  },
+  {
+   "cpuAffinity": "1-5",
+   "cpuAffinityDelay": 0,
+   "priorityClass": "Hoch",
+   "priorityClassEnforcedByRegistry": false,
+   "processName": "handler.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "helperservice.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "igcc.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "igfxcuiservice.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "igfxem.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "intelcphdcpsvc.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "intelcphecisvc.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "jhi_service.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "launcher-x64.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "lms.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "lockapp.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "lsass.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "makalu monitor.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "memory compression"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "microsoftedgeupdate.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "microsoftstartfeedprovider.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "mountaindisplaypadworker.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "mpdefendercoreservice.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "msedgewebview2.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "msmpeng.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "navigraphsimlink.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "ngfmsagent.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "nissrv.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "nvcontainer.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "nvdisplay.container.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "oneapp.igcc.winservice.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "onedrive.sync.service.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "phoneexperiencehost.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "presentationfontcache.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "processgovernor.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "processlasso.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "registry"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "rtkauduservice64.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "runtimebroker.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "searchhost.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "searchindexer.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "securityhealthservice.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "securityhealthsystray.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "services.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "setup.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "shellexperiencehost.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "shellhost.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "sihost.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "simbrief downloader.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "smartscreen.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "smss.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "spoolsv.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "srvstub.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "startmenuexperiencehost.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (appmodel -p -s staterepository)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (clipboardsvcgroup -p -s cbdhsvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (dcomlaunch -p -s lsm)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (dcomlaunch -p)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (gpsvcgroup)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (imgsvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (invsvcgroup -p -s inventorysvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localservice -p -s cdpsvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localservice -p -s dispbrokerdesktopsvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localservice -p -s fontcache)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localservice -p -s licensemanager)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localservice -p -s npsmsvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localservice -p -s nsi)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localservice -p -s sstpsvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localserviceandnoimpersonation -p -s ssdpsrv)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localserviceandnoimpersonation -p -s wcncsvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localservicehttp -p)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localservicenetworkrestricted -p -s dhcp)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localservicenetworkrestricted -p -s dusmsvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localservicenetworkrestricted -p -s eventlog)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localservicenetworkrestricted -p -s lmhosts)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localservicenetworkrestricted -p -s ngcctnrsvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localservicenetworkrestricted -p -s timebrokersvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localservicenetworkrestricted -p -s wcmsvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localservicenetworkrestricted -p)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localservicenetworkrestricted -s rmsvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localservicenonetwork -p -s dps)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localservicenonetwork -p)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localservicenonetworkfirewall -p)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localserviceredirectionguard -p -s eventsystem)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localsystemnetworkrestricted -p -s audioendpointbuilder)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localsystemnetworkrestricted -p -s deviceassociationservice)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localsystemnetworkrestricted -p -s devquerybroker)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localsystemnetworkrestricted -p -s hidserv)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localsystemnetworkrestricted -p -s ncbservice)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localsystemnetworkrestricted -p -s ngcsvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localsystemnetworkrestricted -p -s pcasvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localsystemnetworkrestricted -p -s sysmain)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localsystemnetworkrestricted -p -s textinputmanagementservice)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localsystemnetworkrestricted -p -s trkwks)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localsystemnetworkrestricted -p -s umrdpservice)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localsystemnetworkrestricted -p -s wdisystemhost)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localsystemnetworkrestricted -p -s webthreatdefusersvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (localsystemnetworkrestricted -p)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (netprofm -p -s netprofm)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (netsvcs -p -s appinfo)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (netsvcs -p -s bits)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (netsvcs -p -s ikeext)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (netsvcs -p -s iphlpsvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (netsvcs -p -s lanmanserver)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (netsvcs -p -s schedule)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (netsvcs -p -s sessionenv)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (netsvcs -p -s shellhwdetection)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (netsvcs -p -s themes)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (netsvcs -p -s tokenbroker)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (netsvcs -p -s usermanager)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (netsvcs -p -s usosvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (netsvcs -p -s winmgmt)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (netsvcs -p -s wisvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (netsvcs -p -s wlidsvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (netsvcs -p -s wpnservice)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (netsvcs -p -s wuauserv)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (netsvcs -p)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (netsvcs -s certpropsvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (netsvcs)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (netsvcsredirectionguard -p -s sens)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (networkservice -p -s lanmanworkstation)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (networkservice -p -s tapisrv)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (networkservice -p)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (networkservice -s termservice)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (osprivacy -p -s camsvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (rpcss -p)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (sdrsvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (swprv)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (udksvcgroup -s udkusersvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (unistacksvcgroup -s cdpusersvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (unistacksvcgroup -s wpnuserservice)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (unistacksvcgroup)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (userprofileservice -p -s profsvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (utcsvc -p)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (wbiosvcgroup -s wbiosrvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (webthreatdefense -p -s webthreatdefsvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (whesvc -p -s whesvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (wsaifabricsvcgroup -p -s wsaifabricsvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "svchost.exe (wuqisvcgroup -p -s wuqisvc)"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "system"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "systemsettings.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "taskhostw.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "taskmgr.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "textinputhost.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "tiworker.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "trustedinstaller.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "updatesvc.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "useroobebroker.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "vssvc.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "widgetboard.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "widgetservice.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "wininit.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "winlogon.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "wmiprvse.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "wmiregistrationservice.exe"
+  },
+  {
+   "cpuAffinity": "0",
+   "cpuAffinityDelay": 0,
+   "processName": "wudfhost.exe"
+  },
+  {
+   "cpuAffinity": "1-5",
+   "cpuAffinityDelay": 0,
+   "priorityClass": "Hoch",
+   "priorityClassEnforcedByRegistry": false,
+   "processName": "x-plane.exe"
+  }
+ ],
+ "title": "Process Lasso Rules"
+}

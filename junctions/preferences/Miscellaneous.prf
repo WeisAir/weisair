@@ -2,7 +2,7 @@ I
 1100 Version
 networking_disclose_multiplayer 0
 networking_disclose_flir 0
-selected_tab 1
+selected_tab 6
 networking_disclose_ports 0
 networking_disclose_data_io 0
 networking_disclose_external_visuals 0
@@ -18,14 +18,12 @@ P monitor_14 _offsets 0
 P monitor_14 _visuals 0
 P monitor_4 _offsets 0
 P monitor_4 _visuals 0
-P acf_profile SSG___747-8___Intercontinental___V2.8.2 side-stick___planes
-P acf_profile Boeing___737-800X side-stick___planes
-P acf_profile Cirrus___Vision___SF50 side-stick___planes
+P acf_profile Boeing___737-800X B738___Zibo___v2
+P acf_profile Boeing___737-800 side-stick___planes
 P pilot-430 gps_window_visible 0
 P monitor_6 _offsets 0
 P monitor_6 _visuals 0
 P WXR-1 gps_window_visible 0
-P pilot-530 gps_window_visible 0
 P monitor_7 _offsets 0
 P monitor_7 _visuals 0
 P pilot-1000 gps_window_visible 0
@@ -39,9 +37,9 @@ P monitor_12 _offsets 0
 P monitor_12 _visuals 0
 P monitor_9 _offsets 0
 P monitor_9 _visuals 0
+P pilot-4200 gps_window_visible 0
 P monitor_3 _offsets 0
 P monitor_3 _visuals 0
-P copilot-430 gps_window_visible 0
 P center-1000 gps_window_visible 0
 P monitor_0 _offsets 0
 P monitor_0 _visuals 0
@@ -55,14 +53,14 @@ P monitor_2 _offsets 0
 P monitor_2 _visuals 0
 P window_state exvis_standby v=0 p=0 m=0 b=0,0,0,0
 P window_state fps_test_recoder v=0 p=0 m=0 b=0,0,0,0
-P window_state screenshot_controls v=0 p=0 m=0 b=0,0,0,0
+P window_state screenshot_controls v=0 p=0 m=0 b=-942,402,-462,842
 P window_state networkdebug v=0 p=0 m=0 b=0,0,0,0
 P window_state raininspector v=0 p=0 m=0 b=0,0,0,0
-P window_state pluginadmin v=0 p=0 m=0 b=-1614,251,-566,871
+P window_state pluginadmin v=0 p=0 m=0 b=0,0,0,0
 P window_state vramprofiler v=0 p=0 m=0 b=0,0,0,0
 P window_state microprofiler v=0 p=0 m=0 b=0,0,0,0
 P window_state demo_area v=0 p=0 m=0 b=0,0,0,0
-P window_state log_viewer v=0 p=0 m=0 b=200,200,900,600
+P window_state log_viewer v=0 p=0 m=0 b=0,0,0,0
 P window_state particle_browser v=0 p=0 m=0 b=0,0,0,0
 P window_state texture_browser v=0 p=0 m=0 b=0,0,0,0
 P window_state autopilot_constants v=0 p=0 m=0 b=0,0,0,0
@@ -76,11 +74,12 @@ P window_state logbook_window v=0 p=0 m=0 b=0,0,0,0
 P window_state weather_map v=0 p=0 m=0 b=0,0,0,0
 P window_state ios v=0 p=0 m=0 b=0,0,0,0
 P window_state map v=0 p=0 m=0 b=0,0,0,0
-P window_state data_out v=0 p=0 m=0 b=-1539,594,-615,1114
-P window_state replay_controls v=1 p=0 m=0 b=-2560,185,0,1625
+P window_state data_out v=0 p=0 m=0 b=0,0,0,0
+P window_state replay_controls v=0 p=0 m=0 b=-2560,185,0,1625
 P window_state menu_bar v=1 p=0 m=0 b=-2560,185,0,1625
 P window_state video_recording_config v=0 p=0 m=0 b=0,0,0,0
 P window_state ground_handling_window v=0 p=0 m=0 b=0,0,0,0
+P copilot-4200 gps_window_visible 0
 P WXR-2 gps_window_visible 0
 P GCU gps_window_visible 0
 P monitor_13 _offsets 0
