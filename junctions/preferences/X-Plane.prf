@@ -39,11 +39,11 @@ _vr_use_openxr 0
 _eq_matrox_TH 0
 _eq_HUD_new 0
 _num_acf 1
-_apt_id_str LFPB
+_apt_id_str LOWS
 _tex_res 4
 _default_view 2
 _rcas_ratio 0.000000
-_num_runs_done 67
+_num_runs_done 70
 _metric_temp 0
 _metric_press 0
 _utc_time 0
@@ -66,9 +66,9 @@ _show_atc_taxi_route 1
 _warn_text 1
 _save_acf_sel 0
 _rel_path_tow Aircraft/Laminar Research/Piper PA-18 Super Cub/PA-18-150.acf
-_ref_rwy_wrl 1
+_ref_rwy_wrl 0
 _ref_ram_wrl 0
-_ref_rwy_dir 1
+_ref_rwy_dir 0
 _use_experimental_FM 0
 _use_MTBF 1
 _real_MTBF_hours 5000.000000
@@ -82,8 +82,8 @@ _nav_is_bac 0
 _mode_athr -1
 _km_is_mach 0
 _use_fms_alt 0
-_syn_hold_deg_phi 0.023966
-_syn_hold_deg_the -0.486908
+_syn_hold_deg_phi 0.019599
+_syn_hold_deg_the -0.444155
 _asi_hold_kts_mac 123.000000
 _hdg_hold_mag[0] 0.000000
 _hdg_hold_mag[1] 0.000000
@@ -102,13 +102,13 @@ _Nfreq3 210
 _Nfreq4 11170
 _Nfreq5 11170
 _Nfreq6 11780
-_Nfreq7 11610
-_Nfreq8 11055
-_Nfreq9 10950
-_Nfreq10 11535
-_Nfreq11 11595
-_Nfreq12 11600
-_Nfreq13 11605
+_Nfreq7 10930
+_Nfreq8 10990
+_Nfreq9 10945
+_Nfreq10 11380
+_Nfreq11 11775
+_Nfreq12 11780
+_Nfreq13 11785
 _Nfreq14 11170
 _Nfreq15 58327
 _Nfreq16 58327
@@ -164,7 +164,7 @@ _OBS_mag[1]14 0.000000
 _OBS_mag[1]15 0.000000
 _OBS_mag[1]16 0.000000
 _Cfreq0 118100
-_Cfreq1 118400
+_Cfreq1 118100
 _Cfreq2 118000
 _Cfreq3 118000
 _Cfreq4 118000
@@ -198,25 +198,25 @@ _CfreqSTDBY14 118000
 _CfreqSTDBY15 118000
 _CfreqSTDBY16 118000
 _acf_path_rel0 Aircraft/B737-800X/b738.acf
-_acf_path_rel1 Aircraft/Traffic Global/_TCAS_AI_/TrafficGlobalTCAS.acf
-_acf_path_rel2 Aircraft/Laminar Research/Cirrus Vision SF50/CirrusSF50.acf
-_acf_path_rel3 Aircraft/Laminar Research/Boeing 737-800/b738.acf
-_acf_path_rel4 Aircraft/Laminar Research/Cessna 172 SP/Cessna_172SP.acf
+_acf_path_rel1 Aircraft/Laminar Research/Beechcraft Baron 58/Baron_58.acf
+_acf_path_rel2 Aircraft/Laminar Research/Boeing 737-800/b738.acf
+_acf_path_rel3 Aircraft/Laminar Research/Cessna Citation X/Cessna_CitationX.acf
+_acf_path_rel4 Aircraft/Laminar Research/Cessna Citation X/Cessna_CitationX.acf
 _acf_path_rel5 Aircraft/Laminar Research/Beechcraft Baron 58/Baron_58.acf
-_acf_path_rel6 Aircraft/Laminar Research/Piper PA-18 Super Cub/PA-18-150.acf
-_acf_path_rel7 Aircraft/Laminar Research/McDonnell Douglas MD-82/MD80.acf
-_acf_path_rel8 Aircraft/Laminar Research/Beechcraft Baron 58/Baron_58.acf
-_acf_path_rel9 Aircraft/Laminar Research/Airbus A330-300/A330_AI.acf
-_acf_path_rel10 Aircraft/Laminar Research/Cirrus SR22/Cirrus SR22.acf
-_acf_path_rel11 Aircraft/Laminar Research/Cessna Citation X/Cessna_CitationX.acf
-_acf_path_rel12 Aircraft/Laminar Research/Van's Aircraft RV-10/RV-10.acf
-_acf_path_rel13 Aircraft/Embraer E170/E170_XP11.acf
-_acf_path_rel14 Aircraft/Laminar Research/Cessna 172 SP/Cessna_172SP.acf
-_acf_path_rel15 Aircraft/Embraer E170/E170_XP11.acf
+_acf_path_rel6 Aircraft/Laminar Research/Cirrus SR22/Cirrus SR22.acf
+_acf_path_rel7 Aircraft/Laminar Research/Cessna 172 SP/Cessna_172SP.acf
+_acf_path_rel8 Aircraft/Laminar Research/Cirrus SR22/Cirrus SR22.acf
+_acf_path_rel9 Aircraft/Laminar Research/Beechcraft Baron 58/Baron_58.acf
+_acf_path_rel10 Aircraft/Laminar Research/Cirrus Vision SF50/CirrusSF50.acf
+_acf_path_rel11 Aircraft/Laminar Research/Piper PA-18 Super Cub/PA-18-150.acf
+_acf_path_rel12 Aircraft/Laminar Research/Airbus A330-300/A330_AI.acf
+_acf_path_rel13 Aircraft/Laminar Research/Cirrus Vision SF50/CirrusSF50.acf
+_acf_path_rel14 Aircraft/Laminar Research/McDonnell Douglas MD-82/MD80.acf
+_acf_path_rel15 Aircraft/Laminar Research/Beechcraft Baron 58/Baron_58.acf
 _acf_path_rel16 Aircraft/Laminar Research/Beechcraft King Air C90B/C90B.acf
 _acf_path_rel17 Aircraft/Laminar Research/Cessna Citation X/Cessna_CitationX.acf
-_acf_path_rel18 Aircraft/Laminar Research/McDonnell Douglas MD-82/MD80.acf
-_acf_path_rel19 Aircraft/Laminar Research/Airbus A330-300/A330_AI.acf
+_acf_path_rel18 Aircraft/Laminar Research/Airbus A330-300/A330_AI.acf
+_acf_path_rel19 Aircraft/Laminar Research/Piper PA-18 Super Cub/PA-18-150.acf
 _vol_master 1.000000
 _vol_grp_aircraft 1.000000
 _vol_grp_cockpit 1.000000
@@ -1049,7 +1049,7 @@ _snd_pt_str_40 49000
 _snd_pt_str_41 49000
 _snd_pt_str_42 49000
 _snd_pt_str_43 49000
-_snd_pt_str_44 61281
+_snd_pt_str_44 57459
 _snd_pt_str_45 49000
 _snd_pt_str_46 49000
 _snd_pt_str_47 49000
@@ -1110,7 +1110,7 @@ _snd_pt_rak_str_49 49010
 _snd_pt_rak_str_50 49010
 _snd_pt_rak_str_51 49010
 _snd_ip_str_42 192.168.2.112
-_snd_ip_str_44 192.168.2.170
+_snd_ip_str_44 127.0.0.1
 _snd_ip_str_45 192.168.2.1
 renopt_ANISO 8
 renopt_FSR_04 0
