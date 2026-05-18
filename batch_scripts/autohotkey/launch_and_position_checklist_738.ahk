@@ -1,0 +1,4 @@
+﻿Run "G:\weisair\docs\checklists\B737\Checklist B737.pdf"
+WinWait "PDF-XChange Viewer"
+WinActivate "PDF-XChange Viewer"
+WinMove -7, 0, 1214, 1255, "PDF-XChange Viewer"

@@ -5429,8 +5429,10 @@ _joy_BUTN_use173 sim/autopilot/vertical_speed_sync
 _joy_BUTN_use174 sim/instruments/barometer_std
 _joy_BUTN_use175 sim/fuel/fuel_pumps_on
 _joy_BUTN_use176 sim/fuel/fuel_pumps_off
-_joy_BUTN_use177 sim/systems/seatbelt_sign_toggle
-_joy_BUTN_use178 sim/systems/seatbelt_sign_toggle
+_joy_BUTN_use177 WeisAIR/b738/EFIS/seatbelt_nosmoke_sign_on
+_joy_BUTN_use_desc177 seatbelt_nosmoke_sign_on
+_joy_BUTN_use178 WeisAIR/b738/EFIS/seatbelt_nosmoke_sign_off
+_joy_BUTN_use_desc178 seatbelt_nosmoke_sign_off
 _joy_BUTN_use179 sim/annunciator/test_all_annunciators
 _joy_BUTN_use180 sim/none/none
 _joy_BUTN_use181 sim/flight_controls/landing_gear_up
@@ -5574,9 +5576,11 @@ _joy_BUTN_use318 sim/none/none
 _joy_BUTN_use319 sim/none/none
 _joy_BUTN_use320 sim/none/none
 _joy_BUTN_use321 sim/none/none
-_joy_BUTN_use322 sim/none/none
+_joy_BUTN_use322 laminar/B738/engine/mixture1_toggle
+_joy_BUTN_use_desc322 Engine 1 mixture cutoff/idle
 _joy_BUTN_use323 sim/none/none
-_joy_BUTN_use324 sim/none/none
+_joy_BUTN_use324 laminar/B738/engine/mixture2_toggle
+_joy_BUTN_use_desc324 Engine 2 mixture cutoff/idle
 _joy_BUTN_use325 sim/none/none
 _joy_BUTN_use326 sim/none/none
 _joy_BUTN_use327 sim/none/none
