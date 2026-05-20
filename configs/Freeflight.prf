@@ -4,7 +4,7 @@ _favorite Aircraft/B737-800X/b738.acf||Aircraft/X-Aviation/Douglas DC-3 v2/DC3_C
 _airport EDBX
 _last_start {"runway_start":{"airport_id":"EDBX","runway":"06"}}
 
-P _rwy_or_ramp EDBX 0_0
+P _rwy_or_ramp EDDC 0_0
 P _livery _AircraftLaminarResearchBETATechnologiesAlia250ALIA250acf Default
 P _livery _AircraftLaminarResearchAeroWorksAerolite103Aerolite103acf Default
 P _livery _AircraftLaminarResearchCessna172SPCessna172SPseaplaneacf Default
