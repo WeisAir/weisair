@@ -51,30 +51,101 @@ After fiddling around this hobby for a couple of years I decided to bring things
 
 ## Architecture
 
-What components are used? What Hardware, what software?
+My setup consists of the following modules
+
+- Primary System: Simulator Host
+- Secondary System: Auxilliary System
+
+The main idea is to have one dedicated machine running X-Plane 12 with only essential additional software. Everything else that can be offloaded (e.g. Air Manager Panels, Navigraph) will run on the secondary machine. The reason for that is performance (see [Performance](#performance) for details). Due to my aged hardware, I need to take as much load from the simulator system as possible. I ran X-Plane 12 for several years "all-in-one" on a single machine. During performance measurements I notices that especially stutters but also lower frame times were the positive impact of not having all in one. 
+
+The following passage shows what is running on which machine in detail and how both machines are connected with each other:
+
+|| Primary System | Secondary System|
+|-|----------------|-----------------|
+|Specs| <ul><li>PC<li>i5-8600K CPU @ 5.2 GHz<li>32GB RAM<li>GTX 1080Ti 11GB<li>Windows 11 Pro</ul> | <ul>Lenovo Yoga 12<li>i7-5500U CPU @ 2.4 GHz<li>8GB RAM<li>Intel HD 5500<li>Windows 11 Pro |
+|Software|<ul><li>X-Plane 12<li>X-Organizer<li>X-Toolbox<li>XP Map Enhancement</ul>|<ul><li>Air Manager<li>Navigraph Charts<li>StreamDeck Software</ul>|
+|Connected Devices|<ul><li>Honeycomb Yoke<li>Saitek Throttle Quadrant 1<li>Saitek Throttle Quadrant 2<li>Saitek Rudder Pedals<li>WeisAir Switch Panel<li>Knobster<li>TCA Airbus Flight Stick</ul>|<ul><li>Ext. Touch Screen<li>StreamDeck XL</ul>|
+|Network| Connected via GBit LAN to home network | Connected via 1GBit LAN to home network |
 
 ## Processes
 
-In which order are tools started?
-What is happening in the background?
+The following Sequence Diagram shows how my simulator environment is started from scratch
 
-## Hardware Configuration
 
-### WeisAir Appliance
-#### Elgato StreamDeck
-#### Touch Screen
-#### Switch Panel
-#### DIY Knobster
-#### Bass Shaker
-### Input Peripherals
-#### Yoke
-#### Throttle Quadrant
-#### Pedals
-#### SideStick
-#### FMC
+  
+
+<ol>
+  <li> Turn on primary system
+  <li> Turn on secondary system
+  <li> Once Windows has ideled on both system either hit "LEARN" for offline or "FLY" for online flying
+</ol>
+
+![WeisAir Appliance Overview](docs\readme_resources\sd_start.png)
+
+<ol start=4>
+  <li> Wait for the secondary system to automatically complete the following steps
+      <ul>
+        <li> Start Air Manager
+        <li> Mimimize Air Manager
+        <li> Start Navigraph Charts
+        <li> Position Navigraph Charts on internal screen of Yoga 12
+        <li> start FireFox Browser to load SimBrief for initial flight Planning
+        <li> maximize the browser and hide tool bars (F11)
+        <li> start X-Plane 12 remotely on primary system through StreamDeck / Bitfocus Companion. The remote call starts either the X-Organizer-configured online or offline configuration of X-Plane 12
+      </ul>
+  <li> plan and file flight Plan n Simbrief. Afterwards the filed plan will automatically be loaded by "Simbrief downloader"
+  <li> Configure desigered flight in X-Plane 12 UI
+  <li> the secondary system will automatically load the proper Air Manger Panel and the proper StreamDeck Profile
+  <li> load simbrief flight in Navigraph Charts on secondary system
+  <li> proceed with checklist process once you are in the virtual cockpit
+</ol>
+
+
+## Configuration
+
+This chapter lists the required congiguration for individual hardware and software components.
+
+
+### Windows 11 Settings
+#### System Parameters
+#### Firewall Rules
+#### Junctions
+
+### X-Plane 12 Settings
+#### Graphics
+#### Other
+
+### Bitfocus Companion
+### Simbrief Downloader
+### Streamdeck / apilotsdeck
+
 
 ## Performance
 
+Elaborate on key impacts on Performance
+
+## State of the Art
+
+This section adds screenshots of the current state of both my custom Air Mangager Panels as well as StreamDeck Profiles.
+
+### Air Manager Panels
+
+### StreamDeck Profiles
+
 # The Future
 ## Next Steps
+
+- consider different buttons for Online/Offline flight (especially ATC dialog)
+  - either use X-Organizer "Preferences Module"
+  - or create a custom command that somehow detects whether xPilot Plugin is loaded (aka "I want to fly online")
+- stabilize HDI device recognition
+  - rename second "Throttle Quadrant"?
+  - write batch script that gets a list of needed USB hardware and runs XP12 only if all of them are connected. If not - give a message window to continue at own risk,
+
+## Linux
+
+The only reason at the moment to not run everything on Linux is the extensive usage of StreamDeck and especially the apilotsdeck streamdeck plugin which only runs in Windwows / Mac. Once there is either a linux-compatible version of it or I have had enogh time to develop my own Linux-capable plugin, I will probably switch to Linux. 
+
 ## Known Issues
+
+- Linux Airmanager unstable
