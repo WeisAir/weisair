@@ -1,4 +1,4 @@
-![WeisAir Appliance Overview](docs\weisair_logo\iterations\v1.png)
+![WeisAir Logo](docs\weisair_logo\iterations\v1.png)
 
 # Repository Description
 This repository contains all the individual customizations of my X-Plane 12 home flight simulator setup that I call <b> WeisAir Appliance </b>. It comprises configuration files, scripts for all used HID devices but also documentation and imagery such as icons, logos and artwork.
@@ -80,7 +80,7 @@ The following Sequence Diagram shows how my simulator environment is started fro
   <li> Once Windows has ideled on both system either hit "LEARN" for offline or "FLY" for online flying
 </ol>
 
-![WeisAir Appliance Overview](docs\readme_resources\sd_start.png)
+![WeisAir StreamDeck Start Screen](docs\readme_resources\sd_start.png)
 
 <ol start=4>
   <li> Wait for the secondary system to automatically complete the following steps
