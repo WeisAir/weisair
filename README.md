@@ -3,7 +3,7 @@
 # Repository Description
 This repository contains all the individual customizations of my X-Plane 12 home flight simulator setup that I call <b> WeisAir Appliance </b>. It comprises configuration files, scripts for all used HID devices but also documentation and imagery such as icons, logos and artwork.
 
-# My Story
+# The Story
 ## Purpose and Motivation
 
 As a flight sim enthusiast, I love exploring virtual skies. As an engineer I love anything that is connected with building stuff in both hardware and software. This combination is a lot of fun, although my engineering heart is sometimes even stronger so I often catch myself programming and configuring way more than actually flying :D
