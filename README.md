@@ -3,7 +3,7 @@
 # Repository Description
 This repository contains all the individual customizations of my X-Plane 12 home flight simulator setup that I call <b> WeisAir Appliance </b>. It comprises configuration files, scripts for all used HID devices but also documentation and imagery such as icons, logos and artwork.
 
-# My Story
+# The Story
 ## Purpose and Motivation
 
 As a flight sim enthusiast, I love exploring virtual skies. As an engineer I love anything that is connected with building stuff in both hardware and software. This combination is a lot of fun, although my engineering heart is sometimes even stronger so I often catch myself programming and configuring way more than actually flying :D
@@ -155,6 +155,8 @@ This section adds screenshots of the current state of both my custom Air Mangage
 - stabilize HDI device recognition
   - rename second "Throttle Quadrant"?
   - write batch script that gets a list of needed USB hardware and runs XP12 only if all of them are connected. If not - give a message window to continue at own risk,
+- ergonomics - use fixed chair instead of rollable chair
+- mount TCA flight stick
 
 ## Linux
 
@@ -163,3 +165,11 @@ The only reason at the moment to not run everything on Linux is the extensive us
 ## Known Issues
 
 - Linux Airmanager unstable
+
+# The Key Learnings
+
+- Offloading 3rd Party Software to secondary machine is key to good / stable / stutter-free performance (at least on old machines like my one)
+
+- For IFR flights, the default XP12 scenery is more than enough. For VFR flight choose XP Map Enhancement for an easy-to-setup ortho solution
+
+- Do not improve your setup too much based on theoretical ideas or other ones opinions. Instead: FLY in your setup -> note down issues and fight them specifically
