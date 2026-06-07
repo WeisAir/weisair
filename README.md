@@ -113,10 +113,24 @@ This chapter lists the required congiguration for individual hardware and softwa
 
 ### X-Plane 12 Settings
 #### Graphics
+#### Aircraft Settings
+##### Zibo 737
+
+- throttle noise
+- Landing lights static (not pulsing)
+
 #### Other
 
 ### Bitfocus Companion
 ### Simbrief Downloader
+
+- active options
+  - Run this programm automatically at startup
+  - Minimize to tray
+  - Show notification when minimizing to tray
+  - always overwrite existing files when exporting
+  - always export new flights automatically
+  
 ### Streamdeck / apilotsdeck
 
 
