@@ -1,0 +1,1 @@
+﻿WinMoveTop "Navigraph Charts — Mozilla Firefox"

@@ -133,6 +133,13 @@ This chapter lists the required congiguration for individual hardware and softwa
   
 ### Streamdeck / apilotsdeck
 
+### Firefox
+
+I use Firefox as my browser to access Simbrief / Navigraph Charts on my WeisAir EFB. For that I need to run the urls in "Kiosk" mode but with a specific window size to max out the space on the small display. For that, Firefox needs to have the following config:
+
+- go to about:config
+- set full-screen-api.ignore-widgets = true
+
 
 ## Performance
 
