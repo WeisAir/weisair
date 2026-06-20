@@ -121,7 +121,8 @@ This chapter lists the required congiguration for individual hardware and softwa
 #### Firewall Rules
 
   - Allow TCP/UDP connections to X-Plane 12 within Windows Firewall (ingress / egress)
-  - **ToDo** Add Screenshot
+  - Allow webfmc-win.exe (located in %XPLANEDIR%/Resources/Plugins/webfmc/bin) within private network
+  - **ToDo** Add Screenshots
 
 #### Junctions
 
