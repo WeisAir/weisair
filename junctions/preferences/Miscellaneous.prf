@@ -76,7 +76,7 @@ P window_state autopilot_constants v=0 p=0 m=0 b=-1049,425,-849,1025
 P window_state projection_params v=0 p=0 m=0 b=-1175,484,-175,1084
 P window_state key_shortcuts v=0 p=0 m=0 b=0,0,0,0
 P window_state settings v=0 p=0 m=0 b=480,180,2080,1260
-P window_state main_menu v=0 p=0 m=0 b=0,0,2560,1440
+P window_state main_menu v=1 p=0 m=0 b=0,0,2560,1440
 P window_state atc_window v=0 p=0 m=0 b=2,1277,1200,1869
 P window_state save_flight_window v=0 p=0 m=0 b=1030,570,1530,870
 P window_state logbook_window v=0 p=0 m=0 b=0,0,0,0
@@ -84,16 +84,16 @@ P window_state weather_map v=0 p=0 m=0 b=0,0,0,0
 P window_state ios v=0 p=0 m=0 b=0,0,0,0
 P window_state map v=0 p=0 m=0 b=50,100,974,620
 P window_state data_out v=0 p=0 m=0 b=0,0,0,0
-P window_state replay_controls v=1 p=0 m=0 b=0,0,2560,1440
-P window_state menu_bar v=1 p=0 m=0 b=0,0,2560,1440
+P window_state replay_controls v=0 p=0 m=0 b=0,0,2560,1440
+P window_state menu_bar v=0 p=0 m=0 b=0,0,2560,1440
 P window_state video_recording_config v=0 p=0 m=0 b=0,0,0,0
 P window_state ground_handling_window v=0 p=0 m=0 b=0,0,0,0
 P copilot-4200 gps_window_visible 0
 P WXR-2 gps_window_visible 0
+P monitor_19 _visuals 0
+P monitor_19 _offsets 0
 P GCU gps_window_visible 0
 P monitor_13 _visuals 0
 P monitor_13 _offsets 0
-P monitor_19 _visuals 0
-P monitor_19 _offsets 0
 P monitor_8 _visuals 0
 P monitor_8 _offsets 0
