@@ -16,7 +16,7 @@ After fiddling around this hobby for a couple of years I decided to bring things
 
 ## Requirements and Constraints
 
-- <b>Multiple Aircraft Support</b>: Although I have started my flight simulation journey on the Boeing 737-800 NG, which I still fly a lot, a lot of other Aircrafts are in my field of interest and should be supported by my setup. Currently the following ones are included
+- <b>Multiple Aircraft Support</b>: Although I have started my flight simulation journey on the Boeing 737-800 NG, which I still fly a lot, many other aircrafts are in my field of interest and should be supported by this setup. Currently the following ones are supported
 
   <b>Airliner</b>
     - Boeing 737-800 NG (ZIBO Mod)
@@ -71,7 +71,7 @@ The following passage shows what is running on which machine in detail and how b
 || Primary System | Secondary System|
 |-|----------------|-----------------|
 |Specs| <ul><li>PC<li>i5-8600K CPU @ 5.2 GHz<li>32GB RAM<li>GTX 1080Ti 11GB<li>Windows 11 Pro</ul> | <ul><li>Lenovo Yoga 12 Convertible<li>i7-5500U CPU @ 2.4 GHz<li>8GB RAM<li>Intel HD 5500<li>Windows 11 Pro |
-|Software|<ul><li>X-Plane 12<li>X-Organizer<li>X-Toolbox<li>XP Map Enhancement</ul>|<ul><li>Air Manager<li>Navigraph Charts<li>StreamDeck Software</ul>|
+|Software|<ul><li>X-Plane 12<li>X-Organizer<li>X-Toolbox<li>XP Map Enhancement<li>Bitfocus Companion<li>Simbrief Downnloader<li>FMS Data Manager</ul>|<ul><li>Air Manager<li>Navigraph Charts<li>StreamDeck Software<li>SD Plugin PilotsDeck</ul>|
 |Connected Devices|<ul><li>Honeycomb Yoke<li>Saitek Throttle Quadrant 1<li>Saitek Throttle Quadrant 2<li>Saitek Rudder Pedals<li>WeisAir Switch Panel<li>Knobster<li>TCA Airbus Flight Stick</ul>|<ul><li>Ext. Touch Screen<li>StreamDeck XL</ul>|
 |Network| Connected via GBit LAN to home network | Connected via 1GBit LAN to home network |
 
@@ -90,17 +90,17 @@ The following Sequence Diagram shows how my simulator environment is started fro
 <ol start=4>
   <li> Wait for the secondary system to automatically complete the following steps
       <ul>
-        <li> Start Air Manager
-        <li> Mimimize Air Manager
-        <li> Start EFB Environment
+         <li> Start EFB Environment
           <ul>
             <li> Start EFB Command Bar (Virtual Streamdeck)
             <li> Start Navigraph Charts as Kiosk-Mode Web page through an AutoHotKey Script
             <li> Start Simbrief as Kiosk-Mode Web page through an AutoHotKey Script for initial Flight Planning
           </ul>
+          <li> Start Air Manager
+        <li> Mimimize Air Manager
         <li> start X-Plane 12 remotely on primary system through StreamDeck / Bitfocus Companion. The remote call starts either the X-Organizer-configured online or offline configuration of X-Plane 12
       </ul>
-  <li> plan and file flight Plan n Simbrief. Afterwards the filed plan will automatically be loaded by "Simbrief downloader"
+  <li> plan and file flight Plan in Simbrief. Afterwards the filed plan will automatically be loaded by "Simbrief Downloader" on the primary system
   <li> Configure desiered flight in X-Plane 12 UI
   <li> the secondary system will automatically load the proper Air Manger Panel and the proper StreamDeck Profile
   <li> load simbrief flight in Navigraph Charts on secondary system
