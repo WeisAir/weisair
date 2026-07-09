@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>Beechcraft B58</aircraft><type>Fuel quantity Left</type><uuid>5f3d1f40-cfc4-4434-9bee-af81eef11d67</uuid><author>macnfly</author><description>Fuel quantity Left
+Set the maximum amount of fuel in gallons in the top of the code:
+local gbl_max_fuel    = 'your number of gallons here'
+
+An instrument fitted the Baron B58 instrument set.
+
+@screen size 1440 x 900 for a full screen panel, the geometry can be set to:
+(x, y, w, h)  160, 640, 160, 160 </description><compatibleFSX>true</compatibleFSX><compatibleP3D>true</compatibleP3D><compatibleXPL>true</compatibleXPL><compatibleFS2020>true</compatibleFS2020><compatibleFS2024>true</compatibleFS2024><version>119</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>256</prefWidth><prefHeight>256</prefHeight><source>ONLINE</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier><tier>PROFESSIONAL_STANDARD</tier></tiers></pluginstrument>

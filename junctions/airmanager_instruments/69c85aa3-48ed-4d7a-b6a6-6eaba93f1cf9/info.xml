@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>Beechcraft B58</aircraft><type>Trim</type><uuid>69c85aa3-48ed-4d7a-b6a6-6eaba93f1cf9</uuid><author>macnfly</author><description>Aileron, Rudder and Elevator Trim indications
+
+Not a specific Baron B58 instrument (more a Pilatus PS12 in fact), but fits the Baron Panel set layout
+
+@screen size 1440 x 900 for a full screen panel, the geometry can be set to:
+(x, y, w, h)  800, 800, 320, 100 </description><compatibleFSX>true</compatibleFSX><compatibleP3D>true</compatibleP3D><compatibleXPL>true</compatibleXPL><compatibleFS2>false</compatibleFS2><compatibleFS2020>true</compatibleFS2020><compatibleFS2024>true</compatibleFS2024><version>5</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>512</prefWidth><prefHeight>160</prefHeight><source>ONLINE</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier><tier>PROFESSIONAL_STANDARD</tier></tiers></pluginstrument>

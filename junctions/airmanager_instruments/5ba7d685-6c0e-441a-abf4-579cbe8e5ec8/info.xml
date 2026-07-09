@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>Beechcraft B58</aircraft><type>Call Sign label</type><uuid>5ba7d685-6c0e-441a-abf4-579cbe8e5ec8</uuid><author>macnfly</author><description>PH-BYB by default. You can set the callsign to whatever you like, as long as it fits.
+Not a specific Baron B58 instrument, but fits the Baron Panel set layout
+
+@screen size 1440 x 900 for a full screen panel, the geometry can be set to:
+(x, y, w, h)  0, 800, 160, 160</description><compatibleFSX>true</compatibleFSX><compatibleP3D>true</compatibleP3D><compatibleXPL>true</compatibleXPL><compatibleFS2>false</compatibleFS2><compatibleFS2020>true</compatibleFS2020><compatibleFS2024>true</compatibleFS2024><version>107</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>256</prefWidth><prefHeight>160</prefHeight><source>ONLINE</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier><tier>PROFESSIONAL_STANDARD</tier></tiers></pluginstrument>

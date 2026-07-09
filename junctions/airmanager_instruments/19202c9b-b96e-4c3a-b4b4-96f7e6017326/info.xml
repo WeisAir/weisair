@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>Beechcraft B58</aircraft><type>Digital temperatur OAT and ice warning</type><uuid>19202c9b-b96e-4c3a-b4b4-96f7e6017326</uuid><author>macnfly</author><description>Shows the current outside temperature and warns on icing conditions.
+Icing warning is triggered between -12 and 10 degrees Celsius.
+
+Not a specific Baron B58 instrument, but fits the Baron Panel set layout
+
+@screen size 1440 x 900 for a full screen panel, the geometry can be set to:
+(x, y, w, h)  0, 160, 160, 160</description><compatibleFSX>true</compatibleFSX><compatibleP3D>true</compatibleP3D><compatibleXPL>true</compatibleXPL><compatibleFS2>false</compatibleFS2><compatibleFS2020>true</compatibleFS2020><compatibleFS2024>true</compatibleFS2024><version>120</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>256</prefWidth><prefHeight>256</prefHeight><source>ONLINE</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier><tier>PROFESSIONAL_STANDARD</tier></tiers></pluginstrument>

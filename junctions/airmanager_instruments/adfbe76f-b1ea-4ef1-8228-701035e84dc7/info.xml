@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>Beechcraft B58</aircraft><type>Attitude indicator</type><uuid>adfbe76f-b1ea-4ef1-8228-701035e84dc7</uuid><author>macnfly</author><description>A general attitude indicator with slip ball.
+
+Not a specific Baron B58 instrument, but fits the Baron Panel set layout
+
+@screen size 1440 x 900 for a full screen panel, the geometry can be set to:
+(x, y, w, h)  480, 160, 320, 320</description><compatibleFSX>true</compatibleFSX><compatibleP3D>true</compatibleP3D><compatibleXPL>true</compatibleXPL><compatibleFS2>false</compatibleFS2><compatibleFS2020>true</compatibleFS2020><compatibleFS2024>true</compatibleFS2024><version>206</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>512</prefWidth><prefHeight>512</prefHeight><source>ONLINE</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier><tier>HOME_USE_FREE</tier><tier>PROFESSIONAL_STANDARD</tier><tier>PROFESSIONAL_FREE</tier></tiers></pluginstrument>

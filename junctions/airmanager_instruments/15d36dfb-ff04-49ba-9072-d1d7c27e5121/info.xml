@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>Beechcraft B58</aircraft><type>Prop Amps</type><uuid>15d36dfb-ff04-49ba-9072-d1d7c27e5121</uuid><author>macnfly</author><description>Prop Amps gauge, moves to the configured number of amps when the prop de-ice is turned on. This is a setable value because there is no prop amps dataref or prop amps variable.
+
+An instrument fitted the Baron B58 instrument set.
+
+@screen size 1440 x 900 for a full screen panel, the geometry can be set to:
+(x, y, w, h)  0, 640, 160, 160 </description><compatibleFSX>true</compatibleFSX><compatibleP3D>true</compatibleP3D><compatibleXPL>true</compatibleXPL><compatibleFS2>false</compatibleFS2><compatibleFS2020>true</compatibleFS2020><compatibleFS2024>true</compatibleFS2024><version>120</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>256</prefWidth><prefHeight>256</prefHeight><source>ONLINE</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier><tier>PROFESSIONAL_STANDARD</tier></tiers></pluginstrument>
