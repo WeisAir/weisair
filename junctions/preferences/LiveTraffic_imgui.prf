@@ -1,0 +1,15 @@
+[Window][Debug##Default]
+Pos=60,1
+Size=400,400
+Collapsed=0
+
+[Window][LiveTraffic Settings]
+Pos=0,0
+Size=701,500
+Collapsed=0
+
+[Window][LiveTraffic]
+Pos=0,0
+Size=1277,729
+Collapsed=0
+

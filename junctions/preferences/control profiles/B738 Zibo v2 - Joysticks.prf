@@ -4842,8 +4842,8 @@ _joy_AXIS_use96 0
 _joy_AXIS_use97 0
 _joy_AXIS_use98 0
 _joy_AXIS_use99 0
-_joy_AXIS_use100 7
-_joy_AXIS_use101 6
+_joy_AXIS_use100 1
+_joy_AXIS_use101 2
 _joy_AXIS_use102 3
 _joy_AXIS_use103 0
 _joy_AXIS_use104 0
@@ -5248,7 +5248,7 @@ _joy_BUTN_use2 sim/none/none
 _joy_BUTN_use3 sim/none/none
 _joy_BUTN_use4 sim/none/none
 _joy_BUTN_use5 sim/none/none
-_joy_BUTN_use6 sim/none/none
+_joy_BUTN_use6 sim/engines/thrust_reverse_hold
 _joy_BUTN_use7 sim/none/none
 _joy_BUTN_use8 sim/none/none
 _joy_BUTN_use9 sim/none/none
@@ -5412,7 +5412,7 @@ _joy_BUTN_use156 sim/none/none
 _joy_BUTN_use157 sim/none/none
 _joy_BUTN_use158 sim/none/none
 _joy_BUTN_use159 sim/none/none
-_joy_BUTN_use160 sim/operation/ground_speed_change
+_joy_BUTN_use160 sim/autopilot/altitude_up
 _joy_BUTN_use161 sim/autopilot/altitude_down
 _joy_BUTN_use162 sim/autopilot/heading_up
 _joy_BUTN_use163 sim/autopilot/heading_down
@@ -5427,8 +5427,10 @@ _joy_BUTN_use171 sim/autopilot/heading_sync
 _joy_BUTN_use172 sim/autopilot/airspeed_sync
 _joy_BUTN_use173 sim/autopilot/vertical_speed_sync
 _joy_BUTN_use174 sim/instruments/barometer_std
-_joy_BUTN_use175 sim/fuel/fuel_pumps_on
-_joy_BUTN_use176 sim/fuel/fuel_pumps_off
+_joy_BUTN_use175 WeisAIR/b738/LIGHTS/cockpit_lights_max
+_joy_BUTN_use_desc175 b738_cockpit_lights_max
+_joy_BUTN_use176 WeisAIR/b738/LIGHTS/cockpit_lights_off
+_joy_BUTN_use_desc176 b738_cockpit_lights_off
 _joy_BUTN_use177 WeisAIR/b738/EFIS/seatbelt_nosmoke_sign_on
 _joy_BUTN_use_desc177 seatbelt_nosmoke_sign_on
 _joy_BUTN_use178 WeisAIR/b738/EFIS/seatbelt_nosmoke_sign_off

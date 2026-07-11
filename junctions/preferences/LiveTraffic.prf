@@ -1,0 +1,110 @@
+LiveTraffic 4.6.0
+livetraffic/ui/opacity 25
+livetraffic/ui/font_scale 100
+livetraffic/ui/settings/transparent 0
+livetraffic/ui/aci/collapsed 0
+livetraffic/cfg/auto_start 1
+livetraffic/cfg/volume/master 100
+livetraffic/cfg/sound/force_fmod_instance 1
+livetraffic/cfg/ai_on_request 0
+livetraffic/cfg/ai_not_on_gnd 0
+livetraffic/cfg/labels 2
+livetraffic/cfg/label_shown 12
+livetraffic/cfg/label_max_dist 3
+livetraffic/cfg/label_visibility_cut_off 1
+livetraffic/cfg/label_for_parked 1
+livetraffic/cfg/label_col_dyn 0
+livetraffic/cfg/label_color 16776960
+livetraffic/cfg/log_level 2
+livetraffic/cfg/msg_area_level 1
+livetraffic/cfg/log_list_len 100
+livetraffic/cfg/max_num_ac 50
+livetraffic/cfg/fd_std_distance 25
+livetraffic/cfg/fd_snap_taxi_dist 15
+livetraffic/cfg/fd_refresh_intvl 20
+livetraffic/cfg/fd_long_refresh_intvl 60
+livetraffic/cfg/fd_buf_period 90
+livetraffic/cfg/fd_reduce_height 10000
+livetraffic/cfg/network_timeout 5
+livetraffic/cfg/lnd_lights_taxi 0
+livetraffic/cfg/hide_below_agl 0
+livetraffic/cfg/hide_taxiing 0
+livetraffic/cfg/hide_parking 0
+livetraffic/cfg/hide_nearby_gnd 0
+livetraffic/cfg/hide_nearby_air 0
+livetraffic/cfg/hide_in_replay 0
+livetraffic/cfg/hide_static_twr 1
+livetraffic/cfg/copy_obj_files 1
+livetraffic/cfg/contrail_min_alt 25000
+livetraffic/cfg/contrail_max_alt 45000
+livetraffic/cfg/contrail_life_time 25
+livetraffic/cfg/contrail_multiple 0
+livetraffic/cfg/weather_control 0
+livetraffic/cfg/weather_metar_agl 5000
+livetraffic/cfg/weather_metar_dist 25
+livetraffic/cfg/remote_support 0
+livetraffic/cfg/external_camera_tool 0
+livetraffic/cfg/last_check_new_ver 495476
+livetraffic/dbg/ac_pos 0
+livetraffic/dbg/diagnostic 0
+livetraffic/dbg/model_matching 0
+livetraffic/dbg/export_normalize_ts 1
+livetraffic/dbg/export_format 1
+livetraffic/channel/fscharter/environment 0
+livetraffic/channel/open_glider/use_requrepl 0
+livetraffic/channel/say_intentions/skynet 0
+livetraffic/channel/real_traffic/listen_port 10747
+livetraffic/channel/real_traffic/traffic_port 49005
+livetraffic/channel/real_traffic/weather_port 49004
+livetraffic/channel/real_traffic/send_pos_frequ 250
+livetraffic/channel/real_traffic/sim_time_ctrl 2
+livetraffic/channel/real_traffic/man_toffset 0
+livetraffic/channel/real_traffic/connect_type 0
+livetraffic/channel/fore_flight/listen_port 63093
+livetraffic/channel/fore_flight/send_port 49002
+livetraffic/channel/fore_flight/user_plane 1
+livetraffic/channel/fore_flight/traffic 1
+livetraffic/channel/fore_flight/interval 3
+livetraffic/channel/fore_flight/sender 0
+livetraffic/channel/synthetic/intern 1
+livetraffic/channel/autoatc/online 0
+livetraffic/channel/sayintentions/online 0
+livetraffic/channel/fscharter/online 0
+livetraffic/channel/open_glider/online 0
+livetraffic/channel/adsbhub/online 0
+livetraffic/channel/open_sky/online 0
+livetraffic/channel/open_sky/ac_masterdata 0
+livetraffic/channel/open_sky/ac_masterfile 1
+livetraffic/channel/adsb_exchange/online 0
+livetraffic/channel/adsb_fi/online 0
+livetraffic/channel/airplanes_live/online 0
+livetraffic/channel/navigraph/fr24 1
+livetraffic/channel/real_traffic/online 0
+MessageWndPos 2100,1390,2550,1244
+SettingsWndPos 924,970,1625,470
+ACInfoWndPos 2017,1244,2337,714
+InfoListWndPos 253,1296,1530,567
+DEFAULT_AC_TYPE A320
+DEFAULT_CAR_TYPE ZZZC
+Sound_Device (no change)
+Navigraph_RefreshToken ZUBfDCVRXRxFDkJVDAsYKAtGV21DU1VRUFtlQVFdIwc=
+
+[FlarmAcTypes]
+0 = GLID
+1 = GLID
+2 = DR40
+3 = EC35
+4 = GLID
+5 = C208
+6 = GLID
+7 = GLID
+8 = C172
+9 = C510
+10 = MG29
+11 = GLID
+12 = GLID
+13 = GLID
+
+[CSLPaths]
+1|Resources/plugins/LiveTraffic/Resources/ShippedCSL
+1|Resources/plugins/LiveTraffic/Resources/CSL

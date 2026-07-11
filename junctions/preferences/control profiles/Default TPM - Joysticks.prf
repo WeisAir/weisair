@@ -1580,7 +1580,7 @@ _joy_lo_raw_dat496 9900000256.000000
 _joy_lo_raw_dat497 9900000256.000000
 _joy_lo_raw_dat498 9900000256.000000
 _joy_lo_raw_dat499 9900000256.000000
-_joy_hi_raw_dat0 0.537255
+_joy_hi_raw_dat0 1.000000
 _joy_hi_raw_dat1 1.000000
 _joy_hi_raw_dat2 1.000000
 _joy_hi_raw_dat3 -8999999488.000000
@@ -2105,10 +2105,10 @@ _joy_axis_is_calibrated_override21 0
 _joy_axis_is_calibrated_override22 0
 _joy_axis_is_calibrated_override23 0
 _joy_axis_is_calibrated_override24 0
-_joy_axis_is_calibrated_override25 0
-_joy_axis_is_calibrated_override26 0
-_joy_axis_is_calibrated_override27 0
-_joy_axis_is_calibrated_override28 0
+_joy_axis_is_calibrated_override25 1
+_joy_axis_is_calibrated_override26 1
+_joy_axis_is_calibrated_override27 1
+_joy_axis_is_calibrated_override28 1
 _joy_axis_is_calibrated_override29 0
 _joy_axis_is_calibrated_override30 0
 _joy_axis_is_calibrated_override31 0
@@ -3157,7 +3157,7 @@ _joy_center73 0.000000
 _joy_center74 0.000000
 _joy_center75 0.000000
 _joy_center76 0.000000
-_joy_center77 0.001957
+_joy_center77 -0.001957
 _joy_center78 0.000000
 _joy_center79 0.000000
 _joy_center80 0.000000
