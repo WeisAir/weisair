@@ -1,0 +1,1 @@
+﻿Run('MultiMonitorTool.exe /disable \\.\DISPLAY3')

@@ -71,9 +71,12 @@ The following passage shows what is running on which machine in detail and how b
 || Primary System | Secondary System|
 |-|----------------|-----------------|
 |Specs| <ul><li>PC<li>i5-8600K CPU @ 5.2 GHz<li>32GB RAM<li>GTX 1080Ti 11GB<li>Windows 11 Pro</ul> | <ul><li>Lenovo Yoga 12 Convertible<li>i7-5500U CPU @ 2.4 GHz<li>8GB RAM<li>Intel HD 5500<li>Windows 11 Pro |
-|Software|<ul><li>X-Plane 12<li>X-Organizer<li>X-Toolbox<li>XP Map Enhancement<li>Bitfocus Companion<li>Simbrief Downnloader<li>FMS Data Manager</ul>|<ul><li>Air Manager<li>Navigraph Charts<li>StreamDeck Software<li>SD Plugin PilotsDeck</ul>|
+|Software|<ul><li>X-Plane 12<li>X-Organizer<li>X-Toolbox<li>XP Map Enhancement<li>Bitfocus Companion<li>Simbrief Downnloader<li>FMS Data Manager</ul>|<ul><li>Air Manager<li>Navigraph Charts<li>StreamDeck Software<li>SD Plugin PilotsDeck<li>AHKv2<li>[MultiMonitorTool](https://www.nirsoft.net/utils/multi_monitor_tool.html)</ul>|
 |Connected Devices|<ul><li>Honeycomb Yoke<li>Saitek Throttle Quadrant 1<li>Saitek Throttle Quadrant 2<li>Saitek Rudder Pedals<li>WeisAir Switch Panel<li>Knobster<li>TCA Airbus Flight Stick</ul>|<ul><li>Ext. Touch Screen<li>StreamDeck XL</ul>|
 |Network| Connected via GBit LAN to home network | Connected via 1GBit LAN to home network |
+
+
+**ToDo** Add visualization about monitor setup to understand the need of Multimonitor Tool.
 
 ## Processes
 
@@ -90,6 +93,7 @@ The following Sequence Diagram shows how my simulator environment is started fro
 <ol start=4>
   <li> Wait for the secondary system to automatically complete the following steps
       <ul>
+         <li> Disable the primary monitor (in the scope of the auxiliary system). This is used for convenience, because during development I use the primary monitor for coding. While flying the screen is anyway used by the primary system to display X-Plane 12. Leaving it enabled created here and there hickups with window alignments.
          <li> Start EFB Environment
           <ul>
             <li> Start EFB Command Bar (Virtual Streamdeck)
