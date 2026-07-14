@@ -82,6 +82,7 @@ G SHIFT sim/ground_ops/toggle_window
 0 CTRL sim/radios/nav2_standy_flip
 - CTRL sim/radios/com1_standy_flip
 = CTRL sim/radios/com2_standy_flip
+D <NONE> sim/instruments/DG_sync_mag
 , SHIFT+CTRL sim/instruments/panel_bright_down
 . SHIFT+CTRL sim/instruments/panel_bright_up
 ] <NONE> sim/flight_controls/pitch_trim_up
@@ -117,7 +118,7 @@ W CTRL sim/view/forward_with_nothing
 6 SHIFT sim/view/ridealong
 7 SHIFT sim/view/track_weapon
 8 SHIFT sim/view/chase
-0 SHIFT sim/view/3d_cockpit_cmnd_look
+9 SHIFT sim/view/3d_cockpit_cmnd_look
 C SHIFT sim/view/cinema_verite
 S SHIFT sim/view/sunglasses
 N SHIFT sim/view/night_vision
@@ -180,36 +181,3 @@ R CTRL sim/general/rot_up_slow
 F CTRL sim/general/rot_down_slow
 Q CTRL sim/general/rot_left_slow
 E CTRL sim/general/rot_right_slow
-Numpad-+ <NONE> SRS/X-Camera/Next_Camera Selects the next camera in the current category
-Numpad-- <NONE> SRS/X-Camera/Previous_Camera Selects the previous camera in the current category
-Numpad-* <NONE> SRS/X-Camera/Next_Category Selects the next view category
-Numpad-/ <NONE> SRS/X-Camera/Previous_Category Selects the previous view category
-Insert <NONE> TrafficGlobal/config/toggle_labels Cycle AI aircraft label mode.
-Insert CTRL TrafficGlobal/config/toggle_ext_info Toggle extended info.
-F1 CTRL TrafficGlobal/config/toggle_canvas Open the Flight Path view.
-Home <NONE> TrafficGlobal/views/reset_view Reset view orientation to default.
-Home SHIFT TrafficGlobal/views/reset_view_offset Reset stored tower offset.
-F2 CTRL TrafficGlobal/views/ai_center_view Camera centred on an AI aircraft.
-F7 CTRL TrafficGlobal/views/ai_chase_view Camera following an AI aircraft.
-F3 CTRL TrafficGlobal/views/ai_to_player_view Camera centred on an AI aircraft, looking at the player.
-F4 CTRL TrafficGlobal/views/player_to_ai_view Camera centred on the player, looking at an AI aircraft.
-F5 CTRL TrafficGlobal/views/airport_to_ai_view Camera centred on the nearest airport, looking at an AI aircraft.
-F5 SHIFT+CTRL TrafficGlobal/views/runway_to_ai_view Camera centred on one end of a nearby runway, looking at an AI aircraft.
-F6 CTRL TrafficGlobal/views/airport_free_view Camera centred on the nearest airport.
-PageUp <NONE> TrafficGlobal/views/next_airport Select the next airport for airport-to-aircraft camera.
-PageDown <NONE> TrafficGlobal/views/prev_airport Select the previous airport for airport-to-aircraft camera.
-PageUp SHIFT+CTRL TrafficGlobal/views/next_runway Select the next runway at the current airport for runway-to-aircraft camera.
-PageDown SHIFT+CTRL TrafficGlobal/views/prev_runway Select the previous runway at the current airport for runway-to-aircraft camera.
-F9 CTRL TrafficGlobal/config/toggle_ai_radar Open the AI radar view.
-F11 CTRL TrafficGlobal/config/toggle_flt_board Open the Flight Schedule.
-Delete CTRL TrafficGlobal/control/delete_selected_ai Delete selected AI.
-= SHIFT+CTRL TrafficGlobal/control/density_up Increase traffic density 10%.
-- SHIFT+CTRL TrafficGlobal/control/density_down Decrease traffic density 10%.
-1 ALT TrafficGlobal/control/force_pushback Push back the active, parked AI
-2 ALT TrafficGlobal/control/force_park Make the active, parked AI re-enter parking
-R SHIFT+ALT TrafficGlobal/control/full_reset Reset all traffic immediately.
-3 ALT TrafficGlobal/control/force_goaround Initiate go-around for aircraft on approach
-End <NONE> TrafficGlobal/comms/request_runway_info Request runway and parking info.
-A <NONE> Avalanche/Control/Left_key Left (A)
-D <NONE> Avalanche/Control/Right_key Right (D)
-9 SHIFT sim/view/wingman

@@ -44,7 +44,7 @@ livetraffic/cfg/weather_metar_agl 5000
 livetraffic/cfg/weather_metar_dist 25
 livetraffic/cfg/remote_support 0
 livetraffic/cfg/external_camera_tool 0
-livetraffic/cfg/last_check_new_ver 495476
+livetraffic/cfg/last_check_new_ver 495570
 livetraffic/dbg/ac_pos 0
 livetraffic/dbg/diagnostic 0
 livetraffic/dbg/model_matching 0
@@ -80,14 +80,14 @@ livetraffic/channel/adsb_fi/online 0
 livetraffic/channel/airplanes_live/online 0
 livetraffic/channel/navigraph/fr24 1
 livetraffic/channel/real_traffic/online 0
-MessageWndPos 2100,1390,2550,1244
+MessageWndPos 2100,1390,2550,1243
 SettingsWndPos 924,970,1625,470
 ACInfoWndPos 2017,1244,2337,714
 InfoListWndPos 253,1296,1530,567
 DEFAULT_AC_TYPE A320
 DEFAULT_CAR_TYPE ZZZC
 Sound_Device (no change)
-Navigraph_RefreshToken ZUBfDCVRXRxFDkJVDAsYKAtGV21DU1VRUFtlQVFdIwc=
+Navigraph_RefreshToken YhUNDH9TXB5HXkYEWl5LKl8XA2MWAlZQC1o2FVEKflI=
 
 [FlarmAcTypes]
 0 = GLID
