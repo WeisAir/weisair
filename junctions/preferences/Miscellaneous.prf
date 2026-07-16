@@ -9,15 +9,15 @@ networking_disclose_data_io 0
 pilot_voice Joey
 networking_disclose_external_visuals 0
 pixel_multiplier 1.000000
-last_device SwitchPnl
+last_device Alpha Flight Controls
 networking_disclose_iphone 0
 networking_disclose_instructor 0
 atc_cmd_window_splitter 133.000000
 auto_tune_for_atc 1
 P monitor_10 _offsets 0
 P monitor_10 _visuals 0
-P monitor_19 _offsets 0
-P monitor_19 _visuals 0
+P monitor_13 _offsets 0
+P monitor_13 _visuals 0
 P map_layer map_layer_SDK_Marking_2 1
 P map_layer map_layer_SDK_Marking_1 1
 P map_layer map_layer_SDK_Marking_0 1
@@ -25,6 +25,9 @@ P monitor_14 _offsets 0
 P monitor_14 _visuals 0
 P monitor_8 _offsets 0
 P monitor_8 _visuals 0
+P acf_profile IXEG___B-737-300 B733
+P acf_profile Boeing___737-800X___(4k) B738
+P acf_profile Boeing___737-800X B738
 P acf_profile Cessna___Skyhawk___(Floats) GA___Prop
 P acf_profile Schleicher___ASK___21 __default__
 P acf_profile DR401___CDI155___by___Aerobask GA___Prop
@@ -42,9 +45,7 @@ P acf_profile Beechcraft___King___Air___C90B GA___Prop
 P acf_profile Beechcraft___Baron___58 GA___Prop
 P acf_profile C172___NG___DIGITAL GA___Prop
 P acf_profile SSG___747-8___Freighter___V2.8.2 Airliner
-P acf_profile Boeing___737-800X __default__
 P acf_profile LES___Saab___340A Airliner
-P acf_profile IXEG___B-737-300 Airliner
 P acf_profile DC-3___Modern Airliner
 P acf_profile DC-3___Classic Airliner
 P acf_profile SSG___747-8___Intercontinental___V2.8.2 Airliner
@@ -52,7 +53,6 @@ P acf_profile McDonnell___Douglas___MD-82 Airliner
 P acf_profile Boeing___737-800 Airliner
 P acf_profile Airbus___A330-300 Airliner
 P acf_profile E-Jets___Family___E170 Airliner
-P acf_profile Boeing___737-800X___(4k) Airliner
 P pilot-430 gps_window_visible 0
 P monitor_6 _offsets 0
 P monitor_6 _visuals 0
@@ -123,9 +123,9 @@ P window_state ground_handling_window v=0 p=0 m=0 b=0,0,0,0
 P copilot-4200 gps_window_visible 0
 P RDR2000_WXR device_window_visible 0
 P WXR-2 gps_window_visible 0
+P monitor_19 _offsets 0
+P monitor_19 _visuals 0
 P GCU gps_window_visible 0
-P monitor_13 _offsets 0
-P monitor_13 _visuals 0
 P monitor_1 _offsets 0
 P monitor_1 _visuals 0
 P monitor_4 _offsets 0
