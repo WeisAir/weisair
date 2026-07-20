@@ -9,8 +9,9 @@ networking_disclose_data_io 0
 pilot_voice Joey
 networking_disclose_external_visuals 0
 pixel_multiplier 1.000000
-last_device Alpha Flight Controls
+last_device SwitchPnl
 networking_disclose_iphone 0
+_sdk_notice_cca0436d9a2b58c6bf297c31596af63a_18839332_Deprecation 0
 networking_disclose_instructor 0
 atc_cmd_window_splitter 133.000000
 auto_tune_for_atc 1
@@ -25,6 +26,7 @@ P monitor_14 _offsets 0
 P monitor_14 _visuals 0
 P monitor_8 _offsets 0
 P monitor_8 _visuals 0
+P acf_profile Beechcraft___Baron___58 B58
 P acf_profile IXEG___B-737-300 B733
 P acf_profile Boeing___737-800X___(4k) B738
 P acf_profile Boeing___737-800X B738
@@ -42,7 +44,6 @@ P acf_profile Cessna___Skyhawk___(G1000) GA___Prop
 P acf_profile Cessna___Skyhawk GA___Prop
 P acf_profile CX300 GA___Prop
 P acf_profile Beechcraft___King___Air___C90B GA___Prop
-P acf_profile Beechcraft___Baron___58 GA___Prop
 P acf_profile C172___NG___DIGITAL GA___Prop
 P acf_profile SSG___747-8___Freighter___V2.8.2 Airliner
 P acf_profile LES___Saab___340A Airliner
@@ -94,14 +95,14 @@ P monitor_2 _offsets 0
 P monitor_2 _visuals 0
 P window_state exvis_standby v=0 p=0 m=0 b=0,0,0,0
 P window_state fps_test_recoder v=0 p=0 m=0 b=0,0,0,0
-P window_state screenshot_controls v=0 p=0 m=0 b=1819,10,2299,450
+P window_state screenshot_controls v=0 p=0 m=0 b=1785,13,2265,453
 P window_state networkdebug v=0 p=0 m=0 b=20,20,832,340
 P window_state raininspector v=0 p=0 m=0 b=0,0,0,0
 P window_state pluginadmin v=0 p=0 m=0 b=321,544,871,1164
 P window_state vramprofiler v=0 p=0 m=0 b=0,0,0,0
 P window_state microprofiler v=0 p=0 m=0 b=-1253,519,-223,999
 P window_state demo_area v=0 p=0 m=0 b=0,0,0,0
-P window_state log_viewer v=0 p=0 m=0 b=0,0,0,0
+P window_state log_viewer v=0 p=0 m=0 b=200,201,900,601
 P window_state particle_browser v=0 p=0 m=0 b=-1292,781,-742,1231
 P window_state texture_browser v=0 p=0 m=0 b=0,0,0,0
 P window_state autopilot_constants v=0 p=0 m=0 b=-1049,425,-849,1025

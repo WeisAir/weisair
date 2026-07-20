@@ -53,7 +53,7 @@ end
 local SECS24HRS       = 86400 -- number of seconds in 24 hours 60 * 60 * 24
 local NAV_TYPE_V      = xplm_Nav_Airport+xplm_Nav_VOR+xplm_Nav_Localizer+ xplm_Nav_Fix
 local NAV_TYPE_I      = NAV_TYPE_V  + xplm_Nav_DME 
-local MIN_FLIGHT_SECS = 1 -- minimum flight time to be logged = 10 mins
+local MIN_FLIGHT_SECS = 60 -- minimum flight time to be logged = 10 mins
 local MIN_GS          = 30  -- below this level we are effectively stationary!
 local MIN_VFR_ALTM    = 600 -- m (+- 2000' agl) below this log every 10 secs, above log every minute
 local CSVLog          = "FlightLog" .. mn_VERSION_NO:match("%d+.%d+") ..".csv"  -- file name of csv log file
@@ -613,7 +613,8 @@ end
 
 -- combine all temp files into KML final
 function mn_save_KML(arr_icao,arr_name,flevels,duration,distance)
-    -- formats for kml sections
+   mn_logit("WEISAIR: in function mn_save_KML ") 
+   -- formats for kml sections
     local hdr1 = [=[
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
@@ -683,12 +684,15 @@ Trackpoints : %d
 ]=]
 
    --save final destination
+   mn_logit("WEISAIR: calling function mn_write_KML")
    mn_write_KML(true,string.format("%s: %s [%s]",arr_icao, arr_name, PLANE_ICAO)) 
    local tm  = flt_date .. " " .. mn_SecToTime(stats.takeoff_local)
    local dta = string.format(INFO, stats.dep_icao,arr_icao,stats.dep_name,arr_name,os.date("%Y-%m-%d"),PLANE_ICAO,distance,mn_SecToTime(duration),flevels,num_waypoints,num_trackpoints,mn_VERSION_NO.." " ..mn_VERSION_DATE)
    local tmp = stats.dep_icao .."-" .. arr_icao .. "_" .. KMLLogFile .. ".kml"
    KMLLogFile = tmp
    local fname  = FOLDER .. "/" .. KMLLogFile
+
+   mn_logit("WEISAIR: Saving KML flight data to: " .. fname)
    --safety! Just in case there is already an existing file with the same name
    local success, err = os.remove(fname)
    if (success) then
@@ -749,7 +753,10 @@ Flight data is in: %s
   -- save in csv log file
   mn_write_csv_log(icao,nme,f_levels,duration,dht,dist)
   --save kml
-  if (flight.log_to_kml) then mn_save_KML(icao,nme,f_levels,duration,dist) end
+  if (flight.log_to_kml) then 
+      mn_logit("WEISAIR: in function mn_closeoff calling function mn_save_KML") 
+      mn_save_KML(icao,nme,f_levels,duration,dist) 
+   end
  -- if we are showing status, then close that window first
   if (mnwnd_stat) then  float_wnd_destroy(mnwnd_stat) end
   local h = 180
@@ -814,15 +821,20 @@ end
 
 -- write data to kml file
 function mn_write_KML(logroute,wptname, lat, lon)
-  if (not flight.log_to_kml) then return end
+  mn_logit("WEISAIR: in function mn_write_KML")
+   if (not flight.log_to_kml) then
+      mn_logit("WEISAIR: in function mn_write_KML --> log_to_kml is false, returning") 
+      return end
   lon = lon or LONGITUDE 
   lat = lat or LATITUDE
   elv = math.floor(ELEVATION) --math.floor(aloft[0])
   num_trackpoints = num_trackpoints + 1
   if (wptname and wptname > "") then
+   mn_logit("WEISAIR: calling function mn_save_WPT") 
      mn_save_WPT(wptname, lat, lon, elv)
   end 
   if (logroute) then
+   mn_logit("WEISAIR: in function mn_write_KML -> logroute is true, writing to f_trk")
      f_trk:write(string.format("          %.8f,%.8f,%d\n",lon,lat,elv))
   end
 end
@@ -1057,7 +1069,8 @@ end
 -- called every 10 secs. Rest of function is ignored if we are not flying, are paused, or in replay mode
 function mn_check_progress()
      if (show_popup and (time_z[0] >= close_popup)) then
-         show_popup = false
+         --show_popup = false
+         show_popup = true
          if (mnwnd_stat) then  float_wnd_destroy(mnwnd_stat) end
      end
      if (flight.isactive and (not flight.f_done)) then 
@@ -1079,7 +1092,8 @@ end
 
 --called every 1 sec.  Detect takeoff and landing
 function mn_CheckStatus()
-    flight.isactive = ((replay_mode[0] == 0) and (paused[0] == 0))
+   mn_logit("WEISAIR: Enter mn_CheckStatus") 
+   flight.isactive = ((replay_mode[0] == 0) and (paused[0] == 0))
     if (flight.isactive and (not flight.f_done)) then
          local gskts = mn_get_gs_kts() 
          if (on_ground[0] ~= 0 and aloft[0] < 4)  then -- on ground??

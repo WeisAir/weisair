@@ -3,17 +3,17 @@ I
 _default_to_ramps 0
 weight_and_balance_use_metric 1
 _favorite Aircraft/Laminar Research/Beechcraft Baron 58/Baron_58.acf||Aircraft/X-Aviation/IXEG 737 Classic Plus/B733.acf
-_airport MMGM
-_last_start {"runway_start":{"airport_id":"MMGM","runway":"02"}}
+_airport EDDC
+_last_start {"runway_start":{"airport_id":"EDDC","runway":"22"}}
 
 _other_aircraft {"ai_aircraft":null}
 
-_time {"local_time":{"day_of_year":190,"latitude":27.96048111606072,"longitude":-110.92940166387334,"time_in_24_hours":11.335223197937012}}
+_time {"local_time":{"day_of_year":190,"latitude":51.14387025217129,"longitude":13.781113404956445,"time_in_24_hours":23.0}}
 
-_aircraft Aircraft/X-Aviation/IXEG 737 Classic Plus/B733.acf
-_wxr_def ,var_rand_space_pct=0.00,var_deft_change_enum=7,var_rwx_is_sim_time=1,var_vis_sm=22.61,var_vis_alt_lo_ft=3059.00,var_vis_alt_hi_ft=14451.36,var_ISA_offset_C=18.44,var_SLP_pas=101107.24,var_QNH_ele=27.84,var_precip_rat=0.00,var_cld_typ_enum0=2,var_cld_cov0=0.63,var_tops_msl_ft0=14451.36,var_bases_msl_ft0=3059.00,var_cld_typ_enum1=0,var_cld_cov1=0.00,var_tops_msl_ft1=820.00,var_bases_msl_ft1=0.00,var_cld_typ_enum2=0,var_cld_cov2=0.00,var_tops_msl_ft2=820.00,var_bases_msl_ft2=0.00,var_wind_alt_msl_ft0=0.00,var_wind_alt_msl_ft1=1772.00,var_wind_alt_msl_ft2=3243.00,var_wind_alt_msl_ft3=6392.00,var_wind_alt_msl_ft4=9878.00,var_wind_alt_msl_ft5=13801.00,var_wind_alt_msl_ft6=18281.00,var_wind_alt_msl_ft7=23564.00,var_wind_alt_msl_ft8=30053.00,var_wind_alt_msl_ft9=33999.00,var_wind_alt_msl_ft10=39000.00,var_wind_alt_msl_ft11=44600.00,var_wind_alt_msl_ft12=53082.00,var_wind_spd_kt0=10.43,var_wind_spd_kt1=10.38,var_wind_spd_kt2=10.65,var_wind_spd_kt3=8.87,var_wind_spd_kt4=18.82,var_wind_spd_kt5=22.76,var_wind_spd_kt6=25.06,var_wind_spd_kt7=19.06,var_wind_spd_kt8=32.37,var_wind_spd_kt9=25.49,var_wind_spd_kt10=27.81,var_wind_spd_kt11=31.22,var_wind_spd_kt12=30.85,var_wind_dir_true0=179.28,var_wind_dir_true1=152.79,var_wind_dir_true2=130.14,var_wind_dir_true3=134.47,var_wind_dir_true4=80.33,var_wind_dir_true5=77.11,var_wind_dir_true6=63.88,var_wind_dir_true7=79.30,var_wind_dir_true8=66.06,var_wind_dir_true9=54.10,var_wind_dir_true10=74.65,var_wind_dir_true11=64.69,var_wind_dir_true12=80.50,var_wind_inc_kt0=0.13,var_wind_inc_kt1=1.28,var_wind_inc_kt2=1.36,var_wind_inc_kt3=1.32,var_wind_inc_kt4=1.32,var_wind_inc_kt5=1.33,var_wind_inc_kt6=1.39,var_wind_inc_kt7=1.46,var_wind_inc_kt8=1.46,var_wind_inc_kt9=1.46,var_wind_inc_kt10=1.40,var_wind_inc_kt11=1.41,var_wind_inc_kt12=0.00,var_wind_shr_deg0=0.19,var_wind_shr_deg1=1.93,var_wind_shr_deg2=2.04,var_wind_shr_deg3=1.98,var_wind_shr_deg4=1.98,var_wind_shr_deg5=1.99,var_wind_shr_deg6=2.08,var_wind_shr_deg7=2.19,var_wind_shr_deg8=2.19,var_wind_shr_deg9=2.19,var_wind_shr_deg10=2.10,var_wind_shr_deg11=2.11,var_wind_shr_deg12=0.00,var_CAT_rat0=0.02,var_CAT_rat1=0.02,var_CAT_rat2=0.02,var_CAT_rat3=0.02,var_CAT_rat4=0.02,var_CAT_rat5=0.02,var_CAT_rat6=0.02,var_CAT_rat7=0.02,var_CAT_rat8=0.02,var_CAT_rat9=0.02,var_CAT_rat10=0.02,var_CAT_rat11=0.02,var_CAT_rat12=0.00,var_therm_vvi_fpm=0.00,var_wave_height_ft=0.50,var_wave_dir_deg=179.00,var_ter_eff_UI=0
-P _loads_crc32 _AircraftXAviationIXEG737ClassicPlusB733acf 824521727
+_aircraft Aircraft/Laminar Research/Beechcraft Baron 58/Baron_58.acf
+_wxr_def ,var_rand_space_pct=0.00,var_deft_change_enum=7,var_rwx_is_sim_time=1,var_vis_sm=22.23,var_vis_alt_lo_ft=6535.01,var_vis_alt_hi_ft=8194.83,var_ISA_offset_C=11.74,var_SLP_pas=101533.10,var_QNH_ele=195.65,var_precip_rat=0.00,var_cld_typ_enum0=2,var_cld_cov0=0.78,var_tops_msl_ft0=8194.83,var_bases_msl_ft0=6535.01,var_cld_typ_enum1=1,var_cld_cov1=0.61,var_tops_msl_ft1=30608.44,var_bases_msl_ft1=25688.44,var_cld_typ_enum2=2,var_cld_cov2=0.65,var_tops_msl_ft2=17955.45,var_bases_msl_ft2=15272.62,var_wind_alt_msl_ft0=0.00,var_wind_alt_msl_ft1=1772.00,var_wind_alt_msl_ft2=3243.00,var_wind_alt_msl_ft3=6392.00,var_wind_alt_msl_ft4=9878.00,var_wind_alt_msl_ft5=13801.00,var_wind_alt_msl_ft6=18281.00,var_wind_alt_msl_ft7=23564.00,var_wind_alt_msl_ft8=30053.00,var_wind_alt_msl_ft9=33999.00,var_wind_alt_msl_ft10=39000.00,var_wind_alt_msl_ft11=44600.00,var_wind_alt_msl_ft12=53082.00,var_wind_spd_kt0=3.40,var_wind_spd_kt1=13.98,var_wind_spd_kt2=15.00,var_wind_spd_kt3=15.17,var_wind_spd_kt4=23.52,var_wind_spd_kt5=31.47,var_wind_spd_kt6=32.07,var_wind_spd_kt7=34.97,var_wind_spd_kt8=28.92,var_wind_spd_kt9=38.43,var_wind_spd_kt10=42.79,var_wind_spd_kt11=29.83,var_wind_spd_kt12=9.30,var_wind_dir_true0=347.71,var_wind_dir_true1=14.19,var_wind_dir_true2=4.50,var_wind_dir_true3=347.26,var_wind_dir_true4=346.94,var_wind_dir_true5=335.26,var_wind_dir_true6=329.00,var_wind_dir_true7=335.10,var_wind_dir_true8=339.47,var_wind_dir_true9=325.01,var_wind_dir_true10=322.58,var_wind_dir_true11=334.44,var_wind_dir_true12=5.47,var_wind_inc_kt0=0.00,var_wind_inc_kt1=0.04,var_wind_inc_kt2=1.09,var_wind_inc_kt3=1.09,var_wind_inc_kt4=1.09,var_wind_inc_kt5=1.10,var_wind_inc_kt6=1.10,var_wind_inc_kt7=1.13,var_wind_inc_kt8=1.28,var_wind_inc_kt9=1.35,var_wind_inc_kt10=1.45,var_wind_inc_kt11=1.63,var_wind_inc_kt12=0.00,var_wind_shr_deg0=72.01,var_wind_shr_deg1=61.19,var_wind_shr_deg2=1.64,var_wind_shr_deg3=1.64,var_wind_shr_deg4=1.64,var_wind_shr_deg5=1.65,var_wind_shr_deg6=1.65,var_wind_shr_deg7=1.70,var_wind_shr_deg8=1.91,var_wind_shr_deg9=2.03,var_wind_shr_deg10=2.18,var_wind_shr_deg11=2.44,var_wind_shr_deg12=0.00,var_CAT_rat0=0.02,var_CAT_rat1=0.02,var_CAT_rat2=0.02,var_CAT_rat3=0.02,var_CAT_rat4=0.02,var_CAT_rat5=0.02,var_CAT_rat6=0.02,var_CAT_rat7=0.02,var_CAT_rat8=0.02,var_CAT_rat9=0.02,var_CAT_rat10=0.02,var_CAT_rat11=0.03,var_CAT_rat12=0.00,var_therm_vvi_fpm=0.00,var_wave_height_ft=0.11,var_wave_dir_deg=347.00,var_ter_eff_UI=0
 P _loads_crc32 _AircraftLaminarResearchBeechcraftBaron58Baron58acf 1874879448
+P _loads_crc32 _AircraftXAviationIXEG737ClassicPlusB733acf 824521727
 P _loads_crc32 _AircraftLaminarResearchCessna172SPCessna172SPacf 838785634
 P _loads_crc32 _AircraftLaminarResearchCirrusSR22CirrusSR22acf 3839323202
 P _loads_crc32 _AircraftLaminarResearchCessna172SPCessna172SPG1000acf 838785634
@@ -22,7 +22,9 @@ P _loads_crc32 _AircraftLaminarResearchBeechcraftKingAirC90BC90Bacf 1551873721
 P _loads_crc32 _AircraftLaminarResearchLancairEvolutionN844Xacf 1012608288
 P _loads_crc32 _AircraftSSGB748SeriesV28RC1XP12SSGB748I12acf 4110227935
 P _loads_crc32 _AircraftLaminarResearchBoeing737800b738acf 489069385
-P _rwy_or_ramp MMGM 0_0
+P _rwy_or_ramp EDDC 0_1
+P _rwy_or_ramp EDAB 0_1
+P _rwy_or_ramp MMGM 0_1
 P _rwy_or_ramp KGVQ 0_1
 P _rwy_or_ramp LSGG 37
 P _rwy_or_ramp LFMN 69
@@ -34,7 +36,6 @@ P _rwy_or_ramp EDDF 143
 P _rwy_or_ramp LXGB 0
 P _rwy_or_ramp LERT 7
 P _rwy_or_ramp LSGS 0_1
-P _rwy_or_ramp EDDC 0_1
 P _rwy_or_ramp UUOO 2_0
 P _rwy_or_ramp LKVR 0_0
 P _rwy_or_ramp EPJG 1_0
@@ -44,9 +45,9 @@ P _rwy_or_ramp EDDP 10
 P _rwy_or_ramp LOWS 3
 P _rwy_or_ramp KLAX 2_1
 P _rwy_or_ramp LFPB 1_1
-P _weight_and_balance _AircraftXAviationIXEG737ClassicPlusB733acf {"weight":{"deice_fluid_in_liters":0.0,"deice_holdover_time_in_minutes":0.0,"fueltank_weight_in_kilograms":[1861.5823974609375,14.026382446289062,1861.574462890625,0.0,0.0,0.0,0.0,0.0,0.0],"oxygen_pressure_in_millibars":0.0,"payload_weight_in_kilograms":[1492.2296142578125,2292.69775390625,1612.019775390625,2236.301025390625,1482.747802734375,2007.6461181640625,501.91152954101562]}}
+P _weight_and_balance _AircraftLaminarResearchBeechcraftBaron58Baron58acf {"weight":{"deice_fluid_in_liters":0.0,"deice_holdover_time_in_minutes":0.0,"fueltank_weight_in_kilograms":[53.74267578125,53.681571960449219,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"oxygen_pressure_in_millibars":14144.26171875,"payload_weight_in_kilograms":[3.8395640850067139,3.8395640850067139,3.8395640850067139,3.8395640850067139,3.8395640850067139]}}
 
-P _weight_and_balance _AircraftLaminarResearchBeechcraftBaron58Baron58acf {"weight":{"deice_fluid_in_liters":0.0,"deice_holdover_time_in_minutes":0.0,"fueltank_weight_in_kilograms":[135.66944885253906,132.44509887695312,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"oxygen_pressure_in_millibars":92374.3125,"payload_weight_in_kilograms":[48.9613037109375,48.9613037109375,48.9613037109375,9.7922601699829102,9.7922601699829102]}}
+P _weight_and_balance _AircraftXAviationIXEG737ClassicPlusB733acf {"weight":{"deice_fluid_in_liters":0.0,"deice_holdover_time_in_minutes":0.0,"fueltank_weight_in_kilograms":[1861.5823974609375,14.026382446289062,1861.574462890625,0.0,0.0,0.0,0.0,0.0,0.0],"oxygen_pressure_in_millibars":0.0,"payload_weight_in_kilograms":[1492.2296142578125,2292.69775390625,1612.019775390625,2236.301025390625,1482.747802734375,2007.6461181640625,501.91152954101562]}}
 P _weight_and_balance _AircraftLaminarResearchCessna172SPCessna172SPacf {"weight":{"deice_fluid_in_liters":0.0,"deice_holdover_time_in_minutes":0.0,"fueltank_weight_in_kilograms":[39.689346313476562,39.689346313476562,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"oxygen_pressure_in_millibars":124105.65625,"payload_weight_in_kilograms":[41.788558959960938,41.788558959960938,34.190639495849609,34.190639495849609,22.793760299682617,9.4973993301391602]}}
 P _weight_and_balance _AircraftLaminarResearchCirrusSR22CirrusSR22acf {"weight":{"deice_fluid_in_liters":30.299999237060547,"deice_holdover_time_in_minutes":0.0,"fueltank_weight_in_kilograms":[62.903644561767578,62.903644561767578,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"oxygen_pressure_in_millibars":124105.65625,"payload_weight_in_kilograms":[129.657470703125,129.657470703125,41.254650115966797]}}
 P _weight_and_balance _AircraftLaminarResearchCessna172SPCessna172SPG1000acf {"weight":{"deice_fluid_in_liters":0.0,"deice_holdover_time_in_minutes":0.0,"fueltank_weight_in_kilograms":[39.689346313476562,39.689346313476562,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"oxygen_pressure_in_millibars":124105.65625,"payload_weight_in_kilograms":[41.788509368896484,41.788509368896484,34.190597534179688,34.190597534179688,22.793731689453125,9.4973878860473633]}}
@@ -90,6 +91,8 @@ P _livery _AircraftLaminarResearchMcDonnellDouglasMD82MD80acf Default
 P _livery _AircraftLaminarResearchBoeing737800b738acf American
 P _livery _AircraftLaminarResearchAirbusA330300A330acf Lufthansa D-AIKN
 P _livery _AircraftLaminarResearchCirrusSR22CirrusSR22acf Default
+P _start_is_rwy EDDC 1
+P _start_is_rwy EDAB 1
 P _start_is_rwy MMGM 1
 P _start_is_rwy KGVQ 1
 P _start_is_rwy LSGG 0
@@ -102,7 +105,6 @@ P _start_is_rwy EDDF 0
 P _start_is_rwy LXGB 0
 P _start_is_rwy LERT 0
 P _start_is_rwy LSGS 1
-P _start_is_rwy EDDC 1
 P _start_is_rwy UUOO 1
 P _start_is_rwy LKVR 1
 P _start_is_rwy EPJG 1
@@ -114,8 +116,8 @@ P _start_is_rwy KLAX 1
 P _start_is_rwy LFPB 1
 P _weapon __AircraftXAviationIXEG737ClassicPlusB733acf_1 empty.wpn
 P _weapon __AircraftXAviationIXEG737ClassicPlusB733acf_0 empty.wpn
-P _timestamp _AircraftXAviationIXEG737ClassicPlusB733acf 1699650816.000000
 P _timestamp _AircraftLaminarResearchBeechcraftBaron58Baron58acf 1759261056.000000
+P _timestamp _AircraftXAviationIXEG737ClassicPlusB733acf 1699650816.000000
 P _timestamp _AircraftLaminarResearchCessna172SPCessna172SPacf 1773510912.000000
 P _timestamp _AircraftLaminarResearchCirrusSR22CirrusSR22acf 1766243840.000000
 P _timestamp _AircraftLaminarResearchCessna172SPCessna172SPG1000acf 1738407040.000000

@@ -1,0 +1,863 @@
+{
+	"version": 12,
+	"type": "full",
+	"companionBuild": "4.3.2+9226-stable-1b1835a3e2",
+	"pages": {
+		"1": {
+			"id": "f4ZSgvJNDY-k_EQ0Cm2Oz",
+			"name": "PAGE",
+			"controls": {
+				"0": {
+					"0": {
+						"type": "pageup"
+					},
+					"1": {
+						"type": "button",
+						"style": {
+							"text": "open B738 Checklist",
+							"textExpression": false,
+							"size": "auto",
+							"png64": null,
+							"alignment": "center:center",
+							"pngalignment": "center:center",
+							"color": 16777215,
+							"bgcolor": 0,
+							"show_topbar": "default"
+						},
+						"options": {
+							"stepProgression": "auto",
+							"stepExpression": "",
+							"rotaryActions": false
+						},
+						"feedbacks": [],
+						"steps": {
+							"0": {
+								"action_sets": {
+									"down": [
+										{
+											"id": "Kw1GrRMy57XS-dnI6-Gvd",
+											"definitionId": "exec",
+											"connectionId": "internal",
+											"options": {
+												"path": {
+													"value": "\"G:\\weisair\\batch_scripts\\autohotkey\\launch_and_position_checklist_738.ahk\"",
+													"isExpression": false
+												},
+												"cwd": {
+													"isExpression": false
+												},
+												"timeout": {
+													"isExpression": false,
+													"value": 5000
+												},
+												"targetVariable": {
+													"isExpression": false
+												}
+											},
+											"type": "action",
+											"children": {}
+										}
+									],
+									"up": []
+								},
+								"options": {
+									"runWhileHeld": []
+								}
+							}
+						},
+						"localVariables": []
+					},
+					"2": {
+						"type": "button",
+						"style": {
+							"text": "open B733 Checklist",
+							"textExpression": false,
+							"size": "auto",
+							"png64": null,
+							"alignment": "center:center",
+							"pngalignment": "center:center",
+							"color": 16777215,
+							"bgcolor": 0,
+							"show_topbar": "default"
+						},
+						"options": {
+							"stepProgression": "auto",
+							"stepExpression": "",
+							"rotaryActions": false
+						},
+						"feedbacks": [],
+						"steps": {
+							"0": {
+								"action_sets": {
+									"down": [
+										{
+											"id": "BXBCu6pX6woXYM5FZ9UsL",
+											"definitionId": "exec",
+											"connectionId": "internal",
+											"options": {
+												"path": {
+													"value": "\"G:\\weisair\\batch_scripts\\autohotkey\\launch_and_position_checklist_733.ahk\"",
+													"isExpression": false
+												},
+												"cwd": {
+													"isExpression": false
+												},
+												"timeout": {
+													"isExpression": false,
+													"value": 5000
+												},
+												"targetVariable": {
+													"isExpression": false
+												}
+											},
+											"type": "action",
+											"children": {}
+										}
+									],
+									"up": []
+								},
+								"options": {
+									"runWhileHeld": []
+								}
+							}
+						},
+						"localVariables": []
+					},
+					"3": {
+						"type": "button",
+						"style": {
+							"text": "open B748 Checklist",
+							"textExpression": false,
+							"size": "auto",
+							"png64": null,
+							"alignment": "center:center",
+							"pngalignment": "center:center",
+							"color": 16777215,
+							"bgcolor": 0,
+							"show_topbar": "default"
+						},
+						"options": {
+							"stepProgression": "auto",
+							"stepExpression": "",
+							"rotaryActions": false
+						},
+						"feedbacks": [],
+						"steps": {
+							"0": {
+								"action_sets": {
+									"down": [
+										{
+											"id": "jNvyE-NPYrRQeIq_mVadf",
+											"definitionId": "exec",
+											"connectionId": "internal",
+											"options": {
+												"path": {
+													"value": "\"G:\\weisair\\batch_scripts\\autohotkey\\launch_and_position_checklist_748.ahk\"",
+													"isExpression": false
+												},
+												"cwd": {
+													"isExpression": false
+												},
+												"timeout": {
+													"isExpression": false,
+													"value": 5000
+												},
+												"targetVariable": {
+													"isExpression": false
+												}
+											},
+											"type": "action",
+											"children": {}
+										}
+									],
+									"up": []
+								},
+								"options": {
+									"runWhileHeld": []
+								}
+							}
+						},
+						"localVariables": []
+					},
+					"4": {
+						"type": "button",
+						"style": {
+							"text": "open C172 Checklist",
+							"textExpression": false,
+							"size": "auto",
+							"png64": null,
+							"alignment": "center:center",
+							"pngalignment": "center:center",
+							"color": 16777215,
+							"bgcolor": 0,
+							"show_topbar": "default"
+						},
+						"options": {
+							"stepProgression": "auto",
+							"stepExpression": "",
+							"rotaryActions": false
+						},
+						"feedbacks": [],
+						"steps": {
+							"0": {
+								"action_sets": {
+									"down": [
+										{
+											"id": "JTtxqP4j3WuS3mLxtvteu",
+											"definitionId": "exec",
+											"connectionId": "internal",
+											"options": {
+												"path": {
+													"value": "\"G:\\weisair\\batch_scripts\\autohotkey\\launch_and_position_checklist_C172.ahk\"",
+													"isExpression": false
+												},
+												"cwd": {
+													"isExpression": false
+												},
+												"timeout": {
+													"isExpression": false,
+													"value": 5000
+												},
+												"targetVariable": {
+													"isExpression": false
+												}
+											},
+											"type": "action",
+											"children": {}
+										}
+									],
+									"up": []
+								},
+								"options": {
+									"runWhileHeld": []
+								}
+							}
+						},
+						"localVariables": []
+					},
+					"5": {
+						"type": "button",
+						"style": {
+							"text": "open E170 Checklist",
+							"textExpression": false,
+							"size": "auto",
+							"png64": null,
+							"alignment": "center:center",
+							"pngalignment": "center:center",
+							"color": 16777215,
+							"bgcolor": 0,
+							"show_topbar": "default"
+						},
+						"options": {
+							"stepProgression": "auto",
+							"stepExpression": "",
+							"rotaryActions": false
+						},
+						"feedbacks": [],
+						"steps": {
+							"0": {
+								"action_sets": {
+									"down": [
+										{
+											"id": "pJpLJ0FumJOvVTMb5ywFe",
+											"definitionId": "exec",
+											"connectionId": "internal",
+											"options": {
+												"path": {
+													"value": "\"G:\\weisair\\batch_scripts\\autohotkey\\launch_and_position_checklist_E170.ahk\"",
+													"isExpression": false
+												},
+												"cwd": {
+													"isExpression": false
+												},
+												"timeout": {
+													"isExpression": false,
+													"value": 5000
+												},
+												"targetVariable": {
+													"isExpression": false
+												}
+											},
+											"type": "action",
+											"children": {}
+										}
+									],
+									"up": []
+								},
+								"options": {
+									"runWhileHeld": []
+								}
+							}
+						},
+						"localVariables": []
+					},
+					"6": {
+						"type": "button",
+						"style": {
+							"text": "open S340A Checklist",
+							"textExpression": false,
+							"size": "auto",
+							"png64": null,
+							"alignment": "center:center",
+							"pngalignment": "center:center",
+							"color": 16777215,
+							"bgcolor": 0,
+							"show_topbar": "default"
+						},
+						"options": {
+							"stepProgression": "auto",
+							"stepExpression": "",
+							"rotaryActions": false
+						},
+						"feedbacks": [],
+						"steps": {
+							"0": {
+								"action_sets": {
+									"down": [
+										{
+											"id": "5T4qzyHJ5fmQWcI_L8MqD",
+											"definitionId": "exec",
+											"connectionId": "internal",
+											"options": {
+												"path": {
+													"value": "\"G:\\weisair\\batch_scripts\\autohotkey\\launch_and_position_checklist_S340A.ahk\"",
+													"isExpression": false
+												},
+												"cwd": {
+													"isExpression": false
+												},
+												"timeout": {
+													"isExpression": false,
+													"value": 5000
+												},
+												"targetVariable": {
+													"isExpression": false
+												}
+											},
+											"type": "action",
+											"children": {}
+										}
+									],
+									"up": []
+								},
+								"options": {
+									"runWhileHeld": []
+								}
+							}
+						},
+						"localVariables": []
+					},
+					"7": {
+						"type": "button",
+						"style": {
+							"text": "open xPilot ATC",
+							"textExpression": false,
+							"size": "auto",
+							"png64": null,
+							"alignment": "center:center",
+							"pngalignment": "center:center",
+							"color": 16777215,
+							"bgcolor": 0,
+							"show_topbar": "default"
+						},
+						"options": {
+							"stepProgression": "auto",
+							"stepExpression": "",
+							"rotaryActions": false
+						},
+						"feedbacks": [],
+						"steps": {
+							"0": {
+								"action_sets": {
+									"down": [
+										{
+											"id": "wfNT_y3kaksFwbvkNij7f",
+											"definitionId": "exec",
+											"connectionId": "internal",
+											"options": {
+												"path": {
+													"value": "\"G:\\weisair\\batch_scripts\\autohotkey\\launch_and_position_xpilot.ahk\"",
+													"isExpression": false
+												},
+												"cwd": {
+													"isExpression": false
+												},
+												"timeout": {
+													"isExpression": false,
+													"value": 5000
+												},
+												"targetVariable": {
+													"isExpression": false
+												}
+											},
+											"type": "action",
+											"children": {}
+										}
+									],
+									"up": []
+								},
+								"options": {
+									"runWhileHeld": []
+								}
+							}
+						},
+						"localVariables": []
+					}
+				},
+				"1": {
+					"0": {
+						"type": "pagenum"
+					},
+					"1": {
+						"type": "button",
+						"style": {
+							"text": "open SR22 Checklist",
+							"textExpression": false,
+							"size": "auto",
+							"png64": null,
+							"alignment": "center:center",
+							"pngalignment": "center:center",
+							"color": 16777215,
+							"bgcolor": 0,
+							"show_topbar": "default"
+						},
+						"options": {
+							"stepProgression": "auto",
+							"stepExpression": "",
+							"rotaryActions": false
+						},
+						"feedbacks": [],
+						"steps": {
+							"0": {
+								"action_sets": {
+									"down": [
+										{
+											"id": "qyTVj6ziPJ73_E2e_5gX3",
+											"definitionId": "exec",
+											"connectionId": "internal",
+											"options": {
+												"path": {
+													"value": "\"G:\\weisair\\batch_scripts\\autohotkey\\launch_and_position_checklist_SR22.ahk\"",
+													"isExpression": false
+												},
+												"cwd": {
+													"isExpression": false
+												},
+												"timeout": {
+													"isExpression": false,
+													"value": 5000
+												},
+												"targetVariable": {
+													"isExpression": false
+												}
+											},
+											"type": "action",
+											"children": {}
+										}
+									],
+									"up": []
+								},
+								"options": {
+									"runWhileHeld": []
+								}
+							}
+						},
+						"localVariables": []
+					},
+					"2": {
+						"type": "button",
+						"style": {
+							"text": "open B58 Checklist",
+							"textExpression": false,
+							"size": "auto",
+							"png64": null,
+							"alignment": "center:center",
+							"pngalignment": "center:center",
+							"color": 16777215,
+							"bgcolor": 0,
+							"show_topbar": "default"
+						},
+						"options": {
+							"stepProgression": "auto",
+							"stepExpression": "",
+							"rotaryActions": false
+						},
+						"feedbacks": [],
+						"steps": {
+							"0": {
+								"action_sets": {
+									"down": [
+										{
+											"id": "auLoHhBfOd2gz2q9hkm-f",
+											"definitionId": "exec",
+											"connectionId": "internal",
+											"options": {
+												"path": {
+													"value": "\"G:\\weisair\\batch_scripts\\autohotkey\\launch_and_position_checklist_B58.ahk\"",
+													"isExpression": false
+												},
+												"cwd": {
+													"isExpression": false
+												},
+												"timeout": {
+													"isExpression": false,
+													"value": 5000
+												},
+												"targetVariable": {
+													"isExpression": false
+												}
+											},
+											"type": "action",
+											"children": {}
+										}
+									],
+									"up": []
+								},
+								"options": {
+									"runWhileHeld": []
+								}
+							}
+						},
+						"localVariables": []
+					}
+				},
+				"2": {
+					"0": {
+						"type": "pagedown"
+					},
+					"1": {
+						"type": "button",
+						"style": {
+							"text": "launch XP12 (offline)",
+							"textExpression": false,
+							"size": "auto",
+							"png64": null,
+							"alignment": "center:center",
+							"pngalignment": "center:center",
+							"color": 16777215,
+							"bgcolor": 0,
+							"show_topbar": "default"
+						},
+						"options": {
+							"stepProgression": "auto",
+							"stepExpression": "",
+							"rotaryActions": false
+						},
+						"feedbacks": [],
+						"steps": {
+							"0": {
+								"action_sets": {
+									"down": [
+										{
+											"id": "FYS6K4PrBmosYqy8R1TPX",
+											"definitionId": "exec",
+											"connectionId": "internal",
+											"options": {
+												"path": {
+													"value": "G:\\X-Plane_12_latest\\X-Plane.exe --lock_fr=30",
+													"isExpression": false
+												},
+												"cwd": {
+													"isExpression": false
+												},
+												"timeout": {
+													"isExpression": false,
+													"value": 5000
+												},
+												"targetVariable": {
+													"isExpression": false
+												}
+											},
+											"type": "action",
+											"children": {}
+										}
+									],
+									"up": []
+								},
+								"options": {
+									"runWhileHeld": []
+								}
+							}
+						},
+						"localVariables": []
+					},
+					"2": {
+						"type": "button",
+						"style": {
+							"text": "launch XP12 (online)",
+							"textExpression": false,
+							"size": "auto",
+							"png64": null,
+							"alignment": "center:center",
+							"pngalignment": "center:center",
+							"color": 16777215,
+							"bgcolor": 0,
+							"show_topbar": "default"
+						},
+						"options": {
+							"stepProgression": "auto",
+							"stepExpression": "",
+							"rotaryActions": false
+						},
+						"feedbacks": [],
+						"steps": {
+							"0": {
+								"action_sets": {
+									"down": [
+										{
+											"id": "MYLJ5MJpLVfj1dO0ypNqF",
+											"definitionId": "exec",
+											"connectionId": "internal",
+											"options": {
+												"path": {
+													"value": "G:\\weisair\\tools\\xOrganizer\\latest\\xOrganizer.exe quickstart 6 9 \"None\" 0 2",
+													"isExpression": false
+												},
+												"cwd": {
+													"isExpression": false
+												},
+												"timeout": {
+													"isExpression": false,
+													"value": 5000
+												},
+												"targetVariable": {
+													"isExpression": false
+												}
+											},
+											"type": "action",
+											"children": {}
+										}
+									],
+									"up": []
+								},
+								"options": {
+									"runWhileHeld": []
+								}
+							}
+						},
+						"localVariables": []
+					},
+					"3": {
+						"type": "button",
+						"style": {
+							"text": "launch XP12 (offline) w/prechecks",
+							"textExpression": false,
+							"size": "auto",
+							"png64": null,
+							"alignment": "center:center",
+							"pngalignment": "center:center",
+							"color": 16777215,
+							"bgcolor": 0,
+							"show_topbar": "default"
+						},
+						"options": {
+							"stepProgression": "auto",
+							"stepExpression": "",
+							"rotaryActions": false
+						},
+						"feedbacks": [],
+						"steps": {
+							"0": {
+								"action_sets": {
+									"down": [
+										{
+											"id": "wOFHGTPZIQ-oAYc0TQ-oe",
+											"definitionId": "exec",
+											"connectionId": "internal",
+											"options": {
+												"path": {
+													"value": "G:\\weisair\\batch_scripts\\autohotkey\\launch_xp12_offline_with_prechecks.exe",
+													"isExpression": false
+												},
+												"cwd": {
+													"isExpression": false
+												},
+												"timeout": {
+													"isExpression": false,
+													"value": 5000
+												},
+												"targetVariable": {
+													"isExpression": false
+												}
+											},
+											"type": "action",
+											"children": {}
+										}
+									],
+									"up": []
+								},
+								"options": {
+									"runWhileHeld": []
+								}
+							}
+						},
+						"localVariables": []
+					},
+					"4": {
+						"type": "button",
+						"style": {
+							"text": "launch XP12 (online) w/prechecks",
+							"textExpression": false,
+							"size": "auto",
+							"png64": null,
+							"alignment": "center:center",
+							"pngalignment": "center:center",
+							"color": 16777215,
+							"bgcolor": 0,
+							"show_topbar": "default"
+						},
+						"options": {
+							"stepProgression": "auto",
+							"stepExpression": "",
+							"rotaryActions": false
+						},
+						"feedbacks": [],
+						"steps": {
+							"0": {
+								"action_sets": {
+									"down": [
+										{
+											"id": "rpVIncF585NbDW2m5nuHN",
+											"definitionId": "exec",
+											"connectionId": "internal",
+											"options": {
+												"path": {
+													"value": "G:\\weisair\\batch_scripts\\autohotkey\\launch_xp12_online_with_prechecks.exe",
+													"isExpression": false
+												},
+												"cwd": {
+													"isExpression": false
+												},
+												"timeout": {
+													"isExpression": false,
+													"value": 5000
+												},
+												"targetVariable": {
+													"isExpression": false
+												}
+											},
+											"type": "action",
+											"children": {}
+										}
+									],
+									"up": []
+								},
+								"options": {
+									"runWhileHeld": []
+								}
+							}
+						},
+						"localVariables": []
+					}
+				}
+			},
+			"gridSize": {
+				"minColumn": 0,
+				"maxColumn": 7,
+				"minRow": 0,
+				"maxRow": 3
+			}
+		}
+	},
+	"triggers": {},
+	"triggerCollections": [],
+	"custom_variables": {},
+	"customVariablesCollections": [],
+	"expressionVariables": {},
+	"expressionVariablesCollections": [],
+	"instances": {},
+	"connectionCollections": [],
+	"surfaces": {
+		"emulator:mldJ5iJsF8_2OMUDz6Fvq": {
+			"groupConfig": {
+				"name": "Auto group",
+				"last_page_id": "f4ZSgvJNDY-k_EQ0Cm2Oz",
+				"startup_page_id": "f4ZSgvJNDY-k_EQ0Cm2Oz",
+				"use_last_page": true,
+				"restrict_pages": false,
+				"allowed_page_ids": [],
+				"page": 1,
+				"last_page": 1,
+				"startup_page": 1,
+				"allowed_pages": []
+			},
+			"enabled": true,
+			"config": {
+				"brightness": 100,
+				"rotation": 0,
+				"never_lock": false,
+				"xOffset": 0,
+				"yOffset": 0,
+				"groupId": null,
+				"emulator_control_enable": false,
+				"emulator_prompt_fullscreen": false,
+				"emulator_columns": 8,
+				"emulator_rows": 4
+			},
+			"type": "Emulator",
+			"integrationType": "emulator",
+			"gridSize": {
+				"columns": 8,
+				"rows": 4
+			}
+		},
+		"elgato-plugin:980f11146622": {
+			"groupConfig": {
+				"name": "Auto group",
+				"last_page_id": "f4ZSgvJNDY-k_EQ0Cm2Oz",
+				"startup_page_id": "f4ZSgvJNDY-k_EQ0Cm2Oz",
+				"use_last_page": true,
+				"restrict_pages": false,
+				"allowed_page_ids": [],
+				"page": 1,
+				"last_page": 1,
+				"startup_page": 1,
+				"allowed_pages": []
+			},
+			"enabled": true,
+			"config": {
+				"brightness": 100,
+				"rotation": 0,
+				"never_lock": false,
+				"xOffset": 0,
+				"yOffset": 0,
+				"groupId": null
+			},
+			"type": "Elgato Stream Deck Plugin",
+			"integrationType": "satellite",
+			"gridSize": {
+				"columns": 8,
+				"rows": 4
+			}
+		}
+	},
+	"surfaceGroups": {},
+	"surfacesRemote": {},
+	"surfaceInstances": {
+		"5fSFVzhzunjPqIVRtyx6m": {
+			"moduleInstanceType": "surface",
+			"moduleId": "elgato-stream-deck",
+			"moduleVersionId": "builtin",
+			"label": "elgato-stream-deck",
+			"config": {},
+			"isFirstInit": true,
+			"lastUpgradeIndex": 0,
+			"enabled": true,
+			"sortOrder": 0,
+			"updatePolicy": "stable"
+		},
+		"qVIQ_MRgXbyRn-TaC8EUY": {
+			"moduleInstanceType": "surface",
+			"moduleId": "xkeys",
+			"moduleVersionId": "builtin",
+			"label": "xkeys",
+			"config": {},
+			"isFirstInit": true,
+			"lastUpgradeIndex": 0,
+			"enabled": true,
+			"sortOrder": 0,
+			"updatePolicy": "stable"
+		}
+	},
+	"surfaceInstanceCollections": []
+}
