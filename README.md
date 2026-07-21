@@ -121,6 +121,7 @@ This chapter lists the required congiguration for individual hardware and softwa
   - Windows Engergy Mode to "hightest performance"
   - disable unused services and minimize started services
   - **Todo**: add current configuration
+  - On Seconday PC: add task to regularly backup the AirManager database config (config.sqllite3)
 
 #### Firewall Rules
 
