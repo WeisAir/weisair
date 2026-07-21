@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?><pluginstrument><aircraft>Generic</aircraft><type>Bendix/King KT 76A Transponder</type><uuid>327e70b2-c68a-425b-b687-17ec00fea6f3</uuid><author>Experimental Sim Avionics</author><description>version 116 : fixes incorrectly displayed sqwauk code due to newer Lua version.
+
+Original by SIm Innovations
+
+Classic transponder with rotary buttons to set transponder code. Push the ident light to squawk ident.
+
+FSX: Selecting mode and squawking ident not possible.</description><compatibleFSX>true</compatibleFSX><compatibleP3D>true</compatibleP3D><compatibleXPL>true</compatibleXPL><compatibleFS2>false</compatibleFS2><compatibleFS2020>true</compatibleFS2020><compatibleFS2024>true</compatibleFS2024><version>122</version><configVersion>1</configVersion><pluginInterfaceVersion>100</pluginInterfaceVersion><prefWidth>700</prefWidth><prefHeight>183</prefHeight><source>ONLINE</source><platforms><platform>WINDOWS</platform><platform>MAC</platform><platform>LINUX</platform><platform>RASPBERRY_PI</platform><platform>ANDROID</platform><platform>IPAD</platform></platforms><tiers><tier>HOME_USE_STANDARD</tier><tier>PROFESSIONAL_STANDARD</tier></tiers></pluginstrument>
