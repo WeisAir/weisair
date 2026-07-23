@@ -2,19 +2,7 @@
   "auto_reload_plugins": false,
   "impersonate_dre": false,
   "debug_mode": false,
-  "windows": [
-    {
-      "search_term": "kml",
-      "regex": true,
-      "case_sensitive": false,
-      "datarefs_commands": "all",
-      "change_filter": "all",
-      "pos_left": 99749,
-      "pos_top": 680,
-      "pos_right": 100050,
-      "pos_bottom": 498
-    }
-  ],
+  "windows": [],
   "color_scheme": "default",
   "update_rate": 0.0
 }

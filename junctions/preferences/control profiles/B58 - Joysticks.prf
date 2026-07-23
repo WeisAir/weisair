@@ -5417,10 +5417,10 @@ _joy_BUTN_use171 sim/autopilot/heading_sync
 _joy_BUTN_use172 sim/autopilot/airspeed_sync
 _joy_BUTN_use173 sim/autopilot/vertical_speed_sync
 _joy_BUTN_use174 sim/instruments/barometer_std
-_joy_BUTN_use175 laminar/b58/lighting/flood_light_switch
-_joy_BUTN_use_desc175 Flood Light Toggle Switch
-_joy_BUTN_use176 laminar/b58/lighting/flood_light_switch
-_joy_BUTN_use_desc176 Flood Light Toggle Switch
+_joy_BUTN_use175 WeisAIR/b58/lights/cockpit_panel_lights_on
+_joy_BUTN_use_desc175 cockpit_panel_lights_on
+_joy_BUTN_use176 WeisAIR/b58/lights/cockpit_panel_lights_off
+_joy_BUTN_use_desc176 cockpit_panel_lights_off
 _joy_BUTN_use177 sim/systems/seatbelt_sign_toggle
 _joy_BUTN_use178 sim/systems/seatbelt_sign_toggle
 _joy_BUTN_use179 sim/annunciator/test_all_annunciators
@@ -5429,7 +5429,7 @@ _joy_BUTN_use181 sim/flight_controls/landing_gear_up
 _joy_BUTN_use182 sim/flight_controls/landing_gear_down
 _joy_BUTN_use183 sim/flight_controls/flaps_up
 _joy_BUTN_use184 sim/flight_controls/flaps_down
-_joy_BUTN_use185 sim/flight_controls/brakes_toggle_max
+_joy_BUTN_use185 sim/flight_controls/park_brake_toggle
 _joy_BUTN_use186 sim/autopilot/test_auto_annunciators
 _joy_BUTN_use187 sim/none/none
 _joy_BUTN_use188 sim/none/none

@@ -3,7 +3,7 @@ I
 networking_disclose_multiplayer 0
 networking_disclose_flir 0
 save_flight_type 1
-selected_tab 6
+selected_tab 1
 networking_disclose_ports 0
 networking_disclose_data_io 0
 pilot_voice Joey
@@ -14,18 +14,18 @@ networking_disclose_iphone 0
 _sdk_notice_cca0436d9a2b58c6bf297c31596af63a_18839332_Deprecation 0
 networking_disclose_instructor 0
 atc_cmd_window_splitter 133.000000
-auto_tune_for_atc 1
+auto_tune_for_atc 0
 P monitor_10 _offsets 0
 P monitor_10 _visuals 0
-P monitor_13 _offsets 0
-P monitor_13 _visuals 0
+P monitor_1 _offsets 0
+P monitor_1 _visuals 0
 P map_layer map_layer_SDK_Marking_2 1
 P map_layer map_layer_SDK_Marking_1 1
 P map_layer map_layer_SDK_Marking_0 1
 P monitor_14 _offsets 0
 P monitor_14 _visuals 0
-P monitor_8 _offsets 0
-P monitor_8 _visuals 0
+P monitor_4 _offsets 0
+P monitor_4 _visuals 0
 P acf_profile Beechcraft___Baron___58 B58
 P acf_profile IXEG___B-737-300 B733
 P acf_profile Boeing___737-800X___(4k) B738
@@ -124,10 +124,10 @@ P window_state ground_handling_window v=0 p=0 m=0 b=0,0,0,0
 P copilot-4200 gps_window_visible 0
 P RDR2000_WXR device_window_visible 0
 P WXR-2 gps_window_visible 0
+P monitor_13 _offsets 0
+P monitor_13 _visuals 0
 P monitor_19 _offsets 0
 P monitor_19 _visuals 0
 P GCU gps_window_visible 0
-P monitor_1 _offsets 0
-P monitor_1 _visuals 0
-P monitor_4 _offsets 0
-P monitor_4 _visuals 0
+P monitor_8 _offsets 0
+P monitor_8 _visuals 0

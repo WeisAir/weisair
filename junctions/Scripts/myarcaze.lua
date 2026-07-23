@@ -91,9 +91,10 @@ if AIRCRAFT_FILENAME == "Cirrus SR22.acf" then
 	dofile(SCRIPT_DIRECTORY .. "arcaze_scripts/myarcaze_generic.config")
 	dofile(SCRIPT_DIRECTORY .. "weisair_scripts/laminar_sr22_customs.lua")
 	print("WeisAir Panel Scripts loaded for Aircraft" .. " " ..  AIRCRAFT_FILENAME)
+end
 
-if AIRCRAFT_FILENAME == "b58.acf" then 
-	dofile(SCRIPT_DIRECTORY .. "arcaze_scripts/myarcaze_generic.config")
+if AIRCRAFT_FILENAME == "Baron_58.acf" then 
+	dofile(SCRIPT_DIRECTORY .. "arcaze_scripts/myarcaze_b58.config")
 	dofile(SCRIPT_DIRECTORY .. "weisair_scripts/laminar_b58_customs.lua")
 	print("WeisAir Panel Scripts loaded for Aircraft" .. " " ..  AIRCRAFT_FILENAME)
 

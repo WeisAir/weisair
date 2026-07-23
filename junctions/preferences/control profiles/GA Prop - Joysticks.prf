@@ -5427,7 +5427,7 @@ _joy_BUTN_use181 sim/flight_controls/landing_gear_up
 _joy_BUTN_use182 sim/flight_controls/landing_gear_down
 _joy_BUTN_use183 sim/flight_controls/flaps_up
 _joy_BUTN_use184 sim/flight_controls/flaps_down
-_joy_BUTN_use185 sim/flight_controls/brakes_toggle_max
+_joy_BUTN_use185 sim/flight_controls/park_brake_toggle
 _joy_BUTN_use186 sim/autopilot/test_auto_annunciators
 _joy_BUTN_use187 sim/none/none
 _joy_BUTN_use188 sim/none/none

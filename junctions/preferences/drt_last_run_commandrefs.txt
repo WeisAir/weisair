@@ -213,6 +213,8 @@ SRS/X-Camera/Toggle_X-Camera_on_or_off
 SRS/X-Camera/Toggle_Zoom_Disable
 SRS/X-Camera/Zero_Camera_Bearing
 SRS/X-Camera/Zero_Camera_Pitch
+WeisAIR/b58/lights/cockpit_panel_lights_off
+WeisAIR/b58/lights/cockpit_panel_lights_on
 WeisAIR/generic/camera/toggle_cockpit_cameras
 WeisAIR/generic/camera/toggle_external_cameras
 WeisAIR/generic/camera/toggle_overhead_cameras
