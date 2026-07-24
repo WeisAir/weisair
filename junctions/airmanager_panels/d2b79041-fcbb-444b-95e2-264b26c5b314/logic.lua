@@ -29,5 +29,5 @@ function xpdr_toggle_callback()
     end
 end
 
-garmin_toggle_button = button_add("panel_button_G530.png", "panel_button_G530.png", 1825, 0, 90 ,45, garmin_toggle_callback)
-xpdr_toggle_button = button_add("panel_button_XPDR.png", "panel_button_XPDR.png", 1825, 75, 90 ,45, xpdr_toggle_callback)
+garmin_toggle_button = button_add("panel_button_G530.png", "panel_button_G530.png", 1745, 0, 170 ,85, garmin_toggle_callback)
+xpdr_toggle_button = button_add("panel_button_XPDR.png", "panel_button_XPDR.png", 1745, 100, 170 ,85, xpdr_toggle_callback)
