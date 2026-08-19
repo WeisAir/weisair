@@ -181,6 +181,22 @@ I use Firefox as my browser to access Simbrief / Navigraph Charts on my WeisAir 
 
 Elaborate on key impacts on Performance
 
+### Primary System
+
+### Secondary System
+
+#### Firefox Performance
+
+Recommended settings to max out performance of the browser due to aged hardware:
+
+- Settings -> Performance -> uncheck "Use recommended performance settings"
+- Settings -> Performance -> check "Use hardware acceleration when available"
+- Start Page -> New Window and New Tab -> open blank page
+- General -> Browsing -> uncheck "smooth scrolling"
+- about:config -> dom.ipc.processCount = 3
+
+Reference: https://www.reddit.com/r/firefox/comments/nalyki/how_to_optimise_firefox_for_a_weak_pc/ 
+
 ## State of the Art
 
 This section adds screenshots of the current state of both my custom Air Mangager Panels as well as StreamDeck Profiles.
