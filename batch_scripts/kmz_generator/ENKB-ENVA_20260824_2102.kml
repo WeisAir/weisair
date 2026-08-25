@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+ <Style id="line-style">
+      <LineStyle>
+        <color>ffff55ff</color>
+        <width>4</width>
+      </LineStyle>
+      <PolyStyle><color>8fff55ff</color></PolyStyle>
+    <IconStyle><color>ffc2ff0b</color></IconStyle>
+    <LabelStyle><color>ff00ffff</color></LabelStyle>
+    <BalloonStyle>
+    <text><![CDATA[<center><b><font size=4>ENKB-ENVA</font><br/> Kristiansund Kvernberget &RightArrow; <br/> &RightArrow; Trondheim Vaernes<br/></b></center><pre>
+Date        : 2026-08-24 local
+Aircaft     : BE58
+Distance    : 101nm
+Duration    : 00:35:59
+Altitudes   : 7900/6000
+Waypoints   : 9
+Trackpoints : 91
+</pre>
+<p style="font-size:8px">KMLLogger 1.0.1 2026-01-02 (Mike Nixon)</p>]]></text>
+     </BalloonStyle>
+ </Style>
+<styleUrl>#line-style</styleUrl>
+ <Style id="fix-style">
+    <IconStyle><color>ffc2ff0b</color></IconStyle>
+    <LabelStyle><color>ff00ffff</color></LabelStyle>
+    <BalloonStyle><text>
+    <![CDATA[<center><b><font size=5>$[name]</font> <font size=4>($[description])</font><br/>Kristiansund Kvernberget &RightArrow; <br/>&RightArrow; Trondheim Vaernes<br/>(BE58)</b></center><br/>
+<pre>
+gs  : $[gs]kts
+alt : $[alt]ft
+agl : $[agl]ft
+hdg : $[dn]°    
+vs  : $[vs]ft/min
+wind: $[wd]°/$[ws]kts
+QNH : $[qnh]
+time: $[time]Z
+</pre>]]></text></BalloonStyle>
+</Style>
+<Placemark>
+        <name>ENKB: Kristiansund Kvernberget [BE58]</name>
+        <description>APT</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>0</value></Data>
+          <Data name="alt"><value>300</value></Data>
+          <Data name="agl"><value>0</value></Data>
+          <Data name="dn"><value>66</value></Data>
+          <Data name="vs"><value>0</value></Data>
+          <Data name="wd"><value>0</value></Data>
+          <Data name="ws"><value>0</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>17:09:24</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>7.80720411,63.10920243,41</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>KB901</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>162</value></Data>
+          <Data name="alt"><value>2000</value></Data>
+          <Data name="agl"><value>1799</value></Data>
+          <Data name="dn"><value>68</value></Data>
+          <Data name="vs"><value>1850</value></Data>
+          <Data name="wd"><value>267</value></Data>
+          <Data name="ws"><value>13</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>17:16:36</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>7.87084723,63.11886597,549</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>ALT: 7900</name>
+        <description>Info</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>210</value></Data>
+          <Data name="alt"><value>7900</value></Data>
+          <Data name="agl"><value>7685</value></Data>
+          <Data name="dn"><value>84</value></Data>
+          <Data name="vs"><value>0</value></Data>
+          <Data name="wd"><value>305</value></Data>
+          <Data name="ws"><value>19</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>17:20:36</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>8.29344227,63.10207549,2343</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>ELTOL</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>125</value></Data>
+          <Data name="alt"><value>6000</value></Data>
+          <Data name="agl"><value>4881</value></Data>
+          <Data name="dn"><value>79</value></Data>
+          <Data name="vs"><value>0</value></Data>
+          <Data name="wd"><value>188</value></Data>
+          <Data name="ws"><value>3</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>17:29:52</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>9.33239174,63.09578323,1828</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>LODNU</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>203</value></Data>
+          <Data name="alt"><value>6000</value></Data>
+          <Data name="agl"><value>5166</value></Data>
+          <Data name="dn"><value>55</value></Data>
+          <Data name="vs"><value>0</value></Data>
+          <Data name="wd"><value>194</value></Data>
+          <Data name="ws"><value>4</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>17:31:52</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>9.47611427,63.15467072,1835</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>ALT: 6000</name>
+        <description>Info</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>200</value></Data>
+          <Data name="alt"><value>6000</value></Data>
+          <Data name="agl"><value>5183</value></Data>
+          <Data name="dn"><value>124</value></Data>
+          <Data name="vs"><value>0</value></Data>
+          <Data name="wd"><value>198</value></Data>
+          <Data name="ws"><value>4</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>17:34:53</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>9.93470860,63.11867199,1835</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>VA549</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>112</value></Data>
+          <Data name="alt"><value>1100</value></Data>
+          <Data name="agl"><value>1038</value></Data>
+          <Data name="dn"><value>88</value></Data>
+          <Data name="vs"><value>-1350</value></Data>
+          <Data name="wd"><value>211</value></Data>
+          <Data name="ws"><value>3</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>17:47:45</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>10.75495815,63.45780945,317</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>ML09</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>102</value></Data>
+          <Data name="alt"><value>100</value></Data>
+          <Data name="agl"><value>112</value></Data>
+          <Data name="dn"><value>102</value></Data>
+          <Data name="vs"><value>-700</value></Data>
+          <Data name="wd"><value>203</value></Data>
+          <Data name="ws"><value>3</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>17:48:55</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>10.84569168,63.45771790,35</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>ENVA: Trondheim Vaernes [BE58]</name>
+        <description>APT</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>0</value></Data>
+          <Data name="alt"><value>0</value></Data>
+          <Data name="agl"><value>0</value></Data>
+          <Data name="dn"><value>330</value></Data>
+          <Data name="vs"><value>0</value></Data>
+          <Data name="wd"><value>359</value></Data>
+          <Data name="ws"><value>0</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>17:51:37</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>10.92508318,63.45201244,2</coordinates>
+		</Point>
+ </Placemark>
+      <Placemark>
+      <name>ENKB-ENVA</name>
+      <styleUrl>#line-style</styleUrl>
+      <LineString>
+        <extrude>1</extrude>
+        <tessellate>0</tessellate>
+        <altitudeMode>absolute</altitudeMode>
+        <coordinates>
+          7.80720411,63.10920243,41
+          7.80811972,63.10934766,43
+          7.80847135,63.10940196,43
+          7.80891091,63.10947015,44
+          7.80942895,63.10954694,45
+          7.81000426,63.10962938,46
+          7.81064342,63.10972454,46
+          7.81136351,63.10983952,47
+          7.81211709,63.10996274,48
+          7.81295123,63.11010020,50
+          7.81384230,63.11024303,51
+          7.81475732,63.11038385,51
+          7.82546248,63.11184634,113
+          7.83764244,63.11323864,187
+          7.85098870,63.11363800,315
+          7.86408713,63.11218678,407
+          7.87915525,63.11041947,460
+          7.89506287,63.10870237,549
+          7.99398666,63.10323424,1160
+          8.08828442,63.10241415,1788
+          8.17665694,63.10427805,2340
+          8.29344227,63.10207549,2343
+          8.42480960,63.09912632,2343
+          8.55771245,63.09632054,2341
+          8.69382083,63.09351612,2369
+          8.81690553,63.09484261,2417
+          8.95078481,63.09643744,2417
+          9.09148604,63.10527775,2417
+          9.21308359,63.11619120,2417
+          9.32430184,63.12575287,2227
+          9.42104878,63.13397217,1828
+          9.51138660,63.13580311,1836
+          9.62753295,63.14191068,1835
+          9.73119462,63.17406308,1834
+          9.83231593,63.14978378,1835
+          9.93470860,63.11867199,1835
+          10.03883138,63.13914944,1659
+          10.14137820,63.18139646,1237
+          10.23379552,63.22475966,1169
+          10.33201157,63.25250349,1227
+          10.28313634,63.29086292,1227
+          10.27862116,63.33446075,1227
+          10.37261541,63.37163429,1226
+          10.47021752,63.39306438,1226
+          10.55896422,63.39230489,889
+          10.64158570,63.38943403,883
+          10.70721227,63.41875928,842
+          10.75448897,63.44418578,629
+          10.76419233,63.44743128,554
+          10.77421363,63.45036732,482
+          10.78464036,63.45275791,421
+          10.79519417,63.45473664,376
+          10.80616203,63.45612318,317
+          10.81746547,63.45706251,274
+          10.82869433,63.45747128,235
+          10.83976210,63.45765535,203
+          10.85079662,63.45761439,160
+          10.86184917,63.45768296,116
+          10.87282927,63.45774952,74
+          10.88355957,63.45768450,35
+          10.89397021,63.45765788,10
+          10.90347956,63.45764043,2
+          10.90674384,63.45763124,1
+          10.90755678,63.45762513,1
+          10.90835526,63.45761365,1
+          10.90914040,63.45760872,1
+          10.90993845,63.45760962,2
+          10.91069647,63.45760720,2
+          10.91143871,63.45760711,2
+          10.91156103,63.45760722,2
+          10.91219008,63.45760838,2
+          10.91292249,63.45761636,2
+          10.91359180,63.45762140,2
+          10.91419740,63.45762442,2
+          10.91474679,63.45764023,2
+          10.91529530,63.45766768,2
+          10.91581661,63.45768046,2
+          10.91632507,63.45766819,3
+          10.91683799,63.45764455,3
+          10.91732780,63.45762525,3
+          10.91734401,63.45762472,3
+          10.91782778,63.45761261,3
+          10.91830564,63.45760784,3
+          10.91877628,63.45760968,3
+          10.91919472,63.45761430,3
+          10.92508318,63.45201244,2
+       </coordinates>
+      </LineString>
+    </Placemark>
+</Document>
+</kml>

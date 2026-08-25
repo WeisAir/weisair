@@ -5882,7 +5882,7 @@ _joy_BUTN_use636 sim/none/none
 _joy_BUTN_use637 sim/none/none
 _joy_BUTN_use638 sim/none/none
 _joy_BUTN_use639 sim/none/none
-_joy_BUTN_use640 sim/autopilot/autothrottle_hard_off
+_joy_BUTN_use640 sim/operation/contact_atc_ptt
 _joy_BUTN_use641 sim/flight_controls/flaps_down
 _joy_BUTN_use642 sim/flight_controls/flaps_up
 _joy_BUTN_use643 sim/autopilot/servos_fdir_off

@@ -1,4 +1,3 @@
-AviTab/toggle_tablet
 BetterPushback/cab_camera
 BetterPushback/connect_first
 BetterPushback/disconnect
@@ -935,7 +934,24 @@ sim/GPS/gcu479/popout
 sim/GPS/gcu479/popup
 sim/HUD/brightness_toggle
 sim/HUD/power_toggle
+sim/VR/disable_vr
+sim/VR/enable_vr
 sim/VR/general/reset_view
+sim/VR/hand_tracking/disable
+sim/VR/hand_tracking/enable
+sim/VR/hand_tracking/toggle
+sim/VR/mixed_reality/disable_marker_tracking
+sim/VR/mixed_reality/enable_marker_tracking
+sim/VR/mixed_reality/hide_marker
+sim/VR/mixed_reality/off
+sim/VR/mixed_reality/on
+sim/VR/mixed_reality/setup_apply
+sim/VR/mixed_reality/setup_cancel
+sim/VR/mixed_reality/setup_enter
+sim/VR/mixed_reality/show_marker
+sim/VR/mixed_reality/toggle
+sim/VR/mixed_reality/toggle_marker
+sim/VR/mixed_reality/toggle_marker_tracking
 sim/VR/quick_zoom_view
 sim/VR/reserved/menu
 sim/VR/reserved/select
@@ -3425,6 +3441,7 @@ sim/transponder/transponder_ta_ra
 sim/transponder/transponder_tens_down
 sim/transponder/transponder_tens_up
 sim/transponder/transponder_test
+sim/transponder/transponder_test_cancel
 sim/transponder/transponder_thousands_down
 sim/transponder/transponder_thousands_up
 sim/transponder/transponder_up

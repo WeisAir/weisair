@@ -15,9 +15,10 @@ _h_cam_external 1
 _eq_dataref_udp 0
 _eq_track_IR 0
 _eq_tobii_eyetracker 0
-_exp_follows_gaze 0
 _exp_speed_down_pres 2
 _exp_speed_up_pres 2
+_exp_radius 0.330000
+_exp_autoexp_mode 0
 _tobii_auto_center 0
 _tobii_rel_head_pos 1
 _tobii_cam_boost 1.500000
@@ -26,6 +27,7 @@ _tobii_yaw_sens 2.000000
 _tobii_pitch_sens 2.000000
 _tobii_roll_sens 1.000000
 _tobii_pos_sens 1.000000
+_tobii_pri_mon 0
 _streamer_mode 0
 _eq_vr 0
 _vr_yoke_mode realistic
@@ -35,15 +37,20 @@ _vr_manip_visualize 1
 _vr_has_3d_mouse 0
 _vr_separate_graphics_settings 0
 _vr_separate_vr_settings_init_once 0
-_vr_use_openxr 0
+_vr_hand_tracking_enabled 1
+_vr_draw_hand_mesh 1
+_vr_vrs_preset 1
+_vr_vrs_enable 1
+_vr_depth_reprojection 1
+_vr_runtime_id avp
 _eq_matrox_TH 0
 _eq_HUD_new 0
 _num_acf 1
-_apt_id_str KLVS
+_apt_id_str ENVA
 _tex_res 4
 _default_view 2
 _rcas_ratio 0.000000
-_num_runs_done 125
+_num_runs_done 143
 _metric_temp 0
 _metric_press 0
 _utc_time 0
@@ -73,27 +80,28 @@ _use_experimental_FM 0
 _use_MTBF 0
 _real_MTBF_hours 5000.000000
 _action_on_wreck 0
+_vr_keyboard_scale 0
 _mode_lat 0
 _mode_vert 3
 _nav_arm 0
 _alt_arm 0
 _vnv_arm 0
 _nav_is_bac 0
-_mode_athr 0
+_mode_athr -1
 _km_is_mach 0
 _use_fms_alt 0
-_syn_hold_deg_phi 0.863398
-_syn_hold_deg_the 0.680489
+_syn_hold_deg_phi -0.857712
+_syn_hold_deg_the 0.037248
 _asi_hold_kts_mac 110.000305
-_hdg_hold_mag[0] 275.000000
+_hdg_hold_mag[0] 70.000000
 _hdg_hold_mag[1] 0.000000
 _vvi_hold_fpm 0.000000
-_alt_hold_ft_dial 3940.000000
-_alt_hold_ft_use 3939.411133
+_alt_hold_ft_dial 4030.000000
+_alt_hold_ft_use 4025.195068
 _thermo_metric_units 1
 _aro_setting_HG[0] 29.920000
 _aro_setting_HG[1] 29.920000
-_pdr_freq[0] 5325
+_pdr_freq[0] 7000
 _pdr_freq[1] 1200
 _Nfreq0 11745
 _Nfreq1 11060
@@ -101,7 +109,7 @@ _Nfreq2 320
 _Nfreq3 370
 _Nfreq4 11170
 _Nfreq5 11170
-_Nfreq6 10995
+_Nfreq6 11745
 _Nfreq7 10950
 _Nfreq8 11000
 _Nfreq9 10820
@@ -163,7 +171,7 @@ _OBS_mag[1]13 0.000000
 _OBS_mag[1]14 0.000000
 _OBS_mag[1]15 0.000000
 _OBS_mag[1]16 0.000000
-_Cfreq0 134650
+_Cfreq0 133755
 _Cfreq1 121125
 _Cfreq2 118000
 _Cfreq3 118000
@@ -181,7 +189,7 @@ _Cfreq14 118000
 _Cfreq15 118000
 _Cfreq16 118000
 _CfreqSTDBY0 132825
-_CfreqSTDBY1 134200
+_CfreqSTDBY1 124625
 _CfreqSTDBY2 118000
 _CfreqSTDBY3 118000
 _CfreqSTDBY4 118000
@@ -198,25 +206,25 @@ _CfreqSTDBY14 118000
 _CfreqSTDBY15 118000
 _CfreqSTDBY16 118000
 _acf_path_rel0 Aircraft/Laminar Research/Beechcraft Baron 58/Baron_58.acf
-_acf_path_rel1 Aircraft/Laminar Research/Cirrus SR22/Cirrus SR22.acf
-_acf_path_rel2 Aircraft/Laminar Research/Van's Aircraft RV-10/RV-10.acf
-_acf_path_rel3 Aircraft/Laminar Research/Van's Aircraft RV-10/RV-10.acf
-_acf_path_rel4 Aircraft/Laminar Research/Piper PA-18 Super Cub/PA-18-150.acf
-_acf_path_rel5 Aircraft/Laminar Research/Cessna 172 SP/Cessna_172SP.acf
-_acf_path_rel6 Aircraft/Laminar Research/Piper PA-18 Super Cub/PA-18-150.acf
-_acf_path_rel7 Aircraft/Laminar Research/McDonnell Douglas MD-82/MD80.acf
-_acf_path_rel8 Aircraft/Laminar Research/Cirrus SR22/Cirrus SR22.acf
-_acf_path_rel9 Aircraft/Laminar Research/Beechcraft Baron 58/Baron_58.acf
-_acf_path_rel10 Aircraft/Laminar Research/Sikorsky S-76/S-76C.acf
-_acf_path_rel11 Aircraft/Laminar Research/Cirrus SR22/Cirrus SR22.acf
-_acf_path_rel12 Aircraft/Laminar Research/Cirrus Vision SF50/CirrusSF50.acf
-_acf_path_rel13 Aircraft/Laminar Research/Cessna Citation X/Cessna_CitationX.acf
-_acf_path_rel14 Aircraft/Laminar Research/Airbus A330-300/A330_AI.acf
-_acf_path_rel15 Aircraft/Laminar Research/Airbus A330-300/A330_AI.acf
-_acf_path_rel16 Aircraft/Laminar Research/Beechcraft King Air C90B/C90B.acf
-_acf_path_rel17 Aircraft/Laminar Research/Cessna Citation X/Cessna_CitationX.acf
-_acf_path_rel18 Aircraft/Laminar Research/Piper PA-18 Super Cub/PA-18-150.acf
-_acf_path_rel19 Aircraft/Embraer E170/E170_XP11.acf
+_acf_path_rel1 Aircraft/Laminar Research/McDonnell Douglas MD-82/MD80.acf
+_acf_path_rel2 Aircraft/Laminar Research/Beechcraft Baron 58/Baron_58.acf
+_acf_path_rel3 Aircraft/Laminar Research/Cessna Citation X/Cessna_CitationX.acf
+_acf_path_rel4 Aircraft/Traffic Global/_TCAS_AI_/TrafficGlobalTCAS.acf
+_acf_path_rel5 Aircraft/Laminar Research/Cessna Citation X/Cessna_CitationX.acf
+_acf_path_rel6 Aircraft/Laminar Research/Cirrus SR22/Cirrus SR22.acf
+_acf_path_rel7 Aircraft/Laminar Research/Van's Aircraft RV-10/RV-10.acf
+_acf_path_rel8 Aircraft/Laminar Research/McDonnell Douglas MD-82/MD80.acf
+_acf_path_rel9 Aircraft/Laminar Research/Airbus A330-300/A330_AI.acf
+_acf_path_rel10 Aircraft/Laminar Research/Cessna Citation X/Cessna_CitationX.acf
+_acf_path_rel11 Aircraft/Laminar Research/Van's Aircraft RV-10/RV-10.acf
+_acf_path_rel12 Aircraft/Laminar Research/McDonnell Douglas MD-82/MD80.acf
+_acf_path_rel13 Aircraft/Laminar Research/Piper PA-18 Super Cub/PA-18-150.acf
+_acf_path_rel14 Aircraft/Embraer E170/E170_XP11.acf
+_acf_path_rel15 Aircraft/Laminar Research/Van's Aircraft RV-10/RV-10.acf
+_acf_path_rel16 Aircraft/Laminar Research/Cirrus SR22/Cirrus SR22.acf
+_acf_path_rel17 Aircraft/Laminar Research/Cirrus Vision SF50/CirrusSF50.acf
+_acf_path_rel18 Aircraft/Laminar Research/Cirrus SR22/Cirrus SR22.acf
+_acf_path_rel19 Aircraft/Laminar Research/Van's Aircraft RV-10/RV-10.acf
 _vol_master 0.860000
 _vol_grp_aircraft 0.307647
 _vol_grp_cockpit 0.307647
@@ -226,9 +234,9 @@ _vol_grp_radios 0.759640
 _vol_grp_radios_cop 0.000000
 _vol_grp_enviro 0.307647
 _vol_grp_ui 0.000000
-_Binet0 0
-_Binet1 0
-_Binet2 0
+_Binet0 1
+_Binet1 1
+_Binet2 1
 _Binet3 0
 _Binet4 0
 _Binet5 0
@@ -246,7 +254,7 @@ _Binet16 0
 _Binet17 0
 _Binet18 0
 _Binet19 0
-_Binet20 1
+_Binet20 0
 _Binet21 0
 _Binet22 0
 _Binet23 0
@@ -925,7 +933,7 @@ _Psumm3 0
 _mp_xmts_per_sec 20
 _ev_xmts_per_sec 40
 _graf_rate 21.299147
-_inet_rate 10.000000
+_inet_rate 1.254123
 _disk_rate 0.950410
 _rcv_port 49000
 _snd_port 49001
@@ -1049,7 +1057,7 @@ _snd_pt_str_40 49000
 _snd_pt_str_41 49000
 _snd_pt_str_42 49005
 _snd_pt_str_43 49000
-_snd_pt_str_44 60803
+_snd_pt_str_44 57861
 _snd_pt_str_45 49000
 _snd_pt_str_46 49000
 _snd_pt_str_47 49000

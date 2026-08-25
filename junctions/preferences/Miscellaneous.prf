@@ -9,7 +9,7 @@ networking_disclose_data_io 0
 pilot_voice Joey
 networking_disclose_external_visuals 0
 pixel_multiplier 1.000000
-last_device SwitchPnl
+last_device Alpha Flight Controls
 networking_disclose_iphone 0
 _sdk_notice_cca0436d9a2b58c6bf297c31596af63a_18839332_Deprecation 0
 networking_disclose_instructor 0
@@ -97,23 +97,23 @@ P window_state exvis_standby v=0 p=0 m=0 b=0,0,0,0
 P window_state fps_test_recoder v=0 p=0 m=0 b=0,0,0,0
 P window_state screenshot_controls v=0 p=0 m=0 b=1785,13,2265,453
 P window_state networkdebug v=0 p=0 m=0 b=20,20,832,340
-P window_state raininspector v=0 p=0 m=0 b=0,0,0,0
+P window_state raininspector v=0 p=0 m=0 b=20,20,440,340
 P window_state pluginadmin v=0 p=0 m=0 b=321,544,871,1164
 P window_state vramprofiler v=0 p=0 m=0 b=0,0,0,0
 P window_state microprofiler v=0 p=0 m=0 b=-1253,519,-223,999
 P window_state demo_area v=0 p=0 m=0 b=0,0,0,0
 P window_state log_viewer v=0 p=0 m=0 b=200,201,900,601
 P window_state particle_browser v=0 p=0 m=0 b=-1292,781,-742,1231
-P window_state texture_browser v=0 p=0 m=0 b=0,0,0,0
-P window_state autopilot_constants v=0 p=0 m=0 b=-1049,425,-849,1025
+P window_state texture_browser v=0 p=0 m=0 b=671,395,1221,1170
+P window_state autopilot_constants v=0 p=0 m=0 b=690,615,890,1215
 P window_state projection_params v=0 p=0 m=0 b=-1175,484,-175,1084
 P window_state key_shortcuts v=0 p=0 m=0 b=0,0,0,0
 P window_state settings v=0 p=0 m=0 b=480,180,2080,1260
 P window_state main_menu v=0 p=0 m=0 b=0,0,2560,1440
-P window_state atc_window v=0 p=0 m=0 b=887,541,2085,1133
+P window_state atc_window v=1 p=1 m=0 b=2739,296,4326,758
 P window_state save_flight_window v=0 p=0 m=0 b=1030,570,1530,870
 P window_state logbook_window v=0 p=0 m=0 b=0,0,0,0
-P window_state weather_map v=0 p=0 m=0 b=0,0,0,0
+P window_state weather_map v=0 p=0 m=0 b=487,404,1461,974
 P window_state ios v=0 p=0 m=0 b=0,0,0,0
 P window_state map v=0 p=0 m=0 b=50,100,974,620
 P window_state data_out v=0 p=0 m=0 b=0,0,0,0

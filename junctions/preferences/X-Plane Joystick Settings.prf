@@ -60,11 +60,11 @@ _joy_location15 \\?\hid#vid_294b&pid_1900#6&2969e354&0&0000#{4d1e55b2-f16f-11cf-
 _joy_location16 \\?\hid#vid_06a3&pid_0c2d#9&16055008&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
 _joy_location17 \\?\hid#vid_045e&pid_02ff&ig_00#7&2053245b&1&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
 _joy_location18 \\?\hid#vid_044f&pid_0405#6&e7c901f&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
-_joy_lru_time0 1784839249
-_joy_lru_time1 1784839249
-_joy_lru_time2 1784839249
-_joy_lru_time3 1784839249
-_joy_lru_time4 1784839249
+_joy_lru_time0 1787597981
+_joy_lru_time1 1787597981
+_joy_lru_time2 1787597981
+_joy_lru_time3 1787597981
+_joy_lru_time4 1787597981
 _joy_lru_time5 1777991602
 _joy_lru_time6 0
 _joy_lru_time7 0
@@ -77,7 +77,7 @@ _joy_lru_time13 0
 _joy_lru_time14 0
 _joy_lru_time15 0
 _joy_lru_time16 0
-_joy_lru_time17 1782330114
+_joy_lru_time17 1785161548
 _joy_lru_time18 0
 _joy_lru_time19 0
 _joy_rev_axis0 1
