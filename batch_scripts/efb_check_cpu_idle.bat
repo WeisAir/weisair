@@ -6,7 +6,7 @@ setlocal enabledelayedexpansion
 :: ==========================================
 set "THRESHOLD=10"
 set "POLLING_INTERVAL=5"
-set "TIME_FRAME_SEC=10"
+set "TIME_FRAME_SEC=60"
 :: ==========================================
 
 :: Calculate how many samples we need to collect based on the time frame and interval
