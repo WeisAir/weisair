@@ -46,11 +46,11 @@ _vr_runtime_id avp
 _eq_matrox_TH 0
 _eq_HUD_new 0
 _num_acf 1
-_apt_id_str ENVA
+_apt_id_str ENRM
 _tex_res 4
 _default_view 2
 _rcas_ratio 0.000000
-_num_runs_done 143
+_num_runs_done 147
 _metric_temp 0
 _metric_press 0
 _utc_time 0
@@ -75,7 +75,7 @@ _save_acf_sel 0
 _rel_path_tow Aircraft/Laminar Research/Piper PA-18 Super Cub/PA-18-150.acf
 _ref_rwy_wrl 0
 _ref_ram_wrl 0
-_ref_rwy_dir 0
+_ref_rwy_dir 1
 _use_experimental_FM 0
 _use_MTBF 0
 _real_MTBF_hours 5000.000000
@@ -90,18 +90,18 @@ _nav_is_bac 0
 _mode_athr -1
 _km_is_mach 0
 _use_fms_alt 0
-_syn_hold_deg_phi -0.857712
-_syn_hold_deg_the 0.037248
-_asi_hold_kts_mac 110.000305
-_hdg_hold_mag[0] 70.000000
+_syn_hold_deg_phi 0.909178
+_syn_hold_deg_the -2.375851
+_asi_hold_kts_mac 239.000000
+_hdg_hold_mag[0] 40.000000
 _hdg_hold_mag[1] 0.000000
 _vvi_hold_fpm 0.000000
-_alt_hold_ft_dial 4030.000000
-_alt_hold_ft_use 4025.195068
+_alt_hold_ft_dial 2200.000000
+_alt_hold_ft_use 3350.485107
 _thermo_metric_units 1
 _aro_setting_HG[0] 29.920000
 _aro_setting_HG[1] 29.920000
-_pdr_freq[0] 7000
+_pdr_freq[0] 306
 _pdr_freq[1] 1200
 _Nfreq0 11745
 _Nfreq1 11060
@@ -110,13 +110,13 @@ _Nfreq3 370
 _Nfreq4 11170
 _Nfreq5 11170
 _Nfreq6 11745
-_Nfreq7 10950
-_Nfreq8 11000
-_Nfreq9 10820
-_Nfreq10 11640
-_Nfreq11 11340
-_Nfreq12 11345
-_Nfreq13 11350
+_Nfreq7 11270
+_Nfreq8 10850
+_Nfreq9 11390
+_Nfreq10 11330
+_Nfreq11 11100
+_Nfreq12 11105
+_Nfreq13 11110
 _Nfreq14 11170
 _Nfreq15 58327
 _Nfreq16 58327
@@ -138,7 +138,7 @@ _NfreqSTDBY14 11170
 _NfreqSTDBY15 58327
 _NfreqSTDBY16 58327
 _OBS_mag[0]0 0.000000
-_OBS_mag[0]1 42.000000
+_OBS_mag[0]1 0.000000
 _OBS_mag[0]2 0.000000
 _OBS_mag[0]3 0.000000
 _OBS_mag[0]4 10.695580
@@ -155,7 +155,7 @@ _OBS_mag[0]14 0.000000
 _OBS_mag[0]15 0.000000
 _OBS_mag[0]16 0.000000
 _OBS_mag[1]0 42.000000
-_OBS_mag[1]1 0.000000
+_OBS_mag[1]1 42.000000
 _OBS_mag[1]2 0.000000
 _OBS_mag[1]3 0.000000
 _OBS_mag[1]4 0.000000
@@ -171,7 +171,7 @@ _OBS_mag[1]13 0.000000
 _OBS_mag[1]14 0.000000
 _OBS_mag[1]15 0.000000
 _OBS_mag[1]16 0.000000
-_Cfreq0 133755
+_Cfreq0 119405
 _Cfreq1 121125
 _Cfreq2 118000
 _Cfreq3 118000
@@ -205,56 +205,56 @@ _CfreqSTDBY13 118000
 _CfreqSTDBY14 118000
 _CfreqSTDBY15 118000
 _CfreqSTDBY16 118000
-_acf_path_rel0 Aircraft/Laminar Research/Beechcraft Baron 58/Baron_58.acf
-_acf_path_rel1 Aircraft/Laminar Research/McDonnell Douglas MD-82/MD80.acf
-_acf_path_rel2 Aircraft/Laminar Research/Beechcraft Baron 58/Baron_58.acf
-_acf_path_rel3 Aircraft/Laminar Research/Cessna Citation X/Cessna_CitationX.acf
-_acf_path_rel4 Aircraft/Traffic Global/_TCAS_AI_/TrafficGlobalTCAS.acf
-_acf_path_rel5 Aircraft/Laminar Research/Cessna Citation X/Cessna_CitationX.acf
-_acf_path_rel6 Aircraft/Laminar Research/Cirrus SR22/Cirrus SR22.acf
-_acf_path_rel7 Aircraft/Laminar Research/Van's Aircraft RV-10/RV-10.acf
-_acf_path_rel8 Aircraft/Laminar Research/McDonnell Douglas MD-82/MD80.acf
-_acf_path_rel9 Aircraft/Laminar Research/Airbus A330-300/A330_AI.acf
-_acf_path_rel10 Aircraft/Laminar Research/Cessna Citation X/Cessna_CitationX.acf
-_acf_path_rel11 Aircraft/Laminar Research/Van's Aircraft RV-10/RV-10.acf
-_acf_path_rel12 Aircraft/Laminar Research/McDonnell Douglas MD-82/MD80.acf
-_acf_path_rel13 Aircraft/Laminar Research/Piper PA-18 Super Cub/PA-18-150.acf
-_acf_path_rel14 Aircraft/Embraer E170/E170_XP11.acf
-_acf_path_rel15 Aircraft/Laminar Research/Van's Aircraft RV-10/RV-10.acf
-_acf_path_rel16 Aircraft/Laminar Research/Cirrus SR22/Cirrus SR22.acf
-_acf_path_rel17 Aircraft/Laminar Research/Cirrus Vision SF50/CirrusSF50.acf
-_acf_path_rel18 Aircraft/Laminar Research/Cirrus SR22/Cirrus SR22.acf
-_acf_path_rel19 Aircraft/Laminar Research/Van's Aircraft RV-10/RV-10.acf
+_acf_path_rel0 Aircraft/B737-800X/b738.acf
+_acf_path_rel1 Aircraft/Laminar Research/Piper PA-18 Super Cub/PA-18-150.acf
+_acf_path_rel2 Aircraft/Laminar Research/Cirrus Vision SF50/CirrusSF50.acf
+_acf_path_rel3 Aircraft/Laminar Research/Beechcraft Baron 58/Baron_58.acf
+_acf_path_rel4 Aircraft/Laminar Research/Cirrus SR22/Cirrus SR22.acf
+_acf_path_rel5 Aircraft/Laminar Research/Cirrus Vision SF50/CirrusSF50.acf
+_acf_path_rel6 Aircraft/Laminar Research/Cessna Citation X/Cessna_CitationX.acf
+_acf_path_rel7 Aircraft/Laminar Research/Cessna Citation X/Cessna_CitationX.acf
+_acf_path_rel8 Aircraft/Laminar Research/Airbus A330-300/A330_AI.acf
+_acf_path_rel9 Aircraft/Embraer E170/E170_XP11.acf
+_acf_path_rel10 Aircraft/Laminar Research/Airbus A330-300/A330_AI.acf
+_acf_path_rel11 Aircraft/Laminar Research/Cessna 172 SP/Cessna_172SP.acf
+_acf_path_rel12 Aircraft/Laminar Research/Boeing 737-800/b738.acf
+_acf_path_rel13 Aircraft/Laminar Research/Cessna Citation X/Cessna_CitationX.acf
+_acf_path_rel14 Aircraft/Laminar Research/Boeing 737-800/b738.acf
+_acf_path_rel15 Aircraft/Laminar Research/McDonnell Douglas MD-82/MD80.acf
+_acf_path_rel16 Aircraft/Laminar Research/Cessna 172 SP/Cessna_172SP.acf
+_acf_path_rel17 Aircraft/Laminar Research/Airbus A330-300/A330_AI.acf
+_acf_path_rel18 Aircraft/Laminar Research/Van's Aircraft RV-10/RV-10.acf
+_acf_path_rel19 Aircraft/Traffic Global/_TCAS_AI_/TrafficGlobalTCAS.acf
 _vol_master 0.860000
-_vol_grp_aircraft 0.307647
-_vol_grp_cockpit 0.307647
+_vol_grp_aircraft 0.253200
+_vol_grp_cockpit 1.000000
 _vol_grp_copilot 0.835632
 _vol_grp_pilot 0.835632
 _vol_grp_radios 0.759640
 _vol_grp_radios_cop 0.000000
-_vol_grp_enviro 0.307647
+_vol_grp_enviro 0.530256
 _vol_grp_ui 0.000000
-_Binet0 1
+_Binet0 0
 _Binet1 1
-_Binet2 1
+_Binet2 0
 _Binet3 0
 _Binet4 0
 _Binet5 0
 _Binet6 0
 _Binet7 0
-_Binet8 0
+_Binet8 1
 _Binet9 0
 _Binet10 0
 _Binet11 0
 _Binet12 0
-_Binet13 0
-_Binet14 0
+_Binet13 1
+_Binet14 1
 _Binet15 0
 _Binet16 0
-_Binet17 0
+_Binet17 1
 _Binet18 0
 _Binet19 0
-_Binet20 0
+_Binet20 1
 _Binet21 0
 _Binet22 0
 _Binet23 0
@@ -279,7 +279,7 @@ _Binet41 0
 _Binet42 0
 _Binet43 0
 _Binet44 0
-_Binet45 0
+_Binet45 1
 _Binet46 0
 _Binet47 0
 _Binet48 0
@@ -296,7 +296,7 @@ _Binet58 0
 _Binet59 0
 _Binet60 0
 _Binet61 0
-_Binet62 0
+_Binet62 1
 _Binet63 0
 _Binet64 0
 _Binet65 0
@@ -351,8 +351,8 @@ _Binet113 0
 _Binet114 0
 _Binet115 0
 _Binet116 0
-_Binet117 0
-_Binet118 0
+_Binet117 1
+_Binet118 1
 _Binet119 0
 _Binet120 0
 _Binet121 0
@@ -1057,7 +1057,7 @@ _snd_pt_str_40 49000
 _snd_pt_str_41 49000
 _snd_pt_str_42 49005
 _snd_pt_str_43 49000
-_snd_pt_str_44 57861
+_snd_pt_str_44 50677
 _snd_pt_str_45 49000
 _snd_pt_str_46 49000
 _snd_pt_str_47 49000
@@ -1117,7 +1117,7 @@ _snd_pt_rak_str_48 49010
 _snd_pt_rak_str_49 49010
 _snd_pt_rak_str_50 49010
 _snd_pt_rak_str_51 49010
-_snd_ip_str_42 127.0.0.1
+_snd_ip_str_42 192.168.2.202
 _snd_ip_str_44 192.168.2.202
 _snd_ip_str_45 192.168.2.1
 renopt_ANISO 8

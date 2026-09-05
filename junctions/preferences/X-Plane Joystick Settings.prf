@@ -44,7 +44,7 @@ _joy_unique_id18 VID:1103PID:1029
 _joy_location0 \\?\hid#vid_06a3&pid_0c2d#a&3477ead1&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
 _joy_location1 \\?\hid#vid_1690&pid_fe13&mi_01#a&1fbcac97&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
 _joy_location2 \\?\hid#vid_06a3&pid_0c2d#a&21be3a2c&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
-_joy_location3 \\?\hid#vid_06a3&pid_0763#9&5e52429&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+_joy_location3 \\?\hid#vid_06a3&pid_0763#a&6d49786&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
 _joy_location4 \\?\hid#vid_294b&pid_1900#6&2969e354&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
 _joy_location5 \\?\hid#vid_044f&pid_0405#6&e7c901f&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
 _joy_location6 \\?\hid#vid_1690&pid_fe13&mi_02#9&7c0bbfb&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
@@ -60,11 +60,11 @@ _joy_location15 \\?\hid#vid_294b&pid_1900#6&2969e354&0&0000#{4d1e55b2-f16f-11cf-
 _joy_location16 \\?\hid#vid_06a3&pid_0c2d#9&16055008&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
 _joy_location17 \\?\hid#vid_045e&pid_02ff&ig_00#7&2053245b&1&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
 _joy_location18 \\?\hid#vid_044f&pid_0405#6&e7c901f&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
-_joy_lru_time0 1787597981
-_joy_lru_time1 1787597981
-_joy_lru_time2 1787597981
-_joy_lru_time3 1787597981
-_joy_lru_time4 1787597981
+_joy_lru_time0 1788606112
+_joy_lru_time1 1788606112
+_joy_lru_time2 1788606112
+_joy_lru_time3 1788606112
+_joy_lru_time4 1788606112
 _joy_lru_time5 1777991602
 _joy_lru_time6 0
 _joy_lru_time7 0

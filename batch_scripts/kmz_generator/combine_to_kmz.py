@@ -13,24 +13,12 @@ import piexif
 IMAGE_WIDTH = "500"
 IMAGE_HEIGHT = "auto"
 TIME_TOLERANCE_MINUTES = 15
+TRONDHEIM_TIMEZONE = timezone(timedelta(hours=2), "Trondheim UTC+2")
 # ==========================================
 
 # Transparentes Kamera-Icon (Base64), das im KMZ-Hauptverzeichnis abgelegt wird
 BASE64_CAMERA_ICON = (
-    "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJN"
-    "AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/APgvaeTAAAA"
-    "Cx0RVh0U29mdHdhcmUAcGFpbnQubmV0IDUuMC4xM3b830YAAAJBSURBVFhHxZcxSxsxFIYfS6vV"
-    "ih0cdXByqYidHArpIkiXgEun7p38B86Of0InRwc7OunSpSIdbAdHByfBTrpYpYsVv9fwpbaRphwN"
-    "9wYChByS9+S9uclFf9YshmO1Wq0uYAmwD9wBv4D7mBvH8bLneXvA78XFxfscv9oF9vV/H3gArvM4"
-    "D8wDWeAOmAduM6v+3eXfAor6XfX6Uf9D7vNfQA6YBlY6Z963P1vAsv7nE/gK7D8R6EwD88A88G3M"
-    "jefbX+Rvs6m/2eTftXunwAdgBfgGrALvYm48r/0Y8EwDX8bctP3G6vI7Uf+y3f8WeM38f7Wp/wX8"
-    "A96NufF8q20Bq/wL8An89Zf5G9GgEegE7gI/gV3ggXN0CtwDP7RPHmP+oX378602b/9I8w6Zp5T3"
-    "wAbwAfgVcwf977p+pA38Zp566oE/wGtgK+be9XwV8FfU9wKWY25U73Fp/jHwvYgM4FvUeeo9g6b5"
-    "PphvN7VvP5GvAsb96n2Xep9C03yNfI98v9A03wH/Bvgv9vAn8lXAn+Sppx7U63bVf6N988b8VwGj"
-    "fV0S6O9rVv072uMffV9vYv6hffvzzWfAXwGPdf1Ie3ijL9L8P/X8f8C6V7WfGvMv7dtfYL4WUG8"
-    "j/30v5p6NufF8617VfmrMX7Wv936GfC3wZcK6W3v0H5v6P3OOf+S7GvOf7Otr9zZof3w3gDqN6u"
-    "8F6A3gPrAasH/GfOzvXwK6jfoZ/0H7v8v86A3gFrAK6D9Vf8p86A1gP+Zebv8Y+FrAW8TffbO4"
-    "Zf8CAnfP+799mFAAAAAElFTkSuQmCC"
+    "iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOCSURBVGhD7VhNS1RRGPa/tAiiRbURCWEWQiAULfpYiIs+Ftmm3ORGRMJNEVRkJppKBUqBfYAiWIQhkpk59IFkaI5pWjpIM+V4x49z4jnOOxzfe+feO8O9l1ncBx5G577nnOc55z3vOXNLSkKECBEiRIgCIKWMSCkbC2SE9xc4MkIKRSPvL3CQgbHxia079zo23BCxRWcAwvbsL11zQ8SGBrxC0RrIo7oMQUlza+f23gOHN9wQsRkDaMv7c0v7CpYJco2x8ahsaetyRcR6APvVIwNO1eXd+wmazbyBtrw/J7quYGQAjXgO66w6c9Hgg7gl2vL+nIh2nhoImoEbOHL09DpmmnjsRPU6j8mHgRg4WFaRQruZ2Zjl/lheiYueJ882YY631QnD+w6V7/rOdwNnL9QaEEhik8a2/DCfynIxsZk1YhhpWVfflOZ9QDSZTySToixSmaJnvhnArD990Z9V93lpXV7pW5Klt6dNrO6el29jaxQqh0dGt3SRMJV9KKW8caslq8E3AyQ+vSnk3ZG4SbQVrw7+VisERD9+2aZ0gRmsDuFk1flsqvliAGlD4jG7XKgdK9tnZXxtp7TrY2F/4H/0rY/luQGkDuW825nnvPR8USnCrOuzbUXPDbR1PlIdIue5MCJWpab3p+3q9H5KKFVIJT6GrwbmFxbV7EMgF1XR+n3XZgVg9NTDOVNsefOMSkFA39CcnhrAoYQY5DAXBKJsWiG2uqEE8/jBqb/qeW1dQ84rhqcGai7Xqc07NP3PJObc4wVNshlWJbZ9dFU9sxvTUwMNTddVreubTJrEXHu9rMk1A2J5G5RVACWZj+WLASw1YqwMUGXJBYjlbVDFABQGPpYvBnBXQczUsmESgxzXrw060ltC1X/ehioRVpaP5YsBnJx0Yh7vipkEYR/QIUWA+PqBX6ZYkAzb3Vg9NQD2D7xUCjF7XBCIUnrzzYrKeXxazTxI+Y+yzMfw1QBOzkyHlmeBG2L1ksbOStmljy8G9E6RLphxLtCJdF7gVsr75vTFAPbC5Ndv6lqJQwq5z0VaEelEJzXuU3YnsK8GQNwe9V9gThc7bGRKG/xo4bfOXMzbgNNrFZ2o37QSAFIKZwQ2MPYHTPVE/6hVIsTmfoiOBz2mvnIx79cqRQxHA25fLeakEKJVCPEK1yUhxKwQYjjz930eWwDtXy2GCBEiRKD4D4WdJ6by/EHiAAAAAElFTkSuQmCC"
 )
 
 def parse_kml_time_range(kml_path):
@@ -39,7 +27,19 @@ def parse_kml_time_range(kml_path):
         with open(kml_path, 'r', encoding='utf-8', errors='ignore') as f:
             content = f.read()
         
-        time_matches = re.findall(r'<(?:when|TimeStamp[^>]*><when>|string[^>]*>)([^<\n]+)', content)
+        time_matches = re.findall(
+            r'<(?:when|TimeStamp[^>]*><when>|string[^>]*>)([^<\n]+)',
+            content,
+            flags=re.IGNORECASE,
+        )
+        kml_date_match = re.search(r'\bDate\s*:\s*(\d{4}-\d{2}-\d{2})', content)
+        if kml_date_match:
+            time_matches.extend(re.findall(
+                r'<Data\b[^>]*\bname=["\']time["\'][^>]*>\s*'
+                r'<value>\s*(\d{2}:\d{2}:\d{2}(?:\.\d+)?)\s*</value>',
+                content,
+                flags=re.IGNORECASE,
+            ))
         
         parsed_times = []
         for t_str in time_matches:
@@ -49,6 +49,14 @@ def parse_kml_time_range(kml_path):
                     dt = datetime.strptime(t_clean, fmt).replace(tzinfo=timezone.utc)
                     parsed_times.append(dt)
                     break
+                except ValueError:
+                    continue
+            if kml_date_match and not t_clean.endswith("Z") and ":" in t_clean:
+                try:
+                    parsed_times.append(datetime.strptime(
+                        f"{kml_date_match.group(1)} {t_clean}",
+                        "%Y-%m-%d %H:%M:%S",
+                    ).replace(tzinfo=timezone.utc))
                 except ValueError:
                     continue
 
@@ -107,6 +115,19 @@ def get_image_data(image_path):
     except Exception:
         return None
 
+def get_filename_time(file_name):
+    match = re.search(r'(\d{4}-\d{2}-\d{2})\s+(\d{2}\.\d{2}\.\d{2})', file_name)
+    if not match:
+        return None
+    try:
+        local_time = datetime.strptime(
+            f"{match.group(1)} {match.group(2)}",
+            "%Y-%m-%d %H.%M.%S",
+        ).replace(tzinfo=TRONDHEIM_TIMEZONE)
+        return local_time.astimezone(timezone.utc)
+    except ValueError:
+        return None
+
 def create_kmz(kml_path, image_folder, output_kmz, use_time_filter=True):
     print("-> Starte Erstellung des KMZ-Pakets...")
     if not os.path.exists(kml_path):
@@ -147,12 +168,35 @@ def create_kmz(kml_path, image_folder, output_kmz, use_time_filter=True):
                     
                     if img_data:
                         lon, lat = img_data["coords"]
-                        img_time = img_data["time"]
+                        exif_time = img_data["time"]
+                        filename_time = get_filename_time(file)
+                        img_time = exif_time or filename_time
+                        timestamp_source = "EXIF" if exif_time else (
+                            "filename" if filename_time else "none"
+                        )
+                        timestamp_text = img_time.isoformat() if img_time else "<none>"
                         
-                        if use_time_filter and route_start and route_end and img_time:
-                            if not (route_start <= img_time <= route_end):
+                        if use_time_filter and route_start and route_end:
+                            if not img_time:
+                                print(
+                                    f"[TIME DEBUG] {file}: timestamp=<none>; source={timestamp_source}; "
+                                    "SKIPPED (no usable timestamp)"
+                                )
                                 skipped_time_count += 1
                                 continue
+                            if not (route_start <= img_time <= route_end):
+                                print(
+                                    f"[TIME DEBUG] {file}: timestamp={timestamp_text}; source={timestamp_source}; "
+                                    f"route={route_start.isoformat()} to {route_end.isoformat()}; "
+                                    "SKIPPED (outside route window)"
+                                )
+                                skipped_time_count += 1
+                                continue
+                        print(
+                            f"[TIME DEBUG] {file}: timestamp={timestamp_text}; source={timestamp_source}; "
+                            f"route={route_start.isoformat() if route_start else '<none>'} to "
+                            f"{route_end.isoformat() if route_end else '<none>'}; INCLUDED"
+                        )
                         
                         shutil.copy(source_file, os.path.join(temp_images_dir, file))
                         image_count += 1
@@ -172,6 +216,11 @@ def create_kmz(kml_path, image_folder, output_kmz, use_time_filter=True):
                             "  </Placemark>\n"
                         )
                         generated_placemarks.append(placemark_str)
+                    else:
+                        print(
+                            f"[TIME DEBUG] {file}: timestamp=<unavailable>; "
+                            "SKIPPED (missing GPS or readable EXIF data)"
+                        )
 
         with open(kml_path, 'r', encoding='utf-8') as f:
             kml_content = f.read()
@@ -236,10 +285,6 @@ if __name__ == "__main__":
     kml_file_arg = arguments.pop(0)
     image_folder_arg = arguments.pop(0)
     output_kmz_arg = arguments.pop(0)
-    use_time_filter_bool = True
-    if len(arguments) > 0:
-        next_arg = arguments.pop(0)
-    if next_arg == "--no-time-filter":
-        use_time_filter_bool = False
-        create_kmz(kml_file_arg, image_folder_arg, output_kmz_arg,
-                   use_time_filter=use_time_filter_bool)
+    use_time_filter_bool = not arguments or arguments.pop(0) != "--no-time-filter"
+    create_kmz(kml_file_arg, image_folder_arg, output_kmz_arg,
+               use_time_filter=use_time_filter_bool)
