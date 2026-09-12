@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>EFB Website Launcher</title>
+	<style>
+		:root { color-scheme: dark; }
+		* { box-sizing: border-box; }
+		html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+		body { display: flex; background: #111827; font-family: system-ui, sans-serif; }
+		#website-frame { flex: 0 0 90%; width: 90%; height: 100%; border: 0; background: white; }
+		#button-bar {
+			flex: 0 0 10%; width: 10%; min-width: 90px; padding: 10px;
+			display: flex; flex-direction: column; gap: 8px; overflow-y: auto;
+			background: #1f2937; border-left: 1px solid #374151;
+		}
+		button {
+			width: 100%; padding: 10px 6px; border: 1px solid #4b5563;
+			border-radius: 6px; color: #e5e7eb; background: #374151;
+			cursor: pointer; font: inherit; overflow-wrap: anywhere;
+		}
+		button:hover, button.active { background: #2563eb; border-color: #60a5fa; }
+		#status { margin: auto 2px 0; color: #9ca3af; font-size: 11px; text-align: center; }
+	</style>
+</head>
+<body>
+	<iframe id="website-frame" title="Selected website" src="about:blank"></iframe>
+	<nav id="button-bar" aria-label="Websites">
+		<div id="status">Loading websites…</div>
+	</nav>
+
+	<script>
+		// Point this at the external JSON configuration file you want to maintain.
+		const CONFIG_URL = './websites.json';
+		const frame = document.getElementById('website-frame');
+		const bar = document.getElementById('button-bar');
+		const status = document.getElementById('status');
+
+		// Expected format: [{ "label": "Weather", "url": "https://example.com" }]
+		async function loadWebsites() {
+			try {
+				const response = await fetch(CONFIG_URL, { cache: 'no-store' });
+				if (!response.ok) throw new Error(`HTTP ${response.status}`);
+				const websites = await response.json();
+				if (!Array.isArray(websites)) throw new Error('Configuration must be an array');
+				status.remove();
+				websites.forEach((site, index) => {
+					if (!site || typeof site.label !== 'string' || typeof site.url !== 'string') return;
+					const button = document.createElement('button');
+					button.type = 'button';
+					button.textContent = site.label;
+					button.title = site.url;
+					button.addEventListener('click', () => {
+						frame.src = site.url;
+						bar.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+						button.classList.add('active');
+					});
+					bar.appendChild(button);
+					if (index === 0) button.click();
+				});
+			} catch (error) {
+				status.textContent = `Could not load ${CONFIG_URL}`;
+				console.error(error);
+			}
+		}
+		loadWebsites();
+	</script>
+</body>
+</html>
