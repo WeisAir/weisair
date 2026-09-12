@@ -95,7 +95,7 @@ P monitor_2 _offsets 0
 P monitor_2 _visuals 0
 P window_state exvis_standby v=0 p=0 m=0 b=0,0,0,0
 P window_state fps_test_recoder v=0 p=0 m=0 b=0,0,0,0
-P window_state screenshot_controls v=1 p=0 m=0 b=1785,13,2265,453
+P window_state screenshot_controls v=0 p=0 m=0 b=1785,13,2265,453
 P window_state networkdebug v=0 p=0 m=0 b=20,20,832,340
 P window_state raininspector v=0 p=0 m=0 b=20,20,440,340
 P window_state pluginadmin v=0 p=0 m=0 b=321,544,871,1164
@@ -124,10 +124,10 @@ P window_state ground_handling_window v=0 p=0 m=0 b=0,0,0,0
 P copilot-4200 gps_window_visible 0
 P RDR2000_WXR device_window_visible 0
 P WXR-2 gps_window_visible 0
-P monitor_19 _offsets 0
-P monitor_19 _visuals 0
 P GCU gps_window_visible 0
 P monitor_13 _offsets 0
 P monitor_13 _visuals 0
+P monitor_19 _offsets 0
+P monitor_19 _visuals 0
 P monitor_8 _offsets 0
 P monitor_8 _visuals 0

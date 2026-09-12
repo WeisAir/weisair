@@ -13,10 +13,16 @@ mklink /j "G:\X-Plane_12_prelatest_stable\Aircraft" "G:\weisair\junctions\Aircra
 mklink /j "G:\X-Plane_12_latest_stable\Aircraft" "G:\weisair\junctions\Aircraft"
 mklink /j "G:\X-Plane_12_latest\Aircraft" "G:\weisair\junctions\Aircraft"
 
+REM CREATE JUNCTIONS FOR PYTHONSCRIPTS FOLDER
+mklink /j "G:\X-Plane_12_prelatest_stable\Resources\plugins\PythonPlugins" "G:\weisair\junctions\PythonScripts"
+mklink /j "G:\X-Plane_12_latest_stable\Resources\plugins\PythonPlugins" "G:\weisair\junctions\PythonScripts"
+mklink /j "G:\X-Plane_12_latest\Resources\plugins\PythonPlugins" "G:\weisair\junctions\PythonScripts"
+
 REM CREATE JUNCTIONS FOR FLYWITHLUA SCRIPTS FOLDER
 mklink /j "G:\X-Plane_12_prelatest_stable\Resources\plugins\FlyWithLua\Scripts" "G:\weisair\junctions\Scripts"
 mklink /j "G:\X-Plane_12_latest_stable\Resources\plugins\FlyWithLua\Scripts" "G:\weisair\junctions\Scripts"
 mklink /j "G:\X-Plane_12_latest\Resources\plugins\FlyWithLua\Scripts" "G:\weisair\junctions\Scripts"
+
 
 REM CREATE JUNCTIONS FOR PREFERENCES FOLDER
 mklink /j "G:\X-Plane_12_prelatest_stable\Output\preferences" "G:\weisair\junctions\preferences"
