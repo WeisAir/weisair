@@ -219,11 +219,27 @@ This section adds screenshots of the current state of both my custom Air Mangage
 
 ## Linux
 
+Statement mid of June 2026
+
 The only reason at the moment to not run everything on Linux is the extensive usage of StreamDeck and especially the apilotsdeck streamdeck plugin which only runs in Windwows / Mac. Once there is either a linux-compatible version of it or I have had enogh time to develop my own Linux-capable plugin, I will probably switch to Linux. 
 
-## Known Issues
+Update September 2026
 
-- Linux Airmanager unstable
+Now we get some music in here... I 
+- Airmanager runs fine under Ubuntu 24.04 using X11 display manager 
+  - TODO: validate performance in flight. So far tested only on ground with no hickups
+  - in order flash the knobster device, you need to add yourself to a certain group in ubuntu (need to google that again)
+  - need to calibrate the external touch screen -> follow [this tutorial](https://www.gechic.com/en/knowledge-base-2/linux-touch-screen-settings/), will extract the knowledge to this space later
+  - disable task bar on the flight sim touchscreen to use maximum space
+- I am currently playing with [xplane-streamdeck plugin](https://github.com/wortelus/xplane-streamdeck/blob/master/README.md)
+  - automated conversion of native *.streamdeckprofile profiles would be great but seems to be to much of adjusting (e.g. image names cannot be mapped, as their names are randomized)
+  - still I used copilot to create for me a visual investigation tool for the button configuration
+- XPlane 12 runs anyway in Ubuntu
+- check for xplane plugin compatibility
+  - IXEG 737-300 is windows native but there are good workarounds to get it run in ubuntu -> check out [this summary](https://forums.x-plane.org/forums/topic/123399-ixeg-737-in-linux/)
+  - webfmc pro is compatible
+  - TODO: check others
+- in windows I used the virtual streamdeck as a solution for the EFB Device -> as this is not available for Linux, I used AI to create my own customizable EFB Electron App -> see repo
 
 # The Key Learnings
 
