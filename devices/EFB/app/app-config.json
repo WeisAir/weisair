@@ -4,5 +4,10 @@
   "displayIndex": 0,
   "hardwareAcceleration": true,
   "gpuRasterization": true,
-  "unsafeSwiftShader": false
+  "unsafeSwiftShader": false,
+  "buttonAreaBackground": "#1f2937",
+  "activeButtonColor": "#2563eb",
+  "inactiveButtonColor": "#374151",
+  "buttonHeight": "80px",
+  "buttonFontSize": "24px"
 }

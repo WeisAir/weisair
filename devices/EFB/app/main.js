@@ -1,4 +1,4 @@
-const { app, BrowserWindow, screen, session } = require('electron');
+const { app, BrowserWindow, ipcMain, screen, session } = require('electron');
 const fs = require('node:fs');
 const path = require('node:path');
 
@@ -9,6 +9,8 @@ function loadAppConfig() {
 
 const appConfig = loadAppConfig();
 
+let mainWindow;
+
 if (appConfig.hardwareAcceleration !== true) app.disableHardwareAcceleration();
 if (appConfig.gpuRasterization === true) app.commandLine.appendSwitch('enable-gpu-rasterization');
 if (appConfig.unsafeSwiftShader === true) app.commandLine.appendSwitch('enable-unsafe-swiftshader');
@@ -18,7 +20,7 @@ function createWindow() {
 	const displays = screen.getAllDisplays();
 	const display = displays[config.displayIndex] || screen.getPrimaryDisplay();
 	const { x, y, width, height } = display.workArea;
-	const window = new BrowserWindow({
+	mainWindow = new BrowserWindow({
 		x,
 		y,
 		width,
@@ -27,28 +29,33 @@ function createWindow() {
 		webPreferences: {
 			contextIsolation: true,
 			nodeIntegration: false,
+			preload: path.join(__dirname, 'preload.js'),
 			webviewTag: true,
 			partition: 'persist:efb-hub'
 		}
 	});
 
-	window.webContents.on('before-input-event', (event, input) => {
+	mainWindow.webContents.on('before-input-event', (event, input) => {
 		if (input.type === 'keyDown' && input.key === 'F11') {
 			event.preventDefault();
-			window.setFullScreen(!window.isFullScreen());
+			mainWindow.setFullScreen(!mainWindow.isFullScreen());
 		}
 	});
 
-	window.once('ready-to-show', () => {
-		window.setPosition(x, y);
-		if (config.fullscreen === true) window.setFullScreen(true);
-		else if (config.maximized === true) window.maximize();
+	mainWindow.once('ready-to-show', () => {
+		mainWindow.setPosition(x, y);
+		if (config.fullscreen === true) mainWindow.setFullScreen(true);
+		else if (config.maximized === true) mainWindow.maximize();
 	});
-	window.loadFile(path.join(__dirname, 'index.html'));
+	mainWindow.on('closed', () => {
+		mainWindow = null;
+	});
+	mainWindow.loadFile(path.join(__dirname, 'index.html'));
 }
 
 app.whenReady().then(() => {
 	session.fromPartition('persist:efb-hub');
+	ipcMain.on('close-app', () => app.quit());
 	createWindow();
 	app.on('activate', () => {
 		if (BrowserWindow.getAllWindows().length === 0) createWindow();

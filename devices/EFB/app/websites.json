@@ -1,5 +1,5 @@
 [
-  { "label": "SimBrief Dispatch", "url": "https://dispatch.simbrief.com/home" },
-  { "label": "Navigraph Charts", "url": "https://charts.navigraph.com/flights/current" },
-  { "label": "Example", "url": "https://example.com" }
+  { "label": "Simbrief", "url": "https://dispatch.simbrief.com/home" },
+  { "label": "Charts", "url": "https://charts.navigraph.com/flights/current" },
+  { "label": "FMC", "url": "http://192.168.2.112:9090/" }
 ]
