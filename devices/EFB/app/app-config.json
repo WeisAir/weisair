@@ -1,5 +1,8 @@
 {
   "fullscreen": true,
   "maximized": true,
-  "displayIndex": 0
+  "displayIndex": 0,
+  "hardwareAcceleration": true,
+  "gpuRasterization": true,
+  "unsafeSwiftShader": false
 }
