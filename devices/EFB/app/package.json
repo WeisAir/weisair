@@ -1,0 +1,13 @@
+{
+  "name": "efb-website-hub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Persistent multi-site browser hub for the EFB",
+  "main": "main.js",
+  "scripts": {
+    "start": "node start.js"
+  },
+  "devDependencies": {
+    "electron": "38.8.6"
+  }
+}

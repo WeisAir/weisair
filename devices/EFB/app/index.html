@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>EFB Website Launcher</title>
+	<style>
+		:root { color-scheme: dark; }
+		* { box-sizing: border-box; }
+		html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+		body { display: flex; background: #111827; font-family: system-ui, sans-serif; }
+		#website-area { position: relative; flex: 0 0 90%; width: 90%; height: 100%; background: white; }
+		webview { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: white; }
+		webview.hidden { display: none; }
+		#button-bar {
+			flex: 0 0 10%; width: 10%; min-width: 90px; padding: 10px;
+			display: flex; flex-direction: column; gap: 8px; overflow-y: auto;
+			background: #1f2937; border-left: 1px solid #374151;
+		}
+		button {
+			width: 100%; padding: 10px 6px; border: 1px solid #4b5563;
+			border-radius: 6px; color: #e5e7eb; background: #374151;
+			cursor: pointer; font: inherit; overflow-wrap: anywhere;
+		}
+		button:hover, button.active { background: #2563eb; border-color: #60a5fa; }
+		#status { margin: auto 2px 0; color: #9ca3af; font-size: 11px; text-align: center; }
+	</style>
+</head>
+<body>
+	<section id="website-area" aria-label="Website area"></section>
+	<nav id="button-bar" aria-label="Websites">
+		<div id="status">Loading websites...</div>
+	</nav>
+	<script src="renderer.js"></script>
+</body>
+</html>
