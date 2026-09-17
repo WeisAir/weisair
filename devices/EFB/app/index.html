@@ -23,9 +23,11 @@
 		}
 		#logo-spacer {
 			flex: 0 0 auto; height: var(--logo-height, 90px);
-			display: grid; place-items: center; color: #e5e7eb;
+			display: flex; flex-direction: column; justify-content: center; align-items: center;
+			color: #e5e7eb;
 			font-size: 24px; font-weight: 600;
 		}
+		#aircraft-name { font-size: 14px; font-weight: 400; text-align: center; overflow-wrap: anywhere; }
 		#website-buttons { display: flex; flex-direction: column; gap: 8px; }
 		.website-button {
 			height: var(--button-height, 48px);
@@ -39,16 +41,20 @@
 		}
 		button:hover, button.active { background: var(--active-button-color, #2563eb); border-color: #60a5fa; }
 		#status { margin: auto 2px 0; color: #9ca3af; font-size: 11px; text-align: center; }
+		#airmanager-toggle { margin-top: auto; }
+		#airmanager-toggle.running { background: var(--active-button-color, #2563eb); }
 		#close-button { margin-top: auto; padding: 8px; font-size: 24px; line-height: 1; text-align: center; }
+		#close-button { margin-top: var(--airmanager-exit-spacing, 8px); }
 	</style>
 </head>
 <body>
 	<section id="website-area" aria-label="Website area"></section>
 	<nav id="button-bar" aria-label="Websites">
 		<img id="brand-logo" src="ressources/v1.png" alt="WESAIR">
-		<div id="logo-spacer">EFB</div>
+		<div id="logo-spacer"><div>EFB</div><div id="aircraft-name">X-Plane offline</div></div>
 		<div id="website-buttons"></div>
 		<div id="status">Loading websites...</div>
+		<button id="airmanager-toggle" type="button" aria-pressed="false">AirManager: OFF</button>
 		<button id="close-button" type="button" aria-label="Close application" title="Close application">EXIT</button>
 	</nav>
 	<script src="renderer.js"></script>

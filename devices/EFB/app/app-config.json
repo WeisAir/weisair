@@ -9,5 +9,21 @@
   "activeButtonColor": "#2563eb",
   "inactiveButtonColor": "#374151",
   "buttonHeight": "80px",
-  "buttonFontSize": "24px"
+  "buttonFontSize": "24px",
+  "airManagerExecutable": "/home/stephan/Air Manager 5.2.7 Home use/Bootloader",
+  "airManagerExitSpacing": "16px",
+  "xPlaneApiBaseUrl": "http://127.0.0.1:8086/api/v3",
+  "xPlaneAircraftDataref": "sim/aircraft/view/acf_relative_path",
+  "xPlanePollIntervalMs": 1000,
+  "xPlaneSshTunnel": {
+    "enabled": true,
+    "host": "192.168.2.112",
+    "user": "Pilot",
+    "localPort": 8086,
+    "remotePort": 8086,
+    "identityFile": "/home/stephan/.ssh/xplane_efb"
+  },
+  "aircraftMappings": [
+    { "pattern": "*/b738.acf", "label": "Boeing 737-800NG" }
+  ]
 }

@@ -4,8 +4,10 @@ const buttonBar = document.getElementById('button-bar');
 const websiteButtons = document.getElementById('website-buttons');
 const brandLogo = document.getElementById('brand-logo');
 const logoSpacer = document.getElementById('logo-spacer');
+const aircraftName = document.getElementById('aircraft-name');
 const status = document.getElementById('status');
 const closeButton = document.getElementById('close-button');
+const airManagerToggle = document.getElementById('airmanager-toggle');
 const views = [];
 
 function matchLogoSpacer() {
@@ -16,6 +18,13 @@ brandLogo.addEventListener('load', matchLogoSpacer);
 window.addEventListener('resize', matchLogoSpacer);
 
 closeButton.addEventListener('click', () => window.efb.closeApp());
+airManagerToggle.addEventListener('click', () => window.efb.toggleAirManager());
+window.efb.onAirManagerStatus(running => {
+	airManagerToggle.classList.toggle('running', running);
+	airManagerToggle.setAttribute('aria-pressed', String(running));
+	airManagerToggle.textContent = `AirManager: ${running ? 'ON' : 'OFF'}`;
+});
+window.efb.onAircraftStatus(name => { aircraftName.textContent = name; });
 
 async function loadAppConfig() {
 	const response = await fetch('./app-config.json', { cache: 'no-store' });
@@ -39,6 +48,9 @@ function applyColors(config) {
 	}
 	if (typeof config.buttonFontSize === 'string') {
 		root.style.setProperty('--button-font-size', config.buttonFontSize);
+	}
+	if (typeof config.airManagerExitSpacing === 'string') {
+		root.style.setProperty('--airmanager-exit-spacing', config.airManagerExitSpacing);
 	}
 }
 
