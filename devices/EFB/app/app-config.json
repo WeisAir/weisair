@@ -18,12 +18,13 @@
   "xPlaneSshTunnel": {
     "enabled": true,
     "host": "192.168.2.112",
-    "user": "Pilot",
+    "user": "stephan",
     "localPort": 8086,
     "remotePort": 8086,
     "identityFile": "/home/stephan/.ssh/xplane_efb"
   },
   "aircraftMappings": [
-    { "pattern": "*/b738.acf", "label": "Boeing 737-800NG" }
+    { "pattern": "*/b738.acf", "label": "Boeing 737-800NG" },
+    { "pattern": "*/A330.acf", "label": "AIRBUS A330" }
   ]
 }
