@@ -2,13 +2,17 @@ const CONFIG_URL = './websites.json';
 const websiteArea = document.getElementById('website-area');
 const buttonBar = document.getElementById('button-bar');
 const websiteButtons = document.getElementById('website-buttons');
+const checklistButton = document.getElementById('checklist-button');
+const checklistView = document.getElementById('checklist-view');
+const checklistMessage = document.getElementById('checklist-message');
 const brandLogo = document.getElementById('brand-logo');
 const logoSpacer = document.getElementById('logo-spacer');
 const aircraftName = document.getElementById('aircraft-name');
-const status = document.getElementById('status');
 const closeButton = document.getElementById('close-button');
 const airManagerToggle = document.getElementById('airmanager-toggle');
 const views = [];
+let appConfig;
+let currentAircraftPath = '';
 
 function matchLogoSpacer() {
 	logoSpacer.style.height = `${brandLogo.getBoundingClientRect().height}px`;
@@ -24,13 +28,44 @@ window.efb.onAirManagerStatus(running => {
 	airManagerToggle.setAttribute('aria-pressed', String(running));
 	airManagerToggle.textContent = `AirManager: ${running ? 'ON' : 'OFF'}`;
 });
-window.efb.onAircraftStatus(name => { aircraftName.textContent = name; });
+window.efb.onAircraftStatus(aircraft => {
+	currentAircraftPath = aircraft.path || '';
+	aircraftName.textContent = aircraft.name;
+	updateChecklistButton();
+});
 
 async function loadAppConfig() {
 	const response = await fetch('./app-config.json', { cache: 'no-store' });
 	if (!response.ok) throw new Error(`HTTP ${response.status}`);
 	return response.json();
 }
+
+function globMatches(pattern, value) {
+	const expression = '^' + pattern.replace(/[.+^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*').replace(/\?/g, '.') + '$';
+	return new RegExp(expression, 'i').test(value);
+}
+
+function checklistForAircraft() {
+	const mappings = Array.isArray(appConfig?.checklistMappings) ? appConfig.checklistMappings : [];
+	return mappings.find(entry => entry && typeof entry.pattern === 'string' && typeof entry.pdf === 'string' && globMatches(entry.pattern, currentAircraftPath));
+}
+
+function updateChecklistButton() {
+	const checklist = checklistForAircraft();
+	checklistButton.title = checklist ? checklist.pdf : 'No checklist configured for the current aircraft';
+}
+
+function showChecklist() {
+	const checklist = checklistForAircraft();
+	views.forEach(view => view.classList.add('hidden'));
+	checklistMessage.classList.toggle('hidden', Boolean(checklist));
+	checklistView.classList.toggle('hidden', !checklist);
+	if (checklist) checklistView.src = `file://${encodeURI(checklist.pdf)}`;
+	buttonBar.querySelectorAll('button').forEach(button => button.classList.remove('active'));
+	checklistButton.classList.add('active');
+}
+
+checklistButton.addEventListener('click', showChecklist);
 
 function applyColors(config) {
 	const root = document.documentElement;
@@ -68,21 +103,23 @@ function showWebsite(site, index, button) {
 	}
 
 	views.forEach(candidate => candidate.classList.add('hidden'));
+	checklistView.classList.add('hidden');
+	checklistMessage.classList.add('hidden');
 	view.classList.remove('hidden');
 	buttonBar.querySelectorAll('button').forEach(candidate => candidate.classList.remove('active'));
 	button.classList.add('active');
-	status.textContent = site.label;
 }
 
 async function loadWebsites() {
 	try {
-		applyColors(await loadAppConfig());
+		appConfig = await loadAppConfig();
+		applyColors(appConfig);
+		updateChecklistButton();
 		const response = await fetch(CONFIG_URL, { cache: 'no-store' });
 		if (!response.ok) throw new Error(`HTTP ${response.status}`);
 		const websites = await response.json();
 		if (!Array.isArray(websites)) throw new Error('Configuration must be an array');
 
-		status.remove();
 		websites.slice(0, 3).forEach((site, index) => {
 			if (!site || typeof site.label !== 'string' || typeof site.url !== 'string') return;
 			const button = document.createElement('button');
@@ -98,7 +135,6 @@ async function loadWebsites() {
 		if (firstButton) firstButton.click();
 		else throw new Error('No valid websites configured');
 	} catch (error) {
-		status.textContent = `Could not load ${CONFIG_URL}`;
 		console.error(error);
 	}
 }

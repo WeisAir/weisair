@@ -21,6 +21,7 @@ Edit `app-config.json` before starting the app:
 - `xPlanePollIntervalMs`: interval for refreshing the aircraft name.
 - `xPlaneSshTunnel`: starts an SSH tunnel automatically when `enabled` is `true`. Configure `host`, `user`, ports, and an SSH `identityFile`. Key authentication is required because the tunnel runs without an interactive password prompt.
 - `aircraftMappings`: glob patterns and labels for aircraft paths. For example, `*/b738.acf` maps to `Boeing 737-800NG`.
+- `checklistMappings`: glob patterns and absolute PDF paths for aircraft checklists. For example, `*/b738.acf` can map to `/home/stephan/dev/xplane/weisair/docs/checklists/B737/Checklist B737.pdf`.
 
 The current recommended settings are:
 

@@ -22,8 +22,13 @@ function sendAirManagerStatus() {
 	}
 }
 
-function sendAircraftStatus(name) {
-	if (mainWindow && !mainWindow.isDestroyed()) mainWindow.webContents.send('aircraft-status', name);
+function sendAircraftStatus(pathValue) {
+	if (mainWindow && !mainWindow.isDestroyed()) {
+		mainWindow.webContents.send('aircraft-status', {
+			path: pathValue,
+			name: pathValue ? mapAircraftPath(pathValue) : 'X-Plane offline'
+		});
+	}
 }
 
 function startXPlaneTunnel() {
@@ -106,7 +111,7 @@ async function updateAircraftStatus() {
 		}
 		const result = await xPlaneRequest(`${baseUrl}/datarefs/${aircraftDatarefId}/value`);
 		const aircraftPath = decodeDatarefValue(result.data);
-		sendAircraftStatus(aircraftPath ? mapAircraftPath(aircraftPath) : 'Loading aircraft...');
+		sendAircraftStatus(aircraftPath || '');
 	} catch (error) {
 		aircraftDatarefId = undefined;
 		sendAircraftStatus('X-Plane offline');

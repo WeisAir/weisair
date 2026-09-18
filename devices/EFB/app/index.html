@@ -11,7 +11,12 @@
 		body { display: flex; background: #111827; font-family: system-ui, sans-serif; }
 		#website-area { position: relative; flex: 0 0 90%; width: 90%; height: 100%; background: white; }
 		webview { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: white; }
-		webview.hidden { display: none; }
+		.hidden { display: none !important; }
+		#checklist-view { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: white; }
+		#checklist-message {
+			position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+			padding: 24px; color: #374151; background: white; font-size: 24px; text-align: center;
+		}
 		#button-bar {
 			flex: 0 0 10%; width: 10%; min-width: 90px; padding: 10px;
 			display: flex; flex-direction: column; gap: 8px; overflow-y: auto;
@@ -48,12 +53,15 @@
 	</style>
 </head>
 <body>
-	<section id="website-area" aria-label="Website area"></section>
+	<section id="website-area" aria-label="Website area">
+		<webview id="checklist-view" class="hidden" partition="persist:efb-hub" title="Checklists"></webview>
+		<div id="checklist-message" class="hidden">Checklist not found or configured file path is invalid</div>
+	</section>
 	<nav id="button-bar" aria-label="Websites">
 		<img id="brand-logo" src="ressources/v1.png" alt="WESAIR">
 		<div id="logo-spacer"><div>EFB</div><div id="aircraft-name">X-Plane offline</div></div>
 		<div id="website-buttons"></div>
-		<div id="status">Loading websites...</div>
+		<button id="checklist-button" class="website-button" type="button">Checklists</button>
 		<button id="airmanager-toggle" type="button" aria-pressed="false">AirManager: OFF</button>
 		<button id="close-button" type="button" aria-label="Close application" title="Close application">EXIT</button>
 	</nav>

@@ -26,5 +26,8 @@
   "aircraftMappings": [
     { "pattern": "*/b738.acf", "label": "Boeing 737-800NG" },
     { "pattern": "*/A330.acf", "label": "AIRBUS A330" }
+  ],
+  "checklistMappings": [
+    { "pattern": "*/b738.acf", "pdf": "/home/stephan/dev/xplane/weisair/docs/checklists/B737/Checklist B737.pdf" }
   ]
 }
