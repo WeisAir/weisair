@@ -2,6 +2,7 @@
 /configs/fms_data_manager_backups
 /configs/flywithlua_scripts/
 /configs/preferences
+/devices/EFB/app/node_modules
 /docs/issues
 /junctions/Global Scenery/
 /junctions/screenshots/

@@ -1,0 +1,1 @@
+This folder contains custom profiles to be used in the [x-plane-streamdeck plugin](https://github.com/wortelus/xplane-streamdeck). The profiles are integrated via ln into the local working directory.

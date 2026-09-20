@@ -1,0 +1,33 @@
+{
+  "fullscreen": true,
+  "maximized": true,
+  "displayIndex": 0,
+  "hardwareAcceleration": true,
+  "gpuRasterization": true,
+  "unsafeSwiftShader": false,
+  "buttonAreaBackground": "#1f2937",
+  "activeButtonColor": "#2563eb",
+  "inactiveButtonColor": "#374151",
+  "buttonHeight": "80px",
+  "buttonFontSize": "24px",
+  "airManagerExecutable": "/home/stephan/Air Manager 5.2.7 Home use/Bootloader",
+  "airManagerExitSpacing": "16px",
+  "xPlaneApiBaseUrl": "http://127.0.0.1:8086/api/v3",
+  "xPlaneAircraftDataref": "sim/aircraft/view/acf_relative_path",
+  "xPlanePollIntervalMs": 1000,
+  "xPlaneSshTunnel": {
+    "enabled": true,
+    "host": "192.168.2.112",
+    "user": "stephan",
+    "localPort": 8086,
+    "remotePort": 8086,
+    "identityFile": "/home/stephan/.ssh/xplane_efb"
+  },
+  "aircraftMappings": [
+    { "pattern": "*/b738.acf", "label": "Boeing 737-800NG" },
+    { "pattern": "*/A330.acf", "label": "AIRBUS A330" }
+  ],
+  "checklistMappings": [
+    { "pattern": "*/b738.acf", "pdf": "/home/stephan/dev/xplane/weisair/docs/checklists/B737/Checklist B737.pdf" }
+  ]
+}
