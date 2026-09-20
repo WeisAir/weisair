@@ -248,7 +248,7 @@ Below I log learning nuggets that came up once I tried to achieve a 1:1 feature 
 |Component|Issues|Resolution|Workaround|
 |--------|------|-----------|---------|
 |X-Plane 12 Simulator Core| &#x2705; native installer - no issues | n.a.||
-|Navigraph Simlink Plugin| &#10060; No simlink plugin for Linux available | n.a.| Use LittleNavMap to get moving maps instead -> need to run ```sudo apt install qtwayland5```, then proceed with default installation|
+|Navigraph Simlink Plugin| &#10060; No simlink plugin for Linux available | Some Hope: [Sim Tools for Linux](https://forums.x-plane.org/forums/topic/347895-simlink-navigraph-for-linux-basic-airac-updater/?page=1) -> I applied for testing| Use LittleNavMap to get moving maps instead -> need to run ```sudo apt install qtwayland5```, then proceed with default installation|
 |Saitek Rudder Pedals|X-Plane does not recognize them by default|run the following commands: <ul><li>```lsusb```<li>```sudo nano /etc/udev/rules.d/10-saitek-rudder.rules```<li>add ```SUBSYSTEM=="hidraw", ATTRS{idVendor}=="06a3", ATTRS{idProduct}=="0763", TAG+="uaccess"```<li>```sudo udevadm control --reload-rules```<li>```sudo udevadm trigger```</ul>||
 |Touch Screen Support|My External Waveshare Touch screen is not recognized|Follow instructions on [this website](https://www.gechic.com/en/knowledge-base-2/linux-touch-screen-settings/)
 |Arcaze USB Device | Flywithlua could not read from Device | run the following commands: <ul><li>```lsusb```<li>```sudo nano /etc/udev/rules.d/99-arcaze.rules```<li>add ```KERNEL=="hidraw*", ATTRS{idVendor}=="1690", ATTRS{idProduct}=="fe13", MODE="0666", TAG+="uaccess"```<li>```sudo udevadm control --reload-rules```<li>```sudo udevadm trigger```</ul>||
