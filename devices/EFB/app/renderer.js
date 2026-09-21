@@ -10,6 +10,7 @@ const logoSpacer = document.getElementById('logo-spacer');
 const aircraftName = document.getElementById('aircraft-name');
 const closeButton = document.getElementById('close-button');
 const airManagerToggle = document.getElementById('airmanager-toggle');
+const streamDeckToggle = document.getElementById('streamdeck-toggle');
 const views = [];
 let appConfig;
 let currentAircraftPath = '';
@@ -23,10 +24,16 @@ window.addEventListener('resize', matchLogoSpacer);
 
 closeButton.addEventListener('click', () => window.efb.closeApp());
 airManagerToggle.addEventListener('click', () => window.efb.toggleAirManager());
+streamDeckToggle.addEventListener('click', () => window.efb.toggleStreamDeck());
 window.efb.onAirManagerStatus(running => {
 	airManagerToggle.classList.toggle('running', running);
 	airManagerToggle.setAttribute('aria-pressed', String(running));
 	airManagerToggle.textContent = `AirManager: ${running ? 'ON' : 'OFF'}`;
+});
+window.efb.onStreamDeckStatus(running => {
+	streamDeckToggle.classList.toggle('running', running);
+	streamDeckToggle.setAttribute('aria-pressed', String(running));
+	streamDeckToggle.textContent = `StreamDeck: ${running ? 'ON' : 'OFF'}`;
 });
 window.efb.onAircraftStatus(aircraft => {
 	currentAircraftPath = aircraft.path || '';
@@ -131,7 +138,7 @@ async function loadWebsites() {
 			websiteButtons.appendChild(button);
 		});
 
-		const firstButton = buttonBar.querySelector('.website-button');
+		const firstButton = websiteButtons.querySelector('.website-button');
 		if (firstButton) firstButton.click();
 		else throw new Error('No valid websites configured');
 	} catch (error) {

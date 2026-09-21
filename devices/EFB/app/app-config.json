@@ -23,8 +23,17 @@
     "remotePort": 8086,
     "identityFile": "/home/stephan/.ssh/xplane_efb"
   },
+  "streamDeckPython": "/home/stephan/dev/xplane/xplane-streamdeck-master/venv/bin/python",
+  "streamDeckStartScript": "/home/stephan/dev/xplane/xplane-streamdeck-master/start.py",
+  "streamDeckProfilesPath": "/home/stephan/dev/xplane/weisair/devices/streamdeck/xplane-streamdeck-profiles",
+  "streamDeckConfigPath": "/home/stephan/dev/xplane/xplane-streamdeck-master/config.yaml",
+  "streamDeckMappings": [
+    { "pattern": "*/b738.acf", "preset": "WeisAir_B738" },
+    { "pattern": "*/Baron_58.acf", "preset": "WeisAir_B58" }
+  ],
   "aircraftMappings": [
     { "pattern": "*/b738.acf", "label": "Boeing 737-800NG" },
+    { "pattern": "*/Baron_58.acf", "label": "Beechcraft Baron 58" },
     { "pattern": "*/A330.acf", "label": "AIRBUS A330" }
   ],
   "checklistMappings": [

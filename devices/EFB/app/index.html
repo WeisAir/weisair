@@ -46,8 +46,10 @@
 		}
 		button:hover, button.active { background: var(--active-button-color, #2563eb); border-color: #60a5fa; }
 		#status { margin: auto 2px 0; color: #9ca3af; font-size: 11px; text-align: center; }
-		#airmanager-toggle { margin-top: auto; }
+		#streamdeck-toggle { margin-top: auto; }
+		#airmanager-toggle { margin-top: 0; }
 		#airmanager-toggle.running { background: var(--active-button-color, #2563eb); }
+		#streamdeck-toggle.running { background: var(--active-button-color, #2563eb); }
 		#close-button { margin-top: auto; padding: 8px; font-size: 24px; line-height: 1; text-align: center; }
 		#close-button { margin-top: var(--airmanager-exit-spacing, 8px); }
 	</style>
@@ -62,6 +64,7 @@
 		<div id="logo-spacer"><div>EFB</div><div id="aircraft-name">X-Plane offline</div></div>
 		<div id="website-buttons"></div>
 		<button id="checklist-button" class="website-button" type="button">Checklists</button>
+		<button id="streamdeck-toggle" type="button" aria-pressed="false">StreamDeck: OFF</button>
 		<button id="airmanager-toggle" type="button" aria-pressed="false">AirManager: OFF</button>
 		<button id="close-button" type="button" aria-label="Close application" title="Close application">EXIT</button>
 	</nav>

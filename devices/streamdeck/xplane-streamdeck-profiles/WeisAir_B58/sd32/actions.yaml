@@ -1,0 +1,243 @@
+actions:
+  - index: 0
+    name: aircraft label
+    type: single
+    icon: plane_identifier
+    command: sim/none/none
+    special-labels:
+      - label: Beechcraft
+        text-center:
+          x: center
+          y: 30
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+      - label: Baron 58
+        text-center:
+          x: center
+          y: 50
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 16
+    name: land lights
+    type: single
+    file-names:
+      - generic_toggle_2pos_off
+      - generic_toggle_2pos_on
+    dataref: sim/cockpit2/switches/generic_lights_switch[0]
+    command: laminar/B738/switch/wing_light_toggle
+    special-labels:
+      - label: LAND
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 17
+    name: rwto lights
+    type: single
+    file-names:
+      - generic_toggle_2pos_off
+      - generic_toggle_2pos_on
+    dataref: sim/cockpit2/switches/generic_lights_switch[0]
+    command: laminar/B738/switch/wing_light_toggle
+    special-labels:
+      - label: RTWO
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 18
+    name: taxi lights
+    type: single
+    file-names:
+      - generic_toggle_2pos_off
+      - generic_toggle_2pos_on
+    dataref: sim/cockpit2/switches/generic_lights_switch[0]
+    command: laminar/B738/switch/wing_light_toggle
+    special-labels:
+      - label: TAXI
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 19
+    name: logo lights
+    type: single
+    file-names:
+      - generic_toggle_2pos_off
+      - generic_toggle_2pos_on
+    dataref: sim/cockpit2/switches/generic_lights_switch[0]
+    command: laminar/B738/switch/wing_light_toggle
+    special-labels:
+      - label: LOGO
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 20
+    name: position lights
+    type: single
+    file-names:
+      - generic_toggle_2pos_off
+      - generic_toggle_2pos_on
+    dataref: sim/cockpit2/switches/generic_lights_switch[0]
+    command: laminar/B738/switch/wing_light_toggle
+    special-labels:
+      - label: POS
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 21
+    name: anti-collision lights
+    type: single
+    file-names:
+      - generic_toggle_2pos_off
+      - generic_toggle_2pos_on
+    dataref: sim/cockpit2/switches/generic_lights_switch[0]
+    command: laminar/B738/switch/wing_light_toggle
+    special-labels:
+      - label: ANTI COL
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 22
+    name: wing lights
+    type: single
+    file-names:
+      - generic_toggle_2pos_off
+      - generic_toggle_2pos_on
+    dataref: sim/cockpit2/switches/generic_lights_switch[0]
+    command: laminar/B738/switch/wing_light_toggle
+    special-labels:
+      - label: WING
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 23
+    name: wheel well lights
+    type: single
+    file-names:
+      - generic_toggle_2pos_off
+      - generic_toggle_2pos_on
+    dataref: sim/cockpit2/switches/generic_lights_switch[0]
+    command: laminar/B738/switch/wing_light_toggle
+    special-labels:
+      - label: W-WELL
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+        
+  - index: 27
+    name: doors
+    type: dir
+    icon: folder
+    special-labels:
+      - label: DOORS
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 28
+    name: plan pushback
+    type: single
+    command: laminar/B738/switch/wing_light_toggle
+    icon: button
+    special-labels:
+      - label: Plan
+        text-center:
+          x: center
+          y: 45
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: yellow
+        direction: ltr
+        align: center
+      - label: Pushback
+        text-center:
+          x: center
+          y: 65
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: yellow
+        direction: ltr
+        align: center
+
+  - index: 29
+    name: plan pushback
+    type: single
+    command: laminar/B738/switch/wing_light_toggle
+    icon: button
+    special-labels:
+      - label: Start
+        text-center:
+          x: center
+          y: 45
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: green
+        direction: ltr
+        align: center
+      - label: Pushback
+        text-center:
+          x: center
+          y: 65
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: green
+        direction: ltr
+        align: center

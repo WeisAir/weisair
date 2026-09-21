@@ -22,6 +22,11 @@ Edit `app-config.json` before starting the app:
 - `xPlaneSshTunnel`: starts an SSH tunnel automatically when `enabled` is `true`. Configure `host`, `user`, ports, and an SSH `identityFile`. Key authentication is required because the tunnel runs without an interactive password prompt.
 - `aircraftMappings`: glob patterns and labels for aircraft paths. For example, `*/b738.acf` maps to `Boeing 737-800NG`.
 - `checklistMappings`: glob patterns and absolute PDF paths for aircraft checklists. For example, `*/b738.acf` can map to `/home/stephan/dev/xplane/weisair/docs/checklists/B737/Checklist B737.pdf`.
+- `streamDeckPython`: Python executable used to run StreamDeck. Use the virtual-environment interpreter when dependencies such as `pyxpudpserver` are installed there.
+- `streamDeckStartScript`: configurable path to `start.py`.
+- `streamDeckProfilesPath`: working directory containing aircraft-specific StreamDeck profiles.
+- `streamDeckConfigPath`: path to the StreamDeck `config.yaml` whose `active-preset` is updated.
+- `streamDeckMappings`: glob patterns mapping aircraft `.acf` paths to preset directory names.
 
 The current recommended settings are:
 

@@ -15,6 +15,8 @@ let airManagerProcess;
 let aircraftDatarefId;
 let aircraftPollTimer;
 let xPlaneTunnelProcess;
+let latestAircraftPath = '';
+let streamDeckProcess;
 
 function sendAirManagerStatus() {
 	if (mainWindow && !mainWindow.isDestroyed()) {
@@ -23,12 +25,17 @@ function sendAirManagerStatus() {
 }
 
 function sendAircraftStatus(pathValue) {
+	latestAircraftPath = pathValue;
 	if (mainWindow && !mainWindow.isDestroyed()) {
 		mainWindow.webContents.send('aircraft-status', {
 			path: pathValue,
 			name: pathValue ? mapAircraftPath(pathValue) : 'X-Plane offline'
 		});
 	}
+}
+
+function sendStreamDeckStatus(running) {
+	if (mainWindow && !mainWindow.isDestroyed()) mainWindow.webContents.send('streamdeck-status', running);
 }
 
 function startXPlaneTunnel() {
@@ -82,6 +89,107 @@ function mapAircraftPath(aircraftPath) {
 	const mappings = Array.isArray(appConfig.aircraftMappings) ? appConfig.aircraftMappings : [];
 	const mapping = mappings.find(entry => entry && typeof entry.pattern === 'string' && typeof entry.label === 'string' && globMatches(entry.pattern, aircraftPath));
 	return mapping ? mapping.label : aircraftPath.split('/').pop() || 'Unknown aircraft';
+}
+
+function streamDeckPresetForAircraft(aircraftPath) {
+	const mappings = Array.isArray(appConfig.streamDeckMappings) ? appConfig.streamDeckMappings : [];
+	return mappings.find(entry => entry && typeof entry.pattern === 'string' && typeof entry.preset === 'string' && globMatches(entry.pattern, aircraftPath));
+}
+
+function streamDeckGroupIsRunning() {
+	if (!streamDeckProcess || !streamDeckProcess.pid) return false;
+	try {
+		process.kill(-streamDeckProcess.pid, 0);
+		return true;
+	} catch {
+		return false;
+	}
+}
+
+function updateStreamDeckPreset(configPath, preset) {
+	const yaml = fs.readFileSync(configPath, 'utf8');
+	const lines = yaml.split(/(\r?\n)/);
+	let updated = false;
+	for (let index = 0; index < lines.length; index += 2) {
+		if (/^\s*active-preset\s*:/.test(lines[index])) {
+			const indentation = lines[index].match(/^\s*/)[0];
+			lines[index] = `${indentation}active-preset: ${preset}`;
+			updated = true;
+			break;
+		}
+	}
+	if (!updated) throw new Error(`active-preset was not found in ${configPath}`);
+	const updatedYaml = lines.join('');
+	fs.writeFileSync(configPath, updatedYaml, 'utf8');
+}
+
+function toggleStreamDeck() {
+	if (streamDeckProcess) {
+		if (streamDeckGroupIsRunning()) {
+			try {
+				process.kill(-streamDeckProcess.pid, 'SIGTERM');
+			} catch (error) {
+				console.error('Could not stop StreamDeck:', error);
+			}
+		}
+		streamDeckProcess = null;
+		sendStreamDeckStatus(false);
+		return;
+	}
+
+	const configPath = appConfig.streamDeckConfigPath;
+	const profilesPath = appConfig.streamDeckProfilesPath;
+	const startScript = appConfig.streamDeckStartScript;
+	const mapping = streamDeckPresetForAircraft(latestAircraftPath);
+	if (!mapping) {
+		console.error(`No StreamDeck preset is configured for aircraft: ${latestAircraftPath || 'unknown'}`);
+		sendStreamDeckStatus(false);
+		return;
+	}
+	if (![configPath, profilesPath, startScript].every(value => typeof value === 'string' && value.length > 0)) {
+		console.error('StreamDeck paths are not fully configured.');
+		sendStreamDeckStatus(false);
+		return;
+	}
+	if (!fs.existsSync(configPath) || !fs.existsSync(profilesPath) || !fs.existsSync(startScript)) {
+		console.error('A configured StreamDeck path does not exist.');
+		sendStreamDeckStatus(false);
+		return;
+	}
+	if (!fs.existsSync(path.join(profilesPath, mapping.preset))) {
+		console.error(`StreamDeck preset directory does not exist: ${mapping.preset}`);
+		sendStreamDeckStatus(false);
+		return;
+	}
+
+	try {
+		updateStreamDeckPreset(configPath, mapping.preset);
+	} catch (error) {
+		console.error('Could not update StreamDeck active-preset:', error.message);
+		sendStreamDeckStatus(false);
+		return;
+	}
+
+	const python = appConfig.streamDeckPython || 'python3';
+	const child = spawn(python, [startScript], {
+		cwd: path.dirname(startScript),
+		stdio: 'ignore',
+		detached: true
+	});
+	streamDeckProcess = child;
+	sendStreamDeckStatus(true);
+	child.once('error', error => {
+		console.error('Could not start StreamDeck:', error.message);
+		if (streamDeckProcess === child) streamDeckProcess = null;
+		sendStreamDeckStatus(false);
+	});
+	child.once('exit', () => {
+		if (streamDeckProcess === child && !streamDeckGroupIsRunning()) {
+			streamDeckProcess = null;
+			sendStreamDeckStatus(false);
+		}
+	});
+	child.unref();
 }
 
 function decodeDatarefValue(value) {
@@ -234,6 +342,7 @@ app.whenReady().then(() => {
 	session.fromPartition('persist:efb-hub');
 	ipcMain.on('close-app', () => app.quit());
 	ipcMain.on('toggle-airmanager', toggleAirManager);
+	ipcMain.on('toggle-streamdeck', toggleStreamDeck);
 	startXPlaneTunnel();
 	createWindow();
 	app.on('activate', () => {
@@ -250,4 +359,5 @@ app.on('window-all-closed', () => {
 app.on('before-quit', () => {
 	if (aircraftPollTimer) clearInterval(aircraftPollTimer);
 	stopXPlaneTunnel();
+	if (streamDeckProcess && streamDeckGroupIsRunning()) process.kill(-streamDeckProcess.pid, 'SIGTERM');
 });
