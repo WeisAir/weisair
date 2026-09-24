@@ -252,7 +252,12 @@ Below I log learning nuggets that came up once I tried to achieve a 1:1 feature 
 |Saitek Rudder Pedals|X-Plane does not recognize them by default|run the following commands: <ul><li>```lsusb```<li>```sudo nano /etc/udev/rules.d/10-saitek-rudder.rules```<li>add ```SUBSYSTEM=="hidraw", ATTRS{idVendor}=="06a3", ATTRS{idProduct}=="0763", TAG+="uaccess"```<li>```sudo udevadm control --reload-rules```<li>```sudo udevadm trigger```</ul>||
 |Touch Screen Support|My External Waveshare Touch screen is not recognized|Follow instructions on [this website](https://www.gechic.com/en/knowledge-base-2/linux-touch-screen-settings/)
 |Arcaze USB Device | Flywithlua could not read from Device | run the following commands: <ul><li>```lsusb```<li>```sudo nano /etc/udev/rules.d/99-arcaze.rules```<li>add ```KERNEL=="hidraw*", ATTRS{idVendor}=="1690", ATTRS{idProduct}=="fe13", MODE="0666", TAG+="uaccess"```<li>```sudo udevadm control --reload-rules```<li>```sudo udevadm trigger```</ul>||
-|FlyWithLua Plugin|Plugin is not loaded by X-Plane 12| run the following commands <ul><li>```sudo apt install -y libglut3.12 libopenal1```<li>```sudo ln -s /usr/lib/x86_64-linux-gnu/libglut.so.3.12.0 /usr/lib/x86_64-linux-gnu/libglut.so.3```
+|FlyWithLua Plugin|Plugin is not loaded by X-Plane 12| run the following commands <ul><li>```sudo apt install -y libglut3.12 libopenal1```<li>```sudo ln -s /usr/lib/x86_64-linux-gnu/libglut.so.3.12.0 /usr/lib/x86_64-linux-gnu/libglut.so.3```|
+|RealOps Plugin | &#10060; Not available for Linux | n.a.|
+|Simhaptic Plugin | &#10060; Not available for Linux | n.a.|
+|Traffic Global Plugin | &#10060; Not available for Linux | World Traffic Plugin (€), but probably LiveTraffic is something I will prefer over AI Traffic|
+|xjet Plugin (Airfoillabs) | &#10060; Not available for Linux | Workaround is described [here](https://forums.x-plane.org/forums/topic/341138-does-not-work-on-linux-and-i-do-not-want-to-have-a-plugin-installed/) but not sure whether I want that because I was not 100% happy with the AFL C172NG at all|
+
 
 
 

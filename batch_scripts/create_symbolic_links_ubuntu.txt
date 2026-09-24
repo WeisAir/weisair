@@ -1,0 +1,82 @@
+#FD Alps UHD
+for dir in /media/stephan/XPLANE_SCENERY/5_High_Prio_Scenery/FD_AlpsUHD/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+
+#FD Dolomites
+for dir in /media/stephan/XPLANE_SCENERY/5_High_Prio_Scenery/FD_Dolomites/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+
+#FD Everest Park
+for dir in /media/stephan/XPLANE_SCENERY/5_High_Prio_Scenery/FD_EverestPark/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+
+#Madeira
+for dir in /media/stephan/XPLANE_SCENERY/5_High_Prio_Scenery/Madeira/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+
+#OrbX TEGB Central
+for dir in /media/stephan/XPLANE_SCENERY/5_High_Prio_Scenery/Orbx/xp12/TrueEarth\ Great\ Britain\ Central/Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+
+#OrbX TEGB North
+for dir in /media/stephan/XPLANE_SCENERY/5_High_Prio_Scenery/Orbx/xp12/TrueEarth\ Great\ Britain\ North/Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+
+#OrbX TEGB South
+for dir in /media/stephan/XPLANE_SCENERY/5_High_Prio_Scenery/Orbx/xp12/TrueEarth\ Great\ Britain\ South/Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+
+#SFD Munich
+for dir in /media/stephan/XPLANE_SCENERY/5_High_Prio_Scenery/SFD_Munich/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+
+#SimHeaven X-World
+for dir in /media/stephan/XPLANE_SCENERY/4_VFR/SimHeaven/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+#SimHeaven X-WOrld -> link x-plane12 trees for vegetation library
+ln -sf ~/X-Plane\ 12/Resources/default\ scenery/1200\ forests/ /media/stephan/XPLANE_SCENERY/4_VFR/SimHeaven/simHeaven_X-World_Vegetation_Library/
+
+#GK VFR Objects
+for dir in /media/stephan/XPLANE_SCENERY/4_VFR/GK/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+
+#Libraries
+for dir in /media/stephan/XPLANE_SCENERY/0_LIBS_Curated_XP12/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+
+#OrbX Librares
+for dir in /media/stephan/XPLANE_SCENERY/0_LIBS/OrbX/xp11/Orbx\ Libraries/Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+for dir in /media/stephan/XPLANE_SCENERY/0_LIBS/OrbX/xp12/Orbx\ Libraries/Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+
+#curated Airports
+for dir in /media/stephan/XPLANE_SCENERY/3_ARPT/curated_xp12/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+
+#ORBX EDDB
+for dir in /media/stephan/XPLANE_SCENERY/3_ARPT/OrbX/xp12/EDDB\ Berlin\ Brandenburg\ Airport/Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+
+#ORBX EGLC
+for dir in /media/stephan/XPLANE_SCENERY/3_ARPT/OrbX/xp12/EGLC\ London\ City\ Airport/Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+
+#ORBX DrzewickiDesign Polish Airports
+for dir in /media/stephan/XPLANE_SCENERY/3_ARPT/OrbX/xp11/Drzewiecki\ Design\ Polish\ Airports\ Volume\ 1\ -\ \ X-Plane\ 11/Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+for dir in /media/stephan/XPLANE_SCENERY/3_ARPT/OrbX/xp11/Drzewiecki\ Design\ Polish\ Airports\ Volume\ 3\ -\ \ X-Plane\ 11/Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+for dir in /media/stephan/XPLANE_SCENERY/3_ARPT/OrbX/xp11/EPKK\ John\ Paul\ II\ International\ Airport/Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+
+#ORBX Misc Airports
+for dir in /media/stephan/XPLANE_SCENERY/3_ARPT/OrbX/xp11/EG20\ Clench\ Common\ Field/Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+for dir in /media/stephan/XPLANE_SCENERY/3_ARPT/OrbX/xp11/EG41\ Fishburn\ Airfield/Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+for dir in /media/stephan/XPLANE_SCENERY/3_ARPT/OrbX/xp11/EGHP\ Popham\ Airfield/Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+for dir in /media/stephan/XPLANE_SCENERY/3_ARPT/OrbX/xp11/EGNM\ Leeds\ Bradford\ Airport/Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+for dir in /media/stephan/XPLANE_SCENERY/3_ARPT/OrbX/xp11/ENHA\ Hamar\ Stafsberg/Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+for dir in /media/stephan/XPLANE_SCENERY/3_ARPT/OrbX/xp11/ENOV\ Ørsta-Volda\ Airport/Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+for dir in /media/stephan/XPLANE_SCENERY/3_ARPT/OrbX/xp11/L52\ Oceano\ County\ Airport/Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+for dir in /media/stephan/XPLANE_SCENERY/3_ARPT/OrbX/xp11/LFLJ\ Courchevel\ Airport/Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+
+#Maps2XPlane Svalbard
+for dir in /media/stephan/XPLANE_SCENERY/Aerosoft\ One\ Library/Add-ons/xp12-df48-AS14269/gameDirectory~Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+
+#Maps2XPlane Faroe
+for dir in /media/stephan/XPLANE_SCENERY/Aerosoft\ One\ Library/Add-ons/xp12-df48-AS14530/gameDirectory~Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+
+#Maps2XPlane Seychelles
+for dir in /media/stephan/XPLANE_SCENERY/Aerosoft\ One\ Library/Add-ons/xp12-df48-AS14891/gameDirectory~Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+
+#Maps2XPlane Society Islands
+for dir in /media/stephan/XPLANE_SCENERY/Aerosoft\ One\ Library/Add-ons/xp12-df48-AS15264/gameDirectory~Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+for dir in /media/stephan/XPLANE_SCENERY/Aerosoft\ One\ Library/Add-ons/xp12-df48-AS16217/gameDirectory~Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+
+
+-----------------
+
+Aircrafts
+
+ln -s /media/stephan/XPLANE_SCENERY/Aircraft/ /home/stephan/X-Plane\ 12/Aircraft
