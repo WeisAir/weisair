@@ -117,6 +117,38 @@ function showWebsite(site, index, button) {
 	button.classList.add('active');
 }
 
+function refreshShownWebsite() {
+	const view = views.find(candidate => !candidate.classList.contains('hidden'));
+	if (view) view.reloadIgnoringCache();
+}
+
+function bindWebsiteButton(button, site, index) {
+	let longPressTimer;
+	let longPressTriggered = false;
+	const longPressMs = Number.isFinite(appConfig.websiteLongPressMs) && appConfig.websiteLongPressMs > 0
+		? appConfig.websiteLongPressMs
+		: 1000;
+
+	button.addEventListener('pointerdown', () => {
+		longPressTriggered = false;
+		longPressTimer = setTimeout(() => {
+			longPressTriggered = true;
+			refreshShownWebsite();
+		}, longPressMs);
+	});
+	const cancelLongPress = () => clearTimeout(longPressTimer);
+	button.addEventListener('pointerup', cancelLongPress);
+	button.addEventListener('pointercancel', cancelLongPress);
+	button.addEventListener('pointerleave', cancelLongPress);
+	button.addEventListener('click', () => {
+		if (longPressTriggered) {
+			longPressTriggered = false;
+			return;
+		}
+		showWebsite(site, index, button);
+	});
+}
+
 async function loadWebsites() {
 	try {
 		appConfig = await loadAppConfig();
@@ -134,7 +166,7 @@ async function loadWebsites() {
 			button.className = 'website-button';
 			button.textContent = site.label;
 			button.title = site.url;
-			button.addEventListener('click', () => showWebsite(site, index, button));
+			bindWebsiteButton(button, site, index);
 			websiteButtons.appendChild(button);
 		});
 
