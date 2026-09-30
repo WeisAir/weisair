@@ -13,3 +13,396 @@ actions:
         color: white
         direction: ltr
         align: center
+  
+  - index: 9
+    name: at_arm
+    type: single
+    file-names:
+      - switch_off
+      - switch_on
+    dataref: laminar/B738/autopilot/autothrottle_arm_pos
+    command: laminar/B738/autopilot/autothrottle_arm_toggle
+    special-labels:
+      - label: AT/ARM
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 10
+    name: n1
+    type: single
+    file-names:
+      - mcp_button_inactive
+      - mcp_button_active_green
+    dataref: laminar/B738/autopilot/n1_status1
+    command: laminar/B738/autopilot/n1_press
+    special-labels:
+      - label: N1
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 11
+    name: vnav
+    type: single
+    file-names:
+      - mcp_button_inactive
+      - mcp_button_active_green
+    dataref: laminar/B738/autopilot/vnav_status1
+    command: laminar/B738/autopilot/vnav_press
+    special-labels:
+      - label: VNAV
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 12
+    name: lnav
+    type: single
+    file-names:
+      - mcp_button_inactive
+      - mcp_button_active_green
+    dataref: laminar/B738/autopilot/lnav_status
+    command: laminar/B738/autopilot/lnav_press
+    special-labels:
+      - label: LNAV
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+  
+  - index: 13
+    name: cmd_a
+    type: single
+    file-names:
+      - mcp_button_inactive
+      - mcp_button_active_green
+    dataref: laminar/B738/autopilot/cmd_a_status
+    command: laminar/B738/autopilot/cmd_a_press
+    special-labels:
+      - label: CMD A
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+  
+  - index: 14
+    name: cmd_b
+    type: single
+    file-names:
+      - mcp_button_inactive
+      - mcp_button_active_green
+    dataref: laminar/B738/autopilot/cmd_b_status
+    command: laminar/B738/autopilot/cmd_b_press
+    special-labels:
+      - label: CMD B
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+  
+  - index: 16
+    name: autobrake
+    type: single
+    file-names:
+      - auto_brake_rto
+      - auto_brake_1
+      - auto_brake_2
+      - auto_brake_3
+      - auto_brake_4
+      - auto_brake_max
+    dataref: laminar/B738/autobrake/autobrake_pos
+        dataref-states:
+      - 0.0
+      - 1.0
+      - 2.0
+      - 3.0
+      - 4.0
+      - 5.0
+    command: WeisAIR/b738/b738_autobrake_pos_toggle
+    special-labels:
+      - label: AUTO
+        text-center:
+          x: center
+          y: 0
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+      - label: BRAKE
+        text-center:
+          x: center
+          y: 20
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 17
+    name: alt_intv
+    type: single
+    icon: button
+    command: laminar/B738/autopilot/alt_interv
+    special-labels:
+      - label: ALT
+        text-center:
+          x: center
+          y: 0
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 45
+        color: white
+        direction: ltr
+        align: center
+      - label: INTV
+        text-center:
+          x: center
+          y: 0
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 65
+        color: white
+        direction: ltr
+        align: center
+      
+  - index: 18
+    name: speed
+    type: single
+    file-names:
+      - mcp_button_inactive
+      - mcp_button_active_green
+    dataref: laminar/B738/autopilot/speed_status1
+    command: laminar/B738/autopilot/speed_press
+    special-labels:
+      - label: SPEED
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+  
+  - index: 19
+    name: lvl_chg
+    type: single
+    file-names:
+      - mcp_button_inactive
+      - mcp_button_active_green
+    dataref: laminar/B738/autopilot/lvl_chg_status
+    command: laminar/B738/autopilot/lvl_chg_press
+    special-labels:
+      - label: LVL CHG
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+  
+  - index: 20
+    name: vor_loc
+    type: single
+    file-names:
+      - mcp_button_inactive
+      - mcp_button_active_green
+    dataref: laminar/B738/autopilot/vorloc_status
+    command: laminar/B738/autopilot/vorloc_press
+    special-labels:
+      - label: VOR LOC
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+  
+  - index: 21
+    name: cws_a
+    type: single
+    file-names:
+      - mcp_button_inactive
+      - mcp_button_active_green
+    dataref: laminar/B738/autopilot/cws_a_status
+    command: laminar/B738/autopilot/cws_a_press
+    special-labels:
+      - label: CWS A
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+  
+  - index: 22
+    name: cws_b
+    type: single
+    file-names:
+      - mcp_button_inactive
+      - mcp_button_active_green
+    dataref: laminar/B738/autopilot/cws_b_status
+    command: laminar/B738/autopilot/cws_b_press
+    special-labels:
+      - label: CWS B
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+  
+  - index: 25
+    name: fd
+    type: single
+    file-names:
+      - switch_off
+      - switch_on
+    dataref: laminar/B738/autopilot/flight_direct_on
+    command: WeisAIR/b738/fd_toggle_both
+    special-labels:
+      - label: F/D
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 26
+    name: spd_intv
+    type: single
+    icon: button
+    command: laminar/B738/autopilot/spd_interv
+    special-labels:
+      - label: SPD
+        text-center:
+          x: center
+          y: 0
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 45
+        color: white
+        direction: ltr
+        align: center
+      - label: INTV
+        text-center:
+          x: center
+          y: 0
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 65
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 27
+    name: hdg_sel
+    type: single
+    file-names:
+      - mcp_button_inactive
+      - mcp_button_active_green
+    dataref: laminar/B738/autopilot/hdg_sel_status
+    command: laminar/B738/autopilot/hdg_sel_press
+    special-labels:
+      - label: HDG SEL
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 28
+    name: app
+    type: single
+    file-names:
+      - mcp_button_inactive
+      - mcp_button_active_green
+    dataref: laminar/B738/autopilot/app_status
+    command: laminar/B738/autopilot/app_press
+    special-labels:
+      - label: APP
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+  
+  - index: 29
+    name: alt_hld
+    type: single
+    file-names:
+      - mcp_button_inactive
+      - mcp_button_active_green
+    dataref: laminar/B738/autopilot/alt_hld_status
+    command: laminar/B738/autopilot/alt_hld_press
+    special-labels:
+      - label: ALT HLD
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 30
+    name: vs
+    type: single
+    file-names:
+      - mcp_button_inactive
+      - mcp_button_active_green
+    dataref: laminar/B738/autopilot/vs_status
+    command: laminar/B738/autopilot/vs_press
+    special-labels:
+      - label: V/S
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center

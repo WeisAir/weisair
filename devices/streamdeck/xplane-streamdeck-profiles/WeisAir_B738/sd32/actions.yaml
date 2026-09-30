@@ -167,8 +167,20 @@ actions:
         direction: ltr
         align: center
 
-
-
+  - index: 10
+    name: efis
+    type: dir
+    icon: folder
+    special-labels:
+      - label: EFIS
+        text-center:
+          x: center
+          y: bottom
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
 
   - index: 16
     name: land lights
@@ -322,6 +334,68 @@ actions:
         direction: ltr
         align: center
 
+  - index: 24
+    name: connect_gpu
+    type: single
+    file-names:
+      - gpu_inactive
+      - gpu_active
+    dataref: laminar/B738/gpu_available
+    command: laminar/B738/gpu_toggle
+    special-labels:
+      - label: Connect
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+      - label: GPU
+        text-center:
+          x: center
+          y: 48
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+  
+  - index: 25
+    name: gnd_object
+    type: single
+    file-names:
+      - chocks_inactive
+      - chocks_active
+    dataref: laminar/B738/fms/chock_status
+    command: laminar/B738/toggle_switch/chock
+    special-labels:
+      - label: GND OBJ
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 26
+    name: flashlight
+    type: single
+    icon: flashlight
+    command: sim/view/flashlight_wht
+    special-labels:
+      - label: Cockpit
+        text-center:
+          x: center
+          y: 0
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
         
   - index: 27
     name: doors
@@ -385,5 +459,20 @@ actions:
         font-path: IBMPlexMono-Bold.ttf
         font-size: 16
         color: green
+        direction: ltr
+        align: center
+
+  - index: 31
+    name: env
+    type: dir
+    icon: vfr_few
+    special-labels:
+      - label: ENV
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
         direction: ltr
         align: center
