@@ -257,6 +257,8 @@ Below I log learning nuggets that came up once I tried to achieve a 1:1 feature 
 |Simhaptic Plugin | &#10060; Not available for Linux | n.a.|
 |Traffic Global Plugin | &#10060; Not available for Linux | World Traffic Plugin (€), but probably LiveTraffic is something I will prefer over AI Traffic|
 |xjet Plugin (Airfoillabs) | &#10060; Not available for Linux | Workaround is described [here](https://forums.x-plane.org/forums/topic/341138-does-not-work-on-linux-and-i-do-not-want-to-have-a-plugin-installed/) but not sure whether I want that because I was not 100% happy with the AFL C172NG at all|
+|Simbrief Downloader | &#10060; Not available for Linux | use [SimbriefPyDownloader](https://github.com/clumsynick/SimBriefPyDownloader) instead. Included Binary won't run, use the included python script instead. AIRAC Zip files have to be downloaded manually from [Navigraph](https://navigraph.com/downloads) -> maybe an automated selenium script could do that job
+
 
 
 
