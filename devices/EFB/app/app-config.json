@@ -10,6 +10,7 @@
   "inactiveButtonColor": "#374151",
   "buttonHeight": "80px",
   "buttonFontSize": "24px",
+  "websiteLongPressMs": 1000,
   "airManagerExecutable": "/home/stephan/Air Manager 5.2.7 Home use/Bootloader",
   "airManagerExitSpacing": "16px",
   "xPlaneApiBaseUrl": "http://127.0.0.1:8086/api/v3",
