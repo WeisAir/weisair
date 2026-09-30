@@ -33,7 +33,7 @@ actions:
       - label: Cockpit
         text-center:
           x: center
-          y: 0
+          y: 10
         font-path: IBMPlexMono-Bold.ttf
         font-size: 16
         color: white
@@ -49,7 +49,7 @@ actions:
       - label: External
         text-center:
           x: center
-          y: 0
+          y: 10
         font-path: IBMPlexMono-Bold.ttf
         font-size: 16
         color: white
@@ -65,7 +65,7 @@ actions:
       - label: OVHD
         text-center:
           x: center
-          y: 0
+          y: 10
         font-path: IBMPlexMono-Bold.ttf
         font-size: 16
         color: white
@@ -81,7 +81,7 @@ actions:
       - label: FMC
         text-center:
           x: center
-          y: 0
+          y: 10
         font-path: IBMPlexMono-Bold.ttf
         font-size: 16
         color: white
@@ -97,7 +97,7 @@ actions:
       - label: EFB
         text-center:
           x: center
-          y: 0
+          y: 10
         font-path: IBMPlexMono-Bold.ttf
         font-size: 16
         color: white
@@ -144,7 +144,7 @@ actions:
       - label: BAT
         text-center:
           x: center
-          y: 28
+          y: 20
         font-path: IBMPlexMono-Bold.ttf
         font-size: 20
         color: white
@@ -160,7 +160,7 @@ actions:
       - label: AUTOPILOT
         text-center:
           x: center
-          y: bottom
+          y: 50
         font-path: IBMPlexMono-Bold.ttf
         font-size: 16
         color: white
@@ -175,7 +175,7 @@ actions:
       - label: EFIS
         text-center:
           x: center
-          y: bottom
+          y: 50
         font-path: IBMPlexMono-Bold.ttf
         font-size: 16
         color: white
@@ -346,18 +346,18 @@ actions:
       - label: Connect
         text-center:
           x: center
-          y: 28
+          y: 18
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
+        font-size: 16
         color: white
         direction: ltr
         align: center
       - label: GPU
         text-center:
           x: center
-          y: 48
+          y: 34
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
+        font-size: 16
         color: white
         direction: ltr
         align: center
@@ -374,7 +374,7 @@ actions:
       - label: GND OBJ
         text-center:
           x: center
-          y: 28
+          y: 20
         font-path: IBMPlexMono-Bold.ttf
         font-size: 20
         color: white
@@ -387,10 +387,10 @@ actions:
     icon: flashlight
     command: sim/view/flashlight_wht
     special-labels:
-      - label: Cockpit
+      - label: Flashlight
         text-center:
           x: center
-          y: 0
+          y: 10
         font-path: IBMPlexMono-Bold.ttf
         font-size: 16
         color: white
@@ -405,7 +405,7 @@ actions:
       - label: DOORS
         text-center:
           x: center
-          y: 28
+          y: 50
         font-path: IBMPlexMono-Bold.ttf
         font-size: 20
         color: white
@@ -470,7 +470,7 @@ actions:
       - label: ENV
         text-center:
           x: center
-          y: 28
+          y: 60
         font-path: IBMPlexMono-Bold.ttf
         font-size: 20
         color: white

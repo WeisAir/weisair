@@ -133,13 +133,13 @@ actions:
     type: single
     file-names:
       - auto_brake_rto
+      - auto_brake_off
       - auto_brake_1
       - auto_brake_2
       - auto_brake_3
-      - auto_brake_4
       - auto_brake_max
     dataref: laminar/B738/autobrake/autobrake_pos
-        dataref-states:
+    dataref-states:
       - 0.0
       - 1.0
       - 2.0
@@ -176,18 +176,18 @@ actions:
       - label: ALT
         text-center:
           x: center
-          y: 0
+          y: 45
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 45
+        font-size: 20
         color: white
         direction: ltr
         align: center
       - label: INTV
         text-center:
           x: center
-          y: 0
+          y: 65
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 65
+        font-size: 20
         color: white
         direction: ltr
         align: center
@@ -315,18 +315,18 @@ actions:
       - label: SPD
         text-center:
           x: center
-          y: 0
+          y: 45
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 45
+        font-size: 20
         color: white
         direction: ltr
         align: center
       - label: INTV
         text-center:
           x: center
-          y: 0
+          y: 65
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 65
+        font-size: 20
         color: white
         direction: ltr
         align: center
