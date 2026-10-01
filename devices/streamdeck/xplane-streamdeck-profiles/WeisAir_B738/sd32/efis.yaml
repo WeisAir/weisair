@@ -2,17 +2,7 @@ actions:
   - index: 0
     name: return
     type: dir
-    icon: dir
-    special-labels:
-      - label: BACK
-        text-center:
-          x: center
-          y: 28
-        font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
-        color: white
-        direction: ltr
-        align: center
+    icon: back
 
   - index: 12
     name: fpv
@@ -23,7 +13,7 @@ actions:
       - label: FPV
         text-center:
           x: center
-          y: 35
+          y: center
         font-path: IBMPlexMono-Bold.ttf
         font-size: 20
         color: white
@@ -39,7 +29,7 @@ actions:
       - label: MTRS
         text-center:
           x: center
-          y: 35
+          y: center
         font-path: IBMPlexMono-Bold.ttf
         font-size: 20
         color: white
@@ -65,18 +55,18 @@ actions:
       - label: MAP
         text-center:
           x: center
-          y: 0
+          y: 14
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
+        font-size: 16
         color: white
         direction: ltr
         align: center
       - label: MODE
         text-center:
           x: center
-          y: 20
+          y: 28
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
+        font-size: 16
         color: white
         direction: ltr
         align: center
@@ -98,7 +88,7 @@ actions:
       - label: ADF 1
         text-center:
           x: center
-          y: 10
+          y: 20
         font-path: IBMPlexMono-Bold.ttf
         font-size: 20
         color: white
@@ -114,7 +104,7 @@ actions:
       - label: CTR
         text-center:
           x: center
-          y: 35
+          y: center
         font-path: IBMPlexMono-Bold.ttf
         font-size: 20
         color: white
@@ -130,7 +120,7 @@ actions:
       - label: TFC
         text-center:
           x: center
-          y: 35
+          y: center
         font-path: IBMPlexMono-Bold.ttf
         font-size: 20
         color: white
@@ -151,10 +141,10 @@ actions:
       - 1.0
     command: WeisAIR/b738/EFIS/toggle_right_VOR
     special-labels:
-      - label: ADF 1
+      - label: ADF 2
         text-center:
           x: center
-          y: 10
+          y: 20
         font-path: IBMPlexMono-Bold.ttf
         font-size: 20
         color: white
@@ -170,7 +160,7 @@ actions:
       - label: WXR
         text-center:
           x: center
-          y: 35
+          y: center
         font-path: IBMPlexMono-Bold.ttf
         font-size: 20
         color: white
@@ -186,7 +176,7 @@ actions:
       - label: STA
         text-center:
           x: center
-          y: 35
+          y: center
         font-path: IBMPlexMono-Bold.ttf
         font-size: 20
         color: white
@@ -202,7 +192,7 @@ actions:
       - label: WPT
         text-center:
           x: center
-          y: 35
+          y: center
         font-path: IBMPlexMono-Bold.ttf
         font-size: 20
         color: white
@@ -218,7 +208,7 @@ actions:
       - label: ARPT
         text-center:
           x: center
-          y: 35
+          y: center
         font-path: IBMPlexMono-Bold.ttf
         font-size: 20
         color: white
@@ -234,7 +224,7 @@ actions:
       - label: DATA
         text-center:
           x: center
-          y: 35
+          y: center
         font-path: IBMPlexMono-Bold.ttf
         font-size: 20
         color: white
@@ -250,7 +240,7 @@ actions:
       - label: POS
         text-center:
           x: center
-          y: 35
+          y: center
         font-path: IBMPlexMono-Bold.ttf
         font-size: 20
         color: white
@@ -266,7 +256,7 @@ actions:
       - label: TERR
         text-center:
           x: center
-          y: 35
+          y: center
         font-path: IBMPlexMono-Bold.ttf
         font-size: 20
         color: white

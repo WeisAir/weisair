@@ -200,7 +200,7 @@ actions:
           x: center
           y: 28
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
+        font-size: 18
         color: white
         direction: ltr
         align: center
@@ -223,7 +223,7 @@ actions:
           x: center
           y: 28
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
+        font-size: 18
         color: white
         direction: ltr
         align: center
@@ -245,7 +245,7 @@ actions:
           x: center
           y: 28
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
+        font-size: 18
         color: white
         direction: ltr
         align: center
@@ -264,7 +264,7 @@ actions:
           x: center
           y: 28
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
+        font-size: 18
         color: white
         direction: ltr
         align: center
@@ -288,7 +288,7 @@ actions:
           x: center
           y: 28
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
+        font-size: 18
         color: white
         direction: ltr
         align: center
@@ -307,7 +307,7 @@ actions:
           x: center
           y: 28
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
+        font-size: 18
         color: white
         direction: ltr
         align: center
@@ -326,7 +326,7 @@ actions:
           x: center
           y: 28
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
+        font-size: 18
         color: white
         direction: ltr
         align: center
@@ -345,7 +345,7 @@ actions:
           x: center
           y: 28
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
+        font-size: 18
         color: white
         direction: ltr
         align: center
@@ -402,16 +402,7 @@ actions:
     type: single
     icon: flashlight
     command: sim/view/flashlight_wht
-    special-labels:
-      - label: Flashlight
-        text-center:
-          x: center
-          y: 10
-        font-path: IBMPlexMono-Bold.ttf
-        font-size: 16
-        color: white
-        direction: ltr
-        align: center
+    
         
   - index: 27
     name: doors
