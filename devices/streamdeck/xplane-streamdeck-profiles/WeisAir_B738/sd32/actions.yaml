@@ -188,8 +188,12 @@ actions:
     file-names:
       - generic_toggle_2pos_off
       - generic_toggle_2pos_on
-    dataref: sim/cockpit2/switches/generic_lights_switch[0]
-    command: laminar/B738/switch/wing_light_toggle
+    dataref: sim/cockpit/electrical/landing_lights_on
+    dataref-states:
+      - 0.0
+      - 1.0
+    command-on: sim/lights/landing_lights_on
+    command-off: sim/lights/landing_lights_off
     special-labels:
       - label: LAND
         text-center:
@@ -207,8 +211,12 @@ actions:
     file-names:
       - generic_toggle_2pos_off
       - generic_toggle_2pos_on
-    dataref: sim/cockpit2/switches/generic_lights_switch[0]
-    command: laminar/B738/switch/wing_light_toggle
+    dataref: laminar/B738/toggle_switch/rwy_light_left
+    dataref-states:
+      - 0.0
+      - 1.0
+    command-on: WeisAIR/b738/LIGHTS/rwto_lights_on
+    command-off: WeisAIR/b738/LIGHTS/rwto_lights_off
     special-labels:
       - label: RTWO
         text-center:
@@ -226,8 +234,11 @@ actions:
     file-names:
       - generic_toggle_2pos_off
       - generic_toggle_2pos_on
-    dataref: sim/cockpit2/switches/generic_lights_switch[0]
-    command: laminar/B738/switch/wing_light_toggle
+    dataref: laminar/B738/toggle_switch/taxi_light_brightness_pos
+    dataref-states:
+      - 0.0
+      - 2.0
+    command: laminar/B738/toggle_switch/taxi_light_brigh_toggle
     special-labels:
       - label: TAXI
         text-center:
@@ -245,8 +256,8 @@ actions:
     file-names:
       - generic_toggle_2pos_off
       - generic_toggle_2pos_on
-    dataref: sim/cockpit2/switches/generic_lights_switch[0]
-    command: laminar/B738/switch/wing_light_toggle
+    dataref: laminar/B738/toggle_switch/logo_light
+    command: laminar/B738/toggle_switch/logo_light
     special-labels:
       - label: LOGO
         text-center:
@@ -262,10 +273,15 @@ actions:
     name: position lights
     type: single
     file-names:
-      - generic_toggle_2pos_off
-      - generic_toggle_2pos_on
-    dataref: sim/cockpit2/switches/generic_lights_switch[0]
-    command: laminar/B738/switch/wing_light_toggle
+      - strobe_lgt_strobesteady
+      - strobe_lgt_off
+      - strobe_lgt_steady
+    dataref: laminar/B738/toggle_switch/position_light_pos
+    dataref-states:
+      - -1.0
+      - 0.0
+      - 1.0
+    command: WeisAIR/b738/LIGHTS/b738_pos_lights_toggle
     special-labels:
       - label: POS
         text-center:
@@ -283,8 +299,8 @@ actions:
     file-names:
       - generic_toggle_2pos_off
       - generic_toggle_2pos_on
-    dataref: sim/cockpit2/switches/generic_lights_switch[0]
-    command: laminar/B738/switch/wing_light_toggle
+    dataref: sim/cockpit/electrical/beacon_lights_on
+    command: sim/cockpit/electrical/beacon_lights_on
     special-labels:
       - label: ANTI COL
         text-center:
@@ -321,8 +337,8 @@ actions:
     file-names:
       - generic_toggle_2pos_off
       - generic_toggle_2pos_on
-    dataref: sim/cockpit2/switches/generic_lights_switch[0]
-    command: laminar/B738/switch/wing_light_toggle
+    dataref: laminar/B738/toggle_switch/wheel_light
+    command: laminar/B738/toggle_switch/wheel_light
     special-labels:
       - label: W-WELL
         text-center:
@@ -415,7 +431,7 @@ actions:
   - index: 28
     name: plan pushback
     type: single
-    command: laminar/B738/switch/wing_light_toggle
+    command: BetterPushback/start_planner
     icon: button
     special-labels:
       - label: Plan
@@ -440,7 +456,7 @@ actions:
   - index: 29
     name: plan pushback
     type: single
-    command: laminar/B738/switch/wing_light_toggle
+    command: BetterPushback/start
     icon: button
     special-labels:
       - label: Start
