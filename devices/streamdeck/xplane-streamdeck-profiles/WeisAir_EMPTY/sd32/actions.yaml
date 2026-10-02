@@ -1,0 +1,146 @@
+actions:
+  - index: 0
+    name: actions
+    type: dir
+    icon: 1e557c
+  - index: 1
+    name: actions
+    type: dir
+    icon: 1e557c
+  - index: 2
+    name: actions
+    type: dir
+    icon: 1e557c
+  - index: 3
+    name: actions
+    type: dir
+    icon: 1e557c
+  - index: 4
+    name: actions
+    type: dir
+    icon: 1e557c
+  - index: 5
+    name: actions
+    type: dir
+    icon: 1e557c
+  - index: 6
+    name: actions
+    type: dir
+    icon: 1e557c
+  - index: 7
+    name: actions
+    type: dir
+    icon: 1e557c
+  - index: 8
+    name: actions
+    type: dir
+    icon: 1e557c
+  
+  - index: 10
+    name: txt1
+    type: single
+    icon: just_black
+    command: sim/none/none
+    special-labels:
+      - label: Aircraft
+        text-center:
+          x: center
+          y: center
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 11
+    name: txt2
+    type: single
+    icon: just_black
+    command: sim/none/none
+    special-labels:
+      - label: Profile
+        text-center:
+          x: center
+          y: center
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 12
+    name: txt3
+    type: single
+    icon: just_black
+    command: sim/none/none
+    special-labels:
+      - label: Not
+        text-center:
+          x: center
+          y: center
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 13
+    name: txt4
+    type: single
+    icon: just_black
+    command: sim/none/none
+    special-labels:
+      - label: Found
+        text-center:
+          x: center
+          y: center
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center  
+
+  - index: 15
+    name: actions
+    type: dir
+    icon: 1e557c
+  - index: 16
+    name: actions
+    type: dir
+    icon: 1e557c
+  - index: 23
+    name: actions
+    type: dir
+    icon: 1e557c
+  - index: 24
+    name: actions
+    type: dir
+    icon: 1e557c
+  - index: 25
+    name: actions
+    type: dir
+    icon: 1e557c
+  - index: 26
+    name: actions
+    type: dir
+    icon: 1e557c
+  - index: 27
+    name: actions
+    type: dir
+    icon: 1e557c
+  - index: 28
+    name: actions
+    type: dir
+    icon: 1e557c
+  - index: 29
+    name: actions
+    type: dir
+    icon: 1e557c
+  - index: 30
+    name: actions
+    type: dir
+    icon: 1e557c
+  - index: 31
+    name: actions
+    type: dir
+    icon: 1e557c
