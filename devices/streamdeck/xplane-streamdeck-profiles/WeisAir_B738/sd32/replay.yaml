@@ -3,3 +3,504 @@ actions:
     name: return
     type: dir
     icon: back
+
+  - index: 1
+    name: screenshot
+    type: single
+    icon: button
+    command: sim/operation/screenshot
+    special-labels:
+      - label: Screen
+        text-center:
+          x: center
+          y: 45
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+      - label: Shot
+        text-center:
+          x: center
+          y: 65
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 2
+    name: record_video
+    type: single
+    icon: button
+    command: sim/operation/video_record_toggle
+    special-labels:
+      - label: Record
+        text-center:
+          x: center
+          y: 45
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+      - label: Video
+        text-center:
+          x: center
+          y: 65
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 7
+    name: record_video
+    type: single
+    icon: button
+    command: sim/operation/show_fps
+    special-labels:
+      - label: Show
+        text-center:
+          x: center
+          y: 45
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+      - label: FPS
+        text-center:
+          x: center
+          y: 65
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 8
+    name: label_screen_control
+    type: single
+    icon: 1e557c
+    command: sim/none/none
+    special-labels:
+      - label: Screen
+        text-center:
+          x: center
+          y: 45
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+      - label: Control
+        text-center:
+          x: center
+          y: 65
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 9
+    name: replay_on_off
+    type: single
+    icon: button
+    command: sim/replay/replay_toggle
+    special-labels:
+      - label: Replay
+        text-center:
+          x: center
+          y: 45
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+      - label: On/Off
+        text-center:
+          x: center
+          y: 65
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 10
+    name: replay_start
+    type: single
+    icon: button
+    command: sim/replay/rep_begin
+    special-labels:
+      - label: Replay
+        text-center:
+          x: center
+          y: 45
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+      - label: Start
+        text-center:
+          x: center
+          y: 65
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 11
+    name: replay_stop
+    type: single
+    icon: button
+    command: sim/replay/rep_end
+    special-labels:
+      - label: Replay
+        text-center:
+          x: center
+          y: 45
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+      - label: Stop
+        text-center:
+          x: center
+          y: 65
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 12
+    name: toggle_replay_control
+    type: single
+    icon: button
+    command: sim/replay/replay_controls_toggle
+    special-labels:
+      - label: Toggle
+        text-center:
+          x: center
+          y: 25
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+      - label: Replay
+        text-center:
+          x: center
+          y: 45
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+      - label: Control 
+        text-center:
+          x: center
+          y: 65
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 13
+    name: toggle_screenshot_control
+    type: single
+    icon: button
+    command: sim/replay/replay_screenshot_toggle
+    special-labels:
+      - label: Toggle
+        text-center:
+          x: center
+          y: 25
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+      - label: Screenshot
+        text-center:
+          x: center
+          y: 45
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+      - label: Control 
+        text-center:
+          x: center
+          y: 65
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 16
+    name: label_replay_control
+    type: single
+    icon: 1e557c
+    command: sim/none/none
+    special-labels:
+      - label: Replay
+        text-center:
+          x: center
+          y: 45
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+      - label: Control
+        text-center:
+          x: center
+          y: 65
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 17
+    name: play_fr
+    type: single
+    icon: button
+    command: sim/replay/rep_play_fr
+    special-labels:
+      - label: <<<
+        text-center:
+          x: center
+          y: center
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 30
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 18
+    name: play_rr
+    type: single
+    icon: button
+    command: sim/replay/rep_play_rr
+    special-labels:
+      - label: <<
+        text-center:
+          x: center
+          y: center
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 30
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 19
+    name: play_sr
+    type: single
+    icon: button
+    command: sim/replay/rep_play_sr
+    special-labels:
+      - label: <
+        text-center:
+          x: center
+          y: center
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 30
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 20
+    name: play_pause
+    type: single
+    icon: button
+    command: sim/replay/rep_pause
+    special-labels:
+      - label: "||"
+        text-center:
+          x: center
+          y: center
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 30
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 21
+    name: play_sf
+    type: single
+    icon: button
+    command: sim/replay/rep_play_sf
+    special-labels:
+      - label: >
+        text-center:
+          x: center
+          y: center
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 30
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 22
+    name: play_rf
+    type: single
+    icon: button
+    command: sim/replay/rep_play_rf
+    special-labels:
+      - label: >
+        text-center:
+          x: center
+          y: center
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 30
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 23
+    name: play_ff
+    type: single
+    icon: button
+    command: sim/replay/rep_play_ff
+    special-labels:
+      - label: >
+        text-center:
+          x: center
+          y: center
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 30
+        color: white
+        direction: ltr
+        align: center
+      
+  - index: 24
+    name: label_camera_view
+    type: single
+    icon: 1e557c
+    command: sim/none/none
+    special-labels:
+      - label: Replay
+        text-center:
+          x: center
+          y: 45
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+      - label: Control
+        text-center:
+          x: center
+          y: 65
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center 
+
+  - index: 25
+    name: cam_rwy
+    type: single
+    icon: button
+    command: sim/view/runway
+    special-labels:
+      - label: RWY
+        text-center:
+          x: center
+          y: center
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 30
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 26
+    name: cam_chase
+    type: single
+    icon: button
+    command: sim/view/chase
+    special-labels:
+      - label: CHASE
+        text-center:
+          x: center
+          y: center
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 30
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 27
+    name: cam_default
+    type: single
+    icon: button
+    command: sim/view/default_view
+    special-labels:
+      - label: DEFAULT
+        text-center:
+          x: center
+          y: center
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 30
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 28
+    name: cam_tower
+    type: single
+    icon: button
+    command: sim/view/tower
+    special-labels:
+      - label: TOWER
+        text-center:
+          x: center
+          y: center
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 30
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 29
+    name: cam_free
+    type: single
+    icon: button
+    command: sim/view/free_camera
+    special-labels:
+      - label: FREE
+        text-center:
+          x: center
+          y: center
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 30
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 30
+    name: cam_cpt
+    type: single
+    icon: button
+    command: SRS/X-Camera/Select_View_ID_8
+    special-labels:
+      - label: CPT
+        text-center:
+          x: center
+          y: center
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 30
+        color: cyan
+        direction: ltr
+        align: center
