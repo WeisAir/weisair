@@ -294,7 +294,7 @@ actions:
     icon: button
     command: sim/replay/rep_play_rr
     special-labels:
-      - label: <<
+      - label: "<<"
         text-center:
           x: center
           y: center
@@ -310,7 +310,7 @@ actions:
     icon: button
     command: sim/replay/rep_play_sr
     special-labels:
-      - label: <
+      - label: "<"
         text-center:
           x: center
           y: center
@@ -342,7 +342,7 @@ actions:
     icon: button
     command: sim/replay/rep_play_sf
     special-labels:
-      - label: >
+      - label: ">"
         text-center:
           x: center
           y: center
@@ -358,7 +358,7 @@ actions:
     icon: button
     command: sim/replay/rep_play_rf
     special-labels:
-      - label: >
+      - label: ">>"
         text-center:
           x: center
           y: center
@@ -374,7 +374,7 @@ actions:
     icon: button
     command: sim/replay/rep_play_ff
     special-labels:
-      - label: >
+      - label: ">>>"
         text-center:
           x: center
           y: center
