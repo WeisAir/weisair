@@ -188,27 +188,27 @@ actions:
       - label: Toggle
         text-center:
           x: center
-          y: 25
+          y: 35
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
+        font-size: 16
         color: white
         direction: ltr
         align: center
       - label: Replay
         text-center:
           x: center
-          y: 45
+          y: 51
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
+        font-size: 16
         color: white
         direction: ltr
         align: center
       - label: Control 
         text-center:
           x: center
-          y: 65
+          y: 67
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
+        font-size: 16
         color: white
         direction: ltr
         align: center
@@ -217,32 +217,32 @@ actions:
     name: toggle_screenshot_control
     type: single
     icon: button
-    command: sim/replay/replay_screenshot_toggle
+    command: sim/view/toggle_screenshot_window
     special-labels:
       - label: Toggle
         text-center:
           x: center
-          y: 25
+          y: 35
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
+        font-size: 16
         color: white
         direction: ltr
         align: center
-      - label: Screenshot
+      - label: ScrShot
         text-center:
           x: center
-          y: 45
+          y: 51
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
+        font-size: 16
         color: white
         direction: ltr
         align: center
       - label: Control 
         text-center:
           x: center
-          y: 65
+          y: 67
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
+        font-size: 16
         color: white
         direction: ltr
         align: center
@@ -281,7 +281,7 @@ actions:
       - label: <<<
         text-center:
           x: center
-          y: center
+          y: 55
         font-path: IBMPlexMono-Bold.ttf
         font-size: 30
         color: white
@@ -297,7 +297,7 @@ actions:
       - label: "<<"
         text-center:
           x: center
-          y: center
+          y: 55
         font-path: IBMPlexMono-Bold.ttf
         font-size: 30
         color: white
@@ -313,7 +313,7 @@ actions:
       - label: "<"
         text-center:
           x: center
-          y: center
+          y: 55
         font-path: IBMPlexMono-Bold.ttf
         font-size: 30
         color: white
@@ -329,7 +329,7 @@ actions:
       - label: "||"
         text-center:
           x: center
-          y: center
+          y: 55
         font-path: IBMPlexMono-Bold.ttf
         font-size: 30
         color: white
@@ -345,7 +345,7 @@ actions:
       - label: ">"
         text-center:
           x: center
-          y: center
+          y: 55
         font-path: IBMPlexMono-Bold.ttf
         font-size: 30
         color: white
@@ -361,7 +361,7 @@ actions:
       - label: ">>"
         text-center:
           x: center
-          y: center
+          y: 55
         font-path: IBMPlexMono-Bold.ttf
         font-size: 30
         color: white
@@ -377,7 +377,7 @@ actions:
       - label: ">>>"
         text-center:
           x: center
-          y: center
+          y: 55
         font-path: IBMPlexMono-Bold.ttf
         font-size: 30
         color: white
@@ -390,7 +390,7 @@ actions:
     icon: 1e557c
     command: sim/none/none
     special-labels:
-      - label: Replay
+      - label: Camera
         text-center:
           x: center
           y: 45
@@ -418,9 +418,9 @@ actions:
       - label: RWY
         text-center:
           x: center
-          y: center
+          y: 55
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 30
+        font-size: 24
         color: white
         direction: ltr
         align: center
@@ -434,9 +434,9 @@ actions:
       - label: CHASE
         text-center:
           x: center
-          y: center
+          y: 55
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 30
+        font-size: 24
         color: white
         direction: ltr
         align: center
@@ -450,9 +450,9 @@ actions:
       - label: DEFAULT
         text-center:
           x: center
-          y: center
+          y: 55
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 30
+        font-size: 20
         color: white
         direction: ltr
         align: center
@@ -466,9 +466,9 @@ actions:
       - label: TOWER
         text-center:
           x: center
-          y: center
+          y: 55
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 30
+        font-size: 24
         color: white
         direction: ltr
         align: center
@@ -482,9 +482,9 @@ actions:
       - label: FREE
         text-center:
           x: center
-          y: center
+          y: 55
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 30
+        font-size: 24
         color: white
         direction: ltr
         align: center
@@ -498,9 +498,9 @@ actions:
       - label: CPT
         text-center:
           x: center
-          y: center
+          y: 55
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 30
+        font-size: 24
         color: cyan
         direction: ltr
         align: center

@@ -138,8 +138,8 @@ actions:
     dataref-states:
       - 0.0
       - 1.0
-    command-on: laminar/B738/switch/battery_up
-    command-off: laminar/B738/switch/battery_dn
+    command-on: laminar/B738/switch/battery_dn
+    command-off: laminar/B738/switch/battery_up
     special-labels:
       - label: BAT
         text-center:
@@ -184,7 +184,7 @@ actions:
 
   - index: 16
     name: land lights
-    type: single
+    type: dual
     file-names:
       - generic_toggle_2pos_off
       - generic_toggle_2pos_on
@@ -207,7 +207,7 @@ actions:
 
   - index: 17
     name: rwto lights
-    type: single
+    type: dual
     file-names:
       - generic_toggle_2pos_off
       - generic_toggle_2pos_on
@@ -257,7 +257,7 @@ actions:
       - generic_toggle_2pos_off
       - generic_toggle_2pos_on
     dataref: laminar/B738/toggle_switch/logo_light
-    command: laminar/B738/toggle_switch/logo_light
+    command: laminar/B738/switch/logo_light_toggle
     special-labels:
       - label: LOGO
         text-center:
@@ -300,7 +300,7 @@ actions:
       - generic_toggle_2pos_off
       - generic_toggle_2pos_on
     dataref: sim/cockpit/electrical/beacon_lights_on
-    command: sim/cockpit/electrical/beacon_lights_on
+    command: sim/lights/beacon_lights_toggle
     special-labels:
       - label: ANTI COL
         text-center:
@@ -338,7 +338,7 @@ actions:
       - generic_toggle_2pos_off
       - generic_toggle_2pos_on
     dataref: laminar/B738/toggle_switch/wheel_light
-    command: laminar/B738/toggle_switch/wheel_light
+    command: laminar/B738/switch/wheel_light_toggle
     special-labels:
       - label: W-WELL
         text-center:
