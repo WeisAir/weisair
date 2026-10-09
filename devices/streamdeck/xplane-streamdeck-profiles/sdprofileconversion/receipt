@@ -1,0 +1,123 @@
+#Case 1: Push Button with static icon
+  - index: 26
+    name: flashlight
+    type: single
+    icon: flashlight
+    command: sim/view/flashlight_wht
+    label: FLASHLIGHT
+
+
+#Case 2: Toggle Button with dynamic icon (Multiple states)
+  - index: 20
+    name: position lights
+    type: single
+    file-names:
+      - strobe_lgt_strobesteady
+      - strobe_lgt_off
+      - strobe_lgt_steady
+    dataref: laminar/B738/toggle_switch/position_light_pos
+    dataref-states:
+      - -1.0
+      - 0.0
+      - 1.0
+    command: WeisAIR/b738/LIGHTS/b738_pos_lights_toggle
+    label: POSITION LIGHTS
+
+
+#Case 3: ON/OFF Button with dynamic icon (separate ON/OFF Commands)  
+
+  - index: 8
+    name: battery
+    type: dual
+    file-names:
+      - switch_off
+      - switch_on
+    dataref: laminar/B738/electric/battery_pos
+    dataref-states:
+      - 0.0
+      - 1.0
+    command-on: laminar/B738/switch/battery_dn
+    command-off: laminar/B738/switch/battery_up
+    label: BATTERY
+
+#Case 4: Folder
+
+  - index: 10
+    name: efis
+    type: dir
+    icon: folder
+    label: EFIS
+
+#Case 5: Cosmetic Button (Text label with background image)
+  
+  - index: 24
+    name: label_camera_view
+    type: single #geht hier auch "none" ohne command?
+    icon: 1e557c
+    command: sim/none/none
+    label: CAMERA VIEW
+
+#Case 6: Value Display (Dynamic icons based on dataref value)
+
+  - index: 17
+    name: rwy_friction
+    type: single #geht hier auch "none" ohne command?
+    file-names:
+      - rwy_dry
+      - rwy_wet1
+      - rwy_wet2
+      - rwy_wet3
+      - rwy_puddly1
+      - rwy_puddly2
+      - rwy_puddly3
+      - rwy_snow1
+      - rwy_snow2
+      - rwy_snow3
+      - rwy_icy1
+      - rwy_icy2
+      - rwy_icy3
+      - rwy_snowicy1
+      - rwy_snowicy2
+      - rwy_snowicy3
+    dataref: sim/weather/region/runway_friction
+    dataref-states:
+      - 0.0
+      - 1.0
+      - 2.0
+      - 3.0
+      - 4.0
+      - 5.0
+      - 6.0
+      - 7.0
+      - 8.0
+      - 9.0
+      - 10.0
+      - 11.0
+      - 12.0
+      - 13.0
+      - 14.0
+      - 15.0
+    command: sim/none/none
+    label: ""
+
+
+#Case 7: Value Display (formatted dataref value output)
+
+  - index: 2
+    name: wind_speed_knots
+    type: none
+    dataref: sim/weather/aircraft/wind_speed_kts[0] #sim/cockpit2/gauges/indicators/wind_speed_kts
+    display:
+      name: display_wind_speed_knots
+      text-center:
+        x: center
+        y: 70 # center doesn't work as it should, due to font's height
+      font-path: IBMPlexMono-Bold.ttf
+      font-size: 20
+      zero-pad: False
+      min: 0
+      max: 100
+      step: 1
+      color: lime
+      keep-decimal: False
+      background: none

@@ -16,6 +16,7 @@
 /performance_tests/xp_fps_tests/*
 /performance_tests/xplane_fps_testautomation/XPFiles/*
 /tools/
+/devices/streamdeck/xplane-streamdeck-profiles/sdprofileconversion/X-Plane Ops Panel 737 Minimal
 
 # but not
 #!junctions/Scripts/myarcaze.lua

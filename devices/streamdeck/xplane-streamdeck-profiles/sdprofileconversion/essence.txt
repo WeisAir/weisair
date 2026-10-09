@@ -1,0 +1,124 @@
+"4,0": {
+		"ActionID": "6f2700b2-76b0-454e-9956-8452eac9d27c",
+                    "Name": "Simple Button",
+                    "Settings": {
+                        "settingsModel": {
+                            "ActionType": 10,
+                            "AddressAction": "laminar/B738/knob/eng1_start_left",
+                            "OffImage": "Images/KorryOffWhiteBottom.png",
+                            "OnImage": "Images/KorryOnBlueTop.png",
+                         }
+
+"7,1": {
+                    "ActionID": "96ced6ef-b859-4d72-836f-2a9bea366d5a",
+                    "Name": "Display Value",
+                    "Settings": {
+                        "settingsModel": {
+                            "ActionType": 3,
+                            "Address": "laminar/B738/annunciator/wing_ice_on_L_annun",
+                            "OffImage": "Images/KorryOffWhiteBottom.png",
+                            "OnImage": "Images/KorryOnBlueTop.png",
+                            "ValueMappings": "1=OFF SCHED DESCENT:0=",
+
+                        }
+                },
+                
+"6,3": {
+                    "ActionID": "bfbba50b-67d0-4ef8-99a7-c07809aaf5c9",
+                    "Name": "Dynamic Button",
+                    "Settings": {
+                        "settingsModel": {
+                            "ActionType": 10,
+                            "Address": "laminar/B738/autopilot/vs_status",
+                            "AddressAction": "laminar/B738/autopilot/vs_press",
+                            "OffImage": "Images/weisair_738/vs.0.0.png",
+                            "OffState": "0",
+                            "OnImage": "Images/weisair_738/vs.1.0.png",
+                            "OnState": ">0",
+                            
+                             }
+                            }
+                           }
+
+#Folder_Structure
+
+X-Plane Ops Panel 737 Minimal
+    Profiles
+        package.json
+        UUID
+            manifest.json #root manifest
+            Images
+            Profiles
+                UUID 1
+                    Images
+                    manifest.json
+                UUID 2
+                    Images
+                    manifest.json
+                UUID N
+                    Images
+                    manifest.json
+
+
+#Manifest_Structure (root)
+
+{
+    "Device": {
+        "Model": "20GAT9901",
+        "UUID": "ec6cb2eb-7159-4321-9b93-08b77730f411"
+    },
+    "Name": "X-Plane Ops Panel 737 Minimal",
+    "Pages": {
+        "Current": "00000000-0000-0000-0000-000000000000",
+        "Default": "0ec0f238-85fc-4644-8655-34de974cb894",
+        "Pages": [
+            "8a2792b1-51af-4559-9818-e6d025b40bbb" #scheint startseite zu sein
+        ]
+    },
+    "Version": "3.0"
+}
+
+#Manifest_Structure (individual page)
+
+{
+    "Controllers":[
+        {
+            "Actions":{
+                "Key_X1,Key_Y1":{
+                    "ActionID": "uuid",
+                    "LinkedTitle": true,
+                    "Name": "Display Value",    # "Display Value" | "Cosmetic Key" | "Create Folder" | "Simple Button" | "Dynamic Button"
+                    "Plugin":{}
+                    "Resources": null,
+                    "Settings": {
+                        "settingsModel": {
+                            "attribute1": Value,
+                            "attribute2": Value,
+                            "attributeN": Value
+                        },
+                        "ProfileUUID": "9b833cbb-95c5-4758-ab6a-1b357eea4106" #link zu Ordner -> weiteres manifest.json
+
+                    },
+                    "State": 0,
+                    "States": [
+                        {
+                            "attribute1": Value,
+                            "attribute2": Value,
+                            "attributeN": Value
+                        }
+                    ],
+                "UUID": "com.extension.pilotsdeck.action.*"  
+                },
+                "Key_X2,Key_Y2":{
+                    ...
+                },
+                "Key_Xn,Key_Yn":{
+                    ...
+                }
+            },
+            "Type": "Keypad"
+        }
+    ],  
+    "Icon": "",
+    "Name": ""
+}
