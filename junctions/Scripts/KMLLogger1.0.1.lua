@@ -613,7 +613,7 @@ end
 
 -- combine all temp files into KML final
 function mn_save_KML(arr_icao,arr_name,flevels,duration,distance)
-   mn_logit("WEISAIR: in function mn_save_KML ") 
+   --mn_logit("WEISAIR: in function mn_save_KML ") 
    -- formats for kml sections
     local hdr1 = [=[
 <?xml version="1.0" encoding="UTF-8"?>
@@ -684,7 +684,7 @@ Trackpoints : %d
 ]=]
 
    --save final destination
-   mn_logit("WEISAIR: calling function mn_write_KML")
+   --mn_logit("WEISAIR: calling function mn_write_KML")
    mn_write_KML(true,string.format("%s: %s [%s]",arr_icao, arr_name, PLANE_ICAO)) 
    local tm  = flt_date .. " " .. mn_SecToTime(stats.takeoff_local)
    local dta = string.format(INFO, stats.dep_icao,arr_icao,stats.dep_name,arr_name,os.date("%Y-%m-%d"),PLANE_ICAO,distance,mn_SecToTime(duration),flevels,num_waypoints,num_trackpoints,mn_VERSION_NO.." " ..mn_VERSION_DATE)
@@ -692,7 +692,7 @@ Trackpoints : %d
    KMLLogFile = tmp
    local fname  = FOLDER .. "/" .. KMLLogFile
 
-   mn_logit("WEISAIR: Saving KML flight data to: " .. fname)
+   --mn_logit("WEISAIR: Saving KML flight data to: " .. fname)
    --safety! Just in case there is already an existing file with the same name
    local success, err = os.remove(fname)
    if (success) then
@@ -754,7 +754,7 @@ Flight data is in: %s
   mn_write_csv_log(icao,nme,f_levels,duration,dht,dist)
   --save kml
   if (flight.log_to_kml) then 
-      mn_logit("WEISAIR: in function mn_closeoff calling function mn_save_KML") 
+      --mn_logit("WEISAIR: in function mn_closeoff calling function mn_save_KML") 
       mn_save_KML(icao,nme,f_levels,duration,dist) 
    end
  -- if we are showing status, then close that window first
@@ -821,20 +821,20 @@ end
 
 -- write data to kml file
 function mn_write_KML(logroute,wptname, lat, lon)
-  mn_logit("WEISAIR: in function mn_write_KML")
+  --mn_logit("WEISAIR: in function mn_write_KML")
    if (not flight.log_to_kml) then
-      mn_logit("WEISAIR: in function mn_write_KML --> log_to_kml is false, returning") 
+     -- mn_logit("WEISAIR: in function mn_write_KML --> log_to_kml is false, returning") 
       return end
   lon = lon or LONGITUDE 
   lat = lat or LATITUDE
   elv = math.floor(ELEVATION) --math.floor(aloft[0])
   num_trackpoints = num_trackpoints + 1
   if (wptname and wptname > "") then
-   mn_logit("WEISAIR: calling function mn_save_WPT") 
+   --mn_logit("WEISAIR: calling function mn_save_WPT") 
      mn_save_WPT(wptname, lat, lon, elv)
   end 
   if (logroute) then
-   mn_logit("WEISAIR: in function mn_write_KML -> logroute is true, writing to f_trk")
+   --mn_logit("WEISAIR: in function mn_write_KML -> logroute is true, writing to f_trk")
      f_trk:write(string.format("          %.8f,%.8f,%d\n",lon,lat,elv))
   end
 end
@@ -1092,7 +1092,7 @@ end
 
 --called every 1 sec.  Detect takeoff and landing
 function mn_CheckStatus()
-   mn_logit("WEISAIR: Enter mn_CheckStatus") 
+   --mn_logit("WEISAIR: Enter mn_CheckStatus") 
    flight.isactive = ((replay_mode[0] == 0) and (paused[0] == 0))
     if (flight.isactive and (not flight.f_done)) then
          local gskts = mn_get_gs_kts() 

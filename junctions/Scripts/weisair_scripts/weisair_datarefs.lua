@@ -49,7 +49,7 @@ function update_relative_wind_direction()
     local clean_integer_dir = math.floor(relative_wind_dir)
 
     -- Write the result to your custom dataref
-    ["WeisAIR/environment/wind_heading_relative_to_aircraft"] = clean_integer_dir
+    set_dataref_value("WeisAIR/environment/wind_heading_relative_to_aircraft",clean_integer_dir)
 end
 
 -- 4. Run this calculation roughly once per second to conserve CPU performance
