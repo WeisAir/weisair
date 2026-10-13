@@ -103,6 +103,7 @@ else
 	print("WeisAir Panel Scripts loaded for Aircraft" .. " " ..  AIRCRAFT_FILENAME)
 end
 
--- always include generic functions scripts
+-- always include generic functions and custom datarefs scripts
 dofile(SCRIPT_DIRECTORY .. "weisair_scripts/generic_functions_xcam.lua")
 dofile(SCRIPT_DIRECTORY .. "weisair_scripts/generic_functions_global_settings.lua")
+dofile(SCRIPT_DIRECTORY .. "weisair_scripts/weisair_datarefs.lua")
