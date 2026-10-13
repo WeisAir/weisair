@@ -1,0 +1,79 @@
+This is a step-by-step instruction to convert streamdeck JSON key configuration structure of keys with the attribute "Name": "Dynamic Button".
+
+The target yaml structure after the conversion looks like this. Every Line is mandatory unless it is suffixed with a #optional marking
+
+-index:
+    name:
+    type:
+    file-names:
+    dataref:
+    dataref-states:
+    command: #optional
+    command-on: #optional
+    command-off: #optional
+    command-release: #optional
+    label:
+
+The following section defines how values from the source json file should be set or transformed to the yaml file.
+
+Target Field "index"
+--------------------
+Each key configuration in the target YAML file starts with "index: ". The value is an integer (0-31) In the original json file this is separated by the x and y coordinate of the streamdeck key grid. So, if the source json file has the entry "2,1" that shall be translated to 10 (calculation: target_value = source_y*8 + source_x)
+
+Target Field "name"
+-------------------
+
+The value of name is a concatenation of the the source field "Title", a "_" sign and the source field "ActionID"
+
+Target Field "type"
+-------------------
+
+This field can be derived from the source field "ToggleSwitch". If ToggleSwitch == false then set "type" to the value "dual", else to "single".
+
+Target Fields "command" and "command-release"
+---------------------------------------------
+
+If the target field "type" is "single" then populate the the target field "command" with the value of the source field "AddressAction". In this case, the fields "command-on" and "command-off" will not be present in the target yaml structure for this key. The field "command-release" is optional. It is populated with the value of the source field "AddressActionLong" if the value of the source field "HasLongPress" is "true".
+
+Target Fields "command-on" and "command-off"
+--------------------------------------------
+
+If the target field "type" is "dual" then populate the the target field "command-on" with the value of the source field "AddressAction". In this case, the field "command-off" is mandatory and its value is populated by the value of the source field "AddressActionOff". In this case, the attributes "command" and "command-release"  will not be present in the target yaml structure for this key.
+
+Target Field "dataref"
+----------------------
+
+The value of target field "dataref" is populated with the value of the source field "AddressMonitor".
+
+Target Fields dataref-states and file-names
+-------------------------------------------
+
+If the value of source data field "ImageMap" is and empty string ("") then the attribute "dataref-states" gets 2 children values. The order matters. 
+    
+    The first child is the value of the source data field "OffState". If the source value is an integer it must be converted to a float (e.g. "1" becomes "1.0")
+    The second child is the value of the source data field "OnState". If the source value is an integer it must be converted to a float (e.g. "1" becomes "1.0")
+
+The attribute "file-names" is populated in the same order as the "dataref-states". The idea is to map values to images to be loaded. Hence, the following logic applies:
+
+    The first child is the value of the source data field "OffImage". The source data field value is always a relative path to the picture, e.g. /relative/path/to/img.png. The value in the target structure however must just be the file name without the file type suffix, so in this case just img.
+    The second child is the value of the source data field "OnImage". The source data field value is always a relative path to the picture, e.g. /relative/path/to/img.png. The value in the target structure however must just be the file name without the file type suffix, so in this case just img.
+
+If the value of source data field "ImageMap" is not empty, the target yaml structure of "dataref-states" and "file-names" can have more than 2 entries each. They are populated by splitting the value of source data field "ImageMap". The source syntax is like this for example:
+
+"ImageMap": "1=weisair_738/strobe_lgt_strobesteady:0=weisair_738/strobe_lgt_off:-1=weisair_738/strobe_lgt_steady"
+
+This must be translated into 3 child values for "dataref-states", i.e.
+- 1
+- 0
+- -1
+
+and 3 "file-names" child values, i.e.
+
+- strobe_lgt_strobesteady
+- strobe_lgt_off
+- strobe_lgt_steady
+
+Target Field "label"
+--------------------
+
+The value of target data field "lable" is populated by the value of source data field "Title". In case the value of "Title" contains control characters like "\n" they shall be replaced by a space.

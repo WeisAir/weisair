@@ -81,9 +81,8 @@ actions:
 
   - index: 8
     name: label_screen_control
-    type: single
+    type: none
     icon: 1e557c
-    command: sim/none/none
     special-labels:
       - label: Screen
         text-center:
@@ -249,9 +248,8 @@ actions:
 
   - index: 16
     name: label_replay_control
-    type: single
+    type: none
     icon: 1e557c
-    command: sim/none/none
     special-labels:
       - label: Replay
         text-center:
@@ -386,9 +384,8 @@ actions:
       
   - index: 24
     name: label_camera_view
-    type: single
+    type: none
     icon: 1e557c
-    command: sim/none/none
     special-labels:
       - label: Camera
         text-center:

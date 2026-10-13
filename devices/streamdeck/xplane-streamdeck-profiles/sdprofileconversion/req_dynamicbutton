@@ -43,7 +43,7 @@ If the target field "type" is "dual" then populate the the target field "command
 Target Field "dataref"
 ----------------------
 
-The value of target field "dataref" is populated with the value of the source field "AddressMonitor".
+The value of target field "dataref" is populated with the value of the source field "Address".
 
 Target Fields dataref-states and file-names
 -------------------------------------------
@@ -77,3 +77,39 @@ Target Field "label"
 --------------------
 
 The value of target data field "lable" is populated by the value of source data field "Title". In case the value of "Title" contains control characters like "\n" they shall be replaced by a space.
+
+
+Copilot Guidelines:
+
+Your req_dynamicbutton file is a good starting point. I’d make it a Markdown conversion spec and pair it with small source/expected-output fixtures. The spec explains the rules; the fixtures make them concrete and testable.
+
+For each action type, document:
+
+How to recognize it in the source, such as Name: "Dynamic Button" or a particular UUID.
+Which source JSON fields map to which target YAML fields.
+Any transformations, including control-character handling, defaults, and conditional or optional fields.
+What to do when a field is missing, unknown, or malformed.
+A complete example of the source action and its expected YAML output.
+
+-> see req_dynamicbutton.md as an example
+
+
+Be exact about target field names: your note says `lable`, so confirm whether that spelling is required by `xplane-streamdeck` or is a typo. For optional fields, define when they’re omitted versus emitted with an empty or default value.
+
+For the attached autopilot conversion, include a **small representative source/expected pair** in the spec, plus the full manually converted profile as a reference fixture if useful. The complete profile is valuable for checking nested folders and assets, but a compact pair will make individual rules easier to discuss and validate.
+
+A practical layout would be:
+
+```text
+sdprofileconversion/
+  prompt
+  requirements.md
+  examples/
+    dynamic-button.source.json
+    dynamic-button.expected.yaml
+    autopilot.source.json
+    autopilot.expected/
+
+
+    Also document profile-wide behavior separately: how to find nested profiles in the archive, map keys to positions, copy or rename images, handle folders, and what the command-line output directory should contain. That keeps action-specific mapping rules from getting tangled with archive and file-generation rules.
+

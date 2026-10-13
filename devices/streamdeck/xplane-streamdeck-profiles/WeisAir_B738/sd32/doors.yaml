@@ -3,3 +3,314 @@ actions:
     name: return
     type: dir
     icon: back
+
+
+  - index: 10
+    name: door_emerg_4
+    type: single
+    file-names:
+      - doors_closed
+      - doors_open
+    dataref: 737u/doors/L1
+    dataref-states:
+      - 0.0
+      - 1.0
+    command: laminar/B738/door/fwd_L_toggle
+    special-labels:
+      - label: FWD
+        text-center:
+          x: center
+          y: 20
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+      - label: ENTRY
+        text-center:
+          x: center
+          y: 36
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center 
+
+  - index: 11
+    name: door_fwd_service
+    type: single
+    file-names:
+      - doors_closed
+      - doors_open
+    dataref: 737u/doors/R1
+    dataref-states:
+      - 0.0
+      - 1.0
+    command: laminar/B738/door/fwd_R_toggle
+    special-labels:
+      - label: FWD
+        text-center:
+          x: center
+          y: 20
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+      - label: SERVICE
+        text-center:
+          x: center
+          y: 36
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 12
+    name: door_fwd_cargo
+    type: single
+    file-names:
+      - doors_closed
+      - doors_open
+    dataref: 737u/doors/Fwd_Cargo
+    dataref-states:
+      - 0.0
+      - 1.0
+    command: laminar/B738/door/fwd_cargo_toggle
+    special-labels:
+      - label: FWD
+        text-center:
+          x: center
+          y: 20
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+      - label: CARGO
+        text-center:
+          x: center
+          y: 36
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center 
+
+  - index: 17
+    name: door_lt_fwd
+    type: single
+    file-names:
+      - doors_closed
+      - doors_open
+    dataref: 737u/doors/emerg4
+    dataref-states:
+      - 0.0
+      - 1.0
+    command: laminar/B738/door/emerg4_toggle
+    special-labels:
+      - label: LT FWD
+        text-center:
+          x: center
+          y: 20
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+      - label: O-WING
+        text-center:
+          x: center
+          y: 36
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center        
+
+  - index: 18
+    name: door_emerg_3
+    type: single
+    file-names:
+      - doors_closed
+      - doors_open
+    dataref: 737u/doors/emerg3
+    dataref-states:
+      - 0.0
+      - 1.0
+    command: laminar/B738/door/emerg3_toggle
+    special-labels:
+      - label: LT AFT
+        text-center:
+          x: center
+          y: 20
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+      - label: O-WING
+        text-center:
+          x: center
+          y: 36
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+  
+  - index: 20
+    name: door_emerg_2
+    type: single
+    file-names:
+      - doors_closed
+      - doors_open
+    dataref: 737u/doors/emerg2
+    dataref-states:
+      - 0.0
+      - 1.0
+    command: laminar/B738/door/emerg2_toggle
+    special-labels:
+      - label: RT AFT
+        text-center:
+          x: center
+          y: 20
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+      - label: O-WING
+        text-center:
+          x: center
+          y: 36
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center  
+
+  - index: 21
+    name: door_emerg_1
+    type: single
+    file-names:
+      - doors_closed
+      - doors_open
+    dataref: 737u/doors/emerg1
+    dataref-states:
+      - 0.0
+      - 1.0
+    command: laminar/B738/door/emerg1_toggle
+    special-labels:
+      - label: RT FWD
+        text-center:
+          x: center
+          y: 20
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+      - label: O-WING
+        text-center:
+          x: center
+          y: 36
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center  
+
+  - index: 26
+    name: door_aft_entry
+    type: single
+    file-names:
+      - doors_closed
+      - doors_open
+    dataref: 737u/doors/L2
+    dataref-states:
+      - 0.0
+      - 1.0
+    command: laminar/B738/door/aft_L_toggle
+    special-labels:
+      - label: AFT
+        text-center:
+          x: center
+          y: 20
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+      - label: ENTRY
+        text-center:
+          x: center
+          y: 36
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center  
+
+  - index: 27
+    name: door_aft_service
+    type: single
+    file-names:
+      - doors_closed
+      - doors_open
+    dataref: 737u/doors/R2
+    dataref-states:
+      - 0.0
+      - 1.0
+    command: laminar/B738/door/aft_R_toggle
+    special-labels:
+      - label: AFT
+        text-center:
+          x: center
+          y: 20
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+      - label: SERVICE
+        text-center:
+          x: center
+          y: 36
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 28
+    name: door_aft_cargo
+    type: single
+    file-names:
+      - doors_closed
+      - doors_open
+    dataref: 737u/doors/aft_Cargo
+    dataref-states:
+      - 0.0
+      - 1.0
+    command: laminar/B738/door/aft_cargo_toggle
+    special-labels:
+      - label: AFT
+        text-center:
+          x: center
+          y: 20
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+      - label: CARGO
+        text-center:
+          x: center
+          y: 36
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center  

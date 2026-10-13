@@ -38,9 +38,8 @@ actions:
   
   - index: 10
     name: txt1
-    type: single
+    type: none
     icon: just_black
-    command: sim/none/none
     special-labels:
       - label: Aircraft
         text-center:
@@ -54,9 +53,8 @@ actions:
 
   - index: 11
     name: txt2
-    type: single
+    type: none
     icon: just_black
-    command: sim/none/none
     special-labels:
       - label: Profile
         text-center:
@@ -70,9 +68,8 @@ actions:
 
   - index: 12
     name: txt3
-    type: single
+    type: none
     icon: just_black
-    command: sim/none/none
     special-labels:
       - label: Not
         text-center:
@@ -86,9 +83,8 @@ actions:
 
   - index: 13
     name: txt4
-    type: single
+    type: none
     icon: just_black
-    command: sim/none/none
     special-labels:
       - label: Found
         text-center:
