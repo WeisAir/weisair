@@ -127,7 +127,7 @@ actions:
           x: center
           y: 90
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 16
+        font-size: 14
         color: white
         direction: ltr
         align: center
@@ -159,7 +159,7 @@ actions:
           x: center
           y: 90
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 16
+        font-size: 14
         color: white
         direction: ltr
         align: center
