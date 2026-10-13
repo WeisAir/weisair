@@ -1,21 +1,22 @@
 -- =========================================================================
--- WeisAIR Relative Wind Dataref Script (Optimized & Cleaned)
+-- WeisAIR Relative Wind Dataref Script (FlyWithLua Native Fix)
 -- =========================================================================
 
 -- 1. Link the existing X-Plane source datarefs to Lua variables
 dataref("xp_wind_heading", "sim/cockpit2/gauges/indicators/wind_heading_deg_mag", "readonly")
 dataref("xp_aircraft_heading", "sim/cockpit2/gauges/indicators/heading_AHARS_deg_mag_copilot", "readonly")
 
--- 2. Define and register your custom dataref
--- "WeisAIR/environment/wind_heading_relative_to_aircraft"
-create_dataref("WeisAIR/environment/wind_heading_relative_to_aircraft", "number")
+-- 2. Define and register your custom shared dataref.
+-- In FlyWithLua, we use define_shared_dataref. 
+-- "Int" is used because we are outputting a rounded whole integer.
+define_shared_dataref("WeisAIR/environment/wind_heading_relative_to_aircraft", "Int")
 
 -- 3. Calculate and update function
 function update_relative_wind_direction()
 
     local wind_dir_raw = xp_wind_heading
 
-    -- Note: Your original shift logic to get the right vector calculation
+    -- Your original shift logic to get the right vector calculation
     local wind_dir = 0
     if (wind_dir_raw < 180) then 
         wind_dir = wind_dir_raw + 180
@@ -48,9 +49,9 @@ function update_relative_wind_direction()
     -- Round the result to a clean integer to prevent decimal flickering
     local clean_integer_dir = math.floor(relative_wind_dir)
 
-    -- Write the result to your custom dataref
-    set_dataref_value("WeisAIR/environment/wind_heading_relative_to_aircraft",clean_integer_dir)
+    -- 4. Write the value to the shared dataref using FlyWithLua's global array syntax
+    set_dataref_value("WeisAIR/environment/wind_heading_relative_to_aircraft", clean_integer_dir)
 end
 
--- 4. Run this calculation roughly once per second to conserve CPU performance
+-- 5. Run this calculation roughly once per second to conserve CPU performance
 do_often("update_relative_wind_direction()")
