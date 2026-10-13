@@ -1,15 +1,14 @@
 -- =========================================================================
--- WeisAIR Relative Wind Dataref Script (FlyWithLua Native Fix)
+-- WeisAIR Relative Wind Dataref Script (FlyWithLua Table Implementation)
 -- =========================================================================
 
 -- 1. Link the existing X-Plane source datarefs to Lua variables
 dataref("xp_wind_heading", "sim/cockpit2/gauges/indicators/wind_heading_deg_mag", "readonly")
 dataref("xp_aircraft_heading", "sim/cockpit2/gauges/indicators/heading_AHARS_deg_mag_copilot", "readonly")
 
--- 2. Define and register your custom shared dataref.
--- In FlyWithLua, we use define_shared_dataref. 
--- "Int" is used because we are outputting a rounded whole integer.
-define_shared_dataref("WeisAIR/environment/wind_heading_relative_to_aircraft", "Int")
+-- 2. Define and register your custom dataref as a FlyWithLua Table
+-- This registers it to X-Plane and provides a Lua table object to interact with.
+weisair_relative_wind = create_dataref_table("WeisAIR/environment/wind_heading_relative_to_aircraft", "Int")
 
 -- 3. Calculate and update function
 function update_relative_wind_direction()
@@ -49,8 +48,9 @@ function update_relative_wind_direction()
     -- Round the result to a clean integer to prevent decimal flickering
     local clean_integer_dir = math.floor(relative_wind_dir)
 
-    -- 4. Write the value to the shared dataref using FlyWithLua's global array syntax
-    set_dataref_value("WeisAIR/environment/wind_heading_relative_to_aircraft", clean_integer_dir)
+    -- 4. Correct FlyWithLua writing syntax: 
+    -- Single-value custom datarefs are always assigned to index [0]
+    weisair_relative_wind[0] = clean_integer_dir
 end
 
 -- 5. Run this calculation roughly once per second to conserve CPU performance
