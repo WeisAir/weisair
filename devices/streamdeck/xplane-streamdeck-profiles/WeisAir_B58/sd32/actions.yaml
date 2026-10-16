@@ -1,9 +1,8 @@
 actions:
   - index: 0
     name: aircraft label
-    type: single
+    type: none
     icon: plane_identifier
-    command: sim/none/none
     special-labels:
       - label: Beechcraft
         text-center:
@@ -24,158 +23,282 @@ actions:
         direction: ltr
         align: center
 
-  - index: 16
-    name: land lights
+  - index: 1
+    name: cockpit cameras
     type: single
+    icon: camera
+    command: WeisAIR/generic/camera/toggle_cockpit_cameras
+    special-labels:
+      - label: Cockpit
+        text-center:
+          x: center
+          y: 10
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+  
+  - index: 2
+    name: external cameras
+    type: single
+    icon: camera
+    command: WeisAIR/generic/camera/toggle_external_cameras
+    special-labels:
+      - label: External
+        text-center:
+          x: center
+          y: 10
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+  
+  - index: 7
+    name: replay
+    type: dir
+    icon: folder
+    special-labels:
+      - label: REPLAY
+        text-center:
+          x: center
+          y: 45
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+      - label: CONTROL
+        text-center:
+          x: center
+          y: 65
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 8
+    name: battery_1
+    type: dual
+    file-names:
+      - switch_off
+      - switch_on
+    dataref: sim/cockpit2/electrical/battery_on[0]
+    dataref-states:
+      - 0.0
+      - 1.0
+    command-on: sim/electrical/battery_1_off
+    command-off: sim/electrical/battery_1_on
+    special-labels:
+      - label: BAT 1
+        text-center:
+          x: center
+          y: 20
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+  
+
+  - index: 9
+    name: autopilot
+    type: dir
+    icon: folder
+    special-labels:
+      - label: AUTOPILOT
+        text-center:
+          x: center
+          y: 50
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 10
+    name: energy
+    type: dir
+    icon: folder
+    special-labels:
+      - label: ENERGY
+        text-center:
+          x: center
+          y: 45
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 11
+    name: systems
+    type: dir
+    icon: folder
+    special-labels:
+      - label: SYSTEMS
+        text-center:
+          x: center
+          y: 45
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+
+  - index: 16
+    name: strobe_lights
+    type: dual
     file-names:
       - generic_toggle_2pos_off
       - generic_toggle_2pos_on
-    dataref: sim/cockpit2/switches/generic_lights_switch[0]
-    command: laminar/B738/switch/wing_light_toggle
+    dataref: sim/cockpit/electrical/strobe_lights_on
+    dataref-states:
+      - 0.0
+      - 1.0
+    command-on: sim/lights/strobe_lights_off
+    command-off: sim/lights/strobe_lights_on
     special-labels:
-      - label: LAND
+      - label: STROBE
         text-center:
           x: center
           y: 28
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
+        font-size: 18
         color: white
         direction: ltr
         align: center
 
   - index: 17
-    name: rwto lights
+    name: beacon_lights
     type: single
     file-names:
       - generic_toggle_2pos_off
       - generic_toggle_2pos_on
-    dataref: sim/cockpit2/switches/generic_lights_switch[0]
-    command: laminar/B738/switch/wing_light_toggle
+    dataref: sim/cockpit/electrical/beacon_lights_on
+    dataref-states:
+      - 0.0
+      - 1.0
+    command: sim/lights/beacon_lights_toggle
     special-labels:
-      - label: RTWO
+      - label: BCN
         text-center:
           x: center
           y: 28
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
+        font-size: 18
         color: white
         direction: ltr
         align: center
 
   - index: 18
-    name: taxi lights
+    name: nav_lights
+    type: dual
+    file-names:
+      - generic_toggle_2pos_off
+      - generic_toggle_2pos_on
+    dataref: sim/cockpit/electrical/nav_lights_on
+    dataref-states:
+      - 0.0
+      - 2.0
+    command-on: sim/lights/nav_lights_off
+    command-off: sim/lights/nav_lights_on
+    special-labels:
+      - label: NAV
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 18
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 19
+    name: flood_lights
     type: single
     file-names:
       - generic_toggle_2pos_off
       - generic_toggle_2pos_on
-    dataref: sim/cockpit2/switches/generic_lights_switch[0]
-    command: laminar/B738/switch/wing_light_toggle
+    dataref: laminar/b58/flood_light_toggle/switch_pos
+    command: laminar/b58/lighting/flood_light_switch
+    special-labels:
+      - label: FLOOD
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 18
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 20
+    name: panel_lights
+    type: single
+    file-names:
+      - generic_toggle_2pos_off
+      - generic_toggle_2pos_on
+    dataref: laminar/b58/panel_light_toggle/switch_pos
+    command: laminar/b58/lighting/panel_light_switch
+    special-labels:
+      - label: PANEL
+        text-center:
+          x: center
+          y: 28
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 18
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 21
+    name: taxi_lights
+    type: single
+    file-names:
+      - generic_toggle_2pos_off
+      - generic_toggle_2pos_on
+    dataref: sim/cockpit/electrical/taxi_light_on
+    command: sim/lights/taxi_lights_toggle
     special-labels:
       - label: TAXI
         text-center:
           x: center
           y: 28
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
-        color: white
-        direction: ltr
-        align: center
-
-  - index: 19
-    name: logo lights
-    type: single
-    file-names:
-      - generic_toggle_2pos_off
-      - generic_toggle_2pos_on
-    dataref: sim/cockpit2/switches/generic_lights_switch[0]
-    command: laminar/B738/switch/wing_light_toggle
-    special-labels:
-      - label: LOGO
-        text-center:
-          x: center
-          y: 28
-        font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
-        color: white
-        direction: ltr
-        align: center
-
-  - index: 20
-    name: position lights
-    type: single
-    file-names:
-      - generic_toggle_2pos_off
-      - generic_toggle_2pos_on
-    dataref: sim/cockpit2/switches/generic_lights_switch[0]
-    command: laminar/B738/switch/wing_light_toggle
-    special-labels:
-      - label: POS
-        text-center:
-          x: center
-          y: 28
-        font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
-        color: white
-        direction: ltr
-        align: center
-
-  - index: 21
-    name: anti-collision lights
-    type: single
-    file-names:
-      - generic_toggle_2pos_off
-      - generic_toggle_2pos_on
-    dataref: sim/cockpit2/switches/generic_lights_switch[0]
-    command: laminar/B738/switch/wing_light_toggle
-    special-labels:
-      - label: ANTI COL
-        text-center:
-          x: center
-          y: 28
-        font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
+        font-size: 18
         color: white
         direction: ltr
         align: center
 
   - index: 22
-    name: wing lights
+    name: land_lights
     type: single
     file-names:
       - generic_toggle_2pos_off
       - generic_toggle_2pos_on
-    dataref: sim/cockpit2/switches/generic_lights_switch[0]
-    command: laminar/B738/switch/wing_light_toggle
+    dataref: sim/cockpit/electrical/landing_lights_on
+    command: sim/lights/landing_lights_toggle
     special-labels:
-      - label: WING
+      - label: LAND
         text-center:
           x: center
           y: 28
         font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
+        font-size: 18
         color: white
         direction: ltr
         align: center
 
-  - index: 23
-    name: wheel well lights
+  - index: 26
+    name: flashlight
     type: single
-    file-names:
-      - generic_toggle_2pos_off
-      - generic_toggle_2pos_on
-    dataref: sim/cockpit2/switches/generic_lights_switch[0]
-    command: laminar/B738/switch/wing_light_toggle
-    special-labels:
-      - label: W-WELL
-        text-center:
-          x: center
-          y: 28
-        font-path: IBMPlexMono-Bold.ttf
-        font-size: 20
-        color: white
-        direction: ltr
-        align: center
-
+    icon: flashlight
+    command: sim/view/flashlight_wht
+    
         
   - index: 27
     name: doors
@@ -185,7 +308,7 @@ actions:
       - label: DOORS
         text-center:
           x: center
-          y: 28
+          y: 50
         font-path: IBMPlexMono-Bold.ttf
         font-size: 20
         color: white
@@ -195,7 +318,7 @@ actions:
   - index: 28
     name: plan pushback
     type: single
-    command: laminar/B738/switch/wing_light_toggle
+    command: BetterPushback/start_planner
     icon: button
     special-labels:
       - label: Plan
@@ -220,7 +343,7 @@ actions:
   - index: 29
     name: plan pushback
     type: single
-    command: laminar/B738/switch/wing_light_toggle
+    command: BetterPushback/start
     icon: button
     special-labels:
       - label: Start
@@ -239,5 +362,20 @@ actions:
         font-path: IBMPlexMono-Bold.ttf
         font-size: 16
         color: green
+        direction: ltr
+        align: center
+
+  - index: 31
+    name: env
+    type: dir
+    icon: vfr_few
+    special-labels:
+      - label: ENV
+        text-center:
+          x: center
+          y: 60
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
         direction: ltr
         align: center

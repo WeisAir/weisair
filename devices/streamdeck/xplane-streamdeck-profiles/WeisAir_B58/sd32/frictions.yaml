@@ -1,0 +1,267 @@
+actions:
+  - index: 0
+    name: return
+    type: dir
+    icon: back
+
+  - index: 4
+    name: weather_rwy_friction_dry
+    type: single
+    icon: rwy_dry
+    command: WeisAIR/ops_weather/set_weather_rwy_friction_dry
+    special-labels:
+      - label: DRY
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+
+  - index: 9
+    name: weather_rwy_friction_wet1
+    type: single
+    icon: rwy_wet1
+    command: WeisAIR/ops_weather/set_weather_rwy_friction_wet1
+    special-labels:
+      - label: WET 1
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 10
+    name: weather_rwy_friction_wet2
+    type: single
+    icon: rwy_wet2
+    command: WeisAIR/ops_weather/set_weather_rwy_friction_wet2
+    special-labels:
+      - label: WET 2
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 11
+    name: weather_rwy_friction_wet3
+    type: single
+    icon: rwy_wet3
+    command: WeisAIR/ops_weather/set_weather_rwy_friction_wet3
+    special-labels:
+      - label: WET 3
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 13
+    name: weather_rwy_friction_puddly1
+    type: single
+    icon: rwy_puddly1
+    command: WeisAIR/ops_weather/set_weather_rwy_friction_puddly1
+    special-labels:
+      - label: PUDDLY 1
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 14
+    name: weather_rwy_friction_puddly2
+    type: single
+    icon: rwy_puddly2
+    command: WeisAIR/ops_weather/set_weather_rwy_friction_puddly2
+    special-labels:
+      - label: PUDDLY 2
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 15
+    name: weather_rwy_friction_puddly3
+    type: single
+    icon: rwy_puddly3
+    command: WeisAIR/ops_weather/set_weather_rwy_friction_puddly3
+    special-labels:
+      - label: PUDDLY 3
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 17
+    name: weather_rwy_friction_snowy1
+    type: single
+    icon: rwy_snow1
+    command: WeisAIR/ops_weather/set_weather_rwy_friction_snowy1
+    special-labels:
+      - label: SNOWY 1
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 18
+    name: weather_rwy_friction_snowy2
+    type: single
+    icon: rwy_snow2
+    command: WeisAIR/ops_weather/set_weather_rwy_friction_snowy2
+    special-labels:
+      - label: SNOWY 2
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 19
+    name: weather_rwy_friction_snowy3
+    type: single
+    icon: rwy_snow3
+    command: WeisAIR/ops_weather/set_weather_rwy_friction_snowy3
+    special-labels:
+      - label: SNOWY 3
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 21
+    name: weather_rwy_friction_icy1
+    type: single
+    icon: rwy_icy1
+    command: WeisAIR/ops_weather/set_weather_rwy_friction_icy1
+    special-labels:
+      - label: ICY 1
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+
+  - index: 22
+    name: weather_rwy_friction_icy2
+    type: single
+    icon: rwy_icy2
+    command: WeisAIR/ops_weather/set_weather_rwy_friction_icy2
+    special-labels:
+      - label: ICY 2
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 23
+    name: weather_rwy_friction_icy3
+    type: single
+    icon: rwy_icy3
+    command: WeisAIR/ops_weather/set_weather_rwy_friction_icy3
+    special-labels:
+      - label: ICY 3
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+    command: WeisAIR/ops_weather/set_weather_rwy_friction_icy1
+
+
+
+  - index: 25
+    name: weather_rwy_friction_snowyicy1
+    type: single
+    icon: rwy_snowicy1
+    command: WeisAIR/ops_weather/set_weather_rwy_friction_snowyicy1
+    special-labels:
+      - label: "SNOW+ICE 1"
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 26
+    name: weather_rwy_friction_snowyicy2
+    type: single
+    icon: rwy_snowicy2
+    command: WeisAIR/ops_weather/set_weather_rwy_friction_snowyicy2
+    special-labels:
+      - label: "SNOW+ICE 2"
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 27
+    name: weather_rwy_friction_snowyicy3
+    type: single
+    icon: rwy_snowicy3
+    command: WeisAIR/ops_weather/set_weather_rwy_friction_snowyicy3
+    special-labels:
+      - label: "SNOW+ICE 3"
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center

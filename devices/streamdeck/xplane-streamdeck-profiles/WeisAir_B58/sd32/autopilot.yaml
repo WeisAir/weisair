@@ -1,0 +1,146 @@
+actions:
+  - index: 0
+    name: return
+    type: dir
+    icon: back    
+  
+  - index: 9
+    name: heading
+    type: single
+    icon: button
+    command: sim/autopilot/heading
+    special-labels:
+      - label: HDG
+        text-center:
+          x: center
+          y: 60
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 10
+    name: flight_director
+    type: single
+    icon: button
+    command: sim/autopilot/fdir_toggle
+    special-labels:
+      - label: FD
+        text-center:
+          x: center
+          y: 60
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+  
+  - index: 11
+    name: alt_hold
+    type: single
+    icon: button
+    command: sim/autopilot/altitude_hold
+    special-labels:
+      - label: ALT
+        text-center:
+          x: center
+          y: 60
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 13
+    name: autopilot
+    type: dual
+    file-names:
+      - switch_off
+      - switch_on
+    dataref: sim/cockpit2/autopilot/autopilot_on
+    dataref-states:
+      - 0.0
+      - 1.0
+    command-on: sim/autopilot/fdir_servos_toggle:sim/autopilot/servis_toggle:sim/autopilot/autothrottle_off
+    command-off: sim/autopilot/fdir_servos_toggle:sim/autopilot/servis_toggle
+    special-labels:
+      - label: AP
+        text-center:
+          x: center
+          y: 20
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 17
+    name: nav
+    type: single
+    icon: button
+    command: sim/autopilot/NAV
+    special-labels:
+      - label: NAV
+        text-center:
+          x: center
+          y: 60
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 18
+    name: back_course
+    type: single
+    icon: button
+    command: sim/autopilot/back_course
+    special-labels:
+      - label: BC
+        text-center:
+          x: center
+          y: 60
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 19
+    name: approach
+    type: single
+    icon: button
+    command: sim/autopilot/approach
+    special-labels:
+      - label: APPR
+        text-center:
+          x: center
+          y: 60
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 21
+    name: yaw_damper
+    type: single
+    file-names:
+      - switch_off
+      - switch_on
+    dataref: sim/cockpit/switches/yaw_damper_on
+    dataref-states:
+      - 0.0
+      - 1.0
+    command: sim/systems/yaw_damper_toggle
+    special-labels:
+      - label: Y-DAMP
+        text-center:
+          x: center
+          y: 20
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center

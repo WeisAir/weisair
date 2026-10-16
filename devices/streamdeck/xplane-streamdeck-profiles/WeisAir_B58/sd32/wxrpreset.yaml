@@ -1,0 +1,181 @@
+actions:
+  - index: 0
+    name: return
+    type: dir
+    icon: back
+
+  - index: 9
+    name: label_vfr
+    type: none
+    icon: 1e557c
+    special-labels:
+      - label: VFR
+        text-center:
+          x: center
+          y: 55
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 30
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 10
+    name: wxr_preset_cavoc
+    type: single
+    icon: cavok
+    command: WeisAIR/ops_weather/set_weather_cavok
+    special-labels:
+      - label: CAVOC
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 11
+    name: wxr_preset_vfr_few
+    type: single
+    icon: vfr_few
+    command: WeisAIR/ops_weather/set_weather_vfr_few
+    special-labels:
+      - label: FEW
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 12
+    name: wxr_preset_vfr_scattered
+    type: single
+    icon: vfr_scattered
+    command: WeisAIR/ops_weather/set_weather_vfr_scattered
+    special-labels:
+      - label: SCATTERED
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+
+  - index: 13
+    name: wxr_preset_vfr_broken
+    type: single
+    icon: vfr_broken
+    command: WeisAIR/ops_weather/set_weather_vfr_broken
+    special-labels:
+      - label: BROKE
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 14
+    name: wxr_preset_vfr_marginal
+    type: single
+    icon: vfr_marginal
+    command: WeisAIR/ops_weather/set_weather_vfr_marginal
+    special-labels:
+      - label: MARGINAL
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+
+
+  - index: 17
+    name: label_ifr
+    type: none
+    icon: 1e557c
+    special-labels:
+      - label: IFR
+        text-center:
+          x: center
+          y: 55
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 30
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 18
+    name: wxr_preset_ifr_nonprecision
+    type: single
+    icon: ifr_nonprec
+    command: WeisAIR/ops_weather/set_weather_ifr_nonprecision
+    special-labels:
+      - label: NON-PRECIS.
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 14
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 19
+    name: wxr_preset_ifr_precision
+    type: single
+    icon: ifr_prec
+    command: WeisAIR/ops_weather/set_weather_ifr_precision
+    special-labels:
+      - label: PRECISION
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
+    
+  - index: 20
+    name: wxr_preset_ifr_convective
+    type: single
+    icon: convective
+    command: WeisAIR/ops_weather/set_weather_convective
+    special-labels:
+      - label: CONVECTIVE
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 14
+        color: white
+        direction: ltr
+        align: center
+
+  - index: 21
+    name: wxr_preset_ifr_thunderstorm
+    type: single
+    icon: thunderstorm
+    command: WeisAIR/ops_weather/set_weather_largecellthunderstorms
+    special-labels:
+      - label: THUNDER
+        text-center:
+          x: center
+          y: 90
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 16
+        color: white
+        direction: ltr
+        align: center
