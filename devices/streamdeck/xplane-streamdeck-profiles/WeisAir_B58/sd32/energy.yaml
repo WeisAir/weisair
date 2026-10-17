@@ -6,7 +6,7 @@ actions:
   
   - index: 8
     name: battery_1
-    type: dual
+    type: single
     file-names:
       - switch_off
       - switch_on
@@ -14,8 +14,7 @@ actions:
     dataref-states:
       - 0.0
       - 1.0
-    command-on: sim/electrical/battery_1_off
-    command-off: sim/electrical/battery_1_on
+    command: sim/electrical/battery_1_toggle
     special-labels:
       - label: BAT 1
         text-center:
@@ -29,7 +28,7 @@ actions:
 
   - index: 9
     name: battery_2
-    type: dual
+    type: single
     file-names:
       - switch_off
       - switch_on
@@ -37,8 +36,7 @@ actions:
     dataref-states:
       - 0.0
       - 1.0
-    command-on: sim/electrical/battery_2_off
-    command-off: sim/electrical/battery_2_on
+    command: sim/electrical/battery_2_toggle
     special-labels:
       - label: BAT 2
         text-center:
@@ -52,7 +50,7 @@ actions:
 
   - index: 10
     name: generator_1
-    type: dual
+    type: single
     file-names:
       - switch_off
       - switch_on
@@ -60,8 +58,7 @@ actions:
     dataref-states:
       - 0.0
       - 1.0
-    command-on: sim/electrical/generator_1_off
-    command-off: sim/electrical/generator_1_on
+    command: sim/electrical/generator_1_toggle
     special-labels:
       - label: ALT 1
         text-center:
@@ -75,7 +72,7 @@ actions:
 
   - index: 11
     name: generator_2
-    type: dual
+    type: single
     file-names:
       - switch_off
       - switch_on
@@ -83,8 +80,7 @@ actions:
     dataref-states:
       - 0.0
       - 1.0
-    command-on: sim/electrical/generator_2_off
-    command-off: sim/electrical/generator_2_on
+    command: sim/electrical/generator_2_toggle
     special-labels:
       - label: ALT 2
         text-center:

@@ -15,8 +15,8 @@ actions:
     dataref-states:
       - 0.0
       - 1.0
-    command-on: sim/flight_controls/door_close_1
-    command-off: sim/flight_controls/door_open_1
+    command-on: sim/flight_controls/door_open_1
+    command-off: sim/flight_controls/door_close_1
     special-labels:
       - label: FRONT
         text-center:
@@ -47,8 +47,8 @@ actions:
     dataref-states:
       - 0.0
       - 1.0
-    command-on: sim/flight_controls/door_close_2
-    command-off: sim/flight_controls/door_open_2
+    command-on: sim/flight_controls/door_open_2
+    command-off: sim/flight_controls/door_close_2
     special-labels:
       - label: REAR
         text-center:

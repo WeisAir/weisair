@@ -81,7 +81,7 @@ actions:
 
   - index: 8
     name: battery_1
-    type: dual
+    type: single
     file-names:
       - switch_off
       - switch_on
@@ -89,8 +89,7 @@ actions:
     dataref-states:
       - 0.0
       - 1.0
-    command-on: sim/electrical/battery_1_off
-    command-off: sim/electrical/battery_1_on
+    command: sim/electrical/battery_1_toggle
     special-labels:
       - label: BAT 1
         text-center:
@@ -159,8 +158,8 @@ actions:
     dataref-states:
       - 0.0
       - 1.0
-    command-on: sim/lights/strobe_lights_off
-    command-off: sim/lights/strobe_lights_on
+    command-on: sim/lights/strobe_lights_on
+    command-off: sim/lights/strobe_lights_off
     special-labels:
       - label: STROBE
         text-center:
@@ -203,9 +202,9 @@ actions:
     dataref: sim/cockpit/electrical/nav_lights_on
     dataref-states:
       - 0.0
-      - 2.0
-    command-on: sim/lights/nav_lights_off
-    command-off: sim/lights/nav_lights_on
+      - 1.0
+    command-on: sim/lights/nav_lights_on
+    command-off: sim/lights/nav_lights_off
     special-labels:
       - label: NAV
         text-center:
