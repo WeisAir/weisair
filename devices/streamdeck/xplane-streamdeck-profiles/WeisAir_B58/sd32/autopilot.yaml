@@ -62,8 +62,13 @@ actions:
     dataref-states:
       - 0.0
       - 1.0
-    command-on: sim/autopilot/fdir_servos_toggle:sim/autopilot/servis_toggle:sim/autopilot/autothrottle_off
-    command-off: sim/autopilot/fdir_servos_toggle:sim/autopilot/servis_toggle
+    commands-on: 
+      - sim/autopilot/fdir_servos_toggle
+      - sim/autopilot/servis_toggle
+      - sim/autopilot/autothrottle_off
+    commands-off: 
+      - sim/autopilot/fdir_servos_toggle
+      - sim/autopilot/servis_toggle
     special-labels:
       - label: AP
         text-center:
