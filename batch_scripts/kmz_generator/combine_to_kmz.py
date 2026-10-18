@@ -1,10 +1,13 @@
 import os
-import sys
 import zipfile
 import shutil
 import re
 import base64
+import argparse
+import csv
+import struct
 from datetime import datetime, timezone, timedelta
+from zoneinfo import ZoneInfo
 import piexif
 
 # ==========================================
@@ -13,7 +16,7 @@ import piexif
 IMAGE_WIDTH = "500"
 IMAGE_HEIGHT = "auto"
 TIME_TOLERANCE_MINUTES = 15
-TRONDHEIM_TIMEZONE = timezone(timedelta(hours=2), "Trondheim UTC+2")
+LOCAL_TIMEZONE = ZoneInfo("Europe/Oslo")
 # ==========================================
 
 # Transparentes Kamera-Icon (Base64), das im KMZ-Hauptverzeichnis abgelegt wird
@@ -78,13 +81,39 @@ def parse_kml_time_range(kml_path):
         print(f"⚠️ Fehler beim Parsen der KML-Zeitstempel: {e}")
         return None, None
 
+def load_image_exif(image_path):
+    with open(image_path, "rb") as image_file:
+        if image_file.read(8) != b"\x89PNG\r\n\x1a\n":
+            return piexif.load(image_path)
+
+        while True:
+            chunk_header = image_file.read(8)
+            if len(chunk_header) != 8:
+                break
+
+            chunk_length = struct.unpack(">I", chunk_header[:4])[0]
+            chunk_type = chunk_header[4:]
+            if chunk_type == b"eXIf":
+                exif_data = image_file.read(chunk_length)
+                if len(exif_data) != chunk_length:
+                    raise ValueError("PNG eXIf chunk is truncated")
+                return piexif.load(exif_data)
+
+            image_file.seek(chunk_length + 4, os.SEEK_CUR)
+
+    raise ValueError("PNG does not contain an eXIf metadata chunk")
+
 def get_image_data(image_path):
     try:
-        exif_dict = piexif.load(image_path)
+        exif_dict = load_image_exif(image_path)
         gps = exif_dict.get("GPS")
         exif = exif_dict.get("Exif")
         
         if not gps or piexif.GPSIFD.GPSLatitude not in gps or piexif.GPSIFD.GPSLongitude not in gps:
+            print(
+                f"[GPS DEBUG] {os.path.basename(image_path)}: "
+                "lon=<unavailable>, lat=<unavailable>; GPS tags are missing"
+            )
             return None
 
         # Sicherer Zugriff ohne eckige Indizes im mathematischen Code
@@ -112,23 +141,92 @@ def get_image_data(image_path):
             img_time = datetime.strptime(date_str, "%Y:%m:%d %H:%M:%S").replace(tzinfo=timezone.utc)
             
         return {"coords": (lon, lat), "time": img_time}
-    except Exception:
+    except ValueError as error:
+        print(
+            f"[GPS DEBUG] {os.path.basename(image_path)}: "
+            f"lon=<unavailable>, lat=<unavailable>; EXIF metadata cannot be read: {error}"
+        )
+        return None
+    except (OSError, KeyError, IndexError, TypeError, ZeroDivisionError) as error:
+        print(
+            f"[GPS DEBUG] {os.path.basename(image_path)}: "
+            f"lon=<unavailable>, lat=<unavailable>; GPS metadata error: {error}"
+        )
         return None
 
 def get_filename_time(file_name):
-    match = re.search(r'(\d{4}-\d{2}-\d{2})\s+(\d{2}\.\d{2}\.\d{2})', file_name)
+    match = re.search(
+        r'(\d{4}-\d{2}-\d{2})\s+(\d{2}\.\d{2}\.\d{2})(?:\s+(AM|PM))?',
+        file_name,
+        flags=re.IGNORECASE,
+    )
     if not match:
         return None
     try:
-        local_time = datetime.strptime(
-            f"{match.group(1)} {match.group(2)}",
-            "%Y-%m-%d %H.%M.%S",
-        ).replace(tzinfo=TRONDHEIM_TIMEZONE)
+        time_format = "%Y-%m-%d %I.%M.%S %p" if match.group(3) else "%Y-%m-%d %H.%M.%S"
+        time_text = f"{match.group(1)} {match.group(2)}"
+        if match.group(3):
+            time_text += f" {match.group(3)}"
+        local_time = datetime.strptime(time_text, time_format).replace(tzinfo=LOCAL_TIMEZONE)
         return local_time.astimezone(timezone.utc)
     except ValueError:
         return None
 
-def create_kmz(kml_path, image_folder, output_kmz, use_time_filter=True):
+def parse_flight_log_time_ranges(flight_log_path):
+    time_formats = (
+        "%Y-%m-%d %I.%M.%S %p",
+        "%Y-%m-%d %H.%M.%S",
+    )
+
+    def parse_local_time(value):
+        for time_format in time_formats:
+            try:
+                return datetime.strptime(value, time_format).replace(
+                    tzinfo=LOCAL_TIMEZONE
+                ).astimezone(timezone.utc)
+            except ValueError:
+                continue
+        raise ValueError(f"Invalid system timestamp: {value!r}")
+
+    ranges = []
+    with open(flight_log_path, "r", encoding="utf-8-sig", newline="") as flight_log:
+        reader = csv.DictReader(flight_log)
+        fieldnames = reader.fieldnames or []
+        if "system_time_start" not in fieldnames:
+            raise ValueError("CSV is missing the 'system_time_start' column")
+        if not ({"system_time_end", "system_time_stop"} & set(fieldnames)):
+            raise ValueError(
+                "CSV is missing a 'system_time_end' or 'system_time_stop' column"
+            )
+
+        for row_number, row in enumerate(reader, start=2):
+            start_text = (row.get("system_time_start") or "").strip()
+            end_text = (
+                row.get("system_time_end") or row.get("system_time_stop") or ""
+            ).strip()
+            if not start_text and not end_text:
+                continue
+            if not start_text or not end_text:
+                raise ValueError(
+                    f"CSV row {row_number} must contain both system-time values"
+                )
+            try:
+                start_time = parse_local_time(start_text)
+                end_time = parse_local_time(end_text)
+            except ValueError as error:
+                raise ValueError(f"CSV row {row_number}: {error}") from error
+            if start_time > end_time:
+                raise ValueError(
+                    f"CSV row {row_number}: system_time_start is after the end time"
+                )
+            ranges.append((start_time, end_time))
+
+    if not ranges:
+        raise ValueError("CSV contains no flight records with system-time ranges")
+    return ranges
+
+def create_kmz(kml_path, image_folder, output_kmz, use_time_filter=True,
+               flight_log_path=None):
     print("-> Starte Erstellung des KMZ-Pakets...")
     if not os.path.exists(kml_path):
         print(f"Fehler: Die KML-Datei '{kml_path}' wurde nicht gefunden.")
@@ -138,8 +236,20 @@ def create_kmz(kml_path, image_folder, output_kmz, use_time_filter=True):
         return
 
     route_start, route_end = None, None
+    flight_log_ranges = None
     if use_time_filter:
-        route_start, route_end = parse_kml_time_range(kml_path)
+        if flight_log_path:
+            try:
+                flight_log_ranges = parse_flight_log_time_ranges(flight_log_path)
+            except (OSError, ValueError) as error:
+                print(f"Fehler beim Lesen des Fluglogs '{flight_log_path}': {error}")
+                return
+            print(
+                f"-> Screenshot-Zeitfilter anhand von {len(flight_log_ranges)} "
+                "Fluglog-Zeitfenster(n)."
+            )
+        else:
+            route_start, route_end = parse_kml_time_range(kml_path)
     else:
         print("ℹ️ Zeitfilter manuell deaktiviert. Alle geolokalisierten Bilder werden verarbeitet.")
 
@@ -159,6 +269,7 @@ def create_kmz(kml_path, image_folder, output_kmz, use_time_filter=True):
         generated_placemarks = []
         image_count = 0
         skipped_time_count = 0
+        skipped_metadata_count = 0
         
         for root, dirs, files in os.walk(image_folder):
             for file in files:
@@ -168,23 +279,56 @@ def create_kmz(kml_path, image_folder, output_kmz, use_time_filter=True):
                     
                     if img_data:
                         lon, lat = img_data["coords"]
+                        print(
+                            f"[GPS DEBUG] {file}: lon={lon:.8f}, lat={lat:.8f}"
+                        )
                         exif_time = img_data["time"]
                         filename_time = get_filename_time(file)
-                        img_time = exif_time or filename_time
-                        timestamp_source = "EXIF" if exif_time else (
-                            "filename" if filename_time else "none"
+                        filter_time = (
+                            filename_time
+                            if flight_log_ranges is not None
+                            else exif_time or filename_time
                         )
-                        timestamp_text = img_time.isoformat() if img_time else "<none>"
+                        if flight_log_ranges is not None:
+                            timestamp_source = "filename" if filename_time else "none"
+                        else:
+                            timestamp_source = "EXIF" if exif_time else (
+                                "filename" if filename_time else "none"
+                            )
+                        timestamp_text = filter_time.isoformat() if filter_time else "<none>"
                         
-                        if use_time_filter and route_start and route_end:
-                            if not img_time:
+                        if use_time_filter and flight_log_ranges is not None:
+                            if not filter_time:
                                 print(
                                     f"[TIME DEBUG] {file}: timestamp=<none>; source={timestamp_source}; "
                                     "SKIPPED (no usable timestamp)"
                                 )
                                 skipped_time_count += 1
                                 continue
-                            if not (route_start <= img_time <= route_end):
+                            if not any(
+                                start <= filter_time <= end
+                                for start, end in flight_log_ranges
+                            ):
+                                log_ranges_text = "; ".join(
+                                    f"{start.isoformat()} to {end.isoformat()}"
+                                    for start, end in flight_log_ranges
+                                )
+                                print(
+                                    f"[TIME DEBUG] {file}: timestamp={filter_time.isoformat()}; "
+                                    f"source=filename; flight-log-ranges={log_ranges_text}; "
+                                    "SKIPPED (outside flight-log window)"
+                                )
+                                skipped_time_count += 1
+                                continue
+                        elif use_time_filter and route_start and route_end:
+                            if not filter_time:
+                                print(
+                                    f"[TIME DEBUG] {file}: timestamp=<none>; source={timestamp_source}; "
+                                    "SKIPPED (no usable timestamp)"
+                                )
+                                skipped_time_count += 1
+                                continue
+                            if not (route_start <= filter_time <= route_end):
                                 print(
                                     f"[TIME DEBUG] {file}: timestamp={timestamp_text}; source={timestamp_source}; "
                                     f"route={route_start.isoformat()} to {route_end.isoformat()}; "
@@ -194,6 +338,7 @@ def create_kmz(kml_path, image_folder, output_kmz, use_time_filter=True):
                                 continue
                         print(
                             f"[TIME DEBUG] {file}: timestamp={timestamp_text}; source={timestamp_source}; "
+                            f"flight-log-ranges={len(flight_log_ranges) if flight_log_ranges is not None else '<not used>'}; "
                             f"route={route_start.isoformat() if route_start else '<none>'} to "
                             f"{route_end.isoformat() if route_end else '<none>'}; INCLUDED"
                         )
@@ -217,10 +362,7 @@ def create_kmz(kml_path, image_folder, output_kmz, use_time_filter=True):
                         )
                         generated_placemarks.append(placemark_str)
                     else:
-                        print(
-                            f"[TIME DEBUG] {file}: timestamp=<unavailable>; "
-                            "SKIPPED (missing GPS or readable EXIF data)"
-                        )
+                        skipped_metadata_count += 1
 
         with open(kml_path, 'r', encoding='utf-8') as f:
             kml_content = f.read()
@@ -254,6 +396,11 @@ def create_kmz(kml_path, image_folder, output_kmz, use_time_filter=True):
         print(f"\n-> KML wurde erfolgreich um {image_count} passende Bild-Placemarks erweitert.")
         if skipped_time_count > 0:
             print(f"-> {skipped_time_count} Bilder wurden aufgrund des Zeitfilters aussortiert.")
+        if skipped_metadata_count > 0:
+            print(
+                f"-> {skipped_metadata_count} Bilder wurden aussortiert, "
+                "weil GPS-Koordinaten nicht gelesen werden konnten."
+            )
 
         with zipfile.ZipFile(output_kmz, 'w', zipfile.ZIP_DEFLATED) as kmz:
             for root, dirs, files in os.walk(temp_dir):
@@ -271,20 +418,24 @@ def create_kmz(kml_path, image_folder, output_kmz, use_time_filter=True):
             shutil.rmtree(temp_dir)
 
 if __name__ == "__main__":
-    # Extrem sicheres Auslesen der Argumente mittels Listen-Pop (umgeht eckige Klammern)
-    arguments = list(sys.argv)
-    
-    if len(arguments) < 4:
-        print("\nVerwendung:")
-        print("  python combine_to_kmz.py <KML_DATEI> <BILD_ORDNER> <OUTPUT_KMZ> [--no-time-filter]")
-        sys.exit(1)
-        
-    # Skriptname entfernen
-    arguments.pop(0)
-    
-    kml_file_arg = arguments.pop(0)
-    image_folder_arg = arguments.pop(0)
-    output_kmz_arg = arguments.pop(0)
-    use_time_filter_bool = not arguments or arguments.pop(0) != "--no-time-filter"
-    create_kmz(kml_file_arg, image_folder_arg, output_kmz_arg,
-               use_time_filter=use_time_filter_bool)
+    argument_parser = argparse.ArgumentParser()
+    argument_parser.add_argument("kml_file", help="KML file written by the simulator")
+    argument_parser.add_argument("image_folder", help="Folder containing screenshots")
+    argument_parser.add_argument("output_kmz", help="Path for the output KMZ file")
+    argument_parser.add_argument(
+        "--flight-log",
+        help="Flight log CSV used to filter screenshots by system-time range",
+    )
+    argument_parser.add_argument(
+        "--no-time-filter",
+        action="store_true",
+        help="Process every geolocated screenshot without a time filter",
+    )
+    arguments = argument_parser.parse_args()
+    create_kmz(
+        arguments.kml_file,
+        arguments.image_folder,
+        arguments.output_kmz,
+        use_time_filter=not arguments.no_time_filter,
+        flight_log_path=arguments.flight_log,
+    )
