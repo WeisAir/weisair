@@ -292,6 +292,8 @@ function mn_wpt_show()
        if (imgui.RadioButton("FIX",wpts.savetype == 512)) then
          wpts.savetype = 512
        end
+       imgui.PopStyleColor()
+       imgui.PopStyleColor()
        imgui.SetCursorPosY(imgui.GetCursorPosY() +10)
        imgui.PushStyleColor(imgui.constant.Col.Text, 0xff000000) -- black text
        imgui.PushStyleColor(imgui.constant.Col.FrameBg,0xff00ff00) -- text input/radiobutton background green
@@ -303,8 +305,9 @@ function mn_wpt_show()
        if (changed) then 
            wpts.wpt_save = newVal 
        end
-       imgui.SetWindowFontScale(1.0) -- normal text
        imgui.PopStyleColor()
+       imgui.PopStyleColor()
+       imgui.SetWindowFontScale(1.0) -- normal text
        imgui.SetCursorPosX(150)
        if imgui.Button("Save", 60, 20) then
             if (wpts.wpt_save and wpts.wpt_save >"") then
@@ -312,6 +315,7 @@ function mn_wpt_show()
             end
             float_wnd_destroy(mnwnd_wpt)        -- close the window
        end
+       imgui.PopStyleColor()
 end
 
 -- --------------------------------------------------------------------------
@@ -390,6 +394,9 @@ function mn_kml_show_screen()
           mn_write_KML(true,string.format("%s: %s [%s]",stats.dep_icao, stats.dep_name, PLANE_ICAO)) --**1230**
           float_wnd_destroy(mnwnd_kml)
       end
+      imgui.PopStyleColor()
+      imgui.PopStyleColor()
+      imgui.PopStyleColor()
  end
 -- --------------------------------------------------------------------------
 
@@ -541,6 +548,8 @@ function mn_show_current_status()
             float_wnd_destroy(mnwnd_stat)        -- close the window
        end
    end
+   imgui.PopStyleColor()
+   imgui.PopStyleColor()
 end
 -- --------------------------------------------------------------------------
 
@@ -1130,4 +1139,3 @@ end
 mn_reset_script()
 do_often("mn_CheckStatus()")
 do_sometimes("mn_check_progress()")
-
