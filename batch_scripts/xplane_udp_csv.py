@@ -4,9 +4,11 @@ import struct
 from datetime import datetime, timezone
 from pathlib import Path
 
-UDP_IP = "0.0.0.0"
+#UDP_IP = "0.0.0.0" #UDP_IP = "192.168.2.202
+UDP_IP = "127.0.0.1"
 UDP_PORT = 49005
 CSV_PATH = Path(__file__).with_name("xplane_log.csv")
+MAPPING_PATH = Path(__file__).with_name("xplane_udp_mapping.csv")
 
 
 def decode_data_packet(data):
@@ -34,12 +36,60 @@ def decode_data_packet(data):
     return records
 
 
-def write_csv(rows, fieldnames):
-    with CSV_PATH.open("w", newline="", encoding="utf-8") as file:
-        writer = csv.DictWriter(file, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(rows)
+def load_header_mapping():
+    with MAPPING_PATH.open(newline="", encoding="utf-8-sig") as file:
+        reader = csv.DictReader(file)
+        if reader.fieldnames != ["generic_header", "human_readable_name"]:
+            raise ValueError(
+                f"{MAPPING_PATH} must have columns "
+                "'generic_header,human_readable_name'"
+            )
 
+        mapping = {}
+        for line_number, row in enumerate(reader, start=2):
+            generic_header = (row["generic_header"] or "").strip()
+            human_readable_name = (row["human_readable_name"] or "").strip()
+            if not generic_header or not human_readable_name:
+                raise ValueError(
+                    f"{MAPPING_PATH}:{line_number} has an empty header name"
+                )
+            if generic_header in mapping:
+                raise ValueError(
+                    f"{MAPPING_PATH}:{line_number} maps "
+                    f"{generic_header!r} more than once"
+                )
+            if human_readable_name == "udp_timestamp" or (
+                human_readable_name in mapping.values()
+            ):
+                raise ValueError(
+                    f"{MAPPING_PATH}:{line_number} has a duplicate or "
+                    "reserved human-readable name"
+                )
+            mapping[generic_header] = human_readable_name
+
+        return mapping
+
+
+def write_csv(rows, fieldnames, header_mapping):
+    output_fieldnames = [
+        header_mapping.get(fieldname, fieldname) for fieldname in fieldnames
+    ]
+    if len(output_fieldnames) != len(set(output_fieldnames)):
+        raise ValueError("The header mapping produces duplicate CSV columns")
+
+    with CSV_PATH.open("w", newline="", encoding="utf-8") as file:
+        writer = csv.DictWriter(file, fieldnames=output_fieldnames)
+        writer.writeheader()
+        writer.writerows(
+            {
+                header_mapping.get(fieldname, fieldname): value
+                for fieldname, value in row.items()
+            }
+            for row in rows
+        )
+
+
+header_mapping = load_header_mapping()
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -76,4 +126,4 @@ while True:
                 fieldnames.append(column)
 
     rows.append(row)
-    write_csv(rows, fieldnames)
+    write_csv(rows, fieldnames, header_mapping)
