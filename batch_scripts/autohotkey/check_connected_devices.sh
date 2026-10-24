@@ -13,7 +13,7 @@ TARGET_DEVICES=(
 MISSING_DEVICES=""
 ALL_CONNECTED=1
 
-echo "Überprüfe USB-Geräte..."
+echo "Check connectivity of USB Devices..."
 
 # Schleife durch alle definierten Geräte
 for ID in "${!TARGET_DEVICES[@]}"; do
@@ -26,19 +26,18 @@ for ID in "${!TARGET_DEVICES[@]}"; do
     fi
 done
 
-# Wenn Geräte fehlen, grafische Warnung anzeigen (falls zenity installiert ist)
+# Wenn Geräte fehlen, eine grafische Warnung anzeigen
 if [ $ALL_CONNECTED -eq 0 ]; then
-    ERROR_MSG="Die folgenden USB-Geräte fehlen:\n\n${MISSING_DEVICES}"
+    ERROR_MSG="The following USB Devices are not connected:\n\n${MISSING_DEVICES}"
+    ERROR_TEXT="$(printf '%b' "$ERROR_MSG")"
     
-    # Prüfen, ob eine Benutzeroberfläche und 'zenity' verfügbar sind
-    if [ -n "$DISPLAY" ] && command -v zenity &> /dev/null; then
-        zenity --error --title="USB Verbindungsfehler" --text="$(printf "$ERROR_MSG")" --width=400
+    if [ -n "$DISPLAY" ] && command -v xmessage &> /dev/null; then
+        xmessage -title "USB device connection test failed" -center -buttons OK:0 "$ERROR_TEXT"
     else
-        # Fallback für das Terminal
-        printf "\e[1;31mERROR: USB Verbindungsfehler\e[0m\n\n$ERROR_MSG"
+        printf "\e[1;31mERROR: USB device connection test failed\e[0m\n\n%s\n" "$ERROR_TEXT"
     fi
-    exit 0
+    exit 1
 fi
 
-echo "Alle Geräte verbunden! Starte X-Plane 12..."
-exit 1
+echo "All relevant USB devices are connected, ready to start X-Plane 12..."
+exit 0
