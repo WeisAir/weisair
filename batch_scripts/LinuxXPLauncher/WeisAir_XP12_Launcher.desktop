@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=WeisAir X-Plane 12 Launcher
+Comment=Run X-Plane 12 in my environment
+Exec=/home/stephan/dev/weisair/batch_scripts/LinuxXPLauncher/WeisAir_XP12_Launcher.sh
+Path=/home/stephan/dev/weisair/batch_scripts/LinuxXPLauncher
+Icon=/home/stephan/dev/weisair/batch_scripts/LinuxXPLauncher/weisair_logo_white.jpg
+Terminal=true
+Categories=Game;

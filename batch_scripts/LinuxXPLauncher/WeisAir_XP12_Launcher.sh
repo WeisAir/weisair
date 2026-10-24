@@ -2,12 +2,14 @@
 
 # Configurable application paths and commands.
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
-USB_CHECK_SCRIPT="${SCRIPT_DIR}/check_usb_devices.sh"
+USB_CHECK_SCRIPT="${SCRIPT_DIR}/check_connected_devices.sh"
 LITTLENAVMAP_EXECUTABLE="/home/stephan/X-Plane-12-Assets/tools/LittleNavmap-linux-ubuntu-24.04-3.0.18/littlenavmap"
-UDP_LOGGER_SCRIPT="${SCRIPT_DIR}/xplane_udp_csv.py"
+UDP_LOGGER_SCRIPT="../udpLogger/xplane_udp_csv.py"
 PYTHON_EXECUTABLE="python3"
 SIMBRIEF_SCRIPT="/home/stephan/X-Plane-12-Assets/tools/SimbriefPyDownloader/SimBriefPyDownloader/SimBriefPyDownloader.py"
 XPLANE_EXECUTABLE="/home/stephan/X-Plane 12/X-Plane-x86_64"
+XPLANE_ISO="/mnt/B87AB6F57AB6AF8C/XPLANE12_DVD1.ISO"
+XPLANE_MOUNT_POINT="/mnt/iso/xp12"
 STATUS_LOG="${SCRIPT_DIR}/WeisAir_XP12_Launcher_status.log"
 APPLICATION_OUTPUT_LOG="${SCRIPT_DIR}/WeisAir_XP12_Launcher_applications.log"
 
@@ -25,7 +27,7 @@ record_failure() {
 run_usb_check() {
     if [[ ! -f "$USB_CHECK_SCRIPT" || ! -x "$USB_CHECK_SCRIPT" ]]; then
         record_failure "USB check script is missing or not executable: $USB_CHECK_SCRIPT"
-        return
+        return 1
     fi
 
     log_status "Running USB device check: $USB_CHECK_SCRIPT"
@@ -33,8 +35,13 @@ run_usb_check() {
     local result=${PIPESTATUS[0]}
     if (( result == 0 )); then
         log_status "USB device check completed successfully"
+        return 0
+    elif (( result == 2 )); then
+        log_status "USB device check cancelled by user"
+        return 2
     else
         record_failure "USB device check exited with status $result"
+        return 1
     fi
 }
 
@@ -54,7 +61,7 @@ launch_background() {
     fi
 
     log_status "Starting $label"
-    (cd -- "$working_directory" && exec nohup "$@") >>"$APPLICATION_OUTPUT_LOG" 2>&1 &
+    (cd -- "$working_directory" && exec setsid --wait nohup "$@") >>"$APPLICATION_OUTPUT_LOG" 2>&1 &
     local process_id=$!
     sleep 3
     local process_state
@@ -103,6 +110,32 @@ launch_python_script() {
     launch_background "$label" "$(dirname -- "$script")" "$PYTHON_EXECUTABLE" "$script"
 }
 
+ensure_xplane_iso_mounted() {
+    if ! command -v mountpoint >/dev/null 2>&1; then
+        record_failure "mountpoint command was not found"
+        return 1
+    fi
+
+    if mountpoint -q -- "$XPLANE_MOUNT_POINT"; then
+        log_status "X-Plane ISO is already mounted at $XPLANE_MOUNT_POINT"
+        return 0
+    fi
+
+    log_status "Mounting X-Plane ISO at $XPLANE_MOUNT_POINT"
+    if sudo mount -o loop "$XPLANE_ISO" "$XPLANE_MOUNT_POINT"; then
+        if mountpoint -q -- "$XPLANE_MOUNT_POINT"; then
+            log_status "X-Plane ISO mounted successfully"
+            return 0
+        fi
+
+        record_failure "Mount command succeeded but $XPLANE_MOUNT_POINT is not mounted"
+        return 1
+    fi
+
+    record_failure "Failed to mount X-Plane ISO: $XPLANE_ISO"
+    return 1
+}
+
 if ! touch "$STATUS_LOG"; then
     printf 'Cannot write status log: %s\n' "$STATUS_LOG" >&2
     exit 1
@@ -110,9 +143,20 @@ fi
 
 log_status "===== WeisAir X-Plane 12 launcher started ====="
 run_usb_check
+usb_check_result=$?
+if (( usb_check_result == 2 )); then
+    log_status "Launcher cancelled by user during USB device check"
+    exit 0
+elif (( usb_check_result != 0 )); then
+    log_status "Launcher stopped because the USB device check did not complete"
+    exit 1
+fi
+
 launch_python_script "X-Plane UDP data logger" "$UDP_LOGGER_SCRIPT"
 launch_python_script "SimBrief PyDownloader" "$SIMBRIEF_SCRIPT"
-launch_native_application "X-Plane 12" "$XPLANE_EXECUTABLE"
+if ensure_xplane_iso_mounted; then
+    launch_native_application "X-Plane 12" "$XPLANE_EXECUTABLE"
+fi
 launch_littlenavmap
 
 if (( FAILURES == 0 )); then

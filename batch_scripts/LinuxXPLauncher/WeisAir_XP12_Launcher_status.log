@@ -1,0 +1,45 @@
+[2026-10-24 23:47:54] ===== WeisAir X-Plane 12 launcher started =====
+[2026-10-24 23:47:54] Running USB device check: /home/stephan/dev/weisair/batch_scripts/LinuxXPLauncher/check_connected_devices.sh
+Check connectivity of USB Devices...
+All relevant USB devices are connected, ready to start X-Plane 12...
+[2026-10-24 23:47:54] USB device check completed successfully
+[2026-10-24 23:47:54] Starting X-Plane UDP data logger
+[2026-10-24 23:47:57] X-Plane UDP data logger started successfully (PID 64590)
+[2026-10-24 23:47:57] Starting SimBrief PyDownloader
+[2026-10-24 23:48:00] SimBrief PyDownloader started successfully (PID 64638)
+[2026-10-24 23:48:00] X-Plane ISO is already mounted at /mnt/iso/xp12
+[2026-10-24 23:48:00] Starting X-Plane 12
+[2026-10-24 23:48:03] X-Plane 12 started successfully (PID 64667)
+[2026-10-24 23:48:03] Starting Little Navmap
+[2026-10-24 23:48:06] Little Navmap started successfully (PID 64716)
+[2026-10-24 23:48:06] All launcher steps completed successfully
+[2026-10-24 23:48:26] ===== WeisAir X-Plane 12 launcher started =====
+[2026-10-24 23:48:26] Running USB device check: /home/stephan/dev/weisair/batch_scripts/LinuxXPLauncher/check_connected_devices.sh
+Check connectivity of USB Devices...
+All relevant USB devices are connected, ready to start X-Plane 12...
+[2026-10-24 23:48:26] USB device check completed successfully
+[2026-10-24 23:48:26] Starting X-Plane UDP data logger
+[2026-10-24 23:48:29] X-Plane UDP data logger started successfully (PID 65011)
+[2026-10-24 23:48:29] Starting SimBrief PyDownloader
+[2026-10-24 23:48:32] SimBrief PyDownloader started successfully (PID 65059)
+[2026-10-24 23:48:32] X-Plane ISO is already mounted at /mnt/iso/xp12
+[2026-10-24 23:48:32] Starting X-Plane 12
+[2026-10-24 23:48:35] X-Plane 12 started successfully (PID 65089)
+[2026-10-24 23:48:35] Starting Little Navmap
+[2026-10-24 23:48:38] Little Navmap started successfully (PID 65211)
+[2026-10-24 23:48:38] All launcher steps completed successfully
+[2026-10-24 23:49:02] ===== WeisAir X-Plane 12 launcher started =====
+[2026-10-24 23:49:02] Running USB device check: /home/stephan/dev/weisair/batch_scripts/LinuxXPLauncher/check_connected_devices.sh
+Check connectivity of USB Devices...
+All relevant USB devices are connected, ready to start X-Plane 12...
+[2026-10-24 23:49:02] USB device check completed successfully
+[2026-10-24 23:49:02] Starting X-Plane UDP data logger
+[2026-10-24 23:49:05] X-Plane UDP data logger started successfully (PID 65452)
+[2026-10-24 23:49:05] Starting SimBrief PyDownloader
+[2026-10-24 23:49:08] SimBrief PyDownloader started successfully (PID 65464)
+[2026-10-24 23:49:08] X-Plane ISO is already mounted at /mnt/iso/xp12
+[2026-10-24 23:49:08] Starting X-Plane 12
+[2026-10-24 23:49:11] X-Plane 12 started successfully (PID 65481)
+[2026-10-24 23:49:11] Starting Little Navmap
+[2026-10-24 23:49:14] Little Navmap started successfully (PID 65589)
+[2026-10-24 23:49:14] All launcher steps completed successfully
