@@ -9,11 +9,18 @@ python analysis/plot_xplane_flight.py path/to/xplane_log.csv
 ```
 
 The default plot uses Zulu time on the x-axis; pressure altitude and indicated
-airspeed on the left y-axis; and flap, speedbrake, and landing-gear deployment
-on a 0-to-1 right y-axis. The filename is shown literally as the chart title,
-without gnuplot interpreting underscores or other enhanced-text characters.
+airspeed on the left y-axis; and speedbrake deployment on a 0-to-1 right
+y-axis. The filename is shown literally as the chart title, without gnuplot
+interpreting underscores or other enhanced-text characters.
 The x-axis has 10-minute ticks and labels the exact starting and ending Zulu
 times at its boundaries.
+Landing-gear deployment is annotated at each 0/1 state change with a triangle
+marker and a "Gear Up" or "Gear Down" label instead of a plotted gear line.
+Flap changes are annotated at each crossed 25% position with a marker and a
+"Flaps UP <percent>%" or "Flaps DOWN <percent>%" label instead of a plotted
+flap line. Both types of event have a thin dotted guide line across the plot;
+nearby flap annotations are staggered into separate rows to keep their labels
+readable.
 The plotter resolves either generic UDP headers or
 the readable names from `batch_scripts/udpLogger/xplane_udp_mapping.csv`.
 Fields not present in a log are reported and skipped. The provided

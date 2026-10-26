@@ -26,6 +26,7 @@ MAPPING_PATH = (
 X_AXIS = "zulu_time_h"
 INVALID_VALUES = {-999.0}
 TIME_TICK_SECONDS = 600
+FLAP_EVENT_STEP = 0.25
 
 
 @dataclass(frozen=True)
@@ -39,10 +40,10 @@ class Series:
 SERIES = (
     Series("p-alt_ftMSL", "Altitude (ft)"),
     Series("vind_kias", "Indicated airspeed (kts)"),
-    Series("flap_postn", "Flaps (deployment ratio)", "y2", "steps"),
     Series("sbrak_postn", "Speedbrake (deployment ratio)", "y2"),
-    Series("gear_01", "Landing gear (deployed)", "y2", "steps"),
 )
+GEAR_EVENT_COLUMN = "gear_01"
+FLAP_EVENT_COLUMN = "flap_postn"
 
 #Altitude:	group_20_field_6,p-alt_ftMSL
 #Airspeed:	group_3_field_1,vind_kias
@@ -134,6 +135,25 @@ def make_xtics(minimum: float, maximum: float) -> str:
     )
 
 
+def assign_event_lanes(
+    events: list[tuple[float, str, int]], time_span: float
+) -> list[tuple[float, str, int, int]]:
+    lane_events: list[list[tuple[float, str]]] = []
+    assigned_events = []
+    for event_time, label, point_type in events:
+        for lane, previous_events in enumerate(lane_events):
+            previous_time, previous_label = previous_events[-1]
+            minimum_gap = time_span * max(len(label), len(previous_label)) / 150
+            if event_time - previous_time >= minimum_gap:
+                previous_events.append((event_time, label))
+                break
+        else:
+            lane = len(lane_events)
+            lane_events.append([(event_time, label)])
+        assigned_events.append((event_time, label, point_type, lane))
+    return assigned_events
+
+
 def generate_plot(
     input_path: Path, mapping_path: Path, output_prefix: Path
 ) -> tuple[Path, Path]:
@@ -166,6 +186,21 @@ def generate_plot(
     if not available_series:
         raise ValueError(f"No configured plot fields were found in {input_path}")
 
+    gear_column = resolve_column(GEAR_EVENT_COLUMN, fieldnames, mapping)
+    if gear_column is None:
+        print(
+            f"Warning: field {GEAR_EVENT_COLUMN!r} is missing; "
+            "gear event annotations will be omitted.",
+            file=sys.stderr,
+        )
+    flap_column = resolve_column(FLAP_EVENT_COLUMN, fieldnames, mapping)
+    if flap_column is None:
+        print(
+            f"Warning: field {FLAP_EVENT_COLUMN!r} is missing; "
+            "flap event annotations will be omitted.",
+            file=sys.stderr,
+        )
+
     output_prefix.parent.mkdir(parents=True, exist_ok=True)
     data_path = output_prefix.with_suffix(".dat")
     plot_path = output_prefix.with_suffix(".gnuplot")
@@ -173,6 +208,10 @@ def generate_plot(
 
     processed_rows: list[tuple[float, list[float]]] = []
     previous_seconds: float | None = None
+    previous_gear_state: int | None = None
+    gear_events: list[tuple[float, int]] = []
+    previous_flap_value: float | None = None
+    flap_events: list[tuple[float, str, int]] = []
     day_offset = 0.0
     skipped_time_rows = 0
     for row in rows:
@@ -185,6 +224,45 @@ def generate_plot(
             day_offset += 86400
         previous_seconds = zulu_seconds
         x_value = zulu_seconds + day_offset
+        if gear_column is not None:
+            gear_value = parse_measurement(row.get(gear_column))
+            if gear_value in (0.0, 1.0):
+                gear_state = int(gear_value)
+                if (
+                    previous_gear_state is not None
+                    and gear_state != previous_gear_state
+                ):
+                    gear_events.append((x_value, gear_state))
+                previous_gear_state = gear_state
+        if flap_column is not None:
+            flap_value = parse_measurement(row.get(flap_column))
+            if not math.isnan(flap_value):
+                if previous_flap_value is not None:
+                    if flap_value > previous_flap_value:
+                        targets = (
+                            target
+                            for target in (
+                                step * FLAP_EVENT_STEP for step in range(1, 5)
+                            )
+                            if previous_flap_value < target <= flap_value
+                        )
+                        flap_events.extend(
+                            (x_value, f"Flaps DOWN {round(target * 100)}%", 11)
+                            for target in targets
+                        )
+                    elif flap_value < previous_flap_value:
+                        targets = (
+                            target
+                            for target in (
+                                step * FLAP_EVENT_STEP for step in range(5)
+                            )
+                            if flap_value <= target < previous_flap_value
+                        )
+                        flap_events.extend(
+                            (x_value, f"Flaps UP {round(target * 100)}%", 9)
+                            for target in targets
+                        )
+                previous_flap_value = flap_value
         measurements = [
             parse_measurement(row.get(column)) for _, column in available_series
         ]
@@ -219,13 +297,42 @@ def generate_plot(
             f"with {series.style}{axis} title {gnuplot_quote(series.label)}"
         )
 
+    event_labels = [
+        (
+            f"set label {index} {gnuplot_quote('Gear Down' if state else 'Gear Up')} "
+            f"at first {event_time:.3f}, graph 0.025 center "
+            f"point pt {11 if state else 9} ps 1.2 offset 0,1"
+        )
+        for index, (event_time, state) in enumerate(gear_events, start=1)
+    ]
+    event_labels.extend(
+        (
+            f"set label {index} {gnuplot_quote(label)} "
+            f"at first {event_time:.3f}, graph {0.08 + lane * 0.07:.2f} center "
+            f"point pt {point_type} ps 1.2 offset 0,1"
+        )
+        for index, (event_time, label, point_type, lane) in enumerate(
+            assign_event_lanes(flap_events, maximum_x - minimum_x),
+            start=len(event_labels) + 1,
+        )
+    )
+    event_times = [event_time for event_time, _ in gear_events]
+    event_times.extend(event_time for event_time, _, _ in flap_events)
+    event_arrows = [
+        (
+            f"set arrow {index} from first {event_time:.3f}, graph 0 "
+            f"to first {event_time:.3f}, graph 1 nohead dt 2 lw 0.5 "
+            "lc rgb '#888888' back"
+        )
+        for index, event_time in enumerate(event_times, start=1)
+    ]
     script = [
         "set terminal pngcairo size 1600,900",
         f"set output {gnuplot_quote(str(image_path.resolve()))}",
         f"set title {gnuplot_quote(input_path.stem)} noenhanced",
         'set xlabel "Zulu time"',
         'set ylabel "Altitude (ft) / airspeed (kt)"',
-        'set y2label "Deployment (0-1)"',
+        'set y2label "Speedbrake deployment (0-1)"',
         "set y2range [0:1]",
         "set y2tics 0, 0.2, 1",
         "set ytics nomirror",
@@ -233,6 +340,8 @@ def generate_plot(
         "set key outside right center",
         f"set xrange [{minimum_x:.3f}:{maximum_x:.3f}]",
         f"set xtics ({make_xtics(minimum_x, maximum_x)})",
+        *event_arrows,
+        *event_labels,
         "plot " + ", \\\n     ".join(plot_terms),
         "",
     ]
