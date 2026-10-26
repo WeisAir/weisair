@@ -26,6 +26,7 @@ MAPPING_PATH = (
 X_AXIS = "zulu_time_h"
 INVALID_VALUES = {-999.0}
 TIME_TICK_SECONDS = 600
+XTIC_EDGE_CLEARANCE = 0.08
 FLAP_EVENT_STEP = 0.25
 
 
@@ -121,12 +122,15 @@ def zulu_boundary_label(seconds: float) -> str:
 
 
 def make_xtics(minimum: float, maximum: float) -> str:
+    time_span = maximum - minimum
     first_tick = math.ceil(minimum / TIME_TICK_SECONDS) * TIME_TICK_SECONDS
     ticks = [(minimum, zulu_boundary_label(minimum))]
     ticks.extend(
         (tick, zulu_label(tick))
         for tick in range(first_tick, math.floor(maximum) + 1, TIME_TICK_SECONDS)
         if minimum < tick < maximum
+        and (tick - minimum) / time_span >= XTIC_EDGE_CLEARANCE
+        and (maximum - tick) / time_span >= XTIC_EDGE_CLEARANCE
     )
     if maximum != minimum:
         ticks.append((maximum, zulu_boundary_label(maximum)))
@@ -218,9 +222,10 @@ def generate_plot(
     processed_rows: list[tuple[float, list[float]]] = []
     previous_seconds: float | None = None
     previous_gear_state: int | None = None
-    gear_events: list[tuple[float, int]] = []
+    gear_events: list[tuple[float, str, int]] = []
     previous_flap_value: float | None = None
-    position_events: list[tuple[float, str, int]] = []
+    flap_events: list[tuple[float, str, int]] = []
+    speedbrake_events: list[tuple[float, str, int]] = []
     previous_speedbrake_value: float | None = None
     day_offset = 0.0
     skipped_time_rows = 0
@@ -242,7 +247,9 @@ def generate_plot(
                     previous_gear_state is not None
                     and gear_state != previous_gear_state
                 ):
-                    gear_events.append((x_value, gear_state))
+                    gear_events.append(
+                        (x_value, f"{gear_state * 100}%", 11 if gear_state else 9)
+                    )
                 previous_gear_state = gear_state
         if flap_column is not None:
             flap_value = parse_measurement(row.get(flap_column))
@@ -256,8 +263,8 @@ def generate_plot(
                             )
                             if previous_flap_value < target <= flap_value
                         )
-                        position_events.extend(
-                            (x_value, f"FLAPS DN {round(target * 100)}%", 11)
+                        flap_events.extend(
+                            (x_value, f"{round(target * 100)}%", 11)
                             for target in targets
                         )
                     elif flap_value < previous_flap_value:
@@ -268,8 +275,8 @@ def generate_plot(
                             )
                             if flap_value <= target < previous_flap_value
                         )
-                        position_events.extend(
-                            (x_value, f"FLAPS UP {round(target * 100)}%", 9)
+                        flap_events.extend(
+                            (x_value, f"{round(target * 100)}%", 9)
                             for target in targets
                         )
                 previous_flap_value = flap_value
@@ -278,11 +285,15 @@ def generate_plot(
             if not math.isnan(speedbrake_value):
                 if previous_speedbrake_value is not None:
                     if previous_speedbrake_value < 1.0 and speedbrake_value == 1.0:
-                        position_events.append((x_value, "SPDBRK FULL", 11))
+                        speedbrake_events.append(
+                            (x_value, f"{round(speedbrake_value * 100)}%", 11)
+                        )
                     elif previous_speedbrake_value == 0.0 and speedbrake_value > 0.0:
-                        position_events.append((x_value, "SPDBRK DN", 11))
+                        speedbrake_events.append(
+                            (x_value, f"{round(speedbrake_value * 100)}%", 11)
+                        )
                     elif previous_speedbrake_value > 0.0 and speedbrake_value == 0.0:
-                        position_events.append((x_value, "SPDBRK UP", 9))
+                        speedbrake_events.append((x_value, "0%", 9))
                 previous_speedbrake_value = speedbrake_value
         measurements = [
             parse_measurement(row.get(column)) for _, column in available_series
@@ -318,35 +329,96 @@ def generate_plot(
             f"with {series.style}{axis} title {gnuplot_quote(series.label)}"
         )
 
-    event_labels = [
+    event_tracks = [
         (
-            f"set label {index} {gnuplot_quote('GEAR DN' if state else 'GEAR UP')} "
-            f"at first {event_time:.3f}, graph 0.025 center "
-            f"point pt {11 if state else 9} ps 1.2 offset 0,1"
-        )
-        for index, (event_time, state) in enumerate(gear_events, start=1)
+            "FLAPS",
+            flap_events,
+        ),
+        (
+            "GEAR",
+            gear_events,
+        ),
+        (
+            "SPDBRK",
+            speedbrake_events,
+        ),
     ]
-    event_labels.extend(
-        (
-            f"set label {index} {gnuplot_quote(label)} "
-            f"at first {event_time:.3f}, graph {0.08 + lane * 0.07:.2f} center "
-            f"point pt {point_type} ps 1.2 offset 0,1"
-        )
-        for index, (event_time, label, point_type, lane) in enumerate(
-            assign_event_lanes(position_events, maximum_x - minimum_x),
-            start=len(event_labels) + 1,
-        )
+    event_track_lanes = [
+        (name, assign_event_lanes(events, maximum_x - minimum_x))
+        for name, events in event_tracks
+        if events
+    ]
+    lane_height = 0.035
+    track_padding = 0.018
+    track_gap = 0.01
+    event_area_height = sum(
+        len({lane for _, _, _, lane in events}) * lane_height
+        + track_padding * 2
+        + track_gap
+        for _, events in event_track_lanes
     )
-    event_times = [event_time for event_time, _ in gear_events]
-    event_times.extend(event_time for event_time, _, _ in position_events)
-    event_arrows = [
-        (
-            f"set arrow {index} from first {event_time:.3f}, graph 0 "
-            f"to first {event_time:.3f}, graph 1 nohead dt 2 lw 0.5 "
-            "lc rgb '#888888' back"
+    track_cursor = 0.04 + event_area_height
+    plot_bottom = track_cursor + 0.11
+    event_box_lines = []
+    event_guides = []
+    event_labels = []
+    arrow_index = 1
+    label_index = 1
+    for name, events in event_track_lanes:
+        lane_count = len({lane for _, _, _, lane in events})
+        track_height = lane_count * lane_height + track_padding * 2
+        track_top = track_cursor
+        track_bottom = track_top - track_height
+        track_center = (track_top + track_bottom) / 2
+        event_box_lines.extend(
+            (
+                f"set arrow {arrow_index} from graph 0, screen {track_bottom:.3f} "
+                f"to graph 1, screen {track_bottom:.3f} nohead front "
+                "lc rgb '#888888' lw 0.7",
+                f"set arrow {arrow_index + 1} from graph 0, screen {track_top:.3f} "
+                f"to graph 1, screen {track_top:.3f} nohead front "
+                "lc rgb '#888888' lw 0.7",
+                f"set arrow {arrow_index + 2} from graph 0, screen {track_bottom:.3f} "
+                f"to graph 0, screen {track_top:.3f} nohead front "
+                "lc rgb '#888888' lw 0.7",
+                f"set arrow {arrow_index + 3} from graph 1, screen {track_bottom:.3f} "
+                f"to graph 1, screen {track_top:.3f} nohead front "
+                "lc rgb '#888888' lw 0.7",
+            )
         )
-        for index, event_time in enumerate(event_times, start=1)
-    ]
+        event_labels.append(
+            f"set label {label_index} {gnuplot_quote(name)} "
+            f"at screen 0.035, screen {track_center:.3f} center rotate by 90"
+        )
+        arrow_index += 4
+        label_index += 1
+        for event_time, label, point_type, lane in events:
+            event_y = track_top - track_padding - (lane + 0.5) * lane_height
+            event_labels.append(
+                f"set label {label_index} {gnuplot_quote(label)} "
+                f"at first {event_time:.3f}, screen {event_y:.3f} "
+                f"left point pt {point_type} ps 1.1 offset 0.35,-0.25"
+            )
+            label_index += 1
+        track_cursor = track_bottom - track_gap
+    if event_track_lanes:
+        event_times = sorted(
+            {
+                event_time
+                for _, events in event_track_lanes
+                for event_time, _, _, _ in events
+            }
+        )
+        event_guides = [
+            (
+                f"set arrow {index} from first {event_time:.3f}, graph 0 "
+                f"to first {event_time:.3f}, screen {track_cursor + track_gap:.3f} "
+                "nohead dt 2 lw 0.5 lc rgb '#888888' back"
+            )
+            for index, event_time in enumerate(
+                event_times, start=arrow_index
+            )
+        ]
     script = [
         "set terminal pngcairo size 1600,900",
         f"set output {gnuplot_quote(str(image_path.resolve()))}",
@@ -356,11 +428,17 @@ def generate_plot(
         'set y2label "Speed (kts)"',
         "set ytics nomirror",
         "set y2tics autofreq",
+        *(
+            [f"set bmargin at screen {plot_bottom:.3f}"]
+            if event_track_lanes
+            else []
+        ),
         "set grid",
         "set key outside right center",
         f"set xrange [{minimum_x:.3f}:{maximum_x:.3f}]",
         f"set xtics ({make_xtics(minimum_x, maximum_x)})",
-        *event_arrows,
+        *event_box_lines,
+        *event_guides,
         *event_labels,
         "plot " + ", \\\n     ".join(plot_terms),
         "",

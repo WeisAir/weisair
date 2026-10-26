@@ -12,17 +12,20 @@ The default plot uses Zulu time on the x-axis, pressure altitude on the left
 y-axis, and indicated airspeed in knots on the right y-axis. The filename is
 shown literally as the chart title, without gnuplot interpreting underscores
 or other enhanced-text characters. The speed axis displays automatically
-scaled numeric ticks.
-The x-axis has 10-minute ticks and labels the exact starting and ending Zulu
-times at its boundaries.
-Landing-gear deployment is annotated at each 0/1 state change with a triangle
-marker and a "Gear Up" or "Gear Down" label instead of a plotted gear line.
-Flap changes are annotated at each crossed 25% position with a marker and a
-"Flaps UP <percent>%" or "Flaps DOWN <percent>%" label instead of a plotted
-flap line. Speedbrake changes are annotated with "SPDBRK UP" or "SPDBRK DN";
-reaching full deployment is labeled "SPDBRK FULL". These events have a marker
-and a thin dotted guide line across the plot. Nearby flap and speedbrake
-annotations are staggered into separate rows to keep their labels readable.
+scaled numeric ticks. The x-axis has 10-minute ticks and labels the exact
+starting and ending Zulu times at its boundaries; nearby interior ticks are
+hidden to prevent overlap with those boundary labels.
+Landing-gear deployment is annotated at each 0/1 state change with an up/down
+triangle and percentage label instead of a plotted gear line. Flap changes
+are annotated at each crossed 25% position with an up/down triangle and
+percentage label instead of a plotted flap line. Speedbrake changes use the
+same triangle-and-percentage style, including 100% for full deployment. The
+FLAPS, GEAR, and SPDBRK row headings identify each event type vertically
+outside the left edge of their boxes. Events are shown in separate boxed
+timeline rows below the x-axis, keeping their labels clear of the plotted
+data. Dotted vertical guides connect each event time through the graph and
+event rows. Nearby events within a row are staggered into separate lanes to
+keep their labels readable.
 The plotter resolves either generic UDP headers or
 the readable names from `batch_scripts/udpLogger/xplane_udp_mapping.csv`.
 Fields not present in a log are reported and skipped. The provided
