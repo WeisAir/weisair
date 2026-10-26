@@ -1,7 +1,8 @@
 # X-Plane Flight Log Plotter
 
 `plot_xplane_flight.py` reads an X-Plane UDP CSV log and creates a gnuplot
-script, its numeric input data, and a PNG flight profile.
+script, its numeric input data, a PNG flight profile, and an interactive HTML
+version of the plot.
 Rendering the PNG requires the `gnuplot` executable to be available in `PATH`.
 
 ```sh
@@ -35,4 +36,8 @@ field (`vind_kias`), so its speed series is omitted unless that field is logged.
 Change `X_AXIS` and the `SERIES` tuple near the top of the script to select
 other mapped headers. Use `--mapping` to specify a different mapping file,
 `--output-prefix` to choose where output files are written, or `--no-render` to
-write the `.dat` and `.gnuplot` files without invoking gnuplot.
+write the `.dat` and `.gnuplot` files without invoking gnuplot. In the HTML
+plot, right-drag to zoom, use the controls below the plot to restore or revisit
+a zoom, and move the pointer over the graph for coordinate readouts. The
+required Gnuplot JavaScript, stylesheet, and icons are copied into a companion
+`_assets` directory so the page works when moved together with that directory.

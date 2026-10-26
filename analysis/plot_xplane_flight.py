@@ -8,12 +8,15 @@ from __future__ import annotations
 
 import argparse
 import csv
+import html.parser
 import math
+import re
 import shutil
 import subprocess
 import sys
 from dataclasses import dataclass
 from pathlib import Path
+from urllib.parse import quote, unquote, urlsplit
 
 
 MAPPING_PATH = (
@@ -107,6 +110,80 @@ def gnuplot_quote(value: str) -> str:
     return "'" + value.replace("\\", "\\\\").replace("'", "\\'") + "'"
 
 
+def bundle_canvas_assets(html_path: Path) -> Path:
+    class ResourceParser(html.parser.HTMLParser):
+        def __init__(self) -> None:
+            super().__init__()
+            self.urls: list[str] = []
+
+        def handle_starttag(
+            self, _tag: str, attrs: list[tuple[str, str | None]]
+        ) -> None:
+            del _tag
+            self.urls.extend(
+                value
+                for name, value in attrs
+                if name in {"href", "src"} and value is not None
+            )
+
+    html_content = html_path.read_text(encoding="utf-8")
+    parser = ResourceParser()
+    parser.feed(html_content)
+    help_url = re.search(
+        r"gnuplot\.help_URL\s*=\s*['\"]([^'\"]+)['\"]", html_content
+    )
+    resource_urls = list(parser.urls)
+    if help_url is not None:
+        resource_urls.append(help_url.group(1))
+
+    assets_path = html_path.with_name(f"{html_path.stem}_assets")
+    replacements: dict[str, str] = {}
+    copied_names: dict[str, Path] = {}
+    missing_help = False
+    for resource_url in resource_urls:
+        parsed_url = urlsplit(resource_url)
+        if parsed_url.scheme or not parsed_url.path.startswith("/"):
+            continue
+        resource_path = Path(unquote(parsed_url.path))
+        if not resource_path.is_file():
+            if resource_path.name == "canvas_help.html":
+                missing_help = True
+                replacements[resource_url] = quote(
+                    f"{assets_path.name}/canvas_help.html"
+                )
+                continue
+            raise FileNotFoundError(
+                f"Gnuplot HTML resource {resource_url!r} was not found"
+            )
+        asset_name = resource_path.name
+        previous_source = copied_names.get(asset_name)
+        if previous_source is not None and previous_source != resource_path:
+            raise ValueError(
+                f"Gnuplot HTML resources have conflicting names: {asset_name}"
+            )
+        copied_names[asset_name] = resource_path
+        replacements[resource_url] = quote(f"{assets_path.name}/{asset_name}")
+
+    assets_path.mkdir(parents=True, exist_ok=True)
+    for asset_name, resource_path in copied_names.items():
+        shutil.copy2(resource_path, assets_path / asset_name)
+    if missing_help:
+        (assets_path / "canvas_help.html").write_text(
+            "<!doctype html><html><head><meta charset='utf-8'>"
+            "<title>Interactive plot help</title></head><body>"
+            "<h1>Interactive plot controls</h1>"
+            "<p>Drag across the plot to zoom into a region. Use the "
+            "unzoom control below the plot to restore the original view. "
+            "Move the pointer over the plot to read the coordinates.</p>"
+            "</body></html>",
+            encoding="utf-8",
+        )
+    for original_url, relative_url in replacements.items():
+        html_content = html_content.replace(original_url, relative_url)
+    html_path.write_text(html_content, encoding="utf-8")
+    return assets_path
+
+
 def zulu_label(seconds: float) -> str:
     whole_seconds = round(seconds) % 86400
     hours, remainder = divmod(whole_seconds, 3600)
@@ -160,7 +237,7 @@ def assign_event_lanes(
 
 def generate_plot(
     input_path: Path, mapping_path: Path, output_prefix: Path
-) -> tuple[Path, Path]:
+) -> tuple[Path, Path, Path]:
     mapping = load_mapping(mapping_path)
     with input_path.open(newline="", encoding="utf-8-sig") as file:
         reader = csv.DictReader(file)
@@ -218,6 +295,7 @@ def generate_plot(
     data_path = output_prefix.with_suffix(".dat")
     plot_path = output_prefix.with_suffix(".gnuplot")
     image_path = output_prefix.with_suffix(".png")
+    html_path = output_prefix.with_suffix(".html")
 
     processed_rows: list[tuple[float, list[float]]] = []
     previous_seconds: float | None = None
@@ -441,10 +519,14 @@ def generate_plot(
         *event_guides,
         *event_labels,
         "plot " + ", \\\n     ".join(plot_terms),
+        "set terminal canvas size 1600,900 standalone mousing",
+        f"set output {gnuplot_quote(str(html_path.resolve()))}",
+        "replot",
+        "set output",
         "",
     ]
     plot_path.write_text("\n".join(script), encoding="utf-8")
-    return data_path, plot_path
+    return data_path, plot_path, html_path
 
 
 def main() -> int:
@@ -477,7 +559,7 @@ def main() -> int:
     output_prefix = args.output_prefix or args.csv_file.with_suffix("")
 
     try:
-        data_path, plot_path = generate_plot(
+        data_path, plot_path, html_path = generate_plot(
             args.csv_file, args.mapping, output_prefix
         )
     except (OSError, ValueError, csv.Error) as error:
@@ -501,7 +583,13 @@ def main() -> int:
             f"gnuplot failed with exit code {error.returncode}; "
             f"see {plot_path} for the generated plot script"
         )
+    try:
+        assets_path = bundle_canvas_assets(html_path)
+    except (OSError, ValueError) as error:
+        parser.error(f"Could not bundle interactive HTML resources: {error}")
     print(f"Plot image:     {output_prefix.with_suffix('.png')}")
+    print(f"Interactive HTML: {html_path}")
+    print(f"HTML assets:     {assets_path}")
     return 0
 
 
