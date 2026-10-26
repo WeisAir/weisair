@@ -39,11 +39,11 @@ class Series:
 
 SERIES = (
     Series("p-alt_ftMSL", "Altitude (ft)"),
-    Series("vind_kias", "Indicated airspeed (kts)"),
-    Series("sbrak_postn", "Speedbrake (deployment ratio)", "y2"),
+    Series("vind_kias", "Indicated airspeed (kts)", "y2"),
 )
 GEAR_EVENT_COLUMN = "gear_01"
 FLAP_EVENT_COLUMN = "flap_postn"
+SPEEDBRAKE_EVENT_COLUMN = "sbrak_postn"
 
 #Altitude:	group_20_field_6,p-alt_ftMSL
 #Airspeed:	group_3_field_1,vind_kias
@@ -200,6 +200,15 @@ def generate_plot(
             "flap event annotations will be omitted.",
             file=sys.stderr,
         )
+    speedbrake_column = resolve_column(
+        SPEEDBRAKE_EVENT_COLUMN, fieldnames, mapping
+    )
+    if speedbrake_column is None:
+        print(
+            f"Warning: field {SPEEDBRAKE_EVENT_COLUMN!r} is missing; "
+            "speedbrake event annotations will be omitted.",
+            file=sys.stderr,
+        )
 
     output_prefix.parent.mkdir(parents=True, exist_ok=True)
     data_path = output_prefix.with_suffix(".dat")
@@ -211,7 +220,8 @@ def generate_plot(
     previous_gear_state: int | None = None
     gear_events: list[tuple[float, int]] = []
     previous_flap_value: float | None = None
-    flap_events: list[tuple[float, str, int]] = []
+    position_events: list[tuple[float, str, int]] = []
+    previous_speedbrake_value: float | None = None
     day_offset = 0.0
     skipped_time_rows = 0
     for row in rows:
@@ -246,7 +256,7 @@ def generate_plot(
                             )
                             if previous_flap_value < target <= flap_value
                         )
-                        flap_events.extend(
+                        position_events.extend(
                             (x_value, f"FLAPS DN {round(target * 100)}%", 11)
                             for target in targets
                         )
@@ -258,11 +268,22 @@ def generate_plot(
                             )
                             if flap_value <= target < previous_flap_value
                         )
-                        flap_events.extend(
+                        position_events.extend(
                             (x_value, f"FLAPS UP {round(target * 100)}%", 9)
                             for target in targets
                         )
                 previous_flap_value = flap_value
+        if speedbrake_column is not None:
+            speedbrake_value = parse_measurement(row.get(speedbrake_column))
+            if not math.isnan(speedbrake_value):
+                if previous_speedbrake_value is not None:
+                    if previous_speedbrake_value < 1.0 and speedbrake_value == 1.0:
+                        position_events.append((x_value, "SPDBRK FULL", 11))
+                    elif previous_speedbrake_value == 0.0 and speedbrake_value > 0.0:
+                        position_events.append((x_value, "SPDBRK DN", 11))
+                    elif previous_speedbrake_value > 0.0 and speedbrake_value == 0.0:
+                        position_events.append((x_value, "SPDBRK UP", 9))
+                previous_speedbrake_value = speedbrake_value
         measurements = [
             parse_measurement(row.get(column)) for _, column in available_series
         ]
@@ -312,12 +333,12 @@ def generate_plot(
             f"point pt {point_type} ps 1.2 offset 0,1"
         )
         for index, (event_time, label, point_type, lane) in enumerate(
-            assign_event_lanes(flap_events, maximum_x - minimum_x),
+            assign_event_lanes(position_events, maximum_x - minimum_x),
             start=len(event_labels) + 1,
         )
     )
     event_times = [event_time for event_time, _ in gear_events]
-    event_times.extend(event_time for event_time, _, _ in flap_events)
+    event_times.extend(event_time for event_time, _, _ in position_events)
     event_arrows = [
         (
             f"set arrow {index} from first {event_time:.3f}, graph 0 "
@@ -331,11 +352,10 @@ def generate_plot(
         f"set output {gnuplot_quote(str(image_path.resolve()))}",
         f"set title {gnuplot_quote(input_path.stem)} noenhanced",
         'set xlabel "Zulu time"',
-        'set ylabel "Altitude (ft) / airspeed (kt)"',
-        'set y2label "Speedbrake deployment (0-1)"',
-        "set y2range [0:1]",
-        "set y2tics 0, 0.2, 1",
+        'set ylabel "Altitude (ft)"',
+        'set y2label "Speed (kts)"',
         "set ytics nomirror",
+        "set y2tics autofreq",
         "set grid",
         "set key outside right center",
         f"set xrange [{minimum_x:.3f}:{maximum_x:.3f}]",
