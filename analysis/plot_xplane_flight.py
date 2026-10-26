@@ -247,7 +247,7 @@ def generate_plot(
                             if previous_flap_value < target <= flap_value
                         )
                         flap_events.extend(
-                            (x_value, f"Flaps DOWN {round(target * 100)}%", 11)
+                            (x_value, f"FLAPS DN {round(target * 100)}%", 11)
                             for target in targets
                         )
                     elif flap_value < previous_flap_value:
@@ -259,7 +259,7 @@ def generate_plot(
                             if flap_value <= target < previous_flap_value
                         )
                         flap_events.extend(
-                            (x_value, f"Flaps UP {round(target * 100)}%", 9)
+                            (x_value, f"FLAPS UP {round(target * 100)}%", 9)
                             for target in targets
                         )
                 previous_flap_value = flap_value
@@ -299,7 +299,7 @@ def generate_plot(
 
     event_labels = [
         (
-            f"set label {index} {gnuplot_quote('Gear Down' if state else 'Gear Up')} "
+            f"set label {index} {gnuplot_quote('GEAR DN' if state else 'GEAR UP')} "
             f"at first {event_time:.3f}, graph 0.025 center "
             f"point pt {11 if state else 9} ps 1.2 offset 0,1"
         )
