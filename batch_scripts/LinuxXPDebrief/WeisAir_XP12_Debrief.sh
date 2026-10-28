@@ -230,6 +230,12 @@ generate_flight_kmz() {
         cd -- "$geo_directory" &&
         "$PYTHON_EXECUTABLE" "$KMZ_GENERATOR_SCRIPT" \
             --flight-log "$DESTINATION_FILE" \
+            --capture-output "${FLIGHT_DIRECTORY}/capture" \
+            --flight-aircraft "$ACF" \
+            --flight-date "$DATE_FLIGHT" \
+            --departure-icao "$ICAO_D" \
+            --arrival-icao "$ICAO_A" \
+            --flight-start-time "$TIME_FLIGHT" \
             "$kml_filename" \
             "$SCREENSHOT_DIRECTORY" \
             "$temporary_kmz"
