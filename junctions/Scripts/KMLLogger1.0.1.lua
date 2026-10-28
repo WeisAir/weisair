@@ -136,6 +136,8 @@ local vfr = { -- **0105**
 local stats = {
  dep_icao, 
  dep_name,               -- departure airport code and name
+ system_time_start,      -- operating-system time when KML logging starts
+ system_time_stop,       -- operating-system time when KML logging stops
  flight_start_distance,  -- start distance recorded at commencement of flight
  takeoff_time,           -- takeoff time in UTC
  takeoff_local,          -- takeoff time in LOCAL
@@ -201,6 +203,8 @@ function mn_reset_script()
   close_popup           = time_z[0]    
   stats.fuel_start      = 0 --**1222**
   stats.fuel_end        = 0 --**1222**
+  stats.system_time_start = ""
+  stats.system_time_stop  = ""
   stats.num_engines     = get("sim/aircraft/engine/acf_num_engines") --**1214**
   -- Zibomod aircraft use different datarefs here
   is_zibomod_acft       = ((XPLMFindDataRef("laminar/B738/fms/legs") and XPLMFindDataRef("laminar/B738/fms/fpln_nav_id")) ~= nil) --these are unique to Zibomod
@@ -220,9 +224,7 @@ function mn_reset_script()
   end
   mn_logit("XPlane verson: " .. XPLANE_VERSION .. " Aircraft: " ..PLANE_ICAO ..  " [" .. stats.num_engines .." engine/s].")
   mn_logit("Zibomod aircraft? ".. tostring(is_zibomod_acft))
-  if (not mn_FileExists(CSVLog)) then  -- write Log file header if file does not exist
-	   mn_WriteLog("Date,Aircraft,Departure ICAO,Departure APT,Arrival ICAO,Arrival APT,TakeOff (Z),Land (Z),TakeOff (Local),Land (Local),Duration (h:m:s),Duration (hour),Distance (nm),Altitude/s,Max Altitude (ft),Block Out Time (Z),Block In Time (Z),Fuel Start (kg),Fuel End (kg)")
-  end
+  mn_ensure_csv_header()
   stats.dep_icao, stats.dep_name = mn_get_airport()
   mn_logit("script initialized.")
 end
@@ -263,11 +265,85 @@ function mn_WriteLog(data)
 end
 -- --------------------------------------------------------------------------
 
+local CSV_HEADER = "Date,Aircraft,Departure ICAO,Departure APT,Arrival ICAO,Arrival APT,TakeOff (Z),Land (Z),TakeOff (Local),Land (Local),Duration (h:m:s),Duration (hour),Distance (nm),Altitude/s,Max Altitude (ft),Block Out Time (Z),Block In Time (Z),Fuel Start (kg),Fuel End (kg),system_time_start,system_time_stop"
+local CSV_HEADER_LEGACY = "Date,Aircraft,Departure ICAO,Departure APT,Arrival ICAO,Arrival APT,TakeOff (Z),Land (Z),TakeOff (Local),Land (Local),Duration (h:m:s),Duration (hour),Distance (nm),Altitude/s,Max Altitude (ft),Block Out Time (Z),Block In Time (Z),Fuel Start (kg),Fuel End (kg)"
+
+function mn_ensure_csv_header()
+   if (not mn_FileExists(CSVLog)) then
+      mn_WriteLog(CSV_HEADER)
+      return
+   end
+
+   local source, err = io.open(CSVLog, "r")
+   if (not source) then
+      mn_logit("ERROR! Can not read CSV log file " .. CSVLog .. ": " .. tostring(err))
+      return
+   end
+
+   local header = source:read("*l")
+   header = header and header:gsub("\r$", "")
+   if (header == CSV_HEADER) then
+      source:close()
+      return
+   elseif (header == nil) then
+      source:close()
+      mn_WriteLog(CSV_HEADER)
+      return
+   elseif (header ~= CSV_HEADER_LEGACY) then
+      source:close()
+      mn_logit("WARNING! CSV header is not recognized; system time columns may not be labeled correctly.")
+      return
+   end
+
+   local temp_path = CSVLog .. ".tmp"
+   local destination, write_err = io.open(temp_path, "w")
+   if (not destination) then
+      source:close()
+      mn_logit("ERROR! Can not update CSV log header: " .. tostring(write_err))
+      return
+   end
+
+   local write_ok, write_err = destination:write(CSV_HEADER, "\n")
+   if (write_ok) then
+      for line in source:lines() do
+         write_ok, write_err = destination:write(line, "\n")
+         if (not write_ok) then break end
+      end
+   end
+   source:close()
+   local close_ok, close_err = destination:close()
+
+   if (not write_ok or not close_ok) then
+      os.remove(temp_path)
+      mn_logit("ERROR! Can not update CSV log header: " .. tostring(write_err or close_err))
+      return
+   end
+
+   local renamed, rename_err = os.rename(temp_path, CSVLog)
+   if (not renamed) then
+      os.remove(temp_path)
+      mn_logit("ERROR! Can not update CSV log header: " .. tostring(rename_err))
+   end
+end
+-- --------------------------------------------------------------------------
+
+function mn_SystemTimeStamp()
+   local now = os.date("*t")
+   local hour = now.hour % 12
+   if (hour == 0) then hour = 12 end
+   return string.format(
+      "%04d-%02d-%02d %02d.%02d.%02d %s",
+      now.year, now.month, now.day, hour, now.min, now.sec,
+      (now.hour < 12) and "AM" or "PM"
+   )
+end
+-- --------------------------------------------------------------------------
+
 -- display waypoint form
 function mn_wpt_show()
        imgui.PushStyleColor(imgui.constant.Col.WindowBg, 0xFFFFFFFF) -- White Background
        imgui.SetCursorPosX(94)
-       imgui.PushStyleColor(imgui.constant.Col.Text, 0xff0000FF) -- red text
+       imgui.PushStyleColor(imgui.constant.Col.Text, 0xffffffff) -- black text !!! Somehow White background above does not work - so I make the text white instead
        imgui.TextUnformatted("*** Set KML Waypoint ***")
        imgui.PopStyleColor()
        imgui.PushStyleColor(imgui.constant.Col.FrameBg,0xfff0d0d0)
@@ -295,7 +371,7 @@ function mn_wpt_show()
        imgui.PopStyleColor()
        imgui.PopStyleColor()
        imgui.SetCursorPosY(imgui.GetCursorPosY() +10)
-       imgui.PushStyleColor(imgui.constant.Col.Text, 0xff000000) -- black text
+       imgui.PushStyleColor(imgui.constant.Col.Text, 0xffffffff) -- black text !!! Somehow White background above does not work - so I make the text white instead
        imgui.PushStyleColor(imgui.constant.Col.FrameBg,0xff00ff00) -- text input/radiobutton background green
        imgui.SetCursorPosX(90)
        imgui.TextUnformatted("Enter Waypoint description\n") 
@@ -371,12 +447,12 @@ end
 
 -- display initial "do you want to log this flight?" form
 function mn_kml_show_screen()
-      imgui.PushStyleColor(imgui.constant.Col.WindowBg, 0xFFFFFFFF) -- White Background
+      imgui.PushStyleColor(imgui.constant.Col.WindowBg, 0xffffffff) -- White Background
       imgui.PushStyleColor(imgui.constant.Col.Text, 0xff0000ff) -- red text
       imgui.SetCursorPosX(90)
       imgui.TextUnformatted("*** Log KML Track ***")
       imgui.PopStyleColor()
-      imgui.PushStyleColor(imgui.constant.Col.Text, 0xff000000) -- black text
+      imgui.PushStyleColor(imgui.constant.Col.Text, 0xffffffff) -- black text !!! Somehow White background above does not work - so I make the text white instead
       imgui.TextUnformatted("Do you want to save this flight path to KML,\nwhich you can then upload to Google Earth?\n")
       imgui.SetCursorPosX(90)
       imgui.PushStyleColor(imgui.constant.Col.Button,0xff0000ff) -- text input/radiobutton background red
@@ -390,6 +466,7 @@ function mn_kml_show_screen()
       imgui.SetCursorPosX(220)
       if imgui.Button("Yes", 40, 20) then
           flight.log_to_kml = true
+          stats.system_time_start = mn_SystemTimeStamp()
           mn_create_kmllogfile()
           mn_write_KML(true,string.format("%s: %s [%s]",stats.dep_icao, stats.dep_name, PLANE_ICAO)) --**1230**
           float_wnd_destroy(mnwnd_kml)
@@ -534,7 +611,7 @@ end
 -- show current status
 function mn_show_current_status()
    imgui.PushStyleColor(imgui.constant.Col.WindowBg, 0xFFFFFFFF) -- White Background
-   imgui.PushStyleColor(imgui.constant.Col.Text, 0xff000000) -- black text
+   imgui.PushStyleColor(imgui.constant.Col.Text, 0xffffffff) -- black text !!! Somehow White background above does not work - so I make the text white instead
    imgui.TextUnformatted(flt_details[1]) -- update the pop-up window with results
    if (flt_details[2]>"") then
       imgui.Separator()
@@ -614,8 +691,8 @@ end
 function mn_write_csv_log(arr_icao,arr_name,flevels,duration,dht,distance)
   local fmt = "Departure: %s,Arrival  : %s,Aircraft : %s,Distance : %dnm,Duration : %s,Altitudes: %s"
   if (duration > MIN_FLIGHT_SECS) then -- only log if in air for > 10 mins!
-   mn_WriteLog(string.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%.1f,%d,%s,%d,%s,%s,%.1f,%.1f",                              
-              flt_date,PLANE_ICAO, stats.dep_icao, stats.dep_name, arr_icao, arr_name,mn_SecToTime(stats.takeoff_time), mn_SecToTime(time_z[0]),                       mn_SecToTime(stats.takeoff_local),mn_SecToTime(time_l[0]),mn_SecToTime(duration), dht, distance,    flevels,flight.max_alt,mn_SecToTime(stats.block_out_time),mn_SecToTime(stats.block_in_time),stats.fuel_start,stats.fuel_end))
+   mn_WriteLog(string.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%.1f,%d,%s,%d,%s,%s,%.1f,%.1f,%s,%s",
+              flt_date,PLANE_ICAO, stats.dep_icao, stats.dep_name, arr_icao, arr_name,mn_SecToTime(stats.takeoff_time), mn_SecToTime(time_z[0]),                       mn_SecToTime(stats.takeoff_local),mn_SecToTime(time_l[0]),mn_SecToTime(duration), dht, distance,    flevels,flight.max_alt,mn_SecToTime(stats.block_out_time),mn_SecToTime(stats.block_in_time),stats.fuel_start,stats.fuel_end,stats.system_time_start,stats.system_time_stop))
   end
 end
 -- --------------------------------------------------------------------------
@@ -759,13 +836,16 @@ Flight data is in: %s
   local icao,nme = mn_get_airport()
   local dist = mn_m_to_nm()
   local dht = duration / 3600 -- duration in decimal hours 
-  -- save in csv log file
-  mn_write_csv_log(icao,nme,f_levels,duration,dht,dist)
   --save kml
   if (flight.log_to_kml) then 
       --mn_logit("WEISAIR: in function mn_closeoff calling function mn_save_KML") 
       mn_save_KML(icao,nme,f_levels,duration,dist) 
    end
+  if (flight.log_to_kml) then
+      stats.system_time_stop = mn_SystemTimeStamp()
+  end
+  -- save in csv log file
+  mn_write_csv_log(icao,nme,f_levels,duration,dht,dist)
  -- if we are showing status, then close that window first
   if (mnwnd_stat) then  float_wnd_destroy(mnwnd_stat) end
   local h = 180

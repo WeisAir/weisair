@@ -17,6 +17,7 @@ IMAGE_WIDTH = "500"
 IMAGE_HEIGHT = "auto"
 TIME_TOLERANCE_MINUTES = 15
 LOCAL_TIMEZONE = ZoneInfo("Europe/Oslo")
+SCREENSHOT_AIRCRAFT_ALIASES = {"be58": {"baron58"}}
 # ==========================================
 
 # Transparentes Kamera-Icon (Base64), das im KMZ-Hauptverzeichnis abgelegt wird
@@ -172,7 +173,62 @@ def get_filename_time(file_name):
     except ValueError:
         return None
 
-def parse_flight_log_time_ranges(flight_log_path):
+
+def normalize_aircraft_name(value):
+    return re.sub(r"[^a-z0-9]", "", value.casefold())
+
+
+def get_filename_aircraft(file_name):
+    match = re.match(
+        r"^(.+?)\s+-\s+\d{4}-\d{2}-\d{2}\s+",
+        file_name,
+        flags=re.IGNORECASE,
+    )
+    return match.group(1).strip() if match else None
+
+
+def get_filename_date(file_name):
+    match = re.search(
+        r"(\d{4})-(\d{2})-(\d{2})\s+\d{2}\.\d{2}\.\d{2}",
+        file_name,
+    )
+    return "".join(match.groups()) if match else None
+
+
+def screenshot_matches_aircraft(file_name, aircraft):
+    screenshot_aircraft = get_filename_aircraft(file_name)
+    if screenshot_aircraft is None:
+        return False
+
+    normalized_aircraft = normalize_aircraft_name(aircraft)
+    accepted_names = {normalized_aircraft}
+    accepted_names.update(SCREENSHOT_AIRCRAFT_ALIASES.get(normalized_aircraft, set()))
+    return normalize_aircraft_name(screenshot_aircraft) in accepted_names
+
+
+def parse_flight_log_time_ranges(
+    flight_log_path,
+    aircraft=None,
+    flight_date=None,
+    departure_icao=None,
+    arrival_icao=None,
+    flight_start_time=None,
+):
+    flight_identity = (
+        aircraft,
+        flight_date,
+        departure_icao,
+        arrival_icao,
+        flight_start_time,
+    )
+    if any(value is not None for value in flight_identity) and any(
+        value is None for value in flight_identity
+    ):
+        raise ValueError(
+            "Aircraft, flight date, departure/arrival ICAO, and flight start time "
+            "must all be supplied to select one flight"
+        )
+
     time_formats = (
         "%Y-%m-%d %I.%M.%S %p",
         "%Y-%m-%d %H.%M.%S",
@@ -189,6 +245,7 @@ def parse_flight_log_time_ranges(flight_log_path):
         raise ValueError(f"Invalid system timestamp: {value!r}")
 
     ranges = []
+    matching_rows = 0
     with open(flight_log_path, "r", encoding="utf-8-sig", newline="") as flight_log:
         reader = csv.DictReader(flight_log)
         fieldnames = reader.fieldnames or []
@@ -200,10 +257,41 @@ def parse_flight_log_time_ranges(flight_log_path):
             )
 
         for row_number, row in enumerate(reader, start=2):
+            if aircraft is not None:
+                try:
+                    row_date = datetime.strptime(
+                        (row.get("Date") or "").strip(), "%Y-%m-%d"
+                    ).strftime("%Y%m%d")
+                except ValueError:
+                    continue
+                if (
+                    (row.get("Aircraft") or "").strip().casefold()
+                    != aircraft.casefold()
+                    or row_date != flight_date
+                    or (row.get("Departure ICAO") or "").strip().casefold()
+                    != departure_icao.casefold()
+                    or (row.get("Arrival ICAO") or "").strip().casefold()
+                    != arrival_icao.casefold()
+                ):
+                    continue
+
             start_text = (row.get("system_time_start") or "").strip()
             end_text = (
                 row.get("system_time_end") or row.get("system_time_stop") or ""
             ).strip()
+            if aircraft is not None:
+                row_start = None
+                for time_format in time_formats:
+                    try:
+                        row_start = datetime.strptime(start_text, time_format)
+                        break
+                    except ValueError:
+                        continue
+                if row_start is None:
+                    continue
+                if row_start.strftime("%H%M") != flight_start_time:
+                    continue
+
             if not start_text and not end_text:
                 continue
             if not start_text or not end_text:
@@ -220,30 +308,94 @@ def parse_flight_log_time_ranges(flight_log_path):
                     f"CSV row {row_number}: system_time_start is after the end time"
                 )
             ranges.append((start_time, end_time))
+            matching_rows += 1
 
     if not ranges:
+        if aircraft is not None:
+            raise ValueError(
+                "CSV contains no flight record matching the requested aircraft, "
+                "date, route, and start time"
+            )
         raise ValueError("CSV contains no flight records with system-time ranges")
+    if aircraft is not None and len(set(ranges)) != 1:
+        raise ValueError(
+            f"CSV contains {matching_rows} different records matching the requested flight"
+        )
+    if aircraft is not None:
+        return [ranges[0]]
     return ranges
 
-def create_kmz(kml_path, image_folder, output_kmz, use_time_filter=True,
-               flight_log_path=None):
+
+def create_kmz(
+    kml_path,
+    image_folder,
+    output_kmz,
+    use_time_filter=True,
+    flight_log_path=None,
+    capture_output_dir=None,
+    flight_aircraft=None,
+    flight_date=None,
+    departure_icao=None,
+    arrival_icao=None,
+    flight_start_time=None,
+):
     print("-> Starte Erstellung des KMZ-Pakets...")
     if not os.path.exists(kml_path):
         print(f"Fehler: Die KML-Datei '{kml_path}' wurde nicht gefunden.")
-        return
+        return False
     if not os.path.exists(image_folder):
         print(f"Fehler: Der Bildordner '{image_folder}' wurde nicht gefunden.")
-        return
+        return False
+    flight_identity = (
+        flight_aircraft,
+        flight_date,
+        departure_icao,
+        arrival_icao,
+        flight_start_time,
+    )
+    if any(value is not None for value in flight_identity) and any(
+        value is None for value in flight_identity
+    ):
+        print(
+            "Fehler: Flugzeug, Flugdatum, Abflug/Ziel-ICAO und Startzeit müssen "
+            "zusammen angegeben werden."
+        )
+        return False
+    if any(value is not None for value in flight_identity) and not flight_log_path:
+        print("Fehler: Fluglog ist für eine flugspezifische Filterung erforderlich.")
+        return False
+    if flight_date is not None and not re.fullmatch(r"\d{8}", flight_date):
+        print("Fehler: Flugdatum muss das Format YYYYMMDD haben.")
+        return False
+    if capture_output_dir is not None:
+        image_folder_real = os.path.realpath(image_folder)
+        capture_output_real = os.path.realpath(capture_output_dir)
+        if os.path.commonpath((image_folder_real, capture_output_real)) in (
+            image_folder_real,
+            capture_output_real,
+        ):
+            print(
+                "Fehler: Capture-Ziel darf sich nicht mit dem Screenshot-Quellordner "
+                "überschneiden."
+            )
+            return False
 
     route_start, route_end = None, None
     flight_log_ranges = None
     if use_time_filter:
         if flight_log_path:
             try:
-                flight_log_ranges = parse_flight_log_time_ranges(flight_log_path)
+                flight_log_ranges = parse_flight_log_time_ranges(
+                    flight_log_path,
+                    aircraft=flight_aircraft,
+                    flight_date=flight_date,
+                    departure_icao=departure_icao,
+                    arrival_icao=arrival_icao,
+                    flight_start_time=flight_start_time,
+                )
             except (OSError, ValueError) as error:
                 print(f"Fehler beim Lesen des Fluglogs '{flight_log_path}': {error}")
-                return
+                return False
             print(
                 f"-> Screenshot-Zeitfilter anhand von {len(flight_log_ranges)} "
                 "Fluglog-Zeitfenster(n)."
@@ -255,12 +407,18 @@ def create_kmz(kml_path, image_folder, output_kmz, use_time_filter=True,
 
     temp_dir = "kmz_temp_build"
     temp_images_dir = os.path.join(temp_dir, "images")
+    temp_capture_dir = os.path.join(temp_dir, "capture")
     
     if os.path.exists(temp_dir):
         shutil.rmtree(temp_dir)
     os.makedirs(temp_images_dir, exist_ok=True)
+    success = False
 
     try:
+        if capture_output_dir is not None:
+            os.makedirs(capture_output_dir, exist_ok=True)
+            os.makedirs(temp_capture_dir, exist_ok=True)
+
         # Icon liegt im Hauptverzeichnis des KMZ-Archivs
         icon_path = os.path.join(temp_dir, "camera_icon.png")
         with open(icon_path, "wb") as icon_file:
@@ -270,10 +428,32 @@ def create_kmz(kml_path, image_folder, output_kmz, use_time_filter=True,
         image_count = 0
         skipped_time_count = 0
         skipped_metadata_count = 0
+        skipped_aircraft_count = 0
+        skipped_date_count = 0
         
         for root, dirs, files in os.walk(image_folder):
             for file in files:
                 if file.lower().endswith(('.jpg', '.jpeg', '.png')):
+                    if flight_aircraft is not None and not screenshot_matches_aircraft(
+                        file, flight_aircraft
+                    ):
+                        print(
+                            f"[FLIGHT DEBUG] {file}: SKIPPED (aircraft does not "
+                            f"match {flight_aircraft})"
+                        )
+                        skipped_aircraft_count += 1
+                        continue
+                    if (
+                        flight_date is not None
+                        and get_filename_date(file) != flight_date
+                    ):
+                        print(
+                            f"[FLIGHT DEBUG] {file}: SKIPPED (date does not match "
+                            f"{flight_date})"
+                        )
+                        skipped_date_count += 1
+                        continue
+
                     source_file = os.path.join(root, file)
                     img_data = get_image_data(source_file)
                     
@@ -344,6 +524,8 @@ def create_kmz(kml_path, image_folder, output_kmz, use_time_filter=True,
                         )
                         
                         shutil.copy(source_file, os.path.join(temp_images_dir, file))
+                        if capture_output_dir is not None:
+                            shutil.copy2(source_file, temp_capture_dir)
                         image_count += 1
                         
                         style_w = f"width:{IMAGE_WIDTH}px;" if IMAGE_WIDTH != "auto" else ""
@@ -388,7 +570,7 @@ def create_kmz(kml_path, image_folder, output_kmz, use_time_filter=True,
             kml_content = kml_content.replace("</kml>", f"{injection_block}</kml>")
         else:
             print("Fehler: Ungültiges KML-Format.")
-            return
+            return False
 
         with open(os.path.join(temp_dir, "doc.kml"), 'w', encoding='utf-8') as f:
             f.write(kml_content)
@@ -401,21 +583,47 @@ def create_kmz(kml_path, image_folder, output_kmz, use_time_filter=True,
                 f"-> {skipped_metadata_count} Bilder wurden aussortiert, "
                 "weil GPS-Koordinaten nicht gelesen werden konnten."
             )
+        if skipped_aircraft_count > 0:
+            print(f"-> {skipped_aircraft_count} Bilder passten nicht zum Flugzeug.")
+        if skipped_date_count > 0:
+            print(f"-> {skipped_date_count} Bilder passten nicht zum Flugdatum.")
+        if capture_output_dir is not None:
+            print(
+                f"-> {image_count} passende Bilder wurden nach "
+                f"'{capture_output_dir}' kopiert."
+            )
 
         with zipfile.ZipFile(output_kmz, 'w', zipfile.ZIP_DEFLATED) as kmz:
             for root, dirs, files in os.walk(temp_dir):
                 for file in files:
                     file_path = os.path.join(root, file)
                     arcname = os.path.relpath(file_path, temp_dir)
-                    kmz.write(file_path, arcname)
+                    if not file_path.startswith(f"{temp_capture_dir}{os.sep}"):
+                        kmz.write(file_path, arcname)
+
+        if capture_output_dir is not None:
+            image_extensions = (".jpg", ".jpeg", ".png")
+            for entry in os.scandir(capture_output_dir):
+                if (
+                    entry.is_file(follow_symlinks=False)
+                    and entry.name.lower().endswith(image_extensions)
+                ):
+                    os.unlink(entry.path)
+            for file in os.listdir(temp_capture_dir):
+                shutil.copy2(
+                    os.path.join(temp_capture_dir, file),
+                    capture_output_dir,
+                )
         
         print(f" 🎉 Erfolg: KMZ-Datei wurde unter '{output_kmz}' erstellt!")
+        success = True
 
     except Exception as e:
         print(f"Ein schwerwiegender Fehler ist aufgetreten: {e}")
     finally:
         if os.path.exists(temp_dir):
             shutil.rmtree(temp_dir)
+    return success
 
 if __name__ == "__main__":
     argument_parser = argparse.ArgumentParser()
@@ -427,15 +635,47 @@ if __name__ == "__main__":
         help="Flight log CSV used to filter screenshots by system-time range",
     )
     argument_parser.add_argument(
+        "--capture-output",
+        help="optional directory to receive copies of the filtered screenshots",
+    )
+    argument_parser.add_argument(
+        "--flight-aircraft",
+        help="aircraft code for selecting one flight and matching screenshot names",
+    )
+    argument_parser.add_argument(
+        "--flight-date",
+        help="flight date in YYYYMMDD format",
+    )
+    argument_parser.add_argument(
+        "--departure-icao",
+        help="departure ICAO code for selecting one flight",
+    )
+    argument_parser.add_argument(
+        "--arrival-icao",
+        help="arrival ICAO code for selecting one flight",
+    )
+    argument_parser.add_argument(
+        "--flight-start-time",
+        help="flight system start time in HHMM format",
+    )
+    argument_parser.add_argument(
         "--no-time-filter",
         action="store_true",
         help="Process every geolocated screenshot without a time filter",
     )
     arguments = argument_parser.parse_args()
-    create_kmz(
+    success = create_kmz(
         arguments.kml_file,
         arguments.image_folder,
         arguments.output_kmz,
         use_time_filter=not arguments.no_time_filter,
         flight_log_path=arguments.flight_log,
+        capture_output_dir=arguments.capture_output,
+        flight_aircraft=arguments.flight_aircraft,
+        flight_date=arguments.flight_date,
+        departure_icao=arguments.departure_icao,
+        arrival_icao=arguments.arrival_icao,
+        flight_start_time=arguments.flight_start_time,
     )
+    if not success:
+        raise SystemExit(1)
