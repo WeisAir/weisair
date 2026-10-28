@@ -9,6 +9,8 @@ XPLANE_DIR="/home/stephan/X-Plane 12"
 KML_SOURCE_DIR="${XPLANE_DIR}/KML"
 SCREENSHOT_DIRECTORY="${XPLANE_DIR}/Output/screenshots"
 KMZ_GENERATOR_SCRIPT="/home/stephan/dev/weisair/batch_scripts/kmz_generator/combine_to_kmz.py"
+UDP_LOGGER_CSV="/home/stephan/dev/weisair/batch_scripts/udpLogger/xplane_log.csv"
+FLIGHT_PLOT_SCRIPT="/home/stephan/dev/weisair/analysis/plot_xplane_flight.py"
 PYTHON_EXECUTABLE="python3"
 SOURCE_FILE="/home/stephan/X-Plane 12/FlightLog1.0.csv"
 DESTINATION_FILE="${SCRIPT_DIR}/FlightLog1.0.csv"
@@ -114,6 +116,53 @@ create_flight_directories() {
     fi
 
     log_status "Created flight directory structure: $FLIGHT_DIRECTORY/{xp_logs_stats,geo,data,capture}"
+}
+
+copy_udp_logger_csv() {
+    local destination_file
+    destination_file="${FLIGHT_DIRECTORY}/data/$(basename -- "$FLIGHT_DIRECTORY").csv"
+
+    if [[ ! -f "$UDP_LOGGER_CSV" || ! -r "$UDP_LOGGER_CSV" ]]; then
+        log_status "ERROR: UDP logger CSV is missing or unreadable: $UDP_LOGGER_CSV"
+        return 1
+    fi
+
+    if ! cp -- "$UDP_LOGGER_CSV" "$destination_file"; then
+        log_status "ERROR: Failed to copy UDP logger CSV to $destination_file"
+        return 1
+    fi
+
+    log_status "Copied UDP logger CSV to $destination_file"
+}
+
+plot_flight_csv() {
+    local data_directory csv_filename
+    data_directory="${FLIGHT_DIRECTORY}/data"
+    csv_filename="$(basename -- "$FLIGHT_DIRECTORY").csv"
+
+    if [[ ! -f "$FLIGHT_PLOT_SCRIPT" || ! -r "$FLIGHT_PLOT_SCRIPT" ]]; then
+        log_status "ERROR: Flight plot script is missing or unreadable: $FLIGHT_PLOT_SCRIPT"
+        return 1
+    fi
+    if [[ ! -r "${data_directory}/${csv_filename}" ]]; then
+        log_status "ERROR: Flight CSV is missing or unreadable: ${data_directory}/${csv_filename}"
+        return 1
+    fi
+    if ! command -v -- "$PYTHON_EXECUTABLE" >/dev/null 2>&1; then
+        log_status "ERROR: Python executable was not found: $PYTHON_EXECUTABLE"
+        return 1
+    fi
+
+    log_status "Running flight plot script for $csv_filename"
+    if ! (
+        cd -- "$data_directory" &&
+        "$PYTHON_EXECUTABLE" "$FLIGHT_PLOT_SCRIPT" "$csv_filename"
+    ) >> "$LOG_FILE" 2>&1; then
+        log_status "ERROR: Flight plot script failed for $csv_filename"
+        return 1
+    fi
+
+    log_status "Flight plot script completed successfully for $csv_filename"
 }
 
 copy_xplane_logs() {
@@ -294,6 +343,12 @@ PY
             exit 1
         fi
         if ! create_flight_directories; then
+            exit 1
+        fi
+        if ! copy_udp_logger_csv; then
+            exit 1
+        fi
+        if ! plot_flight_csv; then
             exit 1
         fi
         if ! copy_flight_kml; then
