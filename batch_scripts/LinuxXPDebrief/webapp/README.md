@@ -43,10 +43,10 @@ Open a gallery image to view it enlarged. Use the viewer's previous/next
 buttons or the left/right arrow keys to browse that flight's screenshots; the
 gallery wraps from the last image to the first and vice versa.
 
-For manual updates, replace `data/FlightLog1.0.csv` with the latest log and run
-`python3 ../sync_webapp_photos.py` and
-`python3 ../sync_webapp_statistics.py` and
-`python3 ../sync_webapp_flight_paths.py` from this directory.
+For a manual refresh after changing debrief data outside the watcher, run
+`python3 ../update_webapp.py` from this directory. It updates
+`data/FlightLog1.0.csv` only when its contents differ, then runs the screenshot,
+statistics, and flight-path publishers.
 
 ## Host online
 

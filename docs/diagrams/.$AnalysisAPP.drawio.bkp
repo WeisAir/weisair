@@ -1,6 +1,6 @@
 <mxfile host="Electron">
   <diagram name="Page-1" id="qqSCLnefPMsWNvGBDIHe">
-    <mxGraphModel dx="3325" dy="1370" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2562" dy="948" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -130,6 +130,33 @@
         </mxCell>
         <mxCell id="N2kvhSn7qd4kTXQf15-w-36" parent="1" style="sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;align=center;fillColor=#2D9C5E;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.check;labelPerimeter=1;" value="" vertex="1">
           <mxGeometry height="40" width="50" x="570" y="1253" as="geometry" />
+        </mxCell>
+        <mxCell id="yAAtbqjdbbLHD5Lh5nix-2" edge="1" parent="1" style="shape=link;html=1;rounded=0;defaultLabelBackgroundColor=page;" value="">
+          <mxGeometry relative="1" width="100" as="geometry">
+            <mxPoint x="-50" y="1520" as="sourcePoint" />
+            <mxPoint x="2240" y="1500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yAAtbqjdbbLHD5Lh5nix-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="SFTP Sync Setup: lokale entwicklung &amp;lt;-&amp;gt; weisair.com" vertex="1">
+          <mxGeometry height="130" width="420" x="-60" y="1580" as="geometry" />
+        </mxCell>
+        <mxCell id="yAAtbqjdbbLHD5Lh5nix-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Impressum&lt;div&gt;legal check bzgl. 3rd party, KML Logger owner&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="420" x="400" y="1580" as="geometry" />
+        </mxCell>
+        <mxCell id="yAAtbqjdbbLHD5Lh5nix-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Wie werden Änderungen die ich lokal in der Debrief App mache in die Website gesynct?" vertex="1">
+          <mxGeometry height="130" width="420" x="-60" y="1740" as="geometry" />
+        </mxCell>
+        <mxCell id="yAAtbqjdbbLHD5Lh5nix-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Ältere Statische Flüge hinzufügen zu FLightlog.1.0.csv&lt;br&gt;&lt;br&gt;-&amp;gt; Buttons entfernen wenn keine Daten vorhanden&lt;div&gt;-&amp;gt; Kartenaktualisiierung passt noch nicht (keine neuen ICAO Punkte entstehen und die Kartenumrisse sind noch zu grob, Zoom wäre schön bei Kurzstreckenflügen)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="420" x="400" y="1740" as="geometry" />
+        </mxCell>
+        <mxCell id="yAAtbqjdbbLHD5Lh5nix-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="update script für Screenshots in KMZ falls im Replay nachträglich welche erstellt wurden&lt;br&gt;&lt;br&gt;-&amp;gt; wird wahrscheinlich nicht gehen, da Aufnahmezeitpunkt außerhalb des KML-Logger Zeitfensters ist. Ausnahme -&amp;gt; Motor solange laufen lassen bis Screenshots beendet wurden und erst dann ausmachen die Maschine :D" vertex="1">
+          <mxGeometry height="130" width="420" x="-60" y="1900" as="geometry" />
+        </mxCell>
+        <mxCell id="yAAtbqjdbbLHD5Lh5nix-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Simbrief PDF integrieren" vertex="1">
+          <mxGeometry height="130" width="420" x="400" y="1900" as="geometry" />
+        </mxCell>
+        <mxCell id="yAAtbqjdbbLHD5Lh5nix-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Simbrief PDF integrieren" vertex="1">
+          <mxGeometry height="130" width="420" x="-60" y="2050" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
