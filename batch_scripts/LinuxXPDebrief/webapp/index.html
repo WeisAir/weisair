@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101820" />
+    <meta
+      name="description"
+      content="A personal overview of flights logged in X-Plane."
+    />
+    <title>WeisAir FlightLog</title>
+    <link rel="icon" href="./custom_assets/weisair_logo_dark.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="WeisAir FlightLog home">
+          <img
+            class="brand-logo"
+            src="./custom_assets/weisair_logo_dark.png"
+            alt=""
+          />
+          <span class="brand-divider" aria-hidden="true"></span>
+          <span class="brand-name">WeisAir</span>
+        </a>
+        <div class="topbar-meta">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>Flight operations</span>
+          <span class="meta-divider" aria-hidden="true"></span>
+          <span>X-Plane 12</span>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-heading" aria-labelledby="page-title">
+          <div>
+            <p class="eyebrow">YOUR FLIGHT HISTORY</p>
+            <h1 id="page-title">WeisAir <span>FlightLog</span></h1>
+            <p class="page-description">
+              Every flight tells a story. Here’s where yours have taken you.
+            </p>
+          </div>
+          <div class="log-status">
+            <span class="status-indicator" aria-hidden="true"></span>
+            <span id="log-status">Loading flight log</span>
+          </div>
+        </section>
+
+        <section class="stats-grid" aria-label="Flight statistics">
+          <article class="stat-card">
+            <div class="stat-icon flight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M3 16.5 21 12 3 7.5l2 4.5-2 4.5Z" />
+                <path d="m5 12 7 0" />
+              </svg>
+            </div>
+            <div>
+              <p class="stat-label">Total flights</p>
+              <p class="stat-value" id="stat-flights">—</p>
+            </div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-icon airport-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 21s7-5.3 7-12a7 7 0 1 0-14 0c0 6.7 7 12 7 12Z" />
+                <circle cx="12" cy="9" r="2.3" />
+              </svg>
+            </div>
+            <div>
+              <p class="stat-label">Airports visited</p>
+              <p class="stat-value" id="stat-airports">—</p>
+            </div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-icon time-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="8.5" />
+                <path d="M12 7v5l3.5 2" />
+              </svg>
+            </div>
+            <div>
+              <p class="stat-label">Time in the air</p>
+              <p class="stat-value" id="stat-time">—</p>
+            </div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-icon distance-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 19 9 5l5 14 6-14" />
+                <path d="M6.1 13h5.8M16 14h2.7" />
+              </svg>
+            </div>
+            <div>
+              <p class="stat-label">Distance flown</p>
+              <p class="stat-value" id="stat-distance">—</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="panel flights-panel" aria-labelledby="flights-title">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">LOGBOOK</p>
+              <h2 id="flights-title">Flight log</h2>
+            </div>
+            <span class="flight-count" id="flight-count">— flights</span>
+          </div>
+          <div class="table-scroll" role="region" aria-label="Flight log table" tabindex="0">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Date</th>
+                  <th scope="col">Aircraft</th>
+                  <th scope="col">Departure ICAO</th>
+                  <th scope="col">Departure APT</th>
+                  <th scope="col">Arrival ICAO</th>
+                  <th scope="col">Arrival APT</th>
+                  <th scope="col">TakeOff (Z)</th>
+                  <th scope="col">Land (Z)</th>
+                  <th scope="col">TakeOff (Local)</th>
+                  <th scope="col">Land (Local)</th>
+                  <th scope="col">Duration (h:m:s)</th>
+                  <th scope="col">Duration (hour)</th>
+                  <th scope="col">Distance (nm)</th>
+                  <th scope="col">More</th>
+                </tr>
+              </thead>
+              <tbody id="flight-rows"></tbody>
+            </table>
+          </div>
+          <p class="table-hint">
+            Select a flight to highlight its airports and route on the map.
+          </p>
+          <div class="empty-state" id="empty-state" hidden>
+            <span class="empty-state-mark" aria-hidden="true">✦</span>
+            <p class="empty-state-title">No flights in your log yet</p>
+            <p>Your logged X-Plane flights will appear here.</p>
+          </div>
+          <div class="error-state" id="error-state" role="alert" hidden></div>
+        </section>
+
+        <section class="panel map-panel" id="map-panel" aria-labelledby="map-title">
+          <div class="panel-heading map-heading">
+            <div>
+              <p class="eyebrow" id="map-eyebrow">FLIGHT NETWORK</p>
+              <h2 id="map-title">Your world, from above</h2>
+            </div>
+            <div class="map-legend" aria-label="Map legend">
+              <span><i class="legend-dot"></i> Airport</span>
+              <span><i class="legend-dot legend-dot-active"></i> Selected</span>
+              <span><i class="legend-route"></i> Flight route</span>
+            </div>
+          </div>
+          <div class="map-canvas" id="map-canvas">
+            <svg
+              id="world-map"
+              viewBox="0 0 960 460"
+              role="img"
+              aria-labelledby="world-map-title world-map-description"
+            >
+              <title id="world-map-title">World map of logged airports</title>
+              <desc id="world-map-description">
+                Airports from your flight log are shown as dots. Select a flight
+                to see its route.
+              </desc>
+              <defs>
+                <pattern
+                  id="map-grid"
+                  width="80"
+                  height="80"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <path
+                    d="M 80 0 L 0 0 0 80"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="0.7"
+                  />
+                </pattern>
+                <clipPath id="map-clip">
+                  <rect width="960" height="460" rx="14" />
+                </clipPath>
+              </defs>
+              <rect class="map-ocean" width="960" height="460" rx="14" />
+              <rect class="map-grid" width="960" height="460" rx="14" />
+              <g id="landmasses" clip-path="url(#map-clip)"></g>
+              <g id="route-layer" clip-path="url(#map-clip)"></g>
+              <g id="airport-layer"></g>
+            </svg>
+            <div class="map-caption" id="map-caption">
+              <span id="map-airport-count">0 airports</span>
+              <span class="caption-separator" aria-hidden="true"></span>
+              <span id="map-selection">Select a flight to trace its route</span>
+            </div>
+            <div class="photo-gallery" id="photo-gallery" hidden>
+              <div class="photo-gallery-toolbar">
+                <div>
+                  <p class="photo-gallery-route" id="photo-gallery-route"></p>
+                  <p class="photo-gallery-count" id="photo-gallery-count"></p>
+                </div>
+                <button class="gallery-close" id="gallery-close" type="button" aria-label="Close photos" title="Close photos">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m6 6 12 12M18 6 6 18" />
+                  </svg>
+                </button>
+              </div>
+              <div class="photo-grid" id="photo-grid"></div>
+              <div class="photo-empty" id="photo-empty" hidden>
+                <span class="empty-state-mark" aria-hidden="true">✦</span>
+                <p class="empty-state-title" id="photo-empty-title">No screenshots for this flight</p>
+                <p id="photo-empty-message">Screenshots will appear here after the debrief sync.</p>
+              </div>
+            </div>
+            <div class="statistics-view" id="statistics-view" hidden>
+              <div class="photo-gallery-toolbar">
+                <div>
+                  <p class="photo-gallery-route" id="statistics-route"></p>
+                  <p class="photo-gallery-count" id="statistics-format"></p>
+                </div>
+                <button class="gallery-close" id="statistics-close" type="button" aria-label="Close statistics" title="Close statistics">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m6 6 12 12M18 6 6 18" />
+                  </svg>
+                </button>
+              </div>
+              <iframe
+                class="statistics-plot"
+                id="statistics-plot"
+                title="Interactive flight statistics"
+                sandbox="allow-scripts"
+                hidden
+              ></iframe>
+              <img class="statistics-image" id="statistics-image" alt="Flight statistics plot" hidden />
+              <div class="photo-empty" id="statistics-empty" hidden>
+                <span class="empty-state-mark" aria-hidden="true">✦</span>
+                <p class="empty-state-title" id="statistics-empty-title">No statistics for this flight</p>
+                <p id="statistics-empty-message">Statistics will appear here after the debrief plot is generated.</p>
+              </div>
+            </div>
+            <div class="flight-path-view" id="flight-path-view" hidden>
+              <div class="photo-gallery-toolbar">
+                <div>
+                  <p class="photo-gallery-route" id="flight-path-route"></p>
+                  <p class="photo-gallery-count" id="flight-path-details">Drag to orbit · Ctrl-drag to tilt · Scroll to zoom · Click a waypoint for details</p>
+                </div>
+                <button class="gallery-close" id="flight-path-close" type="button" aria-label="Close flight path" title="Close flight path">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m6 6 12 12M18 6 6 18" />
+                  </svg>
+                </button>
+              </div>
+              <div
+                class="cesium-globe"
+                id="cesium-globe"
+                role="region"
+                aria-label="Interactive 3D flight path globe"
+                hidden
+              ></div>
+              <svg
+                class="flight-path-map"
+                id="flight-path-map"
+                viewBox="0 0 960 460"
+                role="img"
+                aria-label="Recorded flight path"
+                hidden
+              >
+                <defs>
+                  <pattern id="flight-path-grid" width="64" height="64" patternUnits="userSpaceOnUse">
+                    <path d="M64 0H0V64" fill="none" stroke="currentColor" stroke-width="0.7" />
+                  </pattern>
+                  <linearGradient id="flight-path-background" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#172b38" />
+                    <stop offset="1" stop-color="#101c26" />
+                  </linearGradient>
+                </defs>
+                <rect class="flight-path-background" width="960" height="460" rx="14" />
+                <rect class="flight-path-grid" width="960" height="460" rx="14" />
+                <g id="flight-path-layer"></g>
+              </svg>
+              <div class="photo-empty" id="flight-path-empty" hidden>
+                <span class="empty-state-mark" aria-hidden="true">✦</span>
+                <p class="empty-state-title" id="flight-path-empty-title">No flight path for this flight</p>
+                <p id="flight-path-empty-message">A KML track will appear here after the debrief sync.</p>
+              </div>
+            </div>
+            <div class="image-viewer" id="image-viewer" role="dialog" aria-modal="true" aria-label="Flight screenshot" hidden>
+              <div class="image-viewer-toolbar">
+                <span id="image-viewer-title"></span>
+                <div class="image-viewer-controls">
+                  <button class="gallery-close" id="image-viewer-previous" type="button" aria-label="Previous screenshot" title="Previous screenshot">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m15 18-6-6 6-6" />
+                    </svg>
+                  </button>
+                  <button class="gallery-close" id="image-viewer-next" type="button" aria-label="Next screenshot" title="Next screenshot">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m9 18 6-6-6-6" />
+                    </svg>
+                  </button>
+                  <button class="gallery-close" id="image-viewer-close" type="button" aria-label="Close image" title="Close image">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m6 6 12 12M18 6 6 18" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <img id="image-viewer-image" alt="" />
+            </div>
+          </div>
+          <p class="map-note" id="map-note" hidden></p>
+        </section>
+      </main>
+
+      <footer class="page-footer">
+        <span>WeisAir FlightLog</span>
+        <span>Built for the love of flying</span>
+      </footer>
+    </div>
+  </body>
+</html>

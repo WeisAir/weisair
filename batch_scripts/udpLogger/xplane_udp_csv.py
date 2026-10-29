@@ -7,8 +7,39 @@ from pathlib import Path
 #UDP_IP = "0.0.0.0" #UDP_IP = "192.168.2.202
 UDP_IP = "127.0.0.1"
 UDP_PORT = 49005
+FLIGHT_IDLE_TIMEOUT_SECONDS = 5
 CSV_PATH = Path(__file__).with_name("xplane_log.csv")
+LAST_RUN_CSV_PATH = Path(__file__).with_name("xplane_log_lastrun.csv")
 MAPPING_PATH = Path(__file__).with_name("xplane_udp_mapping.csv")
+
+
+def prepare_csv_for_run():
+    if not CSV_PATH.exists():
+        return
+
+    if LAST_RUN_CSV_PATH.exists():
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        archived_path = LAST_RUN_CSV_PATH.with_name(
+            f"{LAST_RUN_CSV_PATH.stem}_{timestamp}{LAST_RUN_CSV_PATH.suffix}"
+        )
+        suffix = 1
+        while archived_path.exists():
+            archived_path = LAST_RUN_CSV_PATH.with_name(
+                f"{LAST_RUN_CSV_PATH.stem}_{timestamp}_{suffix}"
+                f"{LAST_RUN_CSV_PATH.suffix}"
+            )
+            suffix += 1
+        LAST_RUN_CSV_PATH.rename(archived_path)
+
+    CSV_PATH.rename(LAST_RUN_CSV_PATH)
+
+
+def rotate_csv_if_populated():
+    if not CSV_PATH.exists() or CSV_PATH.stat().st_size == 0:
+        return False
+
+    prepare_csv_for_run()
+    return True
 
 
 def decode_data_packet(data):
@@ -89,10 +120,12 @@ def write_csv(rows, fieldnames, header_mapping):
         )
 
 
+prepare_csv_for_run()
 header_mapping = load_header_mapping()
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+sock.settimeout(FLIGHT_IDLE_TIMEOUT_SECONDS)
 sock.bind((UDP_IP, UDP_PORT))
 
 print(f"Listening on {UDP_IP}:{UDP_PORT}")
@@ -102,7 +135,18 @@ fieldnames = ["udp_timestamp"]
 rows = []
 
 while True:
-    data, address = sock.recvfrom(4096)
+    try:
+        data, address = sock.recvfrom(4096)
+    except socket.timeout:
+        if rotate_csv_if_populated():
+            rows.clear()
+            fieldnames = ["udp_timestamp"]
+            print(
+                f"No UDP packets received for {FLIGHT_IDLE_TIMEOUT_SECONDS} "
+                f"seconds; rotated current log to {LAST_RUN_CSV_PATH}"
+            )
+        continue
+
     records = decode_data_packet(data)
 
     print(

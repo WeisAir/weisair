@@ -6,6 +6,7 @@ set -o pipefail
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 XPLANE_DIR="/home/stephan/X-Plane 12"
+XPLANE_EXECUTABLE="${XPLANE_DIR}/X-Plane-x86_64"
 KML_SOURCE_DIR="${XPLANE_DIR}/KML"
 SCREENSHOT_DIRECTORY="${XPLANE_DIR}/Output/screenshots"
 KMZ_GENERATOR_SCRIPT="/home/stephan/dev/weisair/batch_scripts/kmz_generator/combine_to_kmz.py"
@@ -14,18 +15,80 @@ FLIGHT_PLOT_SCRIPT="/home/stephan/dev/weisair/analysis/plot_xplane_flight.py"
 PYTHON_EXECUTABLE="python3"
 SOURCE_FILE="/home/stephan/X-Plane 12/FlightLog1.0.csv"
 DESTINATION_FILE="${SCRIPT_DIR}/FlightLog1.0.csv"
+WEBAPP_DATA_DIRECTORY="${SCRIPT_DIR}/webapp/data"
+WEBAPP_FLIGHT_LOG="${WEBAPP_DATA_DIRECTORY}/FlightLog1.0.csv"
+WEBAPP_PHOTO_SYNC="${SCRIPT_DIR}/sync_webapp_photos.py"
+WEBAPP_STATISTICS_SYNC="${SCRIPT_DIR}/sync_webapp_statistics.py"
+WEBAPP_FLIGHT_PATH_SYNC="${SCRIPT_DIR}/sync_webapp_flight_paths.py"
 LOG_FILE="${SCRIPT_DIR}/LinuxXPDebrief.log"
 POLL_INTERVAL=5
 FLIGHT_DIRECTORY=""
+XPLANE_SEEN_RUNNING=0
+XPLANE_SHUTDOWN_DETECTED=0
+UDP_LOGGER_STOPPED=0
 
 log_status() {
     printf '[%s] %s\n' "$(date '+%Y-%m-%d %H:%M:%S')" "$*" | tee -a "$LOG_FILE"
+}
+
+sync_webapp_photos() {
+    if [[ ! -f "$WEBAPP_PHOTO_SYNC" || ! -r "$WEBAPP_PHOTO_SYNC" ]]; then
+        log_status "ERROR: Webapp screenshot sync script is missing or unreadable: $WEBAPP_PHOTO_SYNC"
+        return 1
+    fi
+    if ! "$PYTHON_EXECUTABLE" "$WEBAPP_PHOTO_SYNC" >> "$LOG_FILE" 2>&1; then
+        log_status "ERROR: Failed to sync flight screenshots to the webapp"
+        return 1
+    fi
+}
+
+sync_webapp_statistics() {
+    if [[ ! -f "$WEBAPP_STATISTICS_SYNC" || ! -r "$WEBAPP_STATISTICS_SYNC" ]]; then
+        log_status "ERROR: Webapp statistics sync script is missing or unreadable: $WEBAPP_STATISTICS_SYNC"
+        return 1
+    fi
+    if ! "$PYTHON_EXECUTABLE" "$WEBAPP_STATISTICS_SYNC" >> "$LOG_FILE" 2>&1; then
+        log_status "ERROR: Failed to sync flight statistics to the webapp"
+        return 1
+    fi
+}
+
+sync_webapp_flight_paths() {
+    if [[ ! -f "$WEBAPP_FLIGHT_PATH_SYNC" || ! -r "$WEBAPP_FLIGHT_PATH_SYNC" ]]; then
+        log_status "ERROR: Webapp flight path sync script is missing or unreadable: $WEBAPP_FLIGHT_PATH_SYNC"
+        return 1
+    fi
+    if ! "$PYTHON_EXECUTABLE" "$WEBAPP_FLIGHT_PATH_SYNC" >> "$LOG_FILE" 2>&1; then
+        log_status "ERROR: Failed to sync flight paths to the webapp"
+        return 1
+    fi
 }
 
 process_is_active() {
     local process_state
     process_state="$(ps -p "$1" -o stat= 2>/dev/null || true)"
     [[ -n "$process_state" && "$process_state" != Z* ]]
+}
+
+xplane_is_running() {
+    local process_ids process_id process_executable result
+    if process_ids="$(pgrep -f -- "$XPLANE_EXECUTABLE")"; then
+        for process_id in $process_ids; do
+            process_executable="$(readlink -- "/proc/${process_id}/exe" 2>/dev/null || true)"
+            if [[ "$process_executable" == "$XPLANE_EXECUTABLE" ]]; then
+                return 0
+            fi
+        done
+        return 1
+    else
+        result=$?
+        if (( result == 1 )); then
+            return 1
+        fi
+
+        log_status "ERROR: Failed to search for X-Plane processes (pgrep status $result)"
+        return 2
+    fi
 }
 
 stop_udp_logger() {
@@ -270,12 +333,54 @@ if [[ ! -r "$SOURCE_FILE" ]]; then
     exit 1
 fi
 
+if ! mkdir -p "$WEBAPP_DATA_DIRECTORY"; then
+    log_status "ERROR: Cannot create webapp data directory: $WEBAPP_DATA_DIRECTORY"
+    exit 1
+fi
+
+if ! cp -- "$SOURCE_FILE" "$WEBAPP_FLIGHT_LOG"; then
+    log_status "ERROR: Failed to initialize webapp flight log at $WEBAPP_FLIGHT_LOG"
+    exit 1
+fi
+
+if ! sync_webapp_photos; then
+    exit 1
+fi
+
+if ! sync_webapp_statistics; then
+    exit 1
+fi
+
+if ! sync_webapp_flight_paths; then
+    exit 1
+fi
+
 last_line_count="$(wc -l < "$SOURCE_FILE")"
-log_status "Watcher started; monitoring $SOURCE_FILE every $POLL_INTERVAL seconds"
+log_status "Watcher started; monitoring $SOURCE_FILE and $XPLANE_EXECUTABLE every $POLL_INTERVAL seconds"
 log_status "Initial flight log record count: $last_line_count"
 
 while true; do
     sleep "$POLL_INTERVAL"
+
+    if xplane_is_running; then
+        if (( XPLANE_SEEN_RUNNING == 0 )); then
+            log_status "Detected X-Plane running; will stop the UDP logger after X-Plane exits"
+        fi
+        XPLANE_SEEN_RUNNING=1
+    else
+        xplane_status=$?
+        if (( xplane_status > 1 )); then
+            exit 1
+        fi
+        if (( XPLANE_SEEN_RUNNING == 1 && UDP_LOGGER_STOPPED == 0 )); then
+            log_status "X-Plane is no longer running; stopping the UDP logger"
+            if ! stop_udp_logger; then
+                exit 1
+            fi
+            UDP_LOGGER_STOPPED=1
+            XPLANE_SHUTDOWN_DETECTED=1
+        fi
+    fi
 
     if [[ ! -r "$SOURCE_FILE" ]]; then
         log_status "ERROR: X-Plane flight log is no longer readable: $SOURCE_FILE"
@@ -285,13 +390,21 @@ while true; do
     current_line_count="$(wc -l < "$SOURCE_FILE")"
     if (( current_line_count < last_line_count )); then
         log_status "Flight log was shortened from $last_line_count to $current_line_count lines; resetting the baseline"
+        if ! cp -- "$SOURCE_FILE" "$WEBAPP_FLIGHT_LOG"; then
+            log_status "ERROR: Failed to update webapp flight log at $WEBAPP_FLIGHT_LOG"
+            exit 1
+        fi
         last_line_count="$current_line_count"
-        continue
     fi
 
     if (( current_line_count > last_line_count )); then
         if ! cp -- "$SOURCE_FILE" "$DESTINATION_FILE"; then
             log_status "ERROR: Failed to copy flight log to $DESTINATION_FILE"
+            exit 1
+        fi
+
+        if ! cp -- "$SOURCE_FILE" "$WEBAPP_FLIGHT_LOG"; then
+            log_status "ERROR: Failed to update webapp flight log at $WEBAPP_FLIGHT_LOG"
             exit 1
         fi
 
@@ -345,9 +458,6 @@ PY
 
         IFS=$'\t' read -r ACF ICAO_D ICAO_A DATE_FLIGHT TIME_FLIGHT <<< "$flight_info"
         log_status "Detected $((current_line_count - last_line_count)) new line(s); copied $current_line_count lines to $DESTINATION_FILE; ACF=$ACF ICAO_D=$ICAO_D ICAO_A=$ICAO_A DATE_FLIGHT=$DATE_FLIGHT TIME_FLIGHT=$TIME_FLIGHT"
-        if ! stop_udp_logger; then
-            exit 1
-        fi
         if ! create_flight_directories; then
             exit 1
         fi
@@ -357,15 +467,29 @@ PY
         if ! plot_flight_csv; then
             exit 1
         fi
+        if ! sync_webapp_statistics; then
+            exit 1
+        fi
         if ! copy_flight_kml; then
             exit 1
         fi
+        if ! sync_webapp_flight_paths; then
+            exit 1
+        fi
         if ! generate_flight_kmz; then
+            exit 1
+        fi
+        if ! sync_webapp_photos; then
             exit 1
         fi
         if ! copy_xplane_logs; then
             exit 1
         fi
         last_line_count="$current_line_count"
+    fi
+
+    if (( XPLANE_SHUTDOWN_DETECTED == 1 )); then
+        log_status "X-Plane shutdown detected; debrief watcher exiting"
+        exit 0
     fi
 done

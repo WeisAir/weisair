@@ -1,0 +1,1 @@
+ To run locally, open a terminal in webapp/ and run python3 -m http.server 8000, then visit http://localhost:8000.

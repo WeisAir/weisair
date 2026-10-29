@@ -8,6 +8,7 @@ TARGET_DEVICES=(
     ["05e3:0626"]="Saitek Rudder Pedals"
     ["294b:1900"]="Honeycomb Alpha Yoke"
 )
+declare -A REQUIRED_COUNTS=(["06a3:0c2d"]=2)
 
 echo "Check connectivity of USB Devices..."
 
@@ -17,9 +18,11 @@ while true; do
 
     for ID in "${!TARGET_DEVICES[@]}"; do
         NAME="${TARGET_DEVICES[$ID]}"
+        REQUIRED_COUNT="${REQUIRED_COUNTS[$ID]:-1}"
+        DEVICE_COUNT="$(lsusb -d "${ID,,}" 2>/dev/null | awk 'NF { count++ } END { print count+0 }')"
 
-        if ! lsusb -d "${ID,,}" > /dev/null 2>&1; then
-            MISSING_DEVICES="${MISSING_DEVICES}• ${NAME}\n  [ID: ${ID^^}]\n\n"
+        if (( DEVICE_COUNT < REQUIRED_COUNT )); then
+            MISSING_DEVICES="${MISSING_DEVICES}• ${NAME} (${DEVICE_COUNT}/${REQUIRED_COUNT} connected)\n  [ID: ${ID^^}]\n\n"
             ALL_CONNECTED=0
         fi
     done

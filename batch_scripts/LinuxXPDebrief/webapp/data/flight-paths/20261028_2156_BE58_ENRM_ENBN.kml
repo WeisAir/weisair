@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+ <Style id="line-style">
+      <LineStyle>
+        <color>ffff55ff</color>
+        <width>4</width>
+      </LineStyle>
+      <PolyStyle><color>8fff55ff</color></PolyStyle>
+    <IconStyle><color>ffc2ff0b</color></IconStyle>
+    <LabelStyle><color>ff00ffff</color></LabelStyle>
+    <BalloonStyle>
+    <text><![CDATA[<center><b><font size=4>ENRM-ENBN</font><br/> Rørvik Ryum &RightArrow; <br/> &RightArrow; Brønnøysund Brønnøy<br/></b></center><pre>
+Date        : 2026-10-28 local
+Aircaft     : BE58
+Distance    : 52nm
+Duration    : 00:19:37
+Altitudes   : 0
+Waypoints   : 13
+Trackpoints : 79
+</pre>
+<p style="font-size:8px">KMLLogger 1.0.1 2026-01-02 (Mike Nixon)</p>]]></text>
+     </BalloonStyle>
+ </Style>
+<styleUrl>#line-style</styleUrl>
+ <Style id="fix-style">
+    <IconStyle><color>ffc2ff0b</color></IconStyle>
+    <LabelStyle><color>ff00ffff</color></LabelStyle>
+    <BalloonStyle><text>
+    <![CDATA[<center><b><font size=5>$[name]</font> <font size=4>($[description])</font><br/>Rørvik Ryum &RightArrow; <br/>&RightArrow; Brønnøysund Brønnøy<br/>(BE58)</b></center><br/>
+<pre>
+gs  : $[gs]kts
+alt : $[alt]ft
+agl : $[agl]ft
+hdg : $[dn]°    
+vs  : $[vs]ft/min
+wind: $[wd]°/$[ws]kts
+QNH : $[qnh]
+time: $[time]Z
+</pre>]]></text></BalloonStyle>
+</Style>
+<Placemark>
+        <name>ENRM: Rørvik Ryum [BE58]</name>
+        <description>APT</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>0</value></Data>
+          <Data name="alt"><value>-200</value></Data>
+          <Data name="agl"><value>0</value></Data>
+          <Data name="dn"><value>215</value></Data>
+          <Data name="vs"><value>0</value></Data>
+          <Data name="wd"><value>0</value></Data>
+          <Data name="ws"><value>0</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>13:23:56</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>11.14913492,64.83996834,17</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>ALT: 0</name>
+        <description>Info</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>98</value></Data>
+          <Data name="alt"><value>0</value></Data>
+          <Data name="agl"><value>207</value></Data>
+          <Data name="dn"><value>255</value></Data>
+          <Data name="vs"><value>1400</value></Data>
+          <Data name="wd"><value>244</value></Data>
+          <Data name="ws"><value>12</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>13:32:41</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>11.13745685,64.83418939,64</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>MD04</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>129</value></Data>
+          <Data name="alt"><value>1200</value></Data>
+          <Data name="agl"><value>1388</value></Data>
+          <Data name="dn"><value>310</value></Data>
+          <Data name="vs"><value>1100</value></Data>
+          <Data name="wd"><value>243</value></Data>
+          <Data name="ws"><value>18</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>13:33:21</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>11.11860847,64.82367706,424</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>RM400</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>161</value></Data>
+          <Data name="alt"><value>1600</value></Data>
+          <Data name="agl"><value>1822</value></Data>
+          <Data name="dn"><value>321</value></Data>
+          <Data name="vs"><value>1500</value></Data>
+          <Data name="wd"><value>250</value></Data>
+          <Data name="ws"><value>20</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>13:33:41</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>11.11136627,64.82164764,556</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>MEDEK</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>145</value></Data>
+          <Data name="alt"><value>2500</value></Data>
+          <Data name="agl"><value>2698</value></Data>
+          <Data name="dn"><value>352</value></Data>
+          <Data name="vs"><value>50</value></Data>
+          <Data name="wd"><value>246</value></Data>
+          <Data name="ws"><value>19</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>13:45:42</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>11.86674976,65.27817535,823</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>GIMSA</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>151</value></Data>
+          <Data name="alt"><value>1500</value></Data>
+          <Data name="agl"><value>1635</value></Data>
+          <Data name="dn"><value>68</value></Data>
+          <Data name="vs"><value>200</value></Data>
+          <Data name="wd"><value>244</value></Data>
+          <Data name="ws"><value>18</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>13:47:23</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>11.90961647,65.34997559,499</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>BN431</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>131</value></Data>
+          <Data name="alt"><value>1300</value></Data>
+          <Data name="agl"><value>1425</value></Data>
+          <Data name="dn"><value>35</value></Data>
+          <Data name="vs"><value>-600</value></Data>
+          <Data name="wd"><value>246</value></Data>
+          <Data name="ws"><value>17</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>13:48:03</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>12.07179737,65.37699127,436</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>FD03</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>141</value></Data>
+          <Data name="alt"><value>900</value></Data>
+          <Data name="agl"><value>1030</value></Data>
+          <Data name="dn"><value>13</value></Data>
+          <Data name="vs"><value>-800</value></Data>
+          <Data name="wd"><value>238</value></Data>
+          <Data name="ws"><value>16</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>13:49:03</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>12.07685566,65.40896606,316</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>34TH2</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>135</value></Data>
+          <Data name="alt"><value>700</value></Data>
+          <Data name="agl"><value>850</value></Data>
+          <Data name="dn"><value>104</value></Data>
+          <Data name="vs"><value>-700</value></Data>
+          <Data name="wd"><value>234</value></Data>
+          <Data name="ws"><value>15</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>13:49:23</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>12.12586689,65.40917206,260</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>22VOR</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>113</value></Data>
+          <Data name="alt"><value>400</value></Data>
+          <Data name="agl"><value>517</value></Data>
+          <Data name="dn"><value>78</value></Data>
+          <Data name="vs"><value>-750</value></Data>
+          <Data name="wd"><value>235</value></Data>
+          <Data name="ws"><value>14</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>13:49:43</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>12.14703655,65.43357086,159</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>EDEMI</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>115</value></Data>
+          <Data name="alt"><value>100</value></Data>
+          <Data name="agl"><value>306</value></Data>
+          <Data name="dn"><value>20</value></Data>
+          <Data name="vs"><value>100</value></Data>
+          <Data name="wd"><value>228</value></Data>
+          <Data name="ws"><value>14</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>13:50:13</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>12.16201115,65.43206024,94</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>DER21</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>85</value></Data>
+          <Data name="alt"><value>-200</value></Data>
+          <Data name="agl"><value>0</value></Data>
+          <Data name="dn"><value>94</value></Data>
+          <Data name="vs"><value>0</value></Data>
+          <Data name="wd"><value>219</value></Data>
+          <Data name="ws"><value>11</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>13:50:53</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>12.20380020,65.45405579,1</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>ENBN: Brønnøysund Brønnøy [BE58]</name>
+        <description>APT</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>0</value></Data>
+          <Data name="alt"><value>-200</value></Data>
+          <Data name="agl"><value>0</value></Data>
+          <Data name="dn"><value>298</value></Data>
+          <Data name="vs"><value>0</value></Data>
+          <Data name="wd"><value>359</value></Data>
+          <Data name="ws"><value>0</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>13:52:10</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>12.21619942,65.46156699,1</coordinates>
+		</Point>
+ </Placemark>
+      <Placemark>
+      <name>ENRM-ENBN</name>
+      <styleUrl>#line-style</styleUrl>
+      <LineString>
+        <extrude>1</extrude>
+        <tessellate>0</tessellate>
+        <altitudeMode>absolute</altitudeMode>
+        <coordinates>
+          11.14913492,64.83996834,17
+          11.14846280,64.83963489,16
+          11.14817884,64.83949748,16
+          11.14783399,64.83933762,16
+          11.14744381,64.83915302,15
+          11.14704374,64.83893195,15
+          11.14663740,64.83868363,14
+          11.14615766,64.83842161,14
+          11.14560856,64.83815689,13
+          11.14502423,64.83788089,12
+          11.13745685,64.83418939,64
+          11.13025717,64.83064269,138
+          11.12156493,64.82708688,230
+          11.10991941,64.82627643,347
+          11.09846490,64.82873601,424
+          11.09054395,64.83406483,494
+          11.08893165,64.84109431,556
+          11.14018398,64.88209025,1046
+          11.22425573,64.91507315,1442
+          11.29587455,64.95229883,1963
+          11.35930362,64.99047420,2181
+          11.41831052,65.04282248,2178
+          11.47865600,65.09675740,2176
+          11.55491268,65.14734445,2169
+          11.65826022,65.19013687,1991
+          11.74699173,65.23162012,1573
+          11.82991350,65.27191845,1056
+          11.83156290,65.31857574,789
+          11.83062386,65.35812051,823
+          11.91502352,65.37883622,612
+          11.93333114,65.38006451,573
+          11.95114556,65.38147027,530
+          11.96864345,65.38276374,505
+          11.98553637,65.38394792,499
+          12.00137366,65.38501952,514
+          12.01671951,65.38643418,494
+          12.02975439,65.38982131,472
+          12.04051973,65.39417832,436
+          12.05073387,65.39835343,408
+          12.06119779,65.40257782,370
+          12.07134790,65.40704557,350
+          12.08111987,65.41175673,338
+          12.09159937,65.41636036,324
+          12.10367559,65.42035198,316
+          12.11785013,65.42340123,291
+          12.13309924,65.42534608,260
+          12.14633930,65.42732503,208
+          12.15771623,65.42991270,159
+          12.16571400,65.43380642,104
+          12.17333702,65.43770334,93
+          12.18062993,65.44181985,94
+          12.18851907,65.44609852,75
+          12.19648076,65.45020304,42
+          12.20401408,65.45414668,9
+          12.20854347,65.45646869,1
+          12.20923091,65.45683326,1
+          12.20987961,65.45718879,1
+          12.21049581,65.45752462,1
+          12.21091834,65.45774293,1
+          12.21109496,65.45783130,1
+          12.21167011,65.45812880,1
+          12.21219355,65.45841687,1
+          12.21271533,65.45870418,1
+          12.21320615,65.45896696,1
+          12.21365126,65.45920131,1
+          12.21404069,65.45940444,1
+          12.21436711,65.45957330,1
+          12.21463059,65.45970915,1
+          12.21619942,65.46156699,1
+       </coordinates>
+      </LineString>
+    </Placemark>
+</Document>
+</kml>

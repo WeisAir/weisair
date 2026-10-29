@@ -13,7 +13,7 @@ import piexif
 # ==========================================
 # KONFIGURATION DER BILDABMESSUNGEN & STYLES
 # ==========================================
-IMAGE_WIDTH = "500"
+IMAGE_WIDTH = "900"
 IMAGE_HEIGHT = "auto"
 TIME_TOLERANCE_MINUTES = 15
 LOCAL_TIMEZONE = ZoneInfo("Europe/Oslo")

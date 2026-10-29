@@ -8,6 +8,7 @@ UDP_LOGGER_SCRIPT="../udpLogger/xplane_udp_csv.py"
 PYTHON_EXECUTABLE="python3"
 SIMBRIEF_SCRIPT="/home/stephan/X-Plane-12-Assets/tools/SimbriefPyDownloader/SimBriefPyDownloader/SimBriefPyDownloader.py"
 XPLANE_EXECUTABLE="/home/stephan/X-Plane 12/X-Plane-x86_64"
+DEBRIEF_SCRIPT="${SCRIPT_DIR}/../LinuxXPDebrief/WeisAir_XP12_Debrief.sh"
 XPLANE_ISO="/mnt/B87AB6F57AB6AF8C/XPLANE12_DVD1.ISO"
 XPLANE_MOUNT_POINT="/mnt/iso/xp12"
 STATUS_LOG="${SCRIPT_DIR}/WeisAir_XP12_Launcher_status.log"
@@ -52,12 +53,12 @@ launch_background() {
 
     if [[ ! -d "$working_directory" ]]; then
         record_failure "$label working directory does not exist: $working_directory"
-        return
+        return 1
     fi
 
     if ! command -v -- "$1" >/dev/null 2>&1; then
         record_failure "$label command was not found: $1"
-        return
+        return 1
     fi
 
     log_status "Starting $label"
@@ -68,10 +69,12 @@ launch_background() {
     process_state="$(ps -o stat= -p "$process_id" 2>/dev/null || true)"
     if [[ -n "$process_state" && "$process_state" != Z* ]]; then
         log_status "$label started successfully (PID $process_id)"
+        return 0
     else
         local result=0
         wait "$process_id" || result=$?
         record_failure "$label exited during startup with status $result"
+        return 1
     fi
 }
 
@@ -81,10 +84,20 @@ launch_native_application() {
 
     if [[ ! -x "$executable" ]]; then
         record_failure "$label is missing or not executable: $executable"
-        return
+        return 1
     fi
 
     launch_background "$label" "$(dirname -- "$executable")" "$executable"
+}
+
+launch_debrief_watcher() {
+    if [[ ! -f "$DEBRIEF_SCRIPT" || ! -r "$DEBRIEF_SCRIPT" ]]; then
+        record_failure "X-Plane debrief watcher script is missing or unreadable: $DEBRIEF_SCRIPT"
+        return 1
+    fi
+
+    launch_background "X-Plane debrief watcher" "$(dirname -- "$DEBRIEF_SCRIPT")" \
+        bash "$DEBRIEF_SCRIPT"
 }
 
 launch_littlenavmap() {
@@ -155,7 +168,9 @@ fi
 launch_python_script "X-Plane UDP data logger" "$UDP_LOGGER_SCRIPT"
 launch_python_script "SimBrief PyDownloader" "$SIMBRIEF_SCRIPT"
 if ensure_xplane_iso_mounted; then
-    launch_native_application "X-Plane 12" "$XPLANE_EXECUTABLE"
+    if launch_native_application "X-Plane 12" "$XPLANE_EXECUTABLE"; then
+        launch_debrief_watcher
+    fi
 fi
 launch_littlenavmap
 

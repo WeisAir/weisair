@@ -1,0 +1,283 @@
+{
+  "version": 1,
+  "maxImageDimension": 1920,
+  "webpQuality": 84,
+  "flights": {
+    "20261018_2340_BE58_KSFO_KSFO": [
+      {
+        "src": "data/photos/20261018_2340_BE58_KSFO_KSFO/photo-001.webp",
+        "originalName": "Baron_58 - 2026-10-18 11.43.29 PM.png",
+        "sourceSize": 3166787,
+        "sourceModifiedNs": "1792359810272780170",
+        "size": 89618,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261018_2340_BE58_KSFO_KSFO/photo-002.webp",
+        "originalName": "Baron_58 - 2026-10-18 11.43.32 PM.png",
+        "sourceSize": 3709253,
+        "sourceModifiedNs": "1792359812744779098",
+        "size": 104758,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261018_2340_BE58_KSFO_KSFO/photo-003.webp",
+        "originalName": "Baron_58 - 2026-10-18 11.44.12 PM.png",
+        "sourceSize": 4681181,
+        "sourceModifiedNs": "1792359853260761452",
+        "size": 125238,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261018_2340_BE58_KSFO_KSFO/photo-004.webp",
+        "originalName": "Baron_58 - 2026-10-18 11.45.09 PM.png",
+        "sourceSize": 4654051,
+        "sourceModifiedNs": "1792359910725736140",
+        "size": 153554,
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "20261026_1045_B738_EDDC_EDDF": [
+      {
+        "src": "data/photos/20261026_1045_B738_EDDC_EDDF/photo-001.webp",
+        "originalName": "b738 - 2026-10-26 11.05.24 AM.png",
+        "sourceSize": 2989315,
+        "sourceModifiedNs": "1793009125103600471",
+        "size": 71946,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261026_1045_B738_EDDC_EDDF/photo-002.webp",
+        "originalName": "b738 - 2026-10-26 11.06.39 AM.png",
+        "sourceSize": 3199023,
+        "sourceModifiedNs": "1793009199823912910",
+        "size": 86980,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261026_1045_B738_EDDC_EDDF/photo-003.webp",
+        "originalName": "b738 - 2026-10-26 11.07.00 AM.png",
+        "sourceSize": 3264396,
+        "sourceModifiedNs": "1793009220902872585",
+        "size": 83802,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261026_1045_B738_EDDC_EDDF/photo-004.webp",
+        "originalName": "b738 - 2026-10-26 11.11.24 AM.png",
+        "sourceSize": 3742275,
+        "sourceModifiedNs": "1793009484758961610",
+        "size": 101190,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261026_1045_B738_EDDC_EDDF/photo-005.webp",
+        "originalName": "b738 - 2026-10-26 11.19.46 AM.png",
+        "sourceSize": 5419613,
+        "sourceModifiedNs": "1793009986781260887",
+        "size": 206902,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261026_1045_B738_EDDC_EDDF/photo-006.webp",
+        "originalName": "b738 - 2026-10-26 11.23.28 AM.png",
+        "sourceSize": 2927576,
+        "sourceModifiedNs": "1793010219908166745",
+        "size": 51272,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261026_1045_B738_EDDC_EDDF/photo-007.webp",
+        "originalName": "b738 - 2026-10-26 11.23.59 AM.png",
+        "sourceSize": 3139512,
+        "sourceModifiedNs": "1793010240669154290",
+        "size": 81944,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261026_1045_B738_EDDC_EDDF/photo-008.webp",
+        "originalName": "b738 - 2026-10-26 11.36.41 AM.png",
+        "sourceSize": 3049202,
+        "sourceModifiedNs": "1793011002739747434",
+        "size": 96582,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261026_1045_B738_EDDC_EDDF/photo-009.webp",
+        "originalName": "b738 - 2026-10-26 11.39.22 AM.png",
+        "sourceSize": 4318625,
+        "sourceModifiedNs": "1793011163569593865",
+        "size": 145364,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261026_1045_B738_EDDC_EDDF/photo-010.webp",
+        "originalName": "b738 - 2026-10-26 11.45.09 AM.png",
+        "sourceSize": 1745629,
+        "sourceModifiedNs": "1793011510347133951",
+        "size": 36960,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261026_1045_B738_EDDC_EDDF/photo-011.webp",
+        "originalName": "b738 - 2026-10-26 11.45.15 AM.png",
+        "sourceSize": 2390792,
+        "sourceModifiedNs": "1793011516791096459",
+        "size": 61476,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261026_1045_B738_EDDC_EDDF/photo-012.webp",
+        "originalName": "b738 - 2026-10-26 11.47.21 AM.png",
+        "sourceSize": 3175023,
+        "sourceModifiedNs": "1793011644047300084",
+        "size": 67608,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261026_1045_B738_EDDC_EDDF/photo-013.webp",
+        "originalName": "b738 - 2026-10-26 11.47.31 AM.png",
+        "sourceSize": 3504378,
+        "sourceModifiedNs": "1793011659904194075",
+        "size": 83286,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261026_1045_B738_EDDC_EDDF/photo-014.webp",
+        "originalName": "b738 - 2026-10-26 11.49.12 AM.png",
+        "sourceSize": 4042503,
+        "sourceModifiedNs": "1793011754398535706",
+        "size": 84832,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261026_1045_B738_EDDC_EDDF/photo-015.webp",
+        "originalName": "b738 - 2026-10-26 11.49.33 AM.png",
+        "sourceSize": 3574688,
+        "sourceModifiedNs": "1793011776125378409",
+        "size": 71416,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261026_1045_B738_EDDC_EDDF/photo-016.webp",
+        "originalName": "b738 - 2026-10-26 11.49.43 AM.png",
+        "sourceSize": 3807366,
+        "sourceModifiedNs": "1793011785379310794",
+        "size": 72960,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261026_1045_B738_EDDC_EDDF/photo-017.webp",
+        "originalName": "b738 - 2026-10-26 11.49.47 AM.png",
+        "sourceSize": 3791763,
+        "sourceModifiedNs": "1793011789673279296",
+        "size": 73806,
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "20261028_2156_BE58_ENRM_ENBN": [
+      {
+        "src": "data/photos/20261028_2156_BE58_ENRM_ENBN/photo-001.webp",
+        "originalName": "Baron_58 - 2026-10-28 10.04.10 PM.png",
+        "sourceSize": 5191504,
+        "sourceModifiedNs": "1793221451043027569",
+        "size": 157334,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261028_2156_BE58_ENRM_ENBN/photo-002.webp",
+        "originalName": "Baron_58 - 2026-10-28 10.05.15 PM.png",
+        "sourceSize": 5239154,
+        "sourceModifiedNs": "1793221516433091247",
+        "size": 154244,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261028_2156_BE58_ENRM_ENBN/photo-003.webp",
+        "originalName": "Baron_58 - 2026-10-28 10.05.29 PM.png",
+        "sourceSize": 5629583,
+        "sourceModifiedNs": "1793221530224928418",
+        "size": 209442,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261028_2156_BE58_ENRM_ENBN/photo-004.webp",
+        "originalName": "Baron_58 - 2026-10-28 10.09.35 PM.png",
+        "sourceSize": 2751863,
+        "sourceModifiedNs": "1793221776661946770",
+        "size": 63848,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261028_2156_BE58_ENRM_ENBN/photo-005.webp",
+        "originalName": "Baron_58 - 2026-10-28 10.09.44 PM.png",
+        "sourceSize": 2009909,
+        "sourceModifiedNs": "1793221785389613510",
+        "size": 33530,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261028_2156_BE58_ENRM_ENBN/photo-006.webp",
+        "originalName": "Baron_58 - 2026-10-28 10.17.37 PM.png",
+        "sourceSize": 3115193,
+        "sourceModifiedNs": "1793222257910281592",
+        "size": 62546,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261028_2156_BE58_ENRM_ENBN/photo-007.webp",
+        "originalName": "Baron_58 - 2026-10-28 10.21.51 PM.png",
+        "sourceSize": 4293092,
+        "sourceModifiedNs": "1793222512347161468",
+        "size": 95538,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261028_2156_BE58_ENRM_ENBN/photo-008.webp",
+        "originalName": "Baron_58 - 2026-10-28 10.22.21 PM.png",
+        "sourceSize": 4572446,
+        "sourceModifiedNs": "1793222541935150789",
+        "size": 123300,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "data/photos/20261028_2156_BE58_ENRM_ENBN/photo-009.webp",
+        "originalName": "Baron_58 - 2026-10-28 10.22.45 PM.png",
+        "sourceSize": 5119489,
+        "sourceModifiedNs": "1793222566167142375",
+        "size": 152584,
+        "width": 1920,
+        "height": 1080
+      }
+    ]
+  }
+}

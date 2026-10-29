@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "flights": {
+    "20261018_2340_BE58_KSFO_KSFO": {
+      "src": "data/flight-paths/20261018_2340_BE58_KSFO_KSFO.kml",
+      "version": "1793188060507816713"
+    },
+    "20261026_1045_B738_EDDC_EDDF": {
+      "src": "data/flight-paths/20261026_1045_B738_EDDC_EDDF.kml",
+      "version": "1793188091170861047"
+    },
+    "20261028_2156_BE58_ENRM_ENBN": {
+      "src": "data/flight-paths/20261028_2156_BE58_ENRM_ENBN.kml",
+      "version": "1793222665648935244"
+    }
+  }
+}
