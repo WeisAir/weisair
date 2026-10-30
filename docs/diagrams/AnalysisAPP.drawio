@@ -158,6 +158,9 @@
         <mxCell id="yAAtbqjdbbLHD5Lh5nix-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Automatisierung AIRAC Updater + Flightplan Updater" vertex="1">
           <mxGeometry height="130" width="420" x="-60" y="2050" as="geometry" />
         </mxCell>
+        <mxCell id="NwR0xJBrka5ZOGqhkXAu-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Simbrief PDF integrieren" vertex="1">
+          <mxGeometry height="130" width="420" x="400" y="2050" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>

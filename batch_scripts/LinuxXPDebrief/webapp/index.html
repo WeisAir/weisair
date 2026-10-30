@@ -154,6 +154,12 @@
             </div>
           </div>
           <div class="map-canvas" id="map-canvas">
+            <div class="map-controls" role="group" aria-label="Map controls">
+              <button id="zoom-in" type="button" aria-label="Zoom in" title="Zoom in">+</button>
+              <button id="zoom-out" type="button" aria-label="Zoom out" title="Zoom out">−</button>
+              <button id="zoom-to-flight" type="button" aria-label="Zoom to selected flight" title="Zoom to selected flight">Fit flight</button>
+              <button id="zoom-reset" type="button" aria-label="Reset map view" title="Reset map view">Reset</button>
+            </div>
             <svg
               id="world-map"
               viewBox="0 0 960 460"
@@ -184,10 +190,12 @@
                 </clipPath>
               </defs>
               <rect class="map-ocean" width="960" height="460" rx="14" />
-              <rect class="map-grid" width="960" height="460" rx="14" />
-              <g id="landmasses" clip-path="url(#map-clip)"></g>
-              <g id="route-layer" clip-path="url(#map-clip)"></g>
-              <g id="airport-layer"></g>
+              <g id="map-viewport" clip-path="url(#map-clip)">
+                <rect class="map-grid" width="960" height="460" />
+                <g id="landmasses"></g>
+                <g id="route-layer"></g>
+                <g id="airport-layer"></g>
+              </g>
             </svg>
             <div class="map-caption" id="map-caption">
               <span id="map-airport-count">0 airports</span>

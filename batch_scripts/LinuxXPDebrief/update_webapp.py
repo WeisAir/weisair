@@ -2,7 +2,9 @@
 """Refresh the static webapp from the debrief flight data."""
 
 import filecmp
+import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -12,6 +14,11 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 WEBAPP_DATA_DIRECTORY = SCRIPT_DIR / "webapp" / "data"
 FLIGHT_LOG_SOURCE = SCRIPT_DIR / "FlightLog1.0.csv"
 FLIGHT_LOG_DESTINATION = WEBAPP_DATA_DIRECTORY / "FlightLog1.0.csv"
+FLIGHT_DIRECTORY = SCRIPT_DIR / "flights"
+FLIGHT_FOLDERS_DESTINATION = WEBAPP_DATA_DIRECTORY / "flight-folders.json"
+FLIGHT_NAME_PATTERN = re.compile(
+    r"^\d{8}_\d{4}_[A-Za-z0-9_-]+_[A-Za-z0-9_-]+_[A-Za-z0-9_-]+$"
+)
 SYNC_SCRIPTS = (
     "sync_webapp_photos.py",
     "sync_webapp_statistics.py",
@@ -51,9 +58,34 @@ def update_flight_resources():
         subprocess.run([sys.executable, str(script_path)], check=True)
 
 
+def update_flight_folders():
+    folders = (
+        sorted(
+            folder.name
+            for folder in FLIGHT_DIRECTORY.iterdir()
+            if folder.is_dir() and FLIGHT_NAME_PATTERN.fullmatch(folder.name)
+        )
+        if FLIGHT_DIRECTORY.is_dir()
+        else []
+    )
+    temporary_path = FLIGHT_FOLDERS_DESTINATION.with_name(
+        f".{FLIGHT_FOLDERS_DESTINATION.name}.{os.getpid()}.tmp"
+    )
+    try:
+        with temporary_path.open("w", encoding="utf-8") as manifest_file:
+            json.dump({"version": 1, "folders": folders}, manifest_file, indent=2)
+            manifest_file.write("\n")
+        os.replace(temporary_path, FLIGHT_FOLDERS_DESTINATION)
+    finally:
+        temporary_path.unlink(missing_ok=True)
+
+    print(f"Published {len(folders)} flight folders to {FLIGHT_FOLDERS_DESTINATION}")
+
+
 def main():
     update_flight_log()
     update_flight_resources()
+    update_flight_folders()
 
 
 if __name__ == "__main__":

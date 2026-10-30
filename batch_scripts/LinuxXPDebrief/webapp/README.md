@@ -39,6 +39,12 @@ connection; the local track view remains available if the globe cannot load.
 Flight altitude comes from the KML coordinates and waypoint metadata; no
 separate terrain-elevation service is configured.
 
+The update script also publishes `data/flight-folders.json` from folders
+present under `flights`. The Photos, Flight Path, and Statistics buttons appear
+only for log entries that match one of those folders. Older log entries without
+a corresponding folder remain visible in the table and on the map, without
+those buttons.
+
 Open a gallery image to view it enlarged. Use the viewer's previous/next
 buttons or the left/right arrow keys to browse that flight's screenshots; the
 gallery wraps from the last image to the first and vice versa.
@@ -51,10 +57,14 @@ statistics, and flight-path publishers.
 ## Host online
 
 Upload the contents of this directory, including `data/FlightLog1.0.csv`,
-`data/photos`, `data/statistics`, and `data/flight-paths`, to your static
-hosting space. Keep the `data` and `custom_assets` directories alongside
-`index.html`.
+`data/flight-folders.json`, `data/world-land.json`, `data/photos`,
+`data/statistics`, and `data/flight-paths`, to your static hosting space. Keep
+the `data` and `custom_assets` directories alongside `index.html`.
 
-The map uses a compact built-in world illustration and does not rely on map
-tiles or a mapping service. Airport locations are defined in `app.js`; add
-coordinates there when a new airport code appears in the flight log.
+The map uses Natural Earth's public-domain 1:50m land dataset in
+`data/world-land.json` for detailed coastlines, with the existing color palette
+and no map-tile service. Select a flight row to fit its route; use the map's
+Fit flight and Reset controls, mouse wheel to zoom, or drag to pan. Airport
+markers and labels stay compact as you zoom in, and flight paths use flatter
+curves. Airport locations are defined in `app.js`; add coordinates there when a
+new airport code appears in the flight log.

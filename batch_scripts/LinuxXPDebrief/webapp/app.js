@@ -15,61 +15,25 @@ const DISPLAY_COLUMNS = [
 ];
 
 const AIRPORTS = {
+  EDAB: { latitude: 51.193530556, longitude: 14.519747222 },
   EDDC: { latitude: 51.134344444, longitude: 13.768 },
   EDDF: { latitude: 50.033305556, longitude: 8.570455556 },
   ENBN: { latitude: 65.461111111, longitude: 12.2175 },
+  ENFL: { latitude: 61.583611111, longitude: 5.024722222 },
+  ENKB: { latitude: 63.111944444, longitude: 7.826111111 },
+  ENOV: { latitude: 62.18, longitude: 6.074166667 },
   ENRM: { latitude: 64.838333333, longitude: 11.146111111 },
+  ENVA: { latitude: 63.4575, longitude: 10.924166667 },
+  LKVR: { latitude: 50.624166667, longitude: 15.646388889 },
+  LPMA: { latitude: 32.69425, longitude: -16.778055556 },
   KSFO: { latitude: 37.618805556, longitude: -122.375416667 },
 };
 
-const LANDMASSES = [
-  [
-    [-168, 70], [-151, 71], [-139, 69], [-132, 58], [-127, 53], [-124, 42],
-    [-117, 33], [-111, 29], [-106, 23], [-97, 17], [-90, 15], [-83, 9],
-    [-78, 9], [-77, 18], [-81, 25], [-80, 31], [-75, 36], [-70, 42],
-    [-65, 45], [-60, 51], [-57, 55], [-63, 59], [-69, 61], [-73, 68],
-    [-91, 72], [-110, 75], [-130, 73], [-151, 75],
-  ],
-  [
-    [-81, 12], [-75, 10], [-69, 11], [-62, 9], [-53, 5], [-49, -2],
-    [-52, -11], [-57, -18], [-59, -27], [-65, -38], [-70, -51],
-    [-75, -55], [-77, -43], [-73, -31], [-77, -20], [-80, -8],
-  ],
-  [
-    [-53, 59], [-44, 60], [-38, 67], [-42, 77], [-52, 82], [-62, 79],
-    [-66, 72], [-61, 65],
-  ],
-  [
-    [-10, 36], [-10, 43], [-6, 50], [-3, 56], [-7, 59], [-1, 59],
-    [2, 55], [8, 55], [11, 58], [18, 60], [24, 66], [31, 70],
-    [40, 68], [48, 73], [65, 72], [81, 75], [99, 72], [114, 68],
-    [128, 62], [142, 58], [157, 60], [170, 57], [178, 52], [170, 47],
-    [158, 51], [149, 45], [141, 43], [134, 35], [127, 37], [123, 32],
-    [121, 24], [114, 22], [109, 18], [105, 10], [100, 6], [96, 13],
-    [91, 21], [84, 22], [80, 8], [77, 8], [72, 20], [68, 24],
-    [60, 25], [56, 27], [52, 25], [49, 30], [44, 33], [37, 37],
-    [31, 42], [27, 41], [23, 37], [18, 37], [14, 42], [9, 44],
-    [5, 43], [0, 45], [-4, 43], [-9, 43], [-10, 36],
-  ],
-  [
-    [-17, 36], [-6, 36], [1, 34], [10, 37], [18, 33], [25, 32],
-    [33, 31], [40, 15], [50, 11], [44, 2], [42, -12], [35, -22],
-    [29, -34], [18, -35], [12, -26], [9, -9], [2, 5], [-5, 5],
-    [-10, 14], [-16, 20],
-  ],
-  [
-    [112, -11], [129, -12], [139, -17], [153, -27], [151, -38],
-    [139, -43], [126, -35], [116, -31], [113, -22],
-  ],
-  [
-    [-180, -68], [-150, -71], [-110, -69], [-70, -73], [-20, -69],
-    [20, -72], [60, -68], [100, -72], [140, -69], [180, -72],
-    [180, -90], [-180, -90],
-  ],
-];
-
 const MAP_WIDTH = 960;
 const MAP_HEIGHT = 460;
+const MIN_MAP_ZOOM = 1;
+const MAX_MAP_ZOOM = 24;
+const mapView = { zoom: 1, centerX: MAP_WIDTH / 2, centerY: MAP_HEIGHT / 2 };
 const flightRows = document.querySelector("#flight-rows");
 const errorState = document.querySelector("#error-state");
 const emptyState = document.querySelector("#empty-state");
@@ -83,6 +47,11 @@ let statisticsManifest = null;
 let statisticsManifestError = "";
 let flightPathManifest = null;
 let flightPathManifestError = "";
+let flightFolders = new Set();
+let flightFoldersManifestError = "";
+let landmassPath = "";
+let mapGeometryError = "";
+let mapPanStart = null;
 let activePanelFlightIndex = null;
 let activePanelAction = null;
 let activeViewerImageIndex = null;
@@ -256,7 +225,10 @@ function createFlightRow(flight, index) {
   }
 
   const actionsCell = document.createElement("td");
-  actionsCell.append(createActionButtons(index));
+  const folderName = getFlightFolderName(flight);
+  if (folderName && flightFolders.has(folderName)) {
+    actionsCell.append(createActionButtons(index));
+  }
   row.append(actionsCell);
 
   row.addEventListener("click", () => selectFlight(index));
@@ -281,15 +253,94 @@ function project(latitude, longitude) {
 
 function renderLandmasses() {
   const layer = document.querySelector("#landmasses");
-  for (const points of LANDMASSES) {
-    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    const commands = points.map(([longitude, latitude], index) => {
-      const point = project(latitude, longitude);
-      return `${index === 0 ? "M" : "L"}${point.x.toFixed(1)},${point.y.toFixed(1)}`;
-    });
-    path.setAttribute("d", `${commands.join(" ")} Z`);
-    path.setAttribute("class", "landmass");
-    layer.append(path);
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute("d", landmassPath);
+  path.setAttribute("class", "landmass");
+  path.setAttribute("fill-rule", "evenodd");
+  layer.replaceChildren(path);
+}
+
+function applyMapView() {
+  const translateX = MAP_WIDTH / 2 - mapView.centerX * mapView.zoom;
+  const translateY = MAP_HEIGHT / 2 - mapView.centerY * mapView.zoom;
+  document.querySelector("#map-viewport").setAttribute(
+    "transform",
+    `translate(${translateX} ${translateY}) scale(${mapView.zoom})`,
+  );
+  document.querySelectorAll(".airport-symbols").forEach((symbols) => {
+    symbols.setAttribute("transform", `scale(${1 / mapView.zoom})`);
+  });
+  document.querySelector("#zoom-to-flight").disabled = selectedFlightIndex === null;
+}
+
+function setMapZoom(zoom, focusPoint) {
+  const nextZoom = Math.min(MAX_MAP_ZOOM, Math.max(MIN_MAP_ZOOM, zoom));
+  if (focusPoint && nextZoom !== mapView.zoom) {
+    const worldX = mapView.centerX + (focusPoint.x - MAP_WIDTH / 2) / mapView.zoom;
+    const worldY = mapView.centerY + (focusPoint.y - MAP_HEIGHT / 2) / mapView.zoom;
+    mapView.centerX = worldX - (focusPoint.x - MAP_WIDTH / 2) / nextZoom;
+    mapView.centerY = worldY - (focusPoint.y - MAP_HEIGHT / 2) / nextZoom;
+  }
+  mapView.zoom = nextZoom;
+  applyMapView();
+}
+
+function fitFlightOnMap(flightIndex) {
+  const flight = flights[flightIndex];
+  if (!flight) {
+    return;
+  }
+
+  const start = AIRPORTS[flight["Departure ICAO"].toUpperCase()];
+  const end = AIRPORTS[flight["Arrival ICAO"].toUpperCase()];
+  if (!start || !end) {
+    return;
+  }
+
+  const startPoint = project(start.latitude, start.longitude);
+  const endPoint = project(end.latitude, end.longitude);
+  let endX = endPoint.x;
+  if (endX - startPoint.x > MAP_WIDTH / 2) {
+    endX -= MAP_WIDTH;
+  } else if (endX - startPoint.x < -MAP_WIDTH / 2) {
+    endX += MAP_WIDTH;
+  }
+  const width = Math.abs(endX - startPoint.x);
+  const height = Math.abs(endPoint.y - startPoint.y);
+  mapView.centerX = (startPoint.x + endX) / 2;
+  mapView.centerY = (startPoint.y + endPoint.y) / 2;
+  mapView.zoom = width < 0.1 && height < 0.1
+    ? 1
+    : Math.min(MAX_MAP_ZOOM, Math.max(MIN_MAP_ZOOM, Math.min(
+      (MAP_WIDTH - 140) / Math.max(width, 1),
+      (MAP_HEIGHT - 120) / Math.max(height, 1),
+    )));
+  applyMapView();
+}
+
+function svgPointFromEvent(event) {
+  const svg = document.querySelector("#world-map");
+  const point = svg.createSVGPoint();
+  point.x = event.clientX;
+  point.y = event.clientY;
+  return point.matrixTransform(svg.getScreenCTM().inverse());
+}
+
+async function loadLandmasses() {
+  try {
+    const response = await fetch("./data/world-land.json", { cache: "force-cache" });
+    if (!response.ok) {
+      throw new Error(`Coastline data request failed (${response.status} ${response.statusText}).`);
+    }
+    const data = await response.json();
+    if (typeof data.path !== "string" || data.path.length === 0) {
+      throw new Error("The coastline data has an unsupported format.");
+    }
+    landmassPath = data.path;
+    renderLandmasses();
+  } catch (error) {
+    mapGeometryError =
+      error instanceof Error ? error.message : "An unexpected error occurred.";
   }
 }
 
@@ -317,12 +368,12 @@ function createRoutePath(start, end) {
   }
 
   if (Math.abs(deltaX) < 0.5 && Math.abs(endPoint.y - startPoint.y) < 0.5) {
-    const offset = 30;
-    return `M${startPoint.x},${startPoint.y} C${startPoint.x + offset},${startPoint.y - offset * 2} ${startPoint.x - offset},${startPoint.y - offset * 2} ${endPoint.x},${endPoint.y}`;
+    const offset = 12;
+    return `M${startPoint.x},${startPoint.y} C${startPoint.x + offset},${startPoint.y - offset} ${startPoint.x - offset},${startPoint.y - offset} ${endPoint.x},${endPoint.y}`;
   }
 
   const endX = startPoint.x + deltaX;
-  const bend = Math.min(75, Math.max(19, Math.hypot(deltaX, endPoint.y - startPoint.y) * 0.11));
+  const bend = Math.min(28, Math.max(3, Math.hypot(deltaX, endPoint.y - startPoint.y) * 0.04));
   const controlX = (startPoint.x + endX) / 2;
   const controlY = (startPoint.y + endPoint.y) / 2 - bend;
   return `M${startPoint.x},${startPoint.y} Q${controlX},${controlY} ${endX},${endPoint.y}`;
@@ -357,26 +408,32 @@ function renderMap() {
 
   for (const airport of airports) {
     const point = project(airport.latitude, airport.longitude);
-    const marker = document.createElementNS("http://www.w3.org/2000/svg", "g");
     const selected = selectedCodes.has(airport.code);
-    marker.setAttribute(
-      "class",
-      `airport-marker${selected ? " is-active" : ""}${selectedFlight && !selected ? " is-dimmed" : ""}`,
-    );
-    marker.setAttribute("transform", `translate(${point.x} ${point.y})`);
+    for (const offset of [-MAP_WIDTH, 0, MAP_WIDTH]) {
+      const marker = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      marker.setAttribute(
+        "class",
+        `airport-marker${selected ? " is-active" : ""}${selectedFlight && !selected ? " is-dimmed" : ""}`,
+      );
+      marker.setAttribute("transform", `translate(${point.x + offset} ${point.y})`);
+      const symbols = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      symbols.setAttribute("class", "airport-symbols");
+      symbols.setAttribute("transform", `scale(${1 / mapView.zoom})`);
 
-    const halo = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-    halo.setAttribute("class", "marker-halo");
-    halo.setAttribute("r", selected ? "10" : "7");
-    const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-    dot.setAttribute("class", "marker-dot");
-    dot.setAttribute("r", selected ? "4.5" : "3.5");
-    const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
-    label.setAttribute("x", "8");
-    label.setAttribute("y", "-8");
-    label.textContent = airport.code;
-    marker.append(halo, dot, label);
-    airportLayer.append(marker);
+      const halo = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      halo.setAttribute("class", "marker-halo");
+      halo.setAttribute("r", selected ? "10" : "7");
+      const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      dot.setAttribute("class", "marker-dot");
+      dot.setAttribute("r", selected ? "4.5" : "3.5");
+      const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
+      label.setAttribute("x", "8");
+      label.setAttribute("y", "-8");
+      label.textContent = airport.code;
+      symbols.append(halo, dot, label);
+      marker.append(symbols);
+      airportLayer.append(marker);
+    }
   }
 
   const unknownCodes = new Set();
@@ -389,19 +446,24 @@ function renderMap() {
     }
   }
   const note = document.querySelector("#map-note");
+  const messages = [];
   if (unknownCodes.size > 0) {
-    note.textContent = `Airport coordinates are not available for ${[...unknownCodes].sort().join(", ")}. Add their coordinates in app.js to show them on the map.`;
-    note.hidden = false;
-  } else {
-    note.hidden = true;
-    note.textContent = "";
+    messages.push(
+      `Airport coordinates are not available for ${[...unknownCodes].sort().join(", ")}. Add their coordinates in app.js to show them on the map.`,
+    );
   }
+  if (mapGeometryError) {
+    messages.push(`${mapGeometryError} The coastlines could not be displayed.`);
+  }
+  note.textContent = messages.join(" ");
+  note.hidden = messages.length === 0;
 
   document.querySelector("#map-airport-count").textContent =
     `${airports.length} ${airports.length === 1 ? "airport" : "airports"}`;
   document.querySelector("#map-selection").textContent = selectedFlight
     ? `${selectedFlight["Departure ICAO"]} → ${selectedFlight["Arrival ICAO"]}`
-    : "Select a flight to trace its route";
+    : "Select a flight to trace its route · Scroll to zoom, drag to pan";
+  applyMapView();
 }
 
 function selectFlight(index) {
@@ -414,6 +476,7 @@ function selectFlight(index) {
     row.classList.toggle("is-selected", selected);
     row.setAttribute("aria-selected", String(selected));
   }
+  fitFlightOnMap(index);
   renderMap();
 }
 
@@ -1124,6 +1187,33 @@ async function loadFlightPathManifest() {
   }
 }
 
+async function loadFlightFoldersManifest() {
+  try {
+    const response = await fetch("./data/flight-folders.json", { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error(
+        `Flight folder index request failed (${response.status} ${response.statusText}).`,
+      );
+    }
+    const manifest = await response.json();
+    if (
+      manifest.version !== 1 ||
+      !Array.isArray(manifest.folders) ||
+      !manifest.folders.every(
+        (folder) =>
+          typeof folder === "string" &&
+          /^\d{8}_\d{4}_[A-Za-z0-9_-]+_[A-Za-z0-9_-]+_[A-Za-z0-9_-]+$/.test(folder),
+      )
+    ) {
+      throw new Error("The flight folder index has an unsupported format.");
+    }
+    flightFolders = new Set(manifest.folders);
+  } catch (error) {
+    flightFoldersManifestError =
+      error instanceof Error ? error.message : "An unexpected error occurred.";
+  }
+}
+
 function showError(message) {
   logStatus.textContent = "Unable to load flight log";
   logStatusContainer.classList.add("is-error");
@@ -1138,6 +1228,8 @@ async function loadFlightLog() {
       loadPhotoManifest(),
       loadStatisticsManifest(),
       loadFlightPathManifest(),
+      loadFlightFoldersManifest(),
+      loadLandmasses(),
     ]);
     const response = await fetch("./data/FlightLog1.0.csv", { cache: "no-store" });
     if (!response.ok) {
@@ -1153,6 +1245,13 @@ async function loadFlightLog() {
       flightRows.replaceChildren(...flights.map(createFlightRow));
       logStatus.textContent = "Flight log loaded";
     }
+    if (flightFoldersManifestError) {
+      logStatus.textContent = "Flight folder index unavailable";
+      logStatusContainer.classList.add("is-error");
+      errorState.textContent =
+        `${flightFoldersManifestError} Flight-specific actions are hidden; run ../update_webapp.py to publish the folder index.`;
+      errorState.hidden = false;
+    }
     updateStatistics();
     renderMap();
   } catch (error) {
@@ -1160,11 +1259,71 @@ async function loadFlightLog() {
   }
 }
 
-renderLandmasses();
 document.querySelector("#gallery-close").addEventListener("click", () => {
   if (activePanelFlightIndex !== null && activePanelAction === "photos") {
     togglePhotoGallery(activePanelFlightIndex);
   }
+});
+document.querySelector("#zoom-in").addEventListener("click", () => {
+  setMapZoom(mapView.zoom * 1.5);
+});
+document.querySelector("#zoom-out").addEventListener("click", () => {
+  setMapZoom(mapView.zoom / 1.5);
+});
+document.querySelector("#zoom-reset").addEventListener("click", () => {
+  mapView.zoom = 1;
+  mapView.centerX = MAP_WIDTH / 2;
+  mapView.centerY = MAP_HEIGHT / 2;
+  applyMapView();
+});
+document.querySelector("#zoom-to-flight").addEventListener("click", () => {
+  if (selectedFlightIndex !== null) {
+    fitFlightOnMap(selectedFlightIndex);
+  }
+});
+document.querySelector("#map-canvas").addEventListener(
+  "wheel",
+  (event) => {
+    if (document.querySelector("#world-map").getAttribute("aria-hidden") === "true") {
+      return;
+    }
+    event.preventDefault();
+    const point = svgPointFromEvent(event);
+    setMapZoom(mapView.zoom * (event.deltaY < 0 ? 1.2 : 1 / 1.2), point);
+  },
+  { passive: false },
+);
+document.querySelector("#world-map").addEventListener("pointerdown", (event) => {
+  if (event.button !== 0) {
+    return;
+  }
+  mapPanStart = {
+    point: svgPointFromEvent(event),
+    centerX: mapView.centerX,
+    centerY: mapView.centerY,
+  };
+  event.currentTarget.setPointerCapture(event.pointerId);
+  document.querySelector("#map-canvas").classList.add("is-panning");
+});
+document.querySelector("#world-map").addEventListener("pointermove", (event) => {
+  if (!mapPanStart) {
+    return;
+  }
+  const point = svgPointFromEvent(event);
+  mapView.centerX = mapPanStart.centerX - (point.x - mapPanStart.point.x) / mapView.zoom;
+  mapView.centerY = mapPanStart.centerY - (point.y - mapPanStart.point.y) / mapView.zoom;
+  applyMapView();
+});
+document.querySelector("#world-map").addEventListener("pointerup", (event) => {
+  mapPanStart = null;
+  document.querySelector("#map-canvas").classList.remove("is-panning");
+  if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+    event.currentTarget.releasePointerCapture(event.pointerId);
+  }
+});
+document.querySelector("#world-map").addEventListener("pointercancel", () => {
+  mapPanStart = null;
+  document.querySelector("#map-canvas").classList.remove("is-panning");
 });
 document.querySelector("#statistics-close").addEventListener("click", () => {
   if (activePanelFlightIndex !== null && activePanelAction === "statistics") {
