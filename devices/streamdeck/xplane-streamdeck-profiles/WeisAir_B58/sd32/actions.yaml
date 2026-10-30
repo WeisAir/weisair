@@ -54,6 +54,31 @@ actions:
         color: white
         direction: ltr
         align: center
+
+  - index: 6
+    name: screenshot
+    type: single
+    icon: button
+    command: WeisAIR/generic/take_screenshot
+    special-labels:
+      - label: Screen
+        text-center:
+          x: center
+          y: 45
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
+      - label: Shot
+        text-center:
+          x: center
+          y: 65
+        font-path: IBMPlexMono-Bold.ttf
+        font-size: 20
+        color: white
+        direction: ltr
+        align: center
   
   - index: 7
     name: replay

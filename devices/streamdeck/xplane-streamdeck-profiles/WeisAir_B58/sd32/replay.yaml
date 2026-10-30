@@ -8,7 +8,7 @@ actions:
     name: screenshot
     type: single
     icon: button
-    command: sim/operation/screenshot
+    command: WeisAIR/generic/take_screenshot
     special-labels:
       - label: Screen
         text-center:
@@ -55,7 +55,7 @@ actions:
         align: center
 
   - index: 7
-    name: record_video
+    name: show_fps
     type: single
     icon: button
     command: sim/operation/show_fps

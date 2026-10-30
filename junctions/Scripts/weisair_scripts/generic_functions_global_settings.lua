@@ -4,6 +4,23 @@
 
 -- overall weather presets
 
+function take_screenshot()
+	
+	dataref("fps_shown", "sim/network/dataout/data_to_screen", "writable",0)
+
+	if (fps_shown == 1) then
+
+			command_once("sim/operation/show_fps")
+			command_once("sim/operation/screenshot")
+			command_once("sim/operation/show_fps")
+		
+	else
+		command_once("sim/operation/screenshot")
+	end
+
+end
+create_command("WeisAIR/generic/take_screenshot", "take_screenshot", "take_screenshot()", "", "")
+
 function set_weather_cavok()
 	set("sim/weather/region/weather_preset", 0)
 end
