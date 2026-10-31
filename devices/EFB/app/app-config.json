@@ -11,7 +11,7 @@
   "buttonHeight": "80px",
   "buttonFontSize": "24px",
   "websiteLongPressMs": 1000,
-  "airManagerExecutable": "/home/stephan/Air Manager 5.2.7 Home use/Bootloader",
+  "airManagerExecutable": "/home/stephan/Air Manager 5.2.7 Home use/AirManager.sh",
   "airManagerExitSpacing": "16px",
   "xPlaneApiBaseUrl": "http://127.0.0.1:8086/api/v3",
   "xPlaneAircraftDataref": "sim/aircraft/view/acf_relative_path",

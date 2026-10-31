@@ -228,6 +228,15 @@ Update September 2026
 Now we get some music in here... I 
 - Airmanager runs fine under Ubuntu 24.04 using X11 display manager 
   - TODO: validate performance in flight. So far tested only on ground with no hickups
+  - Preconditions for AirManager on Ubuntu
+    - primary system
+      - make sure that according to Siminnovations Docs the libcurl4-openssl-dev lib is installed
+      - latest plugin version 4.5.3
+    - secondary system
+      - video streams will crash with a malloc exception - workaround:
+        - install libjemalloc (sudo apt install libjemalloc-dev)
+        - run AirManager with prefix (LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libjemalloc.so" ./AirManager.sh)
+
   - in order flash the knobster device, you need to add yourself to a certain group in ubuntu (need to google that again)
   - need to calibrate the external touch screen -> follow [this tutorial](https://www.gechic.com/en/knowledge-base-2/linux-touch-screen-settings/), will extract the knowledge to this space later
   - disable task bar on the flight sim touchscreen to use maximum space

@@ -15,7 +15,7 @@ Edit `app-config.json` before starting the app:
 - `buttonHeight`: height of each website button, for example `"60px"`.
 - `buttonFontSize`: font size of website button labels, for example `"20px"`.
 - `websiteLongPressMs`: how long an application button must be held to hard-refresh the currently shown website; defaults to `1000` milliseconds.
-- `airManagerExecutable`: full path to the AirManager executable.
+- `airManagerExecutable`: full path to `AirManager.sh`. The app launches it from its containing directory with `/usr/lib/x86_64-linux-gnu/libjemalloc.so` preloaded.
 - `airManagerExitSpacing`: spacing between the AirManager toggle and EXIT, for example `"16px"`.
 - `xPlaneApiBaseUrl`: X-Plane Web API base URL, for example `"http://192.168.2.112:8086/api/v3"`.
 - `xPlaneAircraftDataref`: dataref used to read the loaded aircraft path. X-Plane returns this `data` value as base64, which the app decodes automatically.
@@ -44,7 +44,7 @@ The current recommended settings are:
 	"inactiveButtonColor": "#374151",
 	"buttonHeight": "48px",
 	"buttonFontSize": "16px",
-	"airManagerExecutable": "/home/stephan/Air Manager 5.2.7 Home use/Bootloader",
+	"airManagerExecutable": "/home/stephan/Air Manager 5.2.7 Home use/AirManager.sh",
 	"airManagerExitSpacing": "16px",
 	"xPlaneApiBaseUrl": "http://192.168.2.112:8086/api/v3",
 	"xPlaneAircraftDataref": "sim/aircraft/view/acf_relative_path",

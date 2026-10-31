@@ -272,8 +272,9 @@ function toggleAirManager() {
 	]) {
 		if (process.env[key]) airManagerEnvironment[key] = process.env[key];
 	}
+	airManagerEnvironment.LD_PRELOAD = '/usr/lib/x86_64-linux-gnu/libjemalloc.so';
 
-	const child = spawn(executable, [], {
+	const child = spawn(`./${path.basename(executable)}`, [], {
 		cwd: path.dirname(executable),
 		stdio: 'ignore',
 		env: airManagerEnvironment,
