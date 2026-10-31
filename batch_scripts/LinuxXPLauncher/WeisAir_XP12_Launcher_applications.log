@@ -23951,3 +23951,27 @@ Launched PID: 90206
 [2026-10-31 22:17:09.297 DEBUG]: virtual atools::gui::DataExchange::~DataExchange() ../atools/src/gui/dataexchange.cpp:217 deleteLater sharedMemory (QSharedMemory(0x1c5b9170))
 [2026-10-31 22:17:09.297 DEBUG]: int main(int, char**) ../littlenavmap/src/main.cpp:515 delete dbManager (QObject(0x0))
 [2026-10-31 22:17:09.297 INFO ]: About to shut down logging
+Picking device: NVIDIA GeForce GTX 1080 Ti
+Device budget changed to 9.59 gb. Memory thresholds are now: heavy: 9.09 gb, slight: 8.84 gb, none: 8.34 gb, negative: 7.84 gb. Current: 26.50 mb
+Device budget changed to 9.76 gb. Memory thresholds are now: heavy: 9.26 gb, slight: 9.01 gb, none: 8.51 gb, negative: 8.01 gb. Current: 35.83 mb
+Device budget changed to 9.88 gb. Memory thresholds are now: heavy: 9.38 gb, slight: 9.13 gb, none: 8.63 gb, negative: 8.13 gb. Current: 48.21 mb
+Checksum Reader: 1.6% wait input, 98.3% work, 0.1% wait output.
+Checksum calc: 74.4% wait input, 25.6% work, 0.0% wait output.
+Device budget changed to 10.01 gb. Memory thresholds are now: heavy: 9.51 gb, slight: 9.26 gb, none: 8.76 gb, negative: 8.26 gb. Current: 49.21 mb
+Start time: 498.868435
+end time: 510.622310
+Net Read: 1.0% wait input, 99.0% work, 0.0% wait output.
+Decompress: 98.7% wait input, 1.3% work, 0.0% wait output.
+HDD Writer: 99.2% wait input, 0.8% work, 0.0% wait output.
+Files: 18
+Chunks: 9
+Total kbytes: 61580.976562
+DL Time: 11.753871
+DL Rate: 17169.113281
+DL deviation: 4375.029785
+Retries: 0
+Source: 1
+Product: 0
+Complete: yes
+Fatal Errors: 0
+Device budget changed to 9.88 gb. Memory thresholds are now: heavy: 9.38 gb, slight: 9.13 gb, none: 8.63 gb, negative: 8.13 gb. Current: 49.73 mb
