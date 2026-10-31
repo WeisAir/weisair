@@ -34,9 +34,12 @@ Run:
 The browser opens `https://navigraph.com/downloads`. Sign in if needed; the
 script automatically waits up to three minutes for every configured package
 row and its Linux download control to appear. It then clicks each control and
-saves the resulting file to the configured directory. If the table does not
-become ready in time, check the sign-in status and package names. Download
-errors are reported and cause a non-zero exit status.
+saves the resulting file to the configured directory using the package-specific
+naming rules in [zip_naming_conventions.md](./zip_naming_conventions.md). For
+example, `ixeg737-classic-plus-native-2611-r1.zip` becomes
+`ixeg737classicplus_native_2611_r1.zip`. If the table does not become ready in
+time, check the sign-in status and package names. Download errors are reported
+and cause a non-zero exit status.
 
 An alternate JSON config can be selected with `--config /path/to/config.json`.
 The browser session is kept in `~/.local/share/navigraph-airac-downloader/` so

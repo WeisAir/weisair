@@ -164,6 +164,12 @@
         <mxCell id="NwR0xJBrka5ZOGqhkXAu-2" parent="1" style="sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;align=center;fillColor=#2D9C5E;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.check;labelPerimeter=1;" value="" vertex="1">
           <mxGeometry height="40" width="50" x="790" y="1740" as="geometry" />
         </mxCell>
+        <mxCell id="NwR0xJBrka5ZOGqhkXAu-3" parent="1" style="sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;align=center;fillColor=#FFD966;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.check;labelPerimeter=1;" value="" vertex="1">
+          <mxGeometry height="40" width="50" x="790" y="2060" as="geometry" />
+        </mxCell>
+        <mxCell id="NwR0xJBrka5ZOGqhkXAu-4" parent="1" style="sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;align=center;fillColor=#FFD966;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.check;labelPerimeter=1;" value="" vertex="1">
+          <mxGeometry height="40" width="50" x="330" y="2050" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>

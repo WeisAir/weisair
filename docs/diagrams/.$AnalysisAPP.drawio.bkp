@@ -158,8 +158,11 @@
         <mxCell id="yAAtbqjdbbLHD5Lh5nix-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Automatisierung AIRAC Updater + Flightplan Updater" vertex="1">
           <mxGeometry height="130" width="420" x="-60" y="2050" as="geometry" />
         </mxCell>
-        <mxCell id="NwR0xJBrka5ZOGqhkXAu-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Simbrief PDF integrieren" vertex="1">
+        <mxCell id="NwR0xJBrka5ZOGqhkXAu-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Screenshot Action Streamdeck auf Main screen&lt;br&gt;Custom Screenshot action -&amp;gt; &quot;Show FPS&quot; ausblenden, dann Screenshot, dann einblenden" vertex="1">
           <mxGeometry height="130" width="420" x="400" y="2050" as="geometry" />
+        </mxCell>
+        <mxCell id="NwR0xJBrka5ZOGqhkXAu-2" parent="1" style="sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;align=center;fillColor=#2D9C5E;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.check;labelPerimeter=1;" value="" vertex="1">
+          <mxGeometry height="40" width="50" x="790" y="1740" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

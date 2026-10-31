@@ -27,6 +27,13 @@ PROFILE_DIRECTORY = (
     / "browser-profile"
 )
 DOWNLOAD_TIMEOUT_MS = 120_000
+FILENAME_REPLACEMENTS = {
+    "IXEG 737 Classic Plus": ("ixeg737-classic-plus", "ixeg737classicplus"),
+    "Little NavMap": ("little-navmap", "lnm"),
+    "SSG Boeing 748i": None,
+    "X-Plane 12": None,
+    "X-Plane GNS430": ("xplane-gns430", "xplane_customdata"),
+}
 
 
 def load_config(config_path: Path) -> tuple[Path, list[str]]:
@@ -105,6 +112,23 @@ def wait_for_download_table(page: Page, packages: list[str]) -> None:
     )
 
 
+def normalize_download_filename(package: str, filename: str) -> str:
+    if package not in FILENAME_REPLACEMENTS:
+        raise ValueError(f"No filename naming rule is configured for {package!r}.")
+
+    replacement = FILENAME_REPLACEMENTS[package]
+    if replacement is not None:
+        source, target = replacement
+        if source not in filename:
+            raise ValueError(
+                f"Downloaded filename {filename!r} does not contain expected "
+                f"package fragment {source!r} for {package!r}."
+            )
+        filename = filename.replace(source, target, 1)
+
+    return filename.replace("-", "_")
+
+
 def download_packages(page: Page, target_directory: Path, packages: list[str]) -> int:
     failures = 0
     for package in packages:
@@ -124,10 +148,15 @@ def download_packages(page: Page, target_directory: Path, packages: list[str]) -
             with page.expect_download(timeout=DOWNLOAD_TIMEOUT_MS) as download_info:
                 control.click()
             download = download_info.value
-            destination = target_directory / download.suggested_filename
+            filename = normalize_download_filename(package, download.suggested_filename)
+            destination = target_directory / filename
             download.save_as(destination)
-        except PlaywrightTimeoutError:
-            print(f"ERROR: Timed out waiting for the Linux download: {package}")
+        except (PlaywrightTimeoutError, ValueError) as error:
+            if isinstance(error, PlaywrightTimeoutError):
+                message = "Timed out waiting for the Linux download"
+            else:
+                message = f"Could not determine the required filename: {error}"
+            print(f"ERROR: {message}: {package}")
             failures += 1
             continue
 
