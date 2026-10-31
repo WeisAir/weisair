@@ -19,6 +19,7 @@ SCRIPT_DIRECTORY = Path(__file__).resolve().parent
 DEFAULT_CONFIG = SCRIPT_DIRECTORY / "config.json"
 DOWNLOADS_URL = "https://navigraph.com/downloads"
 TABLE_READY_TIMEOUT_MS = 180_000
+AIRAC_CYCLE_TIMEOUT_MS = 60_000
 PROFILE_DIRECTORY = (
     Path.home()
     / ".local"
@@ -109,6 +110,26 @@ def wait_for_download_table(page: Page, packages: list[str]) -> None:
         }""",
         arg=packages,
         timeout=TABLE_READY_TIMEOUT_MS,
+    )
+
+
+def current_airac_cycle(page: Page) -> str:
+    page.wait_for_function(
+        """() => /current AIRAC cycle is\\s+\\d{4}/i.test(document.body.innerText)""",
+        timeout=AIRAC_CYCLE_TIMEOUT_MS,
+    )
+    page_text = page.locator("body").inner_text()
+    match = re.search(r"current AIRAC cycle is\s+(\d{4})", page_text, re.IGNORECASE)
+    if match is None:
+        raise ValueError("Could not read the current AIRAC cycle from the page.")
+    return match.group(1)
+
+
+def existing_cycle_archives(target_directory: Path, cycle: str) -> list[Path]:
+    return sorted(
+        path
+        for path in target_directory.iterdir()
+        if path.is_file() and path.suffix.lower() == ".zip" and cycle in path.name
     )
 
 
@@ -209,6 +230,27 @@ def main() -> int:
                     file=sys.stderr,
                 )
                 return 1
+            try:
+                cycle = current_airac_cycle(page)
+            except (PlaywrightTimeoutError, ValueError) as error:
+                print(
+                    f"ERROR: Could not determine the current AIRAC cycle from "
+                    f"the downloads page: {error}",
+                    file=sys.stderr,
+                )
+                return 1
+
+            existing_archives = existing_cycle_archives(target_directory, cycle)
+            if existing_archives:
+                print(
+                    f"AIRAC cycle {cycle} is already present in {target_directory}; "
+                    "no download is necessary."
+                )
+                for archive in existing_archives:
+                    print(f"  {archive.name}")
+                return 0
+
+            print(f"No ZIP files for AIRAC cycle {cycle} found; starting downloads.")
             failures = download_packages(page, target_directory, packages)
         finally:
             context.close()

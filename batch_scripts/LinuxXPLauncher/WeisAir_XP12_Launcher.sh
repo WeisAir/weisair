@@ -3,6 +3,7 @@
 # Configurable application paths and commands.
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 USB_CHECK_SCRIPT="${SCRIPT_DIR}/check_connected_devices.sh"
+AIRAC_DOWNLOADER_SCRIPT="${SCRIPT_DIR}/../AIRAC_downloader/download_airac.sh"
 LITTLENAVMAP_EXECUTABLE="/home/stephan/X-Plane-12-Assets/tools/LittleNavmap-linux-ubuntu-24.04-3.0.18/littlenavmap"
 UDP_LOGGER_SCRIPT="../udpLogger/xplane_udp_csv.py"
 PYTHON_EXECUTABLE="python3"
@@ -123,6 +124,27 @@ launch_python_script() {
     launch_background "$label" "$(dirname -- "$script")" "$PYTHON_EXECUTABLE" "$script"
 }
 
+run_airac_downloader() {
+    if [[ ! -f "$AIRAC_DOWNLOADER_SCRIPT" || ! -r "$AIRAC_DOWNLOADER_SCRIPT" ]]; then
+        record_failure "AIRAC downloader script is missing or unreadable: $AIRAC_DOWNLOADER_SCRIPT"
+        return 1
+    fi
+
+    log_status "Running AIRAC downloader before SimBrief PyDownloader"
+    (
+        cd -- "$(dirname -- "$AIRAC_DOWNLOADER_SCRIPT")" &&
+            bash "$(basename -- "$AIRAC_DOWNLOADER_SCRIPT")"
+    ) 2>&1 | tee -a "$STATUS_LOG"
+    local result=${PIPESTATUS[0]}
+    if (( result == 0 )); then
+        log_status "AIRAC downloads completed successfully"
+        return 0
+    fi
+
+    record_failure "AIRAC downloader exited with status $result"
+    return 1
+}
+
 ensure_xplane_iso_mounted() {
     if ! command -v mountpoint >/dev/null 2>&1; then
         record_failure "mountpoint command was not found"
@@ -166,6 +188,7 @@ elif (( usb_check_result != 0 )); then
 fi
 
 launch_python_script "X-Plane UDP data logger" "$UDP_LOGGER_SCRIPT"
+run_airac_downloader
 launch_python_script "SimBrief PyDownloader" "$SIMBRIEF_SCRIPT"
 if ensure_xplane_iso_mounted; then
     if launch_native_application "X-Plane 12" "$XPLANE_EXECUTABLE"; then

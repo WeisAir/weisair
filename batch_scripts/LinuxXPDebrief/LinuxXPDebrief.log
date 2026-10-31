@@ -261,3 +261,12 @@ Published flight paths for 3 flights to /home/stephan/dev/weisair/batch_scripts/
 [2026-10-29 21:34:07] X-Plane is no longer running; stopping the UDP logger
 [2026-10-29 21:34:07] Stopped xplane_udp_csv.py process 110578 with SIGTERM
 [2026-10-29 21:34:07] X-Plane shutdown detected; debrief watcher exiting
+Published 30 optimized screenshots for 3 flights to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/photos
+Published plots for 3 flights (3 interactive, 3 PNG) to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/statistics
+Published flight paths for 3 flights to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/flight-paths
+[2026-10-31 22:16:36] Watcher started; monitoring /home/stephan/X-Plane 12/FlightLog1.0.csv and /home/stephan/X-Plane 12/X-Plane-x86_64 every 5 seconds
+[2026-10-31 22:16:36] Initial flight log record count: 4
+[2026-10-31 22:16:41] Detected X-Plane running; will stop the UDP logger after X-Plane exits
+[2026-10-31 22:16:51] X-Plane is no longer running; stopping the UDP logger
+[2026-10-31 22:16:51] Stopped xplane_udp_csv.py process 89606 with SIGTERM
+[2026-10-31 22:16:51] X-Plane shutdown detected; debrief watcher exiting

@@ -38,8 +38,10 @@ saves the resulting file to the configured directory using the package-specific
 naming rules in [zip_naming_conventions.md](./zip_naming_conventions.md). For
 example, `ixeg737-classic-plus-native-2611-r1.zip` becomes
 `ixeg737classicplus_native_2611_r1.zip`. If the table does not become ready in
-time, check the sign-in status and package names. Download errors are reported
-and cause a non-zero exit status.
+time, check the sign-in status and package names. Before downloading, it reads
+the current AIRAC cycle from the page and skips the downloads if any `.zip` file
+in the target directory already contains that cycle number. Download errors are
+reported and cause a non-zero exit status.
 
 An alternate JSON config can be selected with `--config /path/to/config.json`.
 The browser session is kept in `~/.local/share/navigraph-airac-downloader/` so
