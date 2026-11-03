@@ -43,7 +43,13 @@ while true; do
         case "$choice" in
             0) continue ;;
             1) exit 2 ;;
-            2) echo "USB device check ignored by user."; exit 0 ;;
+            2)
+                echo "USB device check ignored by user."
+                if [[ "${WEISAIR_STATUS_BAR_ENABLED:-0}" == 1 ]]; then
+                    exit 3
+                fi
+                exit 0
+                ;;
             *) exit 2 ;;
         esac
     fi
