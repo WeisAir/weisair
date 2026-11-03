@@ -28,6 +28,8 @@ BACKGROUND = "#171a1f"
 FOREGROUND = "#f5f5f5"
 POLL_INTERVAL_MS = 2000
 HIDDEN_HEIGHT = 2
+IMAGE_SUFFIXES = {".bmp", ".jpeg", ".jpg", ".png", ".tif", ".tiff", ".webp"}
+DEFAULT_SCREENSHOTS_DIR = Path("/home/stephan/X-Plane 12/Output/screenshots")
 MONITOR_PATTERN = re.compile(
     r"^\s*\d+:\s+\S+\s+(\d+)/\d+x(\d+)/\d+([+-]\d+)([+-]\d+)"
 )
@@ -56,6 +58,9 @@ def parse_arguments() -> argparse.Namespace:
     )
     parser.add_argument("--state-file", type=Path, required=True)
     parser.add_argument("--csv-file", type=Path, required=True)
+    parser.add_argument(
+        "--screenshots-dir", type=Path, default=DEFAULT_SCREENSHOTS_DIR
+    )
     arguments = parser.parse_args()
     if arguments.height < 1:
         parser.error("--height must be a positive number of pixels")
@@ -129,6 +134,14 @@ def count_csv_records(path: Path) -> int:
         return max(sum(1 for _ in csv.reader(csv_file)) - 1, 0)
 
 
+def count_screenshots(directory: Path) -> int:
+    return sum(
+        1
+        for path in directory.iterdir()
+        if path.is_file() and path.suffix.casefold() in IMAGE_SUFFIXES
+    )
+
+
 class LauncherStatusBar:
     def __init__(
         self,
@@ -138,9 +151,20 @@ class LauncherStatusBar:
         close_action: str,
         state_file: Path,
         csv_file: Path,
+        screenshots_dir: Path,
     ) -> None:
         self.state_file = state_file
         self.csv_file = csv_file
+        self.screenshots_dir = screenshots_dir
+        try:
+            self.initial_screenshot_count: int | None = count_screenshots(
+                self.screenshots_dir
+            )
+        except OSError:
+            logging.exception(
+                "Unable to count screenshots in %s", self.screenshots_dir
+            )
+            self.initial_screenshot_count = None
         self.height = height
         self.hover_width = hover_width
         self.close_action = close_action
@@ -216,6 +240,17 @@ class LauncherStatusBar:
             pady=0,
         )
         close_button.place(relx=1.0, x=-2, y=0, anchor="ne")
+        self.screenshots_label = tk.Label(
+            container,
+            text="Screenshots: 0",
+            bg=BACKGROUND,
+            fg=FOREGROUND,
+            font=("Sans", 8),
+        )
+        self.screenshots_label.grid(
+            row=0, column=len(COMPONENTS), sticky="nsew", padx=(4, 14)
+        )
+        container.grid_columnconfigure(len(COMPONENTS), weight=1)
         self.root.after(1500, self.hide_if_pointer_outside)
 
     def request_close(self) -> None:
@@ -323,6 +358,22 @@ class LauncherStatusBar:
             logging.exception("Unable to count UDP logger CSV records")
             self.labels["udp_logger"].configure(text="UDP Logger: ?")
 
+        try:
+            screenshot_count = count_screenshots(self.screenshots_dir)
+            if self.initial_screenshot_count is None:
+                self.initial_screenshot_count = screenshot_count
+            new_screenshots = max(
+                screenshot_count - self.initial_screenshot_count, 0
+            )
+            self.screenshots_label.configure(
+                text=f"Screenshots: {new_screenshots}"
+            )
+        except OSError:
+            logging.exception(
+                "Unable to count screenshots in %s", self.screenshots_dir
+            )
+            self.screenshots_label.configure(text="Screenshots: ?")
+
         self.root.after(POLL_INTERVAL_MS, self.refresh)
 
     def run(self) -> None:
@@ -339,6 +390,7 @@ def main() -> None:
         arguments.close_action,
         arguments.state_file,
         arguments.csv_file,
+        arguments.screenshots_dir,
     ).run()
 
 
