@@ -71,6 +71,9 @@ for dir in /mnt/58AEA11AAEA0F224/Aerosoft\ One\ Library/Add-ons/xp12-df48-AS1489
 for dir in /mnt/58AEA11AAEA0F224/Aerosoft\ One\ Library/Add-ons/xp12-df48-AS15264/gameDirectory~Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
 for dir in /mnt/58AEA11AAEA0F224/Aerosoft\ One\ Library/Add-ons/xp12-df48-AS16217/gameDirectory~Custom\ Scenery/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
 
+#KaiTak
+for dir in /mnt/58AEA11AAEA0F224/3_ARPT/KaiTak_VHHX_XP12/apt/*/; do ln -s "$dir" /home/stephan/X-Plane-12-Assets/Custom\ Scenery/; done
+
 #Aircrafts
 ln -s /mnt/58AEA11AAEA0F224/Aircraft/ /home/stephan/X-Plane\ 12/Aircraft
 
