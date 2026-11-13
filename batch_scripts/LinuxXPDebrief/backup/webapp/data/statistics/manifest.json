@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "flights": {
+    "20261018_2340_BE58_KSFO_KSFO": {
+      "html": "data/statistics/20261018_2340_BE58_KSFO_KSFO/20261018_2340_BE58_KSFO_KSFO.html",
+      "png": "data/statistics/20261018_2340_BE58_KSFO_KSFO/20261018_2340_BE58_KSFO_KSFO.png",
+      "version": "1793188060500218445"
+    },
+    "20261026_1045_B738_EDDC_EDDF": {
+      "html": "data/statistics/20261026_1045_B738_EDDC_EDDF/20261026_1045_B738_EDDC_EDDF.html",
+      "png": "data/statistics/20261026_1045_B738_EDDC_EDDF/20261026_1045_B738_EDDC_EDDF.png",
+      "version": "1793188091162713067"
+    },
+    "20261028_2156_BE58_ENRM_ENBN": {
+      "html": "data/statistics/20261028_2156_BE58_ENRM_ENBN/20261028_2156_BE58_ENRM_ENBN.html",
+      "png": "data/statistics/20261028_2156_BE58_ENRM_ENBN/20261028_2156_BE58_ENRM_ENBN.png",
+      "version": "1793222665640083843"
+    }
+  }
+}

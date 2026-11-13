@@ -343,3 +343,33 @@ AIRAC cycle 2611 is already present in /home/stephan/X-Plane-12-Assets/AIRAC; no
 [2026-11-03 09:39:32] Starting Little Navmap
 [2026-11-03 09:39:35] Little Navmap started successfully (PID 57642)
 [2026-11-03 09:39:35] All launcher steps completed successfully
+[2026-11-12 21:42:19] ===== WeisAir X-Plane 12 launcher started =====
+[2026-11-12 21:42:20] Launcher status bar started (PID 13693)
+[2026-11-12 21:42:20] Running USB device check: /home/stephan/dev/weisair/batch_scripts/LinuxXPLauncher/check_connected_devices.sh
+Check connectivity of USB Devices...
+All relevant USB devices are connected, ready to start X-Plane 12...
+[2026-11-12 21:42:20] USB device check completed successfully
+[2026-11-12 21:42:20] Starting X-Plane UDP data logger
+[2026-11-12 21:42:23] X-Plane UDP data logger started successfully (PID 13732)
+[2026-11-12 21:42:23] Running AIRAC downloader before SimBrief PyDownloader
+Downloads will be saved in: /home/stephan/X-Plane-12-Assets/AIRAC
+A browser will open. Sign in to Navigraph if prompted.
+Waiting for all configured packages and their Linux download controls (up to 180 seconds)...
+AIRAC cycle 2611 is already present in /home/stephan/X-Plane-12-Assets/AIRAC; no download is necessary.
+  ixeg737classicplus_native_2611_r1.zip
+  lnm_native_2611_r2.zip
+  ssg_native_2611_r2.zip
+  xplane12_native_2611_r1.zip
+  xplane_customdata_native_2611_r1.zip
+[2026-11-12 21:42:27] AIRAC downloads completed successfully
+[2026-11-12 21:42:27] Starting SimBrief PyDownloader
+[2026-11-12 21:42:30] SimBrief PyDownloader started successfully (PID 13915)
+[2026-11-12 21:42:30] Mounting X-Plane ISO at /mnt/iso/xp12
+[2026-11-12 21:42:47] X-Plane ISO mounted successfully
+[2026-11-12 21:42:47] Starting X-Plane 12
+[2026-11-12 21:42:50] X-Plane 12 started successfully (PID 13948)
+[2026-11-12 21:42:50] Starting X-Plane debrief watcher
+[2026-11-12 21:42:53] X-Plane debrief watcher started successfully (PID 13997)
+[2026-11-12 21:42:53] Starting Little Navmap
+[2026-11-12 21:42:57] Little Navmap started successfully (PID 14033)
+[2026-11-12 21:42:57] All launcher steps completed successfully

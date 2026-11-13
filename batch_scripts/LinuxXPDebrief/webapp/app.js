@@ -27,6 +27,7 @@ const AIRPORTS = {
   LKVR: { latitude: 50.624166667, longitude: 15.646388889 },
   LPMA: { latitude: 32.69425, longitude: -16.778055556 },
   KSFO: { latitude: 37.618805556, longitude: -122.375416667 },
+  VHHX: { latitude: 22.305, longitude: 114.188 }
 };
 
 const MAP_WIDTH = 960;

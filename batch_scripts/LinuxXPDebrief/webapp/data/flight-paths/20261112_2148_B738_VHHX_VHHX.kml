@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+ <Style id="line-style">
+      <LineStyle>
+        <color>ffff55ff</color>
+        <width>4</width>
+      </LineStyle>
+      <PolyStyle><color>8fff55ff</color></PolyStyle>
+    <IconStyle><color>ffc2ff0b</color></IconStyle>
+    <LabelStyle><color>ff00ffff</color></LabelStyle>
+    <BalloonStyle>
+    <text><![CDATA[<center><b><font size=4>VHHX-VHHX</font><br/> Kai Tak &RightArrow; <br/> &RightArrow; Kai Tak<br/></b></center><pre>
+Date        : 2026-11-12 local
+Aircaft     : B738
+Distance    : 40nm
+Duration    : 00:13:39
+Altitudes   : ^~v
+Waypoints   : 13
+Trackpoints : 114
+</pre>
+<p style="font-size:8px">KMLLogger 1.0.1 2026-01-02 (Mike Nixon)</p>]]></text>
+     </BalloonStyle>
+ </Style>
+<styleUrl>#line-style</styleUrl>
+ <Style id="fix-style">
+    <IconStyle><color>ffc2ff0b</color></IconStyle>
+    <LabelStyle><color>ff00ffff</color></LabelStyle>
+    <BalloonStyle><text>
+    <![CDATA[<center><b><font size=5>$[name]</font> <font size=4>($[description])</font><br/>Kai Tak &RightArrow; <br/>&RightArrow; Kai Tak<br/>(B738)</b></center><br/>
+<pre>
+gs  : $[gs]kts
+alt : $[alt]ft
+agl : $[agl]ft
+hdg : $[dn]°    
+vs  : $[vs]ft/min
+wind: $[wd]°/$[ws]kts
+QNH : $[qnh]
+time: $[time]Z
+</pre>]]></text></BalloonStyle>
+</Style>
+<Placemark>
+        <name>VHHX: Kai Tak [B738]</name>
+        <description>APT</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>0</value></Data>
+          <Data name="alt"><value>100</value></Data>
+          <Data name="agl"><value>0</value></Data>
+          <Data name="dn"><value>137</value></Data>
+          <Data name="vs"><value>0</value></Data>
+          <Data name="wd"><value>0</value></Data>
+          <Data name="ws"><value>0</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>06:46:17</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>114.19678896,22.32146572,2</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>HH487</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>208</value></Data>
+          <Data name="alt"><value>2000</value></Data>
+          <Data name="agl"><value>1984</value></Data>
+          <Data name="dn"><value>322</value></Data>
+          <Data name="vs"><value>-800</value></Data>
+          <Data name="wd"><value>206</value></Data>
+          <Data name="ws"><value>16</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>07:00:44</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>114.21294403,22.25485802,607</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>HH482</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>192</value></Data>
+          <Data name="alt"><value>1800</value></Data>
+          <Data name="agl"><value>1640</value></Data>
+          <Data name="dn"><value>42</value></Data>
+          <Data name="vs"><value>200</value></Data>
+          <Data name="wd"><value>200</value></Data>
+          <Data name="ws"><value>15</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>07:01:44</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>114.12294006,22.28757858,526</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>R288</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>160</value></Data>
+          <Data name="alt"><value>1600</value></Data>
+          <Data name="agl"><value>1363</value></Data>
+          <Data name="dn"><value>91</value></Data>
+          <Data name="vs"><value>-1500</value></Data>
+          <Data name="wd"><value>200</value></Data>
+          <Data name="ws"><value>16</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>07:02:24</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>114.16502380,22.33141708,448</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>MM13</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>170</value></Data>
+          <Data name="alt"><value>700</value></Data>
+          <Data name="agl"><value>540</value></Data>
+          <Data name="dn"><value>136</value></Data>
+          <Data name="vs"><value>-100</value></Data>
+          <Data name="wd"><value>202</value></Data>
+          <Data name="ws"><value>9</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>07:02:54</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>114.16524506,22.33153915,167</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>MM31</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>184</value></Data>
+          <Data name="alt"><value>1800</value></Data>
+          <Data name="agl"><value>1521</value></Data>
+          <Data name="dn"><value>221</value></Data>
+          <Data name="vs"><value>-400</value></Data>
+          <Data name="wd"><value>210</value></Data>
+          <Data name="ws"><value>18</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>07:04:24</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>114.23827362,22.28456688,514</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>HH487</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>214</value></Data>
+          <Data name="alt"><value>2000</value></Data>
+          <Data name="agl"><value>854</value></Data>
+          <Data name="dn"><value>308</value></Data>
+          <Data name="vs"><value>-350</value></Data>
+          <Data name="wd"><value>203</value></Data>
+          <Data name="ws"><value>16</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>07:05:34</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>114.21294403,22.25485802,604</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>XVH0003</name>
+        <description>APT</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>207</value></Data>
+          <Data name="alt"><value>2100</value></Data>
+          <Data name="agl"><value>1768</value></Data>
+          <Data name="dn"><value>295</value></Data>
+          <Data name="vs"><value>-950</value></Data>
+          <Data name="wd"><value>209</value></Data>
+          <Data name="ws"><value>17</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>07:05:54</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>114.17440796,22.28471565,624</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>VHSS</name>
+        <description>APT</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>187</value></Data>
+          <Data name="alt"><value>1800</value></Data>
+          <Data name="agl"><value>1669</value></Data>
+          <Data name="dn"><value>318</value></Data>
+          <Data name="vs"><value>-800</value></Data>
+          <Data name="wd"><value>209</value></Data>
+          <Data name="ws"><value>15</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>07:06:24</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>114.15267181,22.28870201,511</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>HH482</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>169</value></Data>
+          <Data name="alt"><value>1100</value></Data>
+          <Data name="agl"><value>998</value></Data>
+          <Data name="dn"><value>30</value></Data>
+          <Data name="vs"><value>-1050</value></Data>
+          <Data name="wd"><value>191</value></Data>
+          <Data name="ws"><value>12</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>07:06:54</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>114.12294006,22.28757858,306</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>R288</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>141</value></Data>
+          <Data name="alt"><value>1000</value></Data>
+          <Data name="agl"><value>730</value></Data>
+          <Data name="dn"><value>79</value></Data>
+          <Data name="vs"><value>250</value></Data>
+          <Data name="wd"><value>185</value></Data>
+          <Data name="ws"><value>10</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>07:07:44</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>114.16502380,22.33141708,258</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>MM13</name>
+        <description>FIX</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/shapes/triangle.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>141</value></Data>
+          <Data name="alt"><value>300</value></Data>
+          <Data name="agl"><value>138</value></Data>
+          <Data name="dn"><value>139</value></Data>
+          <Data name="vs"><value>-750</value></Data>
+          <Data name="wd"><value>172</value></Data>
+          <Data name="ws"><value>6</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>07:08:24</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>114.16524506,22.33153915,44</coordinates>
+		</Point>
+ </Placemark>
+<Placemark>
+        <name>VHHX: Kai Tak [B738]</name>
+        <description>APT</description>
+		<styleUrl>#fix-style</styleUrl>
+        <Style><IconStyle><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>
+        <ExtendedData>
+          <Data name="gs"><value>0</value></Data>
+          <Data name="alt"><value>100</value></Data>
+          <Data name="agl"><value>0</value></Data>
+          <Data name="dn"><value>83</value></Data>
+          <Data name="vs"><value>0</value></Data>
+          <Data name="wd"><value>0</value></Data>
+          <Data name="ws"><value>0</value></Data>
+          <Data name="qnh"><value>29.92hg/1013.2hPa</value></Data>
+          <Data name="time"><value>07:10:01</value></Data>
+        </ExtendedData>
+ 		<Point>
+           <altitudeMode>absolute</altitudeMode>
+   		 <coordinates>114.20723554,22.31285632,2</coordinates>
+		</Point>
+ </Placemark>
+      <Placemark>
+      <name>VHHX-VHHX</name>
+      <styleUrl>#line-style</styleUrl>
+      <LineString>
+        <extrude>1</extrude>
+        <tessellate>0</tessellate>
+        <altitudeMode>absolute</altitudeMode>
+        <coordinates>
+          114.19678896,22.32146572,2
+          114.19698301,22.32129190,2
+          114.19711510,22.32117493,2
+          114.19727939,22.32103046,2
+          114.19748373,22.32085148,2
+          114.19771748,22.32064736,2
+          114.19798935,22.32041053,2
+          114.19829743,22.32014156,2
+          114.19863653,22.31984213,2
+          114.19899949,22.31951985,2
+          114.19940369,22.31916045,2
+          114.19983480,22.31877574,2
+          114.20029271,22.31836707,2
+          114.20078566,22.31792827,2
+          114.20130362,22.31746921,2
+          114.20185914,22.31697948,2
+          114.20242623,22.31647845,2
+          114.20302218,22.31595133,2
+          114.20363541,22.31540840,2
+          114.20427630,22.31484034,2
+          114.21214413,22.30786378,257
+          114.21926680,22.30153236,515
+          114.26680882,22.25253158,1260
+          114.22921834,22.21179690,1237
+          114.16824782,22.23868944,917
+          114.12000184,22.27049292,607
+          114.11778556,22.27969234,583
+          114.11935586,22.28876450,563
+          114.12359112,22.29708435,525
+          114.12885633,22.30491687,504
+          114.13488870,22.31223202,515
+          114.14102608,22.31924651,526
+          114.14723639,22.32594094,525
+          114.15429046,22.33127704,512
+          114.16162477,22.33493744,511
+          114.16929667,22.33700818,448
+          114.17723381,22.33645458,362
+          114.18418730,22.33292136,255
+          114.19019843,22.32769018,167
+          114.19607640,22.32179676,366
+          114.20243402,22.31525365,485
+          114.21020209,22.30745590,532
+          114.21847884,22.29939572,577
+          114.22612542,22.29198477,541
+          114.23315289,22.28489440,514
+          114.23769291,22.27696175,520
+          114.23823950,22.26890460,545
+          114.23523209,22.26098684,514
+          114.22915611,22.25455511,493
+          114.22095666,22.25035879,518
+          114.21170470,22.24871282,528
+          114.20235024,22.24979553,565
+          114.19333853,22.25327109,551
+          114.18505610,22.25853583,604
+          114.17675278,22.26448400,604
+          114.16807215,22.27050186,622
+          114.15899501,22.27553400,624
+          114.15016664,22.28042521,570
+          114.14225656,22.28615016,523
+          114.13640510,22.29317552,511
+          114.13332470,22.30149566,411
+          114.13378718,22.31000121,386
+          114.13743913,22.31727141,306
+          114.14289762,22.32289651,275
+          114.14899952,22.32739552,262
+          114.15530637,22.33132540,241
+          114.16171630,22.33484626,236
+          114.16842555,22.33748413,258
+          114.17532121,22.33749274,243
+          114.18169991,22.33470070,178
+          114.18721136,22.33033248,104
+          114.19225494,22.32555504,44
+          114.19716074,22.32112492,7
+          114.19891059,22.31956794,2
+          114.19937899,22.31916425,3
+          114.19985337,22.31876382,2
+          114.20032518,22.31836918,2
+          114.20079468,22.31797376,2
+          114.20125548,22.31757594,2
+          114.20170070,22.31717589,2
+          114.20177229,22.31711049,2
+          114.20212354,22.31678663,2
+          114.20251931,22.31641635,2
+          114.20288298,22.31607380,2
+          114.20322790,22.31575894,2
+          114.20354591,22.31547763,2
+          114.20384051,22.31522265,2
+          114.20410965,22.31498808,2
+          114.20435706,22.31476363,2
+          114.20458488,22.31454689,2
+          114.20478721,22.31434696,2
+          114.20478721,22.31434696,2
+          114.20498375,22.31415120,2
+          114.20516514,22.31397399,2
+          114.20532270,22.31382698,2
+          114.20546621,22.31369938,2
+          114.20559150,22.31358806,2
+          114.20570331,22.31348594,2
+          114.20581517,22.31338187,2
+          114.20592611,22.31328046,2
+          114.20603921,22.31318134,2
+          114.20612777,22.31310804,2
+          114.20723554,22.31285632,2
+       </coordinates>
+      </LineString>
+    </Placemark>
+</Document>
+</kml>

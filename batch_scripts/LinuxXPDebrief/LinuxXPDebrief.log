@@ -333,3 +333,197 @@ Published flight paths for 3 flights to /home/stephan/dev/weisair/batch_scripts/
 [2026-11-03 09:42:15] X-Plane is no longer running; stopping the UDP logger
 [2026-11-03 09:42:15] Stopped xplane_udp_csv.py process 57257 with SIGTERM
 [2026-11-03 09:42:15] X-Plane shutdown detected; debrief watcher exiting
+Published 30 optimized screenshots for 3 flights to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/photos
+Published plots for 3 flights (3 interactive, 3 PNG) to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/statistics
+Published flight paths for 3 flights to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/flight-paths
+[2026-11-10 22:29:32] Watcher started; monitoring /home/stephan/X-Plane 12/FlightLog1.0.csv and /home/stephan/X-Plane 12/X-Plane-x86_64 every 5 seconds
+[2026-11-10 22:29:32] Initial flight log record count: 5
+Published 30 optimized screenshots for 3 flights to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/photos
+Published plots for 3 flights (3 interactive, 3 PNG) to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/statistics
+Published flight paths for 3 flights to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/flight-paths
+[2026-11-11 23:05:08] Watcher started; monitoring /home/stephan/X-Plane 12/FlightLog1.0.csv and /home/stephan/X-Plane 12/X-Plane-x86_64 every 5 seconds
+[2026-11-11 23:05:08] Initial flight log record count: 5
+ERROR: Unexpected flight directory name: TEST_20261028_2156_BE58_ENRM_ENBN
+[2026-11-11 23:40:14] ERROR: Failed to sync flight screenshots to the webapp
+Published 30 optimized screenshots for 3 flights to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/photos
+Published plots for 3 flights (3 interactive, 3 PNG) to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/statistics
+Published flight paths for 3 flights to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/flight-paths
+[2026-11-11 23:40:38] Watcher started; monitoring /home/stephan/X-Plane 12/FlightLog1.0.csv and /home/stephan/X-Plane 12/X-Plane-x86_64 every 5 seconds
+[2026-11-11 23:40:38] Initial flight log record count: 13
+Published 30 optimized screenshots for 3 flights to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/photos
+Published plots for 3 flights (3 interactive, 3 PNG) to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/statistics
+Published flight paths for 3 flights to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/flight-paths
+[2026-11-11 23:41:32] Watcher started; monitoring /home/stephan/X-Plane 12/FlightLog1.0.csv and /home/stephan/X-Plane 12/X-Plane-x86_64 every 5 seconds
+[2026-11-11 23:41:32] Initial flight log record count: 11
+[2026-11-11 23:41:52] Detected 1 new line(s); copied 12 lines to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/FlightLog1.0.csv; ACF=BE58 ICAO_D=ENRM ICAO_A=ENBN DATE_FLIGHT=20261028 TIME_FLIGHT=2156
+[2026-11-11 23:41:52] Created flight directory structure: /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/flights/20261028_2156_BE58_ENRM_ENBN/{xp_logs_stats,geo,data,capture}
+[2026-11-11 23:41:52] ERROR: UDP logger CSV is missing or unreadable: /home/stephan/dev/weisair/batch_scripts/udpLogger/xplane_log.csv
+ERROR: Unexpected flight directory name: TEST_20261028_2156_BE58_ENRM_ENBN
+[2026-11-11 23:44:29] ERROR: Failed to sync flight screenshots to the webapp
+Published 30 optimized screenshots for 3 flights to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/photos
+Published plots for 3 flights (3 interactive, 3 PNG) to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/statistics
+Published flight paths for 3 flights to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/flight-paths
+[2026-11-11 23:44:38] Watcher started; monitoring /home/stephan/X-Plane 12/FlightLog1.0.csv and /home/stephan/X-Plane 12/X-Plane-x86_64 every 5 seconds
+[2026-11-11 23:44:38] Initial flight log record count: 11
+[2026-11-11 23:45:08] Detected 1 new line(s); copied 12 lines to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/FlightLog1.0.csv; ACF=BE58 ICAO_D=ENRM ICAO_A=ENBN DATE_FLIGHT=20261028 TIME_FLIGHT=2156
+[2026-11-11 23:45:08] Created flight directory structure: /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/flights/20261028_2156_BE58_ENRM_ENBN/{xp_logs_stats,geo,data,capture}
+[2026-11-11 23:45:08] Copied UDP logger CSV to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/flights/20261028_2156_BE58_ENRM_ENBN/data/20261028_2156_BE58_ENRM_ENBN.csv
+[2026-11-11 23:45:08] Running flight plot script for 20261028_2156_BE58_ENRM_ENBN.csv
+Warning: field 'vind_kias' (Indicated airspeed (kts)) is missing; skipping this series.
+"20261028_2156_BE58_ENRM_ENBN.gnuplot" line 39: warning: y2 axis range undefined or overflow, resetting to [0:0]
+"20261028_2156_BE58_ENRM_ENBN.gnuplot" line 42: warning: y2 axis range undefined or overflow, resetting to [0:0]
+Gnuplot data:   20261028_2156_BE58_ENRM_ENBN.dat
+Gnuplot script: 20261028_2156_BE58_ENRM_ENBN.gnuplot
+Plot image:     20261028_2156_BE58_ENRM_ENBN.png
+Interactive HTML: 20261028_2156_BE58_ENRM_ENBN.html
+HTML assets:     20261028_2156_BE58_ENRM_ENBN_assets
+[2026-11-11 23:45:09] Flight plot script completed successfully for 20261028_2156_BE58_ENRM_ENBN.csv
+ERROR: Unexpected flight directory name: TEST_20261028_2156_BE58_ENRM_ENBN
+[2026-11-11 23:45:09] ERROR: Failed to sync flight statistics to the webapp
+Published 30 optimized screenshots for 3 flights to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/photos
+Published plots for 3 flights (3 interactive, 3 PNG) to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/statistics
+Published flight paths for 3 flights to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/flight-paths
+[2026-11-11 23:47:06] Watcher started; monitoring /home/stephan/X-Plane 12/FlightLog1.0.csv and /home/stephan/X-Plane 12/X-Plane-x86_64 every 5 seconds
+[2026-11-11 23:47:06] Initial flight log record count: 12
+Published 30 optimized screenshots for 3 flights to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/photos
+Published plots for 3 flights (3 interactive, 3 PNG) to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/statistics
+Published flight paths for 3 flights to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/flight-paths
+[2026-11-12 21:42:51] Watcher started; monitoring /home/stephan/X-Plane 12/FlightLog1.0.csv and /home/stephan/X-Plane 12/X-Plane-x86_64 every 5 seconds
+[2026-11-12 21:42:51] Initial flight log record count: 12
+[2026-11-12 21:42:56] Detected X-Plane running; will stop the UDP logger after X-Plane exits
+[2026-11-12 22:18:14] Detected 1 new line(s); copied 13 lines to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/FlightLog1.0.csv; ACF=B738 ICAO_D=VHHX ICAO_A=VHHX DATE_FLIGHT=20261112 TIME_FLIGHT=2148
+[2026-11-12 22:18:14] Created flight directory structure: /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/flights/20261112_2148_B738_VHHX_VHHX/{xp_logs_stats,geo,data,capture}
+[2026-11-12 22:18:14] Copied UDP logger CSV to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/flights/20261112_2148_B738_VHHX_VHHX/data/20261112_2148_B738_VHHX_VHHX.csv
+[2026-11-12 22:18:14] Running flight plot script for 20261112_2148_B738_VHHX_VHHX.csv
+Gnuplot data:   20261112_2148_B738_VHHX_VHHX.dat
+Gnuplot script: 20261112_2148_B738_VHHX_VHHX.gnuplot
+Plot image:     20261112_2148_B738_VHHX_VHHX.png
+Interactive HTML: 20261112_2148_B738_VHHX_VHHX.html
+HTML assets:     20261112_2148_B738_VHHX_VHHX_assets
+[2026-11-12 22:18:14] Flight plot script completed successfully for 20261112_2148_B738_VHHX_VHHX.csv
+Published plots for 4 flights (4 interactive, 4 PNG) to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/statistics
+[2026-11-12 22:18:14] Copied flight KML to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/flights/20261112_2148_B738_VHHX_VHHX/geo/VHHX-VHHX_20261112_2148.kml
+Published flight paths for 4 flights to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/flight-paths
+[2026-11-12 22:18:15] Running KMZ generator for VHHX-VHHX_20261112_2148.kml
+-> Starte Erstellung des KMZ-Pakets...
+-> Screenshot-Zeitfilter anhand von 1 Fluglog-Zeitfenster(n).
+[GPS DEBUG] b738 - 2026-11-12 09.54.28 PM.png: lon=114.19690833, lat=22.32136944
+[TIME DEBUG] b738 - 2026-11-12 09.54.28 PM.png: timestamp=2026-11-12T20:54:28+00:00; source=filename; flight-log-ranges=1; route=<none> to <none>; INCLUDED
+[FLIGHT DEBUG] b738 - 2026-09-28 10.05.47 PM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] Baron_58 - 2026-10-18 11.04.27 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] b738 - 2026-10-14 10.37.43 AM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] b738 - 2026-10-26 11.49.33 AM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] b738 - 2026-10-14 10.36.19 AM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] b738 - 2026-10-26 11.39.22 AM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] b738 - 2026-10-26 11.05.24 AM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] b738 - 2026-10-26 11.45.09 AM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] b738 - 2026-09-28 10.05.31 PM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] b738 - 2026-10-14 10.36.35 AM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] Baron_58 - 2026-10-28 10.04.10 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-18 11.04.43 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-31 10.37.13 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-28 10.32.55 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-18 11.03.28 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] b738 - 2026-09-28 10.06.46 PM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] Baron_58 - 2026-10-31 10.31.19 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] b738 - 2026-10-05 11.24.48 PM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] Baron_58 - 2026-10-31 10.50.36 PM.png: SKIPPED (aircraft does not match B738)
+[GPS DEBUG] b738 - 2026-11-12 10.05.29 PM.png: lon=114.15668611, lat=22.33263889
+[TIME DEBUG] b738 - 2026-11-12 10.05.29 PM.png: timestamp=2026-11-12T21:05:29+00:00; source=filename; flight-log-ranges=1; route=<none> to <none>; INCLUDED
+[FLIGHT DEBUG] Baron_58 - 2026-10-18 11.03.08 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-31 10.51.28 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-28 10.17.37 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-18 11.44.12 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-31 10.31.13 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] b738 - 2026-10-29 08.46.58 PM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] Baron_58 - 2026-10-31 10.43.38 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-28 10.09.44 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-31 10.37.09 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-18 11.43.32 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] b738 - 2026-09-28 10.05.50 PM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] Baron_58 - 2026-10-28 10.05.29 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-28 10.09.35 PM.png: SKIPPED (aircraft does not match B738)
+[GPS DEBUG] b738 - 2026-11-12 10.15.30 PM.png: lon=114.18304444, lat=22.33576944
+[TIME DEBUG] b738 - 2026-11-12 10.15.30 PM.png: timestamp=2026-11-12T21:15:30+00:00; source=filename; flight-log-ranges=1; route=<none> to <none>; INCLUDED
+[FLIGHT DEBUG] b738 - 2026-10-26 11.49.47 AM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] b738 - 2026-10-29 08.47.09 PM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] b738 - 2026-10-26 11.06.39 AM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] Baron_58 - 2026-10-28 10.21.51 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] b738 - 2026-10-26 11.45.15 AM.png: SKIPPED (date does not match 20261112)
+[GPS DEBUG] b738 - 2026-11-12 10.02.36 PM.png: lon=114.19451111, lat=22.22220000
+[TIME DEBUG] b738 - 2026-11-12 10.02.36 PM.png: timestamp=2026-11-12T21:02:36+00:00; source=filename; flight-log-ranges=1; route=<none> to <none>; INCLUDED
+[GPS DEBUG] b738 - 2026-11-12 10.01.34 PM.png: lon=114.25959722, lat=22.22442500
+[TIME DEBUG] b738 - 2026-11-12 10.01.34 PM.png: timestamp=2026-11-12T21:01:34+00:00; source=filename; flight-log-ranges=1; route=<none> to <none>; INCLUDED
+[FLIGHT DEBUG] Baron_58 - 2026-10-28 10.37.49 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-28 10.22.45 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-18 11.01.21 PM.png: SKIPPED (aircraft does not match B738)
+[GPS DEBUG] b738 - 2026-11-12 10.10.38 PM.png: lon=114.15058056, lat=22.32842778
+[TIME DEBUG] b738 - 2026-11-12 10.10.38 PM.png: timestamp=2026-11-12T21:10:38+00:00; source=filename; flight-log-ranges=1; route=<none> to <none>; INCLUDED
+[FLIGHT DEBUG] Baron_58 - 2026-10-31 10.49.19 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-28 10.34.24 PM.png: SKIPPED (aircraft does not match B738)
+[GPS DEBUG] b738 - 2026-11-12 10.14.46 PM.png: lon=114.18296944, lat=22.33571944
+[TIME DEBUG] b738 - 2026-11-12 10.14.46 PM.png: timestamp=2026-11-12T21:14:46+00:00; source=filename; flight-log-ranges=1; route=<none> to <none>; INCLUDED
+[FLIGHT DEBUG] b738 - 2026-10-26 11.07.00 AM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] b738 - 2026-11-10 10.18.34 PM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] Baron_58 - 2026-10-28 10.35.54 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] b738 - 2026-10-26 11.23.59 AM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] Baron_58 - 2026-10-28 10.22.21 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-31 10.34.01 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-31 10.51.38 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-31 10.37.12 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] b738 - 2026-11-10 10.18.23 PM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] b738 - 2026-09-28 10.06.57 PM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] Baron_58 - 2026-10-28 10.32.02 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] b738 - 2026-10-26 11.47.31 AM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] Baron_58 - 2026-10-31 10.48.39 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-31 10.37.08 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-18 11.01.43 PM.png: SKIPPED (aircraft does not match B738)
+[GPS DEBUG] b738 - 2026-11-12 10.01.48 PM.png: lon=114.24739167, lat=22.21579444
+[TIME DEBUG] b738 - 2026-11-12 10.01.48 PM.png: timestamp=2026-11-12T21:01:48+00:00; source=filename; flight-log-ranges=1; route=<none> to <none>; INCLUDED
+[FLIGHT DEBUG] b738 - 2026-11-10 10.18.37 PM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] b738 - 2026-09-28 10.07.17 PM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] b738 - 2026-10-26 11.11.24 AM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] Baron_58 - 2026-10-31 10.52.13 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] b738 - 2026-10-29 08.46.40 PM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] Baron_58 - 2026-10-18 11.00.18 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] b738 - 2026-10-29 08.47.36 PM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] b738 - 2026-10-26 11.49.43 AM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] b738 - 2026-11-10 10.19.17 PM.png: SKIPPED (date does not match 20261112)
+[GPS DEBUG] b738 - 2026-11-12 10.16.44 PM.png: lon=114.19659444, lat=22.32198889
+[TIME DEBUG] b738 - 2026-11-12 10.16.44 PM.png: timestamp=2026-11-12T21:16:44+00:00; source=filename; flight-log-ranges=1; route=<none> to <none>; INCLUDED
+[FLIGHT DEBUG] b738 - 2026-10-26 11.19.46 AM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] Baron_58 - 2026-10-18 11.45.09 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-31 10.37.13 PM 1.png: SKIPPED (aircraft does not match B738)
+[GPS DEBUG] b738 - 2026-11-12 10.00.31 PM.png: lon=114.24406389, lat=22.27980556
+[TIME DEBUG] b738 - 2026-11-12 10.00.31 PM.png: timestamp=2026-11-12T21:00:31+00:00; source=filename; flight-log-ranges=1; route=<none> to <none>; INCLUDED
+[FLIGHT DEBUG] b738 - 2026-11-10 10.18.22 PM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] Baron_58 - 2026-10-31 10.37.11 PM.png: SKIPPED (aircraft does not match B738)
+[GPS DEBUG] b738 - 2026-11-12 10.16.16 PM.png: lon=114.19648056, lat=22.32174444
+[TIME DEBUG] b738 - 2026-11-12 10.16.16 PM.png: timestamp=2026-11-12T21:16:16+00:00; source=filename; flight-log-ranges=1; route=<none> to <none>; INCLUDED
+[GPS DEBUG] b738 - 2026-11-12 10.17.30 PM.png: lon=114.20730556, lat=22.31251389
+[TIME DEBUG] b738 - 2026-11-12 10.17.30 PM.png: timestamp=2026-11-12T21:17:30+00:00; source=filename; flight-log-ranges=1; route=<none> to <none>; INCLUDED
+[FLIGHT DEBUG] b738 - 2026-10-26 11.49.12 AM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] Baron_58 - 2026-10-18 11.05.00 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-31 10.37.06 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] b738 - 2026-09-28 10.05.38 PM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] b738 - 2026-10-26 11.23.28 AM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] b738 - 2026-10-26 11.47.21 AM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] Baron_58 - 2026-10-31 10.51.52 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-28 10.05.15 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] Baron_58 - 2026-10-31 10.37.13 PM 2.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] b738 - 2026-11-10 10.18.39 PM.png: SKIPPED (date does not match 20261112)
+[FLIGHT DEBUG] Baron_58 - 2026-10-18 11.43.29 PM.png: SKIPPED (aircraft does not match B738)
+[FLIGHT DEBUG] b738 - 2026-10-26 11.36.41 AM.png: SKIPPED (date does not match 20261112)
+
+-> KML wurde erfolgreich um 12 passende Bild-Placemarks erweitert.
+-> 45 Bilder passten nicht zum Flugzeug.
+-> 38 Bilder passten nicht zum Flugdatum.
+-> 12 passende Bilder wurden nach '/home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/flights/20261112_2148_B738_VHHX_VHHX/capture' kopiert.
+ 🎉 Erfolg: KMZ-Datei wurde unter '20261112_2148_B738_VHHX_VHHX.kmz.tmp.13997' erstellt!
+[2026-11-12 22:18:16] Created flight KMZ: /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/flights/20261112_2148_B738_VHHX_VHHX/geo/20261112_2148_B738_VHHX_VHHX.kmz
+Published 42 optimized screenshots for 4 flights to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/webapp/data/photos
+[2026-11-12 22:18:20] Copied X-Plane log file to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/flights/20261112_2148_B738_VHHX_VHHX/xp_logs_stats/Log.txt
+[2026-11-12 22:18:20] Copied X-Plane log file to /home/stephan/dev/weisair/batch_scripts/LinuxXPDebrief/flights/20261112_2148_B738_VHHX_VHHX/xp_logs_stats/telemetry_0.tlm
+[2026-11-12 22:19:20] X-Plane is no longer running; stopping the UDP logger
+[2026-11-12 22:19:21] Stopped xplane_udp_csv.py process 13732 with SIGTERM
+[2026-11-12 22:19:21] X-Plane shutdown detected; debrief watcher exiting
