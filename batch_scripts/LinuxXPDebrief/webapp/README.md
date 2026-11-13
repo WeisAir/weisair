@@ -62,6 +62,43 @@ Upload the contents of this directory, including `data/FlightLog1.0.csv`,
 `data/statistics`, and `data/flight-paths`, to your static hosting space. Keep
 the `data` and `custom_assets` directories alongside `index.html`.
 
+To upload the current local site over SFTP, configure an SSH alias in
+`~/.ssh/config` with the SFTP hostname, account name, and private-key path, then
+for example:
+
+```sshconfig
+Host strato-weisair
+    HostName your-sftp-hostname-from-Strato
+    User your-sftp-username
+    IdentityFile ~/.ssh/weisair_strato
+    IdentitiesOnly yes
+```
+
+It uses OpenSSH, so credentials stay outside the script: configure an SSH alias and key in ~/.ssh/config, and use ssh-agent for a passphrase-protected key. It keeps normal host-key checks enabled, supports a dry run, and does not delete remote files.
+
+The dry run and batch-generation checks passed; Pylance reported no syntax errors or diagnostics. Before a real upload, replace the example SSH and remote-directory values with the details from Strato.
+
+Replace the example values with the connection details from your hosting
+account. Then run from this directory:
+
+```sh
+python3 ../deploy_webapp.py strato-weisair public_html/weisair --dry-run
+python3 ../deploy_webapp.py strato-weisair public_html/weisair
+```
+
+Replace the example remote directory with the web root from your hosting
+account. The script uses the system OpenSSH `sftp` client, uploads without
+deleting remote-only files, and uses the normal SSH host-key checks.
+For key authentication, generate a dedicated key with
+`ssh-keygen -t ed25519 -f ~/.ssh/weisair_strato`, configure the alias to use it,
+and register its public key with the host if the hosting account supports
+SSH-key authentication. Keep the private key local; use `ssh-agent` to unlock a
+passphrase-protected key. Before the first deployment, connect with `ssh
+strato-weisair` and verify the host fingerprint against information from your
+provider. The script uses batch mode and will not fall back to password
+authentication; if your Strato account only supports passwords, check with
+Strato whether SSH-key authentication can be enabled.
+
 The map uses Natural Earth's public-domain 1:50m land dataset in
 `data/world-land.json` for detailed coastlines, with the existing color palette
 and no map-tile service. Select a flight row to fit its route; use the map's
