@@ -1,7 +1,8 @@
-# WeisAir FlightLog
+# WeisAir
 
-A static single-page flight log. It reads `data/FlightLog1.0.csv` and can be
-hosted on any static web host.
+A static X-Plane 12 site with a home page, flight log, and knowledge base. The
+flight log reads `data/FlightLog1.0.csv`; the site can be hosted on any static
+web host.
 
 ## Run locally
 
