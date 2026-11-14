@@ -40,12 +40,16 @@ input {
 }
 
 .topbar {
+  position: sticky;
+  z-index: 10;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
   min-height: 82px;
   border-bottom: 1px solid rgba(139, 154, 166, 0.15);
+  background: var(--background);
 }
 
 .primary-navigation {
@@ -197,6 +201,33 @@ h1 span {
 
 .content-panel p:last-of-type {
   margin-bottom: 0;
+}
+
+.legal-content {
+  line-height: 1.7;
+}
+
+.legal-content h2:not(:first-child) {
+  margin-top: 26px;
+}
+
+.legal-content h3,
+.legal-content h4 {
+  margin: 20px 0 10px;
+}
+
+.legal-content p {
+  max-width: 100%;
+}
+
+.legal-content a {
+  color: var(--accent);
+  overflow-wrap: anywhere;
+}
+
+.legal-content ul {
+  padding-left: 24px;
+  color: var(--muted);
 }
 
 .content-link {
