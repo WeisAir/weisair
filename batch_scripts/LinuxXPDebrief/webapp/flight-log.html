@@ -267,6 +267,27 @@
                 </button>
               </div>
               <div
+                class="map-consent"
+                id="flight-path-consent"
+                role="group"
+                aria-labelledby="flight-path-consent-title"
+                hidden
+              >
+                <div class="map-consent-content">
+                  <p class="eyebrow">EXTERNE KARTE</p>
+                  <h3 id="flight-path-consent-title">3D-Karte aktivieren?</h3>
+                  <p>
+                    Beim Laden der 3D-Karte werden CesiumJS und Kartenmaterial
+                    von Esri angefordert. Dabei können Ihre IP-Adresse und
+                    technische Verbindungsdaten an Anbieter in den USA
+                    übertragen werden.
+                  </p>
+                  <button id="flight-path-activate" type="button">
+                    Karte aktivieren
+                  </button>
+                </div>
+              </div>
+              <div
                 class="cesium-globe"
                 id="cesium-globe"
                 role="region"

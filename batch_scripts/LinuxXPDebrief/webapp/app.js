@@ -58,6 +58,8 @@ let activePanelAction = null;
 let activeViewerImageIndex = null;
 let cesiumLoadPromise = null;
 let cesiumViewer = null;
+let pendingFlightPath = null;
+let cesiumConsentGranted = false;
 const CESIUM_BASE_URL =
   "https://cesium.com/downloads/cesiumjs/releases/1.146/Build/Cesium/";
 
@@ -528,11 +530,13 @@ function setMapView() {
   document.querySelector("#photo-gallery").hidden = true;
   document.querySelector("#statistics-view").hidden = true;
   document.querySelector("#flight-path-view").hidden = true;
+  document.querySelector("#flight-path-consent").hidden = true;
   document.querySelector("#image-viewer").hidden = true;
   document.querySelector("#statistics-plot").removeAttribute("src");
   document.querySelector("#statistics-image").removeAttribute("src");
   document.querySelector("#flight-path-layer").replaceChildren();
   document.querySelector("#cesium-globe").hidden = true;
+  pendingFlightPath = null;
   if (cesiumViewer) {
     cesiumViewer.destroy();
     cesiumViewer = null;
@@ -926,6 +930,7 @@ async function renderFlightPathView(flightIndex) {
   const view = document.querySelector("#flight-path-view");
   const map = document.querySelector("#flight-path-map");
   const globe = document.querySelector("#cesium-globe");
+  const consent = document.querySelector("#flight-path-consent");
   const empty = document.querySelector("#flight-path-empty");
   const title = document.querySelector("#flight-path-empty-title");
   const message = document.querySelector("#flight-path-empty-message");
@@ -944,6 +949,7 @@ async function renderFlightPathView(flightIndex) {
   view.hidden = false;
   map.setAttribute("hidden", "");
   globe.hidden = true;
+  consent.hidden = true;
   empty.hidden = false;
   title.textContent = "Loading flight path";
   message.textContent = "Preparing the interactive 3D globe.";
@@ -997,72 +1003,94 @@ async function renderFlightPathView(flightIndex) {
     document.querySelector("#flight-path-details").textContent =
       `${waypointCount.toLocaleString()} waypoints · ${trackPointCount.toLocaleString()} trackpoints · Click a waypoint for details`;
 
-    try {
-      const Cesium = await loadCesiumLibrary();
-      if (!isCurrentView()) {
-        return;
-      }
-      globe.hidden = false;
-      const viewer = createCesiumViewer(Cesium);
-      viewer.selectedEntity = undefined;
-      viewer.dataSources.removeAll(true);
-      viewer.scene.rethrowRenderErrors = false;
-      viewer.scene.renderError.addEventListener((scene, error) => {
-        if (!isCurrentView()) {
-          return;
-        }
-        viewer.useDefaultRenderLoop = false;
-        showFlightPathFallback(
-          segments,
-          flight,
-          `3D globe rendering failed: ${error instanceof Error ? error.message : "Unexpected error"}`,
-        );
-        window.setTimeout(() => {
-          if (cesiumViewer === viewer && !viewer.isDestroyed()) {
-            viewer.destroy();
-            cesiumViewer = null;
-          }
-        }, 0);
-      });
-      const source = await Cesium.KmlDataSource.load(documentXml, {
-        camera: viewer.scene.camera,
-        canvas: viewer.scene.canvas,
-        sourceUri: kmlUrl.href,
-      });
-      if (!isCurrentView()) {
-        source.destroy();
-        return;
-      }
-      await viewer.dataSources.add(source);
-      await viewer.zoomTo(
-        source,
-        new Cesium.HeadingPitchRange(
-          0,
-          Cesium.Math.toRadians(-60),
-          Math.max(80000, Number(flight["Distance (nm)"]) * 1852 * 0.85 + 45000),
-        ),
-      );
-      if (!isCurrentView()) {
-        return;
-      }
-      title.textContent = "Flight path loaded";
+    pendingFlightPath = { flightIndex, flight, segments, documentXml, kmlUrl };
+    if (!cesiumConsentGranted) {
       empty.hidden = true;
-    } catch (error) {
-      if (!isCurrentView()) {
-        return;
-      }
-      showFlightPathFallback(
-        segments,
-        flight,
-        `3D globe unavailable: ${error instanceof Error ? error.message : "Unexpected error"}`,
-      );
+      consent.hidden = false;
+      return;
     }
+    await renderCesiumFlightPath(pendingFlightPath);
   } catch (error) {
     if (!isCurrentView()) {
       return;
     }
     title.textContent = "Unable to display flight path";
     message.textContent = error instanceof Error ? error.message : "An unexpected error occurred.";
+  }
+}
+
+async function renderCesiumFlightPath(flightPath) {
+  const { flightIndex, flight, segments, documentXml, kmlUrl } = flightPath;
+  const isCurrentView = () =>
+    activePanelFlightIndex === flightIndex && activePanelAction === "flight-path";
+  const globe = document.querySelector("#cesium-globe");
+  const empty = document.querySelector("#flight-path-empty");
+  const title = document.querySelector("#flight-path-empty-title");
+  const message = document.querySelector("#flight-path-empty-message");
+  document.querySelector("#flight-path-consent").hidden = true;
+  empty.hidden = false;
+  title.textContent = "Loading flight path";
+  message.textContent = "Loading the interactive 3D globe.";
+
+  try {
+    const Cesium = await loadCesiumLibrary();
+    if (!isCurrentView()) {
+      return;
+    }
+    globe.hidden = false;
+    const viewer = createCesiumViewer(Cesium);
+    viewer.selectedEntity = undefined;
+    viewer.dataSources.removeAll(true);
+    viewer.scene.rethrowRenderErrors = false;
+    viewer.scene.renderError.addEventListener((scene, error) => {
+      if (!isCurrentView()) {
+        return;
+      }
+      viewer.useDefaultRenderLoop = false;
+      showFlightPathFallback(
+        segments,
+        flight,
+        `3D globe rendering failed: ${error instanceof Error ? error.message : "Unexpected error"}`,
+      );
+      window.setTimeout(() => {
+        if (cesiumViewer === viewer && !viewer.isDestroyed()) {
+          viewer.destroy();
+          cesiumViewer = null;
+        }
+      }, 0);
+    });
+    const source = await Cesium.KmlDataSource.load(documentXml, {
+      camera: viewer.scene.camera,
+      canvas: viewer.scene.canvas,
+      sourceUri: kmlUrl.href,
+    });
+    if (!isCurrentView()) {
+      source.destroy();
+      return;
+    }
+    await viewer.dataSources.add(source);
+    await viewer.zoomTo(
+      source,
+      new Cesium.HeadingPitchRange(
+        0,
+        Cesium.Math.toRadians(-60),
+        Math.max(80000, Number(flight["Distance (nm)"]) * 1852 * 0.85 + 45000),
+      ),
+    );
+    if (!isCurrentView()) {
+      return;
+    }
+    title.textContent = "Flight path loaded";
+    empty.hidden = true;
+  } catch (error) {
+    if (!isCurrentView()) {
+      return;
+    }
+    showFlightPathFallback(
+      segments,
+      flight,
+      `3D globe unavailable: ${error instanceof Error ? error.message : "Unexpected error"}`,
+    );
   }
 }
 
@@ -1335,6 +1363,21 @@ document.querySelector("#flight-path-close").addEventListener("click", () => {
   if (activePanelFlightIndex !== null && activePanelAction === "flight-path") {
     toggleFlightPathView(activePanelFlightIndex);
   }
+});
+document.querySelector("#flight-path-activate").addEventListener("click", async (event) => {
+  const flightPath = pendingFlightPath;
+  if (
+    !flightPath ||
+    activePanelFlightIndex !== flightPath.flightIndex ||
+    activePanelAction !== "flight-path"
+  ) {
+    return;
+  }
+
+  cesiumConsentGranted = true;
+  pendingFlightPath = null;
+  event.currentTarget.disabled = true;
+  await renderCesiumFlightPath(flightPath);
 });
 document.querySelector("#image-viewer-close").addEventListener("click", closeImageViewer);
 document.querySelector("#image-viewer-previous").addEventListener("click", () => {

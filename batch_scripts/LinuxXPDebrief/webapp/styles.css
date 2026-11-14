@@ -682,6 +682,63 @@ tbody tr.is-selected td:first-child {
   flex-direction: column;
 }
 
+.map-consent {
+  display: grid;
+  min-height: 0;
+  flex: 1;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(35, 91, 100, 0.2), transparent 34rem),
+    #111f2a;
+}
+
+.map-consent-content {
+  max-width: 520px;
+  padding: 26px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(23, 33, 43, 0.96);
+}
+
+.map-consent-content h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.map-consent-content p:not(.eyebrow) {
+  margin-bottom: 18px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.map-consent-content button {
+  padding: 10px 14px;
+  border: 1px solid rgba(86, 211, 194, 0.55);
+  border-radius: 7px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.map-consent-content button:hover,
+.map-consent-content button:focus-visible {
+  background: rgba(86, 211, 194, 0.22);
+}
+
+.map-consent-content button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.map-consent-content button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
 .cesium-globe {
   position: relative;
   min-height: 0;
