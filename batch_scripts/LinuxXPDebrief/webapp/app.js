@@ -14,22 +14,6 @@ const DISPLAY_COLUMNS = [
   "Distance (nm)",
 ];
 
-const AIRPORTS = {
-  EDAB: { latitude: 51.193530556, longitude: 14.519747222 },
-  EDDC: { latitude: 51.134344444, longitude: 13.768 },
-  EDDF: { latitude: 50.033305556, longitude: 8.570455556 },
-  ENBN: { latitude: 65.461111111, longitude: 12.2175 },
-  ENFL: { latitude: 61.583611111, longitude: 5.024722222 },
-  ENKB: { latitude: 63.111944444, longitude: 7.826111111 },
-  ENOV: { latitude: 62.18, longitude: 6.074166667 },
-  ENRM: { latitude: 64.838333333, longitude: 11.146111111 },
-  ENVA: { latitude: 63.4575, longitude: 10.924166667 },
-  LKVR: { latitude: 50.624166667, longitude: 15.646388889 },
-  LPMA: { latitude: 32.69425, longitude: -16.778055556 },
-  KSFO: { latitude: 37.618805556, longitude: -122.375416667 },
-  VHHX: { latitude: 22.305, longitude: 114.188 }
-};
-
 const MAP_WIDTH = 960;
 const MAP_HEIGHT = 460;
 const MIN_MAP_ZOOM = 1;
@@ -48,6 +32,8 @@ let statisticsManifest = null;
 let statisticsManifestError = "";
 let flightPathManifest = null;
 let flightPathManifestError = "";
+let airportCoordinates = Object.create(null);
+let airportLookupError = "";
 let flightFolders = new Set();
 let flightFoldersManifestError = "";
 let landmassPath = "";
@@ -294,8 +280,8 @@ function fitFlightOnMap(flightIndex) {
     return;
   }
 
-  const start = AIRPORTS[flight["Departure ICAO"].toUpperCase()];
-  const end = AIRPORTS[flight["Arrival ICAO"].toUpperCase()];
+  const start = airportCoordinates[flight["Departure ICAO"].toUpperCase()];
+  const end = airportCoordinates[flight["Arrival ICAO"].toUpperCase()];
   if (!start || !end) {
     return;
   }
@@ -347,13 +333,62 @@ async function loadLandmasses() {
   }
 }
 
+async function loadAirportCoordinates() {
+  try {
+    const response = await fetch("./data/airports.json", { cache: "force-cache" });
+    if (!response.ok) {
+      throw new Error(
+        `Airport coordinate lookup request failed (${response.status} ${response.statusText}).`,
+      );
+    }
+
+    const data = await response.json();
+    if (
+      data.version !== 1 ||
+      !data.airports ||
+      typeof data.airports !== "object" ||
+      Array.isArray(data.airports)
+    ) {
+      throw new Error("The airport coordinate lookup has an unsupported format.");
+    }
+
+    const coordinates = Object.create(null);
+    for (const [code, airport] of Object.entries(data.airports)) {
+      if (
+        !/^[A-Z0-9]{4}$/.test(code) ||
+        !airport ||
+        !Number.isFinite(airport.latitude) ||
+        airport.latitude < -90 ||
+        airport.latitude > 90 ||
+        !Number.isFinite(airport.longitude) ||
+        airport.longitude < -180 ||
+        airport.longitude > 180
+      ) {
+        throw new Error(`The airport coordinate lookup contains invalid data for "${code}".`);
+      }
+      coordinates[code] = {
+        latitude: airport.latitude,
+        longitude: airport.longitude,
+      };
+    }
+    if (Object.keys(coordinates).length === 0) {
+      throw new Error("The airport coordinate lookup is empty.");
+    }
+
+    airportCoordinates = coordinates;
+  } catch (error) {
+    airportLookupError =
+      error instanceof Error ? error.message : "An unexpected error occurred.";
+  }
+}
+
 function createAirportList() {
   const found = new Map();
   for (const flight of flights) {
     for (const field of ["Departure ICAO", "Arrival ICAO"]) {
       const code = flight[field].trim().toUpperCase();
-      if (code && AIRPORTS[code] && !found.has(code)) {
-        found.set(code, { code, ...AIRPORTS[code] });
+      if (code && airportCoordinates[code] && !found.has(code)) {
+        found.set(code, { code, ...airportCoordinates[code] });
       }
     }
   }
@@ -394,7 +429,10 @@ function renderMap() {
     ? new Set([selectedFlight["Departure ICAO"].toUpperCase(), selectedFlight["Arrival ICAO"].toUpperCase()])
     : new Set();
   const activeFlightAirports = selectedFlight
-    ? [AIRPORTS[selectedFlight["Departure ICAO"].toUpperCase()], AIRPORTS[selectedFlight["Arrival ICAO"].toUpperCase()]]
+    ? [
+      airportCoordinates[selectedFlight["Departure ICAO"].toUpperCase()],
+      airportCoordinates[selectedFlight["Arrival ICAO"].toUpperCase()],
+    ]
     : [];
 
   if (activeFlightAirports.length === 2 && activeFlightAirports.every(Boolean)) {
@@ -443,7 +481,7 @@ function renderMap() {
   for (const flight of flights) {
     for (const field of ["Departure ICAO", "Arrival ICAO"]) {
       const code = flight[field].trim().toUpperCase();
-      if (code && !AIRPORTS[code]) {
+      if (code && !airportCoordinates[code]) {
         unknownCodes.add(code);
       }
     }
@@ -452,8 +490,11 @@ function renderMap() {
   const messages = [];
   if (unknownCodes.size > 0) {
     messages.push(
-      `Airport coordinates are not available for ${[...unknownCodes].sort().join(", ")}. Add their coordinates in app.js to show them on the map.`,
+      `Airport coordinates are not available for ${[...unknownCodes].sort().join(", ")}. Check data/airports.json to show them on the map.`,
     );
+  }
+  if (airportLookupError) {
+    messages.push(`${airportLookupError} Airport markers and routes may be incomplete.`);
   }
   if (mapGeometryError) {
     messages.push(`${mapGeometryError} The coastlines could not be displayed.`);
@@ -1258,6 +1299,7 @@ async function loadFlightLog() {
       loadStatisticsManifest(),
       loadFlightPathManifest(),
       loadFlightFoldersManifest(),
+      loadAirportCoordinates(),
       loadLandmasses(),
     ]);
     const response = await fetch("./data/FlightLog1.0.csv", { cache: "no-store" });

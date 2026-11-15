@@ -58,9 +58,10 @@ statistics, and flight-path publishers.
 ## Host online
 
 Upload the contents of this directory, including `data/FlightLog1.0.csv`,
-`data/flight-folders.json`, `data/world-land.json`, `data/photos`,
-`data/statistics`, and `data/flight-paths`, to your static hosting space. Keep
-the `data` and `custom_assets` directories alongside `index.html`.
+`data/flight-folders.json`, `data/airports.json`, `data/world-land.json`,
+`data/photos`, `data/statistics`, and `data/flight-paths`, to your static
+hosting space. Keep the `data` and `custom_assets` directories alongside
+`index.html`.
 
 To upload the current local site over SFTP, configure an SSH alias in
 `~/.ssh/config` with the SFTP hostname, account name, and private-key path, then
@@ -103,6 +104,12 @@ The map uses Natural Earth's public-domain 1:50m land dataset in
 `data/world-land.json` for detailed coastlines, with the existing color palette
 and no map-tile service. Select a flight row to fit its route; use the map's
 Fit flight and Reset controls, mouse wheel to zoom, or drag to pan. Airport
-markers and labels stay compact as you zoom in, and flight paths use flatter
-curves. Airport locations are defined in `app.js`; add coordinates there when a
-new airport code appears in the flight log.
+coordinates are loaded from `data/airports.json`, a local lookup generated from
+the daily [OurAirports open-data export](https://github.com/davidmegginson/ourairports-data)
+using its `icao_code` values. The dataset is distributed under the
+[Unlicense](https://github.com/davidmegginson/ourairports-data/blob/main/LICENSE).
+The lookup includes the retired VHHX location from the previous site data.
+Refresh the lookup from the upstream export when you want newer airport data;
+the export is a community-maintained airport list and is not a guarantee of
+every current or historical ICAO assignment. Markers and labels stay compact
+as you zoom in, and flight paths use flatter curves.
