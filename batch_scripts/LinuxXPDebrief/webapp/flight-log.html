@@ -112,7 +112,35 @@
               <p class="eyebrow">LOGBOOK</p>
               <h2 id="flights-title">Flight log</h2>
             </div>
-            <span class="flight-count" id="flight-count">— flights</span>
+            <span class="flight-count" id="flight-count" aria-live="polite" aria-atomic="true">
+              — flights
+            </span>
+          </div>
+          <div class="flight-filters" role="group" aria-label="Filter flights">
+            <button
+              type="button"
+              class="flight-filter is-active"
+              data-flight-filter="all"
+              aria-pressed="true"
+            >
+              All flights
+            </button>
+            <button
+              type="button"
+              class="flight-filter"
+              data-flight-filter="route"
+              aria-pressed="false"
+            >
+              Route flights
+            </button>
+            <button
+              type="button"
+              class="flight-filter"
+              data-flight-filter="circuit"
+              aria-pressed="false"
+            >
+              Traffic circuit flights
+            </button>
           </div>
           <div class="table-scroll" role="region" aria-label="Flight log table" tabindex="0">
             <table>

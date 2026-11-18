@@ -4,6 +4,11 @@ A static X-Plane 12 site with a home page, flight log, and knowledge base. The
 flight log reads `data/FlightLog1.0.csv`; the site can be hosted on any static
 web host.
 
+Use the filter above the flight table to show all flights, route flights
+(different departure and arrival airports), or traffic circuit flights (the
+same departure and arrival airport). The summary statistics continue to cover
+all logged flights.
+
 ## Run locally
 
 From this directory, start a local web server:

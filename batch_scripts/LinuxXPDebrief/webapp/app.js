@@ -20,11 +20,14 @@ const MIN_MAP_ZOOM = 1;
 const MAX_MAP_ZOOM = 24;
 const mapView = { zoom: 1, centerX: MAP_WIDTH / 2, centerY: MAP_HEIGHT / 2 };
 const flightRows = document.querySelector("#flight-rows");
+const flightCount = document.querySelector("#flight-count");
+const flightFilterButtons = document.querySelectorAll("[data-flight-filter]");
 const errorState = document.querySelector("#error-state");
 const emptyState = document.querySelector("#empty-state");
 const logStatus = document.querySelector("#log-status");
 const logStatusContainer = document.querySelector(".log-status");
 let flights = [];
+let flightFilter = "all";
 let selectedFlightIndex = null;
 let photoManifest = null;
 let photoManifestError = "";
@@ -191,7 +194,8 @@ function createActionButtons(flightIndex) {
 function createFlightRow(flight, index) {
   const row = document.createElement("tr");
   row.tabIndex = 0;
-  row.setAttribute("aria-selected", "false");
+  row.setAttribute("aria-selected", String(index === selectedFlightIndex));
+  row.classList.toggle("is-selected", index === selectedFlightIndex);
   row.dataset.flightIndex = String(index);
 
   for (const column of DISPLAY_COLUMNS) {
@@ -384,7 +388,7 @@ async function loadAirportCoordinates() {
 
 function createAirportList() {
   const found = new Map();
-  for (const flight of flights) {
+  for (const { flight } of getVisibleFlightEntries()) {
     for (const field of ["Departure ICAO", "Arrival ICAO"]) {
       const code = flight[field].trim().toUpperCase();
       if (code && airportCoordinates[code] && !found.has(code)) {
@@ -478,7 +482,7 @@ function renderMap() {
   }
 
   const unknownCodes = new Set();
-  for (const flight of flights) {
+  for (const { flight } of getVisibleFlightEntries()) {
     for (const field of ["Departure ICAO", "Arrival ICAO"]) {
       const code = flight[field].trim().toUpperCase();
       if (code && !airportCoordinates[code]) {
@@ -1195,8 +1199,48 @@ function updateStatistics() {
   const distanceUnit = document.createElement("small");
   distanceUnit.textContent = "nm";
   distanceValue.append(distanceUnit);
-  document.querySelector("#flight-count").textContent =
-    `${flights.length.toLocaleString()} ${flights.length === 1 ? "flight" : "flights"}`;
+}
+
+function isFlightIncludedByFilter(flight) {
+  if (flightFilter === "all") {
+    return true;
+  }
+  const departure = flight["Departure ICAO"].trim().toUpperCase();
+  const arrival = flight["Arrival ICAO"].trim().toUpperCase();
+  if (!departure || !arrival) {
+    return false;
+  }
+  return flightFilter === "route" ? departure !== arrival : departure === arrival;
+}
+
+function getVisibleFlightEntries() {
+  return flights
+    .map((flight, index) => ({ flight, index }))
+    .filter(({ flight }) => isFlightIncludedByFilter(flight));
+}
+
+function renderFlightRows() {
+  const visibleFlights = getVisibleFlightEntries();
+  flightRows.replaceChildren(
+    ...visibleFlights.map(({ flight, index }) => createFlightRow(flight, index)),
+  );
+  flightCount.textContent =
+    `${visibleFlights.length.toLocaleString()} ${visibleFlights.length === 1 ? "flight" : "flights"}`;
+
+  const noFlightsMatchFilter = flights.length > 0 && visibleFlights.length === 0;
+  emptyState.hidden = flights.length > 0 && !noFlightsMatchFilter;
+  emptyState.querySelector(".empty-state-title").textContent = noFlightsMatchFilter
+    ? "No flights match this filter"
+    : "No flights in your log yet";
+  emptyState.querySelector("p:last-child").textContent = noFlightsMatchFilter
+    ? "Try another flight type to see more entries."
+    : "Your logged X-Plane flights will appear here.";
+
+  for (const button of flightFilterButtons) {
+    const active = button.dataset.flightFilter === flightFilter;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", String(active));
+  }
 }
 
 async function loadPhotoManifest() {
@@ -1310,12 +1354,11 @@ async function loadFlightLog() {
       DISPLAY_COLUMNS.some((column) => flight[column]?.trim()),
     );
     if (flights.length === 0) {
-      emptyState.hidden = false;
       logStatus.textContent = "Flight log is empty";
     } else {
-      flightRows.replaceChildren(...flights.map(createFlightRow));
       logStatus.textContent = "Flight log loaded";
     }
+    renderFlightRows();
     if (flightFoldersManifestError) {
       logStatus.textContent = "Flight folder index unavailable";
       logStatusContainer.classList.add("is-error");
@@ -1335,6 +1378,23 @@ document.querySelector("#gallery-close").addEventListener("click", () => {
     togglePhotoGallery(activePanelFlightIndex);
   }
 });
+for (const button of flightFilterButtons) {
+  button.addEventListener("click", () => {
+    flightFilter = button.dataset.flightFilter;
+    const selectedFlight = selectedFlightIndex === null ? null : flights[selectedFlightIndex];
+    if (selectedFlight && !isFlightIncludedByFilter(selectedFlight)) {
+      if (activePanelFlightIndex !== null) {
+        closeActivePanel();
+      }
+      selectedFlightIndex = null;
+      mapView.zoom = MIN_MAP_ZOOM;
+      mapView.centerX = MAP_WIDTH / 2;
+      mapView.centerY = MAP_HEIGHT / 2;
+    }
+    renderFlightRows();
+    renderMap();
+  });
+}
 document.querySelector("#zoom-in").addEventListener("click", () => {
   setMapZoom(mapView.zoom * 1.5);
 });

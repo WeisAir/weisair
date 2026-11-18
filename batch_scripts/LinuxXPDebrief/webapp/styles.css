@@ -371,6 +371,45 @@ h2 {
   font-weight: 600;
 }
 
+.flight-filters {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  margin: 0 17px 14px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: rgba(13, 21, 28, 0.45);
+}
+
+.flight-filter {
+  min-height: 34px;
+  padding: 7px 10px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: #9aa8b2;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  transition: color 140ms ease, border-color 140ms ease, background 140ms ease;
+}
+
+.flight-filter:hover {
+  color: var(--text);
+}
+
+.flight-filter.is-active {
+  border-color: rgba(86, 211, 194, 0.42);
+  background: rgba(86, 211, 194, 0.13);
+  color: var(--accent);
+}
+
+.flight-filter:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 .table-scroll {
   overflow-x: auto;
   border-top: 1px solid rgba(139, 154, 166, 0.1);
@@ -1188,6 +1227,17 @@ tbody tr.is-selected td:first-child {
   .stats-grid {
     gap: 9px;
     margin-bottom: 16px;
+  }
+
+  .flight-filters {
+    margin-right: 12px;
+    margin-left: 12px;
+  }
+
+  .flight-filter {
+    padding-right: 5px;
+    padding-left: 5px;
+    font-size: 10px;
   }
 
   .stat-card {
